@@ -68,6 +68,7 @@ conda activate infinigen
 
 But due to a change in the `bpy` package, run:
 ```bash
+conda install -n infinigen pip
 pip install bpy==3.6.0 --extra-index-url https://download.blender.org/pypi/
 ```
 
