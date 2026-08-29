@@ -6,6 +6,7 @@
 #include "dual_contouring.h"
 #include "bisection.h"
 #include "slicing.h"
+#include "event_registry.h"
 
 
 // given an edge connecting two 4D vertices and a time slicing plane, compute the sliced vertex with ID and coordinates
@@ -193,6 +194,7 @@ extern "C" {
     void slicing_preprocess() {
         FILE *log = fopen(params::log_path.c_str(), "a");
         using namespace bisection;
+        event_registry::begin(params::output_path);
         // Sort polyhedra according the time span
         // First group together polyhedra with the same starting time, then sort by ending time within each group
         vec<int, pair<array<timeT, 2>, int> > hyperpolys_timed;
@@ -250,6 +252,7 @@ extern "C" {
                     FILE *outfile = fopen(filename.str().c_str() , "ab" );
                     for (int index = starting_index[t_start]; index < starting_index[t_start+1]; index++) {
                         auto hyperpoly = hyperpolys[hyperpolys_timed[index].second];
+                        event_registry::observe_hyperpoly(hypervertices, hyperpoly);
                         // Given a polyhedra, find the list of critital time point
                         // For each time segment, precompute which edge to slice and what faces to generate
                         vec_timeT times;
@@ -350,6 +353,7 @@ extern "C" {
                 }
             });
         }
+        event_registry::finish();
         fclose(log);
     }
 }

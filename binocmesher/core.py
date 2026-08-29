@@ -157,6 +157,9 @@ class BinocMesher:
         register_func(self, dll, "run_slicing", [self.float_type, POINTER(c_int32), POINTER(c_int32), c_bool])
         register_func(self, dll, "slicing_output", [c_int32, POINTER(self.float_type), POINTER(c_int32), POINTER(c_int32)])
         register_func(self, dll, "slicing_clean_up")
+        register_func(self, dll, "binoc_event_fixture_saddle", [POINTER(c_int32), POINTER(c_int32)], c_int32)
+        register_func(self, dll, "binoc_event_fixture_endpoint", [POINTER(c_double), POINTER(c_double)], c_int32)
+        register_func(self, dll, "binoc_event_fixture_replay", [c_int32, POINTER(c_int32), POINTER(c_int32), POINTER(c_int32)], c_int32)
 
 
     def kernel_caller(self, kernels, XYZ_all, step=2**31-1):
@@ -415,7 +418,7 @@ class BinocMesher:
             # clean up unnecessary files
             files_to_delete = list(path.glob("*/*")) + list(path.glob("*"))
             files_to_keep = list(path.glob("processed_hyperpolys/*")) + list(path.glob("hypervertices/*")) + \
-                list(path.glob("slicing_preprocess.finish")) + list(path.glob("*.txt"))
+                list(path.glob("slicing_preprocess.finish")) + list(path.glob("*.txt")) + list(path.glob("event_registry_p1*"))
             for file_path in files_to_delete:
                 if file_path not in files_to_keep and not os.path.isdir(file_path):
                     file_path.unlink()

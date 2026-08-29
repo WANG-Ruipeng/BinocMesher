@@ -9,7 +9,7 @@ CXXFLAGS = -w -O3 -std=c++17 -fPIC -fopenmp
 # Source files
 SRCS = source/binoctree.cpp source/coarse_step.cpp \
        source/medium_step.cpp source/fine_step.cpp source/dual_contouring.cpp \
-       source/bisection.cpp source/slicing.cpp
+       source/bisection.cpp source/event_registry.cpp source/slicing.cpp
 
 # Object directory
 OBJDIR = lib
