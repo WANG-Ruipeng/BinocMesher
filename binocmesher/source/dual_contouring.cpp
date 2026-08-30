@@ -1,3 +1,4 @@
+#include "hyperpoly_layout.h"
 #include "utils.h"
 #include "binoctree.h"
 #include "coarse_step.h"
@@ -830,7 +831,8 @@ extern "C" {
                             for (int t = 0; t < 2; t++) {
                                 dirs[e1] = i;
                                 dirs[e2] = j;
-                                int res = results[2*(i + j*2 + t*4)] = bipolar_edge_neighbor_search(ed.coords, ed.L, &dirs[0], ed.tcoord, ed.tL, t, e0, fine::active_nodes, fine::mask);
+                                const int hp_corner = hyperpoly_layout::corner_index(i, j, t);
+                                int res = results[2 * hp_corner] = bipolar_edge_neighbor_search(ed.coords, ed.L, &dirs[0], ed.tcoord, ed.tL, t, e0, fine::active_nodes, fine::mask);
                                 // a bipolar edge is finalized only if all its neighbors are loaded in the current group (?= 0) or its neighbor is the time boundary
                                 finalized &= (res >= 0 || res == TBOUND);
                                 // a bipolar edge is invalid if any of its neighbor is invalid (i.e., there are middle points found)

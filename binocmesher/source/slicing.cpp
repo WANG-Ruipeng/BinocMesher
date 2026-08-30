@@ -10,6 +10,7 @@
 #include "bisection.h"
 #include "slicing.h"
 #include "event_registry.h"
+#include "hyperpoly_provenance.h"
 
 namespace {
 
@@ -336,6 +337,103 @@ std::vector<vec<int, VID> > preprocess_hyperpoly(HVTable &hypervertices, HP &hyp
     return ret;
 }
 
+std::vector<hyperpoly_provenance::SourceRecord> load_hyperpoly_provenance(
+    int t_group,
+    int expected_records
+) {
+    using namespace hyperpoly_provenance;
+    std::stringstream filename;
+    filename << params::output_path << "/hyperpoly_meta/" << t_group
+             << ".bin";
+    ScopedFile infile_owner(fopen(filename.str().c_str(), "rb"));
+    FILE *infile = infile_owner.get();
+    if (infile == nullptr) {
+        throw std::runtime_error("missing hyperpoly provenance stream");
+    }
+    SourceHeader header{};
+    if (read_scalar_checked(infile, header) != CheckedReadStatus::record) {
+        throw std::runtime_error(
+            "truncated hyperpoly provenance header");
+    }
+    if (header.magic != kSourceMagic || header.version != kVersion ||
+        header.record_size != sizeof(SourceRecord) ||
+        header.layout_version != kLayoutVersion || expected_records < 0 ||
+        header.record_count !=
+            static_cast<std::uint64_t>(expected_records)) {
+        throw std::runtime_error(
+            "hyperpoly provenance header/count mismatch");
+    }
+    std::vector<SourceRecord> records(
+        static_cast<size_t>(expected_records));
+    for (int index = 0; index < expected_records; ++index) {
+        if (read_scalar_checked(
+                infile, records[static_cast<size_t>(index)]) !=
+            CheckedReadStatus::record) {
+            throw std::runtime_error(
+                "truncated hyperpoly provenance payload");
+        }
+    }
+    SourceRecord trailing{};
+    if (read_scalar_checked(infile, trailing) !=
+        CheckedReadStatus::clean_eof) {
+        throw std::runtime_error(
+            "trailing bytes or records in hyperpoly provenance stream");
+    }
+    for (int index = 0; index < expected_records; ++index) {
+        const SourceRecord& record =
+            records[static_cast<size_t>(index)];
+        if (record.source_t_group != t_group ||
+            record.source_record_index != index) {
+            throw std::runtime_error(
+                "hyperpoly provenance record order mismatch");
+        }
+    }
+    return records;
+}
+
+void write_processed_provenance(
+    FILE *outfile,
+    int t_group,
+    int t_start,
+    int sorted_record_index,
+    const hyperpoly_provenance::SourceRecord& source
+) {
+    using namespace hyperpoly_provenance;
+    if (outfile == nullptr) {
+        throw std::runtime_error(
+            "null processed provenance output");
+    }
+    ProcessedRecord record{};
+    record.magic = kProcessedMagic;
+    record.version = kVersion;
+    record.record_size = sizeof(ProcessedRecord);
+    record.layout_version = kLayoutVersion;
+    record.t_group = t_group;
+    record.t_start = t_start;
+    record.sorted_record_index = sorted_record_index;
+    record.source = source;
+    if (fwrite(&record, sizeof(record), 1, outfile) != 1) {
+        throw std::runtime_error(
+            "failed to write processed provenance record");
+    }
+}
+
+CheckedReadStatus read_processed_provenance(
+    FILE *infile,
+    hyperpoly_provenance::ProcessedRecord& record
+) {
+    const CheckedReadStatus status = read_scalar_checked(infile, record);
+    if (status != CheckedReadStatus::record) return status;
+    if (record.magic != hyperpoly_provenance::kProcessedMagic ||
+        record.version != hyperpoly_provenance::kVersion ||
+        record.record_size != sizeof(record) ||
+        record.layout_version != hyperpoly_provenance::kLayoutVersion) {
+        throw std::runtime_error(
+            "invalid processed provenance record header");
+    }
+    return CheckedReadStatus::record;
+}
+
 // These are functions exposed to Python
 extern "C" {
     // The preprocessing function that prebuild a lookup table for which edge to cut given a timestamp
@@ -350,6 +448,7 @@ extern "C" {
             throw std::runtime_error("failed to open slicing log");
         }
         using namespace bisection;
+        const bool provenance_enabled = hyperpoly_provenance::enabled();
         event_registry::begin(params::output_path);
         // Sort polyhedra according the time span
         // First group together polyhedra with the same starting time, then sort by ending time within each group
@@ -360,6 +459,12 @@ extern "C" {
                 load_hyperpolys(t_group);
                 load_vertices(t_group);
             });
+            std::vector<hyperpoly_provenance::SourceRecord>
+                source_provenance;
+            if (provenance_enabled) {
+                source_provenance = load_hyperpoly_provenance(
+                    t_group, hyperpolys.size());
+            }
             MEASURE_TIME("get timed hyperpolys", 1, {
                 hyperpolys_timed.resize(hyperpolys.size());
                 OMP_PRAGMA(omp parallel for schedule(dynamic))
@@ -411,9 +516,34 @@ extern "C" {
                         throw std::runtime_error(
                             "failed to open processed hyperpoly output");
                     }
+                    std::stringstream metadata_filename;
+                    metadata_filename
+                        << params::output_path << "/processed_hyperpolys/"
+                        << t_group << "_" << t_start << "_hpmeta.bin";
+                    ScopedFile metadata_outfile_owner(
+                        provenance_enabled
+                            ? fopen(metadata_filename.str().c_str(), "ab")
+                            : nullptr);
+                    FILE *metadata_outfile =
+                        metadata_outfile_owner.get();
+                    if (provenance_enabled && metadata_outfile == nullptr) {
+                        throw std::runtime_error(
+                            "failed to open processed hyperpoly metadata output");
+                    }
                     for (int index = starting_index[t_start]; index < starting_index[t_start+1]; index++) {
-                        auto hyperpoly = hyperpolys[hyperpolys_timed[index].second];
-                        event_registry::observe_hyperpoly(hypervertices, hyperpoly);
+                        const int source_index =
+                            hyperpolys_timed[index].second;
+                        auto hyperpoly = hyperpolys[source_index];
+                        if (provenance_enabled) {
+                            const auto &source = source_provenance[
+                                static_cast<size_t>(source_index)];
+                            write_processed_provenance(
+                                metadata_outfile, t_group, t_start, index,
+                                source);
+                            event_registry::observe_hyperpoly(
+                                hypervertices, hyperpoly, source,
+                                t_group, t_start, index);
+                        }
                         // Given a polyhedra, find the list of critital time point
                         // For each time segment, precompute which edge to slice and what faces to generate
                         vec_timeT times;
@@ -488,6 +618,10 @@ extern "C" {
                     if (ferror(outfile)) {
                         throw std::runtime_error(
                             "I/O error in processed hyperpoly output");
+                    }
+                    if (provenance_enabled && ferror(metadata_outfile)) {
+                        throw std::runtime_error(
+                            "I/O error in processed hyperpoly metadata output");
                     }
                     for (auto &vertices_set: parallel_faces_to_remove) {
                         parallel_faces.erase(vertices_set);
@@ -632,6 +766,7 @@ extern "C" {
         }
         using namespace bisection;
         using namespace slicing;
+        const bool provenance_enabled = hyperpoly_provenance::enabled();
         const int disc_t = exact_slice_time.has_value()
             ? slicing_cache_group_exact(
                 temporal_group_count, maximum_discrete_time)
@@ -668,11 +803,22 @@ extern "C" {
                     ScopedFile infile_discon_owner(
                         fopen(filename2.str().c_str(), "rb"));
                     FILE *infile_discon = infile_discon_owner.get();
-                    if (infile == nullptr || infile_discon == nullptr) {
+                    std::stringstream filename3;
+                    filename3
+                        << params::output_path << "/processed_hyperpolys/"
+                        << t_group << "_" << t_start << "_hpmeta.bin";
+                    ScopedFile infile_metadata_owner(
+                        provenance_enabled
+                            ? fopen(filename3.str().c_str(), "rb")
+                            : nullptr);
+                    FILE *infile_metadata = infile_metadata_owner.get();
+                    if (infile == nullptr || infile_discon == nullptr ||
+                        (provenance_enabled && infile_metadata == nullptr)) {
                         throw std::runtime_error(
                             "missing synchronized processed hyperpoly stream");
                     }
                     int hyperpolys_cnt = 0;
+                    int previous_sorted_record_index = -1;
                     for (;;) {
                         start_discon_face.clear();
                         end_discon_face.clear();
@@ -684,10 +830,22 @@ extern "C" {
                         const CheckedReadStatus primary_status =
                             read_scalar_checked(infile, ele);
                         if (primary_status == CheckedReadStatus::clean_eof) {
-                            if (read_vec_checked(
+                            const CheckedReadStatus discon_status =
+                                read_vec_checked(
                                     infile_discon, buffer,
-                                    static_cast<int>(64)) !=
-                                CheckedReadStatus::clean_eof) {
+                                    static_cast<int>(64));
+                            CheckedReadStatus metadata_status =
+                                CheckedReadStatus::clean_eof;
+                            if (provenance_enabled) {
+                                hyperpoly_provenance::ProcessedRecord
+                                    trailing_metadata{};
+                                metadata_status = read_processed_provenance(
+                                    infile_metadata, trailing_metadata);
+                            }
+                            if (discon_status !=
+                                    CheckedReadStatus::clean_eof ||
+                                metadata_status !=
+                                    CheckedReadStatus::clean_eof) {
                                 throw std::runtime_error(
                                     "synchronized processed hyperpoly stream has trailing records");
                             }
@@ -703,6 +861,27 @@ extern "C" {
                             CheckedReadStatus::record) {
                             throw std::runtime_error(
                                 "processed_hyperpolys discontinuity stream ended before primary stream");
+                        }
+                        if (provenance_enabled) {
+                            hyperpoly_provenance::ProcessedRecord metadata{};
+                            if (read_processed_provenance(
+                                    infile_metadata, metadata) !=
+                                CheckedReadStatus::record) {
+                                throw std::runtime_error(
+                                    "processed provenance stream ended before primary stream");
+                            }
+                            if (metadata.t_group != t_group ||
+                                metadata.t_start != t_start ||
+                                metadata.source.element != ele ||
+                                metadata.sorted_record_index < 0 ||
+                                (previous_sorted_record_index >= 0 &&
+                                 metadata.sorted_record_index !=
+                                     previous_sorted_record_index + 1)) {
+                                throw std::runtime_error(
+                                    "processed provenance stream alignment mismatch");
+                            }
+                            previous_sorted_record_index =
+                                metadata.sorted_record_index;
                         }
                         if (extra_smooth) {
                             for (auto &p: buffer) {

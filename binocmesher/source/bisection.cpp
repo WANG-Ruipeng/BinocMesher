@@ -5,6 +5,7 @@
 #include "fine_step.h"
 #include "dual_contouring.h"
 #include "bisection.h"
+#include "hyperpoly_provenance.h"
 
 namespace {
 
@@ -517,6 +518,67 @@ void write_hyperpolys(int t) {
     hyperpolys.clear();
 }
 
+void write_hyperpoly_provenance(int t) {
+    if (!hyperpoly_provenance::enabled()) {
+        return;
+    }
+    using namespace bisection;
+    using namespace dual_contouring;
+    using namespace hyperpoly_provenance;
+    auto &edges = *edges_;
+    if (edges.size() != hyperpolys.size()) {
+        throw std::runtime_error(
+            "hyperpoly/source-edge count mismatch before provenance write");
+    }
+    std::stringstream filename;
+    filename << params::output_path << "/hyperpoly_meta/" << t << ".bin";
+    FILE *outfile = fopen(filename.str().c_str(), "wb");
+    if (outfile == nullptr) {
+        throw std::runtime_error(
+            "failed to open hyperpoly provenance output");
+    }
+    const SourceHeader header{
+        kSourceMagic,
+        kVersion,
+        static_cast<std::uint32_t>(sizeof(SourceRecord)),
+        kLayoutVersion,
+        static_cast<std::uint64_t>(hyperpolys.size()),
+    };
+    if (fwrite(&header, sizeof(header), 1, outfile) != 1) {
+        fclose(outfile);
+        throw std::runtime_error(
+            "failed to write hyperpoly provenance header");
+    }
+    for (int index = 0; index < hyperpolys.size(); ++index) {
+        const auto &source_edge = edges[index].e;
+        const auto &hyperpoly = hyperpolys[index];
+        SourceRecord record{};
+        record.source_t_group = t;
+        record.source_record_index = index;
+        for (int axis = 0; axis < 3; ++axis) {
+            record.edge_coords[axis] = source_edge.coords[axis];
+        }
+        record.edge_L = source_edge.L;
+        record.edge_tcoord = source_edge.tcoord;
+        record.edge_tL = source_edge.tL;
+        record.edge_dir = source_edge.dir;
+        record.element = hyperpoly.second;
+        for (int corner = 0; corner < 8; ++corner) {
+            record.hvid_node[corner] = hyperpoly.first[corner].first;
+            record.hvid_group[corner] = hyperpoly.first[corner].second;
+        }
+        if (fwrite(&record, sizeof(record), 1, outfile) != 1) {
+            fclose(outfile);
+            throw std::runtime_error(
+                "failed to write hyperpoly provenance record");
+        }
+    }
+    if (fclose(outfile) != 0) {
+        throw std::runtime_error(
+            "failed to close hyperpoly provenance output");
+    }
+}
+
 // Load the 4D polyhedra for updating
 void load_hyperpolys(int t, int expected_records) {
     using namespace bisection;
@@ -648,6 +710,7 @@ extern "C" {
             collect_hypervertices();
         });
         MEASURE_TIME("write_final_hypermesh part 4", 1, {
+            write_hyperpoly_provenance(t);
             write_hyperpolys(t);
             write_vertices(t);
         });
@@ -667,6 +730,10 @@ extern "C" {
                 collect_hypervertices();
             });
             MEASURE_TIME("write_final_hypermesh part 5", 1, {
+                // A later group may resolve previously placeholder HVID slots
+                // in this cached HP. Refresh the aligned provenance snapshot
+                // whenever the primary HP stream is rewritten.
+                write_hyperpoly_provenance(t_group);
                 write_hyperpolys(t_group);
                 write_vertices(t_group);
             });
@@ -684,6 +751,7 @@ extern "C" {
             collect_hypervertices();
         });
         MEASURE_TIME("write_final_hypermesh part 7", 1, {
+            write_hyperpoly_provenance(t);
             write_hyperpolys(t);
             write_vertices(t);
         });

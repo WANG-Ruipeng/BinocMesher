@@ -10,6 +10,7 @@
 #include "utils.h"
 #include "binoctree.h"
 #include "bisection.h"
+#include "hyperpoly_provenance.h"
 
 namespace event_registry {
 
@@ -19,9 +20,7 @@ struct Rational64 {
     std::int64_t denominator = 1;
 };
 
-// Exact three-way comparison without cross multiplication. Both
-// denominators must be positive; numerators may span signed int64.
-// Returns -1, 0, or +1.
+// Exact overflow-safe comparison for normalized rationals.
 int compare_exact_rational(const Rational64& first, const Rational64& second);
 
 // Reset read-only instrumentation for one slicing_preprocess() invocation.
@@ -29,9 +28,16 @@ int compare_exact_rational(const Rational64& first, const Rational64& second);
 void begin(const std::string& output_path);
 
 // Observe one official HP/HV record without mutating the source cache or output stream.
-void observe_hyperpoly(const HVTable& hypervertices, const HP& hyperpoly);
+void observe_hyperpoly(
+    const HVTable& hypervertices,
+    const HP& hyperpoly,
+    const hyperpoly_provenance::SourceRecord& source,
+    int t_group,
+    int t_start,
+    int sorted_record_index
+);
 
-// Write event_registry_p1.csv and event_registry_p1_summary.json when enabled.
+// Write the provenance-v2 P1 CSV, summary, and selected-event evidence.
 void finish();
 
 }  // namespace event_registry

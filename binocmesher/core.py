@@ -18,6 +18,22 @@ _INT64_MIN = -(1 << 63)
 _INT64_MAX = (1 << 63) - 1
 
 
+def _positive_env_flag(name):
+    value = os.environ.get(name)
+    if value is None:
+        return False
+    try:
+        return int(value) > 0
+    except ValueError as error:
+        raise RuntimeError(f"{name} must be an integer flag") from error
+
+
+def _provenance_v2_enabled():
+    # The exact-event observer requires source provenance.  Otherwise the
+    # provenance layer is fully opt-in and leaves no BHP2/BPM2 sidecars.
+    return _positive_env_flag("BINOC_PROVENANCE_V2") or _positive_env_flag("BINOC_EVENT_MODE")
+
+
 def _parse_checked_rational_time(numerator_text, denominator_text, context):
     """Parse an exact time without allowing ctypes.c_int64 to wrap it."""
     try:
@@ -265,6 +281,8 @@ class BinocMesher:
             (path/"computed_vertices").mkdir(exist_ok=True)
             (path/"hypervertices").mkdir(exist_ok=True)
             (path/"hyperpolys").mkdir(exist_ok=True)
+            if _provenance_v2_enabled():
+                (path/"hyperpoly_meta").mkdir(exist_ok=True)
             (path/"processed_hyperpolys").mkdir(exist_ok=True)
 
             # Coarse step that split the node up to n_coarse_nodes and mark leaf nodes using virtual grid
@@ -457,7 +475,10 @@ class BinocMesher:
             # clean up unnecessary files
             files_to_delete = list(path.glob("*/*")) + list(path.glob("*"))
             files_to_keep = list(path.glob("processed_hyperpolys/*")) + list(path.glob("hypervertices/*")) + \
-                list(path.glob("slicing_preprocess.finish")) + list(path.glob("*.txt")) + list(path.glob("event_registry_p1*"))
+                list(path.glob("slicing_preprocess.finish")) + list(path.glob("*.txt")) + list(path.glob("event_registry_p1*")) + \
+                list(path.glob("event_registry_selected_event.json"))
+            if _provenance_v2_enabled():
+                files_to_keep += list(path.glob("hyperpoly_meta/*"))
             for file_path in files_to_delete:
                 if file_path not in files_to_keep and not os.path.isdir(file_path):
                     file_path.unlink()

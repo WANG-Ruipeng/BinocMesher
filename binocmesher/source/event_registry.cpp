@@ -1,3 +1,4 @@
+#include "hyperpoly_layout.h"
 #include "event_registry.h"
 
 // The upstream utils.h intentionally defines short macro aliases such as
@@ -35,11 +36,13 @@
 #include <filesystem>
 #include <fstream>
 #include <iomanip>
+#include <limits>
 #include <map>
 #include <numeric>
 #include <optional>
 #include <set>
 #include <sstream>
+#include <stdexcept>
 #include <string>
 #include <tuple>
 #include <utility>
@@ -50,19 +53,52 @@ namespace {
 
 using FaceKey = std::array<HVID, 4>;
 
+struct SaddleSolution {
+    Rational64 time{};
+    Rational64 u{};
+    Rational64 v{};
+    std::int64_t A = 0;
+    std::int64_t B = 0;
+};
+
+struct CanonicalFace {
+    FaceKey key{};
+    std::array<std::int64_t, 4> times{};
+};
+
 struct SaddleObservation {
     FaceKey key{};
-    Rational64 time{};
+    std::array<std::int64_t, 4> times{};
+    SaddleSolution solution{};
     int face_axis = -1;
     int face_side = -1;
     int element = -1;
+    int t_group = -1;
+    int t_start = -1;
+    int sorted_record_index = -1;
+    hyperpoly_provenance::SourceRecord source{};
+    std::string raw_id;
+    std::string logical_incidence_id;
+    std::string canonical_event_id;
+};
+
+struct EventAggregate {
+    FaceKey key{};
+    std::array<std::int64_t, 4> times{};
+    SaddleSolution solution{};
+    int face_axis = -1;
+    int element = -1;
+    std::int64_t raw_observations = 0;
+    std::set<std::string> logical_incidence_ids;
 };
 
 struct RegistryState {
     bool enabled = false;
     std::filesystem::path output_path;
     std::vector<SaddleObservation> observations;
-    std::map<FaceKey, Rational64> shared_roots;
+    std::set<std::string> raw_observation_ids;
+    std::map<std::string, EventAggregate> events;
+    std::set<std::string> logical_incidence_ids;
     std::int64_t hyperpolys = 0;
     std::int64_t faces_examined = 0;
     std::int64_t finite_algebraic_roots = 0;
@@ -71,6 +107,9 @@ struct RegistryState {
     std::int64_t a0_b_nonzero = 0;
     std::int64_t reduced_hvid_faces = 0;
     std::int64_t shared_root_mismatches = 0;
+    std::optional<std::string> selected_saddle_event_id;
+    std::set<std::string> selected_saddle_raw_ids;
+    std::set<std::string> selected_saddle_logical_ids;
 };
 
 RegistryState state;
@@ -104,7 +143,6 @@ bool rational_equal(const Rational64& a, const Rational64& b) {
 
 std::uint64_t unsigned_magnitude(std::int64_t value) noexcept {
     if (value >= 0) return static_cast<std::uint64_t>(value);
-    // Avoid negating INT64_MIN in the signed domain.
     return static_cast<std::uint64_t>(-(value + 1)) + UINT64_C(1);
 }
 
@@ -114,8 +152,6 @@ int compare_unsigned_rational(
     std::uint64_t second_numerator,
     std::uint64_t second_denominator
 ) {
-    // Compare through the continued-fraction expansion. Division/remainder
-    // stays exact when either cross product would overflow uint64_t.
     int direction = 1;
     for (;;) {
         const std::uint64_t first_quotient =
@@ -126,7 +162,6 @@ int compare_unsigned_rational(
             const int result = first_quotient > second_quotient ? 1 : -1;
             return direction * result;
         }
-
         const std::uint64_t first_remainder =
             first_numerator % first_denominator;
         const std::uint64_t second_remainder =
@@ -136,7 +171,6 @@ int compare_unsigned_rational(
             const int result = first_remainder == 0 ? -1 : 1;
             return direction * result;
         }
-
         first_numerator = first_denominator;
         first_denominator = first_remainder;
         second_numerator = second_denominator;
@@ -157,10 +191,7 @@ int compare_signed_rational_components(
     }
     const bool first_negative = first_numerator < 0;
     const bool second_negative = second_numerator < 0;
-    if (first_negative != second_negative) {
-        return first_negative ? -1 : 1;
-    }
-
+    if (first_negative != second_negative) return first_negative ? -1 : 1;
     const int magnitude_comparison = compare_unsigned_rational(
         unsigned_magnitude(first_numerator),
         static_cast<std::uint64_t>(first_denominator),
@@ -169,10 +200,7 @@ int compare_signed_rational_components(
     return first_negative ? -magnitude_comparison : magnitude_comparison;
 }
 
-int compare_integer_to_rational(
-    std::int64_t value,
-    const Rational64& rational
-) {
+int compare_integer_to_rational(std::int64_t value, const Rational64& rational) {
     return compare_signed_rational_components(
         value, 1, rational.numerator, rational.denominator);
 }
@@ -183,26 +211,33 @@ int compare_rational(const Rational64& first, const Rational64& second) {
         second.numerator, second.denominator);
 }
 
-FaceKey rotate(const FaceKey& key, int offset) {
-    FaceKey result{};
+CanonicalFace rotate(const CanonicalFace& face, int offset) {
+    CanonicalFace result{};
     for (int i = 0; i < 4; ++i) {
-        result[i] = key[(i + offset) & 3];
+        result.key[i] = face.key[(i + offset) & 3];
+        result.times[i] = face.times[(i + offset) & 3];
     }
     return result;
 }
 
-FaceKey reverse_cycle(const FaceKey& key) {
-    return FaceKey{key[0], key[3], key[2], key[1]};
+CanonicalFace reverse_cycle(const CanonicalFace& face) {
+    return CanonicalFace{
+        FaceKey{face.key[0], face.key[3], face.key[2], face.key[1]},
+        std::array<std::int64_t, 4>{
+            face.times[0], face.times[3], face.times[2], face.times[1]},
+    };
 }
 
-FaceKey canonical_face_key(const FaceKey& input) {
-    FaceKey best = rotate(input, 0);
+CanonicalFace canonical_face(const CanonicalFace& input) {
+    CanonicalFace best = rotate(input, 0);
     for (int offset = 1; offset < 4; ++offset) {
-        best = std::min(best, rotate(input, offset));
+        const CanonicalFace candidate = rotate(input, offset);
+        if (candidate.key < best.key) best = candidate;
     }
-    const FaceKey reversed = reverse_cycle(input);
+    const CanonicalFace reversed = reverse_cycle(input);
     for (int offset = 0; offset < 4; ++offset) {
-        best = std::min(best, rotate(reversed, offset));
+        const CanonicalFace candidate = rotate(reversed, offset);
+        if (candidate.key < best.key) best = candidate;
     }
     return best;
 }
@@ -213,14 +248,14 @@ bool all_hvids_distinct(const FaceKey& key) {
 }
 
 // A face is ordered cyclically as (00, 10, 11, 01).
-std::optional<Rational64> admissible_saddle(const std::array<std::int64_t, 4>& times) {
+std::optional<SaddleSolution> admissible_saddle(
+    const std::array<std::int64_t, 4>& times
+) {
     constexpr std::int64_t minimum_serialized_time =
         std::numeric_limits<std::int8_t>::min();
     constexpr std::int64_t maximum_serialized_time =
         std::numeric_limits<std::int8_t>::max();
     for (const std::int64_t value : times) {
-        // Production corner times use timeT == int8_t. Keep this wider helper
-        // fail-closed so the coefficient arithmetic below cannot overflow.
         if (value < minimum_serialized_time ||
             value > maximum_serialized_time) {
             throw std::runtime_error(
@@ -276,20 +311,13 @@ std::optional<Rational64> admissible_saddle(const std::array<std::int64_t, 4>& t
         return std::nullopt;
     }
 
-    // The bilinear critical point must lie strictly inside the parameter face.
-    // f(u,v) = a + b u + c v + d u v.
-    const long double b = static_cast<long double>(t10 - t00);
-    const long double c = static_cast<long double>(t01 - t00);
-    const long double d = static_cast<long double>(t11 - t10 - t01 + t00);
-    if (d == 0.0L) {
+    const Rational64 u = normalize(t00 - t01, A);
+    const Rational64 v = normalize(t00 - t10, A);
+    if (!(u.numerator > 0 && u.numerator < u.denominator &&
+          v.numerator > 0 && v.numerator < v.denominator)) {
         return std::nullopt;
     }
-    const long double u = -c / d;
-    const long double v = -b / d;
-    if (!(u > 0.0L && u < 1.0L && v > 0.0L && v < 1.0L)) {
-        return std::nullopt;
-    }
-    return root;
+    return SaddleSolution{root, u, v, A, B};
 }
 
 std::string hvid_string(const HVID& value) {
@@ -298,20 +326,237 @@ std::string hvid_string(const HVID& value) {
     return stream.str();
 }
 
+std::string face_string(const FaceKey& key) {
+    std::ostringstream stream;
+    for (int corner = 0; corner < 4; ++corner) {
+        if (corner != 0) stream << '|';
+        stream << hvid_string(key[corner]);
+    }
+    return stream.str();
+}
+
+std::string event_id(int element, int face_axis, const FaceKey& key) {
+    std::ostringstream stream;
+    stream << "element=" << element
+           << ";role=" << hyperpoly_layout::axis_role_name(
+               static_cast<hyperpoly_layout::AxisRole>(face_axis))
+           << ";face=" << face_string(key);
+    return stream.str();
+}
+
+std::string logical_incidence_id(
+    const std::string& canonical_event_id,
+    const hyperpoly_provenance::SourceRecord& source
+) {
+    std::ostringstream stream;
+    stream << canonical_event_id << ";edge="
+           << source.edge_coords[0] << ',' << source.edge_coords[1] << ','
+           << source.edge_coords[2] << ',' << source.edge_L << ','
+           << source.edge_tcoord << ',' << source.edge_tL << ','
+           << source.edge_dir << ',' << source.element;
+    return stream.str();
+}
+
+std::string raw_observation_id(
+    int t_group,
+    int t_start,
+    int sorted_record_index,
+    int face_axis,
+    int face_side,
+    const hyperpoly_provenance::SourceRecord& source
+) {
+    std::ostringstream stream;
+    stream << "cache=" << t_group << ':' << t_start << ':'
+           << sorted_record_index << ";source=" << source.source_t_group
+           << ':' << source.source_record_index << ";face=" << face_axis
+           << ':' << face_side;
+    return stream.str();
+}
+
+std::string json_escape(const std::string& input) {
+    std::ostringstream output;
+    for (const unsigned char character : input) {
+        switch (character) {
+            case '"': output << "\\\""; break;
+            case '\\': output << "\\\\"; break;
+            case '\b': output << "\\b"; break;
+            case '\f': output << "\\f"; break;
+            case '\n': output << "\\n"; break;
+            case '\r': output << "\\r"; break;
+            case '\t': output << "\\t"; break;
+            default:
+                if (character < 0x20U) {
+                    output << "\\u" << std::hex << std::setw(4)
+                           << std::setfill('0') << static_cast<int>(character)
+                           << std::dec << std::setfill(' ');
+                } else {
+                    output << character;
+                }
+        }
+    }
+    return output.str();
+}
+
+void validate_source_record(
+    const HP& hyperpoly,
+    const hyperpoly_provenance::SourceRecord& source
+) {
+    if (source.element != static_cast<int>(hyperpoly.second)) {
+        throw std::runtime_error("hyperpoly provenance element mismatch");
+    }
+    for (int corner = 0; corner < 8; ++corner) {
+        if (source.hvid_node[corner] != hyperpoly.first[corner].first ||
+            source.hvid_group[corner] !=
+                static_cast<int>(hyperpoly.first[corner].second)) {
+            throw std::runtime_error(
+                "hyperpoly provenance HVID alignment mismatch");
+        }
+    }
+}
+
+void build_selected_saddle() {
+    state.selected_saddle_event_id.reset();
+    state.selected_saddle_raw_ids.clear();
+    state.selected_saddle_logical_ids.clear();
+    const int temporal_axis = static_cast<int>(
+        hyperpoly_layout::AxisRole::temporal_neighbour);
+    for (const auto& entry : state.events) {
+        const EventAggregate& candidate = entry.second;
+        if (candidate.face_axis != temporal_axis) continue;
+        if (!state.selected_saddle_event_id.has_value()) {
+            state.selected_saddle_event_id = entry.first;
+            continue;
+        }
+        const EventAggregate& selected =
+            state.events.at(*state.selected_saddle_event_id);
+        if (candidate.raw_observations > selected.raw_observations ||
+            (candidate.raw_observations == selected.raw_observations &&
+             candidate.logical_incidence_ids.size() >
+                 selected.logical_incidence_ids.size()) ||
+            (candidate.raw_observations == selected.raw_observations &&
+             candidate.logical_incidence_ids.size() ==
+                 selected.logical_incidence_ids.size() &&
+             entry.first < *state.selected_saddle_event_id)) {
+            state.selected_saddle_event_id = entry.first;
+        }
+    }
+    if (!state.selected_saddle_event_id.has_value()) return;
+    const EventAggregate& selected =
+        state.events.at(*state.selected_saddle_event_id);
+    state.selected_saddle_logical_ids = selected.logical_incidence_ids;
+    for (const SaddleObservation& observation : state.observations) {
+        if (observation.canonical_event_id ==
+            *state.selected_saddle_event_id) {
+            state.selected_saddle_raw_ids.insert(observation.raw_id);
+        }
+    }
+    if (state.selected_saddle_raw_ids.size() !=
+            static_cast<std::size_t>(selected.raw_observations) ||
+        state.selected_saddle_logical_ids.size() !=
+            selected.logical_incidence_ids.size()) {
+        throw std::runtime_error(
+            "selected saddle provenance cardinality mismatch");
+    }
+}
+
 void write_summary_json(const std::filesystem::path& path) {
     std::ofstream output(path);
     output << "{\n";
-    output << "  \"enabled\": " << (state.enabled ? "true" : "false") << ",\n";
+    output << "  \"enabled\": " << (state.enabled ? "true" : "false")
+           << ",\n";
     output << "  \"hyperpolys\": " << state.hyperpolys << ",\n";
     output << "  \"faces_examined\": " << state.faces_examined << ",\n";
-    output << "  \"finite_algebraic_roots\": " << state.finite_algebraic_roots << ",\n";
-    output << "  \"accepted_saddle_occurrences\": " << state.accepted_saddles << ",\n";
-    output << "  \"canonical_shared_events\": " << state.shared_roots.size() << ",\n";
+    output << "  \"finite_algebraic_roots\": "
+           << state.finite_algebraic_roots << ",\n";
+    output << "  \"accepted_saddle_occurrences\": "
+           << state.accepted_saddles << ",\n";
+    output << "  \"raw_observations\": " << state.observations.size()
+           << ",\n";
+    output << "  \"logical_incidences\": "
+           << state.logical_incidence_ids.size() << ",\n";
+    output << "  \"canonical_events\": " << state.events.size() << ",\n";
+    output << "  \"canonical_shared_events\": " << state.events.size()
+           << ",\n";
     output << "  \"a0_b0_degeneracies\": " << state.a0_b0 << ",\n";
     output << "  \"a0_b_nonzero_faces\": " << state.a0_b_nonzero << ",\n";
-    output << "  \"reduced_hvid_faces\": " << state.reduced_hvid_faces << ",\n";
-    output << "  \"shared_root_mismatches\": " << state.shared_root_mismatches << "\n";
+    output << "  \"reduced_hvid_faces\": " << state.reduced_hvid_faces
+           << ",\n";
+    output << "  \"shared_root_mismatches\": "
+           << state.shared_root_mismatches << "\n";
     output << "}\n";
+}
+
+void write_selected_event_json(const std::filesystem::path& path) {
+    std::ofstream output(path);
+    if (!state.selected_saddle_event_id.has_value()) {
+        output << "{\n  \"selected\": false\n}\n";
+        return;
+    }
+    const std::string& selected_id = *state.selected_saddle_event_id;
+    const EventAggregate& event = state.events.at(selected_id);
+    output << "{\n";
+    output << "  \"selected\": true,\n";
+    output << "  \"selection_rule\": \"temporal-neighbour events only; "
+              "largest raw count, then logical count, then event_id\",\n";
+    output << "  \"event_id\": \"" << json_escape(selected_id) << "\",\n";
+    output << "  \"element\": " << event.element << ",\n";
+    output << "  \"face_axis\": " << event.face_axis << ",\n";
+    output << "  \"face_axis_role\": \""
+           << hyperpoly_layout::axis_role_name(
+               static_cast<hyperpoly_layout::AxisRole>(event.face_axis))
+           << "\",\n";
+    output << "  \"temporal_provenance\": {\"layout_version\": "
+           << hyperpoly_provenance::kLayoutVersion
+           << ", \"producer_mapping\": "
+              "\"dual_contouring hp_slot=i+2*j+4*t\", "
+              "\"verified_temporal_face\": "
+           << (event.face_axis == static_cast<int>(
+                   hyperpoly_layout::AxisRole::temporal_neighbour)
+                   ? "true" : "false")
+           << "},\n";
+    output << "  \"producer_temporal_face_slots\": "
+              "{\"side_0\": [0,1,3,2], \"side_1\": [4,5,7,6]},\n";
+    output << "  \"canonical_hvids\": [";
+    for (int corner = 0; corner < 4; ++corner) {
+        if (corner != 0) output << ',';
+        output << "\"" << hvid_string(event.key[corner]) << "\"";
+    }
+    output << "],\n  \"corner_times\": [";
+    for (int corner = 0; corner < 4; ++corner) {
+        if (corner != 0) output << ',';
+        output << event.times[corner];
+    }
+    output << "],\n";
+    output << "  \"A\": " << event.solution.A << ",\n";
+    output << "  \"B\": " << event.solution.B << ",\n";
+    output << "  \"root\": {\"numerator\": "
+           << event.solution.time.numerator << ", \"denominator\": "
+           << event.solution.time.denominator << "},\n";
+    output << "  \"u\": {\"numerator\": " << event.solution.u.numerator
+           << ", \"denominator\": " << event.solution.u.denominator
+           << "},\n";
+    output << "  \"v\": {\"numerator\": " << event.solution.v.numerator
+           << ", \"denominator\": " << event.solution.v.denominator
+           << "},\n";
+    output << "  \"raw_observations\": " << event.raw_observations
+           << ",\n";
+    output << "  \"logical_incidences\": "
+           << event.logical_incidence_ids.size() << ",\n";
+    output << "  \"canonical_events\": 1,\n";
+    output << "  \"raw_ids\": [";
+    std::size_t raw_index = 0;
+    for (const std::string& raw_id : state.selected_saddle_raw_ids) {
+        if (raw_index++ != 0U) output << ',';
+        output << "\"" << json_escape(raw_id) << "\"";
+    }
+    output << "],\n  \"logical_incidence_ids\": [";
+    std::size_t logical_index = 0;
+    for (const std::string& logical_id :
+         state.selected_saddle_logical_ids) {
+        if (logical_index++ != 0U) output << ',';
+        output << "\"" << json_escape(logical_id) << "\"";
+    }
+    output << "]\n}\n";
 }
 
 }  // namespace
@@ -331,81 +576,158 @@ void begin(const std::string& output_path) {
     state.output_path = output_path;
 }
 
-void observe_hyperpoly(const HVTable& hypervertices, const HP& hyperpoly) {
-    if (!state.enabled) {
-        return;
-    }
+void observe_hyperpoly(
+    const HVTable& hypervertices,
+    const HP& hyperpoly,
+    const hyperpoly_provenance::SourceRecord& source,
+    int t_group,
+    int t_start,
+    int sorted_record_index
+) {
+    if (!state.enabled) return;
     ++state.hyperpolys;
+    validate_source_record(hyperpoly, source);
 
-    // Cube corner index follows cube_index(x,y,z,2) = 4x + 2y + z.
-    static constexpr int faces[6][4] = {
-        {0, 1, 3, 2}, {4, 5, 7, 6},
-        {0, 1, 5, 4}, {2, 3, 7, 6},
-        {0, 2, 6, 4}, {1, 3, 7, 5},
-    };
-
-    for (int face_index = 0; face_index < 6; ++face_index) {
-        ++state.faces_examined;
-        FaceKey key{};
-        std::array<std::int64_t, 4> times{};
-        bool found = true;
-        for (int corner = 0; corner < 4; ++corner) {
-            const HVID hvid = hyperpoly.first[faces[face_index][corner]];
-            key[corner] = hvid;
-            const auto iterator = hypervertices.find(hvid);
-            if (iterator == hypervertices.end()) {
-                found = false;
-                break;
+    for (int face_axis = 0; face_axis < 3; ++face_axis) {
+        for (int face_side = 0; face_side < 2; ++face_side) {
+            ++state.faces_examined;
+            CanonicalFace face{};
+            const auto corners = hyperpoly_layout::face_corners(
+                static_cast<hyperpoly_layout::AxisRole>(face_axis),
+                face_side);
+            bool found = true;
+            for (int corner = 0; corner < 4; ++corner) {
+                const HVID hvid = hyperpoly.first[corners[corner]];
+                face.key[corner] = hvid;
+                const auto iterator = hypervertices.find(hvid);
+                if (iterator == hypervertices.end()) {
+                    found = false;
+                    break;
+                }
+                face.times[corner] =
+                    iterator->second.first.second[0];
             }
-            times[corner] = iterator->second.first.second[0];
-        }
-        if (!found) {
-            continue;
-        }
-        if (!all_hvids_distinct(key)) {
-            ++state.reduced_hvid_faces;
-            continue;
-        }
-        const auto root = admissible_saddle(times);
-        if (!root.has_value()) {
-            continue;
-        }
+            if (!found) continue;
+            if (!all_hvids_distinct(face.key)) {
+                ++state.reduced_hvid_faces;
+                continue;
+            }
+            const CanonicalFace canonical = canonical_face(face);
+            const auto solution = admissible_saddle(canonical.times);
+            if (!solution.has_value()) continue;
 
-        ++state.accepted_saddles;
-        const FaceKey canonical = canonical_face_key(key);
-        const auto existing = state.shared_roots.find(canonical);
-        if (existing == state.shared_roots.end()) {
-            state.shared_roots.emplace(canonical, *root);
-        } else if (!rational_equal(existing->second, *root)) {
-            ++state.shared_root_mismatches;
-        }
+            ++state.accepted_saddles;
+            SaddleObservation observation;
+            observation.key = canonical.key;
+            observation.times = canonical.times;
+            observation.solution = *solution;
+            observation.face_axis = face_axis;
+            observation.face_side = face_side;
+            observation.element = static_cast<int>(hyperpoly.second);
+            observation.t_group = t_group;
+            observation.t_start = t_start;
+            observation.sorted_record_index = sorted_record_index;
+            observation.source = source;
+            observation.canonical_event_id = event_id(
+                observation.element, face_axis, canonical.key);
+            observation.logical_incidence_id = logical_incidence_id(
+                observation.canonical_event_id, source);
+            observation.raw_id = raw_observation_id(
+                t_group, t_start, sorted_record_index, face_axis,
+                face_side, source);
+            if (!state.raw_observation_ids.insert(observation.raw_id).second) {
+                throw std::runtime_error(
+                    "duplicate raw saddle observation identity");
+            }
 
-        SaddleObservation observation;
-        observation.key = canonical;
-        observation.time = *root;
-        observation.face_axis = face_index / 2;
-        observation.face_side = face_index & 1;
-        observation.element = static_cast<int>(hyperpoly.second);
-        state.observations.push_back(observation);
+            auto existing = state.events.find(
+                observation.canonical_event_id);
+            if (existing == state.events.end()) {
+                EventAggregate aggregate;
+                aggregate.key = canonical.key;
+                aggregate.times = canonical.times;
+                aggregate.solution = *solution;
+                aggregate.face_axis = face_axis;
+                aggregate.element = observation.element;
+                existing = state.events.emplace(
+                    observation.canonical_event_id,
+                    aggregate).first;
+            } else if (!rational_equal(
+                           existing->second.solution.time,
+                           solution->time) ||
+                       existing->second.times != canonical.times) {
+                ++state.shared_root_mismatches;
+                throw std::runtime_error(
+                    "canonical event has inconsistent root or corner times");
+            }
+            ++existing->second.raw_observations;
+            existing->second.logical_incidence_ids.insert(
+                observation.logical_incidence_id);
+            state.logical_incidence_ids.insert(
+                observation.logical_incidence_id);
+            state.observations.push_back(std::move(observation));
+        }
     }
 }
 
 void finish() {
-    if (!state.enabled) {
-        return;
-    }
+    if (!state.enabled) return;
+    build_selected_saddle();
     std::filesystem::create_directories(state.output_path);
-    const std::filesystem::path csv_path = state.output_path / "event_registry_p1.csv";
+    const std::filesystem::path csv_path =
+        state.output_path / "event_registry_p1.csv";
     std::ofstream csv(csv_path);
-    csv << "element,face_axis,face_side,h0,h1,h2,h3,root_num,root_den\n";
+    csv << "raw_id,t_group,t_start,sorted_record_index,source_t_group,"
+           "source_record_index,element,edge_x,edge_y,edge_z,edge_L,"
+           "edge_tcoord,edge_tL,edge_dir,source_h0,source_h1,source_h2,"
+           "source_h3,source_h4,source_h5,source_h6,source_h7,face_axis,"
+           "face_axis_role,face_side,h0,h1,h2,h3,t0,t1,t2,t3,A,B,"
+           "root_num,root_den,u_num,u_den,v_num,v_den,"
+           "logical_incidence_id,canonical_event_id\n";
     for (const SaddleObservation& observation : state.observations) {
-        csv << observation.element << ',' << observation.face_axis << ',' << observation.face_side;
+        csv << observation.raw_id << ',' << observation.t_group << ','
+            << observation.t_start << ','
+            << observation.sorted_record_index << ','
+            << observation.source.source_t_group << ','
+            << observation.source.source_record_index << ','
+            << observation.element;
+        for (int axis = 0; axis < 3; ++axis) {
+            csv << ',' << observation.source.edge_coords[axis];
+        }
+        csv << ',' << observation.source.edge_L << ','
+            << observation.source.edge_tcoord << ','
+            << observation.source.edge_tL << ','
+            << observation.source.edge_dir;
+        for (int corner = 0; corner < 8; ++corner) {
+            csv << ',' << observation.source.hvid_node[corner] << ':'
+                << observation.source.hvid_group[corner];
+        }
+        csv << ',' << observation.face_axis << ','
+            << hyperpoly_layout::axis_role_name(
+                   static_cast<hyperpoly_layout::AxisRole>(
+                       observation.face_axis))
+            << ',' << observation.face_side;
         for (const HVID& hvid : observation.key) {
             csv << ',' << hvid_string(hvid);
         }
-        csv << ',' << observation.time.numerator << ',' << observation.time.denominator << '\n';
+        for (const std::int64_t time : observation.times) {
+            csv << ',' << time;
+        }
+        csv << ',' << observation.solution.A << ','
+            << observation.solution.B << ','
+            << observation.solution.time.numerator << ','
+            << observation.solution.time.denominator << ','
+            << observation.solution.u.numerator << ','
+            << observation.solution.u.denominator << ','
+            << observation.solution.v.numerator << ','
+            << observation.solution.v.denominator << ','
+            << std::quoted(observation.logical_incidence_id) << ','
+            << std::quoted(observation.canonical_event_id) << '\n';
     }
-    write_summary_json(state.output_path / "event_registry_p1_summary.json");
+    write_summary_json(
+        state.output_path / "event_registry_p1_summary.json");
+    write_selected_event_json(
+        state.output_path / "event_registry_selected_event.json");
 }
 
 }  // namespace event_registry
