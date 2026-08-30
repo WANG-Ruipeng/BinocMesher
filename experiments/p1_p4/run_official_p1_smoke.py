@@ -28,7 +28,7 @@ def cache_manifest(path: Path) -> dict[str, str]:
         relative = file.relative_to(path)
         if relative.parts[0] not in included_roots:
             continue
-        if file.name.startswith("event_registry_p1"):
+        if file.name.startswith("event_registry_p1") or file.name.endswith("_hpmeta.bin"):
             continue
         manifest[str(relative)] = sha256(file)
     return manifest
@@ -43,6 +43,26 @@ def source_cache_manifest(path: Path) -> dict[str, str]:
         if relative.parts[0] not in included_roots:
             continue
         manifest[str(relative)] = sha256(file)
+    return manifest
+
+
+def provenance_manifest(path: Path) -> dict[str, str]:
+    """Hash opt-in BHP2/BPM2 and registry sidecars only."""
+    manifest: dict[str, str] = {}
+    meta_root = path / "hyperpoly_meta"
+    if meta_root.is_dir():
+        for file in sorted(candidate for candidate in meta_root.rglob("*") if candidate.is_file()):
+            manifest[str(file.relative_to(path))] = sha256(file)
+    processed_root = path / "processed_hyperpolys"
+    if processed_root.is_dir():
+        for file in sorted(processed_root.glob("*_hpmeta.bin")):
+            manifest[str(file.relative_to(path))] = sha256(file)
+    for file in sorted(path.glob("event_registry_p1*")):
+        if file.is_file():
+            manifest[str(file.relative_to(path))] = sha256(file)
+    selected = path / "event_registry_selected_event.json"
+    if selected.is_file():
+        manifest[str(selected.relative_to(path))] = sha256(selected)
     return manifest
 
 
@@ -89,6 +109,7 @@ def terrain_sdf(points: np.ndarray) -> np.ndarray:
 
 def worker(repo: Path, output: Path, mode: int) -> dict:
     os.environ["BINOC_EVENT_MODE"] = str(mode)
+    os.environ["BINOC_PROVENANCE_V2"] = str(mode)
     os.environ["OMP_NUM_THREADS"] = "1"
     sys.path.insert(0, str(repo))
     from binocmesher import BinocMesher  # type: ignore
@@ -157,6 +178,7 @@ def worker(repo: Path, output: Path, mode: int) -> dict:
         "mesh_hashes": mesh_hashes,
         "mesh_counts": mesh_counts,
         "cache_manifest": cache_manifest(output),
+        "provenance_manifest": provenance_manifest(output),
         "source_cache_audits": source_cache_audits,
         "sidecar_csv_exists": (output / "event_registry_p1.csv").exists(),
         "sidecar_summary_exists": (output / "event_registry_p1_summary.json").exists(),
@@ -203,6 +225,8 @@ def controller(repo: Path, output: Path, force: bool) -> int:
         "mesh_counts_identical": baseline["mesh_counts"] == instrumented["mesh_counts"],
         "baseline_has_no_sidecar": not baseline["sidecar_csv_exists"] and not baseline["sidecar_summary_exists"],
         "instrumented_has_sidecar": instrumented["sidecar_csv_exists"] and instrumented["sidecar_summary_exists"],
+        "provenance_disabled_has_no_sidecars": not baseline["provenance_manifest"],
+        "provenance_enabled_has_sidecars": bool(instrumented["provenance_manifest"]),
     }
     result = {
         "verdict": "PASS_P1_OFFICIAL_PIPELINE_READ_ONLY" if all(checks.values()) else "STOP_P1_OFFICIAL_PIPELINE_READ_ONLY",

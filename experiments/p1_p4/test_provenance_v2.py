@@ -457,7 +457,161 @@ def _json_integer(value: Any, field: str) -> int:
     return result
 
 
-def validate_evidence(summary_path: Path, selected_path: Path, csv_path: Path) -> dict[str, Any]:
+
+def validate_evidence_generic(
+    summary_path: Path, selected_path: Path, csv_path: Path
+) -> dict[str, Any]:
+    """Validate one provenance-v2 run without assuming a historical scene.
+
+    The original regression contract is intentionally scene-specific
+    (5 raw -> 2 logical -> 1 canonical at 32/3).  Production provenance is a
+    read-only instrumentation layer, so a different deterministic scene may
+    legitimately yield different counts and exact events.  This validator
+    independently reconstructs every row and checks internal consistency,
+    typed temporal provenance, selected-event aggregation, and exact rational
+    mathematics without silently treating the historical pilot as universal.
+    """
+
+    summary = _read_json_object(summary_path)
+    selected = _read_json_object(selected_path)
+    analysis = analyze_rows(read_registry_csv(csv_path))
+
+    for field in ("raw_observations", "logical_incidences", "canonical_events"):
+        try:
+            reported_value = summary[field]
+        except KeyError as error:
+            raise ValidationError(f"summary lacks integer field {field}") from error
+        reported = _json_integer(reported_value, f"summary.{field}")
+        if reported != analysis[field]:
+            _fail(
+                f"summary {field}={reported} but CSV independently gives "
+                f"{analysis[field]}"
+            )
+
+    if "canonical_shared_events" in summary and _json_integer(
+        summary["canonical_shared_events"], "summary.canonical_shared_events"
+    ) != analysis["canonical_events"]:
+        _fail("canonical_shared_events disagrees with independently rebuilt events")
+    if "accepted_saddle_occurrences" in summary and _json_integer(
+        summary["accepted_saddle_occurrences"],
+        "summary.accepted_saddle_occurrences",
+    ) != analysis["raw_observations"]:
+        _fail("accepted_saddle_occurrences disagrees with raw observations")
+    if _json_integer(
+        summary.get("shared_root_mismatches", -1),
+        "summary.shared_root_mismatches",
+    ) != 0:
+        _fail("shared_root_mismatches must equal zero")
+
+    if selected.get("selected") is not True:
+        _fail("selected-event JSON does not select an event")
+    if selected.get("face_axis") != TEMPORAL_AXIS:
+        _fail("selected event is not on the typed temporal-neighbour axis")
+    if selected.get("face_axis_role") != TEMPORAL_ROLE:
+        _fail("selected event has the wrong typed face role")
+    temporal = selected.get("temporal_provenance")
+    if not isinstance(temporal, dict):
+        _fail("selected event lacks temporal_provenance")
+    if temporal.get("layout_version") != LAYOUT_VERSION:
+        _fail("selected event has the wrong producer layout version")
+    if temporal.get("producer_mapping") != PRODUCER_MAPPING:
+        _fail("selected event lacks the dual-contouring slot mapping contract")
+    if temporal.get("verified_temporal_face") is not True:
+        _fail("selected event was not verified as a temporal face")
+    expected_slots = {
+        "side_0": list(_temporal_face_slots(0)),
+        "side_1": list(_temporal_face_slots(1)),
+    }
+    if selected.get("producer_temporal_face_slots") != expected_slots:
+        _fail("selected event lacks the independently checkable producer face-slot map")
+
+    event_id = selected.get("event_id")
+    if not isinstance(event_id, str) or event_id not in analysis["events"]:
+        _fail("selected event_id is absent from independently rebuilt events")
+    aggregate = analysis["events"][event_id]
+    (
+        element,
+        face_axis,
+        face_axis_role,
+        hvids,
+        times,
+        A,
+        B,
+        root,
+        u,
+        v,
+    ) = aggregate["signature"]
+
+    if _json_integer(selected.get("element"), "selected.element") != element:
+        _fail("selected event element disagrees with CSV")
+    if selected.get("face_axis") != face_axis or selected.get("face_axis_role") != face_axis_role:
+        _fail("selected event face role disagrees with CSV")
+    if tuple(selected.get("canonical_hvids", ())) != hvids:
+        _fail("selected event HVID face disagrees with CSV")
+    if tuple(selected.get("corner_times", ())) != times:
+        _fail("selected event corner times disagree with CSV")
+    if _json_integer(selected.get("A"), "selected.A") != A or _json_integer(
+        selected.get("B"), "selected.B"
+    ) != B:
+        _fail("selected event A/B disagree with CSV")
+    if _json_fraction(selected.get("root"), "root") != root:
+        _fail("selected event exact root disagrees with CSV")
+    if _json_fraction(selected.get("u"), "u") != u:
+        _fail("selected event exact u disagrees with CSV")
+    if _json_fraction(selected.get("v"), "v") != v:
+        _fail("selected event exact v disagrees with CSV")
+
+    selected_counts = {
+        "raw_observations": aggregate["raw"],
+        "logical_incidences": len(aggregate["logical"]),
+        # This JSON describes one selected canonical event, not the global count.
+        "canonical_events": 1,
+    }
+    for field, expected in selected_counts.items():
+        if _json_integer(selected.get(field), f"selected.{field}") != expected:
+            _fail(f"selected-event {field} must equal {expected}")
+
+    observations = [
+        observation
+        for observation in analysis["observations"]
+        if observation.canonical_event_id == event_id
+    ]
+    expected_raw_ids = sorted(observation.raw_id for observation in observations)
+    expected_logical_ids = sorted(
+        {observation.logical_incidence_id for observation in observations}
+    )
+    if "raw_ids" in selected and sorted(selected["raw_ids"]) != expected_raw_ids:
+        _fail("selected event raw_ids disagree with CSV")
+    if "logical_incidence_ids" in selected and sorted(
+        selected["logical_incidence_ids"]
+    ) != expected_logical_ids:
+        _fail("selected event logical_incidence_ids disagree with CSV")
+
+    return {
+        "status": "PASS_PROVENANCE_V2_EVIDENCE",
+        "global_counts": {
+            field: analysis[field]
+            for field in ("raw_observations", "logical_incidences", "canonical_events")
+        },
+        "selected_counts": selected_counts,
+        "event_id": event_id,
+        "canonical_hvids": list(hvids),
+        "corner_times": list(times),
+        "root": {"numerator": root.numerator, "denominator": root.denominator},
+        "u": {"numerator": u.numerator, "denominator": u.denominator},
+        "v": {"numerator": v.numerator, "denominator": v.denominator},
+        "temporal_provenance": {
+            "layout_version": LAYOUT_VERSION,
+            "producer_mapping": PRODUCER_MAPPING,
+            "axis": TEMPORAL_AXIS,
+            "role": TEMPORAL_ROLE,
+            "side_0_slots": list(_temporal_face_slots(0)),
+            "side_1_slots": list(_temporal_face_slots(1)),
+        },
+    }
+
+
+def validate_historical_evidence(summary_path: Path, selected_path: Path, csv_path: Path) -> dict[str, Any]:
     summary = _read_json_object(summary_path)
     selected = _read_json_object(selected_path)
     analysis = analyze_rows(read_registry_csv(csv_path))
@@ -688,6 +842,65 @@ def validate_source_processed_join(
 
     if joined != set(source_by_key):
         _fail("BHP2 source record is missing from the BPM2 join")
+
+
+
+def validate_cache_root(cache_root: Path) -> dict[str, Any]:
+    """Independently validate all BHP2/BPM2 sidecars in one cache root."""
+
+    source_root = cache_root / "hyperpoly_meta"
+    processed_root = cache_root / "processed_hyperpolys"
+    source_files = sorted(source_root.glob("*.bin")) if source_root.is_dir() else []
+    processed_files = (
+        sorted(processed_root.glob("*_hpmeta.bin"))
+        if processed_root.is_dir()
+        else []
+    )
+    if not source_files or not processed_files:
+        _fail("cache root does not contain both BHP2 and BPM2 provenance sidecars")
+
+    sources: list[SourceMetadata] = []
+    for path in source_files:
+        try:
+            expected_t_group = int(path.stem)
+        except ValueError as error:
+            raise ValidationError(f"invalid BHP2 file name: {path.name}") from error
+        sources.extend(
+            parse_source_sidecar(
+                path.read_bytes(), expected_t_group=expected_t_group
+            )
+        )
+
+    processed: list[ProcessedMetadata] = []
+    for path in processed_files:
+        stem = path.name.removesuffix("_hpmeta.bin")
+        pieces = stem.split("_")
+        if len(pieces) != 2:
+            _fail(f"invalid BPM2 file name: {path.name}")
+        try:
+            expected_t_group, expected_t_start = map(int, pieces)
+        except ValueError as error:
+            raise ValidationError(f"invalid BPM2 file name: {path.name}") from error
+        records = parse_processed_sidecar(path.read_bytes())
+        previous_index: int | None = None
+        for record in records:
+            if record.t_group != expected_t_group or record.t_start != expected_t_start:
+                _fail(f"BPM2 file identity mismatch in {path.name}")
+            if previous_index is not None and record.sorted_record_index != previous_index + 1:
+                _fail(f"BPM2 sorted record index is not consecutive in {path.name}")
+            previous_index = record.sorted_record_index
+        processed.extend(records)
+
+    validate_source_processed_join(sources, processed)
+    return {
+        "status": "PASS_BHP2_BPM2_CACHE_JOIN",
+        "source_files": len(source_files),
+        "processed_files": len(processed_files),
+        "source_records": len(sources),
+        "processed_records": len(processed),
+        "join_failures": 0,
+    }
+
 
 
 def _fixture_event_id(element: int = 0) -> str:
@@ -939,7 +1152,7 @@ def run_self_test() -> dict[str, Any]:
             writer = csv.DictWriter(output, fieldnames=CSV_COLUMNS, lineterminator="\n")
             writer.writeheader()
             writer.writerows(rows)
-        validate_evidence(summary_path, selected_path, csv_path)
+        validate_historical_evidence(summary_path, selected_path, csv_path)
 
         # Exercise the as-written C++ encoding too: logical_incidence_id has
         # embedded commas and older writers emit it without RFC 4180 quoting.
@@ -947,7 +1160,7 @@ def run_self_test() -> dict[str, Any]:
             output.write(",".join(CSV_COLUMNS) + "\n")
             for row in rows:
                 output.write(",".join(row[column] for column in CSV_COLUMNS) + "\n")
-        validate_evidence(summary_path, selected_path, csv_path)
+        validate_historical_evidence(summary_path, selected_path, csv_path)
 
     return {
         "status": "PASS_PROVENANCE_V2_SELF_TEST",
@@ -971,21 +1184,34 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--summary", type=Path, help="event_registry_p1_summary.json")
     parser.add_argument("--selected", type=Path, help="event_registry_selected_event.json")
     parser.add_argument("--csv", type=Path, help="event_registry_p1.csv")
+    parser.add_argument("--cache-root", type=Path, help="cache root containing BHP2/BPM2 sidecars")
+    parser.add_argument(
+        "--expect-historical-contract",
+        action="store_true",
+        help="also require the archived 5 -> 2 -> 1 event at root 32/3",
+    )
     parser.add_argument("--self-test", action="store_true", help="run isolated synthetic regressions")
     arguments = parser.parse_args(argv)
 
     supplied = (arguments.summary, arguments.selected, arguments.csv)
     if any(value is not None for value in supplied) and not all(value is not None for value in supplied):
         parser.error("--summary, --selected, and --csv must be supplied together")
-    if not arguments.self_test and not all(value is not None for value in supplied):
-        parser.error("provide --self-test and/or all three evidence paths")
+    if arguments.expect_historical_contract and not all(value is not None for value in supplied):
+        parser.error("--expect-historical-contract requires all three evidence paths")
+    if not arguments.self_test and not all(value is not None for value in supplied) and arguments.cache_root is None:
+        parser.error("provide --self-test, --cache-root, and/or all three evidence paths")
 
     try:
         results: list[dict[str, Any]] = []
         if arguments.self_test:
             results.append(run_self_test())
+        if arguments.cache_root is not None:
+            results.append(validate_cache_root(arguments.cache_root))
         if all(value is not None for value in supplied):
-            results.append(validate_evidence(arguments.summary, arguments.selected, arguments.csv))
+            if arguments.expect_historical_contract:
+                results.append(validate_historical_evidence(arguments.summary, arguments.selected, arguments.csv))
+            else:
+                results.append(validate_evidence_generic(arguments.summary, arguments.selected, arguments.csv))
         for result in results:
             print(json.dumps(result, indent=2, sort_keys=True))
         return 0
