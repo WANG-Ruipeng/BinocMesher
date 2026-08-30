@@ -148,10 +148,23 @@ namespace slicing {
 // These are functions exposed to Python
 extern "C" {
     // The preprocessing function that prebuild a lookup table for which edge to cut given a timestamp
-    void slicing_preprocess();
+    int slicing_preprocess() noexcept;
     // the main slicing function that returns the number of vertices and faces per element
     // extra_smooth indicates whether "Extension to Ameliorate Popping Artifacts" in Sec. 7 is turned On
-    void run_slicing(T t0, int *v_cnts, int *f_cnts, bool extra_smooth=true);
+    int run_slicing(
+        T t0,
+        int *v_cnts,
+        int *f_cnts,
+        bool extra_smooth=true
+    ) noexcept;
+    int run_slicing_rational(
+        std::int64_t time_numerator,
+        std::int64_t time_denominator,
+        int *v_cnts,
+        int *f_cnts,
+        bool extra_smooth=true
+    ) noexcept;
+    const char *slicing_last_error() noexcept;
     // actually output the mesh data
     void slicing_output(int ele, T *output_verts, int *output_faces, int *output_inview);
     // clean up slicing data

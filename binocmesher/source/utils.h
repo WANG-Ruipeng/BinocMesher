@@ -7,6 +7,7 @@
 #include <cstdio>
 #include <cstring>
 #include <array>
+#include <cstdint>
 #include <deque>
 #include <map>
 #include <queue>
@@ -22,7 +23,10 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <stdexcept>
+#include <type_traits>
 #include <malloc.h>
+#include <sys/stat.h>
 #include <unistd.h>
 #include <omp.h>
 
@@ -141,7 +145,7 @@ struct vec {
             throw std::overflow_error("Exceeded maximum size limit");
         }
         #endif
-        if (_size < a.size()) {
+        if (static_cast<size_t>(_size) < a.size()) {
             a[_size] = v;
             _size++;
         }
@@ -187,8 +191,12 @@ struct vec {
     template<typename Type>
     void resize(Type s) {
         static_assert(std::is_same<Type, SizeType>::value, "Argument must be of the corresponding type");
-        if (a.size() < s) {
-            a.resize(s);
+        if (s < 0) {
+            throw std::length_error("negative vec size");
+        }
+        const size_t requested = static_cast<size_t>(s);
+        if (a.size() < requested) {
+            a.resize(requested);
         }
         _size = s;
     }
@@ -196,8 +204,12 @@ struct vec {
     template<typename Type>
     void resizefill(Type s, const T& v) {
         static_assert(std::is_same<Type, SizeType>::value, "Argument must be of the corresponding type");
-        if (a.size() < s) {
-            a.resize(s);
+        if (s < 0) {
+            throw std::length_error("negative vec size");
+        }
+        const size_t requested = static_cast<size_t>(s);
+        if (a.size() < requested) {
+            a.resize(requested);
         }
         if (s > _size) std::fill(a.begin() + _size, a.begin() + s, v);
         _size = s;
@@ -251,6 +263,25 @@ void write_vec(FILE *outfile, vec<SizeType, T> &v) {
 }
 
 template <typename SizeType, typename T>
+void write_vec_checked(FILE *outfile, vec<SizeType, T> &v) {
+    if (outfile == nullptr) {
+        throw std::runtime_error("null serialized output stream");
+    }
+    const SizeType n = v.size();
+    if (n < 0) {
+        throw std::runtime_error("negative vector size on serialized output");
+    }
+    if (fwrite(&n, sizeof(SizeType), 1, outfile) != 1) {
+        throw std::runtime_error("failed to write serialized vector header");
+    }
+    if (n != 0 &&
+        fwrite(&v[(SizeType)0], sizeof(T), static_cast<size_t>(n), outfile) !=
+            static_cast<size_t>(n)) {
+        throw std::runtime_error("failed to write serialized vector payload");
+    }
+}
+
+template <typename SizeType, typename T>
 void read_vec(FILE *infile, vec<SizeType, T> &v) {
     SizeType n;
     fread(&n, sizeof(SizeType), 1, infile);
@@ -259,6 +290,124 @@ void read_vec(FILE *infile, vec<SizeType, T> &v) {
     #endif
     v.resize(n);
     if (n != 0) fread(&v[(SizeType)0], sizeof(T), n, infile);
+}
+
+enum class CheckedReadStatus {
+    record,
+    clean_eof,
+};
+
+// Read a fixed-size scalar while distinguishing a record-boundary EOF from a
+// truncated value. fread(..., sizeof(T), 1, ...) reports zero complete
+// elements in both cases, so the byte count and stream flags are checked.
+template <typename T>
+CheckedReadStatus read_scalar_checked(FILE *infile, T &value) {
+    static_assert(std::is_trivially_copyable<T>::value,
+                  "serialized scalars must be trivially copyable");
+    if (infile == nullptr) {
+        throw std::runtime_error("null serialized stream");
+    }
+    value = T{};
+    const size_t bytes = fread(&value, 1, sizeof(T), infile);
+    if (bytes == sizeof(T)) {
+        return CheckedReadStatus::record;
+    }
+    if (bytes == 0) {
+        if (ferror(infile)) {
+            throw std::runtime_error("I/O error while reading scalar record");
+        }
+        if (feof(infile)) {
+            return CheckedReadStatus::clean_eof;
+        }
+        throw std::runtime_error("scalar record read made no progress");
+    }
+    throw std::runtime_error("truncated scalar record in serialized stream");
+}
+
+// Checked variant for serialized vector records. The caller supplies the
+// schema-level element bound, so a corrupt positive length cannot trigger an
+// unbounded allocation. The extent of the regular-file record is validated
+// before resize, preserving the old vector capacity on malformed input.
+template <typename SizeType, typename T>
+CheckedReadStatus read_vec_checked(
+    FILE *infile,
+    vec<SizeType, T> &v,
+    SizeType max_elements
+) {
+    static_assert(std::is_signed<SizeType>::value,
+                  "serialized vector size must be signed");
+    if (infile == nullptr) {
+        throw std::runtime_error("null serialized stream");
+    }
+    if (max_elements < 0) {
+        throw std::runtime_error("negative serialized-stream schema bound");
+    }
+    const int descriptor = fileno(infile);
+    struct stat stream_stat {};
+    if (descriptor < 0 || fstat(descriptor, &stream_stat) != 0 ||
+        !S_ISREG(stream_stat.st_mode)) {
+        v.clear();
+        throw std::runtime_error(
+            "serialized vector stream must be a regular file");
+    }
+
+    SizeType n = 0;
+    const size_t header_bytes = fread(&n, 1, sizeof(SizeType), infile);
+    if (header_bytes == 0) {
+        v.clear();
+        if (ferror(infile)) {
+            throw std::runtime_error("I/O error while reading vector header");
+        }
+        if (feof(infile)) {
+            return CheckedReadStatus::clean_eof;
+        }
+        throw std::runtime_error("vector header read made no progress");
+    }
+    if (header_bytes != sizeof(SizeType)) {
+        v.clear();
+        throw std::runtime_error("truncated vector header in serialized stream");
+    }
+    if (n < 0) {
+        v.clear();
+        throw std::runtime_error("negative vector size in serialized stream");
+    }
+    if (n > max_elements) {
+        v.clear();
+        throw std::runtime_error(
+            "vector size exceeds serialized-stream schema bound");
+    }
+
+    const size_t count = static_cast<size_t>(n);
+    if (count > std::numeric_limits<size_t>::max() / sizeof(T)) {
+        v.clear();
+        throw std::runtime_error("serialized vector byte size overflows size_t");
+    }
+    const size_t payload_bytes = count * sizeof(T);
+
+    const off_t payload_start = ftello(infile);
+    if (payload_start < 0 || stream_stat.st_size < payload_start) {
+        v.clear();
+        throw std::runtime_error("invalid position in serialized vector stream");
+    }
+    const std::uintmax_t remaining_bytes = static_cast<std::uintmax_t>(
+        stream_stat.st_size - payload_start);
+    if (static_cast<std::uintmax_t>(payload_bytes) > remaining_bytes) {
+        v.clear();
+        throw std::runtime_error("truncated vector payload in serialized stream");
+    }
+
+    v.resize(n);
+    if (payload_bytes != 0) {
+        const size_t bytes_read = fread(&v[(SizeType)0], 1, payload_bytes, infile);
+        if (bytes_read != payload_bytes) {
+            v.clear();
+            if (ferror(infile)) {
+                throw std::runtime_error("I/O error while reading vector payload");
+            }
+            throw std::runtime_error("truncated vector payload in serialized stream");
+        }
+    }
+    return CheckedReadStatus::record;
 }
 
 template <typename SizeType, typename T>
@@ -377,4 +526,3 @@ void make_unique(sdeque<T> &a, bool (*cmp)(const T&, const T&), bool (*eq)(const
 }
 
 #endif // UTILS_H
-

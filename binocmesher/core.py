@@ -9,8 +9,32 @@ import gin
 import trimesh
 import shutil
 
+from ctypes import c_int64
+
 from .utils.interface import AC, POINTER, AsDouble, AsFloat, AsInt, AsBool, c_bool, c_double, c_float, c_int32, c_char_p, load_cdll, register_func
 from .utils.timer import Timer
+
+_INT64_MIN = -(1 << 63)
+_INT64_MAX = (1 << 63) - 1
+
+
+def _parse_checked_rational_time(numerator_text, denominator_text, context):
+    """Parse an exact time without allowing ctypes.c_int64 to wrap it."""
+    try:
+        numerator = int(numerator_text)
+        denominator = int(denominator_text)
+    except (TypeError, ValueError) as error:
+        raise RuntimeError(
+            f"{context} requires integer numerator/denominator"
+        ) from error
+    for name, value in (("numerator", numerator), ("denominator", denominator)):
+        if value < _INT64_MIN or value > _INT64_MAX:
+            raise RuntimeError(f"{context} {name} is outside signed int64 range")
+    if numerator < 0 or denominator <= 0:
+        raise RuntimeError(
+            f"{context} requires a nonnegative numerator and positive denominator"
+        )
+    return numerator, denominator
 
 @gin.configurable()
 class BinocMesher:
@@ -150,11 +174,14 @@ class BinocMesher:
         register_func(self, dll, "bisection_hypermesh_verts_output", [POINTER(self.float_type), c_int32])
         register_func(self, dll, "bisection_hypermesh_verts_iter", [POINTER(self.sdf_float_type), POINTER(self.sdf_float_type)])
         register_func(self, dll, "bisection_hypermesh_verts_finishing", [c_int32, POINTER(self.sdf_float_type), POINTER(self.sdf_float_type)])
-        register_func(self, dll, "write_final_hypermesh", [c_int32])
+        register_func(self, dll, "write_final_hypermesh", [c_int32], c_int32)
+        register_func(self, dll, "bisection_last_error", [], c_char_p)
         register_func(self, dll, "bisection_clean_up")
         
-        register_func(self, dll, "slicing_preprocess")
-        register_func(self, dll, "run_slicing", [self.float_type, POINTER(c_int32), POINTER(c_int32), c_bool])
+        register_func(self, dll, "slicing_preprocess", [], c_int32)
+        register_func(self, dll, "run_slicing", [self.float_type, POINTER(c_int32), POINTER(c_int32), c_bool], c_int32)
+        register_func(self, dll, "run_slicing_rational", [c_int64, c_int64, POINTER(c_int32), POINTER(c_int32), c_bool], c_int32)
+        register_func(self, dll, "slicing_last_error", [], c_char_p)
         register_func(self, dll, "slicing_output", [c_int32, POINTER(self.float_type), POINTER(c_int32), POINTER(c_int32)])
         register_func(self, dll, "slicing_clean_up")
         register_func(self, dll, "binoc_event_fixture_saddle", [POINTER(c_int32), POINTER(c_int32)], c_int32)
@@ -405,7 +432,13 @@ class BinocMesher:
                                 e_positions = positions[cnts[:e].sum(): cnts[:e+1].sum()]
                                 sdfs[cnts[:e].sum(): cnts[:e+1].sum()] = self.kernel_caller(kernels[e:e+1], e_positions)[:, 0]
                             self.bisection_hypermesh_verts_finishing(t, self.sdf_AF(sdfs), self.sdf_AF(center_sdfs))
-                    self.write_final_hypermesh(t)
+                    status = self.write_final_hypermesh(t)
+                    if status != 0:
+                        detail = self.bisection_last_error()
+                        detail = detail.decode("utf-8", errors="replace") if detail else "unknown error"
+                        raise RuntimeError(
+                            f"write_final_hypermesh failed closed: {detail}"
+                        )
                     (path / f"bisection/{t}.finish").touch()
             self.bisection_clean_up()
             # precompute data for slicing the 4D hypermesh by slicing at critical time points
@@ -413,7 +446,13 @@ class BinocMesher:
                 files_to_delete = list(path.glob("processed_hyperpolys/*"))
                 for file_path in files_to_delete:
                     file_path.unlink()
-                self.slicing_preprocess()
+                status = self.slicing_preprocess()
+                if status != 0:
+                    detail = self.slicing_last_error()
+                    detail = detail.decode("utf-8", errors="replace") if detail else "unknown error"
+                    raise RuntimeError(
+                        f"slicing_preprocess failed closed: {detail}"
+                    )
             (path / f"slicing_preprocess.finish").touch()
             # clean up unnecessary files
             files_to_delete = list(path.glob("*/*")) + list(path.glob("*"))
@@ -428,7 +467,12 @@ class BinocMesher:
         with Timer("slicing"):
             v_cnts = np.zeros(n_elements, dtype=np.int32)
             f_cnts = np.zeros(n_elements, dtype=np.int32)
-            self.run_slicing(self.slicing_time, AsInt(v_cnts), AsInt(f_cnts), True)
+            status = self.run_slicing(
+                self.slicing_time, AsInt(v_cnts), AsInt(f_cnts), True)
+            if status != 0:
+                detail = self.slicing_last_error()
+                detail = detail.decode("utf-8", errors="replace") if detail else "unknown error"
+                raise RuntimeError(f"run_slicing failed closed: {detail}")
             meshes = []
             in_view_tags = []
             for ele in range(n_elements):

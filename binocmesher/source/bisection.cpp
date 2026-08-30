@@ -6,6 +6,56 @@
 #include "dual_contouring.h"
 #include "bisection.h"
 
+namespace {
+
+thread_local std::string bisection_last_error_message;
+int pending_hyperpoly_vertex_group = -1;
+
+constexpr int kMaximumSerializedCacheRecords = 10000000;
+constexpr std::uintmax_t kMaximumSerializedCachePayloadBytes =
+    static_cast<std::uintmax_t>(256) << 20;
+
+template <typename Record>
+int checked_serialized_record_count(
+    const std::string& filename,
+    const char *cache_name
+) {
+    const std::uintmax_t file_bytes = std::filesystem::file_size(filename);
+    if (file_bytes < sizeof(int)) {
+        throw std::runtime_error(
+            std::string(cache_name) +
+            " input is smaller than its vector header");
+    }
+    const std::uintmax_t payload_bytes = file_bytes - sizeof(int);
+    if (payload_bytes > kMaximumSerializedCachePayloadBytes) {
+        throw std::runtime_error(
+            std::string(cache_name) +
+            " input exceeds the serialized-cache byte cap");
+    }
+    if (payload_bytes % sizeof(Record) != 0U) {
+        throw std::runtime_error(
+            std::string(cache_name) +
+            " input has an invalid schema byte count");
+    }
+    const std::uintmax_t record_count = payload_bytes / sizeof(Record);
+    if (record_count >
+        static_cast<std::uintmax_t>(kMaximumSerializedCacheRecords)) {
+        throw std::runtime_error(
+            std::string(cache_name) +
+            " input exceeds the serialized-cache record cap");
+    }
+    return static_cast<int>(record_count);
+}
+
+void close_checked(FILE *stream, const char *description) {
+    if (stream == nullptr || fclose(stream) != 0) {
+        throw std::runtime_error(
+            std::string("failed to close ") + description);
+    }
+}
+
+}  // namespace
+
 // get the grid ID in the hypercube for one of the endpoint of the bipolar edge
 gridID edge_key_fn(queriedEdge &edge, int index=0) {
     auto L = edge.e.L;
@@ -313,9 +363,17 @@ void write_computed_vertices(int t) {
     std::stringstream filename;
     filename << params::output_path << "/computed_vertices/" << t << ".bin";
     FILE *outfile = fopen(filename.str().c_str() , "wb" );
-    write_vec(outfile, vertex_map);
-    write_vec(outfile, computed_vertices);
-    fclose(outfile);
+    if (outfile == nullptr) {
+        throw std::runtime_error("failed to open computed-vertex output");
+    }
+    try {
+        write_vec_checked(outfile, vertex_map);
+        write_vec_checked(outfile, computed_vertices);
+    } catch (...) {
+        fclose(outfile);
+        throw;
+    }
+    close_checked(outfile, "computed-vertex output");
 }
 
 // Later we compute the 4D mesh consisting of polyhedra, and we extend the stored vertices of group t to include vertices on other groups that is contained by polyhedra found in group t
@@ -337,10 +395,23 @@ void write_vertices(int t) {
     std::stringstream filename;
     filename << params::output_path << "/hypervertices/" << t << ".bin";
     FILE *outfile = fopen(filename.str().c_str() , "wb" );
+    if (outfile == nullptr) {
+        throw std::runtime_error("failed to open hypervertex output");
+    }
+    if (hypervertices.size() > static_cast<size_t>(INT_MAX)) {
+        fclose(outfile);
+        throw std::runtime_error("hypervertex output exceeds int record count");
+    }
     hypervertices_vec.a.assign(hypervertices.begin(), hypervertices.end());
-    hypervertices_vec._size = hypervertices.size();
-    write_vec(outfile, hypervertices_vec);
-    fclose(outfile);
+    hypervertices_vec._size = static_cast<int>(hypervertices.size());
+    try {
+        write_vec_checked(outfile, hypervertices_vec);
+    } catch (...) {
+        fclose(outfile);
+        hypervertices_vec.clear();
+        throw;
+    }
+    close_checked(outfile, "hypervertex output");
     CLS(hypervertices_vec);
     CL(hypervertices);
 }
@@ -351,19 +422,80 @@ void load_vertices(int t) {
     std::stringstream filename;
     filename << params::output_path << "/hypervertices/" << t << ".bin";
     FILE *infile = fopen(filename.str().c_str() , "rb" );
-    MEASURE_TIME("load vec", 0, {
-        read_vec(infile, hypervertices_vec);
-    });
-
-    MEASURE_TIME("convert vec to map", 0, {
-        hypervertices.clear();
-        for (int i = 0; i < hypervertices_vec.size(); i++) {
-            hypervertices[hypervertices_vec[i].first] = hypervertices_vec[i].second;
+    if (infile == nullptr) {
+        pending_hyperpoly_vertex_group = -1;
+        throw std::runtime_error("failed to open hypervertex input");
+    }
+    try {
+        if (pending_hyperpoly_vertex_group >= 0 &&
+            pending_hyperpoly_vertex_group != t) {
+            throw std::runtime_error("hyperpoly/hypervertex cache group mismatch");
         }
-        PRINT_RSS_MEMORY("");
-        CLS(hypervertices_vec);
-    });
-    fclose(infile);
+        using HypervertexRecord = pair<HVID, HV>;
+        const int maximum_records = checked_serialized_record_count<
+            HypervertexRecord>(filename.str(), "hypervertex");
+        MEASURE_TIME("load vec", 0, {
+            if (read_vec_checked(infile, hypervertices_vec, maximum_records) !=
+                CheckedReadStatus::record) {
+                throw std::runtime_error(
+                    "hypervertex input ended before its vector record");
+            }
+        });
+        if (hypervertices_vec.size() != maximum_records) {
+            throw std::runtime_error(
+                "hypervertex input count differs from its schema byte count");
+        }
+        const int trailing = fgetc(infile);
+        if (trailing != EOF) {
+            throw std::runtime_error("trailing bytes in hypervertex input");
+        }
+        if (ferror(infile)) {
+            throw std::runtime_error("I/O error after hypervertex input record");
+        }
+
+        MEASURE_TIME("convert vec to map", 0, {
+            hypervertices.clear();
+            hypervertices.reserve(static_cast<size_t>(hypervertices_vec.size()));
+            for (int i = 0; i < hypervertices_vec.size(); i++) {
+                const auto inserted = hypervertices.emplace(
+                    hypervertices_vec[i].first,
+                    hypervertices_vec[i].second);
+                if (!inserted.second) {
+                    throw std::runtime_error(
+                        "duplicate HVID in hypervertex input");
+                }
+            }
+            if (pending_hyperpoly_vertex_group == t) {
+                for (int record = 0; record < hyperpolys.size(); ++record) {
+                    for (int corner = 0; corner < 8; ++corner) {
+                        const HVID& referenced = hyperpolys[record].first[corner];
+                        // A negative node is an explicit unresolved producer
+                        // placeholder while the cache is being assembled.
+                        if (referenced.first >= 0 &&
+                            hypervertices.find(referenced) ==
+                                hypervertices.end()) {
+                            throw std::runtime_error(
+                                "missing hypervertex referenced by hyperpoly input");
+                        }
+                    }
+                }
+                pending_hyperpoly_vertex_group = -1;
+            }
+            PRINT_RSS_MEMORY("");
+            CLS(hypervertices_vec);
+        });
+    } catch (...) {
+        pending_hyperpoly_vertex_group = -1;
+        hypervertices_vec.clear();
+        hypervertices.clear();
+        fclose(infile);
+        throw;
+    }
+    if (fclose(infile) != 0) {
+        hypervertices_vec.clear();
+        hypervertices.clear();
+        throw std::runtime_error("failed to close hypervertex input");
+    }
 }
 
 // Write the 4D polyhedra found in group t
@@ -372,20 +504,65 @@ void write_hyperpolys(int t) {
     std::stringstream filename;
     filename << params::output_path << "/hyperpolys/" << t << ".bin";
     FILE *outfile = fopen(filename.str().c_str() , "wb" );
-    write_vec(outfile, hyperpolys);    
-    fclose(outfile);
+    if (outfile == nullptr) {
+        throw std::runtime_error("failed to open hyperpoly output");
+    }
+    try {
+        write_vec_checked(outfile, hyperpolys);
+    } catch (...) {
+        fclose(outfile);
+        throw;
+    }
+    close_checked(outfile, "hyperpoly output");
     hyperpolys.clear();
 }
 
 // Load the 4D polyhedra for updating
-void load_hyperpolys(int t) {
+void load_hyperpolys(int t, int expected_records) {
     using namespace bisection;
     std::stringstream filename;
     filename << params::output_path << "/hyperpolys/" << t << ".bin";
+    pending_hyperpoly_vertex_group = -1;
     FILE *infile = fopen(filename.str().c_str() , "rb" );
-    assert(infile != NULL);
-    read_vec(infile, hyperpolys);
-    fclose(infile);
+    if (infile == nullptr) {
+        throw std::runtime_error("failed to open hyperpoly input");
+    }
+    try {
+        const int schema_records = checked_serialized_record_count<HP>(
+            filename.str(), "hyperpoly");
+        int maximum_records = expected_records;
+        if (maximum_records < 0) {
+            maximum_records = schema_records;
+        } else if (maximum_records > kMaximumSerializedCacheRecords) {
+            throw std::runtime_error(
+                "expected hyperpoly count exceeds the serialized-cache record cap");
+        }
+        if (read_vec_checked(infile, hyperpolys, maximum_records) !=
+            CheckedReadStatus::record) {
+            throw std::runtime_error(
+                "hyperpoly input ended before its vector record");
+        }
+        if (hyperpolys.size() != maximum_records) {
+            throw std::runtime_error(
+                "hyperpoly input count differs from its expected source-edge count");
+        }
+        const int trailing = fgetc(infile);
+        if (trailing != EOF) {
+            throw std::runtime_error("trailing bytes in hyperpoly input");
+        }
+        if (ferror(infile)) {
+            throw std::runtime_error("I/O error after hyperpoly input record");
+        }
+    } catch (...) {
+        hyperpolys.clear();
+        fclose(infile);
+        throw;
+    }
+    if (fclose(infile) != 0) {
+        hyperpolys.clear();
+        throw std::runtime_error("failed to close hyperpoly input");
+    }
+    pending_hyperpoly_vertex_group = t;
 }
 
 // Given bipolar edges and its neighbors, look for those in group t, construct the index of the 4D polyhedra by vertex_map
@@ -415,7 +592,7 @@ void process_hyperpolys(int t) {
                     if (begining || ending) tmp.second.first.second[1] = 0;
                     if (begining) tmp.second.first.second[0] = 0;
                     if (ending) tmp.second.first.second[0] = 2 << params::max_tL;
-                    hypervertices_g[g][tmp.first] = tmp.second;
+                    hypervertices_g[g].insert_or_assign(tmp.first, tmp.second);
                 }
             }
         }
@@ -428,7 +605,7 @@ void collect_hypervertices() {
     const int N_THREAD2 = 4;
     for (int g = 0; g < N_THREAD2; g++) {
         for (auto &tmp: hypervertices_g[g]) {
-            hypervertices[tmp.first] = tmp.second;
+            hypervertices.insert_or_assign(tmp.first, tmp.second);
         }
         PRINT_RSS_MEMORY("");
         CL(hypervertices_g[g]);
@@ -438,9 +615,13 @@ void collect_hypervertices() {
 // These are functions exposed to Python
 extern "C" {
     // Write final 4D mesh of group t to disk
-    void write_final_hypermesh(int t) {
+    int write_final_hypermesh(int t) noexcept {
+        try {
         using namespace dual_contouring;
         using namespace bisection;
+        if (edges_ == nullptr) {
+            throw std::runtime_error("missing bisection edge cache");
+        }
         auto &edges = *edges_;
         CLS(fine::active_nodes);
         // We write the computed center vertices strictly in group t first
@@ -480,7 +661,7 @@ extern "C" {
         for (auto t_group: restricted_set) {
             MEASURE_TIME("write_final_hypermesh part 5a", 1, {
                 load_bip_edges(t_group, 1);
-                load_hyperpolys(t_group);
+                load_hyperpolys(t_group, edges_->size());
                 load_vertices(t_group);
                 process_hyperpolys(t);
                 collect_hypervertices();
@@ -494,7 +675,7 @@ extern "C" {
         // we also update them according to the computed vertices in those related groups
         MEASURE_TIME("write_final_hypermesh part 6", 1, {
             load_bip_edges(t, 1);
-            load_hyperpolys(t);
+            load_hyperpolys(t, edges_->size());
             load_vertices(t);
             for (auto t_group: restricted_set) {
                 load_computed_vertices(t_group);
@@ -513,6 +694,28 @@ extern "C" {
             CLS(computed_vertices);
             CLS(inview_tag);
         });
+        bisection_last_error_message.clear();
+        return 0;
+        } catch (const std::exception& error) {
+            bisection_last_error_message = error.what();
+            pending_hyperpoly_vertex_group = -1;
+            bisection::hyperpolys.clear();
+            bisection::hypervertices_vec.clear();
+            bisection::hypervertices.clear();
+            return -1;
+        } catch (...) {
+            bisection_last_error_message =
+                "unknown write_final_hypermesh failure";
+            pending_hyperpoly_vertex_group = -1;
+            bisection::hyperpolys.clear();
+            bisection::hypervertices_vec.clear();
+            bisection::hypervertices.clear();
+            return -2;
+        }
+    }
+
+    const char *bisection_last_error() noexcept {
+        return bisection_last_error_message.c_str();
     }
 
     // Function to get the number of vertices in the current loaded group for statistics

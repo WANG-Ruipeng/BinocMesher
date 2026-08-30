@@ -1,3 +1,6 @@
+#include <numeric>
+#include <optional>
+
 #include "utils.h"
 #include "binoctree.h"
 #include "coarse_step.h"
@@ -7,6 +10,151 @@
 #include "bisection.h"
 #include "slicing.h"
 #include "event_registry.h"
+
+namespace {
+
+thread_local std::string slicing_last_error_message;
+
+struct ExactSliceTime {
+    std::int64_t numerator = 0;
+    std::int64_t denominator = 1;
+};
+
+thread_local std::optional<ExactSliceTime> exact_slice_time;
+
+int checked_max_temporal_level() {
+    // This translation unit evaluates both 1 << level and 2 << level.
+    // Validate before either expression can shift by a negative count, the
+    // type width, or into the sign bit.
+    if (params::max_tL < 0 ||
+        params::max_tL >= std::numeric_limits<int>::digits - 1) {
+        throw std::runtime_error("temporal cache level cannot be represented");
+    }
+    const std::int64_t maximum_discrete_time =
+        static_cast<std::int64_t>(2) << params::max_tL;
+    if (maximum_discrete_time >
+        static_cast<std::int64_t>(std::numeric_limits<timeT>::max())) {
+        throw std::runtime_error(
+            "temporal cache time exceeds serialized timeT range");
+    }
+    return params::max_tL;
+}
+
+class ScopedFile {
+public:
+    explicit ScopedFile(FILE *file) noexcept : file_(file) {}
+    ~ScopedFile() {
+        if (file_ != nullptr) fclose(file_);
+    }
+    ScopedFile(const ScopedFile&) = delete;
+    ScopedFile& operator=(const ScopedFile&) = delete;
+    FILE *get() const noexcept { return file_; }
+
+private:
+    FILE *file_;
+};
+
+int slicing_cache_group(T physical_time) {
+    if (!std::isfinite(physical_time) || !std::isfinite(params::tsize) ||
+        params::tsize <= 0) {
+        throw std::runtime_error(
+            "slicing time domain is not finite and positive");
+    }
+    if (physical_time < 0 || physical_time > params::tsize) {
+        throw std::runtime_error("slicing time is outside the production cache");
+    }
+    const int group_count = 1 << checked_max_temporal_level();
+    // The time domain is closed. Terminal hypervertices are serialized in the
+    // final source group, not in floor(1 * group_count) == group_count.
+    if (physical_time == params::tsize) return group_count - 1;
+    const long double scaled =
+        static_cast<long double>(physical_time) /
+        static_cast<long double>(params::tsize) *
+        static_cast<long double>(group_count);
+    const int group = static_cast<int>(std::floor(scaled));
+    if (group < 0 || group >= group_count) {
+        throw std::runtime_error(
+            "slicing time maps outside temporal cache groups");
+    }
+    return group;
+}
+
+event_registry::Rational64 current_exact_rational() {
+    if (!exact_slice_time.has_value()) {
+        throw std::runtime_error("exact slicing time is not active");
+    }
+    return event_registry::Rational64{
+        exact_slice_time->numerator, exact_slice_time->denominator};
+}
+
+int compare_slice_time_to_integer(std::int64_t value, T physical_time) {
+    if (exact_slice_time.has_value()) {
+        return event_registry::compare_exact_rational(
+            current_exact_rational(),
+            event_registry::Rational64{value, 1});
+    }
+    const T discrete_time = physical_time / params::deltaT;
+    return (discrete_time > static_cast<T>(value)) -
+           (discrete_time < static_cast<T>(value));
+}
+
+int slicing_cache_group_exact(
+    int group_count,
+    std::int64_t maximum_discrete_time
+) {
+    if (!exact_slice_time.has_value() || group_count <= 0 ||
+        maximum_discrete_time <= 0) {
+        throw std::runtime_error("invalid exact temporal cache mapping state");
+    }
+    const event_registry::Rational64 time = current_exact_rational();
+    const int maximum_relation = event_registry::compare_exact_rational(
+        time, event_registry::Rational64{maximum_discrete_time, 1});
+    if (maximum_relation > 0 ||
+        event_registry::compare_exact_rational(
+            time, event_registry::Rational64{0, 1}) < 0) {
+        throw std::runtime_error(
+            "exact slicing time is outside the production cache");
+    }
+    if (maximum_relation == 0) return group_count - 1;
+
+    // Binary-search exact boundaries instead of forming
+    // numerator * group_count or maximum_time * denominator.
+    int lower = 0;
+    int upper = group_count;
+    while (lower + 1 < upper) {
+        const int middle = lower + (upper - lower) / 2;
+        const std::int64_t boundary_numerator =
+            static_cast<std::int64_t>(middle) * maximum_discrete_time;
+        const event_registry::Rational64 boundary{
+            boundary_numerator, group_count};
+        if (event_registry::compare_exact_rational(time, boundary) >= 0) {
+            lower = middle;
+        } else {
+            upper = middle;
+        }
+    }
+    return lower;
+}
+
+void clear_partial_slicing_state() {
+    using namespace slicing;
+    for (int element = 0; element < N_ELE; ++element) {
+        unmerged_vertices[element].clear();
+        faces[element].clear();
+        vertices[element].clear();
+        vertices_inview[element].clear();
+    }
+    merging_map.clear();
+    vertices_tmp.clear();
+    head.clear();
+    nxt.clear();
+    ind.clear();
+    bisection::hypervertices.clear();
+    bisection::hypervertices_vec.clear();
+    bisection::hyperpolys.clear();
+}
+
+}  // namespace
 
 
 // given an edge connecting two 4D vertices and a time slicing plane, compute the sliced vertex with ID and coordinates
@@ -191,14 +339,22 @@ std::vector<vec<int, VID> > preprocess_hyperpoly(HVTable &hypervertices, HP &hyp
 // These are functions exposed to Python
 extern "C" {
     // The preprocessing function that prebuild a lookup table for which edge to cut given a timestamp
-    void slicing_preprocess() {
-        FILE *log = fopen(params::log_path.c_str(), "a");
+    int slicing_preprocess() noexcept {
+        FILE *log = nullptr;
+        try {
+        const int max_temporal_level = checked_max_temporal_level();
+        const int temporal_group_count = 1 << max_temporal_level;
+        const int maximum_discrete_time = 2 << max_temporal_level;
+        log = fopen(params::log_path.c_str(), "a");
+        if (log == nullptr) {
+            throw std::runtime_error("failed to open slicing log");
+        }
         using namespace bisection;
         event_registry::begin(params::output_path);
         // Sort polyhedra according the time span
         // First group together polyhedra with the same starting time, then sort by ending time within each group
         vec<int, pair<array<timeT, 2>, int> > hyperpolys_timed;
-        for (int t_group = 0; t_group < 1 << params::max_tL; t_group++) {
+        for (int t_group = 0; t_group < temporal_group_count; t_group++) {
             fprintf(log, "processing %d\n", t_group);
             MEASURE_TIME("load hyperpolys", 1, {
                 load_hyperpolys(t_group);
@@ -209,7 +365,7 @@ extern "C" {
                 OMP_PRAGMA(omp parallel for schedule(dynamic))
                 for (int index = 0; index < hyperpolys.size(); index++) {
                     auto hyperpoly = hyperpolys[index];
-                    timeT t_min = 2 << params::max_tL;
+                    timeT t_min = maximum_discrete_time;
                     timeT t_max = 0;
                     for (int i = 0; i < 8; i++) {
                         timeT disc_t = hypervertices[hyperpoly.first[i]].first.second[0];
@@ -224,15 +380,15 @@ extern "C" {
             vec<int, int> starting_index;
             MEASURE_TIME("sort hyperpolys", 1, {
                 _sort(hyperpolys_timed);
-                starting_index.resize((2 << params::max_tL) + 1);
+                starting_index.resize(maximum_discrete_time + 1);
                 starting_index.fill(-1);
-                starting_index[2 << params::max_tL] = hyperpolys.size();
+                starting_index[maximum_discrete_time] = hyperpolys.size();
                 for (int index = 0; index < hyperpolys.size(); index++) {
                     if (index == 0 || hyperpolys_timed[index].first[0] != hyperpolys_timed[index-1].first[0]) {
                         starting_index[(int)hyperpolys_timed[index].first[0]] = index;
                     }
                 }
-                for (int i = (2 << params::max_tL) - 1; i >= 0; i--) {
+                for (int i = maximum_discrete_time - 1; i >= 0; i--) {
                     if (starting_index[i] == -1) starting_index[i] = starting_index[i+1];
                 }
             });
@@ -244,12 +400,17 @@ extern "C" {
             vec<int, pair<int, pair<int, int> > > discontinuity_list;
             // Slice the polyhedra in order
             MEASURE_TIME("process hyperpolys", 1, {
-                for (int t_start = 0; t_start < 2 << params::max_tL; t_start++) {
+                for (int t_start = 0; t_start < maximum_discrete_time; t_start++) {
                     set_VID vertices_set;
                     set_set_VID parallel_faces_to_remove;
                     std::stringstream filename;
                     filename << params::output_path << "/processed_hyperpolys/" << t_group << "_" << t_start << ".bin";
-                    FILE *outfile = fopen(filename.str().c_str() , "ab" );
+                    ScopedFile outfile_owner(fopen(filename.str().c_str(), "ab"));
+                    FILE *outfile = outfile_owner.get();
+                    if (outfile == nullptr) {
+                        throw std::runtime_error(
+                            "failed to open processed hyperpoly output");
+                    }
                     for (int index = starting_index[t_start]; index < starting_index[t_start+1]; index++) {
                         auto hyperpoly = hyperpolys[hyperpolys_timed[index].second];
                         event_registry::observe_hyperpoly(hypervertices, hyperpoly);
@@ -262,13 +423,16 @@ extern "C" {
                         }
                         make_unique(times);
                         _sort(times);
-                        fwrite(&hyperpoly.second, sizeof(eleT), 1, outfile);
-                        write_vec(outfile, times);
+                        if (fwrite(&hyperpoly.second, sizeof(eleT), 1, outfile) != 1) {
+                            throw std::runtime_error(
+                                "failed to write processed hyperpoly element");
+                        }
+                        write_vec_checked(outfile, times);
                         for (int i_times = 0; i_times < times.size() - 1; i_times++) {
                             auto disc_t0 = times[i_times];
                             auto res = preprocess_hyperpoly(hypervertices, hyperpoly, disc_t0);
                             for (auto &face: res) {
-                                write_vec(outfile, face);
+                                write_vec_checked(outfile, face);
                             }
                             if (i_times == 0) {
                                 T t0 = times[0];
@@ -300,7 +464,7 @@ extern "C" {
                             if (i_times == times.size() - 2) {
                                 T t0 = times[times.size() - 1];
                                 bool t0_critical = times[times.size() - 1] - lowbit(times[times.size() - 1]) == 2 * t_group;
-                                if ((times[times.size() - 1] != 2 << params::max_tL) && t0_critical) {
+                                if ((times[times.size() - 1] != maximum_discrete_time) && t0_critical) {
                                     for (int i_face = 0; i_face < res.size(); i_face++) {
                                         auto &face = res[i_face];
                                         vertices_set.clear();
@@ -321,7 +485,10 @@ extern "C" {
                             }
                         }
                     }
-                    fclose(outfile);
+                    if (ferror(outfile)) {
+                        throw std::runtime_error(
+                            "I/O error in processed hyperpoly output");
+                    }
                     for (auto &vertices_set: parallel_faces_to_remove) {
                         parallel_faces.erase(vertices_set);
                     }
@@ -336,25 +503,50 @@ extern "C" {
             vec<int, pair<int, int> > buffer;
             MEASURE_TIME("process discontinuity", 1, {
                 int discontinuity_list_i = 0;
-                for (int t_start = 0; t_start < 2 << params::max_tL; t_start++) {
+                for (int t_start = 0; t_start < maximum_discrete_time; t_start++) {
                     std::stringstream filename;
                     filename << params::output_path << "/processed_hyperpolys/" << t_group << "_" << t_start << "_discon.bin";
-                    FILE *outfile = fopen(filename.str().c_str() , "ab" );
+                    ScopedFile outfile_owner(fopen(filename.str().c_str(), "ab"));
+                    FILE *outfile = outfile_owner.get();
+                    if (outfile == nullptr) {
+                        throw std::runtime_error(
+                            "failed to open discontinuity output");
+                    }
                     for (int index = starting_index[t_start]; index < starting_index[t_start+1]; index++) {
                         buffer.clear();
                         while (discontinuity_list_i < discontinuity_list.size() && discontinuity_list[discontinuity_list_i].first == index) {
                             buffer.push_back(discontinuity_list[discontinuity_list_i].second);
                             discontinuity_list_i++;
                         }
-                        write_vec(outfile, buffer);
+                        write_vec_checked(outfile, buffer);
                     }
-                    fclose(outfile);
+                    if (ferror(outfile)) {
+                        throw std::runtime_error(
+                            "I/O error in discontinuity output");
+                    }
 
                 }
             });
         }
         event_registry::finish();
-        fclose(log);
+        if (fclose(log) != 0) {
+            log = nullptr;
+            throw std::runtime_error("failed to close slicing log");
+        }
+        log = nullptr;
+        slicing_last_error_message.clear();
+        return 0;
+        } catch (const std::exception& error) {
+            slicing_last_error_message = error.what();
+            if (log != nullptr) fclose(log);
+            clear_partial_slicing_state();
+            return -1;
+        } catch (...) {
+            slicing_last_error_message = "unknown slicing_preprocess failure";
+            if (log != nullptr) fclose(log);
+            clear_partial_slicing_state();
+            return -2;
+        }
     }
 }
 
@@ -419,11 +611,31 @@ void bucket_sort(int ele, int index) {
 extern "C" {
     // the main slicing function that returns the number of vertices and faces per element
     // extra_smooth indicates whether "Extension to Ameliorate Popping Artifacts" in Sec. 7 is turned On
-    void run_slicing(T t0, int *v_cnts, int *f_cnts, bool extra_smooth) {
-        FILE *log = fopen(params::log_path.c_str(), "a");
+    int run_slicing(T t0, int *v_cnts, int *f_cnts, bool extra_smooth) noexcept {
+        FILE *log = nullptr;
+        try {
+        if (v_cnts == nullptr || f_cnts == nullptr) {
+            throw std::runtime_error("invalid run_slicing output pointers");
+        }
+        if (params::n_elements < 0 || params::n_elements > N_ELE) {
+            throw std::runtime_error("invalid slicing element count");
+        }
+        const int max_temporal_level = checked_max_temporal_level();
+        const int temporal_group_count = 1 << max_temporal_level;
+        const int maximum_discrete_time = 2 << max_temporal_level;
+        if (!std::isfinite(params::deltaT) || params::deltaT <= 0) {
+            throw std::runtime_error("invalid slicing discrete-time scale");
+        }
+        log = fopen(params::log_path.c_str(), "a");
+        if (log == nullptr) {
+            throw std::runtime_error("failed to open slicing log");
+        }
         using namespace bisection;
         using namespace slicing;
-        int disc_t = int(floor((t0 / params::tsize) * (1 << params::max_tL)));
+        const int disc_t = exact_slice_time.has_value()
+            ? slicing_cache_group_exact(
+                temporal_group_count, maximum_discrete_time)
+            : slicing_cache_group(t0);
         int discon_cnt = 0;
         typedef set<VID> set_VID;
         map<set_VID, int> discon_map;
@@ -441,51 +653,138 @@ extern "C" {
             set<int> start_discon_face, end_discon_face;
             std::vector<array_spaceT_3> full_vertices;
             MEASURE_TIME("getting unmerged mesh", 1, {
-                for (int t_start = 0; t_start < 2 << params::max_tL; t_start++) {
+                for (int t_start = 0; t_start < maximum_discrete_time; t_start++) {
                     // read the preprocessed polyhedra in order until the starting time exceed t0
-                    if ((t_start - 1) * params::deltaT > t0) break;
+                    if (compare_slice_time_to_integer(t_start - 1, t0) < 0) break;
                     vec_timeT times;
                     VID_vec unmerged_face;
                     array_int_3 face;
                     std::stringstream filename;
                     filename << params::output_path << "/processed_hyperpolys/" << t_group << "_" << t_start << ".bin";
-                    FILE *infile = fopen(filename.str().c_str() , "rb" );
+                    ScopedFile infile_owner(fopen(filename.str().c_str(), "rb"));
+                    FILE *infile = infile_owner.get();
                     std::stringstream filename2;
                     filename2 << params::output_path << "/processed_hyperpolys/" << t_group << "_" << t_start << "_discon.bin";
-                    FILE *infile_discon = fopen(filename2.str().c_str() , "rb" );
+                    ScopedFile infile_discon_owner(
+                        fopen(filename2.str().c_str(), "rb"));
+                    FILE *infile_discon = infile_discon_owner.get();
+                    if (infile == nullptr || infile_discon == nullptr) {
+                        throw std::runtime_error(
+                            "missing synchronized processed hyperpoly stream");
+                    }
                     int hyperpolys_cnt = 0;
                     for (;;) {
                         start_discon_face.clear();
                         end_discon_face.clear();
-                        read_vec(infile_discon, buffer);
+
+                        // The primary stream owns record lifetime. On its clean
+                        // EOF the companion must also be exactly at a record
+                        // boundary with no trailing record.
+                        eleT ele{};
+                        const CheckedReadStatus primary_status =
+                            read_scalar_checked(infile, ele);
+                        if (primary_status == CheckedReadStatus::clean_eof) {
+                            if (read_vec_checked(
+                                    infile_discon, buffer,
+                                    static_cast<int>(64)) !=
+                                CheckedReadStatus::clean_eof) {
+                                throw std::runtime_error(
+                                    "synchronized processed hyperpoly stream has trailing records");
+                            }
+                            break;
+                        }
+                        if (ele < 0 || ele >= params::n_elements) {
+                            throw std::runtime_error(
+                                "processed hyperpoly element is out of range");
+                        }
+                        if (read_vec_checked(
+                                infile_discon, buffer,
+                                static_cast<int>(64)) !=
+                            CheckedReadStatus::record) {
+                            throw std::runtime_error(
+                                "processed_hyperpolys discontinuity stream ended before primary stream");
+                        }
                         if (extra_smooth) {
                             for (auto &p: buffer) {
-                                if (p.first == 0) start_discon_face.insert(p.second);
-                                else end_discon_face.insert(p.second);
+                                if (p.second < 0 || p.second >= 16) {
+                                    throw std::runtime_error(
+                                        "discontinuity face index is out of range");
+                                }
+                                if (p.first == 0) {
+                                    start_discon_face.insert(p.second);
+                                } else if (p.first == 1) {
+                                    end_discon_face.insert(p.second);
+                                } else {
+                                    throw std::runtime_error(
+                                        "invalid discontinuity endpoint side");
+                                }
                             }
                         }
-                        eleT ele;
-                        int flag = fread(&ele, sizeof(eleT), 1, infile);
-                        if (flag == 0) break;
-                        read_vec(infile, times);
+                        if (read_vec_checked(
+                                infile, times, static_cast<int>(8)) !=
+                            CheckedReadStatus::record) {
+                            throw std::runtime_error(
+                                "processed hyperpoly times ended before primary record");
+                        }
+                        if (times.size() < 2) {
+                            throw std::runtime_error(
+                                "processed hyperpoly must contain at least two distinct times");
+                        }
+                        for (int time_index = 1;
+                             time_index < times.size(); ++time_index) {
+                            if (times[time_index - 1] >= times[time_index]) {
+                                throw std::runtime_error(
+                                    "processed hyperpoly times are not strictly increasing");
+                            }
+                        }
+                        if (times[0] == std::numeric_limits<timeT>::min() ||
+                            times[times.size() - 1] ==
+                                std::numeric_limits<timeT>::max()) {
+                            throw std::runtime_error(
+                                "processed hyperpoly endpoint expansion exceeds timeT");
+                        }
                         times[0] -= 1;
                         times[times.size() - 1] += 1;
                         int slice_group;
-                        for (slice_group = 0; slice_group < times.size() && times[slice_group] * params::deltaT <= t0; slice_group++);
+                        for (slice_group = 0;
+                             slice_group < times.size() &&
+                             compare_slice_time_to_integer(
+                                 times[slice_group], t0) >= 0;
+                             slice_group++);
                         slice_group--;
-                        // within each group, read the preprocessed polyhedra in order until the time plane do not intersect with them
-                        if (slice_group == times.size() - 1) break;
+                        // Consume every serialized interval even when the time
+                        // plane does not intersect this record. An early break
+                        // would hide a corrupt synchronized suffix.
+                        const bool record_relevant = slice_group >= 0 &&
+                            slice_group < times.size() - 1;
                         for (int s = 0; s < times.size() - 1; s++) {
                             int unmerged_face_cnt = 0;
                             for (;;) {
-                                read_vec(infile, unmerged_face);
+                                if (read_vec_checked(
+                                        infile, unmerged_face,
+                                        static_cast<int>(12)) !=
+                                    CheckedReadStatus::record) {
+                                    throw std::runtime_error(
+                                        "processed hyperpoly face stream ended inside a record");
+                                }
                                 if (unmerged_face.size() == 0) break;
-                                if (s == slice_group) {
-                                    if (start_discon_face.count(unmerged_face_cnt) == 0 && s == 0 && t0 / params::deltaT < times[0] + 1) {
+                                if (unmerged_face_cnt >= 16) {
+                                    throw std::runtime_error(
+                                        "processed hyperpoly interval exceeds face-count bound");
+                                }
+                                if (record_relevant && s == slice_group) {
+                                    if (start_discon_face.count(unmerged_face_cnt) == 0 &&
+                                        s == 0 &&
+                                        compare_slice_time_to_integer(
+                                            times[0] + 1, t0) < 0) {
                                         unmerged_face_cnt++;
                                         continue;
                                     }
-                                    if (end_discon_face.count(unmerged_face_cnt) == 0 && s == times.size() - 2 && t0 / params::deltaT > times[times.size() - 1] - 1) {
+                                    if (end_discon_face.count(unmerged_face_cnt) == 0 &&
+                                        s == times.size() - 2 &&
+                                        compare_slice_time_to_integer(
+                                            times[times.size() - 1] - 1,
+                                            t0) > 0) {
                                         unmerged_face_cnt++;
                                         continue;
                                     }
@@ -496,7 +795,10 @@ extern "C" {
                                     full_vertices.clear();
                                     for (int i_verts = 0; i_verts < unmerged_face.size(); i_verts++) {
                                         auto vert = unmerged_face[i_verts];
-                                        auto res = compute_slice(hypervertices, t0 / params::deltaT, vert);
+                                        auto res = compute_slice(
+                                            hypervertices,
+                                            t0 / params::deltaT,
+                                            vert);
                                         VUnmerged unmerged_vert = res.first;
                                         unmerged_vert.second = mp(unmerged_vertices[ele].size(), res.second);
                                         unmerged_vertices[ele].push_back(unmerged_vert);
@@ -506,11 +808,24 @@ extern "C" {
                                     }
                                     for (int p = 0; p < 3; p++) center[p] /= unmerged_face.size();
                                     // We extrude these time-perpendicular faces and do the special interpolation within the time span of one node
-                                    bool needs_resolve_discon = start_discon_face.count(unmerged_face_cnt) != 0 && s == 0 && t0 / params::deltaT < times[0] + 1;
-                                    needs_resolve_discon |= end_discon_face.count(unmerged_face_cnt) != 0 && s == times.size() - 2 && t0 / params::deltaT > times[times.size() - 1] - 1;
+                                    bool needs_resolve_discon =
+                                        start_discon_face.count(unmerged_face_cnt) != 0 &&
+                                        s == 0 &&
+                                        compare_slice_time_to_integer(
+                                            times[0] + 1, t0) < 0;
+                                    needs_resolve_discon |=
+                                        end_discon_face.count(unmerged_face_cnt) != 0 &&
+                                        s == times.size() - 2 &&
+                                        compare_slice_time_to_integer(
+                                            times[times.size() - 1] - 1,
+                                            t0) > 0;
                                     if (needs_resolve_discon) {
                                         T weight;
-                                        if (s == 0 && t0 / params::deltaT < times[0] + 1) weight = t0 / params::deltaT - times[0];
+                                        if (s == 0 &&
+                                            compare_slice_time_to_integer(
+                                                times[0] + 1, t0) < 0) {
+                                            weight = t0 / params::deltaT - times[0];
+                                        }
                                         else weight = times[times.size() - 1] - t0 / params::deltaT;
                                         for (int i_verts = 0; i_verts < unmerged_face.size(); i_verts++) {
                                             // We interpolate from the center of the face to the actual face so it looks like a point grows into a triangle face
@@ -534,8 +849,6 @@ extern "C" {
                         }
                         hyperpolys_cnt++;
                     }
-                    fclose(infile);
-                    fclose(infile_discon);
                 }
             });
             if (t_group == 0) break;
@@ -597,7 +910,123 @@ extern "C" {
                 f_cnts[ele] = facesele.size();
             }
         });
-        fclose(log);
+        if (fclose(log) != 0) {
+            log = nullptr;
+            throw std::runtime_error("failed to close slicing log");
+        }
+        log = nullptr;
+        slicing_last_error_message.clear();
+        return 0;
+        } catch (const std::exception& error) {
+            slicing_last_error_message = error.what();
+            if (log != nullptr) fclose(log);
+            if (v_cnts != nullptr && f_cnts != nullptr &&
+                params::n_elements >= 0 && params::n_elements <= N_ELE) {
+                for (int element = 0; element < params::n_elements; ++element) {
+                    v_cnts[element] = 0;
+                    f_cnts[element] = 0;
+                }
+            }
+            clear_partial_slicing_state();
+            return -1;
+        } catch (...) {
+            slicing_last_error_message = "unknown run_slicing failure";
+            if (log != nullptr) fclose(log);
+            if (v_cnts != nullptr && f_cnts != nullptr &&
+                params::n_elements >= 0 && params::n_elements <= N_ELE) {
+                for (int element = 0; element < params::n_elements; ++element) {
+                    v_cnts[element] = 0;
+                    f_cnts[element] = 0;
+                }
+            }
+            clear_partial_slicing_state();
+            return -2;
+        }
+    }
+
+    int run_slicing_rational(
+        std::int64_t time_numerator,
+        std::int64_t time_denominator,
+        int *v_cnts,
+        int *f_cnts,
+        bool extra_smooth
+    ) noexcept {
+        try {
+            if (v_cnts == nullptr || f_cnts == nullptr) {
+                throw std::runtime_error("invalid exact slicing output pointers");
+            }
+            if (time_numerator < 0 || time_denominator <= 0) {
+                throw std::runtime_error(
+                    "exact slicing time must have a nonnegative numerator and positive denominator");
+            }
+            if (exact_slice_time.has_value()) {
+                throw std::runtime_error("nested exact slicing is not allowed");
+            }
+            const int max_temporal_level = checked_max_temporal_level();
+            const std::int64_t maximum_discrete_time =
+                static_cast<std::int64_t>(2) << max_temporal_level;
+            const std::int64_t divisor =
+                std::gcd(time_numerator, time_denominator);
+            time_numerator /= divisor;
+            time_denominator /= divisor;
+            const event_registry::Rational64 time{
+                time_numerator, time_denominator};
+            const int maximum_relation = event_registry::compare_exact_rational(
+                time,
+                event_registry::Rational64{maximum_discrete_time, 1});
+            if (maximum_relation > 0) {
+                throw std::runtime_error(
+                    "exact slicing time is outside the production cache");
+            }
+            const long double physical_time = maximum_relation == 0
+                ? static_cast<long double>(params::tsize)
+                : static_cast<long double>(time_numerator) *
+                    static_cast<long double>(params::deltaT) /
+                    static_cast<long double>(time_denominator);
+            if (!std::isfinite(physical_time) || physical_time < 0 ||
+                physical_time >
+                    static_cast<long double>(std::numeric_limits<T>::max())) {
+                throw std::runtime_error(
+                    "exact slicing time cannot be represented physically");
+            }
+            exact_slice_time = ExactSliceTime{
+                time_numerator, time_denominator};
+            const int status = run_slicing(
+                static_cast<T>(physical_time),
+                v_cnts,
+                f_cnts,
+                extra_smooth);
+            exact_slice_time.reset();
+            return status;
+        } catch (const std::exception& error) {
+            exact_slice_time.reset();
+            slicing_last_error_message = error.what();
+            if (v_cnts != nullptr && f_cnts != nullptr &&
+                params::n_elements >= 0 && params::n_elements <= N_ELE) {
+                for (int element = 0; element < params::n_elements; ++element) {
+                    v_cnts[element] = 0;
+                    f_cnts[element] = 0;
+                }
+            }
+            clear_partial_slicing_state();
+            return -1;
+        } catch (...) {
+            exact_slice_time.reset();
+            slicing_last_error_message = "unknown exact slicing failure";
+            if (v_cnts != nullptr && f_cnts != nullptr &&
+                params::n_elements >= 0 && params::n_elements <= N_ELE) {
+                for (int element = 0; element < params::n_elements; ++element) {
+                    v_cnts[element] = 0;
+                    f_cnts[element] = 0;
+                }
+            }
+            clear_partial_slicing_state();
+            return -2;
+        }
+    }
+
+    const char *slicing_last_error() noexcept {
+        return slicing_last_error_message.c_str();
     }
     
     // actually output the mesh data

@@ -214,7 +214,12 @@ extern "C" {
     // Given queried occupancy values from Python, flood to potential new medium cubes
     int fine_iteration_propagate(sdfT *sdf) {
         using namespace fine;
-        int pointer1s[end_mc - start_mc], pointer2s[end_mc - start_mc];
+        const int active_count = end_mc - start_mc;
+        assert(active_count >= 0);
+        // A zero-length VLA is undefined behavior and is reached when no fine
+        // cubes remain. Standard vectors keep the empty case well-defined.
+        std::vector<int> pointer1s(static_cast<size_t>(active_count));
+        std::vector<int> pointer2s(static_cast<size_t>(active_count));
         res_coll.clear();
         // organize output vertices by their medium cube
         MEASURE_TIME("fine_iteration_propagate part 1", 1, {

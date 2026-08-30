@@ -51,7 +51,26 @@ namespace bisection {
 }
 
 // map from ID to data of center vertices of hypercube
-typedef unordered_map<HVID, HV, hash_pair> HVTable;
+// Cache consumers must never synthesize a zero-valued vertex for an absent
+// serialized reference. Producers use emplace/insert_or_assign explicitly.
+class HVTable : public unordered_map<HVID, HV, hash_pair> {
+    using Base = unordered_map<HVID, HV, hash_pair>;
+
+public:
+    using Base::Base;
+
+    HV& operator[](const HVID& key) {
+        const auto found = this->find(key);
+        if (found == this->end()) {
+            throw std::runtime_error("missing referenced hypervertex HVID");
+        }
+        return found->second;
+    }
+
+    HV& operator[](HVID&& key) {
+        return (*this)[static_cast<const HVID&>(key)];
+    }
+};
 namespace bisection {
     extern HVTable hypervertices;
     extern HVTable hypervertices_g[N_THREAD];
@@ -60,7 +79,7 @@ namespace bisection {
 }
 
 // Functions to load the 4D polyhedra and center vertices indices
-void load_hyperpolys(int t);
+void load_hyperpolys(int t, int expected_records = -1);
 
 // Functions to load center vertices information
 void load_vertices(int t);
@@ -84,7 +103,10 @@ extern "C" {
     // Compute the final center vertex after all iterations are done
     void bisection_hypermesh_verts_finishing(int t, sdfT *sdfs, sdfT *center_sdfs);
     // Write final 4D mesh of group t to disk
-    void write_final_hypermesh(int t);
+    // Errors are returned across the C ABI; C++ exceptions must never unwind
+    // through ctypes/libffi.
+    int write_final_hypermesh(int t) noexcept;
+    const char *bisection_last_error() noexcept;
     // Function to get the number of vertices in the current loaded group for statistics
     int verts_count(int t);
     // Clean up bisection module

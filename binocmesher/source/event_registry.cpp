@@ -76,14 +76,21 @@ struct RegistryState {
 RegistryState state;
 
 std::int64_t abs64(std::int64_t value) {
+    if (value == std::numeric_limits<std::int64_t>::min()) {
+        throw std::overflow_error("cannot normalize INT64_MIN rational component");
+    }
     return value < 0 ? -value : value;
 }
 
 Rational64 normalize(std::int64_t numerator, std::int64_t denominator) {
     if (denominator == 0) {
-        return Rational64{0, 0};
+        throw std::runtime_error("cannot normalize a rational with zero denominator");
     }
     if (denominator < 0) {
+        if (numerator == std::numeric_limits<std::int64_t>::min() ||
+            denominator == std::numeric_limits<std::int64_t>::min()) {
+            throw std::overflow_error("cannot normalize signed rational minimum");
+        }
         numerator = -numerator;
         denominator = -denominator;
     }
@@ -95,8 +102,85 @@ bool rational_equal(const Rational64& a, const Rational64& b) {
     return a.numerator == b.numerator && a.denominator == b.denominator;
 }
 
-std::int64_t compare_integer_to_rational(std::int64_t value, const Rational64& rational) {
-    return value * rational.denominator - rational.numerator;
+std::uint64_t unsigned_magnitude(std::int64_t value) noexcept {
+    if (value >= 0) return static_cast<std::uint64_t>(value);
+    // Avoid negating INT64_MIN in the signed domain.
+    return static_cast<std::uint64_t>(-(value + 1)) + UINT64_C(1);
+}
+
+int compare_unsigned_rational(
+    std::uint64_t first_numerator,
+    std::uint64_t first_denominator,
+    std::uint64_t second_numerator,
+    std::uint64_t second_denominator
+) {
+    // Compare through the continued-fraction expansion. Division/remainder
+    // stays exact when either cross product would overflow uint64_t.
+    int direction = 1;
+    for (;;) {
+        const std::uint64_t first_quotient =
+            first_numerator / first_denominator;
+        const std::uint64_t second_quotient =
+            second_numerator / second_denominator;
+        if (first_quotient != second_quotient) {
+            const int result = first_quotient > second_quotient ? 1 : -1;
+            return direction * result;
+        }
+
+        const std::uint64_t first_remainder =
+            first_numerator % first_denominator;
+        const std::uint64_t second_remainder =
+            second_numerator % second_denominator;
+        if (first_remainder == 0 || second_remainder == 0) {
+            if (first_remainder == second_remainder) return 0;
+            const int result = first_remainder == 0 ? -1 : 1;
+            return direction * result;
+        }
+
+        first_numerator = first_denominator;
+        first_denominator = first_remainder;
+        second_numerator = second_denominator;
+        second_denominator = second_remainder;
+        direction = -direction;
+    }
+}
+
+int compare_signed_rational_components(
+    std::int64_t first_numerator,
+    std::int64_t first_denominator,
+    std::int64_t second_numerator,
+    std::int64_t second_denominator
+) {
+    if (first_denominator <= 0 || second_denominator <= 0) {
+        throw std::runtime_error(
+            "exact rational comparison requires positive denominators");
+    }
+    const bool first_negative = first_numerator < 0;
+    const bool second_negative = second_numerator < 0;
+    if (first_negative != second_negative) {
+        return first_negative ? -1 : 1;
+    }
+
+    const int magnitude_comparison = compare_unsigned_rational(
+        unsigned_magnitude(first_numerator),
+        static_cast<std::uint64_t>(first_denominator),
+        unsigned_magnitude(second_numerator),
+        static_cast<std::uint64_t>(second_denominator));
+    return first_negative ? -magnitude_comparison : magnitude_comparison;
+}
+
+int compare_integer_to_rational(
+    std::int64_t value,
+    const Rational64& rational
+) {
+    return compare_signed_rational_components(
+        value, 1, rational.numerator, rational.denominator);
+}
+
+int compare_rational(const Rational64& first, const Rational64& second) {
+    return compare_signed_rational_components(
+        first.numerator, first.denominator,
+        second.numerator, second.denominator);
 }
 
 FaceKey rotate(const FaceKey& key, int offset) {
@@ -130,6 +214,19 @@ bool all_hvids_distinct(const FaceKey& key) {
 
 // A face is ordered cyclically as (00, 10, 11, 01).
 std::optional<Rational64> admissible_saddle(const std::array<std::int64_t, 4>& times) {
+    constexpr std::int64_t minimum_serialized_time =
+        std::numeric_limits<std::int8_t>::min();
+    constexpr std::int64_t maximum_serialized_time =
+        std::numeric_limits<std::int8_t>::max();
+    for (const std::int64_t value : times) {
+        // Production corner times use timeT == int8_t. Keep this wider helper
+        // fail-closed so the coefficient arithmetic below cannot overflow.
+        if (value < minimum_serialized_time ||
+            value > maximum_serialized_time) {
+            throw std::runtime_error(
+                "saddle corner time is outside serialized int8 range");
+        }
+    }
     const std::int64_t t00 = times[0];
     const std::int64_t t10 = times[1];
     const std::int64_t t11 = times[2];
@@ -162,11 +259,20 @@ std::optional<Rational64> admissible_saddle(const std::array<std::int64_t, 4>& t
 
     // At an admissible face saddle, opposite corners have the same sign and
     // adjacent corners have opposite signs at the critical value.
-    const std::int64_t s00 = compare_integer_to_rational(t00, root);
-    const std::int64_t s10 = compare_integer_to_rational(t10, root);
-    const std::int64_t s11 = compare_integer_to_rational(t11, root);
-    const std::int64_t s01 = compare_integer_to_rational(t01, root);
-    if (!(s00 * s11 > 0 && s10 * s01 > 0 && s00 * s10 < 0)) {
+    const int s00 = compare_integer_to_rational(t00, root);
+    const int s10 = compare_integer_to_rational(t10, root);
+    const int s11 = compare_integer_to_rational(t11, root);
+    const int s01 = compare_integer_to_rational(t01, root);
+    const auto same_nonzero_sign = [](int first, int second) {
+        return (first < 0 && second < 0) ||
+               (first > 0 && second > 0);
+    };
+    const auto opposite_sign = [](int first, int second) {
+        return (first < 0 && second > 0) ||
+               (first > 0 && second < 0);
+    };
+    if (!(same_nonzero_sign(s00, s11) &&
+          same_nonzero_sign(s10, s01) && opposite_sign(s00, s10))) {
         return std::nullopt;
     }
 
@@ -209,6 +315,13 @@ void write_summary_json(const std::filesystem::path& path) {
 }
 
 }  // namespace
+
+int compare_exact_rational(
+    const Rational64& first,
+    const Rational64& second
+) {
+    return compare_rational(first, second);
+}
 
 void begin(const std::string& output_path) {
     state = RegistryState{};

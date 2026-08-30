@@ -19,6 +19,11 @@ struct Rational64 {
     std::int64_t denominator = 1;
 };
 
+// Exact three-way comparison without cross multiplication. Both
+// denominators must be positive; numerators may span signed int64.
+// Returns -1, 0, or +1.
+int compare_exact_rational(const Rational64& first, const Rational64& second);
+
 // Reset read-only instrumentation for one slicing_preprocess() invocation.
 // The registry is enabled only when BINOC_EVENT_MODE is a positive integer.
 void begin(const std::string& output_path);
