@@ -12,6 +12,8 @@ from pathlib import Path
 
 import numpy as np
 
+from cache_semantic_hash import semantic_source_cache_manifest
+
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
@@ -107,9 +109,14 @@ def terrain_sdf(points: np.ndarray) -> np.ndarray:
     return points[:, 2] - height
 
 
-def worker(repo: Path, output: Path, mode: int) -> dict:
-    os.environ["BINOC_EVENT_MODE"] = str(mode)
-    os.environ["BINOC_PROVENANCE_V2"] = str(mode)
+def worker(
+    repo: Path,
+    output: Path,
+    provenance_mode: int,
+    event_mode: int,
+) -> dict:
+    os.environ["BINOC_EVENT_MODE"] = str(event_mode)
+    os.environ["BINOC_PROVENANCE_V2"] = str(provenance_mode)
     os.environ["OMP_NUM_THREADS"] = "1"
     sys.path.insert(0, str(repo))
     from binocmesher import BinocMesher  # type: ignore
@@ -146,21 +153,26 @@ def worker(repo: Path, output: Path, mode: int) -> dict:
         # Audit the exact observer call in the same process. This avoids
         # comparing unstable object representations written by independent
         # upstream runs.
-        if mode > 0 and not (output / "slicing_preprocess.finish").exists():
+        if not (output / "slicing_preprocess.finish").exists():
             original_slicing_preprocess = mesher.slicing_preprocess
 
             def audited_slicing_preprocess(
                 _original=original_slicing_preprocess,
             ):
                 before = source_cache_manifest(output)
+                semantic_before = semantic_source_cache_manifest(output)
                 return_value = _original()
                 after = source_cache_manifest(output)
+                semantic_after = semantic_source_cache_manifest(output)
                 source_cache_audits.append({
                     "before": before,
                     "after": after,
                     "file_sets_identical": set(before) == set(after),
                     "bytes_identical": before == after,
                     "unchanged": before == after,
+                    "semantic_before": semantic_before,
+                    "semantic_after": semantic_after,
+                    "semantics_unchanged": semantic_before == semantic_after,
                 })
                 return return_value
 
@@ -173,15 +185,28 @@ def worker(repo: Path, output: Path, mode: int) -> dict:
             "faces": [int(len(mesh.faces)) for mesh in meshes],
         })
     result = {
-        "mode": mode,
+        "mode": f"{provenance_mode}{event_mode}",
+        "provenance_mode": provenance_mode,
+        "event_mode": event_mode,
         "slice_times": slice_times,
         "mesh_hashes": mesh_hashes,
         "mesh_counts": mesh_counts,
         "cache_manifest": cache_manifest(output),
+        "semantic_source_cache_manifest":
+            semantic_source_cache_manifest(output),
         "provenance_manifest": provenance_manifest(output),
         "source_cache_audits": source_cache_audits,
         "sidecar_csv_exists": (output / "event_registry_p1.csv").exists(),
         "sidecar_summary_exists": (output / "event_registry_p1_summary.json").exists(),
+        "sidecar_selected_exists": (output / "event_registry_selected_event.json").exists(),
+        "registry_summary": (
+            json.loads((output / "event_registry_p1_summary.json").read_text())
+            if (output / "event_registry_p1_summary.json").is_file()
+            else None
+        ),
+        "cache_contract": json.loads(
+            (output / "slicing_preprocess.manifest.json").read_text()
+        ),
     }
     (output / "p1_worker_result.json").write_text(json.dumps(result, indent=2, sort_keys=True))
     return result
@@ -194,39 +219,110 @@ def controller(repo: Path, output: Path, force: bool) -> int:
         shutil.rmtree(output)
     output.mkdir(parents=True)
     script = Path(__file__).resolve()
-    baseline_dir = output / "baseline"
-    instrumented_dir = output / "instrumented"
     env = os.environ.copy()
     env["OMP_NUM_THREADS"] = "1"
-    for mode, directory in ((0, baseline_dir), (1, instrumented_dir)):
+    mode_directories = {
+        f"{provenance}{event}": output / f"mode{provenance}{event}"
+        for provenance in (0, 1)
+        for event in (0, 1)
+    }
+    for mode, directory in mode_directories.items():
+        provenance, event = (int(value) for value in mode)
         subprocess.run([
             sys.executable,
             str(script),
             "--worker",
             "--repo", str(repo),
             "--output", str(directory),
-            "--mode", str(mode),
+            "--provenance-mode", str(provenance),
+            "--event-mode", str(event),
         ], check=True, env=env)
-    baseline = json.loads((baseline_dir / "p1_worker_result.json").read_text())
-    instrumented = json.loads((instrumented_dir / "p1_worker_result.json").read_text())
-    source_cache_audits = instrumented.get("source_cache_audits", [])
-    source_cache_unchanged = (
-        bool(source_cache_audits)
-        and all(item.get("unchanged") for item in source_cache_audits)
+    modes = {
+        mode: json.loads((directory / "p1_worker_result.json").read_text())
+        for mode, directory in mode_directories.items()
+    }
+    baseline = modes["00"]
+    instrumented = modes["11"]
+    audits = [
+        audit
+        for result in modes.values()
+        for audit in result.get("source_cache_audits", [])
+    ]
+    source_cache_unchanged = bool(audits) and all(
+        audit.get("unchanged") and audit.get("semantics_unchanged")
+        for audit in audits
     )
+    semantic_manifests = [
+        result["semantic_source_cache_manifest"]
+        for result in modes.values()
+    ]
+
+    mode_matrix_exact = True
+    for mode, result in modes.items():
+        provenance, event = (int(value) for value in mode)
+        contract = result["cache_contract"]
+        registry_sidecars = (
+            result["sidecar_csv_exists"]
+            and result["sidecar_summary_exists"]
+            and result["sidecar_selected_exists"]
+        )
+        summary = result["registry_summary"]
+        separated_face_counts = not event or (
+            isinstance(summary, dict)
+            and isinstance(summary.get("all_parameter_faces"), dict)
+            and isinstance(summary.get("temporal_neighbour_faces"), dict)
+            and summary["temporal_neighbour_faces"].get("raw_observations", -1)
+                <= summary["all_parameter_faces"].get("raw_observations", -2)
+            and summary["temporal_neighbour_faces"].get("logical_incidences", -1)
+                <= summary["all_parameter_faces"].get("logical_incidences", -2)
+            and summary["temporal_neighbour_faces"].get("canonical_events", -1)
+                <= summary["all_parameter_faces"].get("canonical_events", -2)
+        )
+        mode_matrix_exact = mode_matrix_exact and all((
+            result["provenance_mode"] == provenance,
+            result["event_mode"] == event,
+            contract.get("provenance_requested") is bool(provenance),
+            contract.get("provenance_enabled") is bool(provenance or event),
+            contract.get("event_registry_enabled") is bool(event),
+            registry_sidecars is bool(event),
+            separated_face_counts,
+            bool(result["provenance_manifest"]) is bool(provenance or event),
+        ))
 
     checks = {
-        "cache_file_sets_identical": set(baseline["cache_manifest"]) == set(instrumented["cache_manifest"]),
-        # Compatibility key consumed by validate_smoke.py. It now means
-        # exact source-cache identity immediately before/after the observer.
+        "observer_mode_matrix_exact": mode_matrix_exact,
+        "cache_file_sets_identical": all(
+            set(result["cache_manifest"]) == set(baseline["cache_manifest"])
+            for result in modes.values()
+        ),
+        # Compatibility key consumed by validate_smoke.py.
         "cache_bytes_identical": source_cache_unchanged,
         "source_cache_bytes_unchanged_instrumented": source_cache_unchanged,
-        "mesh_hashes_identical": baseline["mesh_hashes"] == instrumented["mesh_hashes"],
-        "mesh_counts_identical": baseline["mesh_counts"] == instrumented["mesh_counts"],
-        "baseline_has_no_sidecar": not baseline["sidecar_csv_exists"] and not baseline["sidecar_summary_exists"],
-        "instrumented_has_sidecar": instrumented["sidecar_csv_exists"] and instrumented["sidecar_summary_exists"],
-        "provenance_disabled_has_no_sidecars": not baseline["provenance_manifest"],
-        "provenance_enabled_has_sidecars": bool(instrumented["provenance_manifest"]),
+        "source_cache_unchanged_all_modes":
+            len(audits) == len(modes) and source_cache_unchanged,
+        "semantic_source_cache_identity":
+            bool(semantic_manifests[0])
+            and all(value == semantic_manifests[0]
+                    for value in semantic_manifests[1:]),
+        "mesh_hashes_identical": all(
+            result["mesh_hashes"] == baseline["mesh_hashes"]
+            for result in modes.values()
+        ),
+        "mesh_counts_identical": all(
+            result["mesh_counts"] == baseline["mesh_counts"]
+            for result in modes.values()
+        ),
+        "baseline_has_no_sidecar":
+            not baseline["sidecar_csv_exists"]
+            and not baseline["sidecar_summary_exists"],
+        "instrumented_has_sidecar":
+            instrumented["sidecar_csv_exists"]
+            and instrumented["sidecar_summary_exists"]
+            and instrumented["sidecar_selected_exists"],
+        "provenance_disabled_has_no_sidecars":
+            not baseline["provenance_manifest"],
+        "provenance_enabled_has_sidecars":
+            bool(instrumented["provenance_manifest"]),
     }
     result = {
         "verdict": "PASS_P1_OFFICIAL_PIPELINE_READ_ONLY" if all(checks.values()) else "STOP_P1_OFFICIAL_PIPELINE_READ_ONLY",
@@ -234,10 +330,13 @@ def controller(repo: Path, output: Path, force: bool) -> int:
         "checks": checks,
         "diagnostics": {
             "cross_run_raw_cache_bytes_identical":
-                baseline["cache_manifest"] == instrumented["cache_manifest"],
+                all(result["cache_manifest"] == baseline["cache_manifest"]
+                    for result in modes.values()),
             "cross_run_raw_cache_note":
-                "Non-gating because upstream serializes unordered/padded C++ objects.",
+                "Diagnostic only: unordered containers and C++ padding can differ; "
+                "semantic HP/HV identity is the hard gate.",
         },
+        "modes": modes,
         "baseline": baseline,
         "instrumented": instrumented,
     }
@@ -252,10 +351,18 @@ def main() -> int:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--worker", action="store_true")
-    parser.add_argument("--mode", type=int, default=0)
+    parser.add_argument("--mode", type=int, choices=(0, 1))
+    parser.add_argument("--provenance-mode", type=int, choices=(0, 1))
+    parser.add_argument("--event-mode", type=int, choices=(0, 1))
     args = parser.parse_args()
     if args.worker:
-        worker(args.repo.resolve(), args.output.resolve(), args.mode)
+        fallback = 0 if args.mode is None else args.mode
+        provenance_mode = (
+            fallback if args.provenance_mode is None else args.provenance_mode)
+        event_mode = fallback if args.event_mode is None else args.event_mode
+        worker(
+            args.repo.resolve(), args.output.resolve(),
+            provenance_mode, event_mode)
         return 0
     return controller(args.repo.resolve(), args.output.resolve(), args.force)
 

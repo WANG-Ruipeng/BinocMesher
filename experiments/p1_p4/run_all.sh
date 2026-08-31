@@ -45,6 +45,7 @@ mkdir -p "$OUTPUT/logs" "$OUTPUT/results" "$OUTPUT/results/focused_bin"
 
 if ((INSTALL_DEPS)); then
   python3 -m pip install -r "$REPO/experiments/p1_p4/requirements-smoke.txt" \
+    -c "$REPO/experiments/p1_p4/constraints-ubuntu22-gcc11-py310.txt" \
     2>&1 | tee "$OUTPUT/logs/pip_install.log"
 fi
 
@@ -95,6 +96,21 @@ g++ -O2 -std=c++17 -fopenmp -Wall -Wextra -Wpedantic -Werror \
 "$OUTPUT/results/focused_bin/test_processed_triple_stream" \
   2>&1 | tee "$OUTPUT/logs/processed_triple_run.log"
 
+# Cache completion contract, semantic identity, and late-I/O regressions.
+PYTHONPATH="$REPO" python3 "$REPO/experiments/p1_p4/test_cache_contract.py" \
+  2>&1 | tee "$OUTPUT/logs/cache_contract.log"
+python3 "$REPO/experiments/p1_p4/cache_semantic_hash.py" --self-test \
+  2>&1 | tee "$OUTPUT/logs/semantic_cache_hash.log"
+
+g++ -O2 -std=c++17 -Wall -Wextra -Wpedantic -Werror \
+  -I"$REPO/binocmesher/source" \
+  "$REPO/experiments/p1_p4/test_checked_output_transaction.cpp" \
+  -o "$OUTPUT/results/focused_bin/test_checked_output_transaction" \
+  2>&1 | tee "$OUTPUT/logs/checked_output_compile.log"
+"$OUTPUT/results/focused_bin/test_checked_output_transaction" \
+  "$OUTPUT/results/checked_output_transaction" \
+  2>&1 | tee "$OUTPUT/logs/checked_output_run.log"
+
 python3 - "$OUTPUT" <<'PY'
 import json, sys
 from pathlib import Path
@@ -105,6 +121,9 @@ checks = {
     "safety_cache_rational_cabi": "PASS_SAFETY_CACHE_RATIONAL_C_ABI" in (logs / "safety_cache_run.log").read_text(),
     "provenance_v2_self_test": "PASS_PROVENANCE_V2_SELF_TEST" in (logs / "provenance_self_test.log").read_text(),
     "processed_triple_stream": "PASS_PROCESSED_PRIMARY_DISCON_BPM2_TRIPLE_STREAM" in (logs / "processed_triple_run.log").read_text(),
+    "cache_mode_schema_contract": "PASS_CACHE_MODE_SCHEMA_CONTRACT" in (logs / "cache_contract.log").read_text(),
+    "semantic_hp_hv_cache_hash": "PASS_SEMANTIC_HP_HV_CACHE_HASH" in (logs / "semantic_cache_hash.log").read_text(),
+    "checked_transactional_output": "PASS_CHECKED_TRANSACTIONAL_OUTPUT" in (logs / "checked_output_run.log").read_text(),
 }
 payload = {"checks": checks, "pass": all(checks.values())}
 (root / "results/focused_checks.json").write_text(json.dumps(payload, indent=2, sort_keys=True))

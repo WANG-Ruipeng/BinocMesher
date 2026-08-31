@@ -29,12 +29,17 @@ using SerializedVID = array<HVID, 2>;
 using TimeVector = vec<int, timeT>;
 using FaceVector = vec<int, SerializedVID>;
 using DiscontinuityVector = vec<int, II>;
+using HypervertexRecord = pair<HVID, HV>;
 
 // The upstream cache intentionally writes these libstdc++ pair/array objects
 // as raw bytes.  Pin their observed production ABI here instead of claiming
 // std::pair is formally trivially copyable (libstdc++ does not promise that).
 static_assert(sizeof(II) == 8, "unexpected discontinuity-pair ABI");
 static_assert(sizeof(HVID) == 8, "unexpected HVID ABI");
+static_assert(sizeof(HV) == 20, "unexpected hypervertex-value ABI");
+static_assert(sizeof(HypervertexRecord) == 28,
+              "unexpected hypervertex-record ABI");
+static_assert(sizeof(HP) == 68, "unexpected hyperpoly-record ABI");
 static_assert(sizeof(SerializedVID) == 16, "unexpected processed VID ABI");
 static_assert(sizeof(hyperpoly_provenance::ProcessedRecord) == 132,
               "BPM2 processed metadata ABI changed");

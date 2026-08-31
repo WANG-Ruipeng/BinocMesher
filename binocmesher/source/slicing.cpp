@@ -1,6 +1,7 @@
 #include <numeric>
 #include <optional>
 
+#include "checked_output.h"
 #include "utils.h"
 #include "binoctree.h"
 #include "coarse_step.h"
@@ -510,26 +511,23 @@ extern "C" {
                     set_set_VID parallel_faces_to_remove;
                     std::stringstream filename;
                     filename << params::output_path << "/processed_hyperpolys/" << t_group << "_" << t_start << ".bin";
-                    ScopedFile outfile_owner(fopen(filename.str().c_str(), "ab"));
+                    checked_output::BinaryFile outfile_owner(
+                        filename.str(), "processed hyperpoly output");
                     FILE *outfile = outfile_owner.get();
-                    if (outfile == nullptr) {
-                        throw std::runtime_error(
-                            "failed to open processed hyperpoly output");
-                    }
                     std::stringstream metadata_filename;
                     metadata_filename
                         << params::output_path << "/processed_hyperpolys/"
                         << t_group << "_" << t_start << "_hpmeta.bin";
-                    ScopedFile metadata_outfile_owner(
-                        provenance_enabled
-                            ? fopen(metadata_filename.str().c_str(), "ab")
-                            : nullptr);
-                    FILE *metadata_outfile =
-                        metadata_outfile_owner.get();
-                    if (provenance_enabled && metadata_outfile == nullptr) {
-                        throw std::runtime_error(
-                            "failed to open processed hyperpoly metadata output");
+                    std::optional<checked_output::BinaryFile>
+                        metadata_outfile_owner;
+                    if (provenance_enabled) {
+                        metadata_outfile_owner.emplace(
+                            metadata_filename.str(),
+                            "processed hyperpoly metadata output");
                     }
+                    FILE *metadata_outfile = provenance_enabled
+                        ? metadata_outfile_owner->get()
+                        : nullptr;
                     for (int index = starting_index[t_start]; index < starting_index[t_start+1]; index++) {
                         const int source_index =
                             hyperpolys_timed[index].second;
@@ -623,6 +621,10 @@ extern "C" {
                         throw std::runtime_error(
                             "I/O error in processed hyperpoly metadata output");
                     }
+                    if (provenance_enabled) {
+                        metadata_outfile_owner->commit();
+                    }
+                    outfile_owner.commit();
                     for (auto &vertices_set: parallel_faces_to_remove) {
                         parallel_faces.erase(vertices_set);
                     }
@@ -640,12 +642,9 @@ extern "C" {
                 for (int t_start = 0; t_start < maximum_discrete_time; t_start++) {
                     std::stringstream filename;
                     filename << params::output_path << "/processed_hyperpolys/" << t_group << "_" << t_start << "_discon.bin";
-                    ScopedFile outfile_owner(fopen(filename.str().c_str(), "ab"));
+                    checked_output::BinaryFile outfile_owner(
+                        filename.str(), "processed discontinuity output");
                     FILE *outfile = outfile_owner.get();
-                    if (outfile == nullptr) {
-                        throw std::runtime_error(
-                            "failed to open discontinuity output");
-                    }
                     for (int index = starting_index[t_start]; index < starting_index[t_start+1]; index++) {
                         buffer.clear();
                         while (discontinuity_list_i < discontinuity_list.size() && discontinuity_list[discontinuity_list_i].first == index) {
@@ -658,7 +657,7 @@ extern "C" {
                         throw std::runtime_error(
                             "I/O error in discontinuity output");
                     }
-
+                    outfile_owner.commit();
                 }
             });
         }

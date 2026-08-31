@@ -48,6 +48,8 @@
 #include <utility>
 #include <vector>
 
+#include "checked_output.h"
+
 namespace event_registry {
 namespace {
 
@@ -459,9 +461,36 @@ void build_selected_saddle() {
     }
 }
 
-void write_summary_json(const std::filesystem::path& path) {
-    std::ofstream output(path);
+void write_summary_json(std::ostream& output) {
+    const int temporal_axis = static_cast<int>(
+        hyperpoly_layout::AxisRole::temporal_neighbour);
+    std::size_t temporal_raw_observations = 0;
+    std::set<std::string> temporal_logical_incidences;
+    for (const SaddleObservation& observation : state.observations) {
+        if (observation.face_axis != temporal_axis) continue;
+        ++temporal_raw_observations;
+        temporal_logical_incidences.insert(
+            observation.logical_incidence_id);
+    }
+    std::size_t temporal_canonical_events = 0;
+    for (const auto& entry : state.events) {
+        if (entry.second.face_axis == temporal_axis) {
+            ++temporal_canonical_events;
+        }
+    }
     output << "{\n";
+    output << R"(  "all_parameter_faces": {"raw_observations": )"
+           << state.observations.size()
+           << R"(, "logical_incidences": )"
+           << state.logical_incidence_ids.size()
+           << R"(, "canonical_events": )" << state.events.size()
+           << "},\n";
+    output << R"(  "temporal_neighbour_faces": {"raw_observations": )"
+           << temporal_raw_observations
+           << R"(, "logical_incidences": )"
+           << temporal_logical_incidences.size()
+           << R"(, "canonical_events": )" << temporal_canonical_events
+           << "},\n";
     output << "  \"enabled\": " << (state.enabled ? "true" : "false")
            << ",\n";
     output << "  \"hyperpolys\": " << state.hyperpolys << ",\n";
@@ -486,8 +515,7 @@ void write_summary_json(const std::filesystem::path& path) {
     output << "}\n";
 }
 
-void write_selected_event_json(const std::filesystem::path& path) {
-    std::ofstream output(path);
+void write_selected_event_json(std::ostream& output) {
     if (!state.selected_saddle_event_id.has_value()) {
         output << "{\n  \"selected\": false\n}\n";
         return;
@@ -676,7 +704,9 @@ void finish() {
     std::filesystem::create_directories(state.output_path);
     const std::filesystem::path csv_path =
         state.output_path / "event_registry_p1.csv";
-    std::ofstream csv(csv_path);
+    checked_output::TextFile csv_output(
+        csv_path, "event registry CSV output");
+    std::ostream& csv = csv_output.stream();
     csv << "raw_id,t_group,t_start,sorted_record_index,source_t_group,"
            "source_record_index,element,edge_x,edge_y,edge_z,edge_L,"
            "edge_tcoord,edge_tL,edge_dir,source_h0,source_h1,source_h2,"
@@ -724,10 +754,17 @@ void finish() {
             << std::quoted(observation.logical_incidence_id) << ','
             << std::quoted(observation.canonical_event_id) << '\n';
     }
-    write_summary_json(
-        state.output_path / "event_registry_p1_summary.json");
-    write_selected_event_json(
-        state.output_path / "event_registry_selected_event.json");
+    checked_output::TextFile summary_output(
+        state.output_path / "event_registry_p1_summary.json",
+        "event registry summary output");
+    checked_output::TextFile selected_output(
+        state.output_path / "event_registry_selected_event.json",
+        "event registry selected-event output");
+    write_summary_json(summary_output.stream());
+    write_selected_event_json(selected_output.stream());
+    csv_output.commit();
+    summary_output.commit();
+    selected_output.commit();
 }
 
 }  // namespace event_registry

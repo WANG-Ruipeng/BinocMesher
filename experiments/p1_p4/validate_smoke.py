@@ -72,12 +72,18 @@ def main() -> int:
             "provenance_disabled_has_no_sidecars": bool(official_checks.get("provenance_disabled_has_no_sidecars")),
             "provenance_enabled_has_sidecars": bool(official_checks.get("provenance_enabled_has_sidecars")),
             "official_source_cache_unchanged": bool(official_checks.get("cache_bytes_identical")),
+            "official_source_cache_semantics_identical": bool(
+                official_checks.get("semantic_source_cache_identity")),
+            "official_observer_mode_matrix_exact": bool(
+                official_checks.get("observer_mode_matrix_exact")),
+            "official_source_cache_unchanged_all_modes": bool(
+                official_checks.get("source_cache_unchanged_all_modes")),
             "official_mesh_unchanged": bool(official_checks.get("mesh_hashes_identical")),
         })
 
     passed = all(checks.values())
     validation = {
-        "schema": "binoc-p1-p4-worktree-smoke-v4",
+        "schema": "binoc-p1-p4-worktree-smoke-v5",
         "pass": passed,
         "verdict": "PASS_P1_P4_OFFICIAL_WORKTREE_SMOKE" if passed else "STOP_P1_P4_OFFICIAL_WORKTREE_SMOKE",
         "checks": checks,
@@ -93,7 +99,7 @@ def main() -> int:
         "scope": {
             "p1": "full official Python pipeline only when --require-official is used",
             "safety": "0001 checked I/O, cache, rational, C ABI, and VLA focused regressions",
-            "provenance": "0002 BHP2/BPM2 schema/join regressions plus observational sidecar gate",
+            "provenance": "BHP2/BPM2 schema/join regressions, four observer modes, and semantic HP/HV identity",
             "p2_p4": "deterministic seam fixtures compiled into official core.so plus source-local oracle",
             "not_claimed": "production P2/P3 intervention or Forest/Cave/Mountain significance",
         },

@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 import sys
 import numpy as np
 from tqdm import tqdm
@@ -16,6 +17,11 @@ from .utils.timer import Timer
 
 _INT64_MIN = -(1 << 63)
 _INT64_MAX = (1 << 63) - 1
+_SLICING_CACHE_SCHEMA = 'binocmesher-slicing-preprocess-v1'
+_SLICING_CACHE_MANIFEST = 'slicing_preprocess.manifest.json'
+_SLICING_CACHE_FINISH = 'slicing_preprocess.finish'
+_PROVENANCE_VERSION = 2
+_PROVENANCE_LAYOUT_VERSION = 1
 
 
 def _positive_env_flag(name):
@@ -32,6 +38,83 @@ def _provenance_v2_enabled():
     # The exact-event observer requires source provenance.  Otherwise the
     # provenance layer is fully opt-in and leaves no BHP2/BPM2 sidecars.
     return _positive_env_flag("BINOC_PROVENANCE_V2") or _positive_env_flag("BINOC_EVENT_MODE")
+
+
+def _event_registry_enabled():
+    return _positive_env_flag('BINOC_EVENT_MODE')
+
+
+def _slicing_cache_contract():
+    provenance_requested = _positive_env_flag('BINOC_PROVENANCE_V2')
+    event_registry_enabled = _event_registry_enabled()
+    return {
+        'cache_schema': _SLICING_CACHE_SCHEMA,
+        'provenance_requested': provenance_requested,
+        'provenance_enabled': provenance_requested or event_registry_enabled,
+        'event_registry_enabled': event_registry_enabled,
+        'bhp_version': _PROVENANCE_VERSION,
+        'bpm_version': _PROVENANCE_VERSION,
+        'layout_version': _PROVENANCE_LAYOUT_VERSION,
+    }
+
+
+def _atomic_write_text(path, text):
+    path = Path(path)
+    temporary = path.with_name(path.name + '.tmp')
+    try:
+        temporary.unlink(missing_ok=True)
+        with temporary.open('x', encoding='utf-8', newline='\n') as handle:
+            handle.write(text)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+    except Exception:
+        temporary.unlink(missing_ok=True)
+        raise
+
+
+def _write_slicing_cache_completion(path, contract=None):
+    path = Path(path)
+    contract = _slicing_cache_contract() if contract is None else contract
+    manifest_path = path / _SLICING_CACHE_MANIFEST
+    finish_path = path / _SLICING_CACHE_FINISH
+    _atomic_write_text(
+        manifest_path,
+        json.dumps(contract, indent=2, sort_keys=True) + '\n',
+    )
+    _atomic_write_text(finish_path, _SLICING_CACHE_SCHEMA + '\n')
+
+
+def _validate_slicing_cache_contract(path, expected=None):
+    path = Path(path)
+    expected = _slicing_cache_contract() if expected is None else expected
+    manifest_path = path / _SLICING_CACHE_MANIFEST
+    if not manifest_path.is_file():
+        raise RuntimeError(
+            'slicing preprocess cache has a finish marker but no mode/schema '
+            'manifest; rebuild into a fresh cache path'
+        )
+    try:
+        actual = json.loads(manifest_path.read_text(encoding='utf-8'))
+    except (OSError, UnicodeError, json.JSONDecodeError) as error:
+        raise RuntimeError(
+            'slicing preprocess cache manifest is unreadable; rebuild into a '
+            'fresh cache path'
+        ) from error
+    if actual != expected:
+        differing = sorted(
+            key for key in set(actual) | set(expected)
+            if actual.get(key) != expected.get(key)
+        )
+        detail = ', '.join(
+            f'{key}: cached={actual.get(key)!r}, requested={expected.get(key)!r}'
+            for key in differing
+        )
+        raise RuntimeError(
+            'slicing preprocess cache mode/schema mismatch; rebuild into a '
+            f'fresh cache path ({detail})'
+        )
+    return actual
 
 
 def _parse_checked_rational_time(numerator_text, denominator_text, context):
@@ -252,6 +335,11 @@ class BinocMesher:
         skip_save1 = True
         path = self.path
         n_elements = len(kernels)
+        slicing_finish = path / _SLICING_CACHE_FINISH
+        slicing_manifest = path / _SLICING_CACHE_MANIFEST
+        cache_contract = _slicing_cache_contract()
+        if slicing_finish.exists():
+            _validate_slicing_cache_contract(path, cache_contract)
         with Timer("load_parameters"):
             time_slices = self.load_parameters(
                 self.AF(self.center), self.size, self.tsize,
@@ -471,12 +559,13 @@ class BinocMesher:
                     raise RuntimeError(
                         f"slicing_preprocess failed closed: {detail}"
                     )
-            (path / f"slicing_preprocess.finish").touch()
+            _write_slicing_cache_completion(path, cache_contract)
             # clean up unnecessary files
             files_to_delete = list(path.glob("*/*")) + list(path.glob("*"))
             files_to_keep = list(path.glob("processed_hyperpolys/*")) + list(path.glob("hypervertices/*")) + \
                 list(path.glob("slicing_preprocess.finish")) + list(path.glob("*.txt")) + list(path.glob("event_registry_p1*")) + \
                 list(path.glob("event_registry_selected_event.json"))
+            files_to_keep += [slicing_finish, slicing_manifest]
             if _provenance_v2_enabled():
                 files_to_keep += list(path.glob("hyperpoly_meta/*"))
             for file_path in files_to_delete:
