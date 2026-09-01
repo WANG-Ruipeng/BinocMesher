@@ -12,6 +12,7 @@
 #include "slicing.h"
 #include "event_registry.h"
 #include "hyperpoly_provenance.h"
+#include "source_splice.h"
 
 namespace {
 
@@ -740,6 +741,27 @@ void bucket_sort(int ele, int index) {
     vertices_tmp.clear();
 }
 
+void append_source_splice_replacement(int ele) {
+    using namespace slicing;
+    std::vector<source_splice::RuntimeVertex> replacement_vertices;
+    std::vector<source_splice::RuntimeFace> replacement_faces;
+    source_splice::build_replacement(
+        ele, static_cast<int>(vertices[ele].size()),
+        replacement_vertices, replacement_faces);
+    for (const auto& replacement_vertex : replacement_vertices) {
+        vertices[ele].push_back(replacement_vertex.position);
+        vertices_inview[ele].push_back(replacement_vertex.in_view);
+    }
+    for (const auto& replacement_face : replacement_faces) {
+        array<int, 3> replacement_face_indices;
+        for (int corner = 0; corner < 3; ++corner) {
+            replacement_face_indices[corner] =
+                replacement_face.indices[corner];
+        }
+        faces[ele].push_back(replacement_face_indices);
+    }
+}
+
 // These are functions exposed to Python
 extern "C" {
     // the main slicing function that returns the number of vertices and faces per element
@@ -766,6 +788,22 @@ extern "C" {
         using namespace bisection;
         using namespace slicing;
         const bool provenance_enabled = hyperpoly_provenance::enabled();
+        const char* source_splice_plan =
+            std::getenv("BINOC_SOURCE_SPLICE_PLAN");
+        const bool source_splice_requested =
+            source_splice_plan != nullptr && source_splice_plan[0] != '\0';
+        if (source_splice_requested && !exact_slice_time.has_value()) {
+            throw std::runtime_error(
+                "source-splice replacement requires run_slicing_rational");
+        }
+        if (exact_slice_time.has_value()) {
+            source_splice::begin_exact(
+                exact_slice_time->numerator,
+                exact_slice_time->denominator,
+                provenance_enabled);
+        } else {
+            source_splice::reset();
+        }
         const int disc_t = exact_slice_time.has_value()
             ? slicing_cache_group_exact(
                 temporal_group_count, maximum_discrete_time)
@@ -861,6 +899,7 @@ extern "C" {
                             throw std::runtime_error(
                                 "processed_hyperpolys discontinuity stream ended before primary stream");
                         }
+                        int current_sorted_record_index = -1;
                         if (provenance_enabled) {
                             hyperpoly_provenance::ProcessedRecord metadata{};
                             if (read_processed_provenance(
@@ -880,6 +919,8 @@ extern "C" {
                                     "processed provenance stream alignment mismatch");
                             }
                             previous_sorted_record_index =
+                                metadata.sorted_record_index;
+                            current_sorted_record_index =
                                 metadata.sorted_record_index;
                         }
                         if (extra_smooth) {
@@ -1019,7 +1060,20 @@ extern "C" {
                                         face[0] = base;
                                         face[1] = base + (j + 1) % unmerged_face.size();
                                         face[2] = base + (j + 2) % unmerged_face.size();
-                                        faces[ele].push_back(face);
+                                        source_splice::TriangleRef source_triangle;
+                                        source_triangle.element = ele;
+                                        source_triangle.t_group = t_group;
+                                        source_triangle.t_start = t_start;
+                                        source_triangle.sorted_record_index =
+                                            current_sorted_record_index;
+                                        source_triangle.interval_index = s;
+                                        source_triangle.face_index =
+                                            unmerged_face_cnt;
+                                        source_triangle.fan_index = j;
+                                        if (!source_splice::should_suppress(
+                                                source_triangle)) {
+                                            faces[ele].push_back(face);
+                                        }
                                     }
                                 }
                                 unmerged_face_cnt++;
@@ -1042,6 +1096,9 @@ extern "C" {
                     if (i == 0 || unmerged_vertices[ele][i].first != unmerged_vertices[ele][i-1].first) {
                         vertices[ele].push_back(unmerged_vertices[ele][i].second.second.second);
                         vertices_inview[ele].push_back(unmerged_vertices[ele][i].second.second.first);
+                        source_splice::register_ordinary_vertex(
+                            ele, unmerged_vertices[ele][i].first,
+                            static_cast<int>(vertices[ele].size()) - 1);
                         if (start_i != -1) {
                             for (int j = start_i; j < i; j++) merging_map[unmerged_vertices[ele][j].second.first] = cnt - 1;
                         }
@@ -1057,6 +1114,7 @@ extern "C" {
                         faces[ele][i][j] = merging_map[faces[ele][i][j]];
                     }
                 }
+                append_source_splice_replacement(ele);
                 CLS(unmerged_vertices[ele]);
                 v_cnts[ele] = vertices[ele].size();
             }
@@ -1088,6 +1146,7 @@ extern "C" {
                 f_cnts[ele] = facesele.size();
             }
         });
+        source_splice::finish();
         if (fclose(log) != 0) {
             log = nullptr;
             throw std::runtime_error("failed to close slicing log");
@@ -1106,6 +1165,7 @@ extern "C" {
                 }
             }
             clear_partial_slicing_state();
+            source_splice::reset();
             return -1;
         } catch (...) {
             slicing_last_error_message = "unknown run_slicing failure";
@@ -1118,6 +1178,7 @@ extern "C" {
                 }
             }
             clear_partial_slicing_state();
+            source_splice::reset();
             return -2;
         }
     }
@@ -1231,6 +1292,7 @@ extern "C" {
 
     // clean up slicing data structures
     void slicing_clean_up() {
+        source_splice::reset();
         using namespace slicing;
         CL(bisection::hypervertices);
     }
