@@ -56,6 +56,13 @@ python3 "$SELF_DIR/validate_critical_beb1_splice.py" \
   --event-ir "$OUTPUT/critical_beb1_event_ir.json" \
   --output "$OUTPUT/critical_beb1_validation.json" \
   > "$OUTPUT/critical_beb1_validation.console.log" 2>&1
+python3 "$SELF_DIR/run_all_canonical_beb1_events.py" \
+  --repo "$REPO" \
+  --cache-root "$OUTPUT/tv0_tv4/cache" \
+  --output "$OUTPUT/all_canonical_beb1" \
+  --expected-events 4 \
+  --expected-profile demo \
+  > "$OUTPUT/all_canonical_beb1.console.log" 2>&1
 bash "$SELF_DIR/run_source_splice.sh" \
   --repo "$REPO" --output "$OUTPUT/source_splice" \
   > "$OUTPUT/source_splice.console.log" 2>&1
@@ -67,6 +74,7 @@ p1=json.loads((root/'p1_p4/results/validation.json').read_text())
 tv=json.loads((root/'tv0_tv4/theory/summary.json').read_text())
 beb1=json.loads((root/'critical_beb1_event_ir.json').read_text())
 beb1_runtime=json.loads((root/'critical_beb1_validation.json').read_text())
+all_beb1=json.loads((root/'all_canonical_beb1/all_canonical_beb1_summary.json').read_text())
 splice=json.loads((root/'source_splice/source_splice_validation.json').read_text())
 checks={
  'p1_p4': p1.get('pass') is True,
@@ -80,10 +88,16 @@ checks={
          'mapping_cylinder', {}).get('critical_side_edges_remaining') == 0
  ),
  'critical_beb1_whole_mesh_runtime': beb1_runtime.get('verdict') == 'PASS_CRITICAL_BEB1_WHOLE_MESH_SPLICE',
+ 'all_canonical_beb1_events': (
+     all_beb1.get('verdict') == 'PASS_ALL_CANONICAL_BEB1_WHOLE_MESH'
+     and all_beb1.get('coverage', {}).get(
+         'canonical_event_fraction') == '4/4'
+     and all_beb1.get('coverage', {}).get('runtime_validated') == 4
+ ),
  'source_face_suppression_boundary_gluing': splice.get('pass') is True,
 }
 payload={
- 'schema':'binoc-source-splice-full-validation-v2',
+ 'schema':'binoc-source-splice-full-validation-v3',
  'pass':all(checks.values()),
  'verdict':'PASS_CERTIFIED_SOURCE_SPLICE_FULL_VALIDATION' if all(checks.values()) else 'STOP_CERTIFIED_SOURCE_SPLICE_FULL_VALIDATION',
  'checks':checks,
@@ -93,6 +107,7 @@ payload={
  'source_splice':splice,
  'critical_beb1_event_ir':beb1,
  'critical_beb1_whole_mesh_validation':beb1_runtime,
+ 'all_canonical_beb1_campaign':all_beb1,
 }
 (root/'FULL_VALIDATION.json').write_text(json.dumps(payload,indent=2,sort_keys=True)+'\n')
 print(payload['verdict'])
@@ -100,4 +115,5 @@ if not payload['pass']: raise SystemExit(2)
 PY
 echo PASS_CRITICAL_BEB1_EVENT_STAR_CLOSURE
 echo PASS_CRITICAL_BEB1_WHOLE_MESH_SPLICE
+echo PASS_ALL_CANONICAL_BEB1_WHOLE_MESH
 echo PASS_CERTIFIED_SOURCE_SPLICE_FULL_VALIDATION

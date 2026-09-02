@@ -287,20 +287,27 @@ def infer_cache_shape(cache_root: Path) -> tuple[int, int]:
     ) + 1
 
 
-def selected_event_rows(cache_root: Path) -> tuple[str, list[dict[str, str]]]:
+def selected_event_rows(
+    cache_root: Path,
+    event_id: str | None = None,
+) -> tuple[str, list[dict[str, str]]]:
     selected_path = cache_root / "event_registry_selected_event.json"
     csv_path = cache_root / "event_registry_p1.csv"
-    if not selected_path.is_file() or not csv_path.is_file():
+    if not csv_path.is_file():
         raise ProcessedMeshError("event registry sidecars are missing")
-    selected = json.loads(selected_path.read_text())
-    if not selected.get("selected"):
-        raise ProcessedMeshError("event registry selected no event")
+    if event_id is None:
+        if not selected_path.is_file():
+            raise ProcessedMeshError("selected-event sidecar is missing")
+        selected = json.loads(selected_path.read_text())
+        if not selected.get("selected"):
+            raise ProcessedMeshError("event registry selected no event")
+        event_id = str(selected["event_id"])
     with csv_path.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.DictReader(handle))
-    event_id = str(selected["event_id"])
     group = [row for row in rows if row["canonical_event_id"] == event_id]
     if not group:
-        raise ProcessedMeshError("selected event has no registry observations")
+        raise ProcessedMeshError(
+            f"event has no registry observations: {event_id}")
     return event_id, group
 
 
@@ -332,9 +339,10 @@ def _parse_processed_metadata(
 def trace_processed_triangles(
     cache_root: Path,
     exact_time: Fraction,
+    event_id: str | None = None,
 ) -> tuple[list[RawTriangle], dict[str, object]]:
     hypervertices = parse_hypervertices(cache_root)
-    event_id, event_rows = selected_event_rows(cache_root)
+    event_id, event_rows = selected_event_rows(cache_root, event_id)
     group_count, maximum_discrete_time = infer_cache_shape(cache_root)
     active_groups = _active_groups(
         exact_time, group_count, maximum_discrete_time

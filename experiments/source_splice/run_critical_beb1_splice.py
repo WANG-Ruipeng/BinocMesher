@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-'''Run the admitted 104/5 BEB1 replacement in the complete ordinary mesh.'''
+'''Run one admitted BEB1 replacement in the complete ordinary mesh.'''
 from __future__ import annotations
 
 import argparse

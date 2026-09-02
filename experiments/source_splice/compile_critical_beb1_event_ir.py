@@ -186,9 +186,11 @@ def compile_ordinary_patch(
     cache_root: Path,
     tau: Fraction,
     required_boundary: frozenset[Any] | None = None,
+    event_id: str | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     raw, groups, selected, trace = compile_at_time(
-        cache_root, tau, required_boundary=required_boundary)
+        cache_root, tau, required_boundary=required_boundary,
+        event_id=event_id)
     faces = (selected[0][1], selected[1][1])
     cycle = directed_boundary_cycle(faces)
     positions, in_view = representative_positions(groups, selected)
@@ -695,6 +697,7 @@ def main() -> int:
     parser.add_argument('--theory-root', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--plan-output', type=Path)
+    parser.add_argument('--event-id')
     parser.add_argument('--expected-root', default='104/5')
     parser.add_argument('--require-whole-mesh-ready', action='store_true')
     args = parser.parse_args()
@@ -706,7 +709,7 @@ def main() -> int:
         raise FileExistsError(output)
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    event_id, rows = selected_event_rows(cache_root)
+    event_id, rows = selected_event_rows(cache_root, args.event_id)
     roots = {
         Fraction(int(row['root_num']), int(row['root_den']))
         for row in rows
@@ -800,7 +803,8 @@ def main() -> int:
     for name, tau in probes.items():
         try:
             patch, runtime = compile_ordinary_patch(
-                cache_root, tau, required_boundary=required_boundary)
+                cache_root, tau, required_boundary=required_boundary,
+                event_id=event_id)
             ordinary_patches[name] = patch
             ordinary_patch_runtime[name] = runtime
             if required_boundary is None:

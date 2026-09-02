@@ -103,6 +103,30 @@ PASS_CRITICAL_BEB1_EVENT_STAR_CLOSURE
 PASS_CRITICAL_BEB1_WHOLE_MESH_SPLICE
 ```
 
+It then enumerates all four canonical saddle events in the fresh demo cache
+and repeats the TV3/TV4, Event IR, SSP1, OMP 1/8, and whole-mesh validation
+chain independently for each event:
+
+```bash
+python3 experiments/source_splice/run_all_canonical_beb1_events.py \
+  --repo "$PWD" \
+  --cache-root /tmp/tv0-tv4/cache \
+  --output /tmp/all-canonical-beb1 \
+  --expected-events 4 \
+  --expected-profile demo
+```
+
+Expected marker:
+
+```text
+PASS_ALL_CANONICAL_BEB1_WHOLE_MESH
+```
+
+The two events sharing root `104/5` are still applied in separate ordinary
+whole-mesh runs.  This campaign proves 4/4 independent event coverage; it does
+not yet claim simultaneous same-root composition or overlapping-star conflict
+resolution.
+
 The original relative half-handle and its four unresolved side edges remain in
 the Event IR as an explicit before-closure witness; they are not exposed as the
 replacement boundary.  The full production closure is globally a

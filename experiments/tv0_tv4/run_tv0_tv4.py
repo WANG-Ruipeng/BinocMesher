@@ -293,10 +293,20 @@ def find_cell_for_row(cells: list[Cell], row: dict[str,str]) -> Cell:
     return candidates[0]
 
 
-def stage_tv3(cache_root: Path, cells: list[Cell], rows: list[dict[str,str]], out: Path) -> tuple[dict[str,Any],dict[str,Any]]:
-    selected=json.loads((cache_root/'event_registry_selected_event.json').read_text())
-    if not selected.get('selected'): raise AuditError('no production saddle selected')
-    event_id=selected['event_id']; group=[row for row in rows if row['canonical_event_id']==event_id]
+def stage_tv3(
+    cache_root: Path,
+    cells: list[Cell],
+    rows: list[dict[str,str]],
+    out: Path,
+    event_id: str | None = None,
+) -> tuple[dict[str,Any],dict[str,Any]]:
+    if event_id is None:
+        selected=json.loads(
+            (cache_root/'event_registry_selected_event.json').read_text())
+        if not selected.get('selected'):
+            raise AuditError('no production saddle selected')
+        event_id=selected['event_id']
+    group=[row for row in rows if row['canonical_event_id']==event_id]
     if not group: raise AuditError('selected production event has no CSV rows')
     row=group[0]; cell=find_cell_for_row(cells,row)
     saddle=Saddle(
@@ -496,7 +506,7 @@ def stage_tv4(cells: list[Cell], rows: list[dict[str,str]], capsule: dict[str,An
 
 
 def main() -> int:
-    parser=argparse.ArgumentParser(); parser.add_argument('--cache-root',type=Path,required=True); parser.add_argument('--output',type=Path,required=True); args=parser.parse_args()
+    parser=argparse.ArgumentParser(); parser.add_argument('--cache-root',type=Path,required=True); parser.add_argument('--output',type=Path,required=True); parser.add_argument('--event-id'); args=parser.parse_args()
     cache=args.cache_root.resolve(); out=args.output.resolve()
     if out.exists(): raise FileExistsError(out)
     out.mkdir(parents=True)
@@ -504,11 +514,12 @@ def main() -> int:
         tv0,cells,rows,hv=stage_tv0(cache,out/'tv0')
         tv1=stage_tv1(cells,rows,out/'tv1')
         tv2=stage_tv2(cells,out/'tv2')
-        tv3,capsule=stage_tv3(cache,cells,rows,out/'tv3')
+        tv3,capsule=stage_tv3(
+            cache,cells,rows,out/'tv3',event_id=args.event_id)
         tv4=stage_tv4(cells,rows,capsule,out/'tv4')
         stages={'tv0':tv0,'tv1':tv1,'tv2':tv2,'tv3':tv3,'tv4':tv4}
         verdict='PASS_TV0_TV4_PRODUCTION_DERIVED_THEORY_VALIDATION'
-        result={'schema':'binoc-tv0-tv4-v1','pass':True,'verdict':verdict,'cache_root':str(cache),'stages':{k:v['verdict'] for k,v in stages.items()},
+        result={'schema':'binoc-tv0-tv4-v1','pass':True,'verdict':verdict,'cache_root':str(cache),'event_id':capsule['event_id'],'stages':{k:v['verdict'] for k,v in stages.items()},
                 'scope':{'production_derived':True,'production_runtime_modified':False,'formal_global_theorem':False,'paper_scenes':False}}
         write_json(out/'summary.json',result); print(verdict); return 0
     except Exception as error:

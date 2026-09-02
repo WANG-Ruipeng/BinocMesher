@@ -161,13 +161,15 @@ def compile_at_time(
     cache_root: Path,
     exact_time: Fraction,
     required_boundary: frozenset[SourceVID] | None = None,
+    event_id: str | None = None,
 ) -> tuple[
     list[RawTriangle],
     dict[tuple[int, tuple[SourceVID, ...]], list[RawTriangle]],
     tuple[tuple[int, tuple[SourceVID, ...]], ...],
     dict[str, object],
 ]:
-    raw, trace_summary = trace_processed_triangles(cache_root, exact_time)
+    raw, trace_summary = trace_processed_triangles(
+        cache_root, exact_time, event_id=event_id)
     groups = canonical_face_groups(raw)
     face_keys = sorted(groups)
     incidence = edge_incidence(face_keys)
