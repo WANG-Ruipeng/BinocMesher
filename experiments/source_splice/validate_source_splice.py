@@ -50,7 +50,8 @@ def main() -> int:
     star8, star8_npz = load_case(runtime, 'star_omp8')
     negative = {
         name: json.loads((runtime / f'{name}.json').read_text())
-        for name in ('wrong_time', 'missing_ref', 'bad_boundary')
+        for name in (
+            'wrong_time', 'missing_ref', 'bad_boundary', 'bad_topology')
     }
     assert all(value is not None for value in (
         baseline1_npz, identity1_npz, star1_npz,
@@ -207,6 +208,10 @@ def main() -> int:
             for name in ('vertices', 'faces', 'tags')),
         'identity_audit_omp_deterministic': identity1['audit'] == identity8['audit'],
         'star_audit_omp_deterministic': star1['audit'] == star8['audit'],
+        'bad_topology_fail_closed': (
+            negative['bad_topology']['pass'] and
+            'validate_plan_topology' in negative['bad_topology']['error']
+        ),
         'wrong_time_fail_closed': (
             negative['wrong_time']['pass'] and
             'exact time does not match' in negative['wrong_time']['error']

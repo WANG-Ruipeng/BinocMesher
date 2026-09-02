@@ -428,6 +428,20 @@ def main() -> int:
         "\n".join(bad_boundary) + "\n"
     )
 
+    # Reverse one replacement face while keeping the same unoriented
+    # connectivity. The runtime must reject the resulting non-cancelling
+    # internal-edge orientations before it mutates the whole mesh.
+    bad_topology = (output / 'star.ssp1').read_text().splitlines()
+    for index, line in enumerate(bad_topology):
+        if line.startswith('FACE '):
+            fields = line.split()
+            fields[3], fields[4] = fields[4], fields[3]
+            bad_topology[index] = ' '.join(fields)
+            break
+    (output / 'bad_topology.ssp1').write_text(
+        '\n'.join(bad_topology) + '\n'
+    )
+
     boundary_interface = {
         "schema": "binoc-beb1-slice-interface-v1",
         "scope": (

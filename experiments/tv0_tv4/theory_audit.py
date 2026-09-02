@@ -664,9 +664,16 @@ def build_production_half_handle(cell: Cell, saddle: Saddle, face_side: int) -> 
         raise AuditError('selected production saddle has degenerate spatial tangents')
     tu=tu/np.linalg.norm(tu); tv=tv-tu*np.dot(tu,tv); tv=tv/np.linalg.norm(tv)
     root=float(saddle.root)
-    lows=[root-t for t in canonical_t if t<root]; highs=[t-root for t in canonical_t if t>root]
-    if len(lows)!=2 or len(highs)!=2: raise AuditError('saddle does not have two lower and two upper branches')
-    scale=max(lows+highs); lt=[-x/scale for x in lows]; ut=[x/scale for x in highs]
+    lower_branches=[(h, root-t, t) for h,t in zip(canonical_h,canonical_t) if t<root]
+    upper_branches=[(h, t-root, t) for h,t in zip(canonical_h,canonical_t) if t>root]
+    if len(lower_branches)!=2 or len(upper_branches)!=2:
+        raise AuditError('saddle does not have two lower and two upper branches')
+    scale=max(
+        [distance for _,distance,_ in lower_branches] +
+        [distance for _,distance,_ in upper_branches]
+    )
+    lt=[-distance/scale for _,distance,_ in lower_branches]
+    ut=[distance/scale for _,distance,_ in upper_branches]
     abstract=np.asarray([
         [0,0,0,0],[-1,0,0,lt[0]],[1,0,0,lt[1]],[0,-1,0,ut[0]],[0,1,0,ut[1]],
     ],dtype=float)
@@ -676,5 +683,31 @@ def build_production_half_handle(cell: Cell, saddle: Saddle, face_side: int) -> 
         vertices[i,:3]=pstar+spatial_scale*(x*tu+y*tv)
         vertices[i,3]=root+t*scale
     tets=np.asarray([(0,3,1,4),(0,3,4,2)],dtype=np.int64)
-    metadata={'critical_position':pstar.tolist(),'tangent_u':tu.tolist(),'tangent_v':tv.tolist(),'spatial_scale':spatial_scale,'time_scale':scale}
+    # Geometry is not a gluing key. Preserve the production HVID carried by
+    # every noncritical block vertex so the BEB1 compiler can separate exact
+    # ordinary source-edge trajectories from unresolved critical side seams.
+    branch_hvids = [
+        lower_branches[0][0], lower_branches[1][0],
+        upper_branches[0][0], upper_branches[1][0],
+    ]
+    branch_times = [
+        lower_branches[0][2], lower_branches[1][2],
+        upper_branches[0][2], upper_branches[1][2],
+    ]
+    metadata={
+        'critical_position':pstar.tolist(),
+        'tangent_u':tu.tolist(),
+        'tangent_v':tv.tolist(),
+        'spatial_scale':spatial_scale,
+        'time_scale':scale,
+        'block_vertex_roles':['critical'] + [
+            'lower_source_branch', 'lower_source_branch',
+            'upper_source_branch', 'upper_source_branch',
+        ],
+        'block_vertex_source_hvids':[None] + [h.text() for h in branch_hvids],
+        'block_vertex_exact_times':[
+            fraction_json(saddle.root),
+            *[fraction_json(Fraction(value,1)) for value in branch_times],
+        ],
+    }
     return vertices,tets,metadata

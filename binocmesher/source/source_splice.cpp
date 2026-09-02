@@ -1,5 +1,6 @@
 #include "source_splice.h"
 
+#include <algorithm>
 #include <cerrno>
 #include <cmath>
 #include <cstdlib>
@@ -132,6 +133,76 @@ void require_token(std::istream& input, const char* expected) {
     if (!(input >> token) || token != expected) {
         throw std::runtime_error(
             std::string("source-splice plan expected token ") + expected);
+    }
+}
+
+// SSP1 describes the complete replacement support for an element.  Therefore
+// every plan-boundary edge must be resolvable through the ordinary SourceVID
+// map; a new internal vertex on that boundary would be an undeclared
+// T-junction.  Internal edges must form an oriented two-chain and all boundary
+// vertices must form cycles before the ordinary whole mesh is modified.
+void validate_plan_topology() {
+    using EV = pair<std::int32_t, std::int32_t>;
+    using Edge = std::tuple<std::int32_t, std::int32_t, std::int32_t>;
+    using Face = std::tuple<
+        std::int32_t, std::int32_t, std::int32_t, std::int32_t>;
+    map<Edge, pair<std::int32_t, std::int32_t>> edges;
+    set<Face> faces;
+    map<EV, std::int32_t> uses;
+    map<EV, std::int32_t> boundary_degree;
+    for (const PlanFace& face : state.plan_faces) {
+        array<std::int32_t, 3> sorted_face = face.local_vertices;
+        sort(sorted_face.begin(), sorted_face.end());
+        if (!faces.emplace(
+                face.element, sorted_face[0], sorted_face[1],
+                sorted_face[2]).second) {
+            throw std::runtime_error(__func__);
+        }
+        for (std::int32_t vertex : face.local_vertices) {
+            ++uses[{face.element, vertex}];
+        }
+        for (int corner = 0; corner < 3; ++corner) {
+            const std::int32_t first = face.local_vertices[corner];
+            const std::int32_t second = face.local_vertices[(corner + 1) % 3];
+            auto& audit = edges[{
+                face.element, std::min(first, second),
+                std::max(first, second)}];
+            ++audit.first;
+            audit.second += first < second ? 1 : -1;
+        }
+    }
+    for (const auto& entry : edges) {
+        const auto& audit = entry.second;
+        if (audit.first > 2 ||
+            (audit.first == 2 && audit.second != 0)) {
+            throw std::runtime_error(__func__);
+        }
+        if (audit.first != 1) continue;
+        const std::int32_t element = std::get<0>(entry.first);
+        const std::int32_t first = std::get<1>(entry.first);
+        const std::int32_t second = std::get<2>(entry.first);
+        const auto first_vertex = state.plan_vertices.find(first);
+        const auto second_vertex = state.plan_vertices.find(second);
+        if (first_vertex == state.plan_vertices.end() ||
+            second_vertex == state.plan_vertices.end() ||
+            first_vertex->second.element != element ||
+            second_vertex->second.element != element ||
+            first_vertex->second.kind != VertexKind::source ||
+            second_vertex->second.kind != VertexKind::source) {
+            throw std::runtime_error(__func__);
+        }
+        ++boundary_degree[{element, first}];
+        ++boundary_degree[{element, second}];
+    }
+    for (const auto& entry : state.plan_vertices) {
+        const PlanVertex& vertex = entry.second;
+        const EV key{vertex.element, vertex.local_id};
+        const std::int32_t degree = boundary_degree[key];
+        if (uses.count(key) == 0 ||
+            (vertex.kind == VertexKind::source && degree != 2) ||
+            (vertex.kind == VertexKind::internal && degree != 0)) {
+            throw std::runtime_error(__func__);
+        }
     }
 }
 
@@ -348,6 +419,7 @@ void load_plan(
     if (audit != nullptr && audit[0] != '\0') {
         state.audit_path = std::filesystem::path(audit);
     }
+    validate_plan_topology();
     state.enabled = true;
 }
 

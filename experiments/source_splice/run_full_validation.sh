@@ -23,6 +23,7 @@ export OMP_NUM_THREADS=1
 export PYTHONHASHSEED=0
 git -C "$REPO" diff --check
 python3 -m compileall -q "$REPO/experiments/source_splice"
+python3 "$SELF_DIR/test_critical_beb1_event_ir.py" > "$OUTPUT/critical_beb1_event_ir_test.log" 2>&1
 bash -n "$SELF_DIR/run_source_splice.sh" "$SELF_DIR/run_full_validation.sh"
 g++ -O2 -std=c++17 -fPIC -fopenmp -Wall -Wextra -Wpedantic -Werror \
   -c "$REPO/binocmesher/source/source_splice.cpp" \
@@ -35,6 +36,7 @@ bash "$REPO/experiments/p1_p4/run_all.sh" \
 bash "$REPO/experiments/tv0_tv4/run_lightweight_tv0_tv4.sh" \
   --repo "$REPO" --output "$OUTPUT/tv0_tv4" \
   > "$OUTPUT/tv0_tv4.console.log" 2>&1
+python3 "$SELF_DIR/compile_critical_beb1_event_ir.py" --cache-root "$OUTPUT/tv0_tv4/cache" --theory-root "$OUTPUT/tv0_tv4/theory" --output "$OUTPUT/critical_beb1_event_ir.json" --expected-root 104/5 > "$OUTPUT/critical_beb1_event_ir.console.log" 2>&1
 bash "$SELF_DIR/run_source_splice.sh" \
   --repo "$REPO" --output "$OUTPUT/source_splice" \
   > "$OUTPUT/source_splice.console.log" 2>&1
@@ -44,10 +46,13 @@ from pathlib import Path
 repo=Path(sys.argv[1]); root=Path(sys.argv[2])
 p1=json.loads((root/'p1_p4/results/validation.json').read_text())
 tv=json.loads((root/'tv0_tv4/theory/summary.json').read_text())
+beb1=json.loads((root/'critical_beb1_event_ir.json').read_text())
 splice=json.loads((root/'source_splice/source_splice_validation.json').read_text())
 checks={
  'p1_p4': p1.get('pass') is True,
  'tv0_tv4': tv.get('verdict') == 'PASS_TV0_TV4_PRODUCTION_DERIVED_THEORY_VALIDATION',
+ 'critical_beb1_event_ir': beb1.get('verdict') == 'PASS_CRITICAL_BEB1_EVENT_IR',
+ 'critical_beb1_fail_closed': beb1.get('whole_mesh_splice_ready') is False and beb1.get('runtime_disposition') == 'SINGULAR_UNRESOLVED_SIDE_TRACE',
  'source_face_suppression_boundary_gluing': splice.get('pass') is True,
 }
 payload={
@@ -59,9 +64,11 @@ payload={
  'tree':subprocess.check_output(['git','-C',str(repo),'rev-parse','HEAD^{tree}'],text=True).strip(),
  'worktree_status':subprocess.check_output(['git','-C',str(repo),'status','--short'],text=True).strip(),
  'source_splice':splice,
+ 'critical_beb1_event_ir':beb1,
 }
 (root/'FULL_VALIDATION.json').write_text(json.dumps(payload,indent=2,sort_keys=True)+'\n')
 print(payload['verdict'])
 if not payload['pass']: raise SystemExit(2)
 PY
+echo PASS_CRITICAL_BEB1_EVENT_IR_FAIL_CLOSED
 echo PASS_CERTIFIED_SOURCE_SPLICE_FULL_VALIDATION

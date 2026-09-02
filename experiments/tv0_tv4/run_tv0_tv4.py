@@ -314,6 +314,19 @@ def stage_tv3(cache_root: Path, cells: list[Cell], rows: list[dict[str,str]], ou
     checks={
         'production_event_used':event_id.startswith('element='),
         'two_tetrahedra':len(tets)==2,
+        'source_labelled_block_vertices':(
+            geometry.get('block_vertex_roles') == [
+                'critical',
+                'lower_source_branch','lower_source_branch',
+                'upper_source_branch','upper_source_branch',
+            ] and
+            geometry.get('block_vertex_source_hvids',[None])[0] is None and
+            len({
+                value for value in
+                geometry.get('block_vertex_source_hvids',[])[1:]
+                if value is not None
+            }) == 4
+        ),
         'critical_link_is_disk':bool(link['is_disk']),
         'positive_physical_gram_volumes':min(volumes)>1e-12,
         'lower_slice_two_components':lower['components']==2,
