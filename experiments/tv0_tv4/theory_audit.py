@@ -603,14 +603,24 @@ def mesh_topology(vertices: np.ndarray, faces: np.ndarray) -> dict[str,int]:
 
 
 def slice_tet_complex(vertices4: np.ndarray, tets: np.ndarray, tau: float) -> tuple[np.ndarray,np.ndarray]:
-    cache: dict[tuple[int,int],int]={}; vertices=[]; faces=[]
+    cache: dict[tuple[str,int,int],int]={}; vertices=[]; faces=[]
     tet_edges=((0,1),(0,2),(0,3),(1,2),(1,3),(2,3))
     for tet in tets:
         crossing=[]
+        for raw_vertex in tet:
+            vertex=int(raw_vertex)
+            if vertices4[vertex,3] != tau:
+                continue
+            key=('v',vertex,-1)
+            if key not in cache:
+                cache[key]=len(vertices)
+                vertices.append(vertices4[vertex,:3].copy())
+            crossing.append(cache[key])
         for ea,eb in tet_edges:
             ia,ib=int(tet[ea]),int(tet[eb]); ta,tb=vertices4[ia,3],vertices4[ib,3]
             if (ta<tau<tb) or (tb<tau<ta):
-                key=tuple(sorted((ia,ib)))
+                first,second=sorted((ia,ib))
+                key=('e',first,second)
                 if key not in cache:
                     w=(tau-ta)/(tb-ta)
                     cache[key]=len(vertices); vertices.append((1-w)*vertices4[ia,:3]+w*vertices4[ib,:3])
@@ -641,11 +651,66 @@ def critical_link_audit(tets: np.ndarray, critical=0) -> dict[str,Any]:
     for a,b,c in faces:
         for x,y in ((a,b),(b,c),(c,a)): edges[tuple(sorted((x,y)))]+=1
     boundary=[e for e,n in edges.items() if n==1]
+    chi=len(verts)-len(edges)+len(faces)
+    boundary_count=len(boundary)
     return {
         'vertices':len(verts),'edges':len(edges),'faces':len(faces),
-        'chi':len(verts)-len(edges)+len(faces),
-        'boundary_edges':len(boundary),'nonmanifold_edges':sum(n>2 for n in edges.values()),
-        'is_disk':len(verts)-len(edges)+len(faces)==1 and len(boundary)==4 and not any(n>2 for n in edges.values()),
+        'chi':chi,
+        'boundary_edges':boundary_count,'nonmanifold_edges':sum(n>2 for n in edges.values()),
+        'is_disk':chi==1 and boundary_count>0 and not any(n>2 for n in edges.values()),
+        'is_sphere':chi==2 and boundary_count==0 and not any(n>2 for n in edges.values()),
+    }
+
+
+def complete_production_event_star(
+    tets: np.ndarray,
+    critical: int = 0,
+) -> tuple[np.ndarray,dict[str,Any]]:
+    '''Complete the two-tet relative BEB1 kernel to one closed event star.
+
+    The TV3 half-handle is the cone over two adjacent faces of the tetrahedron
+    on its four source branches.  The other two branch faces are forced: their
+    cones are the unique no-new-vertex completion whose critical link is the
+    boundary of that tetrahedron.  Consequently every face containing the
+    critical vertex is paired and the only boundary faces are source-labelled.
+    '''
+    rows=[tuple(int(value) for value in row) for row in np.asarray(tets)]
+    if len(rows)!=2 or any(critical not in row for row in rows):
+        raise AuditError('BEB1 completion requires two critical tetrahedra')
+    branches=sorted({value for row in rows for value in row if value!=critical})
+    if len(branches)!=4:
+        raise AuditError('BEB1 completion requires exactly four source branches')
+    existing={tuple(sorted(value for value in row if value!=critical)) for row in rows}
+    sphere_faces={tuple(face) for face in itertools.combinations(branches,3)}
+    if len(existing)!=2 or not existing<sphere_faces:
+        raise AuditError('BEB1 half-handle is not a two-face branch disk')
+    complement=sorted(sphere_faces-existing)
+    if len(complement)!=2:
+        raise AuditError('BEB1 branch-disk complement is not two faces')
+    completed=np.asarray(
+        rows+[tuple([critical,*face]) for face in complement],
+        dtype=np.int64)
+    facet_counts=collections.Counter(
+        tuple(sorted(face))
+        for tet in completed
+        for face in itertools.combinations(map(int,tet),3)
+    )
+    boundary=sorted(face for face,count in facet_counts.items() if count==1)
+    internal=sorted(face for face,count in facet_counts.items() if count==2)
+    if any(count>2 for count in facet_counts.values()):
+        raise AuditError('completed BEB1 event star has a nonmanifold face')
+    if any(critical in face for face in boundary):
+        raise AuditError('completed BEB1 event star leaves a critical side face')
+    link=critical_link_audit(completed,critical)
+    if not link['is_sphere']:
+        raise AuditError('completed BEB1 critical link is not a sphere')
+    return completed,{
+        'completion_kind':'STELLAR_BRANCH_TETRAHEDRON',
+        'added_tetrahedra':[list(map(int,[critical,*face])) for face in complement],
+        'boundary_faces':[list(map(int,face)) for face in boundary],
+        'internal_faces':[list(map(int,face)) for face in internal],
+        'critical_link':link,
+        'critical_side_faces_remaining':sum(critical in face for face in boundary),
     }
 
 
@@ -672,20 +737,8 @@ def build_production_half_handle(cell: Cell, saddle: Saddle, face_side: int) -> 
         [distance for _,distance,_ in lower_branches] +
         [distance for _,distance,_ in upper_branches]
     )
-    lt=[-distance/scale for _,distance,_ in lower_branches]
-    ut=[distance/scale for _,distance,_ in upper_branches]
-    abstract=np.asarray([
-        [0,0,0,0],[-1,0,0,lt[0]],[1,0,0,lt[1]],[0,-1,0,ut[0]],[0,1,0,ut[1]],
-    ],dtype=float)
     spatial_scale=max(1e-3,float(np.mean([np.linalg.norm(p[(i+1)%4]-p[i]) for i in range(4)]))/2)
     vertices=np.zeros((5,4),dtype=float)
-    for i,(x,y,z,t) in enumerate(abstract):
-        vertices[i,:3]=pstar+spatial_scale*(x*tu+y*tv)
-        vertices[i,3]=root+t*scale
-    tets=np.asarray([(0,3,1,4),(0,3,4,2)],dtype=np.int64)
-    # Geometry is not a gluing key. Preserve the production HVID carried by
-    # every noncritical block vertex so the BEB1 compiler can separate exact
-    # ordinary source-edge trajectories from unresolved critical side seams.
     branch_hvids = [
         lower_branches[0][0], lower_branches[1][0],
         upper_branches[0][0], upper_branches[1][0],
@@ -694,7 +747,17 @@ def build_production_half_handle(cell: Cell, saddle: Saddle, face_side: int) -> 
         lower_branches[0][2], lower_branches[1][2],
         upper_branches[0][2], upper_branches[1][2],
     ]
+    # Whole-mesh gluing needs both exact source identity and the corresponding
+    # production geometry.  The former abstract tangent-frame coordinates were
+    # useful for a local combinatorial witness but could not certify beta_e.
+    vertices[0,:3]=pstar
+    vertices[0,3]=root
+    for index,(hvid,time) in enumerate(zip(branch_hvids,branch_times),start=1):
+        vertices[index,:3]=position_by_h[hvid]
+        vertices[index,3]=time
+    tets=np.asarray([(0,3,1,4),(0,3,4,2)],dtype=np.int64)
     metadata={
+        'geometry_kind':'PRODUCTION_SOURCE_HVID_SPACETIME',
         'critical_position':pstar.tolist(),
         'tangent_u':tu.tolist(),
         'tangent_v':tv.tolist(),

@@ -48,51 +48,78 @@ Expected final marker:
 PASS_CERTIFIED_SOURCE_SPLICE_FULL_VALIDATION
 ```
 
-Scope: this validates a real event-star source patch at an exact event-free
-rational probe.  The next step is to feed a certified TV3/BEB1 critical-time
-slice through the same source-boundary interface.  This experiment does not yet
-claim production endpoint blocks, a natural mixed batch, or an arbitrary global
-gluing theorem.
+The event-free identity/subdivision campaign remains as a regression seam.  The
+full wrapper additionally compiles and runs the production-selected critical
+event at exact time `104/5`.  It does not claim production endpoint blocks, a
+natural mixed batch, or an arbitrary global gluing theorem.
 
 ## Critical BEB1 admission compiler
 
-The first critical-time integration stage is intentionally fail-closed.  After
-TV0--TV4 has produced a fresh cache and theory directory, run:
+After TV0--TV4 has produced a fresh cache and theory directory, compile the
+closed event star and its SSP1 plan with:
 
 ```bash
 python3 experiments/source_splice/compile_critical_beb1_event_ir.py \
   --cache-root /tmp/tv0-tv4/cache \
   --theory-root /tmp/tv0-tv4/theory \
   --output /tmp/critical-beb1-event-ir.json \
-  --expected-root 104/5
+  --plan-output /tmp/critical-beb1.ssp1 \
+  --expected-root 104/5 \
+  --require-whole-mesh-ready
 ```
 
 The compiler independently ties the selected registry batch to the TV3
-two-tetrahedron block, reconstructs exact lower/critical/upper slices, and
-labels every block-slice vertex by source provenance.  The current TV3 object
-is a relative half-handle, so its critical side seams are reported explicitly:
+two-tetrahedron relative half-handle.  It then:
+
+1. completes the critical link disk to the four-tetrahedron core sphere;
+2. proves that the four former critical side edges are internal;
+3. extracts the same closed ordinary source patch at lower/root/upper times;
+4. freezes its four SourceVID trajectories as the prescribed affine side trace
+   `S_B`;
+5. builds an explicit double mapping cylinder with 15 spacetime vertices and
+   24 tetrahedra from the lower disk through the critical four-face fan to the
+   upper disk;
+6. audits positive 4D Gram volumes, relative 3-manifold incidence, a
+   16-triangle side wall disjoint from all three disk centers, and an internal
+   root critical vertex; and
+7. emits SSP1 only when every boundary, geometry, and mapping-cylinder audit
+   passes.
+
+Successful admission prints:
 
 ```text
 PASS_CRITICAL_BEB1_EVENT_IR
-SINGULAR_UNRESOLVED_SIDE_TRACE
+READY_FOR_WHOLE_MESH_SPLICE
 ```
 
-This is not a whole-mesh success marker.  Passing
-`--require-whole-mesh-ready` makes the command fail until event-star closure
-cancels every internal side seam and all remaining patch boundary edges are
-ordinary SourceVID trajectories.  SSP1 also rejects malformed replacement
-plans whose boundary contains internal vertices, whose internal orientations
-do not cancel, or whose edge/face incidence is nonmanifold.
+The full wrapper next runs the emitted plan at exact `104/5` with OMP 1 and 8.
+It requires exact-once source suppression, four reused ordinary boundary IDs,
+one internal critical vertex, four replacement faces, unchanged outside
+oriented faces and global topology, and no new external intersection partner.
+Only then does it print:
 
-For the current 104/5 witness the labelled half-handle has four unresolved
-critical side edges in each of K-minus, K-zero, and K-plus.  Its direct
-source-edge boundary agrees with the production face trace on the lower probe
-but not on the upper probe.  This is machine-recorded evidence that TV3 is
-still a relative half-handle and must not be emitted as a finished global
-patch.
+```text
+PASS_CRITICAL_BEB1_EVENT_STAR_CLOSURE
+PASS_CRITICAL_BEB1_WHOLE_MESH_SPLICE
+```
+
+The original relative half-handle and its four unresolved side edges remain in
+the Event IR as an explicit before-closure witness; they are not exposed as the
+replacement boundary.  The full production closure is globally a
+disk-to-disk local retriangulation: the relative seed's two-component-to-one
+transition is not promoted to a whole-mesh topology-change claim.  SSP1 also
+rejects malformed plans whose boundary
+contains internal vertices, whose internal orientations do not cancel, or
+whose edge/face incidence is nonmanifold.
 
 The small exact-combinatorics regression does not need a production cache:
 
 ```bash
 python3 experiments/source_splice/test_critical_beb1_event_ir.py
+```
+
+Expected marker:
+
+```text
+PASS_CRITICAL_BEB1_EVENT_STAR_CLOSURE_COMBINATORICS
 ```

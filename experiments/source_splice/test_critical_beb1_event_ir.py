@@ -14,9 +14,15 @@ if str(SELF_DIR) not in sys.path:
 
 from compile_critical_beb1_event_ir import (
     block_source_boundary_segments,
+    build_event_star_mapping_cylinder,
+    build_whole_mesh_patch_slice,
+    patch_boundary_segments,
     registry_face_trace,
+    side_trace_affine_audit,
     slice_block,
 )
+from processed_mesh import HVID, SourceVID
+from theory_audit import complete_production_event_star
 
 
 def main() -> int:
@@ -47,12 +53,28 @@ def main() -> int:
             vertices4, tets, exact_times, sources,
             Fraction(1, 2), 'fixture'),
     }
+    event_star_tets, completion = complete_production_event_star(tets)
+    complement_tets = np.asarray(
+        completion['added_tetrahedra'], dtype=np.int64)
+    completed_slices = {
+        name: slice_block(
+            vertices4, event_star_tets, exact_times, sources, tau, 'fixture')
+        for name, tau in (
+            ('lower', Fraction(-1, 2)),
+            ('critical', Fraction(0)),
+            ('upper', Fraction(1, 2)),
+        )
+    }
 
     production_root = Fraction(104, 5)
     production_epsilon = Fraction(2, 5)
-    production_vertices = vertices4.copy()
-    production_vertices[:, 3] = [
-        float(production_root), 16.0, 20.0, 22.0, 24.0]
+    production_vertices = np.asarray([
+        [-1.181640625, 8.8515625, 0.0, float(production_root)],
+        [-1.611328125, 8.59375, 0.0, 16.0],
+        [-1.07421875, 9.130859375, 0.0, 20.0],
+        [-1.07421875, 8.59375, 0.0, 22.0],
+        [-1.611328125, 8.59375, 0.0, 24.0],
+    ])
     production_times = [
         production_root, Fraction(16), Fraction(20),
         Fraction(22), Fraction(24),
@@ -74,6 +96,25 @@ def main() -> int:
             ('upper', production_root + production_epsilon),
         )
     }
+    production_completed = {
+        name: slice_block(
+            production_vertices, event_star_tets, production_times,
+            production_sources, tau, 'production-fixture')
+        for name, tau in (
+            ('lower', production_root - production_epsilon),
+            ('critical', production_root),
+            ('upper', production_root + production_epsilon),
+        )
+    }
+    production_complement = {
+        name: slice_block(
+            production_vertices, complement_tets, production_times,
+            production_sources, tau, 'production-fixture')
+        for name, tau in (
+            ('lower', production_root - production_epsilon),
+            ('upper', production_root + production_epsilon),
+        )
+    }
     production_traces = {
         name: registry_face_trace([row], tau)
         for name, tau in (
@@ -81,6 +122,82 @@ def main() -> int:
             ('upper', production_root + production_epsilon),
         )
     }
+
+    # Exact outer boundary recovered by the already validated 102/5 source
+    # patch.  Unlike the four-branch critical core it contains 321:8, proving
+    # that S_B must be frozen from the ordinary event star rather than guessed
+    # from the local half-handle.
+    outer_cycle = (
+        SourceVID.canonical(HVID(7, 10), HVID(321, 8)),
+        SourceVID.canonical(HVID(7, 10), HVID(325, 8)),
+        SourceVID.canonical(HVID(155, 8), HVID(325, 8)),
+        SourceVID.canonical(HVID(155, 8), HVID(243, 0)),
+    )
+    hvid_geometry = {
+        HVID(7, 10): (np.asarray([-1.07421875, 8.59375, 0.0]), Fraction(22)),
+        HVID(321, 8): (np.asarray([-1.07421875, 8.59375, 0.0]), Fraction(18)),
+        HVID(325, 8): (np.asarray([-1.07421875, 9.130859375, 0.0]), Fraction(20)),
+        HVID(155, 8): (np.asarray([-1.611328125, 8.59375, 0.0]), Fraction(24)),
+        HVID(243, 0): (np.asarray([-1.611328125, 8.59375, 0.0]), Fraction(16)),
+    }
+
+    def source_position(vertex: SourceVID, tau: Fraction) -> np.ndarray:
+        first_position, first_time = hvid_geometry[vertex.first]
+        second_position, second_time = hvid_geometry[vertex.second]
+        weight = float((tau - first_time) / (second_time - first_time))
+        return (1.0 - weight) * first_position + weight * second_position
+
+    outer_patches = {}
+    outer_runtime = {}
+    for name, tau in (
+        ('lower', production_root - production_epsilon),
+        ('critical', production_root),
+        ('upper', production_root + production_epsilon),
+    ):
+        positions = {
+            vertex: source_position(vertex, tau) for vertex in outer_cycle
+        }
+        runtime = {
+            'cycle': outer_cycle,
+            'positions': positions,
+            'in_view': {vertex: False for vertex in outer_cycle},
+            'faces': (
+                (outer_cycle[0], outer_cycle[1], outer_cycle[2]),
+                (outer_cycle[0], outer_cycle[2], outer_cycle[3]),
+            ),
+        }
+        patch = {
+            'time': {
+                'numerator': tau.numerator, 'denominator': tau.denominator},
+            'boundary_segments': patch_boundary_segments(outer_cycle),
+            'boundary_positions': {
+                vertex.text(): positions[vertex].tolist()
+                for vertex in outer_cycle
+            },
+        }
+        outer_patches[name] = patch
+        outer_runtime[name] = runtime
+    side_trace = side_trace_affine_audit(
+        outer_patches, {
+            'lower': production_root - production_epsilon,
+            'critical': production_root,
+            'upper': production_root + production_epsilon,
+        })
+    whole_root = build_whole_mesh_patch_slice(
+        outer_patches['critical'], outer_runtime['critical'],
+        'production-fixture',
+        np.asarray([-1.181640625, 8.8515625, 0.0]))
+    mapping_cylinder = build_event_star_mapping_cylinder(
+        outer_patches,
+        outer_runtime,
+        {
+            'lower': production_root - production_epsilon,
+            'critical': production_root,
+            'upper': production_root + production_epsilon,
+        },
+        'production-fixture',
+        np.asarray([-1.181640625, 8.8515625, 0.0]),
+    )
 
     lower = slices['lower']['topology']
     critical = slices['critical']['topology']
@@ -130,13 +247,75 @@ def main() -> int:
             block_source_boundary_segments(production_slices['upper']) !=
             production_traces['upper']['canonical_segments']
         ),
+        'complement_supplies_upper_registry_interface': (
+            block_source_boundary_segments(production_complement['upper']) ==
+            production_traces['upper']['canonical_segments']
+        ),
+        'critical_link_disk_completed_to_sphere': (
+            completion['critical_link']['is_sphere'] is True and
+            completion['critical_side_faces_remaining'] == 0
+        ),
+        'completed_event_star_has_four_tetrahedra': (
+            event_star_tets.shape == (4, 4)
+        ),
+        'completed_slices_are_disks': all(
+            value['topology']['components'] == 1 and
+            value['topology']['chi'] == 1 and
+            value['topology']['boundary_loops'] == 1 and
+            value['topology']['boundary_edges'] == 4
+            for value in completed_slices.values()
+        ),
+        'four_critical_side_edges_eliminated': all(
+            value['source_boundary_complete'] and
+            not value['unresolved_boundary_edges']
+            for value in completed_slices.values()
+        ),
+        'completed_boundary_is_source_quadrilateral': all(
+            len(block_source_boundary_segments(value)) == 4
+            for value in production_completed.values()
+        ),
+        'ordinary_side_trace_is_fixed_and_affine': (
+            side_trace['regular'] is True and
+            side_trace['affine_trajectory_error'] <=
+            side_trace['tolerance']
+        ),
+        'ordinary_side_trace_is_not_core_boundary_guess': (
+            outer_patches['critical']['boundary_segments'] !=
+            block_source_boundary_segments(production_completed['critical'])
+        ),
+        'whole_mesh_root_fan_is_nondegenerate_disk': (
+            whole_root['topology']['components'] == 1 and
+            whole_root['topology']['chi'] == 1 and
+            whole_root['topology']['boundary_edges'] == 4 and
+            whole_root['topology']['boundary_loops'] == 1 and
+            whole_root['minimum_double_area'] > 1e-12 and
+            whole_root['orientation_coherent'] and
+            len(whole_root['faces']) == 4 and
+            whole_root['source_boundary_complete']
+        ),
+        'explicit_event_star_mapping_cylinder_passes': (
+            mapping_cylinder['pass'] is True and
+            mapping_cylinder['verdict'] ==
+            'PASS_BEB1_DOUBLE_MAPPING_CYLINDER' and
+            len(mapping_cylinder['vertices4']) == 15 and
+            len(mapping_cylinder['tetrahedra']) == 24 and
+            mapping_cylinder['minimum_gram_volume'] > 1e-12 and
+            mapping_cylinder[
+                'volume_audit']['valid_relative_3_manifold'] is True and
+            len(mapping_cylinder['side_trace_faces']) == 16 and
+            mapping_cylinder['checks'][
+                'side_trace_avoids_all_centers'] is True and
+            mapping_cylinder['checks'][
+                'middle_critical_vertex_not_on_boundary'] is True and
+            mapping_cylinder['critical_side_edges_remaining'] == 0
+        ),
     }
     if not all(checks.values()):
         for name, passed in checks.items():
             if not passed:
                 print('FAILED:', name)
         return 2
-    print('PASS_CRITICAL_BEB1_EVENT_IR_COMBINATORICS')
+    print('PASS_CRITICAL_BEB1_EVENT_STAR_CLOSURE_COMBINATORICS')
     return 0
 
 

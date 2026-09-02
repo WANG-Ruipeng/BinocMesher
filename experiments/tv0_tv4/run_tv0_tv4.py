@@ -18,7 +18,8 @@ import numpy as np
 from theory_audit import (
     AuditError, Cell, HVID, Saddle, TEMPORAL_FACE_SLOTS,
     admissible_saddle, build_production_half_handle, canonical_cycle,
-    critical_link_audit, exact_schedule, face_segments, fraction_json,
+    complete_production_event_star, critical_link_audit, exact_schedule,
+    face_segments, fraction_json,
     graph_signature, make_cells, mesh_topology, parse_hypervertices,
     parse_hvid, parse_registry, parse_source_records, quotient_signature,
     registry_saddles, sha256_json, slice_tet_complex, source_record_dict,
@@ -377,6 +378,46 @@ def stage_tv4(cells: list[Cell], rows: list[dict[str,str]], capsule: dict[str,An
     lv,lf=slice_tet_complex(block_vertices,block_tets,float(root)-float(delta)/2)
     uv,uf=slice_tet_complex(block_vertices,block_tets,float(root)+float(delta)/2)
     lower_top=mesh_topology(lv,lf); upper_top=mesh_topology(uv,uf)
+    event_star_tets,event_star_completion=complete_production_event_star(block_tets)
+    event_star_volumes=[
+        tet_gram_volume(block_vertices,tet) for tet in event_star_tets]
+    star_lv,star_lf=slice_tet_complex(
+        block_vertices,event_star_tets,float(root)-float(delta)/2)
+    star_cv,star_cf=slice_tet_complex(
+        block_vertices,event_star_tets,float(root))
+    star_uv,star_uf=slice_tet_complex(
+        block_vertices,event_star_tets,float(root)+float(delta)/2)
+    star_lower=mesh_topology(star_lv,star_lf)
+    star_critical=mesh_topology(star_cv,star_cf)
+    star_upper=mesh_topology(star_uv,star_uf)
+    event_star_capsule={
+        'schema':'binoc-tv4-completed-event-core-v1',
+        'event_id':event_id,
+        'root':capsule['root'],
+        'vertices4':capsule['vertices4'],
+        'block_vertex_source_hvids':capsule['geometry']['block_vertex_source_hvids'],
+        'block_vertex_exact_times':capsule['geometry']['block_vertex_exact_times'],
+        'relative_half_handle_tets':capsule['tets'],
+        'event_star_tets':event_star_tets.tolist(),
+        'completion':event_star_completion,
+        'tetrahedron_gram_volumes':event_star_volumes,
+        'core_boundary_candidate':{
+            'kind':'SOURCE_BRANCH_TETRAHEDRON_BOUNDARY',
+            'faces':event_star_completion['boundary_faces'],
+            'critical_vertex_incident_faces':0,
+            'source_hvid_vertices':[1,2,3,4],
+        },
+        'lower_slice':star_lower,
+        'critical_slice':star_critical,
+        'upper_slice':star_upper,
+    }
+    write_json(out/'event_star_capsule.json',event_star_capsule)
+    np.savez_compressed(
+        out/'event_star_block.npz',
+        vertices4=block_vertices,tets=event_star_tets,
+        lower_vertices=star_lv,lower_faces=star_lf,
+        critical_vertices=star_cv,critical_faces=star_cf,
+        upper_vertices=star_uv,upper_faces=star_uf)
     nonincident_pairs=0
     for i,j in itertools.combinations(range(len(block_tets)),2):
         if set(block_tets[i]).isdisjoint(set(block_tets[j])): nonincident_pairs+=1
@@ -424,6 +465,15 @@ def stage_tv4(cells: list[Cell], rows: list[dict[str,str]], capsule: dict[str,An
         'global_duplicate_faces_zero':lower_top['duplicate_faces']==0 and upper_top['duplicate_faces']==0,
         'expected_component_transition':lower_top['components']==2 and upper_top['components']==1,
         'nonincident_tet_pairs_zero':nonincident_pairs==0,
+        'completed_event_core_four_tetrahedra':len(event_star_tets)==4,
+        'completed_critical_link_is_sphere':event_star_completion['critical_link']['is_sphere'],
+        'completed_critical_side_faces_zero':event_star_completion['critical_side_faces_remaining']==0,
+        'completed_event_core_positive_gram_volumes':min(event_star_volumes)>1e-12,
+        'completed_event_core_regular_disk_slices':all(
+            value['components']==1 and value['chi']==1 and
+            value['boundary_loops']==1 and value['boundary_edges']==4 and
+            value['nonmanifold_edges']==0 and value['duplicate_faces']==0
+            for value in (star_lower,star_critical,star_upper)),
     }
     summary={'schema':'binoc-tv4-v1','verdict':'PASS_TV4_PRODUCTION_DERIVED_OFFLINE_GLOBAL_SPLICE' if all(checks.values()) else 'STOP_TV4_PRODUCTION_DERIVED_OFFLINE_GLOBAL_SPLICE',
              'checks':checks,'event_id':event_id,'raw_observations':len(raw_ids),'logical_incidences':len(logical_ids),
@@ -431,8 +481,15 @@ def stage_tv4(cells: list[Cell], rows: list[dict[str,str]], capsule: dict[str,An
              'lower_boundary_hash':next(iter(lower_boundaries)) if len(lower_boundaries)==1 else None,
              'upper_boundary_hash':next(iter(upper_boundaries)) if len(upper_boundaries)==1 else None,
              'lower_slice':lower_top,'upper_slice':upper_top,'shared_blocks':1,'nonincident_tet_pairs':nonincident_pairs,
+             'completed_event_core':{
+                 'tetrahedra':len(event_star_tets),
+                 'minimum_gram_volume':min(event_star_volumes),
+                 'critical_link':event_star_completion['critical_link'],
+                 'critical_side_faces_remaining':event_star_completion['critical_side_faces_remaining'],
+                 'lower_slice':star_lower,'critical_slice':star_critical,'upper_slice':star_upper,
+             },
              'baseline_source_cells':len(baseline_manifest),'event_star_cells':len(selected_cell_ids),'outside_changed_cells':len(outside_changed),
-             'scope':'offline shared block ownership/splice over a production-derived connected event; production run_slicing remains unchanged'}
+             'scope':'offline four-tetrahedron critical-core closure over a production-derived connected event; the source-prescribed outer S_B is compiled from ordinary whole-mesh traces downstream'}
     write_json(out/'tv4_summary.json',summary)
     if not all(checks.values()): raise AuditError(summary['verdict'])
     return summary

@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-'''Compile the selected production saddle into a source-labelled BEB1 Event IR.
+'''Compile the selected production saddle into a closed BEB1 Event IR.
 
-This is deliberately an admission compiler, not a coordinate-welding shim.
-It labels every one-sided slice vertex of the TV3 tetrahedral half-handle as
-either an ordinary source-edge trajectory or an unresolved critical side
-seam.  A whole-mesh SSP1 plan is admissible only when every boundary edge is
-source-resolved after event-star closure.
+TV3 supplies one relative two-tetrahedron half-handle.  This compiler completes
+its branch-link disk to a sphere with the forced complementary two tetrahedra,
+freezes the source-labelled side trace S_B, and compares all one-sided/root
+boundaries with the ordinary whole-mesh patch.  It then constructs an explicit
+double mapping cylinder over those three disks.  SSP1 is emitted only after
+that relative 3-manifold has positive 4D Gram volumes, the critical side seams
+are internal, and every external edge is a SourceVID.
 '''
 from __future__ import annotations
 
@@ -23,9 +25,23 @@ import numpy as np
 TV_DIR = Path(__file__).resolve().parents[1] / 'tv0_tv4'
 if str(TV_DIR) not in sys.path:
     sys.path.insert(0, str(TV_DIR))
+P1_REFERENCE_DIR = Path(__file__).resolve().parents[1] / 'p1_p4' / 'reference'
+if str(P1_REFERENCE_DIR) not in sys.path:
+    sys.path.insert(0, str(P1_REFERENCE_DIR))
 
-from theory_audit import face_segments, mesh_topology  # type: ignore
+from theory_audit import (  # type: ignore
+    complete_production_event_star,
+    face_segments,
+    mesh_topology,
+)
 from processed_mesh import selected_event_rows
+from compile_splice_plans import (
+    compile_at_time,
+    directed_boundary_cycle,
+    representative_positions,
+    write_plan,
+)
+from event_complex import audit_volume
 
 
 TET_EDGES = ((0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3))
@@ -157,6 +173,408 @@ def block_source_boundary_segments(
     return sorted(segments)
 
 
+def patch_boundary_segments(cycle: Any) -> list[list[str]]:
+    return sorted([
+        list(canonical_segment(
+            cycle[index].text(),
+            cycle[(index + 1) % len(cycle)].text()))
+        for index in range(len(cycle))
+    ])
+
+
+def compile_ordinary_patch(
+    cache_root: Path,
+    tau: Fraction,
+    required_boundary: frozenset[Any] | None = None,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    raw, groups, selected, trace = compile_at_time(
+        cache_root, tau, required_boundary=required_boundary)
+    faces = (selected[0][1], selected[1][1])
+    cycle = directed_boundary_cycle(faces)
+    positions, in_view = representative_positions(groups, selected)
+    suppressions = sorted({
+        triangle.reference
+        for key in selected
+        for triangle in groups[key]
+    })
+    payload = {
+        'time': fraction_json(tau),
+        'element': selected[0][0],
+        'boundary_cycle': [vertex.text() for vertex in cycle],
+        'boundary_segments': patch_boundary_segments(cycle),
+        'boundary_positions': {
+            vertex.text(): positions[vertex].tolist() for vertex in cycle
+        },
+        'boundary_in_view': {
+            vertex.text(): bool(in_view[vertex]) for vertex in cycle
+        },
+        'source_faces': [
+            [vertex.text() for vertex in face] for face in faces
+        ],
+        'raw_suppression_count': len(suppressions),
+        'trace': trace,
+    }
+    runtime = {
+        'cycle': cycle,
+        'positions': positions,
+        'in_view': in_view,
+        'suppressions': suppressions,
+        'faces': faces,
+        'element': selected[0][0],
+    }
+    return payload, runtime
+
+
+def source_position_map(block_slice: dict[str, Any]) -> dict[str, np.ndarray]:
+    result: dict[str, np.ndarray] = {}
+    for vertex in block_slice['vertices']:
+        label = vertex['label']
+        if label['kind'] != 'source_vid':
+            continue
+        position = np.asarray(vertex['position'], dtype=np.float64)
+        previous = result.get(label['id'])
+        if previous is not None and np.linalg.norm(previous - position) > 1e-10:
+            raise RuntimeError(
+                'event-star SourceVID has inconsistent slice positions')
+        result[label['id']] = position
+    return result
+
+
+def patch_position_agreement(
+    block_slice: dict[str, Any],
+    patch: dict[str, Any],
+) -> dict[str, Any]:
+    block_positions = source_position_map(block_slice)
+    patch_positions = {
+        key: np.asarray(value, dtype=np.float64)
+        for key, value in patch['boundary_positions'].items()
+    }
+    common = sorted(set(block_positions) & set(patch_positions))
+    errors = {
+        key: float(np.linalg.norm(block_positions[key] - patch_positions[key]))
+        for key in common
+    }
+    scale = max(
+        [1.0] +
+        [float(np.linalg.norm(value)) for value in block_positions.values()] +
+        [float(np.linalg.norm(value)) for value in patch_positions.values()])
+    tolerance = 1e-7 * scale
+    return {
+        'same_source_vids': set(block_positions) == set(patch_positions),
+        'maximum_position_error': max(errors.values(), default=0.0),
+        'tolerance': tolerance,
+        'agrees': (
+            set(block_positions) == set(patch_positions) and
+            max(errors.values(), default=0.0) <= tolerance
+        ),
+    }
+
+
+def build_whole_mesh_patch_slice(
+    patch: dict[str, Any],
+    runtime: dict[str, Any],
+    event_id: str,
+    critical_position: np.ndarray | None = None,
+) -> dict[str, Any]:
+    cycle = runtime['cycle']
+    local = {vertex: index for index, vertex in enumerate(cycle)}
+    positions = [
+        np.asarray(runtime['positions'][vertex], dtype=np.float64)
+        for vertex in cycle
+    ]
+    labels = [
+        {'kind': 'source_vid', 'id': vertex.text()} for vertex in cycle
+    ]
+    if critical_position is None:
+        faces = [
+            tuple(local[vertex] for vertex in face)
+            for face in runtime['faces']
+        ]
+    else:
+        center = len(positions)
+        positions.append(np.asarray(critical_position, dtype=np.float64))
+        labels.append({'kind': 'critical', 'id': 'critical:' + event_id})
+        faces = [
+            (index, (index + 1) % len(cycle), center)
+            for index in range(len(cycle))
+        ]
+    edge_counts: collections.Counter[tuple[int, int]] = collections.Counter()
+    for face in faces:
+        for first, second in ((0, 1), (1, 2), (2, 0)):
+            edge_counts[tuple(sorted((face[first], face[second])))] += 1
+    boundary = [
+        edge for edge, count in sorted(edge_counts.items()) if count == 1
+    ]
+    minimum_area2 = min(
+        float(np.linalg.norm(np.cross(
+            positions[face[1]] - positions[face[0]],
+            positions[face[2]] - positions[face[0]])))
+        for face in faces
+    )
+    reference_faces = [
+        tuple(local[vertex] for vertex in face)
+        for face in runtime['faces']
+    ]
+    reference_normal = sum((
+        np.cross(
+            positions[face[1]] - positions[face[0]],
+            positions[face[2]] - positions[face[0]])
+        for face in reference_faces
+    ), start=np.zeros(3, dtype=np.float64))
+    orientation_dots = [
+        float(np.dot(
+            np.cross(
+                positions[face[1]] - positions[face[0]],
+                positions[face[2]] - positions[face[0]]),
+            reference_normal))
+        for face in faces
+    ]
+    orientation_tolerance = 1e-12 * max(
+        1.0, float(np.dot(reference_normal, reference_normal)))
+    position_array = np.asarray(positions, dtype=np.float64)
+    face_array = np.asarray(faces, dtype=np.int64)
+    return {
+        'time': patch['time'],
+        'vertices': [
+            {
+                'index': index,
+                'position': position.tolist(),
+                'label': labels[index],
+            }
+            for index, position in enumerate(positions)
+        ],
+        'faces': [list(face) for face in faces],
+        'topology': mesh_topology(position_array, face_array),
+        'minimum_double_area': minimum_area2,
+        'orientation_reference_normal': reference_normal.tolist(),
+        'orientation_dots': orientation_dots,
+        'orientation_coherent': (
+            float(np.linalg.norm(reference_normal)) > 1e-12 and
+            min(orientation_dots) > orientation_tolerance
+        ),
+        'boundary_edges': [
+            {
+                'vertices': list(edge),
+                'labels': [labels[edge[0]], labels[edge[1]]],
+                'classification': 'ordinary_source_boundary',
+            }
+            for edge in boundary
+        ],
+        'unresolved_boundary_edges': [],
+        'source_boundary_complete': True,
+    }
+
+
+def side_trace_affine_audit(
+    patches: dict[str, Any],
+    probes: dict[str, Fraction],
+) -> dict[str, Any]:
+    if set(patches) != set(probes):
+        return {
+            'same_boundary_segments': False,
+            'same_boundary_vertices': False,
+            'affine_trajectory_error': None,
+            'tolerance': None,
+            'regular': False,
+        }
+    segments = {
+        tuple(tuple(segment) for segment in patch['boundary_segments'])
+        for patch in patches.values()
+    }
+    vertex_sets = {
+        tuple(sorted(patch['boundary_positions']))
+        for patch in patches.values()
+    }
+    same_segments = len(segments) == 1
+    same_vertices = len(vertex_sets) == 1
+    errors: dict[str, float] = {}
+    tolerance: float | None = None
+    if same_vertices:
+        denominator = probes['upper'] - probes['lower']
+        weight = float(
+            (probes['critical'] - probes['lower']) / denominator)
+        scale = 1.0
+        for vertex in next(iter(vertex_sets)):
+            lower = np.asarray(
+                patches['lower']['boundary_positions'][vertex], dtype=float)
+            critical = np.asarray(
+                patches['critical']['boundary_positions'][vertex], dtype=float)
+            upper = np.asarray(
+                patches['upper']['boundary_positions'][vertex], dtype=float)
+            expected = (1.0 - weight) * lower + weight * upper
+            errors[vertex] = float(np.linalg.norm(critical - expected))
+            scale = max(
+                scale, float(np.linalg.norm(lower)),
+                float(np.linalg.norm(critical)), float(np.linalg.norm(upper)))
+        tolerance = 1e-7 * scale
+    maximum = max(errors.values(), default=0.0)
+    return {
+        'same_boundary_segments': same_segments,
+        'same_boundary_vertices': same_vertices,
+        'affine_trajectory_errors': errors,
+        'affine_trajectory_error': maximum,
+        'tolerance': tolerance,
+        'regular': (
+            same_segments and same_vertices and tolerance is not None and
+            maximum <= tolerance
+        ),
+    }
+
+
+def build_event_star_mapping_cylinder(
+    patches: dict[str, Any],
+    runtimes: dict[str, Any],
+    probes: dict[str, Fraction],
+    event_id: str,
+    critical_position: np.ndarray,
+) -> dict[str, Any]:
+    '''Build an explicit disk x interval whose middle disk is the BEB1 fan.'''
+    if set(patches) != set(probes) or set(runtimes) != set(probes):
+        raise RuntimeError('mapping cylinder requires lower/root/upper patches')
+    reference_cycle = tuple(runtimes['critical']['cycle'])
+    if len(reference_cycle) != 4:
+        raise RuntimeError('mapping cylinder requires a quadrilateral S_B')
+    if any(
+            set(runtimes[name]['cycle']) != set(reference_cycle)
+            for name in probes):
+        raise RuntimeError('mapping cylinder boundary identities changed')
+
+    level_names = ('lower', 'critical', 'upper')
+    fan_faces = (
+        (0, 1, 4), (1, 2, 4), (2, 3, 4), (3, 0, 4))
+    level_positions: list[list[np.ndarray]] = []
+    center_positions: dict[str, list[float]] = {}
+    for name in level_names:
+        runtime = runtimes[name]
+        boundary = [
+            np.asarray(runtime['positions'][vertex], dtype=np.float64)
+            for vertex in reference_cycle
+        ]
+        if name == 'critical':
+            center = np.asarray(critical_position, dtype=np.float64)
+        else:
+            shared = set(runtime['faces'][0]) & set(runtime['faces'][1])
+            if len(shared) != 2:
+                raise RuntimeError(
+                    'ordinary endpoint patch has no unique shared diagonal')
+            center = 0.5 * sum((
+                np.asarray(runtime['positions'][vertex], dtype=np.float64)
+                for vertex in shared
+            ), start=np.zeros(3, dtype=np.float64))
+        center_positions[name] = center.tolist()
+        level_positions.append([*boundary, center])
+
+    vertices4 = np.asarray([
+        [*position.tolist(), float(probes[name])]
+        for name, positions in zip(level_names, level_positions)
+        for position in positions
+    ], dtype=np.float64)
+    tetrahedra: list[tuple[int, int, int, int]] = []
+    for slab in (0, 1):
+        low_offset = 5 * slab
+        high_offset = 5 * (slab + 1)
+        for raw_face in fan_faces:
+            a, b, c = sorted(raw_face)
+            a0, b0, c0 = (
+                low_offset + a, low_offset + b, low_offset + c)
+            a1, b1, c1 = (
+                high_offset + a, high_offset + b, high_offset + c)
+            tetrahedra.extend((
+                (a0, b0, c0, c1),
+                (a0, b0, b1, c1),
+                (a0, a1, b1, c1),
+            ))
+    tets = np.asarray(tetrahedra, dtype=np.int64)
+    volumes = []
+    for tet in tets:
+        edges = (
+            vertices4[np.asarray(tet[1:], dtype=np.int64)] -
+            vertices4[int(tet[0])])
+        determinant = float(np.linalg.det(edges @ edges.T))
+        volumes.append(float(np.sqrt(max(determinant, 0.0)) / 6.0))
+
+    facet_counts: collections.Counter[tuple[int, int, int]] = (
+        collections.Counter(
+            tuple(sorted(face))
+            for tet in tets
+            for face in (
+                (int(tet[0]), int(tet[1]), int(tet[2])),
+                (int(tet[0]), int(tet[1]), int(tet[3])),
+                (int(tet[0]), int(tet[2]), int(tet[3])),
+                (int(tet[1]), int(tet[2]), int(tet[3])),
+            )
+        )
+    )
+    boundary_faces = sorted(
+        face for face, count in facet_counts.items() if count == 1)
+    lower_cap = [face for face in boundary_faces if all(v < 5 for v in face)]
+    upper_cap = [face for face in boundary_faces if all(v >= 10 for v in face)]
+    side_faces = [
+        face for face in boundary_faces
+        if face not in lower_cap and face not in upper_cap
+    ]
+    boundary_edges = sorted({
+        edge
+        for face in boundary_faces
+        for edge in (
+            tuple(sorted((face[0], face[1]))),
+            tuple(sorted((face[0], face[2]))),
+            tuple(sorted((face[1], face[2]))),
+        )
+    })
+    critical_side_edges = [
+        edge for edge in boundary_edges if 9 in edge
+    ]
+    center_indices = {4, 9, 14}
+    side_center_incidence = sum(
+        bool(set(face) & center_indices) for face in side_faces)
+    volume_audit = audit_volume(
+        [tuple(map(int, tet)) for tet in tets]).to_dict()
+    checks = {
+        'fifteen_vertices': vertices4.shape == (15, 4),
+        'twenty_four_tetrahedra': tets.shape == (24, 4),
+        'positive_gram_volumes': min(volumes) > 1e-12,
+        'valid_relative_3_manifold':
+            volume_audit['valid_relative_3_manifold'] is True,
+        'lower_cap_four_faces': len(lower_cap) == 4,
+        'upper_cap_four_faces': len(upper_cap) == 4,
+        'side_trace_sixteen_faces': len(side_faces) == 16,
+        'side_trace_avoids_all_centers': side_center_incidence == 0,
+        'middle_critical_vertex_not_on_boundary': all(
+            9 not in face for face in boundary_faces),
+        'critical_side_edges_zero': not critical_side_edges,
+    }
+    return {
+        'schema': 'binoc-beb1-double-mapping-cylinder-v1',
+        'pass': all(checks.values()),
+        'verdict': (
+            'PASS_BEB1_DOUBLE_MAPPING_CYLINDER'
+            if all(checks.values()) else
+            'STOP_BEB1_DOUBLE_MAPPING_CYLINDER'
+        ),
+        'event_id': event_id,
+        'level_vertex_layout': (
+            'five vertices per level: four S_B vertices followed by center'),
+        'levels': {
+            name: fraction_json(probes[name]) for name in level_names
+        },
+        'boundary_cycle': [vertex.text() for vertex in reference_cycle],
+        'center_positions': center_positions,
+        'vertices4': vertices4.tolist(),
+        'tetrahedra': tets.tolist(),
+        'tetrahedron_gram_volumes': volumes,
+        'minimum_gram_volume': min(volumes),
+        'boundary_faces': [list(face) for face in boundary_faces],
+        'lower_cap_faces': [list(face) for face in lower_cap],
+        'upper_cap_faces': [list(face) for face in upper_cap],
+        'side_trace_faces': [list(face) for face in side_faces],
+        'critical_side_edges': [list(edge) for edge in critical_side_edges],
+        'critical_side_edges_remaining': len(critical_side_edges),
+        'volume_audit': volume_audit,
+        'checks': checks,
+    }
+
+
 def slice_block(
     vertices4: np.ndarray,
     tets: np.ndarray,
@@ -276,6 +694,7 @@ def main() -> int:
     parser.add_argument('--cache-root', type=Path, required=True)
     parser.add_argument('--theory-root', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--plan-output', type=Path)
     parser.add_argument('--expected-root', default='104/5')
     parser.add_argument('--require-whole-mesh-ready', action='store_true')
     args = parser.parse_args()
@@ -328,23 +747,127 @@ def main() -> int:
         'critical': root,
         'upper': root + epsilon,
     }
-    slices = {
+    half_handle_slices = {
         name: slice_block(
             vertices4, tets, exact_times, sources, tau, event_id)
+        for name, tau in probes.items()
+    }
+    event_star_tets, completion = complete_production_event_star(tets)
+    complement_tets = np.asarray(
+        completion['added_tetrahedra'], dtype=np.int64)
+    complement_slices = {
+        name: slice_block(
+            vertices4, complement_tets, exact_times, sources, tau, event_id)
+        for name, tau in probes.items()
+    }
+    slices = {
+        name: slice_block(
+            vertices4, event_star_tets, exact_times, sources, tau, event_id)
         for name, tau in probes.items()
     }
     registry_traces = {
         name: registry_face_trace(rows, probes[name])
         for name in ('lower', 'upper')
     }
-    interface_agreement = {
+    registry_half_agreement = {
         name: (
             registry_traces[name]['agrees_across_registry_incidences'] and
-            block_source_boundary_segments(slices[name]) ==
+            block_source_boundary_segments(half_handle_slices[name]) ==
             registry_traces[name]['canonical_segments']
         )
         for name in ('lower', 'upper')
     }
+    registry_complement_agreement = {
+        name: (
+            registry_traces[name]['agrees_across_registry_incidences'] and
+            block_source_boundary_segments(complement_slices[name]) ==
+            registry_traces[name]['canonical_segments']
+        )
+        for name in ('lower', 'upper')
+    }
+    registry_interface_coverage = {
+        name: (
+            registry_half_agreement[name] or
+            registry_complement_agreement[name]
+        )
+        for name in ('lower', 'upper')
+    }
+
+    ordinary_patches: dict[str, Any] = {}
+    ordinary_patch_runtime: dict[str, Any] = {}
+    ordinary_patch_errors: dict[str, str] = {}
+    required_boundary = None
+    for name, tau in probes.items():
+        try:
+            patch, runtime = compile_ordinary_patch(
+                cache_root, tau, required_boundary=required_boundary)
+            ordinary_patches[name] = patch
+            ordinary_patch_runtime[name] = runtime
+            if required_boundary is None:
+                required_boundary = frozenset(runtime['cycle'])
+        except Exception as error:
+            ordinary_patch_errors[name] = repr(error)
+    core_boundary_agreement = {
+        name: (
+            name in ordinary_patches and
+            block_source_boundary_segments(slices[name]) ==
+            ordinary_patches[name]['boundary_segments']
+        )
+        for name in probes
+    }
+    core_position_agreement = {
+        name: (
+            patch_position_agreement(slices[name], ordinary_patches[name])
+            if name in ordinary_patches else {
+                'same_source_vids': False,
+                'maximum_position_error': None,
+                'tolerance': None,
+                'agrees': False,
+            }
+        )
+        for name in probes
+    }
+    side_trace_audit = side_trace_affine_audit(ordinary_patches, probes)
+    reference_segments = (
+        ordinary_patches['critical']['boundary_segments']
+        if 'critical' in ordinary_patches else []
+    )
+    whole_mesh_boundary_agreement = {
+        name: (
+            name in ordinary_patches and
+            ordinary_patches[name]['boundary_segments'] == reference_segments
+        )
+        for name in probes
+    }
+    critical_position = np.asarray(
+        capsule['geometry']['critical_position'], dtype=np.float64)
+    whole_mesh_slices: dict[str, Any] = {}
+    if not ordinary_patch_errors:
+        whole_mesh_slices = {
+            'lower': build_whole_mesh_patch_slice(
+                ordinary_patches['lower'], ordinary_patch_runtime['lower'],
+                event_id),
+            'critical': build_whole_mesh_patch_slice(
+                ordinary_patches['critical'],
+                ordinary_patch_runtime['critical'], event_id,
+                critical_position),
+            'upper': build_whole_mesh_patch_slice(
+                ordinary_patches['upper'], ordinary_patch_runtime['upper'],
+                event_id),
+        }
+    mapping_cylinder: dict[str, Any] | None = None
+    mapping_cylinder_error: str | None = None
+    if not ordinary_patch_errors and len(whole_mesh_slices) == 3:
+        try:
+            mapping_cylinder = build_event_star_mapping_cylinder(
+                ordinary_patches,
+                ordinary_patch_runtime,
+                probes,
+                event_id,
+                critical_position,
+            )
+        except Exception as error:
+            mapping_cylinder_error = repr(error)
 
     raw_ids = [row['raw_id'] for row in rows]
     logical_ids = sorted({row['logical_incidence_id'] for row in rows})
@@ -361,13 +884,22 @@ def main() -> int:
 
     def topology_matches(name: str) -> bool:
         expected = capsule[name + '_slice']
-        actual = slices[name]['topology']
+        actual = half_handle_slices[name]['topology']
         return all(
             int(actual.get(key, -1)) == int(expected.get(key, -2))
             for key in topology_keys
         )
 
     resolved_cells = tv4.get('resolved_logical_cells', {})
+    completed_tv4 = tv4.get('completed_event_core', {})
+    relative_unresolved_counts = {
+        name: len(value['unresolved_boundary_edges'])
+        for name, value in half_handle_slices.items()
+    }
+    completed_unresolved_counts = {
+        name: len(value['unresolved_boundary_edges'])
+        for name, value in slices.items()
+    }
     checks = {
         'production_event_selected': event_id.startswith('element='),
         'target_event_is_exact_104_over_5': root == expected_root,
@@ -385,7 +917,12 @@ def main() -> int:
         ),
         'tv4_event_star_closure_certified': (
             tv4.get('verdict') ==
-            'PASS_TV4_PRODUCTION_DERIVED_OFFLINE_GLOBAL_SPLICE'
+            'PASS_TV4_PRODUCTION_DERIVED_OFFLINE_GLOBAL_SPLICE' and
+            int(completed_tv4.get('tetrahedra', -1)) == 4 and
+            completed_tv4.get(
+                'critical_link', {}).get('is_sphere') is True and
+            int(completed_tv4.get(
+                'critical_side_faces_remaining', -1)) == 0
         ),
         'tv4_consumes_same_registry_batch': (
             int(tv4.get('raw_observations', -1)) == len(raw_ids) and
@@ -410,14 +947,33 @@ def main() -> int:
         ),
         'lower_slice_matches_tv3': topology_matches('lower'),
         'upper_slice_matches_tv3': topology_matches('upper'),
-        'beb1_component_transition_2_to_1': (
-            slices['lower']['topology']['components'] == 2 and
-            slices['upper']['topology']['components'] == 1
+        'relative_half_handle_component_transition_2_to_1': (
+            half_handle_slices['lower']['topology']['components'] == 2 and
+            half_handle_slices['upper']['topology']['components'] == 1
         ),
-        'one_sided_slices_are_regular': all(
+        'relative_half_handle_has_four_side_seams': all(
+            relative_unresolved_counts[name] == 4 for name in probes
+        ),
+        'completed_event_star_four_tetrahedra': (
+            event_star_tets.shape == (4, 4)
+        ),
+        'completed_critical_link_is_sphere': (
+            completion['critical_link']['is_sphere'] is True
+        ),
+        'completed_critical_side_faces_zero': (
+            completion['critical_side_faces_remaining'] == 0
+        ),
+        'completed_slices_are_regular_disks': all(
+            slices[name]['topology']['components'] == 1 and
+            slices[name]['topology']['chi'] == 1 and
+            slices[name]['topology']['boundary_loops'] == 1 and
+            slices[name]['topology']['boundary_edges'] == 4 and
             slices[name]['topology']['nonmanifold_edges'] == 0 and
             slices[name]['topology']['duplicate_faces'] == 0
-            for name in ('lower', 'upper')
+            for name in probes
+        ),
+        'completed_side_seams_eliminated': all(
+            completed_unresolved_counts[name] == 0 for name in probes
         ),
         'critical_slice_contains_critical_vertex': any(
             vertex['label']['kind'] == 'critical'
@@ -429,20 +985,95 @@ def main() -> int:
         ),
     }
     event_ir_pass = all(checks.values())
-    interface_ready = all(interface_agreement.values())
     source_boundary_ready = all(
         slices[name]['source_boundary_complete']
         for name in ('lower', 'critical', 'upper')
     )
+    interface_ready = all(registry_interface_coverage.values())
+    mapping_cylinder_ready = (
+        mapping_cylinder is not None and
+        mapping_cylinder['pass'] is True
+    )
+    ordinary_boundary_ready = (
+        not ordinary_patch_errors and
+        all(whole_mesh_boundary_agreement.values()) and
+        side_trace_audit['regular'] and
+        all(
+            value['topology']['components'] == 1 and
+            value['topology']['chi'] == 1 and
+            value['topology']['boundary_loops'] == 1 and
+            value['topology']['boundary_edges'] == 4 and
+            value['minimum_double_area'] > 1e-12 and
+            value['orientation_coherent']
+            for value in whole_mesh_slices.values()
+        ) and
+        len(whole_mesh_slices) == 3
+    )
+    root_runtime = ordinary_patch_runtime.get('critical')
+    critical_plan_ready = (
+        root_runtime is not None and
+        len(root_runtime['cycle']) == 4 and
+        len(root_runtime['suppressions']) > 0 and
+        whole_mesh_boundary_agreement['critical'] and
+        ordinary_boundary_ready and
+        mapping_cylinder_ready
+    )
     whole_mesh_ready = (
-        event_ir_pass and interface_ready and source_boundary_ready)
+        event_ir_pass and interface_ready and source_boundary_ready and
+        ordinary_boundary_ready and critical_plan_ready)
     disposition = (
         'READY_FOR_WHOLE_MESH_SPLICE'
         if whole_mesh_ready else
-        'SINGULAR_UNRESOLVED_SIDE_TRACE'
+        'EVENT_STAR_GEOMETRY_UNRESOLVED'
     )
+    plan_metadata: dict[str, Any] | None = None
+    if critical_plan_ready and root_runtime is not None:
+        cycle = root_runtime['cycle']
+        center_id = len(cycle)
+        replacement_faces = [
+            (index, (index + 1) % len(cycle), center_id)
+            for index in range(len(cycle))
+        ]
+        plan_metadata = {
+            'schema': 'binoc-critical-beb1-whole-mesh-plan-v1',
+            'plan_id': 'production-critical-beb1-event-star',
+            'event_id': event_id,
+            'exact_time': fraction_json(root),
+            'element': int(root_runtime['element']),
+            'boundary_cycle': [vertex.text() for vertex in cycle],
+            'critical_position': critical_position.tolist(),
+            'raw_suppressions': [
+                list(reference.values())
+                for reference in root_runtime['suppressions']
+            ],
+            'raw_suppression_count': len(root_runtime['suppressions']),
+            'replacement_faces': [list(face) for face in replacement_faces],
+            'replacement_face_count': len(replacement_faces),
+            'critical_vertex_is_internal': True,
+        }
+        if whole_mesh_ready and args.plan_output is not None:
+            plan_output = args.plan_output.resolve()
+            if plan_output.exists():
+                raise FileExistsError(plan_output)
+            plan_output.parent.mkdir(parents=True, exist_ok=True)
+            write_plan(
+                plan_output,
+                plan_metadata['plan_id'],
+                root,
+                root_runtime['suppressions'],
+                cycle,
+                [(
+                    critical_position,
+                    all(root_runtime['in_view'][vertex] for vertex in cycle),
+                )],
+                replacement_faces,
+                int(root_runtime['element']),
+            )
+            plan_metadata['path'] = str(plan_output)
+            plan_metadata['sha256'] = hashlib.sha256(
+                plan_output.read_bytes()).hexdigest()
     payload = {
-        'schema': 'binoc-critical-beb1-event-ir-v1',
+        'schema': 'binoc-critical-beb1-event-ir-v2',
         'pass': event_ir_pass,
         'verdict': (
             'PASS_CRITICAL_BEB1_EVENT_IR'
@@ -470,40 +1101,103 @@ def main() -> int:
                                     for value in corner_times],
         },
         'kernel': {
-            'kind': 'BEB1_TWO_TETRAHEDRON_RELATIVE_HALF_HANDLE',
+            'kind': 'BEB1_COMPLETED_FOUR_TETRAHEDRON_CORE',
             'block_sha256': stable_hash(block_payload),
             'vertices4': block_payload['vertices4'],
-            'tets': block_payload['tets'],
+            'relative_half_handle_tets': block_payload['tets'],
+            'event_star_tets': event_star_tets.tolist(),
             'block_vertex_source_hvids': sources,
             'block_vertex_exact_times': block_payload['exact_times'],
-            'critical_link': capsule['critical_link'],
+            'relative_critical_link': capsule['critical_link'],
+            'completed_critical_link': completion['critical_link'],
+            'completion': completion,
         },
-        'slices': slices,
+        'relative_half_handle_slices': half_handle_slices,
+        'complement_slices': complement_slices,
+        'core_event_star_slices': slices,
+        'slices': whole_mesh_slices,
         'registry_interface_traces': registry_traces,
+        'ordinary_whole_mesh_patches': ordinary_patches,
+        'ordinary_whole_mesh_patch_errors': ordinary_patch_errors,
+        'side_trace': {
+            'symbol': 'S_B',
+            'kind': 'TRIANGULATED_SOURCEVID_AFFINE_BOUNDARY_CYLINDER',
+            'boundary_segments': reference_segments,
+            'trajectories': [
+                {
+                    'source_vid': source_id,
+                    'lower_position':
+                        ordinary_patches['lower']['boundary_positions'][
+                            source_id],
+                    'critical_position':
+                        ordinary_patches['critical']['boundary_positions'][
+                            source_id],
+                    'upper_position':
+                        ordinary_patches['upper']['boundary_positions'][
+                            source_id],
+                }
+                for source_id in sorted(
+                    ordinary_patches.get(
+                        'critical', {}).get('boundary_positions', {}))
+            ] if not ordinary_patch_errors else [],
+            'affine_audit': side_trace_audit,
+            'triangulated_faces': (
+                mapping_cylinder['side_trace_faces']
+                if mapping_cylinder is not None else []
+            ),
+            'critical_vertex_on_side_trace': False,
+            'regular_on_one_sided_window': side_trace_audit['regular'],
+        },
+        'event_star_geometry': {
+            'kind': 'EXPLICIT_DOUBLE_MAPPING_CYLINDER',
+            'lower_patch': whole_mesh_slices.get('lower'),
+            'critical_patch': whole_mesh_slices.get('critical'),
+            'upper_patch': whole_mesh_slices.get('upper'),
+            'mapping_cylinder': mapping_cylinder,
+            'mapping_cylinder_error': mapping_cylinder_error,
+            'critical_vertex_internal_at_root': True,
+            'core_boundary_differs_from_external_s_b': any(
+                not value for value in core_boundary_agreement.values()),
+        },
+        'whole_mesh_replacement_plan': plan_metadata,
         'checks': checks,
         'admission': {
             'event_ir_certified': event_ir_pass,
             'all_boundary_edges_source_resolved': source_boundary_ready,
-            'block_registry_interface_agreement': interface_agreement,
-            'unresolved_boundary_edge_counts': {
-                name: len(value['unresolved_boundary_edges'])
-                for name, value in slices.items()
-            },
+            'registry_half_agreement': registry_half_agreement,
+            'registry_complement_agreement': registry_complement_agreement,
+            'registry_interface_coverage': registry_interface_coverage,
+            'ordinary_whole_mesh_boundary_agreement':
+                whole_mesh_boundary_agreement,
+            'core_boundary_agreement': core_boundary_agreement,
+            'core_position_agreement': core_position_agreement,
+            'side_trace_affine_audit': side_trace_audit,
+            'mapping_cylinder_ready': mapping_cylinder_ready,
+            'mapping_cylinder_error': mapping_cylinder_error,
+            'relative_unresolved_boundary_edge_counts':
+                relative_unresolved_counts,
+            'completed_unresolved_boundary_edge_counts':
+                completed_unresolved_counts,
+            'critical_plan_ready': critical_plan_ready,
             'policy': (
-                'Do not emit an SSP1 whole-mesh plan until event-star closure '
-                'cancels every critical side seam and every remaining patch '
-                'boundary edge is carried by ordinary SourceVID trajectories.'
+                'Emit SSP1 only after the complementary half closes the '
+                'critical link, all former critical seams are internal, and '
+                'lower/root/upper external boundaries agree in SourceVID and '
+                'production geometry with the ordinary whole-mesh patch, and '
+                'the explicit double mapping cylinder passes its relative '
+                '3-manifold and positive 4D Gram-volume audits.'
             ),
         },
         'scope': {
             'completed': (
                 'production-selected 104/5 BEB1 event identity, registry batch '
-                'closure, source-labelled exact one-sided block slices, and '
-                'explicit relative-boundary admission status'
+                'closure, four-tetrahedron event-star, source-prescribed S_B, '
+                'explicit 15-vertex/24-tetrahedron mapping cylinder, and '
+                'fail-closed whole-mesh SSP1 plan admission'
             ),
             'not_claimed': (
-                'whole-mesh critical block insertion while any side-trace '
-                'boundary remains unresolved'
+                'runtime whole-mesh success until the emitted plan passes the '
+                'OMP, topology, intersection, and exact-once cloud campaign'
             ),
         },
     }

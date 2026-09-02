@@ -160,6 +160,7 @@ def write_plan(
 def compile_at_time(
     cache_root: Path,
     exact_time: Fraction,
+    required_boundary: frozenset[SourceVID] | None = None,
 ) -> tuple[
     list[RawTriangle],
     dict[tuple[int, tuple[SourceVID, ...]], list[RawTriangle]],
@@ -233,6 +234,11 @@ def compile_at_time(
             if min(first_area2, second_area2) <= tolerance:
                 continue
             cycle = directed_boundary_cycle((first_vertices, second_vertices))
+            if (
+                required_boundary is not None and
+                frozenset(cycle) != required_boundary
+            ):
+                continue
             center = 0.5 * (positions[shared_edge[0]] + positions[shared_edge[1]])
             cycle_points = [positions[value] for value in cycle]
             star_areas = [
