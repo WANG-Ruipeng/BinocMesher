@@ -63,6 +63,25 @@ python3 "$SELF_DIR/run_all_canonical_beb1_events.py" \
   --expected-events 4 \
   --expected-profile demo \
   > "$OUTPUT/all_canonical_beb1.console.log" 2>&1
+python3 "$SELF_DIR/compile_same_root_beb1_batch.py" \
+  --events-root "$OUTPUT/all_canonical_beb1" \
+  --output "$OUTPUT/same_root_beb1_batch_ir.json" \
+  --plan-output "$OUTPUT/same_root_beb1_batch.ssp1" \
+  --expected-root 104/5 \
+  --require-ready \
+  > "$OUTPUT/same_root_beb1_batch_ir.console.log" 2>&1
+python3 "$SELF_DIR/run_same_root_beb1_batch.py" \
+  --repo "$REPO" \
+  --cache-root "$OUTPUT/tv0_tv4/cache" \
+  --batch-ir "$OUTPUT/same_root_beb1_batch_ir.json" \
+  --plan "$OUTPUT/same_root_beb1_batch.ssp1" \
+  --output "$OUTPUT/same_root_beb1_runtime" \
+  > "$OUTPUT/same_root_beb1_runtime.console.log" 2>&1
+python3 "$SELF_DIR/validate_same_root_beb1_batch.py" \
+  --runtime-results "$OUTPUT/same_root_beb1_runtime" \
+  --batch-ir "$OUTPUT/same_root_beb1_batch_ir.json" \
+  --output "$OUTPUT/same_root_beb1_validation.json" \
+  > "$OUTPUT/same_root_beb1_validation.console.log" 2>&1
 bash "$SELF_DIR/run_source_splice.sh" \
   --repo "$REPO" --output "$OUTPUT/source_splice" \
   > "$OUTPUT/source_splice.console.log" 2>&1
@@ -75,6 +94,8 @@ tv=json.loads((root/'tv0_tv4/theory/summary.json').read_text())
 beb1=json.loads((root/'critical_beb1_event_ir.json').read_text())
 beb1_runtime=json.loads((root/'critical_beb1_validation.json').read_text())
 all_beb1=json.loads((root/'all_canonical_beb1/all_canonical_beb1_summary.json').read_text())
+batch_ir=json.loads((root/'same_root_beb1_batch_ir.json').read_text())
+batch_validation=json.loads((root/'same_root_beb1_validation.json').read_text())
 splice=json.loads((root/'source_splice/source_splice_validation.json').read_text())
 checks={
  'p1_p4': p1.get('pass') is True,
@@ -94,10 +115,31 @@ checks={
          'canonical_event_fraction') == '4/4'
      and all_beb1.get('coverage', {}).get('runtime_validated') == 4
  ),
+ 'same_root_beb1_atomic_batch_ir': (
+     batch_ir.get('verdict') == 'PASS_SAME_ROOT_BEB1_BATCH_IR'
+     and batch_ir.get('composition', {}).get('classification')
+         == 'DISJOINT_CLOSED_SUPPORT'
+     and batch_ir.get('counts') == {
+         'events':2,
+         'raw_suppressions':18,
+         'boundary_vertices':8,
+         'internal_vertices':2,
+         'replacement_faces':8,
+         'removed_logical_faces':4,
+     }
+ ),
+ 'same_root_beb1_atomic_whole_mesh': (
+     batch_validation.get('verdict') ==
+         'PASS_SAME_ROOT_BEB1_ATOMIC_BATCH'
+     and batch_validation.get('counts', {}).get('batch_vertices') == 1833
+     and batch_validation.get('counts', {}).get('batch_faces') == 3824
+     and batch_validation.get('counts', {}).get(
+         'cross_event_intersections') == 0
+ ),
  'source_face_suppression_boundary_gluing': splice.get('pass') is True,
 }
 payload={
- 'schema':'binoc-source-splice-full-validation-v3',
+ 'schema':'binoc-source-splice-full-validation-v4',
  'pass':all(checks.values()),
  'verdict':'PASS_CERTIFIED_SOURCE_SPLICE_FULL_VALIDATION' if all(checks.values()) else 'STOP_CERTIFIED_SOURCE_SPLICE_FULL_VALIDATION',
  'checks':checks,
@@ -108,6 +150,8 @@ payload={
  'critical_beb1_event_ir':beb1,
  'critical_beb1_whole_mesh_validation':beb1_runtime,
  'all_canonical_beb1_campaign':all_beb1,
+ 'same_root_beb1_batch_ir':batch_ir,
+ 'same_root_beb1_atomic_validation':batch_validation,
 }
 (root/'FULL_VALIDATION.json').write_text(json.dumps(payload,indent=2,sort_keys=True)+'\n')
 print(payload['verdict'])
@@ -116,4 +160,6 @@ PY
 echo PASS_CRITICAL_BEB1_EVENT_STAR_CLOSURE
 echo PASS_CRITICAL_BEB1_WHOLE_MESH_SPLICE
 echo PASS_ALL_CANONICAL_BEB1_WHOLE_MESH
+echo PASS_SAME_ROOT_BEB1_BATCH_IR
+echo PASS_SAME_ROOT_BEB1_ATOMIC_BATCH
 echo PASS_CERTIFIED_SOURCE_SPLICE_FULL_VALIDATION

@@ -495,3 +495,26 @@ def patch_nonincident_intersections(
             if _triangles_intersect(first, second):
                 result.append((first_index, int(second_index)))
     return result
+
+
+def face_set_nonincident_intersections(
+    vertices: np.ndarray,
+    faces: np.ndarray,
+    first_face_indices: list[int],
+    second_face_indices: list[int],
+) -> list[tuple[int, int]]:
+    """Audit all nonincident triangle pairs across two distinguished sets."""
+    vertices = np.asarray(vertices, dtype=np.float64)
+    faces = np.asarray(faces, dtype=np.int64)
+    result: list[tuple[int, int]] = []
+    for first_index in sorted(set(map(int, first_face_indices))):
+        first_ids = set(map(int, faces[first_index]))
+        first = vertices[faces[first_index]]
+        for second_index in sorted(set(map(int, second_face_indices))):
+            second_ids = set(map(int, faces[second_index]))
+            if first_ids & second_ids:
+                continue
+            second = vertices[faces[second_index]]
+            if _triangles_intersect(first, second):
+                result.append((first_index, second_index))
+    return result

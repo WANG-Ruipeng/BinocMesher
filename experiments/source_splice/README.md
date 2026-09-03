@@ -130,10 +130,29 @@ Expected marker:
 PASS_ALL_CANONICAL_BEB1_WHOLE_MESH
 ```
 
-The two events sharing root `104/5` are still applied in separate ordinary
-whole-mesh runs.  This campaign proves 4/4 independent event coverage; it does
-not yet claim simultaneous same-root composition or overlapping-star conflict
-resolution.
+After those four independent controls pass, the full wrapper composes the two
+events sharing exact root `104/5` into one atomic SSP1 plan.  Admission is
+deliberately limited to this observed disjoint case: both events must have a
+byte-identical baseline, disjoint suppression owners, boundary SourceVIDs,
+event HVIDs, and global patch-boundary edges, plus a strict spatial separating
+axis for their complete 4D mapping-cylinder supports.  The combined contract
+is 18 raw suppressions, eight reused boundary vertices, two internal critical
+vertices, and eight replacement faces emitted once for the common element.
+
+The runtime validator requires OMP 1/8 equality, bit-exact positions for both
+critical vertices, four removed source faces, four replacement faces per
+event, two disjoint four-edge patch boundaries with global incidence two,
+unchanged outside oriented faces, equality to the canonical union of the two
+independently certified deltas, unchanged topology invariants, and no new
+external or cross-event intersection.  Successful validation prints:
+
+```text
+PASS_SAME_ROOT_BEB1_BATCH_IR
+PASS_SAME_ROOT_BEB1_ATOMIC_BATCH
+```
+
+This closes the concrete E2+E3 simultaneous batch.  It does not claim
+shared-boundary or overlapping-star conflict resolution.
 
 The original relative half-handle and its four unresolved side edges remain in
 the Event IR as an explicit before-closure witness; they are not exposed as the
