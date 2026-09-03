@@ -33,6 +33,10 @@ from processed_mesh import (
     selected_event_rows,
     trace_processed_triangles,
 )
+from space_position_contract import (
+    SSP1_COORDINATE_FORMAT,
+    canonical_space_position,
+)
 
 
 def fraction_text(value: Fraction) -> str:
@@ -131,6 +135,7 @@ def write_plan(
         "SSP1",
         f"PLAN {json.dumps(plan_id)}",
         f"TIME {exact_time.numerator} {exact_time.denominator}",
+        f"COORDINATES {SSP1_COORDINATE_FORMAT}",
         f"EXPECT {len(suppressions)} {len(boundary_vertices)} "
         f"{len(internal_vertices)} {len(faces)}",
     ]
@@ -145,10 +150,13 @@ def write_plan(
         )
     for internal_index, (position, visible) in enumerate(internal_vertices):
         local_id = len(boundary_vertices) + internal_index
+        canonical_position = canonical_space_position(position)
         rows.append(
             "VERTEX_INTERNAL "
             f"{local_id} {element} "
-            f"{position[0]:.17g} {position[1]:.17g} {position[2]:.17g} "
+            f"{canonical_position[0]:.17g} "
+            f"{canonical_position[1]:.17g} "
+            f"{canonical_position[2]:.17g} "
             f"{int(visible)}"
         )
     for a, b, c in faces:
@@ -337,9 +345,9 @@ def main() -> int:
     shared_vertices = tuple(sorted(set(first[1]) & set(second[1])))
     if len(shared_vertices) != 2:
         raise RuntimeError("selected faces do not have one shared diagonal")
-    center = 0.5 * (
+    center = canonical_space_position(0.5 * (
         positions[shared_vertices[0]] + positions[shared_vertices[1]]
-    )
+    ))
     center_visible = in_view[shared_vertices[0]] and in_view[shared_vertices[1]]
 
     local_ids = {vertex: index for index, vertex in enumerate(cycle)}
@@ -395,6 +403,14 @@ def main() -> int:
         1,
     )
     (output / "wrong_time.ssp1").write_text(wrong_text)
+
+    bad_coordinate_format = (output / "identity.ssp1").read_text().replace(
+        f"COORDINATES {SSP1_COORDINATE_FORMAT}",
+        "COORDINATES FLOAT64_UNSPECIFIED",
+        1,
+    )
+    (output / "bad_coordinate_format.ssp1").write_text(
+        bad_coordinate_format)
 
     missing_reference = TriangleRef(
         element,
@@ -483,6 +499,7 @@ def main() -> int:
 
     metadata = {
         "schema": "binoc-source-splice-plan-metadata-v1",
+        "ssp1_coordinate_format": SSP1_COORDINATE_FORMAT,
         "event_id": event_id,
         "event_root": fraction_text(root),
         "probe_side": side,

@@ -85,6 +85,14 @@ two-tetrahedron relative half-handle.  It then:
 7. emits SSP1 only when every boundary, geometry, and mapping-cylinder audit
    passes.
 
+SSP1 now declares `COORDINATES SPACE_T_BINARY32_RNE`. Internal spatial
+vertices are rounded once from the theory binary64 value to the production
+`spaceT` IEEE-754 binary32 value before serialization. Event IR v3 records
+both values, the binary32 words, and the maximum quantization error. The
+critical root slice and mapping cylinder are rebuilt and admitted with that
+canonical runtime value; the final validator still uses bit-exact equality and
+does not introduce an epsilon.
+
 Successful admission prints:
 
 ```text

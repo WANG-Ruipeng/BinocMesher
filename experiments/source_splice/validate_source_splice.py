@@ -12,6 +12,7 @@ from runtime_common import (
     mesh_topology, oriented_face_multiset,
     patch_nonincident_intersections,
 )
+from space_position_contract import SSP1_COORDINATE_FORMAT
 
 
 def load_case(root: Path, name: str):
@@ -51,7 +52,8 @@ def main() -> int:
     negative = {
         name: json.loads((runtime / f'{name}.json').read_text())
         for name in (
-            'wrong_time', 'missing_ref', 'bad_boundary', 'bad_topology')
+            'wrong_time', 'missing_ref', 'bad_boundary', 'bad_topology',
+            'bad_coordinate_format')
     }
     assert all(value is not None for value in (
         baseline1_npz, identity1_npz, star1_npz,
@@ -208,9 +210,23 @@ def main() -> int:
             for name in ('vertices', 'faces', 'tags')),
         'identity_audit_omp_deterministic': identity1['audit'] == identity8['audit'],
         'star_audit_omp_deterministic': star1['audit'] == star8['audit'],
+        'ssp1_coordinate_format_exact': (
+            plan_summary.get('ssp1_coordinate_format') ==
+            SSP1_COORDINATE_FORMAT and
+            all(
+                value.get('audit', {}).get('coordinate_format') ==
+                SSP1_COORDINATE_FORMAT
+                for value in (identity1, identity8, star1, star8)
+            )
+        ),
         'bad_topology_fail_closed': (
             negative['bad_topology']['pass'] and
             'validate_plan_topology' in negative['bad_topology']['error']
+        ),
+        'bad_coordinate_format_fail_closed': (
+            negative['bad_coordinate_format']['pass'] and
+            'coordinate format' in
+            negative['bad_coordinate_format']['error']
         ),
         'wrong_time_fail_closed': (
             negative['wrong_time']['pass'] and

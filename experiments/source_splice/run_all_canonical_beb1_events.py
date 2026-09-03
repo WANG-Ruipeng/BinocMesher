@@ -19,6 +19,11 @@ from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
+from space_position_contract import (
+    EVENT_IR_SCHEMA,
+    plan_position_contract_is_valid,
+)
+
 
 def read_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding='utf-8'))
@@ -234,8 +239,12 @@ def main() -> int:
             mapping = (
                 event_ir.get('event_star_geometry', {})
                 .get('mapping_cylinder', {}))
+            event_plan = event_ir.get('whole_mesh_replacement_plan') or {}
+            position_contract = (
+                event_plan.get('critical_position_contract') or {})
             event_ir_ok = (
                 event_ir_code == 0 and
+                event_ir.get('schema') == EVENT_IR_SCHEMA and
                 event_ir.get('pass') is True and
                 event_ir.get('event', {}).get('event_id') == event_id and
                 event_ir.get('whole_mesh_splice_ready') is True and
@@ -243,6 +252,14 @@ def main() -> int:
                 'READY_FOR_WHOLE_MESH_SPLICE' and
                 event_ir.get(
                     'admission', {}).get('mapping_cylinder_ready') is True and
+                event_ir.get('admission', {}).get(
+                    'runtime_space_position_contract_ready') is True and
+                event_ir.get('admission', {}).get(
+                    'critical_position_quantization_isotopy_ready') is True and
+                plan_position_contract_is_valid(event_plan) and
+                event_ir.get('event_star_geometry', {}).get(
+                    'critical_position_quantization_audit', {}).get(
+                        'pass') is True and
                 mapping.get('pass') is True and
                 mapping.get('critical_side_edges_remaining') == 0 and
                 plan_path.is_file()
@@ -259,6 +276,11 @@ def main() -> int:
                     mapping.get('minimum_gram_volume'),
                 'critical_side_edges_remaining':
                     mapping.get('critical_side_edges_remaining'),
+                'critical_position_exactly_representable':
+                    position_contract.get('exactly_representable'),
+                'critical_position_maximum_quantization_error':
+                    position_contract.get(
+                        'maximum_absolute_quantization_error'),
                 'plan_sha256': (
                     hashlib.sha256(plan_path.read_bytes()).hexdigest()
                     if plan_path.is_file() else None

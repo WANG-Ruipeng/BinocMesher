@@ -2,7 +2,9 @@
 '''Pure combinatorial regression for the source-labelled BEB1 half-handle.'''
 from __future__ import annotations
 
+import json
 import sys
+import tempfile
 from fractions import Fraction
 from pathlib import Path
 
@@ -13,6 +15,7 @@ if str(SELF_DIR) not in sys.path:
     sys.path.insert(0, str(SELF_DIR))
 
 from compile_critical_beb1_event_ir import (
+    audit_critical_position_quantization,
     block_source_boundary_segments,
     build_event_star_mapping_cylinder,
     build_whole_mesh_patch_slice,
@@ -21,7 +24,15 @@ from compile_critical_beb1_event_ir import (
     side_trace_affine_audit,
     slice_block,
 )
+from compile_splice_plans import write_plan
 from processed_mesh import HVID, SourceVID
+from space_position_contract import (
+    SSP1_COORDINATE_FORMAT,
+    binary32_hex,
+    build_space_position_contract,
+    canonical_space_position,
+    space_position_contract_is_valid,
+)
 from theory_audit import complete_production_event_star
 
 
@@ -199,6 +210,51 @@ def main() -> int:
         np.asarray([-1.181640625, 8.8515625, 0.0]),
     )
 
+    perturbed_theory_center = np.asarray([
+        -1.181640626, 8.851562503, 0.0])
+    perturbed_contract = build_space_position_contract(
+        perturbed_theory_center)
+    perturbed_runtime_center = canonical_space_position(
+        perturbed_theory_center)
+    theory_root = build_whole_mesh_patch_slice(
+        outer_patches['critical'], outer_runtime['critical'],
+        'production-fixture', perturbed_theory_center)
+    runtime_root = build_whole_mesh_patch_slice(
+        outer_patches['critical'], outer_runtime['critical'],
+        'production-fixture', perturbed_runtime_center)
+    quantization_isotopy = audit_critical_position_quantization(
+        theory_root, runtime_root, perturbed_contract)
+
+    nondyadic_theory_position = np.asarray([
+        0.5859375, -0.05326704545454547, 0.3373579545454546])
+    nondyadic_runtime_position = canonical_space_position(
+        nondyadic_theory_position)
+    position_contract = build_space_position_contract(
+        nondyadic_theory_position)
+    serialized_contract = json.loads(json.dumps(position_contract))
+    corrupted_contract = json.loads(json.dumps(position_contract))
+    corrupted_contract['canonical_position_float64'][1] = float(
+        nondyadic_theory_position[1])
+    with tempfile.TemporaryDirectory() as directory:
+        plan_path = Path(directory) / 'canonical.ssp1'
+        write_plan(
+            plan_path,
+            'position-contract-fixture',
+            Fraction(0),
+            [],
+            outer_cycle,
+            [(nondyadic_theory_position, False)],
+            [(0, 1, 4), (1, 2, 4), (2, 3, 4), (3, 0, 4)],
+            0,
+        )
+        plan_rows = plan_path.read_text().splitlines()
+    coordinate_row = next(
+        row for row in plan_rows if row.startswith('COORDINATES '))
+    internal_row = next(
+        row for row in plan_rows if row.startswith('VERTEX_INTERNAL '))
+    serialized_position = np.asarray(
+        list(map(float, internal_row.split()[3:6])), dtype=np.float64)
+
     lower = slices['lower']['topology']
     critical = slices['critical']['topology']
     upper = slices['upper']['topology']
@@ -308,6 +364,36 @@ def main() -> int:
             mapping_cylinder['checks'][
                 'middle_critical_vertex_not_on_boundary'] is True and
             mapping_cylinder['critical_side_edges_remaining'] == 0
+        ),
+        'spaceT_quantization_has_fixed_boundary_disk_isotopy': (
+            quantization_isotopy['pass'] is True and
+            quantization_isotopy['verdict'] ==
+            'PASS_CRITICAL_POSITION_QUANTIZATION_ISOTOPY' and
+            quantization_isotopy['displacement_norm'] > 0.0 and
+            quantization_isotopy['checks'][
+                'straight_line_center_motion_nondegenerate'] is True
+        ),
+        'nondyadic_space_position_is_canonical_binary32': (
+            not np.array_equal(
+                nondyadic_theory_position, nondyadic_runtime_position) and
+            np.array_equal(
+                nondyadic_runtime_position,
+                np.asarray([
+                    0.5859375,
+                    -0.05326704680919647,
+                    0.3373579680919647,
+                ])) and
+            binary32_hex(nondyadic_runtime_position) == [
+                '3f160000', 'bd5a2e8c', '3eacba2f']
+        ),
+        'space_position_contract_round_trips_and_fails_closed': (
+            space_position_contract_is_valid(serialized_contract) and
+            not space_position_contract_is_valid(corrupted_contract)
+        ),
+        'ssp1_serializes_only_canonical_space_position': (
+            coordinate_row == f'COORDINATES {SSP1_COORDINATE_FORMAT}' and
+            np.array_equal(
+                serialized_position, nondyadic_runtime_position)
         ),
     }
     if not all(checks.values()):

@@ -9,6 +9,10 @@ from fractions import Fraction
 from pathlib import Path
 
 from run_splice_experiment import run_success
+from space_position_contract import (
+    EVENT_IR_SCHEMA,
+    plan_position_contract_is_valid,
+)
 
 
 def main() -> int:
@@ -26,8 +30,13 @@ def main() -> int:
 
     event_ir = json.loads(args.event_ir.resolve().read_text())
     if (
+        event_ir.get('schema') != EVENT_IR_SCHEMA or
         event_ir.get('whole_mesh_splice_ready') is not True or
-        event_ir.get('runtime_disposition') != 'READY_FOR_WHOLE_MESH_SPLICE'
+        event_ir.get('runtime_disposition') != 'READY_FOR_WHOLE_MESH_SPLICE' or
+        event_ir.get('admission', {}).get(
+            'runtime_space_position_contract_ready') is not True or
+        event_ir.get('admission', {}).get(
+            'critical_position_quantization_isotopy_ready') is not True
     ):
         raise RuntimeError('critical BEB1 Event IR was not admitted')
     root = event_ir['event']['root']
@@ -38,6 +47,9 @@ def main() -> int:
     if not plan.is_file():
         raise FileNotFoundError(plan)
     expected_plan = event_ir.get('whole_mesh_replacement_plan') or {}
+    if not plan_position_contract_is_valid(expected_plan):
+        raise RuntimeError(
+            'critical BEB1 Event IR has an invalid spaceT position contract')
     if (
         expected_plan.get('sha256') !=
         hashlib.sha256(plan.read_bytes()).hexdigest()

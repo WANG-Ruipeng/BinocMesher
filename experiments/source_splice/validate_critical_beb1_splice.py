@@ -14,6 +14,13 @@ from runtime_common import (
     oriented_face_multiset,
     patch_nonincident_intersections,
 )
+from space_position_contract import (
+    EVENT_IR_SCHEMA,
+    SSP1_COORDINATE_FORMAT,
+    binary32_hex,
+    plan_position_contract_is_valid,
+    position_float64,
+)
 
 
 def load_case(root: Path, name: str):
@@ -44,6 +51,23 @@ def main() -> int:
     runtime = args.runtime_results.resolve()
     event_ir = json.loads(args.event_ir.resolve().read_text())
     plan = event_ir.get('whole_mesh_replacement_plan') or {}
+    position_contract = plan.get('critical_position_contract') or {}
+    position_contract_valid = (
+        event_ir.get('schema') == EVENT_IR_SCHEMA and
+        plan_position_contract_is_valid(plan) and
+        event_ir.get('event_star_geometry', {}).get(
+            'critical_position_contract') == position_contract and
+        event_ir.get('admission', {}).get(
+            'runtime_space_position_contract_ready') is True
+    )
+    if position_contract_valid:
+        expected_critical_position = position_float64(
+            position_contract['canonical_position_float64'])
+        theory_critical_position = position_float64(
+            position_contract['theory_position_float64'])
+    else:
+        expected_critical_position = None
+        theory_critical_position = None
     output = args.output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
 
@@ -57,6 +81,10 @@ def main() -> int:
     critical_v = critical1_npz['vertices']
     critical_f = critical1_npz['faces']
     critical_t = critical1_npz['tags']
+    runtime_critical_position = (
+        position_float64(critical_v[len(baseline_v)])
+        if len(critical_v) == len(baseline_v) + 1 else None
+    )
 
     baseline_faces = oriented_face_multiset(baseline_f)
     critical_faces = oriented_face_multiset(critical_f)
@@ -127,10 +155,18 @@ def main() -> int:
             'READY_FOR_WHOLE_MESH_SPLICE' and
             event_ir.get(
                 'admission', {}).get('mapping_cylinder_ready') is True and
+            event_ir.get('admission', {}).get(
+                'runtime_space_position_contract_ready') is True and
+            event_ir.get('admission', {}).get(
+                'critical_position_quantization_isotopy_ready') is True and
+            event_ir.get('event_star_geometry', {}).get(
+                'critical_position_quantization_audit', {}).get(
+                    'pass') is True and
             event_ir.get('event_star_geometry', {}).get(
                 'mapping_cylinder', {}).get(
                     'critical_side_edges_remaining') == 0
         ),
+        'critical_position_contract_valid': position_contract_valid,
         'runtime_cases_succeeded': all(value['pass'] for value in (
             baseline1, baseline8, critical1, critical8)),
         'baseline_omp_deterministic': all(np.array_equal(
@@ -141,17 +177,23 @@ def main() -> int:
             for name in ('vertices', 'faces', 'tags')),
         'critical_audit_omp_deterministic': (
             critical1.get('audit') == critical8.get('audit')),
+        'runtime_coordinate_format_exact': all(
+            value.get('audit', {}).get('coordinate_format') ==
+            SSP1_COORDINATE_FORMAT
+            for value in (critical1, critical8)
+        ),
         'ordinary_vertex_prefix_exact': np.array_equal(
             critical_v[:len(baseline_v)], baseline_v),
         'ordinary_tag_prefix_exact': np.array_equal(
             critical_t[:len(baseline_t)], baseline_t),
         'one_critical_vertex_added': len(critical_v) == len(baseline_v) + 1,
         'critical_position_exact': (
-            len(critical_v) == len(baseline_v) + 1 and
+            position_contract_valid and
+            runtime_critical_position is not None and
+            expected_critical_position is not None and
             np.array_equal(
-                critical_v[new_vertex],
-                np.asarray(plan.get('critical_position', []),
-                           dtype=critical_v.dtype))
+                runtime_critical_position,
+                expected_critical_position)
         ),
         'two_source_faces_removed': len(removed_values) == 2,
         'four_event_star_faces_added': (
@@ -197,7 +239,7 @@ def main() -> int:
         ),
     }
     result = {
-        'schema': 'binoc-critical-beb1-whole-mesh-validation-v1',
+        'schema': 'binoc-critical-beb1-whole-mesh-validation-v2',
         'pass': all(checks.values()),
         'verdict': (
             'PASS_CRITICAL_BEB1_WHOLE_MESH_SPLICE'
@@ -205,6 +247,31 @@ def main() -> int:
             'STOP_CRITICAL_BEB1_WHOLE_MESH_SPLICE'
         ),
         'checks': checks,
+        'critical_position_audit': {
+            'contract': position_contract,
+            'theory_position_float64': (
+                theory_critical_position.tolist()
+                if theory_critical_position is not None else None
+            ),
+            'expected_runtime_position_float64': (
+                expected_critical_position.tolist()
+                if expected_critical_position is not None else None
+            ),
+            'actual_runtime_position_float64': (
+                runtime_critical_position.tolist()
+                if runtime_critical_position is not None else None
+            ),
+            'actual_runtime_binary32_hex': (
+                binary32_hex(runtime_critical_position)
+                if runtime_critical_position is not None else None
+            ),
+            'maximum_runtime_contract_error': (
+                float(np.max(np.abs(
+                    runtime_critical_position - expected_critical_position)))
+                if runtime_critical_position is not None and
+                expected_critical_position is not None else None
+            ),
+        },
         'counts': {
             'baseline_vertices': len(baseline_v),
             'baseline_faces': len(baseline_f),

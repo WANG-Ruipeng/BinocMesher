@@ -42,6 +42,15 @@ from compile_splice_plans import (
     write_plan,
 )
 from event_complex import audit_volume
+from space_position_contract import (
+    EVENT_IR_SCHEMA,
+    PLAN_SCHEMA,
+    SSP1_COORDINATE_FORMAT,
+    build_space_position_contract,
+    plan_position_contract_is_valid,
+    position_float64,
+    space_position_contract_is_valid,
+)
 
 
 TET_EDGES = ((0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3))
@@ -276,7 +285,7 @@ def build_whole_mesh_patch_slice(
     patch: dict[str, Any],
     runtime: dict[str, Any],
     event_id: str,
-    critical_position: np.ndarray | None = None,
+    runtime_critical_position: np.ndarray | None = None,
 ) -> dict[str, Any]:
     cycle = runtime['cycle']
     local = {vertex: index for index, vertex in enumerate(cycle)}
@@ -287,14 +296,14 @@ def build_whole_mesh_patch_slice(
     labels = [
         {'kind': 'source_vid', 'id': vertex.text()} for vertex in cycle
     ]
-    if critical_position is None:
+    if runtime_critical_position is None:
         faces = [
             tuple(local[vertex] for vertex in face)
             for face in runtime['faces']
         ]
     else:
         center = len(positions)
-        positions.append(np.asarray(critical_position, dtype=np.float64))
+        positions.append(position_float64(runtime_critical_position))
         labels.append({'kind': 'critical', 'id': 'critical:' + event_id})
         faces = [
             (index, (index + 1) % len(cycle), center)
@@ -350,6 +359,7 @@ def build_whole_mesh_patch_slice(
         'minimum_double_area': minimum_area2,
         'orientation_reference_normal': reference_normal.tolist(),
         'orientation_dots': orientation_dots,
+        'orientation_tolerance': orientation_tolerance,
         'orientation_coherent': (
             float(np.linalg.norm(reference_normal)) > 1e-12 and
             min(orientation_dots) > orientation_tolerance
@@ -364,6 +374,101 @@ def build_whole_mesh_patch_slice(
         ],
         'unresolved_boundary_edges': [],
         'source_boundary_complete': True,
+    }
+
+
+def audit_critical_position_quantization(
+    theory_slice: dict[str, Any],
+    runtime_slice: dict[str, Any],
+    position_contract: dict[str, Any],
+) -> dict[str, Any]:
+    '''Certify the fixed-boundary straight-line move to canonical spaceT.'''
+    theory_vertices = np.asarray([
+        vertex['position'] for vertex in theory_slice['vertices']
+    ], dtype=np.float64)
+    runtime_vertices = np.asarray([
+        vertex['position'] for vertex in runtime_slice['vertices']
+    ], dtype=np.float64)
+    theory_dots = np.asarray(
+        theory_slice['orientation_dots'], dtype=np.float64)
+    runtime_dots = np.asarray(
+        runtime_slice['orientation_dots'], dtype=np.float64)
+    orientation_floor = max(
+        float(theory_slice['orientation_tolerance']),
+        float(runtime_slice['orientation_tolerance']),
+    )
+    theory_center = theory_vertices[-1]
+    runtime_center = runtime_vertices[-1]
+    contract_valid = space_position_contract_is_valid(position_contract)
+    contract_theory = (
+        position_float64(position_contract['theory_position_float64'])
+        if contract_valid else None
+    )
+    contract_runtime = (
+        position_float64(position_contract['canonical_position_float64'])
+        if contract_valid else None
+    )
+    topology_keys = (
+        'V', 'E', 'F', 'chi', 'components', 'boundary_edges',
+        'boundary_loops', 'nonmanifold_edges', 'duplicate_faces',
+    )
+    checks = {
+        'position_contract_valid': contract_valid,
+        'theory_center_matches_contract_exact': (
+            contract_theory is not None and
+            np.array_equal(theory_center, contract_theory)
+        ),
+        'runtime_center_matches_contract_exact': (
+            contract_runtime is not None and
+            np.array_equal(runtime_center, contract_runtime)
+        ),
+        'same_vertices_and_faces': (
+            theory_vertices.shape == runtime_vertices.shape and
+            theory_slice['faces'] == runtime_slice['faces']
+        ),
+        'fixed_source_boundary_exact': (
+            theory_vertices.shape == runtime_vertices.shape and
+            np.array_equal(theory_vertices[:-1], runtime_vertices[:-1]) and
+            theory_slice['boundary_edges'] == runtime_slice['boundary_edges']
+        ),
+        'same_reference_normal_exact': np.array_equal(
+            theory_slice['orientation_reference_normal'],
+            runtime_slice['orientation_reference_normal']),
+        'endpoint_disks_nondegenerate_and_coherent': (
+            theory_slice['minimum_double_area'] > 1e-12 and
+            runtime_slice['minimum_double_area'] > 1e-12 and
+            theory_slice['orientation_coherent'] is True and
+            runtime_slice['orientation_coherent'] is True
+        ),
+        'straight_line_center_motion_nondegenerate': (
+            theory_dots.shape == runtime_dots.shape and
+            min(
+                float(np.min(theory_dots)),
+                float(np.min(runtime_dots)),
+            ) > orientation_floor
+        ),
+        'disk_topology_preserved': all(
+            theory_slice['topology'][key] == runtime_slice['topology'][key]
+            for key in topology_keys
+        ),
+    }
+    return {
+        'schema': 'binoc-critical-position-quantization-isotopy-v1',
+        'pass': all(checks.values()),
+        'verdict': (
+            'PASS_CRITICAL_POSITION_QUANTIZATION_ISOTOPY'
+            if all(checks.values()) else
+            'STOP_CRITICAL_POSITION_QUANTIZATION_ISOTOPY'
+        ),
+        'theory_position_float64': theory_center.tolist(),
+        'runtime_spaceT_position_float64': runtime_center.tolist(),
+        'displacement': (runtime_center - theory_center).tolist(),
+        'displacement_norm': float(np.linalg.norm(
+            runtime_center - theory_center)),
+        'minimum_endpoint_orientation_dot': min(
+            float(np.min(theory_dots)), float(np.min(runtime_dots))),
+        'orientation_floor': orientation_floor,
+        'checks': checks,
     }
 
 
@@ -428,7 +533,7 @@ def build_event_star_mapping_cylinder(
     runtimes: dict[str, Any],
     probes: dict[str, Fraction],
     event_id: str,
-    critical_position: np.ndarray,
+    runtime_critical_position: np.ndarray,
 ) -> dict[str, Any]:
     '''Build an explicit disk x interval whose middle disk is the BEB1 fan.'''
     if set(patches) != set(probes) or set(runtimes) != set(probes):
@@ -453,7 +558,7 @@ def build_event_star_mapping_cylinder(
             for vertex in reference_cycle
         ]
         if name == 'critical':
-            center = np.asarray(critical_position, dtype=np.float64)
+            center = position_float64(runtime_critical_position)
         else:
             shared = set(runtime['faces'][0]) & set(runtime['faces'][1])
             if len(shared) != 2:
@@ -555,6 +660,7 @@ def build_event_star_mapping_cylinder(
             'STOP_BEB1_DOUBLE_MAPPING_CYLINDER'
         ),
         'event_id': event_id,
+        'critical_center_coordinate_role': 'runtime_spaceT_canonical',
         'level_vertex_layout': (
             'five vertices per level: four S_B vertices followed by center'),
         'levels': {
@@ -843,10 +949,20 @@ def main() -> int:
         )
         for name in probes
     }
-    critical_position = np.asarray(
+    theory_critical_position = np.asarray(
         capsule['geometry']['critical_position'], dtype=np.float64)
+    critical_position_contract = build_space_position_contract(
+        theory_critical_position)
+    runtime_critical_position = position_float64(
+        critical_position_contract['canonical_position_float64'])
     whole_mesh_slices: dict[str, Any] = {}
+    theory_critical_slice: dict[str, Any] | None = None
+    critical_position_quantization_audit: dict[str, Any] | None = None
     if not ordinary_patch_errors:
+        theory_critical_slice = build_whole_mesh_patch_slice(
+            ordinary_patches['critical'],
+            ordinary_patch_runtime['critical'], event_id,
+            theory_critical_position)
         whole_mesh_slices = {
             'lower': build_whole_mesh_patch_slice(
                 ordinary_patches['lower'], ordinary_patch_runtime['lower'],
@@ -854,11 +970,18 @@ def main() -> int:
             'critical': build_whole_mesh_patch_slice(
                 ordinary_patches['critical'],
                 ordinary_patch_runtime['critical'], event_id,
-                critical_position),
+                runtime_critical_position),
             'upper': build_whole_mesh_patch_slice(
                 ordinary_patches['upper'], ordinary_patch_runtime['upper'],
                 event_id),
         }
+        critical_position_quantization_audit = (
+            audit_critical_position_quantization(
+                theory_critical_slice,
+                whole_mesh_slices['critical'],
+                critical_position_contract,
+            )
+        )
     mapping_cylinder: dict[str, Any] | None = None
     mapping_cylinder_error: str | None = None
     if not ordinary_patch_errors and len(whole_mesh_slices) == 3:
@@ -868,7 +991,7 @@ def main() -> int:
                 ordinary_patch_runtime,
                 probes,
                 event_id,
-                critical_position,
+                runtime_critical_position,
             )
         except Exception as error:
             mapping_cylinder_error = repr(error)
@@ -987,6 +1110,21 @@ def main() -> int:
             probes[name] not in set(corner_times)
             for name in ('lower', 'upper')
         ),
+        'runtime_space_position_contract_exact': (
+            np.array_equal(
+                runtime_critical_position,
+                np.asarray(
+                    theory_critical_position,
+                    dtype=np.float32,
+                ).astype(np.float64),
+            ) and
+            critical_position_contract[
+                'ssp1_coordinate_format'] == SSP1_COORDINATE_FORMAT
+        ),
+        'critical_position_quantization_isotopy_certified': (
+            critical_position_quantization_audit is not None and
+            critical_position_quantization_audit['pass'] is True
+        ),
     }
     event_ir_pass = all(checks.values())
     source_boundary_ready = all(
@@ -997,6 +1135,10 @@ def main() -> int:
     mapping_cylinder_ready = (
         mapping_cylinder is not None and
         mapping_cylinder['pass'] is True
+    )
+    quantization_isotopy_ready = (
+        critical_position_quantization_audit is not None and
+        critical_position_quantization_audit['pass'] is True
     )
     ordinary_boundary_ready = (
         not ordinary_patch_errors and
@@ -1020,7 +1162,8 @@ def main() -> int:
         len(root_runtime['suppressions']) > 0 and
         whole_mesh_boundary_agreement['critical'] and
         ordinary_boundary_ready and
-        mapping_cylinder_ready
+        mapping_cylinder_ready and
+        quantization_isotopy_ready
     )
     whole_mesh_ready = (
         event_ir_pass and interface_ready and source_boundary_ready and
@@ -1039,13 +1182,14 @@ def main() -> int:
             for index in range(len(cycle))
         ]
         plan_metadata = {
-            'schema': 'binoc-critical-beb1-whole-mesh-plan-v1',
+            'schema': PLAN_SCHEMA,
             'plan_id': 'production-critical-beb1-event-star',
             'event_id': event_id,
             'exact_time': fraction_json(root),
             'element': int(root_runtime['element']),
             'boundary_cycle': [vertex.text() for vertex in cycle],
-            'critical_position': critical_position.tolist(),
+            'critical_position': runtime_critical_position.tolist(),
+            'critical_position_contract': critical_position_contract,
             'raw_suppressions': [
                 list(reference.values())
                 for reference in root_runtime['suppressions']
@@ -1055,6 +1199,9 @@ def main() -> int:
             'replacement_face_count': len(replacement_faces),
             'critical_vertex_is_internal': True,
         }
+        if not plan_position_contract_is_valid(plan_metadata):
+            raise RuntimeError(
+                'critical BEB1 plan has an invalid spaceT position contract')
         if whole_mesh_ready and args.plan_output is not None:
             plan_output = args.plan_output.resolve()
             if plan_output.exists():
@@ -1067,7 +1214,7 @@ def main() -> int:
                 root_runtime['suppressions'],
                 cycle,
                 [(
-                    critical_position,
+                    runtime_critical_position,
                     all(root_runtime['in_view'][vertex] for vertex in cycle),
                 )],
                 replacement_faces,
@@ -1077,7 +1224,7 @@ def main() -> int:
             plan_metadata['sha256'] = hashlib.sha256(
                 plan_output.read_bytes()).hexdigest()
     payload = {
-        'schema': 'binoc-critical-beb1-event-ir-v2',
+        'schema': EVENT_IR_SCHEMA,
         'pass': event_ir_pass,
         'verdict': (
             'PASS_CRITICAL_BEB1_EVENT_IR'
@@ -1159,6 +1306,11 @@ def main() -> int:
             'upper_patch': whole_mesh_slices.get('upper'),
             'mapping_cylinder': mapping_cylinder,
             'mapping_cylinder_error': mapping_cylinder_error,
+            'critical_position_contract': critical_position_contract,
+            'theory_critical_patch_before_spaceT_canonicalization':
+                theory_critical_slice,
+            'critical_position_quantization_audit':
+                critical_position_quantization_audit,
             'critical_vertex_internal_at_root': True,
             'core_boundary_differs_from_external_s_b': any(
                 not value for value in core_boundary_agreement.values()),
@@ -1178,6 +1330,12 @@ def main() -> int:
             'side_trace_affine_audit': side_trace_audit,
             'mapping_cylinder_ready': mapping_cylinder_ready,
             'mapping_cylinder_error': mapping_cylinder_error,
+            'runtime_space_position_contract_ready': (
+                plan_metadata is not None and
+                plan_position_contract_is_valid(plan_metadata)
+            ),
+            'critical_position_quantization_isotopy_ready':
+                quantization_isotopy_ready,
             'relative_unresolved_boundary_edge_counts':
                 relative_unresolved_counts,
             'completed_unresolved_boundary_edge_counts':
@@ -1189,7 +1347,10 @@ def main() -> int:
                 'lower/root/upper external boundaries agree in SourceVID and '
                 'production geometry with the ordinary whole-mesh patch, and '
                 'the explicit double mapping cylinder passes its relative '
-                '3-manifold and positive 4D Gram-volume audits.'
+                '3-manifold and positive 4D Gram-volume audits. The root '
+                'critical point is first canonicalized to production spaceT '
+                'binary32, and that exact runtime point is used by both the '
+                'mapping-cylinder audit and the emitted SSP1 plan.'
             ),
         },
         'scope': {

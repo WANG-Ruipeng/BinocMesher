@@ -21,6 +21,10 @@
 namespace source_splice {
 namespace {
 
+static_assert(
+    sizeof(spaceT) == 4 && std::numeric_limits<spaceT>::is_iec559,
+    "SSP1 SPACE_T_BINARY32_RNE requires IEEE-754 binary32 spaceT");
+
 enum class VertexKind {
     source,
     internal,
@@ -243,6 +247,14 @@ void load_plan(
             "source-splice plan exact time does not match run_slicing_rational");
     }
 
+    require_token(input, "COORDINATES");
+    std::string coordinate_format;
+    if (!(input >> coordinate_format) ||
+        coordinate_format != "SPACE_T_BINARY32_RNE") {
+        throw std::runtime_error(
+            "unsupported source-splice coordinate format");
+    }
+
     require_token(input, "EXPECT");
     long long expected_suppressions = 0;
     long long expected_boundary = 0;
@@ -438,6 +450,7 @@ void write_audit() {
            << state.exact_time.numerator << ",\n";
     output << "  \"time_denominator\": "
            << state.exact_time.denominator << ",\n";
+    output << R"(  "coordinate_format": "SPACE_T_BINARY32_RNE",)" << '\n';
     output << "  \"expected_suppressions\": "
            << state.suppressions.size() << ",\n";
     output << "  \"suppressed_triangles\": "

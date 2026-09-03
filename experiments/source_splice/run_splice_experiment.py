@@ -84,6 +84,9 @@ def main() -> int:
             "star_omp8", 8),
     }
     failures = {
+        "bad_coordinate_format": run_failure(
+            repo, cache, exact, plans / "bad_coordinate_format.ssp1", output,
+            "bad_coordinate_format", ("coordinate format",)),
         'bad_topology': run_failure(
             repo, cache, exact, plans / 'bad_topology.ssp1', output,
             'bad_topology', ('validate_plan_topology',)),
