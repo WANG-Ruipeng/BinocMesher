@@ -1,0 +1,53 @@
+diff --git a/infinigen/terrain/core.py b/infinigen/terrain/core.py
+--- a/infinigen/terrain/core.py
++++ b/infinigen/terrain/core.py
+@@ -108,7 +108,9 @@ class CollectiveBinocMesher(UntexturedBinocMesher):
+ class OcMesher(UntexturedOcMesher):
+     def __init__(self, cameras, bounds, **kwargs):
+-        UntexturedOcMesher.__init__(self, get_caminfo(cameras)[0], bounds, **kwargs)
++        # The shared tuple includes timestamps used only by BinocMesher.
++        # OcMesher accepts poses, intrinsics, heights and widths.
++        UntexturedOcMesher.__init__(self, get_caminfo(cameras)[0][:4], bounds, **kwargs)
+ 
+     def __call__(self, kernels):
+         sdf_kernels = [(lambda x, k0=k: k0(x)[Vars.SDF]) for k in kernels]
+@@ -124,7 +126,7 @@ class OcMesher(UntexturedOcMesher):
+ class CollectiveOcMesher(UntexturedOcMesher):
+     def __init__(self, cameras, bounds, **kwargs):
+-        UntexturedOcMesher.__init__(self, get_caminfo(cameras)[0], bounds, **kwargs)
++        UntexturedOcMesher.__init__(self, get_caminfo(cameras)[0][:4], bounds, **kwargs)
+ 
+     def __call__(self, kernels):
+         sdf_kernels = [
+diff --git a/infinigen/core/execute_tasks.py b/infinigen/core/execute_tasks.py
+--- a/infinigen/core/execute_tasks.py
++++ b/infinigen/core/execute_tasks.py
+@@ -312,6 +312,15 @@ def execute_tasks(
+             mesher_backend, fs, fe = f.readlines()
+             mesher_backend = mesher_backend.replace('\n', '')
+             fs, fe = int(fs), int(fe)
++        if (
++            mesher_backend == "BinocMesher"
++            and (Task.Render in task or Task.GroundTruth in task)
++            and frame_range[0] != frame_range[1]
++        ):
++            raise ValueError(
++                "BinocMesher rendering requires one frame per task: set "
++                "iterate_scene_tasks.cam_block_size=1. Multi-frame rendering "
++                "would reuse one sliced mesh across different times."
++            )
+         if mesher_backend == "BinocMesher" or optimize_terrain_diskusage:
+             terrain = Terrain(
+                 scene_seed,
+@@ -327,6 +337,11 @@ def execute_tasks(
+                 if mesh_name + "_fine" in bpy.data.objects.keys():
+                     butil.delete(bpy.data.objects[mesh_name + "_fine"])
+             cameras = [cam_util.get_camera(i, j) for i, j in cam_util.get_cameras_ids()]
++            logger.info(
++                "BinocMesher slicing frame=%s time=%s",
++                bpy.context.scene.frame_current,
++                (bpy.context.scene.frame_current - 0.5) / bpy.context.scene.render.fps,
++            )
+             terrain.fine_terrain(
+                 output_folder,
+                 mesher_backend=mesher_backend,

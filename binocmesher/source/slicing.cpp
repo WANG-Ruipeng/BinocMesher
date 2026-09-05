@@ -1088,7 +1088,9 @@ extern "C" {
         // For each scene element, run bucket sort to merge vertices
         MEASURE_TIME("merging vertices", 1, {
             for (int ele = 0; ele < params::n_elements; ele++) {
-                for (int i = 0; i < 4; i++) bucket_sort(ele, i);
+                if (!unmerged_vertices[ele].empty()) {
+                    for (int i = 0; i < 4; i++) bucket_sort(ele, i);
+                }
                 int cnt = 0;
                 int start_i = -1;
                 merging_map.resize(unmerged_vertices[ele].size());

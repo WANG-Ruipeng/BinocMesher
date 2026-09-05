@@ -6,15 +6,58 @@
 #include "dual_contouring.h"
 #include "bisection.h"
 #include "hyperpoly_provenance.h"
+#include <cstdlib>
 
 namespace {
 
 thread_local std::string bisection_last_error_message;
 int pending_hyperpoly_vertex_group = -1;
 
-constexpr int kMaximumSerializedCacheRecords = 10000000;
-constexpr std::uintmax_t kMaximumSerializedCachePayloadBytes =
+constexpr int kDefaultMaximumSerializedCacheRecords = 10000000;
+constexpr std::uintmax_t kDefaultMaximumSerializedCachePayloadBytes =
     static_cast<std::uintmax_t>(256) << 20;
+constexpr int kAbsoluteMaximumSerializedCacheRecords = 100000000;
+constexpr std::uintmax_t kAbsoluteMaximumSerializedCachePayloadBytes =
+    static_cast<std::uintmax_t>(8) << 30;
+
+std::uintmax_t positive_environment_limit(
+    const char *name,
+    std::uintmax_t default_value,
+    std::uintmax_t absolute_maximum
+) {
+    const char *raw_value = std::getenv(name);
+    if (raw_value == nullptr || raw_value[0] == '\0') {
+        return default_value;
+    }
+
+    try {
+        const std::string text(raw_value);
+        std::string::size_type consumed = 0;
+        const unsigned long long parsed = std::stoull(text, &consumed, 10);
+        if (consumed != text.size() || parsed == 0 ||
+            parsed > absolute_maximum) {
+            throw std::runtime_error("value is outside the allowed range");
+        }
+        return static_cast<std::uintmax_t>(parsed);
+    } catch (const std::exception &) {
+        throw std::runtime_error(
+            std::string("invalid positive integer in ") + name);
+    }
+}
+
+int maximum_serialized_cache_records() {
+    return static_cast<int>(positive_environment_limit(
+        "BINOC_MAX_SERIALIZED_CACHE_RECORDS",
+        kDefaultMaximumSerializedCacheRecords,
+        kAbsoluteMaximumSerializedCacheRecords));
+}
+
+std::uintmax_t maximum_serialized_cache_payload_bytes() {
+    return positive_environment_limit(
+        "BINOC_MAX_SERIALIZED_CACHE_PAYLOAD_BYTES",
+        kDefaultMaximumSerializedCachePayloadBytes,
+        kAbsoluteMaximumSerializedCachePayloadBytes);
+}
 
 template <typename Record>
 int checked_serialized_record_count(
@@ -28,7 +71,7 @@ int checked_serialized_record_count(
             " input is smaller than its vector header");
     }
     const std::uintmax_t payload_bytes = file_bytes - sizeof(int);
-    if (payload_bytes > kMaximumSerializedCachePayloadBytes) {
+    if (payload_bytes > maximum_serialized_cache_payload_bytes()) {
         throw std::runtime_error(
             std::string(cache_name) +
             " input exceeds the serialized-cache byte cap");
@@ -40,7 +83,7 @@ int checked_serialized_record_count(
     }
     const std::uintmax_t record_count = payload_bytes / sizeof(Record);
     if (record_count >
-        static_cast<std::uintmax_t>(kMaximumSerializedCacheRecords)) {
+        static_cast<std::uintmax_t>(maximum_serialized_cache_records())) {
         throw std::runtime_error(
             std::string(cache_name) +
             " input exceeds the serialized-cache record cap");
@@ -595,7 +638,7 @@ void load_hyperpolys(int t, int expected_records) {
         int maximum_records = expected_records;
         if (maximum_records < 0) {
             maximum_records = schema_records;
-        } else if (maximum_records > kMaximumSerializedCacheRecords) {
+        } else if (maximum_records > maximum_serialized_cache_records()) {
             throw std::runtime_error(
                 "expected hyperpoly count exceeds the serialized-cache record cap");
         }
