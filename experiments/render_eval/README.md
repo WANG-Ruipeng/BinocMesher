@@ -83,4 +83,7 @@ python experiments/render_eval/verify_flow_geometry.py SCENE_ROOT \
   --frame 25 --output flow_geometry_check.json
 ```
 
-See `VALIDATION_20260905.md` for the repair checks and the active recovery run.
+See `VALIDATION_20260905.md` for the earlier repair-check checkpoint.
+The [completed Forest pilot archive](artifacts/forest96_20260905/README.md)
+contains the OcMesher-96 and rescored Spherical-8 results, selected renders,
+configuration records, and the limits of this comparison.

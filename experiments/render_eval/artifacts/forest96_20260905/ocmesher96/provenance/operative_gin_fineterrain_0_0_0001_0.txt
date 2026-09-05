@@ -1,0 +1,298 @@
+# Macros:
+# ==============================================================================
+LOG_DIR = '/home/warpwang/runs/forest96-recovery-v2-20260905/ocmesher96/0/logs'
+
+# Parameters for apply_gin_configs:
+# ==============================================================================
+apply_gin_configs.finalize_config = False
+apply_gin_configs.skip_unknown = False
+
+# Parameters for Atmosphere:
+# ==============================================================================
+Atmosphere.hacky_offset = 0
+Atmosphere.height = 130
+Atmosphere.material = 'atmosphere'
+Atmosphere.spherical_radius = -1
+Atmosphere.transparency = 'IndividualTransparent'
+
+# Parameters for configure_blender:
+# ==============================================================================
+configure_blender.motion_blur = False
+configure_blender.motion_blur_shutter = 0.15
+configure_blender.render_engine = 'CYCLES'
+
+# Parameters for configure_cycles_devices:
+# ==============================================================================
+configure_cycles_devices.use_gpu = True
+
+# Parameters for configure_render_cycles:
+# ==============================================================================
+configure_render_cycles.adaptive_threshold = 0.01
+configure_render_cycles.denoise = False
+configure_render_cycles.exposure = 1
+configure_render_cycles.min_samples = 0
+configure_render_cycles.num_samples = 8192
+configure_render_cycles.time_limit = 0
+
+# Parameters for create_text_file:
+# ==============================================================================
+create_text_file.log_dir = %LOG_DIR
+create_text_file.text = None
+
+# Parameters for Element:
+# ==============================================================================
+# None.
+
+# Parameters for execute_tasks:
+# ==============================================================================
+execute_tasks.camera_id = [0, 0]
+execute_tasks.dryrun = False
+execute_tasks.fps = 24
+execute_tasks.frame_range = [1, 96]
+execute_tasks.generate_resolution = [960, 540]
+execute_tasks.optimize_terrain_diskusage = False
+execute_tasks.output_blend_name = 'scene.blend'
+execute_tasks.point_trajectory_src_frame = 1
+execute_tasks.resample_idx = None
+execute_tasks.reset_assets = True
+
+# Parameters for fine_terrain:
+# ==============================================================================
+fine_terrain.fe = None
+fine_terrain.fs = None
+fine_terrain.mesher_backend = 'OcMesher'
+fine_terrain.write_attribute_enabled = True
+
+# Parameters for FixedSeed:
+# ==============================================================================
+# None.
+
+# Parameters for get_caminfo:
+# ==============================================================================
+get_caminfo.fe = None
+get_caminfo.fs = None
+get_caminfo.relax = 1.05
+
+# Parameters for get_surface_type:
+# ==============================================================================
+get_surface_type.degrade_sdf_to_displacement = True
+
+# Parameters for Ground:
+# ==============================================================================
+Ground.freq = 0.01
+Ground.height = 0
+Ground.is_3d = False
+Ground.material = 'ground_collection'
+Ground.octaves = 9
+Ground.sand_dunes_freq = ('log_uniform', 0.01, 0.1)
+Ground.sand_dunes_scale = 0.1
+Ground.sand_dunes_warping_freq = ('log_uniform', 0.01, 0.1)
+Ground.sand_dunes_warping_octaves = 2
+Ground.sand_dunes_warping_scale = ('uniform', 3, 6)
+Ground.scale = 5
+Ground.spherical_radius = -1
+Ground.transparency = 'Opaque'
+Ground.with_sand_dunes = 0
+
+# Parameters for group_collections:
+# ==============================================================================
+group_collections.config = \
+    [{'hide_render': True, 'hide_viewport': True, 'name': 'assets'},
+     {'hide_render': False, 'hide_viewport': True, 'name': 'scatter'},
+     {'hide_render': True, 'hide_viewport': False, 'name': 'placeholders'},
+     {'hide_render': False, 'hide_viewport': True, 'name': 'unique_assets'},
+     {'hide_render': False, 'hide_viewport': True, 'name': 'particleassets'},
+     {'hide_render': False, 'hide_viewport': True, 'name': 'particles'},
+     {'hide_render': True, 'hide_viewport': False, 'name': 'animhelper'}]
+
+# Parameters for LandTiles:
+# ==============================================================================
+LandTiles.assets_seed_override = None
+LandTiles.attribute_distance_range = 1000000000.0
+LandTiles.attribute_modification_distort_freq = 1
+LandTiles.attribute_modification_distort_mag = 2
+LandTiles.attribute_modification_end_height = None
+LandTiles.attribute_modification_start_height = None
+LandTiles.attribute_probability = 1
+LandTiles.direction_deg = 0
+LandTiles.empty_below = -1000000000.0
+LandTiles.height_modification_end = None
+LandTiles.height_modification_start = None
+LandTiles.island_probability = 0
+LandTiles.land_process = ('choice', ['erosion', None], [0.65, 0.35])
+LandTiles.material = 'mountain_collection'
+LandTiles.n_lattice = 1
+LandTiles.randomness = 0
+LandTiles.smooth = False
+LandTiles.tile_density = 1
+LandTiles.tile_heights = [-0.1]
+LandTiles.tiles = ['MultiMountains']
+LandTiles.transparency = 'Opaque'
+LandTiles.use_cblerp = False
+LandTiles.y_tilt = 0
+LandTiles.y_tilt_clip = 0
+
+# Parameters for landtiles.load_assets:
+# ==============================================================================
+landtiles.load_assets.on_the_fly_instances = 1
+landtiles.load_assets.reused_instances = 0
+
+# Parameters for multi_mountains_params:
+# ==============================================================================
+multi_mountains_params.coverage = ('uniform', 0.4, 0.6)
+multi_mountains_params.height = ('uniform', 60, 90)
+multi_mountains_params.max_freq = ('uniform', 0.003, 0.004)
+multi_mountains_params.min_freq = ('uniform', 0.0005, 0.002)
+multi_mountains_params.slope_freq = ('uniform', 0.001, 0.004)
+multi_mountains_params.slope_height = ('uniform', 4, 6)
+
+# Parameters for OcMesher:
+# ==============================================================================
+OcMesher.bisection_iters = 15
+OcMesher.coarse_count = 500000
+OcMesher.enclosed = True
+OcMesher.inv_scale = 10
+OcMesher.memory_limit_mb = 1000
+OcMesher.min_dist = 1
+OcMesher.pixels_per_cube = 6
+OcMesher.simplify_occluded = True
+OcMesher.visible_relax_iter = 2
+
+# Parameters for registry:
+# ==============================================================================
+registry.atmosphere = [('atmosphere_light_haze', 1)]
+registry.bark = [('bark_birch', 0.1), ('bark_random', 0.9)]
+registry.beach = \
+    [('sand', 10),
+     ('cracked_ground', 1),
+     ('dirt', 1),
+     ('stone', 1),
+     ('soil', 1)]
+registry.city_collection = [('stone', 1)]
+registry.city_window = [('city_window', 1)]
+registry.eroded = \
+    [('sand', 1), ('cracked_ground', 1), ('dirt', 1), ('stone', 1), ('soil', 1)]
+registry.greenery = [('simple_greenery', 1)]
+registry.ground_collection = \
+    [('mud', 2),
+     ('sand', 1),
+     ('cobble_stone', 1),
+     ('cracked_ground', 1),
+     ('dirt', 1),
+     ('stone', 1),
+     ('soil', 1),
+     ('chunkyrock', 0)]
+registry.lava = [('lava', 1)]
+registry.liquid_collection = [('water', 0.95)]
+registry.mountain_collection = [('mountain', 10), ('sandstone', 2)]
+registry.rock_collection = [('stone', 1), ('mountain', 5)]
+registry.smooth_categories = 0
+registry.snow = [('snow', 1)]
+registry.tree_collection = [('sdftree', 1)]
+
+# Parameters for scene:
+# ==============================================================================
+scene.caves_chance = 0.0
+scene.ground_chance = 1
+scene.ground_ice_chance = 0
+scene.landtiles_chance = 1
+scene.sdf_city_chance = 0
+scene.sdf_trees_chance = 1
+scene.upsidedown_mountains_chance = 0
+scene.volcanos_chance = 0
+scene.voronoi_grains_chance = 0
+scene.voronoi_rocks_chance = 0.5
+scene.warped_rocks_chance = 0.3
+scene.waterbody_chance = 0.5
+
+# Parameters for SdfTrees:
+# ==============================================================================
+SdfTrees.density = 0.5
+SdfTrees.height_offset = 0.5
+SdfTrees.mask_freq = 0.05
+SdfTrees.mask_octaves = 11
+SdfTrees.mask_shift = -0.2
+SdfTrees.material = 'tree_collection'
+SdfTrees.n_lattice = 60
+SdfTrees.noise_freq = 20
+SdfTrees.noise_octaves = 9
+SdfTrees.noise_scale = 0.1
+SdfTrees.r_randomness = 0.5
+SdfTrees.r_short = 0.1
+SdfTrees.ratio = 1.5
+SdfTrees.ratio_randomness = 0.5
+SdfTrees.transparency = 'Opaque'
+
+# Parameters for Terrain:
+# ==============================================================================
+Terrain.asset_folder = ''
+Terrain.asset_version = 'May27'
+Terrain.bounds = (-500, 500, -500, 500, -500, 500)
+Terrain.device = 'cpu'
+Terrain.main_terrain = 'OpaqueTerrain'
+Terrain.min_distance = 1
+Terrain.pixels_per_cube_individual_transparent = None
+Terrain.populated_bounds = (-75, 75, -75, 75, -25, 55)
+Terrain.simplify_occluded_individual_transparent = False
+Terrain.under_water = False
+
+# Parameters for tile_directions:
+# ==============================================================================
+tile_directions.Canyon = 'random'
+tile_directions.Canyons = 'random'
+tile_directions.Cliff = 'dependent'
+tile_directions.Coast = 'dependent'
+tile_directions.Mesa = 'random'
+tile_directions.Mountain = 'random'
+tile_directions.MultiMountains = 'random'
+tile_directions.River = 'initial'
+tile_directions.Volcano = 'random'
+
+# Parameters for Timer:
+# ==============================================================================
+Timer.disable_timer = False
+Timer.logger = None
+
+# Parameters for VoronoiRocks:
+# ==============================================================================
+VoronoiRocks.gap_base = 10
+VoronoiRocks.gap_max_freq = 0.03
+VoronoiRocks.gap_min_freq = 0.003
+VoronoiRocks.gap_octaves = 2
+VoronoiRocks.gap_scale = 0.1
+VoronoiRocks.mask_freq = 0.05
+VoronoiRocks.mask_octaves = 11
+VoronoiRocks.mask_shift = -0.2
+VoronoiRocks.material = 'mountain_collection'
+VoronoiRocks.max_freq = 10
+VoronoiRocks.min_freq = 1
+VoronoiRocks.n_lattice = 3
+VoronoiRocks.transparency = 'Opaque'
+VoronoiRocks.variable_material = False
+VoronoiRocks.warp_max_freq = 0.5
+VoronoiRocks.warp_min_freq = 0.1
+VoronoiRocks.warp_modu_freq = 0.01
+VoronoiRocks.warp_modu_octaves = 2
+VoronoiRocks.warp_modu_scale = 0.4
+VoronoiRocks.warp_modu_sigmoidscale = 3
+VoronoiRocks.warp_octaves = 3
+VoronoiRocks.warp_prob = 0.5
+
+# Parameters for WarpedRocks:
+# ==============================================================================
+WarpedRocks.content_max_freq = 0.1
+WarpedRocks.content_min_freq = 0.06
+WarpedRocks.content_octaves = 15
+WarpedRocks.content_scale = 40
+WarpedRocks.material = 'mountain_collection'
+WarpedRocks.slope_freq = 0.02
+WarpedRocks.slope_is_3d = False
+WarpedRocks.slope_octaves = 5
+WarpedRocks.slope_scale = 20
+WarpedRocks.slope_shift = -3
+WarpedRocks.supressing_param = 3
+WarpedRocks.transparency = 'Opaque'
+WarpedRocks.warp_max_freq = 0.15
+WarpedRocks.warp_min_freq = 0.1
+WarpedRocks.warp_octaves = 3
+WarpedRocks.warp_scale = 5

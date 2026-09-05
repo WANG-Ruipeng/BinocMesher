@@ -1,0 +1,141 @@
+# Macros:
+# ==============================================================================
+LOG_DIR = '/home/warpwang/runs/forest96-recovery-v2-20260905/ocmesher96/0/logs'
+
+# Parameters for apply_gin_configs:
+# ==============================================================================
+apply_gin_configs.finalize_config = False
+apply_gin_configs.skip_unknown = False
+
+# Parameters for flat/compositor_postprocessing:
+# ==============================================================================
+flat/compositor_postprocessing.color_correct = False
+flat/compositor_postprocessing.distort = False
+flat/compositor_postprocessing.glare = False
+flat/compositor_postprocessing.show = True
+
+# Parameters for configure_blender:
+# ==============================================================================
+configure_blender.motion_blur = False
+configure_blender.motion_blur_shutter = 0.15
+configure_blender.render_engine = 'CYCLES'
+
+# Parameters for flat/configure_compositor_output:
+# ==============================================================================
+# None.
+
+# Parameters for configure_cycles_devices:
+# ==============================================================================
+configure_cycles_devices.use_gpu = True
+
+# Parameters for flat/configure_cycles_devices:
+# ==============================================================================
+flat/configure_cycles_devices.use_gpu = True
+
+# Parameters for configure_render_cycles:
+# ==============================================================================
+configure_render_cycles.adaptive_threshold = 0.01
+configure_render_cycles.denoise = False
+configure_render_cycles.exposure = 1
+configure_render_cycles.min_samples = 0
+configure_render_cycles.num_samples = 8192
+configure_render_cycles.time_limit = 0
+
+# Parameters for flat/configure_render_cycles:
+# ==============================================================================
+flat/configure_render_cycles.adaptive_threshold = 0.01
+flat/configure_render_cycles.denoise = False
+flat/configure_render_cycles.exposure = 1
+flat/configure_render_cycles.min_samples = 1
+flat/configure_render_cycles.num_samples = 16
+flat/configure_render_cycles.time_limit = 0
+
+# Parameters for create_text_file:
+# ==============================================================================
+create_text_file.log_dir = %LOG_DIR
+create_text_file.text = None
+
+# Parameters for execute_tasks:
+# ==============================================================================
+execute_tasks.camera_id = [0, 0]
+execute_tasks.dryrun = False
+execute_tasks.fps = 24
+execute_tasks.frame_range = [1, 24]
+execute_tasks.generate_resolution = [960, 540]
+execute_tasks.optimize_terrain_diskusage = False
+execute_tasks.output_blend_name = 'scene.blend'
+execute_tasks.point_trajectory_src_frame = 1
+execute_tasks.resample_idx = 0
+execute_tasks.reset_assets = True
+
+# Parameters for group_collections:
+# ==============================================================================
+group_collections.config = \
+    [{'hide_render': True, 'hide_viewport': True, 'name': 'assets'},
+     {'hide_render': False, 'hide_viewport': True, 'name': 'scatter'},
+     {'hide_render': True, 'hide_viewport': False, 'name': 'placeholders'},
+     {'hide_render': False, 'hide_viewport': True, 'name': 'unique_assets'},
+     {'hide_render': False, 'hide_viewport': True, 'name': 'particleassets'},
+     {'hide_render': False, 'hide_viewport': True, 'name': 'particles'},
+     {'hide_render': True, 'hide_viewport': False, 'name': 'animhelper'}]
+
+# Parameters for registry:
+# ==============================================================================
+registry.atmosphere = [('atmosphere_light_haze', 1)]
+registry.bark = [('bark_birch', 0.1), ('bark_random', 0.9)]
+registry.beach = \
+    [('sand', 10),
+     ('cracked_ground', 1),
+     ('dirt', 1),
+     ('stone', 1),
+     ('soil', 1)]
+registry.city_collection = [('stone', 1)]
+registry.city_window = [('city_window', 1)]
+registry.eroded = \
+    [('sand', 1), ('cracked_ground', 1), ('dirt', 1), ('stone', 1), ('soil', 1)]
+registry.greenery = [('simple_greenery', 1)]
+registry.ground_collection = \
+    [('mud', 2),
+     ('sand', 1),
+     ('cobble_stone', 1),
+     ('cracked_ground', 1),
+     ('dirt', 1),
+     ('stone', 1),
+     ('soil', 1),
+     ('chunkyrock', 0)]
+registry.lava = [('lava', 1)]
+registry.liquid_collection = [('water', 0.95)]
+registry.mountain_collection = [('mountain', 10), ('sandstone', 2)]
+registry.rock_collection = [('stone', 1), ('mountain', 5)]
+registry.smooth_categories = 0
+registry.snow = [('snow', 1)]
+registry.tree_collection = [('sdftree', 1)]
+
+# Parameters for render:
+# ==============================================================================
+render.hide_water = False
+render.render_image_func = @flat/render_image
+
+# Parameters for flat/render_image:
+# ==============================================================================
+flat/render_image.dof_aperture_fstop = 3
+flat/render_image.excludes = []
+flat/render_image.flat_shading = True
+flat/render_image.passes_to_save = \
+    [['z', 'Depth'],
+     ['normal', 'Normal'],
+     ['vector', 'Vector'],
+     ['object_index', 'IndexOB']]
+flat/render_image.render_resolution_override = None
+flat/render_image.save_blend_file = None
+flat/render_image.use_dof = False
+
+# Parameters for Timer:
+# ==============================================================================
+Timer.disable_timer = False
+Timer.logger = None
+
+# Parameters for flat/Timer:
+# ==============================================================================
+flat/Timer.disable_timer = False
+flat/Timer.logger = None

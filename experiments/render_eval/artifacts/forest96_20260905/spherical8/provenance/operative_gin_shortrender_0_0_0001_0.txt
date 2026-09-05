@@ -1,0 +1,155 @@
+# Macros:
+# ==============================================================================
+LOG_DIR = \
+    '/home/warpwang/runs/forest96-four-baseline-pilot-20260905/spherical8/0/logs'
+
+# Parameters for apply_gin_configs:
+# ==============================================================================
+apply_gin_configs.finalize_config = False
+apply_gin_configs.skip_unknown = False
+
+# Parameters for full/compositor_postprocessing:
+# ==============================================================================
+full/compositor_postprocessing.color_correct = False
+full/compositor_postprocessing.distort = False
+full/compositor_postprocessing.glare = False
+full/compositor_postprocessing.show = True
+
+# Parameters for configure_blender:
+# ==============================================================================
+configure_blender.motion_blur = False
+configure_blender.motion_blur_shutter = 0.15
+configure_blender.render_engine = 'CYCLES'
+
+# Parameters for full/configure_compositor_output:
+# ==============================================================================
+# None.
+
+# Parameters for configure_cycles_devices:
+# ==============================================================================
+configure_cycles_devices.use_gpu = True
+
+# Parameters for full/configure_cycles_devices:
+# ==============================================================================
+full/configure_cycles_devices.use_gpu = True
+
+# Parameters for configure_render_cycles:
+# ==============================================================================
+configure_render_cycles.adaptive_threshold = 0.01
+configure_render_cycles.denoise = False
+configure_render_cycles.exposure = 1
+configure_render_cycles.min_samples = 0
+configure_render_cycles.num_samples = 8192
+configure_render_cycles.time_limit = 0
+
+# Parameters for full/configure_render_cycles:
+# ==============================================================================
+full/configure_render_cycles.adaptive_threshold = 0.01
+full/configure_render_cycles.denoise = False
+full/configure_render_cycles.exposure = 1
+full/configure_render_cycles.min_samples = 32
+full/configure_render_cycles.num_samples = 3072
+full/configure_render_cycles.time_limit = 0
+
+# Parameters for create_text_file:
+# ==============================================================================
+create_text_file.log_dir = %LOG_DIR
+create_text_file.text = None
+
+# Parameters for execute_tasks:
+# ==============================================================================
+execute_tasks.camera_id = [0, 0]
+execute_tasks.dryrun = False
+execute_tasks.fps = 24
+execute_tasks.frame_range = [1, 8]
+execute_tasks.generate_resolution = [960, 540]
+execute_tasks.optimize_terrain_diskusage = False
+execute_tasks.output_blend_name = 'scene.blend'
+execute_tasks.point_trajectory_src_frame = 1
+execute_tasks.resample_idx = 0
+execute_tasks.reset_assets = True
+
+# Parameters for group_collections:
+# ==============================================================================
+group_collections.config = \
+    [{'hide_render': True, 'hide_viewport': True, 'name': 'assets'},
+     {'hide_render': False, 'hide_viewport': True, 'name': 'scatter'},
+     {'hide_render': True, 'hide_viewport': False, 'name': 'placeholders'},
+     {'hide_render': False, 'hide_viewport': True, 'name': 'unique_assets'},
+     {'hide_render': False, 'hide_viewport': True, 'name': 'particleassets'},
+     {'hide_render': False, 'hide_viewport': True, 'name': 'particles'},
+     {'hide_render': True, 'hide_viewport': False, 'name': 'animhelper'}]
+
+# Parameters for registry:
+# ==============================================================================
+registry.atmosphere = [('atmosphere_light_haze', 1)]
+registry.bark = [('bark_birch', 0.1), ('bark_random', 0.9)]
+registry.beach = \
+    [('sand', 10),
+     ('cracked_ground', 1),
+     ('dirt', 1),
+     ('stone', 1),
+     ('soil', 1)]
+registry.city_collection = [('stone', 1)]
+registry.city_window = [('city_window', 1)]
+registry.eroded = \
+    [('sand', 1), ('cracked_ground', 1), ('dirt', 1), ('stone', 1), ('soil', 1)]
+registry.greenery = [('simple_greenery', 1)]
+registry.ground_collection = \
+    [('mud', 2),
+     ('sand', 1),
+     ('cobble_stone', 1),
+     ('cracked_ground', 1),
+     ('dirt', 1),
+     ('stone', 1),
+     ('soil', 1),
+     ('chunkyrock', 0)]
+registry.lava = [('lava', 1)]
+registry.liquid_collection = [('water', 0.95)]
+registry.mountain_collection = [('mountain', 10), ('sandstone', 2)]
+registry.rock_collection = [('stone', 1), ('mountain', 5)]
+registry.smooth_categories = 0
+registry.snow = [('snow', 1)]
+registry.tree_collection = [('sdftree', 1)]
+
+# Parameters for render:
+# ==============================================================================
+render.hide_water = False
+render.render_image_func = @full/render_image
+
+# Parameters for full/render_image:
+# ==============================================================================
+full/render_image.dof_aperture_fstop = 3
+full/render_image.excludes = []
+full/render_image.flat_shading = False
+full/render_image.passes_to_save = \
+    [['diffuse_direct', 'DiffDir'],
+     ['diffuse_color', 'DiffCol'],
+     ['diffuse_indirect', 'DiffInd'],
+     ['glossy_direct', 'GlossDir'],
+     ['glossy_color', 'GlossCol'],
+     ['glossy_indirect', 'GlossInd'],
+     ['transmission_direct', 'TransDir'],
+     ['transmission_color', 'TransCol'],
+     ['transmission_indirect', 'TransInd'],
+     ['volume_direct', 'VolumeDir'],
+     ['emit', 'Emit'],
+     ['environment', 'Env'],
+     ['ambient_occlusion', 'AO']]
+full/render_image.render_resolution_override = None
+full/render_image.save_blend_file = None
+full/render_image.use_dof = False
+
+# Parameters for full/save_camera_parameters:
+# ==============================================================================
+full/save_camera_parameters.use_dof = False
+
+# Parameters for Timer:
+# ==============================================================================
+Timer.disable_timer = False
+Timer.logger = None
+
+# Parameters for full/Timer:
+# ==============================================================================
+full/Timer.disable_timer = False
+full/Timer.logger = None
