@@ -42,6 +42,7 @@ from compile_splice_plans import (
     write_plan,
 )
 from event_complex import audit_volume
+from sidewall_contract import audit_sidewall
 from space_position_contract import (
     EVENT_IR_SCHEMA,
     PLAN_SCHEMA,
@@ -637,6 +638,7 @@ def build_event_star_mapping_cylinder(
         bool(set(face) & center_indices) for face in side_faces)
     volume_audit = audit_volume(
         [tuple(map(int, tet)) for tet in tets]).to_dict()
+    sidewall_contract = audit_sidewall(vertices4.tolist())
     checks = {
         'fifteen_vertices': vertices4.shape == (15, 4),
         'twenty_four_tetrahedra': tets.shape == (24, 4),
@@ -653,6 +655,10 @@ def build_event_star_mapping_cylinder(
     }
     return {
         'schema': 'binoc-beb1-double-mapping-cylinder-v1',
+        'pass_scope': 'THREE_LEVEL_ROOT_SUPPORT_NOT_CONTINUOUS_WINDOW',
+        'sidewall_boundary_contract': sidewall_contract,
+        'sidewall_geometry_compatible': sidewall_contract['pass'],
+        'continuous_window_ready': False,
         'pass': all(checks.values()),
         'verdict': (
             'PASS_BEB1_DOUBLE_MAPPING_CYLINDER'
@@ -806,6 +812,7 @@ def main() -> int:
     parser.add_argument('--event-id')
     parser.add_argument('--expected-root', default='104/5')
     parser.add_argument('--require-whole-mesh-ready', action='store_true')
+    parser.add_argument('--require-continuous-window', action='store_true')
     args = parser.parse_args()
 
     cache_root = args.cache_root.resolve()
@@ -1202,7 +1209,7 @@ def main() -> int:
         if not plan_position_contract_is_valid(plan_metadata):
             raise RuntimeError(
                 'critical BEB1 plan has an invalid spaceT position contract')
-        if whole_mesh_ready and args.plan_output is not None:
+        if whole_mesh_ready and args.plan_output is not None and not args.require_continuous_window:
             plan_output = args.plan_output.resolve()
             if plan_output.exists():
                 raise FileExistsError(plan_output)
@@ -1233,6 +1240,12 @@ def main() -> int:
         ),
         'runtime_disposition': disposition,
         'whole_mesh_splice_ready': whole_mesh_ready,
+        'root_slice_ready': whole_mesh_ready,
+        'continuous_window_ready': False,
+        'window_disposition': (
+            'REJECT_LINEAR_SIDEWALL_WINDOW' if mapping_cylinder is not None
+            and not mapping_cylinder['sidewall_geometry_compatible']
+            else 'CONTINUOUS_WINDOW_NOT_CERTIFIED'),
         'event': {
             'event_id': event_id,
             'root': fraction_json(root),
@@ -1297,7 +1310,9 @@ def main() -> int:
                 if mapping_cylinder is not None else []
             ),
             'critical_vertex_on_side_trace': False,
-            'regular_on_one_sided_window': side_trace_audit['regular'],
+            'vertex_trajectory_three_level_audit_pass': side_trace_audit['regular'],
+            'regular_on_one_sided_window': False,
+            'continuous_geometry_certified': False,
         },
         'event_star_geometry': {
             'kind': 'EXPLICIT_DOUBLE_MAPPING_CYLINDER',
@@ -1329,6 +1344,8 @@ def main() -> int:
             'core_position_agreement': core_position_agreement,
             'side_trace_affine_audit': side_trace_audit,
             'mapping_cylinder_ready': mapping_cylinder_ready,
+            'mapping_cylinder_ready_scope': 'ROOT_ONLY_THREE_LEVEL_SUPPORT',
+            'continuous_window_ready': False,
             'mapping_cylinder_error': mapping_cylinder_error,
             'runtime_space_position_contract_ready': (
                 plan_metadata is not None and
@@ -1366,11 +1383,19 @@ def main() -> int:
             ),
         },
     }
+    if args.require_continuous_window:
+        payload['pass'] = False
+        payload['verdict'] = 'STOP_CONTINUOUS_WINDOW_ADMISSION'
+        payload['runtime_disposition'] = payload['window_disposition']
+        payload['whole_mesh_replacement_plan'] = None
+        disposition = payload['window_disposition']
     output.write_text(
         json.dumps(payload, indent=2, sort_keys=True) + '\n',
         encoding='utf-8')
     print(payload['verdict'])
     print(disposition)
+    if args.require_continuous_window:
+        return 4
     if not event_ir_pass:
         for name, passed in checks.items():
             if not passed:

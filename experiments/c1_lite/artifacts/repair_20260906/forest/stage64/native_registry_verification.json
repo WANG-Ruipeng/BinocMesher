@@ -1,0 +1,102 @@
+{
+  "schema": "c1-lite-forest64-native-registry-verification-v1",
+  "verification_mode": "READ_ONLY_EXISTING_FILES_NO_BUILD_NO_SLICING_NO_RENDER",
+  "overall_driver_status": "STOP_BUILD_OR_CONTRACT_FAILURE",
+  "native_cache_registry_status": "AVAILABLE_PRE_SURFACE_DISPLACEMENT_ONLY",
+  "wrapper_status": "FAILED_POST_MESH_DISPLACEMENT_KEYERROR_ERODED",
+  "worker_exit_code": 1,
+  "matching_forest_census_processes_at_final_ps_check": 0,
+  "worker_wall_seconds": 1203.255439993,
+  "peak_observed_output_bytes": 1783308839,
+  "final_output_bytes_before_supervisor_summary": 1149146053,
+  "original_inputs_sha256_unchanged": true,
+  "driver_snapshot_sha256": "b87e5a6f3e4d888def5bba72c3d914c5b038d861a044f6c0fb450d98afbec058",
+  "protocol": {
+    "scene": "Forest",
+    "seed": 0,
+    "frames_inclusive": [1, 64],
+    "fps": 24,
+    "resolution": [960, 540],
+    "pixels_per_cube": 6,
+    "max_tL": 1,
+    "time_groups": 2,
+    "selection": "Fixed earliest practical two-time-group power-of-two frame block; not selected by observed events or gains."
+  },
+  "cache_root": "/home/warpwang/binoc-runs/forest-census64-repair-20260906/HyperMesh",
+  "caches": [
+    {
+      "name": "OpaqueTerrain",
+      "finish_marker_present": true,
+      "manifest_event_registry_and_provenance_enabled": true,
+      "hyperpolys_native_summary": 3081976,
+      "processed_provenance_records_by_file_length": 3081976,
+      "processed_owner_sidecars": 8,
+      "faces_examined": 18491856,
+      "raw_csv_rows": 440,
+      "distinct_raw_ids": 440,
+      "logical_incidences": 268,
+      "canonical_events": 131,
+      "distinct_exact_roots_internal": 2,
+      "all_rows_temporal_neighbour": true,
+      "shared_root_mismatches_native_summary": 0,
+      "csv_counts_match_native_summary": true,
+      "root_groups": [
+        {"root_internal": "3/2", "raw_observations": 184, "logical_incidences": 132, "canonical_events": 66},
+        {"root_internal": "5/2", "raw_observations": 256, "logical_incidences": 136, "canonical_events": 65}
+      ],
+      "registry_sha256": "0ce1a439bf33b785db9dbb3ea55dbc548933477aca64d2fca64829f660609b52",
+      "native_summary_sha256": "69f7785ebd0dd3a49a3a9c73ce97c8e38634a43d8316ca201d53538c5b968250"
+    },
+    {
+      "name": "atmosphere",
+      "finish_marker_present": true,
+      "manifest_event_registry_and_provenance_enabled": true,
+      "hyperpolys_native_summary": 13542,
+      "processed_provenance_records_by_file_length": 13542,
+      "processed_owner_sidecars": 8,
+      "faces_examined": 81252,
+      "raw_csv_rows": 0,
+      "logical_incidences": 0,
+      "canonical_events": 0,
+      "distinct_exact_roots_internal": 0,
+      "csv_counts_match_native_summary": true,
+      "registry_sha256": "7d209c7123336a36bcb3ae338d6c6b41767a44a0c2bf168b9b7aa41164a19868",
+      "native_summary_sha256": "bb2b67b31dfe2100642aadf004d7fbaf7cadaed6c46a7fd6586b7e792d644f4a"
+    }
+  ],
+  "provenance_availability_check": {
+    "files": 20,
+    "bhp2_files": 4,
+    "bpm2_files": 16,
+    "scope": "SHA256 of every sidecar; BHP2 header and full length; BPM2 length divisibility and first-record schema/file identity. Not every owner record, source selector, or geometry certificate.",
+    "limited_format_checks_pass_after_empty_file_correction": true,
+    "evidence": "provenance_file_checks.json",
+    "empty_file_correction": "provenance_empty_header_check.json",
+    "correction_note": "A valid zero-record BHP2 file is 24 bytes. The original generic reader incorrectly required 28 bytes for that one file; its false flag is explicitly superseded, with no cache or tolerance change."
+  },
+  "wrapper_failure": {
+    "full_stack": "worker_full.log",
+    "full_log_sha256": "6fa0ee586e9b1599a042acca538c81e08aad687e0ec79163bb4a03396b25624a",
+    "last_call": "infinigen/terrain/surface_kernel/core.py:134 params.vertex_attributes[self.attribute]",
+    "exception": "KeyError: 'eroded'",
+    "cause": "The pilot disabled attribute generation, but the existing mesh_extraction wrapper still invokes a displacement kernel requiring the eroded attribute.",
+    "correction_to_effective_inputs_note": "write_attribute_enabled=False is not safely describable as only skipping material/tag evaluation: downstream displacement can modify vertices and requires those attributes. The effective_inputs.json note was recorded before this failure and is superseded here.",
+    "geometry_scope": "Native cached mesher geometry BEFORE the wrapper's surface-displacement stage. Not a complete Infinigen mesh or rendering result."
+  },
+  "not_established": {
+    "BEB1_classification": "NOT_COMPILED",
+    "complete_owner_closure_and_support": "NOT_COMPILED",
+    "same_root_atomic_compatibility": "NOT_COMPILED",
+    "full_window_geometry_and_exterior_admission": "NOT_ATTEMPTED",
+    "runtime_endpoint_and_whole_mesh_contract": "NOT_ATTEMPTED",
+    "natural_frame_visibility_and_temporal_quality": "NOT_EVALUATED",
+    "BEB1_coverage": "NOT_ESTIMATED"
+  },
+  "limitations": [
+    "131 temporal-neighbour bilinear-saddle canonical events are not 131 certified BEB1 constructions.",
+    "This is one fixed 64-frame Forest pilot at 6 px, not a six-scene or paper-setting census.",
+    "Stage 1 failed before writing a registry; its event counts are unknown, not zero, and must not be added as an independent denominator.",
+    "Use actual camera_inputs.json and the cache time model for future natural-frame mapping; do not reuse the four-demo time conversion."
+  ],
+  "retention": "All stage64 caches and 48000835 bytes of private assets retained for reuse. No further stage64 cleanup or build was performed."
+}

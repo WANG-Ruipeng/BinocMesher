@@ -1,0 +1,37 @@
+{
+  "schema": "c1-lite-forest24-resource-stop-diagnosis-v1",
+  "status": "CONFIRMED_SELF_IMPOSED_FILE_LIMIT_STOP",
+  "worker_status": "STOP_BUILD_OR_CONTRACT_FAILURE",
+  "worker_wall_seconds": 661.071571697,
+  "final_output_bytes": 488617766,
+  "source_inputs_sha256_unchanged": true,
+  "failed_file": "/home/warpwang/binoc-runs/forest-census-repair-20260906/HyperMesh/OpaqueTerrain/hyperpoly_meta/0.bin",
+  "failed_file_bytes": 134217728,
+  "failed_file_sha256": "44898b6eb6422fe76efde6ed8603157305401b4ff951dee5dfa270b2ed19bbc2",
+  "worker_RLIMIT_FSIZE_bytes": 134217728,
+  "error": "write_final_hypermesh failed closed: failed to write hyperpoly provenance record",
+  "registry_status": "MISSING_REGISTRY",
+  "canonical_events": null,
+  "exact_roots": null,
+  "raw_observations": null,
+  "interpretation": "The file reached the supervisor's exact 128MiB per-file limit, below the total disk budget. No completed registry exists. The aggregate zero field in the original raw summary is not an observed zero-event result.",
+  "executed_driver_sha256": "95c4638379052d25295477795b9c275a5336f6e1852088fc7e777d4f1826d4d4",
+  "driver_snapshot_available": false,
+  "subsequent_source_changes": "After worker launch the source was extended with fixed stage64, immutable snapshots, the confirmed-file-limit gate, raw_id counting and tighter report wording. Running Python retained its loaded code, but traceback line text may reference the changed file. Current source is not asserted to be byte-identical stage1 replay.",
+  "temporal_structure": {
+    "max_tL": 0,
+    "temporal_groups": 1,
+    "maximum_discrete_time": 2,
+    "internal_hypervertex_time": 1,
+    "time_boundary_hypervertex_times": [0, 2],
+    "consequence": "Temporal-neighbour faces have constant time on each four-corner face; this configuration cannot supply the targeted interior bilinear saddle on that face class.",
+    "source_lines": [
+      "binocmesher/source/coarse_step.cpp:110",
+      "binocmesher/source/bisection.cpp:394",
+      "binocmesher/source/bisection.cpp:697",
+      "binocmesher/source/dual_contouring.cpp:894",
+      "binocmesher/source/hyperpoly_layout.h:35"
+    ]
+  },
+  "next_stage_policy": "Do not repeat an event-uninformative 24-frame run merely to turn smoke status green. The separately predeclared 64-frame run is permitted only after this exact resource-limit explanation and input-integrity check; any further build/resource failure stops this campaign."
+}

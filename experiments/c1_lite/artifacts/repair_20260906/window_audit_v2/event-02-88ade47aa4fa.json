@@ -1,0 +1,1920 @@
+{
+  "admission": {
+    "fallback": "UNCHANGED_BASELINE_ENTIRE_WINDOW_INCLUDING_ROOT",
+    "fallback_is_a_continuity_improvement": false,
+    "gates": {
+      "binary32_geometry_contact": {
+        "reason": "No evidence supplied.",
+        "status": "UNKNOWN"
+      },
+      "compiler_selector_conditioning": {
+        "reason": "No evidence supplied.",
+        "status": "UNKNOWN"
+      },
+      "complete_temporal_partition": {
+        "reason": "Every original source branch and actual singleton attempted, with raw-original-time split guards.",
+        "status": "PASS"
+      },
+      "endpoint_realization": {
+        "binary64_pass": true,
+        "prospective_binary32_pass": true,
+        "reason": "Frozen B prospective endpoint audit: a failure is retained; a prospective PASS is not an actual C++ endpoint-equivalence proof.",
+        "status": "UNKNOWN"
+      },
+      "event_isolation": {
+        "reason": "No evidence supplied.",
+        "status": "UNKNOWN"
+      },
+      "ideal_temporal_continuity": {
+        "reason": "One exact piecewise-affine center and identical source boundaries at all junctions; no float32 continuity claim.",
+        "status": "PASS"
+      },
+      "interface_degeneracy_policy": {
+        "reason": "Whole fixed partition; source-identity quotient / ideal rational scope only. Runtime equivalence is a separate gate.",
+        "status": "UNKNOWN"
+      },
+      "interface_topology": {
+        "reason": "Whole fixed partition; source-identity quotient / ideal rational scope only. Runtime equivalence is a separate gate.",
+        "status": "PASS"
+      },
+      "original_patch_disk": {
+        "reason": "Whole fixed partition; source-identity quotient / ideal rational scope only. Runtime equivalence is a separate gate.",
+        "status": "PASS"
+      },
+      "raw_emission_equivalence": {
+        "reason": "No evidence supplied.",
+        "status": "UNKNOWN"
+      },
+      "replacement_disk": {
+        "reason": "Whole fixed partition; source-identity quotient / ideal rational scope only. Runtime equivalence is a separate gate.",
+        "status": "PASS"
+      },
+      "runtime_identity_and_unchanged_exterior": {
+        "reason": "No evidence supplied.",
+        "status": "UNKNOWN"
+      },
+      "source_incidence_contact": {
+        "reason": "Whole fixed partition; source-identity quotient / ideal rational scope only. Runtime equivalence is a separate gate.",
+        "status": "UNKNOWN"
+      },
+      "source_ownership": {
+        "reason": "Frozen source-owner contract plus every raw owner-emission/suppression model completed; not runtime array identity.",
+        "status": "PASS"
+      }
+    },
+    "rejected_gates": [],
+    "root_only_c0_fallback_allowed": false,
+    "runtime_plan_authorized": false,
+    "schema": "c1-lite-baseline-relative-admission-v1",
+    "scope": "Decision contract only; no runtime plan is emitted by this module.",
+    "status": "FAIL_CLOSED",
+    "unresolved_gates": [
+      "source_incidence_contact",
+      "interface_degeneracy_policy",
+      "event_isolation",
+      "endpoint_realization",
+      "compiler_selector_conditioning",
+      "raw_emission_equivalence",
+      "binary32_geometry_contact",
+      "runtime_identity_and_unchanged_exterior"
+    ]
+  },
+  "all_units_scanned": true,
+  "certificate_kinds": {
+    "POSITIVE_INCIDENT_HALFPLANE_COMBINATION": 7,
+    "STRICT_COORDINATE_AXIS": 46,
+    "STRICT_SOURCE_EDGE_EXTERIOR": 26618,
+    "SUPPORTING_LINE_SOURCE_EDGE": 7,
+    "UNKNOWN": 48
+  },
+  "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+  "diagnostics": [
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            8,
+            20,
+            1139,
+            0,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "64:12|382:8",
+          "70:12|391:8",
+          "71:12|392:8"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "Neither the old strict separator nor the bounded exact source-contact tests certify this branch. UNKNOWN does not diagnose an intersection.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            8,
+            3093,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            8,
+            256,
+            1,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "159:8|311:0",
+          "160:8|312:0",
+          "159:8|317:0"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            8,
+            3093,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            8,
+            8,
+            256,
+            1,
+            0,
+            1
+          ]
+        ],
+        "source_vertices": [
+          "159:8|317:0",
+          "160:8|312:0",
+          "160:8|318:0"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            8,
+            3094,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            8,
+            257,
+            0,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "159:8|317:0",
+          "160:8|318:0",
+          "162:8|320:0"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            8,
+            3090,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            8,
+            253,
+            1,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "159:8|317:0",
+          "161:8|319:0",
+          "161:8|392:8"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "Neither the old strict separator nor the bounded exact source-contact tests certify this branch. UNKNOWN does not diagnose an intersection.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            8,
+            3090,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            8,
+            8,
+            253,
+            1,
+            0,
+            1
+          ]
+        ],
+        "source_vertices": [
+          "159:8|317:0",
+          "161:8|392:8",
+          "159:8|391:8"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            8,
+            3094,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            8,
+            8,
+            257,
+            0,
+            0,
+            1
+          ]
+        ],
+        "source_vertices": [
+          "159:8|317:0",
+          "162:8|320:0",
+          "161:8|319:0"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            8,
+            20,
+            1139,
+            0,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "64:12|382:8",
+          "70:12|391:8",
+          "71:12|392:8"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:1"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "Neither the old strict separator nor the bounded exact source-contact tests certify this branch. UNKNOWN does not diagnose an intersection.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            8,
+            3093,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            8,
+            256,
+            1,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "159:8|311:0",
+          "160:8|312:0",
+          "159:8|317:0"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:1"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            8,
+            3093,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            8,
+            8,
+            256,
+            1,
+            0,
+            1
+          ]
+        ],
+        "source_vertices": [
+          "159:8|317:0",
+          "160:8|312:0",
+          "160:8|318:0"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:1"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            8,
+            3094,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            8,
+            257,
+            0,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "159:8|317:0",
+          "160:8|318:0",
+          "162:8|320:0"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:1"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            8,
+            3090,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            8,
+            253,
+            1,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "159:8|317:0",
+          "161:8|319:0",
+          "161:8|392:8"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:1"
+    }
+  ],
+  "diagnostics_total": 48,
+  "event_id": "element=0;role=temporal_neighbour;face=46:10|311:0|159:8|391:8",
+  "exterior_scope": "Raw original-time emission filtered canonical SourceVID geometric quotient, NOT actual C++ array identity.",
+  "fallback_selection_checks": {
+    "left": "BASELINE",
+    "lower": "BASELINE",
+    "right": "BASELINE",
+    "root": "BASELINE",
+    "upper": "BASELINE"
+  },
+  "historical_v1_superset_pair_counts": {
+    "PASS": 27792,
+    "UNKNOWN": 86
+  },
+  "junctions": {
+    "center_rule": "One piecewise-affine interpolation through the exact source endpoint midpoints and frozen binary32 root anchor.",
+    "exact_boundary_positions_match_all_junctions": true,
+    "ordered_boundary_cycle_matches_all_junctions": true,
+    "source_face_orientation_basis": "Frozen source certificate, not a new C++ runtime test.",
+    "status": "PASS"
+  },
+  "pair_counts": {
+    "PASS": 26678,
+    "UNKNOWN": 48
+  },
+  "production_started": false,
+  "render_started": false,
+  "runtime_admitted": false,
+  "runtime_plan_emitted": false,
+  "runtime_started": false,
+  "schema": "c1-lite-repaired-raw-window-audit-v2",
+  "source_report_sha256": "5a85888afae23f5455ec2ebe545e882f40a03c8d17ba0c0ea4288cb7946575d0",
+  "status": "UNKNOWN",
+  "units": [
+    {
+      "exterior_status": "UNKNOWN",
+      "geometry_certificate": {
+        "minimum_3d_fan_area_lower_bound": {
+          "denominator": 131072,
+          "numerator": 9075
+        },
+        "orientation_xy": 1,
+        "reason": "Every footprint and center half-plane inequality is strictly positive throughout the branch.",
+        "schema": "c1-lite-local-affine-graph-certificate-v1",
+        "scope": "ONE_AFFINE_BRANCH_STRICTLY_CONVEX_XY_GRAPH_FAN_ONLY",
+        "status": "PASS",
+        "witness": null
+      },
+      "geometry_status": "PASS",
+      "index": 0,
+      "interface_degeneracy_status": "UNKNOWN",
+      "interface_topology": {
+        "boundary_edge_checks": [
+          {
+            "edge": [
+              "46:10|376:8",
+              "159:8|311:0"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "159:8|311:0",
+              "159:8|391:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "159:8|391:8",
+              "46:10|391:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "46:10|391:8",
+              "46:10|376:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          }
+        ],
+        "coordinate_model": "source-identity quotient",
+        "original_disk": {
+          "internal_diagonal": [
+            "159:8|391:8",
+            "46:10|376:8"
+          ],
+          "reason": "Two oriented triangles form a disk with exactly the declared boundary.",
+          "status": "PASS"
+        },
+        "reason": "Original disk and retained collar are valid in the source quotient; a compatible fan preserves this interface topology.",
+        "runtime_identity_equivalence": "UNKNOWN",
+        "schema": "c1-lite-source-interface-topology-v1",
+        "status": "PASS",
+        "vertex_link_checks": [
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|311:0",
+              "46:10|391:8"
+            ],
+            "link_edges": 8,
+            "link_vertices": 9,
+            "source_vid": "46:10|376:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|391:8",
+              "46:10|376:8"
+            ],
+            "link_edges": 6,
+            "link_vertices": 7,
+            "source_vid": "159:8|311:0",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|311:0",
+              "46:10|391:8"
+            ],
+            "link_edges": 4,
+            "link_vertices": 5,
+            "source_vid": "159:8|391:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|391:8",
+              "46:10|376:8"
+            ],
+            "link_edges": 5,
+            "link_vertices": 6,
+            "source_vid": "46:10|391:8",
+            "status": "PASS"
+          }
+        ],
+        "witness_count": 0,
+        "witnesses": []
+      },
+      "interface_topology_status": "PASS",
+      "kind": "affine_branch",
+      "original_disk_status": "PASS",
+      "raw_manifest": {
+        "binary32_runtime_certificate": "UNKNOWN",
+        "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+        "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+        "extra_smooth": "UNSUPPORTED",
+        "identically_zero_area_source_faces": 1372,
+        "interface_degenerate_source_faces": 0,
+        "interface_degenerate_witnesses": [],
+        "interface_gate": "UNKNOWN_NO_COMPLETE_INTERFACE_CERTIFICATE",
+        "mode": "raw",
+        "owner_ledger_sha256": "bba0bd324756ad4aa005fc5bcf23c56dd5fc21ce299cd80d4362efefe3e09a22",
+        "owner_reason_counts": {
+          "after_original_end": 512,
+          "inactive_cache_group": 10242,
+          "interval_not_selected": 10573,
+          "raw_emitted": 5256,
+          "record_not_loaded": 1024,
+          "requested_exact_owner": 6
+        },
+        "owner_state_counts": {
+          "retained": 5256,
+          "skip": 22351,
+          "suppress": 6
+        },
+        "owner_universe": "Every serialized polygon fan occurrence in the inventory; skipped owners are retained in the ledger denominator.",
+        "raw_owner_count": 27613,
+        "repeated_effective_SourceVID_faces": 0,
+        "retained_manifest_sha256": "58c4a0e78779890b1d9700f622cb557c1692747bf31f7cd13dae2fb2b88d1d2e",
+        "retained_raw_occurrence_count": 5256,
+        "retained_source_face_count": 3818,
+        "runtime_admission": false,
+        "runtime_final_array_identity": "UNKNOWN_CANONICAL_SOURCE_GEOMETRIC_QUOTIENT_ONLY",
+        "scan_complete": true,
+        "schema": "c1-lite-raw-retained-v1",
+        "status": "PASS_RAW_EMISSION_MODEL",
+        "t0": {
+          "denominator": 5,
+          "numerator": 102
+        },
+        "t1": {
+          "denominator": 5,
+          "numerator": 104
+        },
+        "time_domain": "open_cell_with_endpoint_limits"
+      },
+      "retained_certificate_kinds": {
+        "POSITIVE_INCIDENT_HALFPLANE_COMBINATION": 1,
+        "STRICT_COORDINATE_AXIS": 7,
+        "STRICT_SOURCE_EDGE_EXTERIOR": 3802,
+        "SUPPORTING_LINE_SOURCE_EDGE": 1,
+        "UNKNOWN": 7
+      },
+      "retained_certificate_stream_sha256": "7b47198d6c6c7291d632df2cfbc607d6c6055aab27c7f839a628f02545c7fe71",
+      "retained_counts": {
+        "PASS": 3811,
+        "REJECT": 0,
+        "UNKNOWN": 7
+      },
+      "scan_complete": true,
+      "status": "UNKNOWN",
+      "t0": {
+        "denominator": 5,
+        "numerator": 102
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 104
+      }
+    },
+    {
+      "exterior_status": "UNKNOWN",
+      "geometry_certificate": {
+        "minimum_3d_fan_area_lower_bound": {
+          "denominator": 1048576,
+          "numerator": 130075
+        },
+        "orientation_xy": 1,
+        "reason": "Every footprint and center half-plane inequality is strictly positive throughout the branch.",
+        "schema": "c1-lite-local-affine-graph-certificate-v1",
+        "scope": "ONE_AFFINE_BRANCH_STRICTLY_CONVEX_XY_GRAPH_FAN_ONLY",
+        "status": "PASS",
+        "witness": null
+      },
+      "geometry_status": "PASS",
+      "index": 1,
+      "interface_degeneracy_status": "UNKNOWN",
+      "interface_topology": {
+        "boundary_edge_checks": [
+          {
+            "edge": [
+              "46:10|376:8",
+              "159:8|311:0"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "159:8|311:0",
+              "159:8|391:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "159:8|391:8",
+              "46:10|391:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "46:10|391:8",
+              "46:10|376:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          }
+        ],
+        "coordinate_model": "source-identity quotient",
+        "original_disk": {
+          "internal_diagonal": [
+            "159:8|391:8",
+            "46:10|376:8"
+          ],
+          "reason": "Two oriented triangles form a disk with exactly the declared boundary.",
+          "status": "PASS"
+        },
+        "reason": "Original disk and retained collar are valid in the source quotient; a compatible fan preserves this interface topology.",
+        "runtime_identity_equivalence": "UNKNOWN",
+        "schema": "c1-lite-source-interface-topology-v1",
+        "status": "PASS",
+        "vertex_link_checks": [
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|311:0",
+              "46:10|391:8"
+            ],
+            "link_edges": 8,
+            "link_vertices": 9,
+            "source_vid": "46:10|376:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|391:8",
+              "46:10|376:8"
+            ],
+            "link_edges": 6,
+            "link_vertices": 7,
+            "source_vid": "159:8|311:0",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|311:0",
+              "46:10|391:8"
+            ],
+            "link_edges": 4,
+            "link_vertices": 5,
+            "source_vid": "159:8|391:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|391:8",
+              "46:10|376:8"
+            ],
+            "link_edges": 5,
+            "link_vertices": 6,
+            "source_vid": "46:10|391:8",
+            "status": "PASS"
+          }
+        ],
+        "witness_count": 0,
+        "witnesses": []
+      },
+      "interface_topology_status": "PASS",
+      "kind": "affine_branch",
+      "original_disk_status": "PASS",
+      "raw_manifest": {
+        "binary32_runtime_certificate": "UNKNOWN",
+        "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+        "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+        "extra_smooth": "UNSUPPORTED",
+        "identically_zero_area_source_faces": 1372,
+        "interface_degenerate_source_faces": 0,
+        "interface_degenerate_witnesses": [],
+        "interface_gate": "UNKNOWN_NO_COMPLETE_INTERFACE_CERTIFICATE",
+        "mode": "raw",
+        "owner_ledger_sha256": "bba0bd324756ad4aa005fc5bcf23c56dd5fc21ce299cd80d4362efefe3e09a22",
+        "owner_reason_counts": {
+          "after_original_end": 512,
+          "inactive_cache_group": 10242,
+          "interval_not_selected": 10573,
+          "raw_emitted": 5256,
+          "record_not_loaded": 1024,
+          "requested_exact_owner": 6
+        },
+        "owner_state_counts": {
+          "retained": 5256,
+          "skip": 22351,
+          "suppress": 6
+        },
+        "owner_universe": "Every serialized polygon fan occurrence in the inventory; skipped owners are retained in the ledger denominator.",
+        "raw_owner_count": 27613,
+        "repeated_effective_SourceVID_faces": 0,
+        "retained_manifest_sha256": "65c57b5678e5af9330fac20181af1023c2a9cb00f5bfc31de4e92ed0da11c4a8",
+        "retained_raw_occurrence_count": 5256,
+        "retained_source_face_count": 3818,
+        "runtime_admission": false,
+        "runtime_final_array_identity": "UNKNOWN_CANONICAL_SOURCE_GEOMETRIC_QUOTIENT_ONLY",
+        "scan_complete": true,
+        "schema": "c1-lite-raw-retained-v1",
+        "status": "PASS_RAW_EMISSION_MODEL",
+        "t0": {
+          "denominator": 5,
+          "numerator": 104
+        },
+        "t1": {
+          "denominator": 1,
+          "numerator": 21
+        },
+        "time_domain": "open_cell_with_endpoint_limits"
+      },
+      "retained_certificate_kinds": {
+        "POSITIVE_INCIDENT_HALFPLANE_COMBINATION": 1,
+        "STRICT_COORDINATE_AXIS": 7,
+        "STRICT_SOURCE_EDGE_EXTERIOR": 3802,
+        "SUPPORTING_LINE_SOURCE_EDGE": 1,
+        "UNKNOWN": 7
+      },
+      "retained_certificate_stream_sha256": "70b6973a15b170aa0af40a8441551f31c0507689171ce14ec83e9863889522f6",
+      "retained_counts": {
+        "PASS": 3811,
+        "REJECT": 0,
+        "UNKNOWN": 7
+      },
+      "scan_complete": true,
+      "status": "UNKNOWN",
+      "t0": {
+        "denominator": 5,
+        "numerator": 104
+      },
+      "t1": {
+        "denominator": 1,
+        "numerator": 21
+      }
+    },
+    {
+      "exterior_status": "UNKNOWN",
+      "geometry_certificate": {
+        "minimum_3d_fan_area_lower_bound": {
+          "denominator": 262144,
+          "numerator": 27225
+        },
+        "orientation_xy": 1,
+        "reason": "Every footprint and center half-plane inequality is strictly positive throughout the branch.",
+        "schema": "c1-lite-local-affine-graph-certificate-v1",
+        "scope": "ONE_AFFINE_BRANCH_STRICTLY_CONVEX_XY_GRAPH_FAN_ONLY",
+        "status": "PASS",
+        "witness": null
+      },
+      "geometry_status": "PASS",
+      "index": 2,
+      "interface_degeneracy_status": "UNKNOWN",
+      "interface_topology": {
+        "boundary_edge_checks": [
+          {
+            "edge": [
+              "46:10|376:8",
+              "159:8|311:0"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "159:8|311:0",
+              "159:8|391:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "159:8|391:8",
+              "46:10|391:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "46:10|391:8",
+              "46:10|376:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          }
+        ],
+        "coordinate_model": "source-identity quotient",
+        "original_disk": {
+          "internal_diagonal": [
+            "159:8|391:8",
+            "46:10|376:8"
+          ],
+          "reason": "Two oriented triangles form a disk with exactly the declared boundary.",
+          "status": "PASS"
+        },
+        "reason": "Original disk and retained collar are valid in the source quotient; a compatible fan preserves this interface topology.",
+        "runtime_identity_equivalence": "UNKNOWN",
+        "schema": "c1-lite-source-interface-topology-v1",
+        "status": "PASS",
+        "vertex_link_checks": [
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|311:0",
+              "46:10|391:8"
+            ],
+            "link_edges": 8,
+            "link_vertices": 9,
+            "source_vid": "46:10|376:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|391:8",
+              "46:10|376:8"
+            ],
+            "link_edges": 6,
+            "link_vertices": 7,
+            "source_vid": "159:8|311:0",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|311:0",
+              "46:10|391:8"
+            ],
+            "link_edges": 4,
+            "link_vertices": 5,
+            "source_vid": "159:8|391:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|391:8",
+              "46:10|376:8"
+            ],
+            "link_edges": 5,
+            "link_vertices": 6,
+            "source_vid": "46:10|391:8",
+            "status": "PASS"
+          }
+        ],
+        "witness_count": 0,
+        "witnesses": []
+      },
+      "interface_topology_status": "PASS",
+      "kind": "affine_branch",
+      "original_disk_status": "PASS",
+      "raw_manifest": {
+        "binary32_runtime_certificate": "UNKNOWN",
+        "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+        "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+        "extra_smooth": "UNSUPPORTED",
+        "identically_zero_area_source_faces": 1372,
+        "interface_degenerate_source_faces": 0,
+        "interface_degenerate_witnesses": [],
+        "interface_gate": "UNKNOWN_NO_COMPLETE_INTERFACE_CERTIFICATE",
+        "mode": "raw",
+        "owner_ledger_sha256": "1331ef72bde1aed7fea9bc5be3b6bc1165e5432bc4f2f0933e0bbfd1d079cea6",
+        "owner_reason_counts": {
+          "before_original_start": 122,
+          "inactive_cache_group": 10242,
+          "interval_not_selected": 11135,
+          "raw_emitted": 5256,
+          "record_not_loaded": 852,
+          "requested_exact_owner": 6
+        },
+        "owner_state_counts": {
+          "retained": 5256,
+          "skip": 22351,
+          "suppress": 6
+        },
+        "owner_universe": "Every serialized polygon fan occurrence in the inventory; skipped owners are retained in the ledger denominator.",
+        "raw_owner_count": 27613,
+        "repeated_effective_SourceVID_faces": 0,
+        "retained_manifest_sha256": "6fe53f45ce63920e1aa135ae9437f405fc5ed8cc4c7a5cd74a983aba0d47987a",
+        "retained_raw_occurrence_count": 5256,
+        "retained_source_face_count": 3818,
+        "runtime_admission": false,
+        "runtime_final_array_identity": "UNKNOWN_CANONICAL_SOURCE_GEOMETRIC_QUOTIENT_ONLY",
+        "scan_complete": true,
+        "schema": "c1-lite-raw-retained-v1",
+        "status": "PASS_RAW_EMISSION_MODEL",
+        "t0": {
+          "denominator": 1,
+          "numerator": 21
+        },
+        "t1": {
+          "denominator": 5,
+          "numerator": 106
+        },
+        "time_domain": "open_cell_with_endpoint_limits"
+      },
+      "retained_certificate_kinds": {
+        "POSITIVE_INCIDENT_HALFPLANE_COMBINATION": 1,
+        "STRICT_COORDINATE_AXIS": 7,
+        "STRICT_SOURCE_EDGE_EXTERIOR": 3802,
+        "SUPPORTING_LINE_SOURCE_EDGE": 1,
+        "UNKNOWN": 7
+      },
+      "retained_certificate_stream_sha256": "f91a193a6320e452b202f3737b65ad1ba03c7fd4daf629452b02024f9769c3da",
+      "retained_counts": {
+        "PASS": 3811,
+        "REJECT": 0,
+        "UNKNOWN": 7
+      },
+      "scan_complete": true,
+      "status": "UNKNOWN",
+      "t0": {
+        "denominator": 1,
+        "numerator": 21
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 106
+      }
+    },
+    {
+      "exterior_status": "UNKNOWN",
+      "geometry_certificate": {
+        "minimum_3d_fan_area_lower_bound": {
+          "denominator": 131072,
+          "numerator": 9075
+        },
+        "orientation_xy": 1,
+        "reason": "Every footprint and center half-plane inequality is strictly positive throughout the branch.",
+        "schema": "c1-lite-local-affine-graph-certificate-v1",
+        "scope": "ONE_AFFINE_BRANCH_STRICTLY_CONVEX_XY_GRAPH_FAN_ONLY",
+        "status": "PASS",
+        "witness": null
+      },
+      "geometry_status": "PASS",
+      "index": 0,
+      "interface_degeneracy_status": "UNKNOWN",
+      "interface_topology": {
+        "boundary_edge_checks": [
+          {
+            "edge": [
+              "46:10|376:8",
+              "159:8|311:0"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "159:8|311:0",
+              "159:8|391:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "159:8|391:8",
+              "46:10|391:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "46:10|391:8",
+              "46:10|376:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          }
+        ],
+        "coordinate_model": "source-identity quotient",
+        "original_disk": {
+          "internal_diagonal": [
+            "159:8|391:8",
+            "46:10|376:8"
+          ],
+          "reason": "Two oriented triangles form a disk with exactly the declared boundary.",
+          "status": "PASS"
+        },
+        "reason": "Original disk and retained collar are valid in the source quotient; a compatible fan preserves this interface topology.",
+        "runtime_identity_equivalence": "UNKNOWN",
+        "schema": "c1-lite-source-interface-topology-v1",
+        "status": "PASS",
+        "vertex_link_checks": [
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|311:0",
+              "46:10|391:8"
+            ],
+            "link_edges": 8,
+            "link_vertices": 9,
+            "source_vid": "46:10|376:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|391:8",
+              "46:10|376:8"
+            ],
+            "link_edges": 6,
+            "link_vertices": 7,
+            "source_vid": "159:8|311:0",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|311:0",
+              "46:10|391:8"
+            ],
+            "link_edges": 4,
+            "link_vertices": 5,
+            "source_vid": "159:8|391:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|391:8",
+              "46:10|376:8"
+            ],
+            "link_edges": 5,
+            "link_vertices": 6,
+            "source_vid": "46:10|391:8",
+            "status": "PASS"
+          }
+        ],
+        "witness_count": 0,
+        "witnesses": []
+      },
+      "interface_topology_status": "PASS",
+      "kind": "actual_singleton",
+      "original_disk_status": "PASS",
+      "raw_manifest": {
+        "binary32_runtime_certificate": "UNKNOWN",
+        "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+        "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+        "extra_smooth": "UNSUPPORTED",
+        "identically_zero_area_source_faces": 1372,
+        "interface_degenerate_source_faces": 0,
+        "interface_degenerate_witnesses": [],
+        "interface_gate": "UNKNOWN_NO_COMPLETE_INTERFACE_CERTIFICATE",
+        "mode": "raw",
+        "owner_ledger_sha256": "bba0bd324756ad4aa005fc5bcf23c56dd5fc21ce299cd80d4362efefe3e09a22",
+        "owner_reason_counts": {
+          "after_original_end": 512,
+          "inactive_cache_group": 10242,
+          "interval_not_selected": 10573,
+          "raw_emitted": 5256,
+          "record_not_loaded": 1024,
+          "requested_exact_owner": 6
+        },
+        "owner_state_counts": {
+          "retained": 5256,
+          "skip": 22351,
+          "suppress": 6
+        },
+        "owner_universe": "Every serialized polygon fan occurrence in the inventory; skipped owners are retained in the ledger denominator.",
+        "raw_owner_count": 27613,
+        "repeated_effective_SourceVID_faces": 0,
+        "retained_manifest_sha256": "bcb6ef67e45a743d626527216ea46b75e01d4dab90eba7122dda9bdcd3a2aec3",
+        "retained_raw_occurrence_count": 5256,
+        "retained_source_face_count": 3818,
+        "runtime_admission": false,
+        "runtime_final_array_identity": "UNKNOWN_CANONICAL_SOURCE_GEOMETRIC_QUOTIENT_ONLY",
+        "scan_complete": true,
+        "schema": "c1-lite-raw-retained-v1",
+        "status": "PASS_RAW_EMISSION_MODEL",
+        "t0": {
+          "denominator": 5,
+          "numerator": 102
+        },
+        "t1": {
+          "denominator": 5,
+          "numerator": 102
+        },
+        "time_domain": "actual_singleton"
+      },
+      "retained_certificate_kinds": {
+        "POSITIVE_INCIDENT_HALFPLANE_COMBINATION": 1,
+        "STRICT_COORDINATE_AXIS": 7,
+        "STRICT_SOURCE_EDGE_EXTERIOR": 3802,
+        "SUPPORTING_LINE_SOURCE_EDGE": 1,
+        "UNKNOWN": 7
+      },
+      "retained_certificate_stream_sha256": "b2b81ee2496b9cc712f21da89e19a4019f938b3ae41826e38f786fe118758186",
+      "retained_counts": {
+        "PASS": 3811,
+        "REJECT": 0,
+        "UNKNOWN": 7
+      },
+      "scan_complete": true,
+      "status": "UNKNOWN",
+      "t0": {
+        "denominator": 5,
+        "numerator": 102
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 102
+      }
+    },
+    {
+      "exterior_status": "UNKNOWN",
+      "geometry_certificate": {
+        "minimum_3d_fan_area_lower_bound": {
+          "denominator": 32768,
+          "numerator": 4235
+        },
+        "orientation_xy": 1,
+        "reason": "Every footprint and center half-plane inequality is strictly positive throughout the branch.",
+        "schema": "c1-lite-local-affine-graph-certificate-v1",
+        "scope": "ONE_AFFINE_BRANCH_STRICTLY_CONVEX_XY_GRAPH_FAN_ONLY",
+        "status": "PASS",
+        "witness": null
+      },
+      "geometry_status": "PASS",
+      "index": 1,
+      "interface_degeneracy_status": "UNKNOWN",
+      "interface_topology": {
+        "boundary_edge_checks": [
+          {
+            "edge": [
+              "46:10|376:8",
+              "159:8|311:0"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "159:8|311:0",
+              "159:8|391:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "159:8|391:8",
+              "46:10|391:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "46:10|391:8",
+              "46:10|376:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          }
+        ],
+        "coordinate_model": "source-identity quotient",
+        "original_disk": {
+          "internal_diagonal": [
+            "159:8|391:8",
+            "46:10|376:8"
+          ],
+          "reason": "Two oriented triangles form a disk with exactly the declared boundary.",
+          "status": "PASS"
+        },
+        "reason": "Original disk and retained collar are valid in the source quotient; a compatible fan preserves this interface topology.",
+        "runtime_identity_equivalence": "UNKNOWN",
+        "schema": "c1-lite-source-interface-topology-v1",
+        "status": "PASS",
+        "vertex_link_checks": [
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|311:0",
+              "46:10|391:8"
+            ],
+            "link_edges": 8,
+            "link_vertices": 9,
+            "source_vid": "46:10|376:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|391:8",
+              "46:10|376:8"
+            ],
+            "link_edges": 6,
+            "link_vertices": 7,
+            "source_vid": "159:8|311:0",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|311:0",
+              "46:10|391:8"
+            ],
+            "link_edges": 4,
+            "link_vertices": 5,
+            "source_vid": "159:8|391:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|391:8",
+              "46:10|376:8"
+            ],
+            "link_edges": 5,
+            "link_vertices": 6,
+            "source_vid": "46:10|391:8",
+            "status": "PASS"
+          }
+        ],
+        "witness_count": 0,
+        "witnesses": []
+      },
+      "interface_topology_status": "PASS",
+      "kind": "actual_singleton",
+      "original_disk_status": "PASS",
+      "raw_manifest": {
+        "binary32_runtime_certificate": "UNKNOWN",
+        "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+        "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+        "extra_smooth": "UNSUPPORTED",
+        "identically_zero_area_source_faces": 1372,
+        "interface_degenerate_source_faces": 0,
+        "interface_degenerate_witnesses": [],
+        "interface_gate": "UNKNOWN_NO_COMPLETE_INTERFACE_CERTIFICATE",
+        "mode": "raw",
+        "owner_ledger_sha256": "bba0bd324756ad4aa005fc5bcf23c56dd5fc21ce299cd80d4362efefe3e09a22",
+        "owner_reason_counts": {
+          "after_original_end": 512,
+          "inactive_cache_group": 10242,
+          "interval_not_selected": 10573,
+          "raw_emitted": 5256,
+          "record_not_loaded": 1024,
+          "requested_exact_owner": 6
+        },
+        "owner_state_counts": {
+          "retained": 5256,
+          "skip": 22351,
+          "suppress": 6
+        },
+        "owner_universe": "Every serialized polygon fan occurrence in the inventory; skipped owners are retained in the ledger denominator.",
+        "raw_owner_count": 27613,
+        "repeated_effective_SourceVID_faces": 0,
+        "retained_manifest_sha256": "9a9a5119ba301222da8c975d213b9aab031d7ae9cd2cebb90e2f06bc68e36dc8",
+        "retained_raw_occurrence_count": 5256,
+        "retained_source_face_count": 3818,
+        "runtime_admission": false,
+        "runtime_final_array_identity": "UNKNOWN_CANONICAL_SOURCE_GEOMETRIC_QUOTIENT_ONLY",
+        "scan_complete": true,
+        "schema": "c1-lite-raw-retained-v1",
+        "status": "PASS_RAW_EMISSION_MODEL",
+        "t0": {
+          "denominator": 5,
+          "numerator": 104
+        },
+        "t1": {
+          "denominator": 5,
+          "numerator": 104
+        },
+        "time_domain": "actual_singleton"
+      },
+      "retained_certificate_kinds": {
+        "POSITIVE_INCIDENT_HALFPLANE_COMBINATION": 1,
+        "STRICT_COORDINATE_AXIS": 7,
+        "STRICT_SOURCE_EDGE_EXTERIOR": 3802,
+        "SUPPORTING_LINE_SOURCE_EDGE": 1,
+        "UNKNOWN": 7
+      },
+      "retained_certificate_stream_sha256": "2eed7cdba55c67da037d308f7fb569560586ba32dbdc18ac5ad64b8ba58d007a",
+      "retained_counts": {
+        "PASS": 3811,
+        "REJECT": 0,
+        "UNKNOWN": 7
+      },
+      "scan_complete": true,
+      "status": "UNKNOWN",
+      "t0": {
+        "denominator": 5,
+        "numerator": 104
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 104
+      }
+    },
+    {
+      "exterior_status": "UNKNOWN",
+      "geometry_certificate": {
+        "minimum_3d_fan_area_lower_bound": {
+          "denominator": 1048576,
+          "numerator": 130075
+        },
+        "orientation_xy": 1,
+        "reason": "Every footprint and center half-plane inequality is strictly positive throughout the branch.",
+        "schema": "c1-lite-local-affine-graph-certificate-v1",
+        "scope": "ONE_AFFINE_BRANCH_STRICTLY_CONVEX_XY_GRAPH_FAN_ONLY",
+        "status": "PASS",
+        "witness": null
+      },
+      "geometry_status": "PASS",
+      "index": 2,
+      "interface_degeneracy_status": "UNKNOWN",
+      "interface_topology": {
+        "boundary_edge_checks": [
+          {
+            "edge": [
+              "46:10|376:8",
+              "159:8|311:0"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "159:8|311:0",
+              "159:8|391:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "159:8|391:8",
+              "46:10|391:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "46:10|391:8",
+              "46:10|376:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          }
+        ],
+        "coordinate_model": "source-identity quotient",
+        "original_disk": {
+          "internal_diagonal": [
+            "159:8|391:8",
+            "46:10|376:8"
+          ],
+          "reason": "Two oriented triangles form a disk with exactly the declared boundary.",
+          "status": "PASS"
+        },
+        "reason": "Original disk and retained collar are valid in the source quotient; a compatible fan preserves this interface topology.",
+        "runtime_identity_equivalence": "UNKNOWN",
+        "schema": "c1-lite-source-interface-topology-v1",
+        "status": "PASS",
+        "vertex_link_checks": [
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|311:0",
+              "46:10|391:8"
+            ],
+            "link_edges": 8,
+            "link_vertices": 9,
+            "source_vid": "46:10|376:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|391:8",
+              "46:10|376:8"
+            ],
+            "link_edges": 6,
+            "link_vertices": 7,
+            "source_vid": "159:8|311:0",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|311:0",
+              "46:10|391:8"
+            ],
+            "link_edges": 4,
+            "link_vertices": 5,
+            "source_vid": "159:8|391:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|391:8",
+              "46:10|376:8"
+            ],
+            "link_edges": 5,
+            "link_vertices": 6,
+            "source_vid": "46:10|391:8",
+            "status": "PASS"
+          }
+        ],
+        "witness_count": 0,
+        "witnesses": []
+      },
+      "interface_topology_status": "PASS",
+      "kind": "actual_singleton",
+      "original_disk_status": "PASS",
+      "raw_manifest": {
+        "binary32_runtime_certificate": "UNKNOWN",
+        "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+        "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+        "extra_smooth": "UNSUPPORTED",
+        "identically_zero_area_source_faces": 1372,
+        "interface_degenerate_source_faces": 0,
+        "interface_degenerate_witnesses": [],
+        "interface_gate": "UNKNOWN_NO_COMPLETE_INTERFACE_CERTIFICATE",
+        "mode": "raw",
+        "owner_ledger_sha256": "1331ef72bde1aed7fea9bc5be3b6bc1165e5432bc4f2f0933e0bbfd1d079cea6",
+        "owner_reason_counts": {
+          "before_original_start": 122,
+          "inactive_cache_group": 10242,
+          "interval_not_selected": 11135,
+          "raw_emitted": 5256,
+          "record_not_loaded": 852,
+          "requested_exact_owner": 6
+        },
+        "owner_state_counts": {
+          "retained": 5256,
+          "skip": 22351,
+          "suppress": 6
+        },
+        "owner_universe": "Every serialized polygon fan occurrence in the inventory; skipped owners are retained in the ledger denominator.",
+        "raw_owner_count": 27613,
+        "repeated_effective_SourceVID_faces": 0,
+        "retained_manifest_sha256": "cdb2d2bd3fe527bc363a39629ddf4219f5a4658ae50eeb21118981ddbb4b53ef",
+        "retained_raw_occurrence_count": 5256,
+        "retained_source_face_count": 3818,
+        "runtime_admission": false,
+        "runtime_final_array_identity": "UNKNOWN_CANONICAL_SOURCE_GEOMETRIC_QUOTIENT_ONLY",
+        "scan_complete": true,
+        "schema": "c1-lite-raw-retained-v1",
+        "status": "PASS_RAW_EMISSION_MODEL",
+        "t0": {
+          "denominator": 1,
+          "numerator": 21
+        },
+        "t1": {
+          "denominator": 1,
+          "numerator": 21
+        },
+        "time_domain": "actual_singleton"
+      },
+      "retained_certificate_kinds": {
+        "POSITIVE_INCIDENT_HALFPLANE_COMBINATION": 1,
+        "STRICT_COORDINATE_AXIS": 7,
+        "STRICT_SOURCE_EDGE_EXTERIOR": 3802,
+        "SUPPORTING_LINE_SOURCE_EDGE": 1,
+        "UNKNOWN": 7
+      },
+      "retained_certificate_stream_sha256": "251e45901ce0fd3f2d12c289a5ae66ae08112d336c08e44cdf34c8cd407cf25f",
+      "retained_counts": {
+        "PASS": 3811,
+        "REJECT": 0,
+        "UNKNOWN": 7
+      },
+      "scan_complete": true,
+      "status": "UNKNOWN",
+      "t0": {
+        "denominator": 1,
+        "numerator": 21
+      },
+      "t1": {
+        "denominator": 1,
+        "numerator": 21
+      }
+    },
+    {
+      "exterior_status": "UNKNOWN",
+      "geometry_certificate": {
+        "minimum_3d_fan_area_lower_bound": {
+          "denominator": 262144,
+          "numerator": 27225
+        },
+        "orientation_xy": 1,
+        "reason": "Every footprint and center half-plane inequality is strictly positive throughout the branch.",
+        "schema": "c1-lite-local-affine-graph-certificate-v1",
+        "scope": "ONE_AFFINE_BRANCH_STRICTLY_CONVEX_XY_GRAPH_FAN_ONLY",
+        "status": "PASS",
+        "witness": null
+      },
+      "geometry_status": "PASS",
+      "index": 3,
+      "interface_degeneracy_status": "UNKNOWN",
+      "interface_topology": {
+        "boundary_edge_checks": [
+          {
+            "edge": [
+              "46:10|376:8",
+              "159:8|311:0"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "159:8|311:0",
+              "159:8|391:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "159:8|391:8",
+              "46:10|391:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "46:10|391:8",
+              "46:10|376:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          }
+        ],
+        "coordinate_model": "source-identity quotient",
+        "original_disk": {
+          "internal_diagonal": [
+            "159:8|391:8",
+            "46:10|376:8"
+          ],
+          "reason": "Two oriented triangles form a disk with exactly the declared boundary.",
+          "status": "PASS"
+        },
+        "reason": "Original disk and retained collar are valid in the source quotient; a compatible fan preserves this interface topology.",
+        "runtime_identity_equivalence": "UNKNOWN",
+        "schema": "c1-lite-source-interface-topology-v1",
+        "status": "PASS",
+        "vertex_link_checks": [
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|311:0",
+              "46:10|391:8"
+            ],
+            "link_edges": 8,
+            "link_vertices": 9,
+            "source_vid": "46:10|376:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|391:8",
+              "46:10|376:8"
+            ],
+            "link_edges": 6,
+            "link_vertices": 7,
+            "source_vid": "159:8|311:0",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|311:0",
+              "46:10|391:8"
+            ],
+            "link_edges": 4,
+            "link_vertices": 5,
+            "source_vid": "159:8|391:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "159:8|391:8",
+              "46:10|376:8"
+            ],
+            "link_edges": 5,
+            "link_vertices": 6,
+            "source_vid": "46:10|391:8",
+            "status": "PASS"
+          }
+        ],
+        "witness_count": 0,
+        "witnesses": []
+      },
+      "interface_topology_status": "PASS",
+      "kind": "actual_singleton",
+      "original_disk_status": "PASS",
+      "raw_manifest": {
+        "binary32_runtime_certificate": "UNKNOWN",
+        "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+        "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+        "extra_smooth": "UNSUPPORTED",
+        "identically_zero_area_source_faces": 1372,
+        "interface_degenerate_source_faces": 0,
+        "interface_degenerate_witnesses": [],
+        "interface_gate": "UNKNOWN_NO_COMPLETE_INTERFACE_CERTIFICATE",
+        "mode": "raw",
+        "owner_ledger_sha256": "1331ef72bde1aed7fea9bc5be3b6bc1165e5432bc4f2f0933e0bbfd1d079cea6",
+        "owner_reason_counts": {
+          "before_original_start": 122,
+          "inactive_cache_group": 10242,
+          "interval_not_selected": 11135,
+          "raw_emitted": 5256,
+          "record_not_loaded": 852,
+          "requested_exact_owner": 6
+        },
+        "owner_state_counts": {
+          "retained": 5256,
+          "skip": 22351,
+          "suppress": 6
+        },
+        "owner_universe": "Every serialized polygon fan occurrence in the inventory; skipped owners are retained in the ledger denominator.",
+        "raw_owner_count": 27613,
+        "repeated_effective_SourceVID_faces": 0,
+        "retained_manifest_sha256": "b9079292f7719e1731e0ce9b6c3bf6e915de4c75b3685d48d6eca7baacb0fb82",
+        "retained_raw_occurrence_count": 5256,
+        "retained_source_face_count": 3818,
+        "runtime_admission": false,
+        "runtime_final_array_identity": "UNKNOWN_CANONICAL_SOURCE_GEOMETRIC_QUOTIENT_ONLY",
+        "scan_complete": true,
+        "schema": "c1-lite-raw-retained-v1",
+        "status": "PASS_RAW_EMISSION_MODEL",
+        "t0": {
+          "denominator": 5,
+          "numerator": 106
+        },
+        "t1": {
+          "denominator": 5,
+          "numerator": 106
+        },
+        "time_domain": "actual_singleton"
+      },
+      "retained_certificate_kinds": {
+        "POSITIVE_INCIDENT_HALFPLANE_COMBINATION": 1,
+        "STRICT_COORDINATE_AXIS": 4,
+        "STRICT_SOURCE_EDGE_EXTERIOR": 3806,
+        "SUPPORTING_LINE_SOURCE_EDGE": 1,
+        "UNKNOWN": 6
+      },
+      "retained_certificate_stream_sha256": "8f3a9a2e801eac9ae5d7a51d62eca72e737d8e0047496c83a76fd7129e8150ce",
+      "retained_counts": {
+        "PASS": 3812,
+        "REJECT": 0,
+        "UNKNOWN": 6
+      },
+      "scan_complete": true,
+      "status": "UNKNOWN",
+      "t0": {
+        "denominator": 5,
+        "numerator": 106
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 106
+      }
+    }
+  ]
+}

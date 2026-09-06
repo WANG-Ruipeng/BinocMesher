@@ -1,0 +1,136 @@
+{
+  "schema": "e2-runtime-verification-v1",
+  "date": "2026-09-06",
+  "status": "PASS_PRODUCTION_REQUESTED_SCHEDULE_ONLY",
+  "continuous_window_admitted": false,
+  "build": {
+    "isolated_directory": "/home/warpwang/binoc-runs/e2-runtime-loop-20260906/build/binocmesher",
+    "compiler": "/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++",
+    "compiler_version": "11.4.0",
+    "flags": "-w -O3 -std=c++17 -fPIC -fopenmp",
+    "linker_flags": "-shared -fopenmp",
+    "isolated_core_sha256": "f4263a2f47ba5283175a921e49b8867998bdd8124aac810793b34242ec43a3c9",
+    "installed_original_core_sha256": "b2bf1b5f1847087645d88507446b012dd4b77324269e45bf893de0e17d330796",
+    "installed_core_unchanged": true,
+    "isolated_23_source_files_match_workspace_bytes": true,
+    "isolated_core_python_geometry_and_wrapper_match_workspace_bytes": true,
+    "strict_focused_exit_code": 0,
+    "strict_focused_existing_signedness_warnings": 10,
+    "new_identity_warnings": 0,
+    "isolated_build_bytes_including_strict_objects": 3175673
+  },
+  "tests": {
+    "c1_lite": {
+      "count": 274,
+      "passed": true,
+      "includes_supplementary_envelope": true
+    },
+    "source_splice": {
+      "count": 14,
+      "passed": true
+    },
+    "critical_beb1_standalone": "PASS_CRITICAL_BEB1_EVENT_STAR_CLOSURE_COMBINATORICS",
+    "git_diff_check_passed": true
+  },
+  "comparison": {
+    "status": "PASS_INDEPENDENT_COMPARISON",
+    "schedules": [
+      {
+        "mode": "exact",
+        "queries": 33,
+        "applied": 31,
+        "endpoints": 2,
+        "outside": 0,
+        "old_new_baseline_equal": true,
+        "omp_baseline_equal": true,
+        "omp_result_equal": true,
+        "omp_identity_ledger_equal": true,
+        "checked_retained_faces": 118358,
+        "public_api_equal": true
+      },
+      {
+        "mode": "physical",
+        "queries": 41,
+        "applied": 37,
+        "endpoints": 2,
+        "outside": 2,
+        "old_new_baseline_equal": true,
+        "omp_baseline_equal": true,
+        "omp_result_equal": true,
+        "omp_identity_ledger_equal": true,
+        "checked_retained_faces": 141266,
+        "public_api_equal": true
+      }
+    ],
+    "omp1_seconds": 15.107821189999981,
+    "omp8_seconds": 15.115146128999982,
+    "all_original_caches_unchanged": true,
+    "all_temp_caches_removed": true,
+    "continuous_window_admitted": false
+  },
+  "independent_review": {
+    "blocking_findings": 0,
+    "scope": "fixed E2 requested schedule only; actual owner class coverage and Python replacement of native deduplicated source-face rows, not legacy C++ per-emission suppression"
+  },
+  "storage": {
+    "approx_total_gb_including_wsl_vhdx_windows_repo_migration_backup": 40.3,
+    "user_ceiling_gb": 400,
+    "temporary_worker_caches_removed": true,
+    "original_cache_unchanged": true,
+    "owned_temporary_patch_files_removed": 5,
+    "owned_generated_pyc_files_removed": 2,
+    "environments_original_experiments_and_migration_backup_preserved": true
+  },
+  "source_and_result_sha256": {
+    "binocmesher/core.py": "f5611dcebde85ae45990322a72188de59c954c1f68f8382679211bcc511b7816",
+    "binocmesher/window_runtime.py": "4eae868b0db7c15e1e2c44d55423e72fb6fee2b8c82a2949be8e5d33ee84aeb2",
+    "binocmesher/window_geometry_runtime.py": "8b8fb1002bb8b9f427e10a77e3c87a3d5d67d72d2b5431bb31a20665d21b0c8b",
+    "binocmesher/source/slicing.cpp": "7c1b7397401d941c7a1e35fcfdee9a4740de9d37bdcfd302601c678707507763",
+    "binocmesher/source/slicing.h": "858c8e3f491db499a055a4c8c7211f2c04ee5670bd81cc3cce684f8c620e00f6",
+    "binocmesher/source/runtime_identity.h": "f0506e3dabbc57a5a754703cc421548ef2566b909e2803348ecc71244c37fc75",
+    "experiments/c1_lite/run_e2_runtime.py": "306abf2601525ecc3a9f7e8b77f61d34bf03138eb7ce1ecec60cd8ac2220f72d",
+    "experiments/c1_lite/e2_runtime_validation.py": "4c8d6fe24e72e7f5e97de1b9a84934ff1983916df19e5566fff2ad8e87642d19",
+    "experiments/c1_lite/test_e2_runtime_validation.py": "528de0a9312083f28080f58bdd96912bab72ee80083ebd88d1ed11d71054d37a",
+    "experiments/c1_lite/test_window_runtime.py": "d887bd3a0508ddd2c36361990b9ffaa15d6699bc4465332630004c9bed2efa65",
+    "experiments/c1_lite/conditional_perturbation.py": "5e70d9813de36124d2178815638ddb2d3f661b9ab6417353269da7a006cde017",
+    "experiments/c1_lite/run_e2_conditional_perturbation.py": "156fd8fb1c80300f1605f0bf042292aca805fd3978aaf4b06b1657a1ad2b72cc",
+    "experiments/c1_lite/test_conditional_perturbation.py": "e7c3b1112239656387cdd301d7dc9012f855c8b38d8fadbe416fa17f7536604e",
+    "experiments/c1_lite/artifacts/ab_20260906/window_audit/event-02-88ade47aa4fa/source.json": "6b7f08fb7689ef8e62002c787e301a321fb343cda16d1ce37c54021b58c92dc2",
+    "experiments/c1_lite/artifacts/e2_runtime_20260906/full_omp1/result.json": "e54250850886bc55b441a3ff9ae83969455ec1fa9db5c4f0b8a9b6def515491a",
+    "experiments/c1_lite/artifacts/e2_runtime_20260906/full_omp8/result.json": "1f27e1cf209f88aeada57547d4c2e584508b513ea6a1029df9f932514c918c30",
+    "experiments/c1_lite/artifacts/e2_runtime_20260906/full_reference/result.json": "20e6efd17b41e28bab4e4bf7679129f00048eb87e4539f7f6a624b70fbeac328",
+    "experiments/c1_lite/artifacts/e2_runtime_20260906/smoke_new_omp1/result.json": "53c1e60109e94dfe6074231c79e95b84ece23186433fe76f2c7c42983fb63372",
+    "experiments/c1_lite/artifacts/e2_runtime_20260906/smoke_reference/result.json": "ca2a4519f0a25ca234d0091fc6c5eb9bbbae5103f1dcbe747c614483aa7cf533",
+    "experiments/c1_lite/actual_evaluation_envelope.py": "b3c8b3f57c38b0bf7bea45c4643deac13f0d5a2e6defa964d5a9576a1b117b26",
+    "experiments/c1_lite/test_actual_evaluation_envelope.py": "7cc478f88a864ff447a0dff9eb785164bea9237141264bb44fd11b39f87ad222",
+    "experiments/c1_lite/artifacts/repair_20260906/e2_conditional_perturbation/result.json": "67078cbf8a6bb8b6692cf1270f46242225076ffaaa11e670e52e44fea83674ab",
+    "experiments/c1_lite/artifacts/repair_20260906/e2_actual_evaluation_envelope/result.json": "dc487513b9de4022971d9e3bf4847276c3f6d7cb40c6150e7050d3dfb93d9ea4",
+    "experiments/c1_lite/artifacts/repair_20260906/e2_actual_evaluation_envelope/result_center_checked.json": "1436680b5e32487d13e1855c346df78cf58482472784923d3c8c9d2c9ab14634"
+  },
+  "rendered": false,
+  "installed_runtime_replaced": false,
+  "git_committed": false,
+  "github_pushed": false,
+  "supplementary_numerics": {
+    "conditional_perturbation_result": "../repair_20260906/e2_conditional_perturbation/result.json",
+    "envelopes": [
+      "1/1024",
+      "1/1048576"
+    ],
+    "units": 7,
+    "contact_checks_per_envelope": 26726,
+    "local_checks_per_envelope": 7,
+    "all_pass_conditional": true,
+    "final_actual_evaluation_result": "../repair_20260906/e2_actual_evaluation_envelope/result_center_checked.json",
+    "previous_result_preserved": "../repair_20260906/e2_actual_evaluation_envelope/result.json",
+    "status": "PASS_ANALYTIC_ENVELOPE_UNDER_DECLARED_ARITHMETIC",
+    "center_below_target": true,
+    "exact_source_below_target": true,
+    "physical_source_below_target": true,
+    "original_inputs_unchanged": true,
+    "runtime_admitted": false,
+    "arithmetic_binary_binding_verified": false,
+    "explanation": "Supplemental proof under declared arithmetic, not an authorization used by the production requested-schedule checker. Continuous runtime composition remains unproved.",
+    "notes": "SUPPLEMENTAL_NUMERICS.md"
+  }
+}

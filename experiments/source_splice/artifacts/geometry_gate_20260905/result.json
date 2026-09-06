@@ -1,0 +1,90 @@
+{
+  "schema": "binoc-independent-demo-geometry-gate-v1",
+  "stage": 1,
+  "status": "PASS_STAGE_1",
+  "event_root": "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-00-6d2d6dc2cdd7",
+  "reference": "Original static demo terrain: z = 5 * Noise2(x/10,y/10,octaves=4).",
+  "metric": "Absolute vertical error on identical XY midpoint-grid samples in the patch.",
+  "selection": "First canonical event in the existing campaign (index 0); no outcome-based reselection.",
+  "grids": [
+    32,
+    64,
+    128
+  ],
+  "acceptance": "At every grid: mean height error improves beyond numeric tolerance, maximum does not regress, same sampled footprint, no pre-existing safety check fails.",
+  "numeric_tolerance": "1e-9 * max(1, patch bounding-box diagonal); not a quality-tuning parameter.",
+  "limitations": [
+    "Not Euclidean surface distance or a global topology metric.",
+    "Saved demo meshes, not a newly built paper scene.",
+    "Finite quadrature, not a continuous maximum-error certificate.",
+    "A failed gate rejects this quality claim; it does not refute all BEB1 correctness contracts."
+  ],
+  "measurements": [
+    {
+      "grid": 32,
+      "points": 460,
+      "baseline": {
+        "mean_absolute_height_error": 0.2124759073884267,
+        "maximum_absolute_height_error": 0.45444779517691053,
+        "p95_absolute_height_error": 0.4349501702901728
+      },
+      "ours": {
+        "mean_absolute_height_error": 0.19001022126299336,
+        "maximum_absolute_height_error": 0.43669716844407175,
+        "p95_absolute_height_error": 0.40716073082938353
+      },
+      "gate_pass": true,
+      "mean_error_relative_change": -0.10573286355880285
+    },
+    {
+      "grid": 64,
+      "points": 1834,
+      "baseline": {
+        "mean_absolute_height_error": 0.21360115436355215,
+        "maximum_absolute_height_error": 0.45533277850921183,
+        "p95_absolute_height_error": 0.4350356377674955
+      },
+      "ours": {
+        "mean_absolute_height_error": 0.19104979672451508,
+        "maximum_absolute_height_error": 0.43544491129032953,
+        "p95_absolute_height_error": 0.40678275200036945
+      },
+      "gate_pass": true,
+      "mean_error_relative_change": -0.10557694646469162
+    },
+    {
+      "grid": 128,
+      "points": 7339,
+      "baseline": {
+        "mean_absolute_height_error": 0.21347217746268696,
+        "maximum_absolute_height_error": 0.45586178416435724,
+        "p95_absolute_height_error": 0.4352785464617144
+      },
+      "ours": {
+        "mean_absolute_height_error": 0.19093997694680442,
+        "maximum_absolute_height_error": 0.436467353735497,
+        "p95_absolute_height_error": 0.40681142699724965
+      },
+      "gate_pass": true,
+      "mean_error_relative_change": -0.10555099396885559
+    }
+  ],
+  "inputs": {
+    "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/all_canonical_beb1_summary.json": "a2a1c6c4487261034450359f34723e3bce813bf55b7e6609a085f227b35645be",
+    "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-00-6d2d6dc2cdd7/whole_mesh_validation.json": "554abb4758d7fde8a97092ac46b61a1578200ce5d35f82f17df60990df906dbb",
+    "/home/warpwang/src/BinocMesher/experiments/tv0_tv4/run_lightweight_profile.py": "aff10846eb0ee8a35580343f6e455fc797b80ee99a924a85693c3569db13013a",
+    "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-00-6d2d6dc2cdd7/runtime/baseline_omp1.npz": "3ff1c505c82e498c7f73fc9f2abfb4a1c55a9ccf7dcd2f5c89464149df7f4623",
+    "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-00-6d2d6dc2cdd7/runtime/baseline_omp8.npz": "b339cc92c887eeff0f82c02541ed6115b52a556f7554b5b6fa5dde5f4a786d31",
+    "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-00-6d2d6dc2cdd7/runtime/critical_omp1.npz": "be8f0f6c0c70ee66146955a505cf42a9826a780da9e20f817e8b67abf62ebcee",
+    "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-00-6d2d6dc2cdd7/runtime/critical_omp8.npz": "e94bc92a553337bbfeb6a3f6925b13d4ab592381d728983e462e6092addd7ba7"
+  },
+  "stage_2_started": false,
+  "stage_3_started": false,
+  "elapsed_seconds": 0.06988530699999984,
+  "absolute_numeric_tolerance": 1.943096251685315e-09,
+  "root": {
+    "denominator": 11,
+    "numerator": 120
+  },
+  "next_step": "Stage 2 requires a separately verified time-window intervention; this script does not launch it."
+}

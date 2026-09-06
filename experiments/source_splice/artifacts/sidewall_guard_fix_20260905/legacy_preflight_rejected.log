@@ -1,0 +1,15 @@
+{
+  "schema": "binoc-window-boundary-preflight-v1",
+  "stage": 2,
+  "status": "STOP_STAGE_2",
+  "measurements": [],
+  "stage_3_started": false,
+  "runtime_plan_emitted": false,
+  "purpose": "Slice the actual admitted triangulated side wall at slab midpoints and compare it to source-labeled ordinary patch boundary edges.",
+  "limitations": "Passing finite probes would not certify the entire window. No whole-mesh changes are made.",
+  "elapsed_seconds": 0.010064042999999856,
+  "event_id": "element=0;role=temporal_neighbour;face=133:4|157:0|302:0|179:4",
+  "event_ir_sha256": "6e933f461a9377aa339ac696a5e115dd815db9e073e4ffb7e0e42f0a6b88c2b7",
+  "geometry_result_sha256": "2a17aeb27cd065a32c0fb77b386bbb38e2d9069566b3fe208cd24caee3df2d3a",
+  "stop_reason": "REJECT_LINEAR_SIDEWALL_WINDOW: rotating or collapsing edge; root-only admission cannot authorize a time window"
+}

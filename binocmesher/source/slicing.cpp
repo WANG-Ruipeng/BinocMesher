@@ -13,6 +13,7 @@
 #include "event_registry.h"
 #include "hyperpoly_provenance.h"
 #include "source_splice.h"
+#include "runtime_identity.h"
 
 namespace {
 
@@ -140,6 +141,7 @@ int slicing_cache_group_exact(
 }
 
 void clear_partial_slicing_state() {
+    runtime_identity::fail("Slicing failed; no identity snapshot is available.");
     using namespace slicing;
     for (int element = 0; element < N_ELE; ++element) {
         unmerged_vertices[element].clear();
@@ -767,6 +769,7 @@ extern "C" {
     // the main slicing function that returns the number of vertices and faces per element
     // extra_smooth indicates whether "Extension to Ameliorate Popping Artifacts" in Sec. 7 is turned On
     int run_slicing(T t0, int *v_cnts, int *f_cnts, bool extra_smooth) noexcept {
+        runtime_identity::invalidate("A new slicing call has not completed.");
         FILE *log = nullptr;
         try {
         if (v_cnts == nullptr || f_cnts == nullptr) {
@@ -792,6 +795,8 @@ extern "C" {
             std::getenv("BINOC_SOURCE_SPLICE_PLAN");
         const bool source_splice_requested =
             source_splice_plan != nullptr && source_splice_plan[0] != '\0';
+        runtime_identity::begin(!extra_smooth, provenance_enabled,
+                                source_splice_requested, params::n_elements);
         if (source_splice_requested && !exact_slice_time.has_value()) {
             throw std::runtime_error(
                 "source-splice replacement requires run_slicing_rational");
@@ -1073,6 +1078,7 @@ extern "C" {
                                         if (!source_splice::should_suppress(
                                                 source_triangle)) {
                                             faces[ele].push_back(face);
+                                            runtime_identity::record_owner(source_triangle, face);
                                         }
                                     }
                                 }
@@ -1101,6 +1107,9 @@ extern "C" {
                         source_splice::register_ordinary_vertex(
                             ele, unmerged_vertices[ele][i].first,
                             static_cast<int>(vertices[ele].size()) - 1);
+                        runtime_identity::record_vertex(
+                            ele, unmerged_vertices[ele][i].first,
+                            static_cast<int>(vertices[ele].size()) - 1);
                         if (start_i != -1) {
                             for (int j = start_i; j < i; j++) merging_map[unmerged_vertices[ele][j].second.first] = cnt - 1;
                         }
@@ -1116,6 +1125,7 @@ extern "C" {
                         faces[ele][i][j] = merging_map[faces[ele][i][j]];
                     }
                 }
+                runtime_identity::remap_owners(ele, merging_map);
                 append_source_splice_replacement(ele);
                 CLS(unmerged_vertices[ele]);
                 v_cnts[ele] = vertices[ele].size();
@@ -1146,6 +1156,7 @@ extern "C" {
                 make_unique(facesele, compare_face, equal_face);
                 fprintf(log, "after merging faces, face count: %d\n", (int)facesele.size());
                 f_cnts[ele] = facesele.size();
+                runtime_identity::finalize_element(ele, facesele, vertices[ele].size());
             }
         });
         source_splice::finish();
@@ -1155,6 +1166,7 @@ extern "C" {
         }
         log = nullptr;
         slicing_last_error_message.clear();
+        runtime_identity::complete();
         return 0;
         } catch (const std::exception& error) {
             slicing_last_error_message = error.what();
@@ -1269,6 +1281,33 @@ extern "C" {
     const char *slicing_last_error() noexcept {
         return slicing_last_error_message.c_str();
     }
+
+    void slicing_identity_enable(bool enabled) noexcept {
+        runtime_identity::enable(enabled);
+    }
+    int slicing_identity_status() noexcept {
+        return runtime_identity::state.status;
+    }
+    const char* slicing_identity_last_error() noexcept {
+        return runtime_identity::state.message;
+    }
+    int slicing_identity_vertex_count(int element) noexcept {
+        return runtime_identity::count(element, false);
+    }
+    int slicing_identity_owner_count(int element) noexcept {
+        return runtime_identity::count(element, true);
+    }
+    int slicing_identity_output_vertices(int element, int* rows, int int_capacity) noexcept {
+        return runtime_identity::output_vertices(element, rows, int_capacity);
+    }
+    int slicing_identity_output_owners(int element, int* rows, int int_capacity) noexcept {
+        return runtime_identity::output_owners(element, rows, int_capacity);
+    }
+
+    void slicing_discard_output() noexcept {
+        clear_partial_slicing_state();
+        source_splice::reset();
+    }
     
     // actually output the mesh data
     void slicing_output(int ele, T *output_verts, int *output_faces, int *output_inview) {
@@ -1294,6 +1333,7 @@ extern "C" {
 
     // clean up slicing data structures
     void slicing_clean_up() {
+        runtime_identity::invalidate("Slicing cleanup invalidated the identity snapshot.");
         source_splice::reset();
         using namespace slicing;
         CL(bisection::hypervertices);

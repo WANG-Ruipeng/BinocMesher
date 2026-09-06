@@ -1,0 +1,110 @@
+{
+  "schema": "c1-lite-repair-final-validation-v1",
+  "date": "2026-09-06",
+  "tests": {
+    "c1_lite": {
+      "count": 184,
+      "exit_code": 0,
+      "output": "----------------------------------------------------------------------\nRan 184 tests in 2.014s\n\nOK\n",
+      "command": "python -B -m unittest discover -s experiments/c1_lite -p 'test_*.py' -q"
+    },
+    "source_splice_unittest": {
+      "count": 14,
+      "status": "PASS",
+      "command": "python -B -m unittest discover -s experiments/source_splice -p 'test_*.py' -v"
+    },
+    "source_splice_standalone": {
+      "status": "PASS_CRITICAL_BEB1_EVENT_STAR_CLOSURE_COMBINATORICS",
+      "command": "python -B experiments/source_splice/test_critical_beb1_event_ir.py"
+    },
+    "python": "/home/warpwang/miniforge3/envs/binoc-exp/bin/python"
+  },
+  "evidence_review": {
+    "existing_recorded_hash_bindings_checked": 82,
+    "all_match": true,
+    "scope": "v2/v3 artifacts/scripts and bound source; historical A/B; runtime workers/core/inputs; E2 33-time probe",
+    "new_relative_plane": {
+      "result_sha256": "7a19f7ed0c51202794639ef1f081e19fcb1469b25aa9d6ae75f031069af7bb1e",
+      "status": "COMPLETE_CONDITIONAL_GEOMETRY_FEASIBILITY",
+      "counts": {
+        "PASS": 49
+      },
+      "runtime_admitted": false,
+      "source_hash_checks": [
+        {
+          "script": "audit_relative_plane_feasibility.py",
+          "match": true
+        },
+        {
+          "script": "processed_mesh.py",
+          "match": true
+        },
+        {
+          "script": "run_window_audit.py",
+          "match": true
+        },
+        {
+          "script": "runtime_retained.py",
+          "match": true
+        },
+        {
+          "script": "window_contact_v2.py",
+          "match": true
+        },
+        {
+          "script": "window_exterior.py",
+          "match": true
+        },
+        {
+          "script": "window_geometry.py",
+          "match": true
+        },
+        {
+          "script": "window_source.py",
+          "match": true
+        }
+      ]
+    },
+    "independent_v3_review": "No false PASS found; finite sufficient certificates only, conditional on separately established graph fan preconditions.",
+    "production_admission": false
+  },
+  "storage": {
+    "repo_bytes": 56812772,
+    "repo_file_count": 789,
+    "new_compact_artifact_bytes": 2101225,
+    "vhdx_bytes": 31614566400,
+    "migration_backup_bytes": 8600965120,
+    "conservative_host_total_bytes": 40272344292,
+    "ceiling_bytes": 400000000000,
+    "linux_contents_already_included_in_vhdx": true,
+    "measurement_note": "Snapshot immediately before final small report additions; logical lengths used conservatively. Linux checkout, environments and runs already included in VHDX, not added twice."
+  },
+  "cleanup": {
+    "failed_forest24_regenerable_bytes_removed": 488586831,
+    "failed_run_details": "forest/stage1_cleanup.json",
+    "owned_applied_temporary_patches_removed": [
+      {
+        "path": "E:/BinocMesher/tmp/c1_repair_link_orientation.patch",
+        "bytes": 2165
+      },
+      {
+        "path": "E:/BinocMesher/tmp/c1_repair_diagonal.patch",
+        "bytes": 2060
+      },
+      {
+        "path": "E:/BinocMesher/tmp/c1_repair_docs.patch",
+        "bytes": 3128
+      }
+    ],
+    "patch_recoverability": "Applied code/documentation retained. No trash copies of obsolete patch text.",
+    "forest64_cache_and_private_assets_retained": true,
+    "original_inputs_environments_backup_deleted": false
+  },
+  "limitations": [
+    "No production window emitted or rendered.",
+    "All four demo windows still fail closed.",
+    "Finite raw/smooth OMP probes are not all-time identity or floating-point proofs.",
+    "Forest driver STOP remains; completed registry describes pre-surface-displacement source geometry."
+  ]
+}
+

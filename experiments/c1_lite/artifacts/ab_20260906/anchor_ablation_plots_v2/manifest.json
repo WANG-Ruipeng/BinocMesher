@@ -1,0 +1,63 @@
+{
+  "schema": "binoc-anchor-ablation-plots-v1",
+  "input": "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/ab_20260906/anchor_ablation/result.json",
+  "input_sha256": "8b17fd6a61f3f7f0abe25c39638e1cb01a1ff610f6b66351d7253d234ed15605",
+  "grid": 128,
+  "geometry_recomputed": false,
+  "meshes_read": false,
+  "renderer_used": "matplotlib Agg",
+  "files": [
+    {
+      "file": "mean_height_all_four_events.svg",
+      "bytes": 44107,
+      "sha256": "c90ff8f62ef4e59af164fa2645098b12188f89e28b04085aace0e16c479ee6f8"
+    },
+    {
+      "file": "mean_height_all_four_events.png",
+      "bytes": 336328,
+      "sha256": "c7b61c9e31a3ffbe8b7e275bb8d35e1cb69d7665dfc72b2058d9a3d2e3489c3f"
+    },
+    {
+      "file": "max_height_regret_vs_centroid.svg",
+      "bytes": 49550,
+      "sha256": "5425e02cfe4747e9b373178be97756a1096d887ec31e447a9fd92582dfd5a339"
+    },
+    {
+      "file": "max_height_regret_vs_centroid.png",
+      "bytes": 196242,
+      "sha256": "fb0c2119d26d252652229fae31b1aa640c8cf35d155d0a4b67152e26bb44ff6d"
+    }
+  ],
+  "regret_witnesses": [
+    {
+      "event": "event-00-6d2d6dc2cdd7",
+      "maximum_sampled_max_error_regret": 0.0,
+      "time": {
+        "numerator": 114,
+        "denominator": 11
+      },
+      "strictly_positive_regret_observed": false
+    },
+    {
+      "event": "event-02-88ade47aa4fa",
+      "maximum_sampled_max_error_regret": 8.946096440198836e-06,
+      "time": {
+        "numerator": 409,
+        "denominator": 20
+      },
+      "strictly_positive_regret_observed": true
+    },
+    {
+      "event": "event-03-0c61aa0982ef",
+      "maximum_sampled_max_error_regret": 0.0,
+      "time": {
+        "numerator": 102,
+        "denominator": 5
+      },
+      "strictly_positive_regret_observed": false
+    }
+  ],
+  "scope": "Restricted geometry evidence from the first demo family; no runtime/video/paper-superiority claim.",
+  "c0_display": "Single exact-root marker only, never connected into a smoothed window curve.",
+  "total_figure_bytes": 626227
+}

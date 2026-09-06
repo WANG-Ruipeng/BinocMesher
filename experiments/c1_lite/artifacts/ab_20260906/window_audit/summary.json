@@ -1,0 +1,99 @@
+{
+  "bytes_written_before_summary": 244871,
+  "elapsed_seconds": 54.366621820999995,
+  "event_isolation_certificate": "UNKNOWN",
+  "event_order": [
+    "event-00-6d2d6dc2cdd7",
+    "event-01-e40703e638f3",
+    "event-02-88ade47aa4fa",
+    "event-03-0c61aa0982ef"
+  ],
+  "events": [
+    {
+      "audit_artifact": {
+        "bytes": 20773,
+        "path": "audit.json",
+        "sha256": "a9ecbe280969577be20bb9764430708a1553c0ad138687cd8eafc248b8d597fa"
+      },
+      "diagnostics_total": 18,
+      "exterior": "UNKNOWN",
+      "key": "event-00-6d2d6dc2cdd7",
+      "local_geometry": "PASS",
+      "source_artifact": {
+        "bytes": 40051,
+        "path": "source.json",
+        "sha256": "e3985c5b075a2acc03acf9292e0bb8e9fe246348134c37f7766701ad03e63b67"
+      },
+      "source_status": "PASS_SOURCE_BRANCH_CONTRACT",
+      "status": "UNKNOWN"
+    },
+    {
+      "audit_artifact": {
+        "bytes": 18962,
+        "path": "audit.json",
+        "sha256": "61e1a06d2582a2e8b714f80aeaf8bc5697cb48143516023bcefe2d8764e1b166"
+      },
+      "diagnostics_total": 10,
+      "exterior": "UNKNOWN",
+      "key": "event-01-e40703e638f3",
+      "local_geometry": "PASS",
+      "source_artifact": {
+        "bytes": 30996,
+        "path": "source.json",
+        "sha256": "0bf136d6ea6334ec4956c4bed8378619e18e212adb16be412297eb034800b473"
+      },
+      "source_status": "PASS_SOURCE_BRANCH_CONTRACT",
+      "status": "UNKNOWN"
+    },
+    {
+      "audit_artifact": {
+        "bytes": 21804,
+        "path": "audit.json",
+        "sha256": "7dea6ce1b54013efed78d599834f656c728f8dae286bcc4c0af0704e7638c86d"
+      },
+      "diagnostics_total": 86,
+      "exterior": "UNKNOWN",
+      "key": "event-02-88ade47aa4fa",
+      "local_geometry": "PASS",
+      "source_artifact": {
+        "bytes": 41325,
+        "path": "source.json",
+        "sha256": "6b7f08fb7689ef8e62002c787e301a321fb343cda16d1ce37c54021b58c92dc2"
+      },
+      "source_status": "PASS_SOURCE_BRANCH_CONTRACT",
+      "status": "UNKNOWN"
+    },
+    {
+      "audit_artifact": {
+        "bytes": 25101,
+        "path": "audit.json",
+        "sha256": "cefc831209bb1e889284e284acc02f9cd36da6a18f0f6cc08bf3fbc8660f36ec"
+      },
+      "diagnostics_total": 123,
+      "exterior": "UNKNOWN",
+      "key": "event-03-0c61aa0982ef",
+      "local_geometry": "PASS",
+      "source_artifact": {
+        "bytes": 45859,
+        "path": "source.json",
+        "sha256": "b00b78bcf5cbe433ab2b36d04c5e22be63efd080792b45ec3a7a30bc2d75ba77"
+      },
+      "source_status": "PASS_SOURCE_BRANCH_CONTRACT",
+      "status": "UNKNOWN"
+    }
+  ],
+  "input_sha256": {
+    "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/all_canonical_beb1_summary.json": "a2a1c6c4487261034450359f34723e3bce813bf55b7e6609a085f227b35645be",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_window_audit.py": "20941586729cedcb2a9d82b3cb1d928c0707c1be4cf531e58d9e6dbe26ce9941",
+    "/mnt/e/BinocMesher/experiments/c1_lite/window_exterior.py": "9e9e071307f49e2059a8bf121a7adb3b0fa2469b15a1afc953c2e5dc73c99479",
+    "/mnt/e/BinocMesher/experiments/c1_lite/window_geometry.py": "a3a9ffd34775634d6e93d722911317d8e3fffa52d2410a8ca34e862fa0a38765",
+    "/mnt/e/BinocMesher/experiments/c1_lite/window_source.py": "1aa09ab97c85d57941b5be574c25f0c9c243c569c282c8f72b6692eff65f4ff6"
+  },
+  "max_seconds": 7200.0,
+  "output_budget_bytes": 10485760,
+  "python": "3.10.21",
+  "render_started": false,
+  "runtime_admission": false,
+  "schema": "c1-lite-four-demo-window-audit-v1",
+  "status": "UNKNOWN"
+}

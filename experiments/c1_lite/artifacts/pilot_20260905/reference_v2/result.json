@@ -1,0 +1,891 @@
+{
+  "schema": "binoc-c1-lite-reference-preflight-v2",
+  "status": "PASS_PREFLIGHT_ONLY",
+  "endpoint_evaluation_order": "Quantize source first, then compute prospective binary32 center; binary64 reference remains separate.",
+  "measurement_coordinate_model": "Binary64 parser boundary and binary64 center trajectory; NOT a binary32 runtime quality evaluation.",
+  "runtime_plan_emitted": false,
+  "render_started": false,
+  "continuous_window_certified": false,
+  "endpoint_audits": {
+    "lower": {
+      "ideal_midpoint_exact": [
+        {
+          "numerator": 2425,
+          "denominator": 4096
+        },
+        {
+          "numerator": 1301088759534933,
+          "denominator": 9007199254740992
+        },
+        {
+          "numerator": 1325,
+          "denominator": 4096
+        }
+      ],
+      "quantized_source_midpoint_exact": [
+        {
+          "numerator": 2425,
+          "denominator": 4096
+        },
+        {
+          "numerator": 4846933,
+          "denominator": 33554432
+        },
+        {
+          "numerator": 1325,
+          "denominator": 4096
+        }
+      ],
+      "ideal_midpoint_on_shared_diagonal_exact": true,
+      "center_binary64": [
+        0.592041015625,
+        0.14444986979166663,
+        0.323486328125
+      ],
+      "center_binary32": [
+        0.592041015625,
+        0.1444498598575592,
+        0.323486328125
+      ],
+      "source_diagonal_binary64": [
+        [
+          0.8056640625,
+          -0.6591796875,
+          0.2685546875
+        ],
+        [
+          0.37841796875,
+          0.9480794270833333,
+          0.37841796875
+        ]
+      ],
+      "source_diagonal_binary32": [
+        [
+          0.8056640625,
+          -0.6591796875,
+          0.2685546875
+        ],
+        [
+          0.37841796875,
+          0.9480794072151184,
+          0.37841796875
+        ]
+      ],
+      "binary64_center_on_shared_diagonal_exact": true,
+      "binary32_center_on_ideal_diagonal_exact": false,
+      "binary32_center_on_shared_diagonal_exact": true,
+      "binary32_distance_to_shared_diagonal": 0.0,
+      "meaning": "Binary64 center uses binary64 source; binary32 center is computed after source quantization. Each is checked against its own diagonal. No C++ runtime execution was performed.",
+      "source_diagonal": [
+        "133:4|139:2",
+        "302:0|694:0"
+      ]
+    },
+    "upper": {
+      "ideal_midpoint_exact": [
+        {
+          "numerator": 2275,
+          "denominator": 4096
+        },
+        {
+          "numerator": 1942470542404267,
+          "denominator": 18014398509481984
+        },
+        {
+          "numerator": 1175,
+          "denominator": 4096
+        }
+      ],
+      "quantized_source_midpoint_exact": [
+        {
+          "numerator": 2275,
+          "denominator": 4096
+        },
+        {
+          "numerator": 3618133,
+          "denominator": 33554432
+        },
+        {
+          "numerator": 1175,
+          "denominator": 4096
+        }
+      ],
+      "ideal_midpoint_on_shared_diagonal_exact": true,
+      "center_binary64": [
+        0.555419921875,
+        0.10782877604166669,
+        0.286865234375
+      ],
+      "center_binary32": [
+        0.555419921875,
+        0.1078287661075592,
+        0.286865234375
+      ],
+      "source_diagonal_binary64": [
+        [
+          0.8056640625,
+          -0.7568359375,
+          0.2685546875
+        ],
+        [
+          0.30517578125,
+          0.9724934895833334,
+          0.30517578125
+        ]
+      ],
+      "source_diagonal_binary32": [
+        [
+          0.8056640625,
+          -0.7568359375,
+          0.2685546875
+        ],
+        [
+          0.30517578125,
+          0.9724934697151184,
+          0.30517578125
+        ]
+      ],
+      "binary64_center_on_shared_diagonal_exact": true,
+      "binary32_center_on_ideal_diagonal_exact": false,
+      "binary32_center_on_shared_diagonal_exact": true,
+      "binary32_distance_to_shared_diagonal": 0.0,
+      "meaning": "Binary64 center uses binary64 source; binary32 center is computed after source quantization. Each is checked against its own diagonal. No C++ runtime execution was performed.",
+      "source_diagonal": [
+        "133:4|139:2",
+        "302:0|694:0"
+      ]
+    }
+  },
+  "measurements": [
+    {
+      "time": {
+        "numerator": 114,
+        "denominator": 11
+      },
+      "source_owner_refs": [
+        [
+          0,
+          0,
+          4,
+          2489,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          4,
+          2489,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          4,
+          4,
+          3,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          4,
+          4,
+          3,
+          3,
+          0,
+          2
+        ]
+      ],
+      "source_boundary_shared_by_construction": true,
+      "boundary_gap_to_same_source_input": 0.0,
+      "source_faces": [
+        [
+          "133:4|139:2",
+          "179:4|302:0",
+          "302:0|694:0"
+        ],
+        [
+          "133:4|139:2",
+          "302:0|694:0",
+          "157:0|302:0"
+        ]
+      ],
+      "c1_center": [
+        0.592041015625,
+        0.14444986979166663,
+        0.323486328125
+      ],
+      "naive_center": [
+        0.592041015625,
+        0.14444986979166663,
+        0.323486328125
+      ],
+      "grids": [
+        {
+          "grid": 32,
+          "samples": 505,
+          "same_sampled_coverage": true,
+          "tolerance": 1.911337114052856e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.2140272919724367,
+            "maximum_absolute_height_error": 0.46358508837329554,
+            "p95_absolute_height_error": 0.4410905837694839
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.2140272919724367,
+            "maximum_absolute_height_error": 0.46358508837329554,
+            "p95_absolute_height_error": 0.4410905837694839
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.2140272919724367,
+            "maximum_absolute_height_error": 0.46358508837329554,
+            "p95_absolute_height_error": 0.4410905837694839
+          },
+          "quality_gate_pass": null
+        },
+        {
+          "grid": 64,
+          "samples": 2014,
+          "same_sampled_coverage": true,
+          "tolerance": 1.911337114052856e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.21508612232792498,
+            "maximum_absolute_height_error": 0.4630916133230788,
+            "p95_absolute_height_error": 0.4424740630394807
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.21508612232792496,
+            "maximum_absolute_height_error": 0.4630916133230788,
+            "p95_absolute_height_error": 0.4424740630394807
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.21508612232792496,
+            "maximum_absolute_height_error": 0.4630916133230788,
+            "p95_absolute_height_error": 0.4424740630394807
+          },
+          "quality_gate_pass": null
+        },
+        {
+          "grid": 128,
+          "samples": 8056,
+          "same_sampled_coverage": true,
+          "tolerance": 1.911337114052856e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.21514657747911178,
+            "maximum_absolute_height_error": 0.4636494434225382,
+            "p95_absolute_height_error": 0.4421177371066739
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.21514657747911178,
+            "maximum_absolute_height_error": 0.4636494434225382,
+            "p95_absolute_height_error": 0.44211773710667396
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.21514657747911178,
+            "maximum_absolute_height_error": 0.4636494434225382,
+            "p95_absolute_height_error": 0.44211773710667396
+          },
+          "quality_gate_pass": null
+        }
+      ]
+    },
+    {
+      "time": {
+        "numerator": 117,
+        "denominator": 11
+      },
+      "source_owner_refs": [
+        [
+          0,
+          0,
+          4,
+          2489,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          4,
+          2489,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          4,
+          4,
+          3,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          4,
+          4,
+          3,
+          3,
+          0,
+          2
+        ]
+      ],
+      "source_boundary_shared_by_construction": true,
+      "boundary_gap_to_same_source_input": 0.0,
+      "source_faces": [
+        [
+          "133:4|139:2",
+          "179:4|302:0",
+          "302:0|694:0"
+        ],
+        [
+          "133:4|139:2",
+          "302:0|694:0",
+          "157:0|302:0"
+        ]
+      ],
+      "c1_center": [
+        0.5889892578125,
+        0.04559141149123508,
+        0.33042214810848236
+      ],
+      "naive_center": [
+        0.5828857421875,
+        0.13529459635416663,
+        0.3143310546875
+      ],
+      "grids": [
+        {
+          "grid": 32,
+          "samples": 481,
+          "same_sampled_coverage": true,
+          "tolerance": 1.9267848122546917e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.21415881500793624,
+            "maximum_absolute_height_error": 0.45859591271761885,
+            "p95_absolute_height_error": 0.4375939811609728
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.2027793039532871,
+            "maximum_absolute_height_error": 0.4398408525493544,
+            "p95_absolute_height_error": 0.42591946112809176
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.21415881500793624,
+            "maximum_absolute_height_error": 0.45859591271761885,
+            "p95_absolute_height_error": 0.4375939811609728
+          },
+          "quality_gate_pass": true
+        },
+        {
+          "grid": 64,
+          "samples": 1927,
+          "same_sampled_coverage": true,
+          "tolerance": 1.9267848122546917e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.21396365443835375,
+            "maximum_absolute_height_error": 0.4591393643500682,
+            "p95_absolute_height_error": 0.43852208916180624
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.20259516540332587,
+            "maximum_absolute_height_error": 0.44022188490537667,
+            "p95_absolute_height_error": 0.42535474427916914
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.21396365443835375,
+            "maximum_absolute_height_error": 0.4591393643500682,
+            "p95_absolute_height_error": 0.43852208916180624
+          },
+          "quality_gate_pass": true
+        },
+        {
+          "grid": 128,
+          "samples": 7699,
+          "same_sampled_coverage": true,
+          "tolerance": 1.9267848122546917e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.21440279417430036,
+            "maximum_absolute_height_error": 0.4599051498220037,
+            "p95_absolute_height_error": 0.4385568687283024
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.20301984379915725,
+            "maximum_absolute_height_error": 0.4402849955072605,
+            "p95_absolute_height_error": 0.42583817024054477
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.21440279417430033,
+            "maximum_absolute_height_error": 0.45990514982200364,
+            "p95_absolute_height_error": 0.4385568687283024
+          },
+          "quality_gate_pass": true
+        }
+      ]
+    },
+    {
+      "time": {
+        "numerator": 120,
+        "denominator": 11
+      },
+      "source_owner_refs": [
+        [
+          0,
+          0,
+          4,
+          2489,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          4,
+          2489,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          4,
+          4,
+          3,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          4,
+          4,
+          3,
+          3,
+          0,
+          2
+        ]
+      ],
+      "source_boundary_shared_by_construction": true,
+      "boundary_gap_to_same_source_input": 0.0,
+      "source_faces": [
+        [
+          "133:4|139:2",
+          "179:4|302:0",
+          "302:0|694:0"
+        ],
+        [
+          "133:4|139:2",
+          "302:0|694:0",
+          "157:0|302:0"
+        ]
+      ],
+      "c1_center": [
+        0.5859375,
+        -0.05326704680919647,
+        0.3373579680919647
+      ],
+      "naive_center": [
+        0.57373046875,
+        0.12613932291666666,
+        0.30517578125
+      ],
+      "grids": [
+        {
+          "grid": 32,
+          "samples": 461,
+          "same_sampled_coverage": true,
+          "tolerance": 1.9430962687436712e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.21252881766130716,
+            "maximum_absolute_height_error": 0.45444779648157024,
+            "p95_absolute_height_error": 0.43483649704247135
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.19011186340600938,
+            "maximum_absolute_height_error": 0.4366971686997909,
+            "p95_absolute_height_error": 0.40716015918190285
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.21252881766130718,
+            "maximum_absolute_height_error": 0.45444779648157024,
+            "p95_absolute_height_error": 0.4348364970424714
+          },
+          "quality_gate_pass": true
+        },
+        {
+          "grid": 64,
+          "samples": 1836,
+          "same_sampled_coverage": true,
+          "tolerance": 1.9430962687436712e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.21359977831318194,
+            "maximum_absolute_height_error": 0.45533278019911183,
+            "p95_absolute_height_error": 0.43502107244833693
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.19107298580033893,
+            "maximum_absolute_height_error": 0.4354449111969705,
+            "p95_absolute_height_error": 0.40677426611105283
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.21359977831318194,
+            "maximum_absolute_height_error": 0.45533278019911183,
+            "p95_absolute_height_error": 0.43502107244833693
+          },
+          "quality_gate_pass": true
+        },
+        {
+          "grid": 128,
+          "samples": 7342,
+          "same_sampled_coverage": true,
+          "tolerance": 1.9430962687436712e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.2135010083663616,
+            "maximum_absolute_height_error": 0.4558617856821447,
+            "p95_absolute_height_error": 0.435274346918602
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.19097801408101847,
+            "maximum_absolute_height_error": 0.43646735370534856,
+            "p95_absolute_height_error": 0.4068043761983645
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.2135010083663616,
+            "maximum_absolute_height_error": 0.45586178568214475,
+            "p95_absolute_height_error": 0.43527434691860206
+          },
+          "quality_gate_pass": true
+        }
+      ]
+    },
+    {
+      "time": {
+        "numerator": 123,
+        "denominator": 11
+      },
+      "source_owner_refs": [
+        [
+          0,
+          0,
+          4,
+          2489,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          4,
+          2489,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          4,
+          4,
+          3,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          4,
+          4,
+          3,
+          3,
+          0,
+          2
+        ]
+      ],
+      "source_boundary_shared_by_construction": true,
+      "boundary_gap_to_same_source_input": 0.0,
+      "source_faces": [
+        [
+          "133:4|139:2",
+          "179:4|302:0",
+          "302:0|694:0"
+        ],
+        [
+          "133:4|139:2",
+          "302:0|694:0",
+          "157:0|302:0"
+        ]
+      ],
+      "c1_center": [
+        0.5706787109375,
+        0.027280864616235107,
+        0.31211160123348236
+      ],
+      "naive_center": [
+        0.5645751953125,
+        0.11698404947916667,
+        0.2960205078125
+      ],
+      "grids": [
+        {
+          "grid": 32,
+          "samples": 439,
+          "same_sampled_coverage": true,
+          "tolerance": 1.9602499213535485e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.21333875651979137,
+            "maximum_absolute_height_error": 0.4505873711993257,
+            "p95_absolute_height_error": 0.4311290407781699
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.2022655993779972,
+            "maximum_absolute_height_error": 0.43379983978090636,
+            "p95_absolute_height_error": 0.418652195208316
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.21333875651979137,
+            "maximum_absolute_height_error": 0.4505873711993257,
+            "p95_absolute_height_error": 0.4311290407781698
+          },
+          "quality_gate_pass": true
+        },
+        {
+          "grid": 64,
+          "samples": 1745,
+          "same_sampled_coverage": true,
+          "tolerance": 1.9602499213535485e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.2125814828213769,
+            "maximum_absolute_height_error": 0.4517418065764818,
+            "p95_absolute_height_error": 0.43186826622598923
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.20144473610574087,
+            "maximum_absolute_height_error": 0.43446355981960677,
+            "p95_absolute_height_error": 0.4180623734828745
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.21258148282137687,
+            "maximum_absolute_height_error": 0.4517418065764818,
+            "p95_absolute_height_error": 0.43186826622598923
+          },
+          "quality_gate_pass": true
+        },
+        {
+          "grid": 128,
+          "samples": 6976,
+          "same_sampled_coverage": true,
+          "tolerance": 1.9602499213535485e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.21249308419433455,
+            "maximum_absolute_height_error": 0.4517728200455232,
+            "p95_absolute_height_error": 0.4317147768332826
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.2013533950100591,
+            "maximum_absolute_height_error": 0.43465957035335073,
+            "p95_absolute_height_error": 0.4184323929677911
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.21249308419433452,
+            "maximum_absolute_height_error": 0.4517728200455232,
+            "p95_absolute_height_error": 0.43171477683328263
+          },
+          "quality_gate_pass": true
+        }
+      ]
+    },
+    {
+      "time": {
+        "numerator": 126,
+        "denominator": 11
+      },
+      "source_owner_refs": [
+        [
+          0,
+          0,
+          4,
+          2489,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          4,
+          2489,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          4,
+          4,
+          3,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          4,
+          4,
+          3,
+          3,
+          0,
+          2
+        ]
+      ],
+      "source_boundary_shared_by_construction": true,
+      "boundary_gap_to_same_source_input": 0.0,
+      "source_faces": [
+        [
+          "133:4|139:2",
+          "179:4|302:0",
+          "302:0|694:0"
+        ],
+        [
+          "133:4|139:2",
+          "302:0|694:0",
+          "157:0|302:0"
+        ]
+      ],
+      "c1_center": [
+        0.555419921875,
+        0.10782877604166669,
+        0.286865234375
+      ],
+      "naive_center": [
+        0.555419921875,
+        0.10782877604166669,
+        0.286865234375
+      ],
+      "grids": [
+        {
+          "grid": 32,
+          "samples": 414,
+          "same_sampled_coverage": true,
+          "tolerance": 1.9782238615531847e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.21113816669851884,
+            "maximum_absolute_height_error": 0.4459977081322654,
+            "p95_absolute_height_error": 0.4289193756615832
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.21113816669851884,
+            "maximum_absolute_height_error": 0.4459977081322654,
+            "p95_absolute_height_error": 0.42891937566158317
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.21113816669851884,
+            "maximum_absolute_height_error": 0.4459977081322654,
+            "p95_absolute_height_error": 0.42891937566158317
+          },
+          "quality_gate_pass": null
+        },
+        {
+          "grid": 64,
+          "samples": 1651,
+          "same_sampled_coverage": true,
+          "tolerance": 1.9782238615531847e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.21151439629484373,
+            "maximum_absolute_height_error": 0.4482018073168473,
+            "p95_absolute_height_error": 0.4280694612948378
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.21151439629484373,
+            "maximum_absolute_height_error": 0.44820180731684733,
+            "p95_absolute_height_error": 0.4280694612948378
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.21151439629484373,
+            "maximum_absolute_height_error": 0.44820180731684733,
+            "p95_absolute_height_error": 0.4280694612948378
+          },
+          "quality_gate_pass": null
+        },
+        {
+          "grid": 128,
+          "samples": 6603,
+          "same_sampled_coverage": true,
+          "tolerance": 1.9782238615531847e-09,
+          "baseline": {
+            "mean_absolute_height_error": 0.21157794112499081,
+            "maximum_absolute_height_error": 0.447944637732342,
+            "p95_absolute_height_error": 0.42836576223536893
+          },
+          "c1": {
+            "mean_absolute_height_error": 0.21157794112499076,
+            "maximum_absolute_height_error": 0.447944637732342,
+            "p95_absolute_height_error": 0.428365762235369
+          },
+          "naive": {
+            "mean_absolute_height_error": 0.21157794112499076,
+            "maximum_absolute_height_error": 0.447944637732342,
+            "p95_absolute_height_error": 0.428365762235369
+          },
+          "quality_gate_pass": null
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Finite source samples do not prove interval owner or branch stability.",
+    "No patch/exterior continuous intersection certificate.",
+    "No production whole-mesh splice, attribute, or OMP execution.",
+    "Height error is not Hausdorff distance or warped SSIM.",
+    "C1-lite denotes a route, not temporal derivative continuity."
+  ],
+  "selection": "First existing canonical event; original window, fixed grids 32/64/128; no retuning.",
+  "quality_gate": "At each interior sample/grid, C1 mean improves over baseline and naive beyond numeric tolerance; sampled maximum does not regress against either.",
+  "inputs_sha256": {
+    "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/all_canonical_beb1_summary.json": "a2a1c6c4487261034450359f34723e3bce813bf55b7e6609a085f227b35645be",
+    "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-00-6d2d6dc2cdd7/critical_beb1_event_ir.json": "6e933f461a9377aa339ac696a5e115dd815db9e073e4ffb7e0e42f0a6b88c2b7",
+    "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-00-6d2d6dc2cdd7/whole_mesh_validation.json": "554abb4758d7fde8a97092ac46b61a1578200ce5d35f82f17df60990df906dbb",
+    "/home/warpwang/src/BinocMesher/experiments/tv0_tv4/run_lightweight_profile.py": "aff10846eb0ee8a35580343f6e455fc797b80ee99a924a85693c3569db13013a",
+    "/mnt/e/BinocMesher/experiments/c1_lite/reference.py": "7fb812f7fdaa2488e17e7774017118b0cb0844c8d1aef8fc1a686ccc45af83eb"
+  },
+  "times": [
+    {
+      "numerator": 114,
+      "denominator": 11
+    },
+    {
+      "numerator": 117,
+      "denominator": 11
+    },
+    {
+      "numerator": 120,
+      "denominator": 11
+    },
+    {
+      "numerator": 123,
+      "denominator": 11
+    },
+    {
+      "numerator": 126,
+      "denominator": 11
+    }
+  ],
+  "natural_frame_mapping": null,
+  "event_id": "element=0;role=temporal_neighbour;face=133:4|157:0|302:0|179:4",
+  "cache_root": "/home/warpwang/binoc-runs/full-ubuntu26-smoke/tv0_tv4/cache",
+  "fixed_boundary_cycle": [
+    "133:4|139:2",
+    "179:4|302:0",
+    "302:0|694:0",
+    "157:0|302:0"
+  ],
+  "root_c0_geometry_identical": true,
+  "root_anchor": "Frozen C0 canonical binary32 center, promoted to binary64; not the unrounded ideal critical point.",
+  "next_step": "Review evidence; do not emit runtime plans before interval and exterior certificates."
+}

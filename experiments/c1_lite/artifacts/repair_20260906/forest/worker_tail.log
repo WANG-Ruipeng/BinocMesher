@@ -1,0 +1,57 @@
+Private assets ready: 48000835 bytes
+Failed to open dir (No such file or directory): /run/user/1000/gvfs/
+/home/warpwang/miniforge3/envs/binoc-exp/lib/python3.10/site-packages/numpy/core/getlimits.py:549: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/warpwang/miniforge3/envs/binoc-exp/lib/python3.10/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float64'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+/home/warpwang/miniforge3/envs/binoc-exp/lib/python3.10/site-packages/numpy/core/getlimits.py:549: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  setattr(self, word, getattr(machar, word).flat[0])
+/home/warpwang/miniforge3/envs/binoc-exp/lib/python3.10/site-packages/numpy/core/getlimits.py:89: UserWarning: The value of the smallest subnormal for <class 'numpy.float32'> type is zero.
+  return self._float_to_str(self.smallest_subnormal)
+[11:03:05.885] [acceleratesupport] [INFO] | No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+[11:03:06.746] [smb_client] [WARNING] | SMB_AUTH envvar is not set, smb_client upload will not work. Ignore this message if not using upload
+[11:03:06.748] [init] [INFO] | Converted seed='0' to scene_seed=0, parsed as hexadecimal
+Read blend: "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/scene.blend"
+[11:03:06.866] [init] [INFO] | Available devices have types=['CUDA', 'CPU']
+[11:03:06.866] [init] [INFO] | Cycles will use use_device_type='CUDA', len(use_devices)=1
+[11:03:06.877] [logging] [INFO] | [Create terrain]
+[11:03:06.877] [core] [INFO] | Terrain using only on the fly on_the_fly_asset_folder=PosixPath('/home/warpwang/binoc-runs/forest-census-repair-20260906/assets')
+[11:03:07.080] [core] [INFO] | Terrain elements: ['ground', 'landtiles', 'sdf_trees', 'warped_rocks', 'voronoi_rocks', 'atmosphere']
+[11:03:07.080] [logging] [INFO] | [Create terrain] finished in 0:00:00.203066
+[11:03:07.080] [core] [INFO] | attribute='ground_collection' will use material infinigen.assets.materials.mud
+[11:03:07.080] [core] [INFO] | attribute='mountain_collection' will use material infinigen.assets.materials.mountain
+[11:03:07.080] [core] [INFO] | attribute='eroded' will use material infinigen.assets.materials.cracked_ground
+[11:03:07.081] [core] [INFO] | attribute='tree_collection' will use material infinigen.assets.materials.sdftree
+[11:03:07.081] [core] [INFO] | attribute='atmosphere' will use material infinigen.assets.materials.atmosphere_light_haze
+Starting unchanged Forest mesh_extraction; cache only, no scene export/render.
+[11:03:07.085] [logging] [INFO] | [meshing OpaqueTerrain]
+[load_parameters] finished in 0:00:00.000036 with memory usage 0.5357284545898438 GB
+[coarse step] finished in 0:00:09.085205 with memory usage 1.1600112915039062 GB
+  0%|          | 0/85 [00:00<?, ?it/s]  1%|          | 1/85 [00:05<07:03,  5.04s/it]  2%|▏         | 2/85 [00:10<07:11,  5.19s/it]  4%|▎         | 3/85 [00:14<06:38,  4.86s/it]  5%|▍         | 4/85 [00:18<06:10,  4.58s/it]  6%|▌         | 5/85 [00:23<06:15,  4.69s/it]  7%|▋         | 6/85 [00:28<06:07,  4.65s/it]  8%|▊         | 7/85 [00:32<05:54,  4.54s/it]  9%|▉         | 8/85 [00:37<05:57,  4.64s/it] 11%|█         | 9/85 [00:41<05:32,  4.37s/it] 12%|█▏        | 10/85 [00:45<05:23,  4.32s/it] 13%|█▎        | 11/85 [00:50<05:44,  4.66s/it] 14%|█▍        | 12/85 [00:56<05:56,  4.89s/it] 15%|█▌        | 13/85 [01:01<06:03,  5.05s/it] 16%|█▋        | 14/85 [01:07<06:06,  5.16s/it] 18%|█▊        | 15/85 [01:12<06:06,  5.23s/it] 19%|█▉        | 16/85 [01:18<06:09,  5.36s/it] 20%|██        | 17/85 [01:23<06:06,  5.38s/it] 21%|██        | 18/85 [01:27<05:29,  4.92s/it] 22%|██▏       | 19/85 [01:33<05:35,  5.08s/it] 24%|██▎       | 20/85 [01:38<05:38,  5.21s/it] 25%|██▍       | 21/85 [01:42<05:16,  4.95s/it] 26%|██▌       | 22/85 [01:48<05:20,  5.08s/it] 27%|██▋       | 23/85 [01:53<05:19,  5.15s/it] 28%|██▊       | 24/85 [01:58<05:17,  5.21s/it] 29%|██▉       | 25/85 [02:04<05:12,  5.20s/it] 31%|███       | 26/85 [02:09<05:07,  5.21s/it] 32%|███▏      | 27/85 [02:14<05:01,  5.20s/it] 33%|███▎      | 28/85 [02:21<05:30,  5.79s/it] 34%|███▍      | 29/85 [02:29<05:56,  6.36s/it] 35%|███▌      | 30/85 [02:34<05:23,  5.88s/it] 36%|███▋      | 31/85 [02:38<04:56,  5.49s/it] 38%|███▊      | 32/85 [02:43<04:32,  5.15s/it] 39%|███▉      | 33/85 [02:47<04:16,  4.93s/it] 40%|████      | 34/85 [02:52<04:11,  4.94s/it] 41%|████      | 35/85 [02:56<03:55,  4.71s/it] 42%|████▏     | 36/85 [03:00<03:36,  4.42s/it] 44%|████▎     | 37/85 [03:05<03:40,  4.60s/it] 45%|████▍     | 38/85 [03:10<03:42,  4.74s/it] 46%|████▌     | 39/85 [03:15<03:43,  4.85s/it] 47%|████▋     | 40/85 [03:20<03:41,  4.93s/it] 48%|████▊     | 41/85 [03:25<03:38,  4.97s/it] 49%|████▉     | 42/85 [03:30<03:35,  5.02s/it] 51%|█████     | 43/85 [03:36<03:34,  5.10s/it] 52%|█████▏    | 44/85 [03:41<03:31,  5.17s/it] 53%|█████▎    | 45/85 [03:46<03:28,  5.22s/it] 54%|█████▍    | 46/85 [03:52<03:24,  5.26s/it] 55%|█████▌    | 47/85 [03:57<03:21,  5.31s/it] 56%|█████▋    | 48/85 [04:03<03:17,  5.34s/it] 58%|█████▊    | 49/85 [04:08<03:13,  5.38s/it] 59%|█████▉    | 50/85 [04:13<03:09,  5.40s/it] 60%|██████    | 51/85 [04:19<03:03,  5.40s/it] 61%|██████    | 52/85 [04:24<02:58,  5.40s/it] 62%|██████▏   | 53/85 [04:30<02:52,  5.40s/it] 64%|██████▎   | 54/85 [04:35<02:45,  5.35s/it] 65%|██████▍   | 55/85 [04:40<02:39,  5.32s/it] 66%|██████▌   | 56/85 [04:45<02:33,  5.28s/it] 67%|██████▋   | 57/85 [04:51<02:27,  5.27s/it] 68%|██████▊   | 58/85 [04:56<02:22,  5.26s/it] 69%|██████▉   | 59/85 [05:01<02:17,  5.27s/it] 71%|███████   | 60/85 [05:06<02:12,  5.29s/it] 72%|███████▏  | 61/85 [05:12<02:06,  5.27s/it] 73%|███████▎  | 62/85 [05:17<02:00,  5.24s/it] 74%|███████▍  | 63/85 [05:22<01:54,  5.22s/it] 75%|███████▌  | 64/85 [05:27<01:50,  5.27s/it] 76%|███████▋  | 65/85 [05:33<01:46,  5.30s/it] 78%|███████▊  | 66/85 [05:38<01:41,  5.33s/it] 79%|███████▉  | 67/85 [05:44<01:36,  5.35s/it] 80%|████████  | 68/85 [05:49<01:31,  5.37s/it] 81%|████████  | 69/85 [05:54<01:25,  5.37s/it] 82%|████████▏ | 70/85 [06:00<01:20,  5.39s/it] 84%|████████▎ | 71/85 [06:05<01:15,  5.39s/it] 85%|████████▍ | 72/85 [06:11<01:10,  5.40s/it] 86%|████████▌ | 73/85 [06:16<01:04,  5.40s/it] 87%|████████▋ | 74/85 [06:21<00:59,  5.40s/it] 88%|████████▊ | 75/85 [06:27<00:53,  5.39s/it] 89%|████████▉ | 76/85 [06:32<00:48,  5.38s/it] 91%|█████████ | 77/85 [06:37<00:42,  5.37s/it] 92%|█████████▏| 78/85 [06:43<00:37,  5.37s/it] 93%|█████████▎| 79/85 [06:48<00:32,  5.37s/it] 94%|█████████▍| 80/85 [06:54<00:26,  5.38s/it] 95%|█████████▌| 81/85 [06:59<00:21,  5.38s/it] 96%|█████████▋| 82/85 [07:04<00:16,  5.39s/it] 98%|█████████▊| 83/85 [07:10<00:10,  5.40s/it] 99%|█████████▉| 84/85 [07:15<00:05,  5.39s/it]100%|██████████| 85/85 [07:17<00:00,  4.29s/it]100%|██████████| 85/85 [07:17<00:00,  5.15s/it]
+  0%|          | 0/15 [00:00<?, ?it/s] 53%|█████▎    | 8/15 [00:00<00:00, 16.59it/s]100%|██████████| 15/15 [00:00<00:00, 31.09it/s]
+[medium step] finished in 0:07:18.105827 with memory usage 1.25799560546875 GB
+[visibility filter] finished in 0:00:00.020624 with memory usage 1.2753067016601562 GB
+  0%|          | 0/12689 [00:00<?, ?it/s]100%|██████████| 14390/14390 [00:36<00:00, 395.78it/s]
+[fine step] finished in 0:00:36.359203 with memory usage 1.4778327941894531 GB
+[rearrange nodes] finished in 0:00:00.007146 with memory usage 1.4778327941894531 GB
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 1283.84it/s]
+[pre tree building] finished in 0:00:00.000999 with memory usage 1.4778327941894531 GB
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 63.43it/s]
+[rearrange fine nodes] finished in 0:00:00.015928 with memory usage 1.4288520812988281 GB
+dual contouring:   0%|          | 0/1 [00:00<?, ?it/s]dual contouring: 100%|██████████| 1/1 [00:43<00:00, 43.53s/it]dual contouring: 100%|██████████| 1/1 [00:43<00:00, 43.53s/it]
+bisection:   0%|          | 0/1 [00:00<?, ?it/s]bisection:   0%|          | 0/1 [02:08<?, ?it/s]
+[11:14:03.884] [logging] [INFO] | [meshing OpaqueTerrain] failed with <class 'RuntimeError'>
+Traceback (most recent call last):
+  File "/mnt/e/BinocMesher/experiments/c1_lite/forest_census_pilot.py", line 405, in <module>
+    parser.add_argument('--stage', choices=['forest24', 'forest64'], default='forest24')
+  File "/mnt/e/BinocMesher/experiments/c1_lite/forest_census_pilot.py", line 401, in main
+    
+  File "/mnt/e/BinocMesher/experiments/c1_lite/forest_census_pilot.py", line 250, in worker
+    hypermesh_path=output/'HyperMesh', fs=FIRST_FRAME, fe=LAST_FRAME,
+  File "/home/warpwang/src/BinocMesher/infinigen_binocmesher/infinigen/terrain/core.py", line 309, in mesh_extraction
+    mesh = mesher([element for element in opaque_elements])
+  File "/home/warpwang/src/BinocMesher/infinigen_binocmesher/infinigen/terrain/core.py", line 83, in __call__
+    meshes, in_view_tags = UntexturedBinocMesher.__call__(self, sdf_kernels)
+  File "/home/warpwang/src/BinocMesher/infinigen_binocmesher/infinigen/BinocMesher/binocmesher/core.py", line 545, in __call__
+    raise RuntimeError(
+RuntimeError: write_final_hypermesh failed closed: failed to write hyperpoly provenance record

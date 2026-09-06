@@ -1,0 +1,2334 @@
+{
+  "actual_delta_t_hex": "0x1.eaabfa360338dp-6",
+  "cache_copy_bytes": 4255152,
+  "continuous_window_admitted": false,
+  "core_so_sha256": "f4263a2f47ba5283175a921e49b8867998bdd8124aac810793b34242ec43a3c9",
+  "driver_sha256": "306abf2601525ecc3a9f7e8b77f61d34bf03138eb7ce1ecec60cd8ac2220f72d",
+  "elapsed_seconds": 3.8538262099999656,
+  "negative_tests": {
+    "disabled": {
+      "pass": true,
+      "reason": "DISABLED",
+      "status": "BASELINE_ENTIRE_SCHEDULE"
+    },
+    "invalid_spec": {
+      "pass": true,
+      "reason": "INVALID_SPEC",
+      "status": "BASELINE_ENTIRE_SCHEDULE"
+    },
+    "late_failure_atomic_baseline": {
+      "pass": true,
+      "report": {
+        "cases": [
+          {
+            "endpoint_contract": "PASS",
+            "evaluation_tau": "102/5",
+            "index": 0,
+            "query": "102/5",
+            "status": "BASELINE_ENDPOINT"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "evaluation_tau": "103/5",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 1,
+            "new_center": [
+              4.519775390625,
+              9.638427734375,
+              -0.045654296875
+            ],
+            "new_center_id": 1831,
+            "query": "103/5",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "PROPOSED_NOT_PUBLISHED"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "evaluation_tau": "104/5",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 2,
+            "new_center": [
+              4.662109375,
+              9.689453125,
+              -0.064453125
+            ],
+            "new_center_id": 1831,
+            "query": "104/5",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "PROPOSED_NOT_PUBLISHED"
+          },
+          {
+            "evaluation_tau": "211/10",
+            "index": 3,
+            "query": "211/10",
+            "reason": "Requested source owner was not emitted.",
+            "status": "REFUSED"
+          }
+        ],
+        "continuous_window_admitted": false,
+        "discarded_proposals": 3,
+        "extra_smooth": false,
+        "fallback_reason": "Requested source owner was not emitted.",
+        "published_partial_results": false,
+        "schema": "binoc-actual-window-schedule-v1",
+        "status": "BASELINE_ENTIRE_SCHEDULE",
+        "temporal_scope": "ATOMIC_REQUESTED_SCHEDULE_ONLY",
+        "time_mode": "exact"
+      }
+    },
+    "state_reset_valid_again": {
+      "pass": true,
+      "status": "COMMITTED_REQUESTED_SCHEDULE"
+    },
+    "unsupported_smooth": {
+      "pass": true,
+      "status": "BASELINE_ENTIRE_SCHEDULE"
+    }
+  },
+  "omp_threads": 1,
+  "original_cache_unchanged": true,
+  "production_scope": "ACTUAL_PRODUCTION_SLICER_PLUS_ATOMIC_REQUESTED_SCHEDULE",
+  "reference_only": false,
+  "render_started": false,
+  "schedules": {
+    "exact": {
+      "baseline_hashes": [
+        "7f9062125e740574f8504132481989173ca1c0a9ee94ea80be6bc9de9b8932d8",
+        "083077c1db3c97c0c9d721870f3aa06adfccd8cd5a39abd22ef8375208cbbdf4",
+        "73c34f2b75c48426e85232f86735d6a0d002e3e805a5b78fc9554f59e808fd01",
+        "b64381254c4de50aa91c690aef08fa76c23227d562626f121b1ae0098c659fcc",
+        "fff5c6b85b829b282dc28919a4ed76b5cfdffcb45498564f884f97a1b971d3ca"
+      ],
+      "baseline_shapes": [
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ]
+      ],
+      "identity_ledger_hashes": [
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        }
+      ],
+      "independent": [
+        {
+          "scope": "BASELINE_ENDPOINT",
+          "status": "PASS_BASELINE_BYTES"
+        },
+        {
+          "boundary_global_ids": [
+            171,
+            498,
+            500,
+            172
+          ],
+          "checks": {
+            "all_old_vertex_tag_bits_and_external_face_rows_unchanged": true,
+            "authorized_patch_matches_frozen_oriented_boundary": true,
+            "boundary_identity_unique_no_coordinate_lookup": true,
+            "expected_center_bits": true,
+            "one_new_center_four_correct_unique_exact_nonzero_faces": true,
+            "owners_authorize_exactly_two_faces_and_all_replicas_consumed_once": true,
+            "shape_dtype_and_finite": true
+          },
+          "consumed_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "errors": [],
+          "expected_center_checked": true,
+          "expected_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "expected_raw_owner_count": 6,
+          "expected_removed_face_rows": [
+            493,
+            494
+          ],
+          "geometry_admission": "NOT_CERTIFIED",
+          "pass": true,
+          "replacement_face_rows": [
+            493,
+            494,
+            3820,
+            3821
+          ],
+          "schema": "c1-lite-e2-runtime-identity-array-validation-v1",
+          "scope": "IDENTITY_ARRAY_CONTRACT_ONLY",
+          "status": "PASS_IDENTITY_ARRAY_CONTRACT_ONLY",
+          "temporal_continuity": "NOT_CERTIFIED",
+          "trace_assumption": "Complete production owner/vertex ledgers supplied by caller."
+        },
+        {
+          "boundary_global_ids": [
+            171,
+            498,
+            500,
+            172
+          ],
+          "checks": {
+            "all_old_vertex_tag_bits_and_external_face_rows_unchanged": true,
+            "authorized_patch_matches_frozen_oriented_boundary": true,
+            "boundary_identity_unique_no_coordinate_lookup": true,
+            "expected_center_bits": true,
+            "one_new_center_four_correct_unique_exact_nonzero_faces": true,
+            "owners_authorize_exactly_two_faces_and_all_replicas_consumed_once": true,
+            "shape_dtype_and_finite": true
+          },
+          "consumed_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "errors": [],
+          "expected_center_checked": true,
+          "expected_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "expected_raw_owner_count": 6,
+          "expected_removed_face_rows": [
+            493,
+            494
+          ],
+          "geometry_admission": "NOT_CERTIFIED",
+          "pass": true,
+          "replacement_face_rows": [
+            493,
+            494,
+            3820,
+            3821
+          ],
+          "schema": "c1-lite-e2-runtime-identity-array-validation-v1",
+          "scope": "IDENTITY_ARRAY_CONTRACT_ONLY",
+          "status": "PASS_IDENTITY_ARRAY_CONTRACT_ONLY",
+          "temporal_continuity": "NOT_CERTIFIED",
+          "trace_assumption": "Complete production owner/vertex ledgers supplied by caller."
+        },
+        {
+          "boundary_global_ids": [
+            171,
+            498,
+            500,
+            172
+          ],
+          "checks": {
+            "all_old_vertex_tag_bits_and_external_face_rows_unchanged": true,
+            "authorized_patch_matches_frozen_oriented_boundary": true,
+            "boundary_identity_unique_no_coordinate_lookup": true,
+            "expected_center_bits": true,
+            "one_new_center_four_correct_unique_exact_nonzero_faces": true,
+            "owners_authorize_exactly_two_faces_and_all_replicas_consumed_once": true,
+            "shape_dtype_and_finite": true
+          },
+          "consumed_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "errors": [],
+          "expected_center_checked": true,
+          "expected_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "expected_raw_owner_count": 6,
+          "expected_removed_face_rows": [
+            493,
+            494
+          ],
+          "geometry_admission": "NOT_CERTIFIED",
+          "pass": true,
+          "replacement_face_rows": [
+            493,
+            494,
+            3820,
+            3821
+          ],
+          "schema": "c1-lite-e2-runtime-identity-array-validation-v1",
+          "scope": "IDENTITY_ARRAY_CONTRACT_ONLY",
+          "status": "PASS_IDENTITY_ARRAY_CONTRACT_ONLY",
+          "temporal_continuity": "NOT_CERTIFIED",
+          "trace_assumption": "Complete production owner/vertex ledgers supplied by caller."
+        },
+        {
+          "scope": "BASELINE_ENDPOINT",
+          "status": "PASS_BASELINE_BYTES"
+        }
+      ],
+      "instrumented_baseline_identical": true,
+      "public_api_equal": true,
+      "queries": [
+        "102/5",
+        "103/5",
+        "104/5",
+        "211/10",
+        "106/5"
+      ],
+      "result_hashes": [
+        "7f9062125e740574f8504132481989173ca1c0a9ee94ea80be6bc9de9b8932d8",
+        "f0cbd2117a9b6a549536c51d03bf13594f7c2164200a6f1bfede877782e40de3",
+        "b89bb1397859b5422a8cf27f3d98d4922067d4d5aea521f08237ecb04931c106",
+        "dc4efa916c7c8d502a4a59a83812ea97356aefa95b387ef3c238f27b78faf7f9",
+        "fff5c6b85b829b282dc28919a4ed76b5cfdffcb45498564f884f97a1b971d3ca"
+      ],
+      "transaction": {
+        "cases": [
+          {
+            "endpoint_contract": "PASS",
+            "evaluation_tau": "102/5",
+            "index": 0,
+            "query": "102/5",
+            "status": "BASELINE_ENDPOINT"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "evaluation_tau": "103/5",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 1,
+            "new_center": [
+              4.519775390625,
+              9.638427734375,
+              -0.045654296875
+            ],
+            "new_center_id": 1831,
+            "query": "103/5",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "APPLIED_ACTUAL_QUERY"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "evaluation_tau": "104/5",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 2,
+            "new_center": [
+              4.662109375,
+              9.689453125,
+              -0.064453125
+            ],
+            "new_center_id": 1831,
+            "query": "104/5",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "APPLIED_ACTUAL_QUERY"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "evaluation_tau": "211/10",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 3,
+            "new_center": [
+              4.5694580078125,
+              9.4920654296875,
+              -0.0765380859375
+            ],
+            "new_center_id": 1831,
+            "query": "211/10",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "APPLIED_ACTUAL_QUERY"
+          },
+          {
+            "endpoint_contract": "PASS",
+            "evaluation_tau": "106/5",
+            "index": 4,
+            "query": "106/5",
+            "status": "BASELINE_ENDPOINT"
+          }
+        ],
+        "continuous_window_admitted": false,
+        "extra_smooth": false,
+        "published_partial_results": false,
+        "schema": "binoc-actual-window-schedule-v1",
+        "source_proposal_digest": "5a85888afae23f5455ec2ebe545e882f40a03c8d17ba0c0ea4288cb7946575d0",
+        "status": "COMMITTED_REQUESTED_SCHEDULE",
+        "temporal_scope": "ATOMIC_REQUESTED_SCHEDULE_ONLY",
+        "time_mode": "exact"
+      }
+    },
+    "physical": {
+      "baseline_hashes": [
+        "7f9062125e740574f8504132481989173ca1c0a9ee94ea80be6bc9de9b8932d8",
+        "7f9062125e740574f8504132481989173ca1c0a9ee94ea80be6bc9de9b8932d8",
+        "7f9062125e740574f8504132481989173ca1c0a9ee94ea80be6bc9de9b8932d8",
+        "083077c1db3c97c0c9d721870f3aa06adfccd8cd5a39abd22ef8375208cbbdf4",
+        "73c34f2b75c48426e85232f86735d6a0d002e3e805a5b78fc9554f59e808fd01",
+        "73c34f2b75c48426e85232f86735d6a0d002e3e805a5b78fc9554f59e808fd01",
+        "73c34f2b75c48426e85232f86735d6a0d002e3e805a5b78fc9554f59e808fd01",
+        "cf6c7bc1bf35efd51ceab1c6875b22398ffdca83855e60c9c7a2a62692af13d3",
+        "c99a740ee84b78ef9753d5f41a021a1c28a538684b43f7187d6424ec3d0f56d2",
+        "158734283912be8309b05efbe210264ae942b9b2f1a18c9ab447a007d1fb7d87",
+        "b64381254c4de50aa91c690aef08fa76c23227d562626f121b1ae0098c659fcc",
+        "fff5c6b85b829b282dc28919a4ed76b5cfdffcb45498564f884f97a1b971d3ca",
+        "fff5c6b85b829b282dc28919a4ed76b5cfdffcb45498564f884f97a1b971d3ca",
+        "fff5c6b85b829b282dc28919a4ed76b5cfdffcb45498564f884f97a1b971d3ca"
+      ],
+      "baseline_shapes": [
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ],
+        [
+          1831,
+          3820
+        ]
+      ],
+      "identity_ledger_hashes": [
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        },
+        {
+          "owner_rows": 5262,
+          "owners": "bb550272819c1d35962e70c063b8ce4a0de942c78d3ffe2f3c0e4e8c9e297ed3",
+          "vertices": "219104c16ba2319ca59abc32f2a6e93ba81db7fade2a4f975451248a9276dc78"
+        }
+      ],
+      "independent": [
+        {
+          "scope": "BASELINE_OUTSIDE",
+          "status": "PASS_BASELINE_BYTES"
+        },
+        {
+          "scope": "BASELINE_ENDPOINT",
+          "status": "PASS_BASELINE_BYTES"
+        },
+        {
+          "boundary_global_ids": [
+            171,
+            498,
+            500,
+            172
+          ],
+          "checks": {
+            "all_old_vertex_tag_bits_and_external_face_rows_unchanged": true,
+            "authorized_patch_matches_frozen_oriented_boundary": true,
+            "boundary_identity_unique_no_coordinate_lookup": true,
+            "expected_center_bits": true,
+            "one_new_center_four_correct_unique_exact_nonzero_faces": true,
+            "owners_authorize_exactly_two_faces_and_all_replicas_consumed_once": true,
+            "shape_dtype_and_finite": true
+          },
+          "consumed_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "errors": [],
+          "expected_center_checked": true,
+          "expected_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "expected_raw_owner_count": 6,
+          "expected_removed_face_rows": [
+            493,
+            494
+          ],
+          "geometry_admission": "NOT_CERTIFIED",
+          "pass": true,
+          "replacement_face_rows": [
+            493,
+            494,
+            3820,
+            3821
+          ],
+          "schema": "c1-lite-e2-runtime-identity-array-validation-v1",
+          "scope": "IDENTITY_ARRAY_CONTRACT_ONLY",
+          "status": "PASS_IDENTITY_ARRAY_CONTRACT_ONLY",
+          "temporal_continuity": "NOT_CERTIFIED",
+          "trace_assumption": "Complete production owner/vertex ledgers supplied by caller."
+        },
+        {
+          "boundary_global_ids": [
+            171,
+            498,
+            500,
+            172
+          ],
+          "checks": {
+            "all_old_vertex_tag_bits_and_external_face_rows_unchanged": true,
+            "authorized_patch_matches_frozen_oriented_boundary": true,
+            "boundary_identity_unique_no_coordinate_lookup": true,
+            "expected_center_bits": true,
+            "one_new_center_four_correct_unique_exact_nonzero_faces": true,
+            "owners_authorize_exactly_two_faces_and_all_replicas_consumed_once": true,
+            "shape_dtype_and_finite": true
+          },
+          "consumed_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "errors": [],
+          "expected_center_checked": true,
+          "expected_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "expected_raw_owner_count": 6,
+          "expected_removed_face_rows": [
+            493,
+            494
+          ],
+          "geometry_admission": "NOT_CERTIFIED",
+          "pass": true,
+          "replacement_face_rows": [
+            493,
+            494,
+            3820,
+            3821
+          ],
+          "schema": "c1-lite-e2-runtime-identity-array-validation-v1",
+          "scope": "IDENTITY_ARRAY_CONTRACT_ONLY",
+          "status": "PASS_IDENTITY_ARRAY_CONTRACT_ONLY",
+          "temporal_continuity": "NOT_CERTIFIED",
+          "trace_assumption": "Complete production owner/vertex ledgers supplied by caller."
+        },
+        {
+          "boundary_global_ids": [
+            171,
+            498,
+            500,
+            172
+          ],
+          "checks": {
+            "all_old_vertex_tag_bits_and_external_face_rows_unchanged": true,
+            "authorized_patch_matches_frozen_oriented_boundary": true,
+            "boundary_identity_unique_no_coordinate_lookup": true,
+            "expected_center_bits": true,
+            "one_new_center_four_correct_unique_exact_nonzero_faces": true,
+            "owners_authorize_exactly_two_faces_and_all_replicas_consumed_once": true,
+            "shape_dtype_and_finite": true
+          },
+          "consumed_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "errors": [],
+          "expected_center_checked": true,
+          "expected_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "expected_raw_owner_count": 6,
+          "expected_removed_face_rows": [
+            493,
+            494
+          ],
+          "geometry_admission": "NOT_CERTIFIED",
+          "pass": true,
+          "replacement_face_rows": [
+            493,
+            494,
+            3820,
+            3821
+          ],
+          "schema": "c1-lite-e2-runtime-identity-array-validation-v1",
+          "scope": "IDENTITY_ARRAY_CONTRACT_ONLY",
+          "status": "PASS_IDENTITY_ARRAY_CONTRACT_ONLY",
+          "temporal_continuity": "NOT_CERTIFIED",
+          "trace_assumption": "Complete production owner/vertex ledgers supplied by caller."
+        },
+        {
+          "boundary_global_ids": [
+            171,
+            498,
+            500,
+            172
+          ],
+          "checks": {
+            "all_old_vertex_tag_bits_and_external_face_rows_unchanged": true,
+            "authorized_patch_matches_frozen_oriented_boundary": true,
+            "boundary_identity_unique_no_coordinate_lookup": true,
+            "expected_center_bits": true,
+            "one_new_center_four_correct_unique_exact_nonzero_faces": true,
+            "owners_authorize_exactly_two_faces_and_all_replicas_consumed_once": true,
+            "shape_dtype_and_finite": true
+          },
+          "consumed_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "errors": [],
+          "expected_center_checked": true,
+          "expected_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "expected_raw_owner_count": 6,
+          "expected_removed_face_rows": [
+            493,
+            494
+          ],
+          "geometry_admission": "NOT_CERTIFIED",
+          "pass": true,
+          "replacement_face_rows": [
+            493,
+            494,
+            3820,
+            3821
+          ],
+          "schema": "c1-lite-e2-runtime-identity-array-validation-v1",
+          "scope": "IDENTITY_ARRAY_CONTRACT_ONLY",
+          "status": "PASS_IDENTITY_ARRAY_CONTRACT_ONLY",
+          "temporal_continuity": "NOT_CERTIFIED",
+          "trace_assumption": "Complete production owner/vertex ledgers supplied by caller."
+        },
+        {
+          "boundary_global_ids": [
+            171,
+            498,
+            500,
+            172
+          ],
+          "checks": {
+            "all_old_vertex_tag_bits_and_external_face_rows_unchanged": true,
+            "authorized_patch_matches_frozen_oriented_boundary": true,
+            "boundary_identity_unique_no_coordinate_lookup": true,
+            "expected_center_bits": true,
+            "one_new_center_four_correct_unique_exact_nonzero_faces": true,
+            "owners_authorize_exactly_two_faces_and_all_replicas_consumed_once": true,
+            "shape_dtype_and_finite": true
+          },
+          "consumed_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "errors": [],
+          "expected_center_checked": true,
+          "expected_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "expected_raw_owner_count": 6,
+          "expected_removed_face_rows": [
+            493,
+            494
+          ],
+          "geometry_admission": "NOT_CERTIFIED",
+          "pass": true,
+          "replacement_face_rows": [
+            493,
+            494,
+            3820,
+            3821
+          ],
+          "schema": "c1-lite-e2-runtime-identity-array-validation-v1",
+          "scope": "IDENTITY_ARRAY_CONTRACT_ONLY",
+          "status": "PASS_IDENTITY_ARRAY_CONTRACT_ONLY",
+          "temporal_continuity": "NOT_CERTIFIED",
+          "trace_assumption": "Complete production owner/vertex ledgers supplied by caller."
+        },
+        {
+          "boundary_global_ids": [
+            171,
+            498,
+            500,
+            172
+          ],
+          "checks": {
+            "all_old_vertex_tag_bits_and_external_face_rows_unchanged": true,
+            "authorized_patch_matches_frozen_oriented_boundary": true,
+            "boundary_identity_unique_no_coordinate_lookup": true,
+            "expected_center_bits": true,
+            "one_new_center_four_correct_unique_exact_nonzero_faces": true,
+            "owners_authorize_exactly_two_faces_and_all_replicas_consumed_once": true,
+            "shape_dtype_and_finite": true
+          },
+          "consumed_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "errors": [],
+          "expected_center_checked": true,
+          "expected_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "expected_raw_owner_count": 6,
+          "expected_removed_face_rows": [
+            493,
+            494
+          ],
+          "geometry_admission": "NOT_CERTIFIED",
+          "pass": true,
+          "replacement_face_rows": [
+            493,
+            494,
+            3820,
+            3821
+          ],
+          "schema": "c1-lite-e2-runtime-identity-array-validation-v1",
+          "scope": "IDENTITY_ARRAY_CONTRACT_ONLY",
+          "status": "PASS_IDENTITY_ARRAY_CONTRACT_ONLY",
+          "temporal_continuity": "NOT_CERTIFIED",
+          "trace_assumption": "Complete production owner/vertex ledgers supplied by caller."
+        },
+        {
+          "boundary_global_ids": [
+            171,
+            498,
+            500,
+            172
+          ],
+          "checks": {
+            "all_old_vertex_tag_bits_and_external_face_rows_unchanged": true,
+            "authorized_patch_matches_frozen_oriented_boundary": true,
+            "boundary_identity_unique_no_coordinate_lookup": true,
+            "expected_center_bits": true,
+            "one_new_center_four_correct_unique_exact_nonzero_faces": true,
+            "owners_authorize_exactly_two_faces_and_all_replicas_consumed_once": true,
+            "shape_dtype_and_finite": true
+          },
+          "consumed_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "errors": [],
+          "expected_center_checked": true,
+          "expected_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "expected_raw_owner_count": 6,
+          "expected_removed_face_rows": [
+            493,
+            494
+          ],
+          "geometry_admission": "NOT_CERTIFIED",
+          "pass": true,
+          "replacement_face_rows": [
+            493,
+            494,
+            3820,
+            3821
+          ],
+          "schema": "c1-lite-e2-runtime-identity-array-validation-v1",
+          "scope": "IDENTITY_ARRAY_CONTRACT_ONLY",
+          "status": "PASS_IDENTITY_ARRAY_CONTRACT_ONLY",
+          "temporal_continuity": "NOT_CERTIFIED",
+          "trace_assumption": "Complete production owner/vertex ledgers supplied by caller."
+        },
+        {
+          "boundary_global_ids": [
+            171,
+            498,
+            500,
+            172
+          ],
+          "checks": {
+            "all_old_vertex_tag_bits_and_external_face_rows_unchanged": true,
+            "authorized_patch_matches_frozen_oriented_boundary": true,
+            "boundary_identity_unique_no_coordinate_lookup": true,
+            "expected_center_bits": true,
+            "one_new_center_four_correct_unique_exact_nonzero_faces": true,
+            "owners_authorize_exactly_two_faces_and_all_replicas_consumed_once": true,
+            "shape_dtype_and_finite": true
+          },
+          "consumed_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "errors": [],
+          "expected_center_checked": true,
+          "expected_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "expected_raw_owner_count": 6,
+          "expected_removed_face_rows": [
+            493,
+            494
+          ],
+          "geometry_admission": "NOT_CERTIFIED",
+          "pass": true,
+          "replacement_face_rows": [
+            493,
+            494,
+            3820,
+            3821
+          ],
+          "schema": "c1-lite-e2-runtime-identity-array-validation-v1",
+          "scope": "IDENTITY_ARRAY_CONTRACT_ONLY",
+          "status": "PASS_IDENTITY_ARRAY_CONTRACT_ONLY",
+          "temporal_continuity": "NOT_CERTIFIED",
+          "trace_assumption": "Complete production owner/vertex ledgers supplied by caller."
+        },
+        {
+          "boundary_global_ids": [
+            171,
+            498,
+            500,
+            172
+          ],
+          "checks": {
+            "all_old_vertex_tag_bits_and_external_face_rows_unchanged": true,
+            "authorized_patch_matches_frozen_oriented_boundary": true,
+            "boundary_identity_unique_no_coordinate_lookup": true,
+            "expected_center_bits": true,
+            "one_new_center_four_correct_unique_exact_nonzero_faces": true,
+            "owners_authorize_exactly_two_faces_and_all_replicas_consumed_once": true,
+            "shape_dtype_and_finite": true
+          },
+          "consumed_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "errors": [],
+          "expected_center_checked": true,
+          "expected_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "expected_raw_owner_count": 6,
+          "expected_removed_face_rows": [
+            493,
+            494
+          ],
+          "geometry_admission": "NOT_CERTIFIED",
+          "pass": true,
+          "replacement_face_rows": [
+            493,
+            494,
+            3820,
+            3821
+          ],
+          "schema": "c1-lite-e2-runtime-identity-array-validation-v1",
+          "scope": "IDENTITY_ARRAY_CONTRACT_ONLY",
+          "status": "PASS_IDENTITY_ARRAY_CONTRACT_ONLY",
+          "temporal_continuity": "NOT_CERTIFIED",
+          "trace_assumption": "Complete production owner/vertex ledgers supplied by caller."
+        },
+        {
+          "boundary_global_ids": [
+            171,
+            498,
+            500,
+            172
+          ],
+          "checks": {
+            "all_old_vertex_tag_bits_and_external_face_rows_unchanged": true,
+            "authorized_patch_matches_frozen_oriented_boundary": true,
+            "boundary_identity_unique_no_coordinate_lookup": true,
+            "expected_center_bits": true,
+            "one_new_center_four_correct_unique_exact_nonzero_faces": true,
+            "owners_authorize_exactly_two_faces_and_all_replicas_consumed_once": true,
+            "shape_dtype_and_finite": true
+          },
+          "consumed_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "errors": [],
+          "expected_center_checked": true,
+          "expected_owner_sha256": "080010b9edb51600c2371b0b59ee97801fc364acc3a17fd28b9ffaa5e04ac3d4",
+          "expected_raw_owner_count": 6,
+          "expected_removed_face_rows": [
+            493,
+            494
+          ],
+          "geometry_admission": "NOT_CERTIFIED",
+          "pass": true,
+          "replacement_face_rows": [
+            493,
+            494,
+            3820,
+            3821
+          ],
+          "schema": "c1-lite-e2-runtime-identity-array-validation-v1",
+          "scope": "IDENTITY_ARRAY_CONTRACT_ONLY",
+          "status": "PASS_IDENTITY_ARRAY_CONTRACT_ONLY",
+          "temporal_continuity": "NOT_CERTIFIED",
+          "trace_assumption": "Complete production owner/vertex ledgers supplied by caller."
+        },
+        {
+          "scope": "BASELINE_ENDPOINT",
+          "status": "PASS_BASELINE_BYTES"
+        },
+        {
+          "scope": "BASELINE_OUTSIDE",
+          "status": "PASS_BASELINE_BYTES"
+        }
+      ],
+      "instrumented_baseline_identical": true,
+      "public_api_equal": true,
+      "queries": [
+        "0x1.38cda2b5a20dcp-1",
+        "0x1.38cda2b5a20ddp-1",
+        "0x1.38cda2b5a20dep-1",
+        "0x1.3bdeb5df92130p-1",
+        "0x1.3eefc90982181p-1",
+        "0x1.3eefc90982182p-1",
+        "0x1.3eefc90982183p-1",
+        "0x1.4200dc33721d4p-1",
+        "0x1.4200dc33721d5p-1",
+        "0x1.4200dc33721d6p-1",
+        "0x1.438965c86a1fep-1",
+        "0x1.4511ef5d62226p-1",
+        "0x1.4511ef5d62227p-1",
+        "0x1.4511ef5d62228p-1"
+      ],
+      "result_hashes": [
+        "7f9062125e740574f8504132481989173ca1c0a9ee94ea80be6bc9de9b8932d8",
+        "7f9062125e740574f8504132481989173ca1c0a9ee94ea80be6bc9de9b8932d8",
+        "6a2be3b3a37ededbaa73927972f59d37a569d2612100d9d38d023689ab7a7619",
+        "f0cbd2117a9b6a549536c51d03bf13594f7c2164200a6f1bfede877782e40de3",
+        "b89bb1397859b5422a8cf27f3d98d4922067d4d5aea521f08237ecb04931c106",
+        "b89bb1397859b5422a8cf27f3d98d4922067d4d5aea521f08237ecb04931c106",
+        "b89bb1397859b5422a8cf27f3d98d4922067d4d5aea521f08237ecb04931c106",
+        "372f132154cc4cab1ce8d960597764be3d55c4fcff4b3bb1267842184ffa5e09",
+        "c1b29764cf2562fb40401f5fb8c280d8cb35e5cc7ab013642ed812aef6bb3333",
+        "fa944f78c81695bd848846a3bda3b546feffecd7c7a997e3ee63b0cb5509f2b6",
+        "dc4efa916c7c8d502a4a59a83812ea97356aefa95b387ef3c238f27b78faf7f9",
+        "f1530199729a620ee4cdb41c2074d128541de65920d45181b77b71ce192d42bb",
+        "fff5c6b85b829b282dc28919a4ed76b5cfdffcb45498564f884f97a1b971d3ca",
+        "fff5c6b85b829b282dc28919a4ed76b5cfdffcb45498564f884f97a1b971d3ca"
+      ],
+      "transaction": {
+        "cases": [
+          {
+            "effective_discrete_time_hex": "0x1.4666666666665p+4",
+            "evaluation_tau": "5742089524897381/281474976710656",
+            "index": 0,
+            "physical_time_hex": "0x1.38cda2b5a20dcp-1",
+            "query": "0.6109438749999998",
+            "status": "BASELINE_OUTSIDE"
+          },
+          {
+            "effective_discrete_time_hex": "0x1.4666666666666p+4",
+            "endpoint_contract": "PASS",
+            "evaluation_tau": "102/5",
+            "index": 1,
+            "physical_time_hex": "0x1.38cda2b5a20ddp-1",
+            "query": "0.6109438749999999",
+            "status": "BASELINE_ENDPOINT"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "effective_discrete_time_hex": "0x1.4666666666667p+4",
+            "evaluation_tau": "5742089524897383/281474976710656",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 2,
+            "new_center": [
+              4.37744140625,
+              9.58740234375,
+              -0.02685546875
+            ],
+            "new_center_id": 1831,
+            "physical_time_hex": "0x1.38cda2b5a20dep-1",
+            "query": "0.610943875",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "APPLIED_ACTUAL_QUERY"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "effective_discrete_time_hex": "0x1.499999999999ap+4",
+            "evaluation_tau": "2899192260119757/140737488355328",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 3,
+            "new_center": [
+              4.519775390625,
+              9.638427734375,
+              -0.045654296875
+            ],
+            "new_center_id": 1831,
+            "physical_time_hex": "0x1.3bdeb5df92130p-1",
+            "query": "0.6169335208333333",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "APPLIED_ACTUAL_QUERY"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "effective_discrete_time_hex": "0x1.4ccccccccccccp+4",
+            "evaluation_tau": "1463669878895411/70368744177664",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 4,
+            "new_center": [
+              4.662109375,
+              9.689453125,
+              -0.064453125
+            ],
+            "new_center_id": 1831,
+            "physical_time_hex": "0x1.3eefc90982181p-1",
+            "query": "0.6229231666666665",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "APPLIED_ACTUAL_QUERY"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "effective_discrete_time_hex": "0x1.4cccccccccccdp+4",
+            "evaluation_tau": "5854679515581645/281474976710656",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 5,
+            "new_center": [
+              4.662109375,
+              9.689453125,
+              -0.064453125
+            ],
+            "new_center_id": 1831,
+            "physical_time_hex": "0x1.3eefc90982182p-1",
+            "query": "0.6229231666666666",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "APPLIED_ACTUAL_QUERY"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "effective_discrete_time_hex": "0x1.4cccccccccccep+4",
+            "evaluation_tau": "2927339757790823/140737488355328",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 6,
+            "new_center": [
+              4.662109375,
+              9.689453125,
+              -0.064453125
+            ],
+            "new_center_id": 1831,
+            "physical_time_hex": "0x1.3eefc90982183p-1",
+            "query": "0.6229231666666667",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "APPLIED_ACTUAL_QUERY"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "effective_discrete_time_hex": "0x1.4ffffffffffffp+4",
+            "evaluation_tau": "5910974510923775/281474976710656",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 7,
+            "new_center": [
+              4.600341796875,
+              9.557861328125,
+              -0.072509765625
+            ],
+            "new_center_id": 1831,
+            "physical_time_hex": "0x1.4200dc33721d4p-1",
+            "query": "0.6289128124999999",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "APPLIED_ACTUAL_QUERY"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "effective_discrete_time_hex": "0x1.5000000000000p+4",
+            "evaluation_tau": "21",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 8,
+            "new_center": [
+              4.600341796875,
+              9.557861328125,
+              -0.072509765625
+            ],
+            "new_center_id": 1831,
+            "physical_time_hex": "0x1.4200dc33721d5p-1",
+            "query": "0.6289128125",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "APPLIED_ACTUAL_QUERY"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "effective_discrete_time_hex": "0x1.5000000000002p+4",
+            "evaluation_tau": "2955487255461889/140737488355328",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 9,
+            "new_center": [
+              4.600341796875,
+              9.557861328125,
+              -0.072509765625
+            ],
+            "new_center_id": 1831,
+            "physical_time_hex": "0x1.4200dc33721d6p-1",
+            "query": "0.6289128125000001",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "APPLIED_ACTUAL_QUERY"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "effective_discrete_time_hex": "0x1.519999999999ap+4",
+            "evaluation_tau": "2969561004297421/140737488355328",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 10,
+            "new_center": [
+              4.5694580078125,
+              9.4920654296875,
+              -0.0765380859375
+            ],
+            "new_center_id": 1831,
+            "physical_time_hex": "0x1.438965c86a1fep-1",
+            "query": "0.6319076354166666",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "APPLIED_ACTUAL_QUERY"
+          },
+          {
+            "boundary_actual_ids": [
+              171,
+              498,
+              500,
+              172
+            ],
+            "consumed_owners": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ],
+            "effective_discrete_time_hex": "0x1.5333333333332p+4",
+            "evaluation_tau": "2983634753132953/140737488355328",
+            "geometry": {
+              "all_time_certificate": false,
+              "certificate_counts": {
+                "RELATIVE_EDGE_PLANE": 19,
+                "RELATIVE_EMPTY_PLANE": 9,
+                "STRICT_ACTUAL_AABB": 3790
+              },
+              "reason": "Actual graph fan, interface and all retained contacts checked exactly.",
+              "retained_faces_checked": 3818,
+              "scope": "ONE_ACTUAL_QUERY_ONLY",
+              "status": "PASS"
+            },
+            "index": 11,
+            "new_center": [
+              4.53857421875,
+              9.42626953125,
+              -0.08056640625
+            ],
+            "new_center_id": 1831,
+            "physical_time_hex": "0x1.4511ef5d62226p-1",
+            "query": "0.6349024583333331",
+            "replaced_face_rows": [
+              493,
+              494
+            ],
+            "source_identity_from_coordinate_matching": false,
+            "source_identity_used": true,
+            "status": "APPLIED_ACTUAL_QUERY"
+          },
+          {
+            "effective_discrete_time_hex": "0x1.5333333333333p+4",
+            "endpoint_contract": "PASS",
+            "evaluation_tau": "106/5",
+            "index": 12,
+            "physical_time_hex": "0x1.4511ef5d62227p-1",
+            "query": "0.6349024583333333",
+            "status": "BASELINE_ENDPOINT"
+          },
+          {
+            "effective_discrete_time_hex": "0x1.5333333333334p+4",
+            "evaluation_tau": "1491817376566477/70368744177664",
+            "index": 13,
+            "physical_time_hex": "0x1.4511ef5d62228p-1",
+            "query": "0.6349024583333334",
+            "status": "BASELINE_OUTSIDE"
+          }
+        ],
+        "continuous_window_admitted": false,
+        "extra_smooth": false,
+        "published_partial_results": false,
+        "schema": "binoc-actual-window-schedule-v1",
+        "source_proposal_digest": "5a85888afae23f5455ec2ebe545e882f40a03c8d17ba0c0ea4288cb7946575d0",
+        "status": "COMMITTED_REQUESTED_SCHEDULE",
+        "temporal_scope": "ATOMIC_REQUESTED_SCHEDULE_ONLY",
+        "time_mode": "physical"
+      }
+    }
+  },
+  "schema": "e2-production-runtime-worker-v1",
+  "smoke": true,
+  "source_report_sha256": "6b7f08fb7689ef8e62002c787e301a321fb343cda16d1ce37c54021b58c92dc2",
+  "status": "PASS_PRODUCTION_REQUESTED_SCHEDULE_ONLY",
+  "temporary_cache_removed": true,
+  "tsize_hex": "0x1.eaabfa360338dp-1"
+}

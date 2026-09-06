@@ -1,0 +1,6867 @@
+{
+  "admission": {
+    "fallback": "UNCHANGED_BASELINE_ENTIRE_WINDOW_INCLUDING_ROOT",
+    "fallback_is_a_continuity_improvement": false,
+    "gates": {
+      "binary32_geometry_contact": {
+        "reason": "No evidence supplied.",
+        "status": "UNKNOWN"
+      },
+      "compiler_selector_conditioning": {
+        "reason": "No evidence supplied.",
+        "status": "UNKNOWN"
+      },
+      "complete_temporal_partition": {
+        "reason": "Every original source branch and actual singleton attempted, with raw-original-time split guards.",
+        "status": "PASS"
+      },
+      "endpoint_realization": {
+        "binary64_pass": true,
+        "prospective_binary32_pass": true,
+        "reason": "Frozen B prospective endpoint audit: a failure is retained; a prospective PASS is not an actual C++ endpoint-equivalence proof.",
+        "status": "UNKNOWN"
+      },
+      "event_isolation": {
+        "reason": "No evidence supplied.",
+        "status": "UNKNOWN"
+      },
+      "ideal_temporal_continuity": {
+        "reason": "One exact piecewise-affine center and identical source boundaries at all junctions; no float32 continuity claim.",
+        "status": "PASS"
+      },
+      "interface_degeneracy_policy": {
+        "reason": "Whole fixed partition; source-identity quotient / ideal rational scope only. Runtime equivalence is a separate gate.",
+        "status": "REJECT"
+      },
+      "interface_topology": {
+        "reason": "Whole fixed partition; source-identity quotient / ideal rational scope only. Runtime equivalence is a separate gate.",
+        "status": "PASS"
+      },
+      "original_patch_disk": {
+        "reason": "Whole fixed partition; source-identity quotient / ideal rational scope only. Runtime equivalence is a separate gate.",
+        "status": "PASS"
+      },
+      "raw_emission_equivalence": {
+        "reason": "No evidence supplied.",
+        "status": "UNKNOWN"
+      },
+      "replacement_disk": {
+        "reason": "Whole fixed partition; source-identity quotient / ideal rational scope only. Runtime equivalence is a separate gate.",
+        "status": "PASS"
+      },
+      "runtime_identity_and_unchanged_exterior": {
+        "reason": "No evidence supplied.",
+        "status": "UNKNOWN"
+      },
+      "source_incidence_contact": {
+        "reason": "Whole fixed partition; source-identity quotient / ideal rational scope only. Runtime equivalence is a separate gate.",
+        "status": "REJECT"
+      },
+      "source_ownership": {
+        "reason": "Frozen source-owner contract plus every raw owner-emission/suppression model completed; not runtime array identity.",
+        "status": "PASS"
+      }
+    },
+    "rejected_gates": [
+      "source_incidence_contact",
+      "interface_degeneracy_policy"
+    ],
+    "root_only_c0_fallback_allowed": false,
+    "runtime_plan_authorized": false,
+    "schema": "c1-lite-baseline-relative-admission-v1",
+    "scope": "Decision contract only; no runtime plan is emitted by this module.",
+    "status": "FAIL_CLOSED",
+    "unresolved_gates": [
+      "event_isolation",
+      "endpoint_realization",
+      "compiler_selector_conditioning",
+      "raw_emission_equivalence",
+      "binary32_geometry_contact",
+      "runtime_identity_and_unchanged_exterior"
+    ]
+  },
+  "all_units_scanned": true,
+  "certificate_kinds": {
+    "BASELINE_INTERFACE_DEGENERACY_POLICY": 28,
+    "POSITIVE_INCIDENT_HALFPLANE_COMBINATION": 5,
+    "STRICT_SOURCE_EDGE_EXTERIOR": 26614,
+    "UNKNOWN": 79
+  },
+  "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+  "diagnostics": [
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            16,
+            4878,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            16,
+            4888,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            8,
+            16,
+            942,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            8,
+            16,
+            952,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            10,
+            16,
+            46,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            10,
+            16,
+            56,
+            1,
+            0,
+            1
+          ]
+        ],
+        "source_vertices": [
+          "5:10|242:0",
+          "5:10|319:8",
+          "7:10|243:0"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            16,
+            4830,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            16,
+            4852,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            16,
+            9,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            16,
+            20,
+            0,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "5:10|242:0",
+          "7:10|243:0",
+          "7:12|243:0"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            16,
+            4830,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            16,
+            4852,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            10,
+            16,
+            9,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            10,
+            16,
+            20,
+            0,
+            0,
+            1
+          ]
+        ],
+        "source_vertices": [
+          "5:10|242:0",
+          "7:12|243:0",
+          "5:12|242:0"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "Neither the old strict separator nor the bounded exact source-contact tests certify this branch. UNKNOWN does not diagnose an intersection.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            16,
+            4878,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            16,
+            4888,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            16,
+            942,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            16,
+            952,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            16,
+            46,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            16,
+            56,
+            1,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "5:10|319:8",
+          "7:10|321:8",
+          "7:10|243:0"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            16,
+            4748,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            16,
+            4768,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            16,
+            4780,
+            0,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "5:12|242:0",
+          "7:12|243:0",
+          "242:0|242:32"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "reason": "Pre-existing retained zero-area support touches the interface; the fixed conservative policy refuses this window. This is NOT a new collision.",
+          "schema": "c1-lite-interface-degeneracy-policy-v1",
+          "status": "REJECT",
+          "witness": {
+            "kind": "inherited_interface_degeneracy",
+            "shared_source_vids": [
+              "element=0;155:8|243:0",
+              "element=0;7:10|321:8"
+            ]
+          }
+        },
+        "owners": [
+          [
+            0,
+            0,
+            16,
+            4866,
+            2,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            16,
+            4868,
+            2,
+            0,
+            2
+          ],
+          [
+            0,
+            8,
+            16,
+            930,
+            2,
+            0,
+            2
+          ],
+          [
+            0,
+            8,
+            16,
+            932,
+            2,
+            0,
+            2
+          ],
+          [
+            0,
+            10,
+            16,
+            34,
+            2,
+            0,
+            2
+          ],
+          [
+            0,
+            10,
+            16,
+            36,
+            2,
+            0,
+            2
+          ]
+        ],
+        "source_vertices": [
+          "7:10|243:0",
+          "7:10|321:8",
+          "155:8|243:0"
+        ]
+      },
+      "kind": "BASELINE_INTERFACE_DEGENERACY_POLICY",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "reason": "Pre-existing retained zero-area support touches the interface; the fixed conservative policy refuses this window. This is NOT a new collision.",
+          "schema": "c1-lite-interface-degeneracy-policy-v1",
+          "status": "REJECT",
+          "witness": {
+            "kind": "inherited_interface_degeneracy",
+            "shared_source_vids": [
+              "element=0;155:8|243:0"
+            ]
+          }
+        },
+        "owners": [
+          [
+            0,
+            0,
+            16,
+            4831,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            16,
+            4854,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            8,
+            16,
+            914,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            8,
+            16,
+            927,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            10,
+            16,
+            10,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            10,
+            16,
+            22,
+            1,
+            1,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "7:10|243:0",
+          "155:8|243:0",
+          "7:12|243:0"
+        ]
+      },
+      "kind": "BASELINE_INTERFACE_DEGENERACY_POLICY",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "reason": "Pre-existing retained zero-area support touches the interface; the fixed conservative policy refuses this window. This is NOT a new collision.",
+          "schema": "c1-lite-interface-degeneracy-policy-v1",
+          "status": "REJECT",
+          "witness": {
+            "kind": "inherited_interface_degeneracy",
+            "shared_source_vids": [
+              "element=0;155:8|243:0"
+            ]
+          }
+        },
+        "owners": [
+          [
+            0,
+            0,
+            16,
+            4749,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            16,
+            4770,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            16,
+            4782,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            16,
+            896,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            16,
+            898,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            16,
+            900,
+            0,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "7:12|243:0",
+          "155:8|243:0",
+          "243:0|243:32"
+        ]
+      },
+      "kind": "BASELINE_INTERFACE_DEGENERACY_POLICY",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            16,
+            4748,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            16,
+            4768,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            16,
+            4780,
+            0,
+            0,
+            1
+          ]
+        ],
+        "source_vertices": [
+          "7:12|243:0",
+          "243:0|243:32",
+          "242:0|242:32"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "reason": "Pre-existing retained zero-area support touches the interface; the fixed conservative policy refuses this window. This is NOT a new collision.",
+          "schema": "c1-lite-interface-degeneracy-policy-v1",
+          "status": "REJECT",
+          "witness": {
+            "kind": "inherited_interface_degeneracy",
+            "shared_source_vids": [
+              "element=0;155:8|243:0"
+            ]
+          }
+        },
+        "owners": [
+          [
+            0,
+            0,
+            16,
+            4714,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            16,
+            4725,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            16,
+            876,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            16,
+            887,
+            0,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "155:8|243:0",
+          "837:0|837:32",
+          "243:0|243:32"
+        ]
+      },
+      "kind": "BASELINE_INTERFACE_DEGENERACY_POLICY",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "Neither the old strict separator nor the bounded exact source-contact tests certify this branch. UNKNOWN does not diagnose an intersection.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            8,
+            3125,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            8,
+            288,
+            1,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "155:8|325:8",
+          "155:8|415:8",
+          "155:8|859:0"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    },
+    {
+      "detail": {
+        "certificate": {
+          "orientation_xy": 1,
+          "reason": "No strict source-edge or enabled full-fan coordinate-axis separator was certified. This is not evidence of a collision.",
+          "schema": "c1-lite-affine-source-contact-v2",
+          "scope": "CONDITIONAL_LOCAL_FAN_VS_ONE_AFFINE_RETAINED_TRIANGLE",
+          "separation_certificate": null,
+          "status": "UNKNOWN",
+          "witness": null
+        },
+        "owners": [
+          [
+            0,
+            0,
+            8,
+            3126,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            8,
+            289,
+            1,
+            0,
+            0
+          ]
+        ],
+        "source_vertices": [
+          "155:8|415:8",
+          "155:8|417:8",
+          "155:8|860:0"
+        ]
+      },
+      "kind": "UNKNOWN",
+      "unit": "affine_branch:0"
+    }
+  ],
+  "diagnostics_total": 107,
+  "event_id": "element=0;role=temporal_neighbour;face=7:10|243:0|155:8|325:8",
+  "exterior_scope": "Raw original-time emission filtered canonical SourceVID geometric quotient, NOT actual C++ array identity.",
+  "fallback_selection_checks": {
+    "left": "BASELINE",
+    "lower": "BASELINE",
+    "right": "BASELINE",
+    "root": "BASELINE",
+    "upper": "BASELINE"
+  },
+  "historical_v1_superset_pair_counts": {
+    "PASS": 27755,
+    "UNKNOWN": 123
+  },
+  "junctions": {
+    "center_rule": "One piecewise-affine interpolation through the exact source endpoint midpoints and frozen binary32 root anchor.",
+    "exact_boundary_positions_match_all_junctions": true,
+    "ordered_boundary_cycle_matches_all_junctions": true,
+    "source_face_orientation_basis": "Frozen source certificate, not a new C++ runtime test.",
+    "status": "PASS"
+  },
+  "pair_counts": {
+    "PASS": 26619,
+    "REJECT": 28,
+    "UNKNOWN": 79
+  },
+  "production_started": false,
+  "render_started": false,
+  "runtime_admitted": false,
+  "runtime_plan_emitted": false,
+  "runtime_started": false,
+  "schema": "c1-lite-repaired-raw-window-audit-v2",
+  "source_report_sha256": "44a165b271c980a0cbf054ff0da15c3a9041805848fbb5adb06b8bb082fabdc3",
+  "status": "REJECT",
+  "units": [
+    {
+      "exterior_status": "REJECT",
+      "geometry_certificate": {
+        "minimum_3d_fan_area_lower_bound": {
+          "denominator": 524288,
+          "numerator": 3025
+        },
+        "orientation_xy": 1,
+        "reason": "Every footprint and center half-plane inequality is strictly positive throughout the branch.",
+        "schema": "c1-lite-local-affine-graph-certificate-v1",
+        "scope": "ONE_AFFINE_BRANCH_STRICTLY_CONVEX_XY_GRAPH_FAN_ONLY",
+        "status": "PASS",
+        "witness": null
+      },
+      "geometry_status": "PASS",
+      "index": 0,
+      "interface_degeneracy_status": "REJECT",
+      "interface_topology": {
+        "boundary_edge_checks": [
+          {
+            "edge": [
+              "7:10|321:8",
+              "7:10|325:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "7:10|325:8",
+              "155:8|325:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "155:8|325:8",
+              "155:8|243:0"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "155:8|243:0",
+              "7:10|321:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          }
+        ],
+        "coordinate_model": "source-identity quotient",
+        "original_disk": {
+          "internal_diagonal": [
+            "155:8|325:8",
+            "7:10|321:8"
+          ],
+          "reason": "Two oriented triangles form a disk with exactly the declared boundary.",
+          "status": "PASS"
+        },
+        "reason": "Original disk and retained collar are valid in the source quotient; a compatible fan preserves this interface topology.",
+        "runtime_identity_equivalence": "UNKNOWN",
+        "schema": "c1-lite-source-interface-topology-v1",
+        "status": "PASS",
+        "vertex_link_checks": [
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|243:0",
+              "7:10|325:8"
+            ],
+            "link_edges": 5,
+            "link_vertices": 6,
+            "source_vid": "7:10|321:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|325:8",
+              "7:10|321:8"
+            ],
+            "link_edges": 3,
+            "link_vertices": 4,
+            "source_vid": "7:10|325:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|243:0",
+              "7:10|325:8"
+            ],
+            "link_edges": 4,
+            "link_vertices": 5,
+            "source_vid": "155:8|325:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|325:8",
+              "7:10|321:8"
+            ],
+            "link_edges": 8,
+            "link_vertices": 9,
+            "source_vid": "155:8|243:0",
+            "status": "PASS"
+          }
+        ],
+        "witness_count": 0,
+        "witnesses": []
+      },
+      "interface_topology_status": "PASS",
+      "kind": "affine_branch",
+      "original_disk_status": "PASS",
+      "raw_manifest": {
+        "binary32_runtime_certificate": "UNKNOWN",
+        "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+        "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+        "extra_smooth": "UNSUPPORTED",
+        "identically_zero_area_source_faces": 1372,
+        "interface_degenerate_source_faces": 4,
+        "interface_degenerate_witnesses": [
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              false
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                2
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 768,
+                  "numerator": -935
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 256,
+                  "numerator": -275
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -605
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 256,
+                  "numerator": -275
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "54dd8641c8e8eb6bd9b2a2aa1670aced53a199ef7628b7793c034dab91600874",
+            "shared_source_vertices": [
+              "155:8|243:0",
+              "7:10|321:8"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:10|243:0",
+              "7:10|321:8",
+              "155:8|243:0"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              false
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4831,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4854,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                914,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                927,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                10,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                22,
+                1,
+                1,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 768,
+                  "numerator": -935
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -4345
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -605
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -715
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "9e378900996c3fd73bc0f6d0dcb479f0fc5358f2d272dc218047257f13aa1340",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:10|243:0",
+              "155:8|243:0",
+              "7:12|243:0"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              true
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4749,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4770,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4782,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                896,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                898,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                900,
+                0,
+                0,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -4345
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -715
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "848c01ce61dfa7d55d559cef5b24b913fe555be444ae01693850f9e5167bcaae",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:12|243:0",
+              "155:8|243:0",
+              "243:0|243:32"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              true,
+              true
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4714,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4725,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                876,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                887,
+                0,
+                0,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1024,
+                  "numerator": -2475
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": 8525
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": -825
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1024,
+                  "numerator": -2475
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": 8525
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": -825
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 4,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "77d07c16576675fa2bf4180165cadf3eea926ef30e1a1444b6a314e158613d44",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "155:8|243:0",
+              "837:0|837:32",
+              "243:0|243:32"
+            ]
+          }
+        ],
+        "interface_gate": "REJECT_BASELINE_DEGENERACY_AT_INTERFACE",
+        "mode": "raw",
+        "owner_ledger_sha256": "2c7286a7da2c89691b42e56fdef0f191080753a26355403cd0faa5745cfa0eff",
+        "owner_reason_counts": {
+          "after_original_end": 512,
+          "inactive_cache_group": 10242,
+          "interval_not_selected": 10573,
+          "raw_emitted": 5250,
+          "record_not_loaded": 1024,
+          "requested_exact_owner": 12
+        },
+        "owner_state_counts": {
+          "retained": 5250,
+          "skip": 22351,
+          "suppress": 12
+        },
+        "owner_universe": "Every serialized polygon fan occurrence in the inventory; skipped owners are retained in the ledger denominator.",
+        "raw_owner_count": 27613,
+        "repeated_effective_SourceVID_faces": 0,
+        "retained_manifest_sha256": "c59e8414324afc7f3b53321acabdda3a5ca0ec883d32e8f216cbb309c80935cc",
+        "retained_raw_occurrence_count": 5250,
+        "retained_source_face_count": 3818,
+        "runtime_admission": false,
+        "runtime_final_array_identity": "UNKNOWN_CANONICAL_SOURCE_GEOMETRIC_QUOTIENT_ONLY",
+        "scan_complete": true,
+        "schema": "c1-lite-raw-retained-v1",
+        "status": "PASS_RAW_EMISSION_MODEL",
+        "t0": {
+          "denominator": 5,
+          "numerator": 102
+        },
+        "t1": {
+          "denominator": 5,
+          "numerator": 104
+        },
+        "time_domain": "open_cell_with_endpoint_limits"
+      },
+      "retained_certificate_kinds": {
+        "BASELINE_INTERFACE_DEGENERACY_POLICY": 4,
+        "STRICT_SOURCE_EDGE_EXTERIOR": 3802,
+        "UNKNOWN": 12
+      },
+      "retained_certificate_stream_sha256": "2b444400b4293fd17abfd158cd80439c41ff6bf3db4e77e9948015c03539e44e",
+      "retained_counts": {
+        "PASS": 3802,
+        "REJECT": 4,
+        "UNKNOWN": 12
+      },
+      "scan_complete": true,
+      "status": "REJECT",
+      "t0": {
+        "denominator": 5,
+        "numerator": 102
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 104
+      }
+    },
+    {
+      "exterior_status": "REJECT",
+      "geometry_certificate": {
+        "minimum_3d_fan_area_lower_bound": {
+          "denominator": 65536,
+          "numerator": 605
+        },
+        "orientation_xy": 1,
+        "reason": "Every footprint and center half-plane inequality is strictly positive throughout the branch.",
+        "schema": "c1-lite-local-affine-graph-certificate-v1",
+        "scope": "ONE_AFFINE_BRANCH_STRICTLY_CONVEX_XY_GRAPH_FAN_ONLY",
+        "status": "PASS",
+        "witness": null
+      },
+      "geometry_status": "PASS",
+      "index": 1,
+      "interface_degeneracy_status": "REJECT",
+      "interface_topology": {
+        "boundary_edge_checks": [
+          {
+            "edge": [
+              "7:10|321:8",
+              "7:10|325:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "7:10|325:8",
+              "155:8|325:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "155:8|325:8",
+              "155:8|243:0"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "155:8|243:0",
+              "7:10|321:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          }
+        ],
+        "coordinate_model": "source-identity quotient",
+        "original_disk": {
+          "internal_diagonal": [
+            "155:8|325:8",
+            "7:10|321:8"
+          ],
+          "reason": "Two oriented triangles form a disk with exactly the declared boundary.",
+          "status": "PASS"
+        },
+        "reason": "Original disk and retained collar are valid in the source quotient; a compatible fan preserves this interface topology.",
+        "runtime_identity_equivalence": "UNKNOWN",
+        "schema": "c1-lite-source-interface-topology-v1",
+        "status": "PASS",
+        "vertex_link_checks": [
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|243:0",
+              "7:10|325:8"
+            ],
+            "link_edges": 5,
+            "link_vertices": 6,
+            "source_vid": "7:10|321:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|325:8",
+              "7:10|321:8"
+            ],
+            "link_edges": 3,
+            "link_vertices": 4,
+            "source_vid": "7:10|325:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|243:0",
+              "7:10|325:8"
+            ],
+            "link_edges": 4,
+            "link_vertices": 5,
+            "source_vid": "155:8|325:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|325:8",
+              "7:10|321:8"
+            ],
+            "link_edges": 8,
+            "link_vertices": 9,
+            "source_vid": "155:8|243:0",
+            "status": "PASS"
+          }
+        ],
+        "witness_count": 0,
+        "witnesses": []
+      },
+      "interface_topology_status": "PASS",
+      "kind": "affine_branch",
+      "original_disk_status": "PASS",
+      "raw_manifest": {
+        "binary32_runtime_certificate": "UNKNOWN",
+        "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+        "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+        "extra_smooth": "UNSUPPORTED",
+        "identically_zero_area_source_faces": 1372,
+        "interface_degenerate_source_faces": 4,
+        "interface_degenerate_witnesses": [
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              false
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                2
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -605
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 256,
+                  "numerator": -275
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -3575
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 256,
+                  "numerator": -275
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "54dd8641c8e8eb6bd9b2a2aa1670aced53a199ef7628b7793c034dab91600874",
+            "shared_source_vertices": [
+              "155:8|243:0",
+              "7:10|321:8"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:10|243:0",
+              "7:10|321:8",
+              "155:8|243:0"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              false
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4831,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4854,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                914,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                927,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                10,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                22,
+                1,
+                1,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -605
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -715
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -3575
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 6144,
+                  "numerator": -8525
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "9e378900996c3fd73bc0f6d0dcb479f0fc5358f2d272dc218047257f13aa1340",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:10|243:0",
+              "155:8|243:0",
+              "7:12|243:0"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              true
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4749,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4770,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4782,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                896,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                898,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                900,
+                0,
+                0,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -715
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 6144,
+                  "numerator": -8525
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "848c01ce61dfa7d55d559cef5b24b913fe555be444ae01693850f9e5167bcaae",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:12|243:0",
+              "155:8|243:0",
+              "243:0|243:32"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              true,
+              true
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4714,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4725,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                876,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                887,
+                0,
+                0,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1024,
+                  "numerator": -2475
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": 8525
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": -825
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1024,
+                  "numerator": -2475
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": 8525
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": -825
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 4,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "77d07c16576675fa2bf4180165cadf3eea926ef30e1a1444b6a314e158613d44",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "155:8|243:0",
+              "837:0|837:32",
+              "243:0|243:32"
+            ]
+          }
+        ],
+        "interface_gate": "REJECT_BASELINE_DEGENERACY_AT_INTERFACE",
+        "mode": "raw",
+        "owner_ledger_sha256": "2c7286a7da2c89691b42e56fdef0f191080753a26355403cd0faa5745cfa0eff",
+        "owner_reason_counts": {
+          "after_original_end": 512,
+          "inactive_cache_group": 10242,
+          "interval_not_selected": 10573,
+          "raw_emitted": 5250,
+          "record_not_loaded": 1024,
+          "requested_exact_owner": 12
+        },
+        "owner_state_counts": {
+          "retained": 5250,
+          "skip": 22351,
+          "suppress": 12
+        },
+        "owner_universe": "Every serialized polygon fan occurrence in the inventory; skipped owners are retained in the ledger denominator.",
+        "raw_owner_count": 27613,
+        "repeated_effective_SourceVID_faces": 0,
+        "retained_manifest_sha256": "88ba01628bac9349ea985e1e8ddb769d02ae991fc632650f1041a3e62660bc56",
+        "retained_raw_occurrence_count": 5250,
+        "retained_source_face_count": 3818,
+        "runtime_admission": false,
+        "runtime_final_array_identity": "UNKNOWN_CANONICAL_SOURCE_GEOMETRIC_QUOTIENT_ONLY",
+        "scan_complete": true,
+        "schema": "c1-lite-raw-retained-v1",
+        "status": "PASS_RAW_EMISSION_MODEL",
+        "t0": {
+          "denominator": 5,
+          "numerator": 104
+        },
+        "t1": {
+          "denominator": 1,
+          "numerator": 21
+        },
+        "time_domain": "open_cell_with_endpoint_limits"
+      },
+      "retained_certificate_kinds": {
+        "BASELINE_INTERFACE_DEGENERACY_POLICY": 4,
+        "STRICT_SOURCE_EDGE_EXTERIOR": 3802,
+        "UNKNOWN": 12
+      },
+      "retained_certificate_stream_sha256": "4828d8e501b60fff38ca7ef3c03e5db4e80fb312e129744ef6ff5f6918f4891a",
+      "retained_counts": {
+        "PASS": 3802,
+        "REJECT": 4,
+        "UNKNOWN": 12
+      },
+      "scan_complete": true,
+      "status": "REJECT",
+      "t0": {
+        "denominator": 5,
+        "numerator": 104
+      },
+      "t1": {
+        "denominator": 1,
+        "numerator": 21
+      }
+    },
+    {
+      "exterior_status": "REJECT",
+      "geometry_certificate": {
+        "minimum_3d_fan_area_lower_bound": {
+          "denominator": 1048576,
+          "numerator": 9075
+        },
+        "orientation_xy": 1,
+        "reason": "Every footprint and center half-plane inequality is strictly positive throughout the branch.",
+        "schema": "c1-lite-local-affine-graph-certificate-v1",
+        "scope": "ONE_AFFINE_BRANCH_STRICTLY_CONVEX_XY_GRAPH_FAN_ONLY",
+        "status": "PASS",
+        "witness": null
+      },
+      "geometry_status": "PASS",
+      "index": 2,
+      "interface_degeneracy_status": "REJECT",
+      "interface_topology": {
+        "boundary_edge_checks": [
+          {
+            "edge": [
+              "7:10|321:8",
+              "7:10|325:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "7:10|325:8",
+              "155:8|325:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "155:8|325:8",
+              "155:8|243:0"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "155:8|243:0",
+              "7:10|321:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          }
+        ],
+        "coordinate_model": "source-identity quotient",
+        "original_disk": {
+          "internal_diagonal": [
+            "155:8|325:8",
+            "7:10|321:8"
+          ],
+          "reason": "Two oriented triangles form a disk with exactly the declared boundary.",
+          "status": "PASS"
+        },
+        "reason": "Original disk and retained collar are valid in the source quotient; a compatible fan preserves this interface topology.",
+        "runtime_identity_equivalence": "UNKNOWN",
+        "schema": "c1-lite-source-interface-topology-v1",
+        "status": "PASS",
+        "vertex_link_checks": [
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|243:0",
+              "7:10|325:8"
+            ],
+            "link_edges": 5,
+            "link_vertices": 6,
+            "source_vid": "7:10|321:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|325:8",
+              "7:10|321:8"
+            ],
+            "link_edges": 3,
+            "link_vertices": 4,
+            "source_vid": "7:10|325:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|243:0",
+              "7:10|325:8"
+            ],
+            "link_edges": 4,
+            "link_vertices": 5,
+            "source_vid": "155:8|325:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|325:8",
+              "7:10|321:8"
+            ],
+            "link_edges": 8,
+            "link_vertices": 9,
+            "source_vid": "155:8|243:0",
+            "status": "PASS"
+          }
+        ],
+        "witness_count": 0,
+        "witnesses": []
+      },
+      "interface_topology_status": "PASS",
+      "kind": "affine_branch",
+      "original_disk_status": "PASS",
+      "raw_manifest": {
+        "binary32_runtime_certificate": "UNKNOWN",
+        "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+        "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+        "extra_smooth": "UNSUPPORTED",
+        "identically_zero_area_source_faces": 1372,
+        "interface_degenerate_source_faces": 4,
+        "interface_degenerate_witnesses": [
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              false
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                2
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -3575
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 256,
+                  "numerator": -275
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 48,
+                  "numerator": -55
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 256,
+                  "numerator": -275
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "54dd8641c8e8eb6bd9b2a2aa1670aced53a199ef7628b7793c034dab91600874",
+            "shared_source_vertices": [
+              "155:8|243:0",
+              "7:10|321:8"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:10|243:0",
+              "7:10|321:8",
+              "155:8|243:0"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              false
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4831,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4854,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                914,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                927,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                10,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                22,
+                1,
+                1,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -3575
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 6144,
+                  "numerator": -8525
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 48,
+                  "numerator": -55
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -4235
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "9e378900996c3fd73bc0f6d0dcb479f0fc5358f2d272dc218047257f13aa1340",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:10|243:0",
+              "155:8|243:0",
+              "7:12|243:0"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              true
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4749,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4770,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4782,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                896,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                898,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                900,
+                0,
+                0,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 6144,
+                  "numerator": -8525
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -4235
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "848c01ce61dfa7d55d559cef5b24b913fe555be444ae01693850f9e5167bcaae",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:12|243:0",
+              "155:8|243:0",
+              "243:0|243:32"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              true,
+              true
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4714,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4725,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                876,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                887,
+                0,
+                0,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1024,
+                  "numerator": -2475
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": 8525
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": -825
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1024,
+                  "numerator": -2475
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": 8525
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": -825
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 4,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "77d07c16576675fa2bf4180165cadf3eea926ef30e1a1444b6a314e158613d44",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "155:8|243:0",
+              "837:0|837:32",
+              "243:0|243:32"
+            ]
+          }
+        ],
+        "interface_gate": "REJECT_BASELINE_DEGENERACY_AT_INTERFACE",
+        "mode": "raw",
+        "owner_ledger_sha256": "bd7ff028b09a1cf6883edf9181097b5a38047ed337900e24cde046506b9eecc1",
+        "owner_reason_counts": {
+          "before_original_start": 122,
+          "inactive_cache_group": 10242,
+          "interval_not_selected": 11135,
+          "raw_emitted": 5250,
+          "record_not_loaded": 852,
+          "requested_exact_owner": 12
+        },
+        "owner_state_counts": {
+          "retained": 5250,
+          "skip": 22351,
+          "suppress": 12
+        },
+        "owner_universe": "Every serialized polygon fan occurrence in the inventory; skipped owners are retained in the ledger denominator.",
+        "raw_owner_count": 27613,
+        "repeated_effective_SourceVID_faces": 0,
+        "retained_manifest_sha256": "ecb2700241647f8c6b6319095977e569648b4ad3c747ecae58d9239b28da3b2a",
+        "retained_raw_occurrence_count": 5250,
+        "retained_source_face_count": 3818,
+        "runtime_admission": false,
+        "runtime_final_array_identity": "UNKNOWN_CANONICAL_SOURCE_GEOMETRIC_QUOTIENT_ONLY",
+        "scan_complete": true,
+        "schema": "c1-lite-raw-retained-v1",
+        "status": "PASS_RAW_EMISSION_MODEL",
+        "t0": {
+          "denominator": 1,
+          "numerator": 21
+        },
+        "t1": {
+          "denominator": 5,
+          "numerator": 106
+        },
+        "time_domain": "open_cell_with_endpoint_limits"
+      },
+      "retained_certificate_kinds": {
+        "BASELINE_INTERFACE_DEGENERACY_POLICY": 4,
+        "POSITIVE_INCIDENT_HALFPLANE_COMBINATION": 1,
+        "STRICT_SOURCE_EDGE_EXTERIOR": 3802,
+        "UNKNOWN": 11
+      },
+      "retained_certificate_stream_sha256": "40a2a4ed465ab3e53a645429b92566a571045036f165e39f2dd37e87c03d5f37",
+      "retained_counts": {
+        "PASS": 3803,
+        "REJECT": 4,
+        "UNKNOWN": 11
+      },
+      "scan_complete": true,
+      "status": "REJECT",
+      "t0": {
+        "denominator": 1,
+        "numerator": 21
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 106
+      }
+    },
+    {
+      "exterior_status": "REJECT",
+      "geometry_certificate": {
+        "minimum_3d_fan_area_lower_bound": {
+          "denominator": 524288,
+          "numerator": 3025
+        },
+        "orientation_xy": 1,
+        "reason": "Every footprint and center half-plane inequality is strictly positive throughout the branch.",
+        "schema": "c1-lite-local-affine-graph-certificate-v1",
+        "scope": "ONE_AFFINE_BRANCH_STRICTLY_CONVEX_XY_GRAPH_FAN_ONLY",
+        "status": "PASS",
+        "witness": null
+      },
+      "geometry_status": "PASS",
+      "index": 0,
+      "interface_degeneracy_status": "REJECT",
+      "interface_topology": {
+        "boundary_edge_checks": [
+          {
+            "edge": [
+              "7:10|321:8",
+              "7:10|325:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "7:10|325:8",
+              "155:8|325:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "155:8|325:8",
+              "155:8|243:0"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "155:8|243:0",
+              "7:10|321:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          }
+        ],
+        "coordinate_model": "source-identity quotient",
+        "original_disk": {
+          "internal_diagonal": [
+            "155:8|325:8",
+            "7:10|321:8"
+          ],
+          "reason": "Two oriented triangles form a disk with exactly the declared boundary.",
+          "status": "PASS"
+        },
+        "reason": "Original disk and retained collar are valid in the source quotient; a compatible fan preserves this interface topology.",
+        "runtime_identity_equivalence": "UNKNOWN",
+        "schema": "c1-lite-source-interface-topology-v1",
+        "status": "PASS",
+        "vertex_link_checks": [
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|243:0",
+              "7:10|325:8"
+            ],
+            "link_edges": 5,
+            "link_vertices": 6,
+            "source_vid": "7:10|321:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|325:8",
+              "7:10|321:8"
+            ],
+            "link_edges": 3,
+            "link_vertices": 4,
+            "source_vid": "7:10|325:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|243:0",
+              "7:10|325:8"
+            ],
+            "link_edges": 4,
+            "link_vertices": 5,
+            "source_vid": "155:8|325:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|325:8",
+              "7:10|321:8"
+            ],
+            "link_edges": 8,
+            "link_vertices": 9,
+            "source_vid": "155:8|243:0",
+            "status": "PASS"
+          }
+        ],
+        "witness_count": 0,
+        "witnesses": []
+      },
+      "interface_topology_status": "PASS",
+      "kind": "actual_singleton",
+      "original_disk_status": "PASS",
+      "raw_manifest": {
+        "binary32_runtime_certificate": "UNKNOWN",
+        "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+        "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+        "extra_smooth": "UNSUPPORTED",
+        "identically_zero_area_source_faces": 1372,
+        "interface_degenerate_source_faces": 4,
+        "interface_degenerate_witnesses": [
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              false
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                2
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 768,
+                  "numerator": -935
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 256,
+                  "numerator": -275
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 768,
+                  "numerator": -935
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 256,
+                  "numerator": -275
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "54dd8641c8e8eb6bd9b2a2aa1670aced53a199ef7628b7793c034dab91600874",
+            "shared_source_vertices": [
+              "155:8|243:0",
+              "7:10|321:8"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:10|243:0",
+              "7:10|321:8",
+              "155:8|243:0"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              false
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4831,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4854,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                914,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                927,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                10,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                22,
+                1,
+                1,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 768,
+                  "numerator": -935
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -4345
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 768,
+                  "numerator": -935
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -4345
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "9e378900996c3fd73bc0f6d0dcb479f0fc5358f2d272dc218047257f13aa1340",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:10|243:0",
+              "155:8|243:0",
+              "7:12|243:0"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              true
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4749,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4770,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4782,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                896,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                898,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                900,
+                0,
+                0,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -4345
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -4345
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "848c01ce61dfa7d55d559cef5b24b913fe555be444ae01693850f9e5167bcaae",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:12|243:0",
+              "155:8|243:0",
+              "243:0|243:32"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              true,
+              true
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4714,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4725,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                876,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                887,
+                0,
+                0,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1024,
+                  "numerator": -2475
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": 8525
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": -825
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1024,
+                  "numerator": -2475
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": 8525
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": -825
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 4,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "77d07c16576675fa2bf4180165cadf3eea926ef30e1a1444b6a314e158613d44",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "155:8|243:0",
+              "837:0|837:32",
+              "243:0|243:32"
+            ]
+          }
+        ],
+        "interface_gate": "REJECT_BASELINE_DEGENERACY_AT_INTERFACE",
+        "mode": "raw",
+        "owner_ledger_sha256": "2c7286a7da2c89691b42e56fdef0f191080753a26355403cd0faa5745cfa0eff",
+        "owner_reason_counts": {
+          "after_original_end": 512,
+          "inactive_cache_group": 10242,
+          "interval_not_selected": 10573,
+          "raw_emitted": 5250,
+          "record_not_loaded": 1024,
+          "requested_exact_owner": 12
+        },
+        "owner_state_counts": {
+          "retained": 5250,
+          "skip": 22351,
+          "suppress": 12
+        },
+        "owner_universe": "Every serialized polygon fan occurrence in the inventory; skipped owners are retained in the ledger denominator.",
+        "raw_owner_count": 27613,
+        "repeated_effective_SourceVID_faces": 0,
+        "retained_manifest_sha256": "2cbb625dce5a7f88f295b626f0492005a0dea58f1e73000719e0a49ed905f3a8",
+        "retained_raw_occurrence_count": 5250,
+        "retained_source_face_count": 3818,
+        "runtime_admission": false,
+        "runtime_final_array_identity": "UNKNOWN_CANONICAL_SOURCE_GEOMETRIC_QUOTIENT_ONLY",
+        "scan_complete": true,
+        "schema": "c1-lite-raw-retained-v1",
+        "status": "PASS_RAW_EMISSION_MODEL",
+        "t0": {
+          "denominator": 5,
+          "numerator": 102
+        },
+        "t1": {
+          "denominator": 5,
+          "numerator": 102
+        },
+        "time_domain": "actual_singleton"
+      },
+      "retained_certificate_kinds": {
+        "BASELINE_INTERFACE_DEGENERACY_POLICY": 4,
+        "POSITIVE_INCIDENT_HALFPLANE_COMBINATION": 1,
+        "STRICT_SOURCE_EDGE_EXTERIOR": 3802,
+        "UNKNOWN": 11
+      },
+      "retained_certificate_stream_sha256": "3f20d016dd17db9637d8aed4890c33210f1bbaeea95a0c9657484e4830422ade",
+      "retained_counts": {
+        "PASS": 3803,
+        "REJECT": 4,
+        "UNKNOWN": 11
+      },
+      "scan_complete": true,
+      "status": "REJECT",
+      "t0": {
+        "denominator": 5,
+        "numerator": 102
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 102
+      }
+    },
+    {
+      "exterior_status": "REJECT",
+      "geometry_certificate": {
+        "minimum_3d_fan_area_lower_bound": {
+          "denominator": 65536,
+          "numerator": 605
+        },
+        "orientation_xy": 1,
+        "reason": "Every footprint and center half-plane inequality is strictly positive throughout the branch.",
+        "schema": "c1-lite-local-affine-graph-certificate-v1",
+        "scope": "ONE_AFFINE_BRANCH_STRICTLY_CONVEX_XY_GRAPH_FAN_ONLY",
+        "status": "PASS",
+        "witness": null
+      },
+      "geometry_status": "PASS",
+      "index": 1,
+      "interface_degeneracy_status": "REJECT",
+      "interface_topology": {
+        "boundary_edge_checks": [
+          {
+            "edge": [
+              "7:10|321:8",
+              "7:10|325:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "7:10|325:8",
+              "155:8|325:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "155:8|325:8",
+              "155:8|243:0"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "155:8|243:0",
+              "7:10|321:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          }
+        ],
+        "coordinate_model": "source-identity quotient",
+        "original_disk": {
+          "internal_diagonal": [
+            "155:8|325:8",
+            "7:10|321:8"
+          ],
+          "reason": "Two oriented triangles form a disk with exactly the declared boundary.",
+          "status": "PASS"
+        },
+        "reason": "Original disk and retained collar are valid in the source quotient; a compatible fan preserves this interface topology.",
+        "runtime_identity_equivalence": "UNKNOWN",
+        "schema": "c1-lite-source-interface-topology-v1",
+        "status": "PASS",
+        "vertex_link_checks": [
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|243:0",
+              "7:10|325:8"
+            ],
+            "link_edges": 5,
+            "link_vertices": 6,
+            "source_vid": "7:10|321:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|325:8",
+              "7:10|321:8"
+            ],
+            "link_edges": 3,
+            "link_vertices": 4,
+            "source_vid": "7:10|325:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|243:0",
+              "7:10|325:8"
+            ],
+            "link_edges": 4,
+            "link_vertices": 5,
+            "source_vid": "155:8|325:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|325:8",
+              "7:10|321:8"
+            ],
+            "link_edges": 8,
+            "link_vertices": 9,
+            "source_vid": "155:8|243:0",
+            "status": "PASS"
+          }
+        ],
+        "witness_count": 0,
+        "witnesses": []
+      },
+      "interface_topology_status": "PASS",
+      "kind": "actual_singleton",
+      "original_disk_status": "PASS",
+      "raw_manifest": {
+        "binary32_runtime_certificate": "UNKNOWN",
+        "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+        "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+        "extra_smooth": "UNSUPPORTED",
+        "identically_zero_area_source_faces": 1372,
+        "interface_degenerate_source_faces": 4,
+        "interface_degenerate_witnesses": [
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              false
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                2
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -605
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 256,
+                  "numerator": -275
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -605
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 256,
+                  "numerator": -275
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "54dd8641c8e8eb6bd9b2a2aa1670aced53a199ef7628b7793c034dab91600874",
+            "shared_source_vertices": [
+              "155:8|243:0",
+              "7:10|321:8"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:10|243:0",
+              "7:10|321:8",
+              "155:8|243:0"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              false
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4831,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4854,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                914,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                927,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                10,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                22,
+                1,
+                1,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -605
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -715
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -605
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -715
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "9e378900996c3fd73bc0f6d0dcb479f0fc5358f2d272dc218047257f13aa1340",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:10|243:0",
+              "155:8|243:0",
+              "7:12|243:0"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              true
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4749,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4770,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4782,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                896,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                898,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                900,
+                0,
+                0,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -715
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -715
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "848c01ce61dfa7d55d559cef5b24b913fe555be444ae01693850f9e5167bcaae",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:12|243:0",
+              "155:8|243:0",
+              "243:0|243:32"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              true,
+              true
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4714,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4725,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                876,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                887,
+                0,
+                0,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1024,
+                  "numerator": -2475
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": 8525
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": -825
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1024,
+                  "numerator": -2475
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": 8525
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": -825
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 4,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "77d07c16576675fa2bf4180165cadf3eea926ef30e1a1444b6a314e158613d44",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "155:8|243:0",
+              "837:0|837:32",
+              "243:0|243:32"
+            ]
+          }
+        ],
+        "interface_gate": "REJECT_BASELINE_DEGENERACY_AT_INTERFACE",
+        "mode": "raw",
+        "owner_ledger_sha256": "2c7286a7da2c89691b42e56fdef0f191080753a26355403cd0faa5745cfa0eff",
+        "owner_reason_counts": {
+          "after_original_end": 512,
+          "inactive_cache_group": 10242,
+          "interval_not_selected": 10573,
+          "raw_emitted": 5250,
+          "record_not_loaded": 1024,
+          "requested_exact_owner": 12
+        },
+        "owner_state_counts": {
+          "retained": 5250,
+          "skip": 22351,
+          "suppress": 12
+        },
+        "owner_universe": "Every serialized polygon fan occurrence in the inventory; skipped owners are retained in the ledger denominator.",
+        "raw_owner_count": 27613,
+        "repeated_effective_SourceVID_faces": 0,
+        "retained_manifest_sha256": "dc1abaf2765c70eeac6bcca910e14bc7a89f9e8fe74dac9d0bdf1a399481fd04",
+        "retained_raw_occurrence_count": 5250,
+        "retained_source_face_count": 3818,
+        "runtime_admission": false,
+        "runtime_final_array_identity": "UNKNOWN_CANONICAL_SOURCE_GEOMETRIC_QUOTIENT_ONLY",
+        "scan_complete": true,
+        "schema": "c1-lite-raw-retained-v1",
+        "status": "PASS_RAW_EMISSION_MODEL",
+        "t0": {
+          "denominator": 5,
+          "numerator": 104
+        },
+        "t1": {
+          "denominator": 5,
+          "numerator": 104
+        },
+        "time_domain": "actual_singleton"
+      },
+      "retained_certificate_kinds": {
+        "BASELINE_INTERFACE_DEGENERACY_POLICY": 4,
+        "POSITIVE_INCIDENT_HALFPLANE_COMBINATION": 1,
+        "STRICT_SOURCE_EDGE_EXTERIOR": 3802,
+        "UNKNOWN": 11
+      },
+      "retained_certificate_stream_sha256": "ded0382dfe34a59238a6d5bc740c7b84c314124b533994e4b5eb7d3090277f38",
+      "retained_counts": {
+        "PASS": 3803,
+        "REJECT": 4,
+        "UNKNOWN": 11
+      },
+      "scan_complete": true,
+      "status": "REJECT",
+      "t0": {
+        "denominator": 5,
+        "numerator": 104
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 104
+      }
+    },
+    {
+      "exterior_status": "REJECT",
+      "geometry_certificate": {
+        "minimum_3d_fan_area_lower_bound": {
+          "denominator": 4194304,
+          "numerator": 39325
+        },
+        "orientation_xy": 1,
+        "reason": "Every footprint and center half-plane inequality is strictly positive throughout the branch.",
+        "schema": "c1-lite-local-affine-graph-certificate-v1",
+        "scope": "ONE_AFFINE_BRANCH_STRICTLY_CONVEX_XY_GRAPH_FAN_ONLY",
+        "status": "PASS",
+        "witness": null
+      },
+      "geometry_status": "PASS",
+      "index": 2,
+      "interface_degeneracy_status": "REJECT",
+      "interface_topology": {
+        "boundary_edge_checks": [
+          {
+            "edge": [
+              "7:10|321:8",
+              "7:10|325:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "7:10|325:8",
+              "155:8|325:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "155:8|325:8",
+              "155:8|243:0"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "155:8|243:0",
+              "7:10|321:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          }
+        ],
+        "coordinate_model": "source-identity quotient",
+        "original_disk": {
+          "internal_diagonal": [
+            "155:8|325:8",
+            "7:10|321:8"
+          ],
+          "reason": "Two oriented triangles form a disk with exactly the declared boundary.",
+          "status": "PASS"
+        },
+        "reason": "Original disk and retained collar are valid in the source quotient; a compatible fan preserves this interface topology.",
+        "runtime_identity_equivalence": "UNKNOWN",
+        "schema": "c1-lite-source-interface-topology-v1",
+        "status": "PASS",
+        "vertex_link_checks": [
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|243:0",
+              "7:10|325:8"
+            ],
+            "link_edges": 5,
+            "link_vertices": 6,
+            "source_vid": "7:10|321:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|325:8",
+              "7:10|321:8"
+            ],
+            "link_edges": 3,
+            "link_vertices": 4,
+            "source_vid": "7:10|325:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|243:0",
+              "7:10|325:8"
+            ],
+            "link_edges": 4,
+            "link_vertices": 5,
+            "source_vid": "155:8|325:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|325:8",
+              "7:10|321:8"
+            ],
+            "link_edges": 8,
+            "link_vertices": 9,
+            "source_vid": "155:8|243:0",
+            "status": "PASS"
+          }
+        ],
+        "witness_count": 0,
+        "witnesses": []
+      },
+      "interface_topology_status": "PASS",
+      "kind": "actual_singleton",
+      "original_disk_status": "PASS",
+      "raw_manifest": {
+        "binary32_runtime_certificate": "UNKNOWN",
+        "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+        "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+        "extra_smooth": "UNSUPPORTED",
+        "identically_zero_area_source_faces": 1372,
+        "interface_degenerate_source_faces": 4,
+        "interface_degenerate_witnesses": [
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              false
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                2
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -3575
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 256,
+                  "numerator": -275
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -3575
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 256,
+                  "numerator": -275
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "54dd8641c8e8eb6bd9b2a2aa1670aced53a199ef7628b7793c034dab91600874",
+            "shared_source_vertices": [
+              "155:8|243:0",
+              "7:10|321:8"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:10|243:0",
+              "7:10|321:8",
+              "155:8|243:0"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              false
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4831,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4854,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                914,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                927,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                10,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                22,
+                1,
+                1,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -3575
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 6144,
+                  "numerator": -8525
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -3575
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 6144,
+                  "numerator": -8525
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "9e378900996c3fd73bc0f6d0dcb479f0fc5358f2d272dc218047257f13aa1340",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:10|243:0",
+              "155:8|243:0",
+              "7:12|243:0"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              true
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4749,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4770,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4782,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                896,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                898,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                900,
+                0,
+                0,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 6144,
+                  "numerator": -8525
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 6144,
+                  "numerator": -8525
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "848c01ce61dfa7d55d559cef5b24b913fe555be444ae01693850f9e5167bcaae",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:12|243:0",
+              "155:8|243:0",
+              "243:0|243:32"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              true,
+              true
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4714,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4725,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                876,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                887,
+                0,
+                0,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1024,
+                  "numerator": -2475
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": 8525
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": -825
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1024,
+                  "numerator": -2475
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": 8525
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": -825
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 4,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "77d07c16576675fa2bf4180165cadf3eea926ef30e1a1444b6a314e158613d44",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "155:8|243:0",
+              "837:0|837:32",
+              "243:0|243:32"
+            ]
+          }
+        ],
+        "interface_gate": "REJECT_BASELINE_DEGENERACY_AT_INTERFACE",
+        "mode": "raw",
+        "owner_ledger_sha256": "bd7ff028b09a1cf6883edf9181097b5a38047ed337900e24cde046506b9eecc1",
+        "owner_reason_counts": {
+          "before_original_start": 122,
+          "inactive_cache_group": 10242,
+          "interval_not_selected": 11135,
+          "raw_emitted": 5250,
+          "record_not_loaded": 852,
+          "requested_exact_owner": 12
+        },
+        "owner_state_counts": {
+          "retained": 5250,
+          "skip": 22351,
+          "suppress": 12
+        },
+        "owner_universe": "Every serialized polygon fan occurrence in the inventory; skipped owners are retained in the ledger denominator.",
+        "raw_owner_count": 27613,
+        "repeated_effective_SourceVID_faces": 0,
+        "retained_manifest_sha256": "b8dc394bad45799a9613490d73468712a56984ad6ae95040befb68c093717c02",
+        "retained_raw_occurrence_count": 5250,
+        "retained_source_face_count": 3818,
+        "runtime_admission": false,
+        "runtime_final_array_identity": "UNKNOWN_CANONICAL_SOURCE_GEOMETRIC_QUOTIENT_ONLY",
+        "scan_complete": true,
+        "schema": "c1-lite-raw-retained-v1",
+        "status": "PASS_RAW_EMISSION_MODEL",
+        "t0": {
+          "denominator": 1,
+          "numerator": 21
+        },
+        "t1": {
+          "denominator": 1,
+          "numerator": 21
+        },
+        "time_domain": "actual_singleton"
+      },
+      "retained_certificate_kinds": {
+        "BASELINE_INTERFACE_DEGENERACY_POLICY": 4,
+        "POSITIVE_INCIDENT_HALFPLANE_COMBINATION": 1,
+        "STRICT_SOURCE_EDGE_EXTERIOR": 3802,
+        "UNKNOWN": 11
+      },
+      "retained_certificate_stream_sha256": "fb147f1b05949b0045c306c4f90ea2bea2e8783c6f6f7357734c81b16c83fce1",
+      "retained_counts": {
+        "PASS": 3803,
+        "REJECT": 4,
+        "UNKNOWN": 11
+      },
+      "scan_complete": true,
+      "status": "REJECT",
+      "t0": {
+        "denominator": 1,
+        "numerator": 21
+      },
+      "t1": {
+        "denominator": 1,
+        "numerator": 21
+      }
+    },
+    {
+      "exterior_status": "REJECT",
+      "geometry_certificate": {
+        "minimum_3d_fan_area_lower_bound": {
+          "denominator": 1048576,
+          "numerator": 9075
+        },
+        "orientation_xy": 1,
+        "reason": "Every footprint and center half-plane inequality is strictly positive throughout the branch.",
+        "schema": "c1-lite-local-affine-graph-certificate-v1",
+        "scope": "ONE_AFFINE_BRANCH_STRICTLY_CONVEX_XY_GRAPH_FAN_ONLY",
+        "status": "PASS",
+        "witness": null
+      },
+      "geometry_status": "PASS",
+      "index": 3,
+      "interface_degeneracy_status": "REJECT",
+      "interface_topology": {
+        "boundary_edge_checks": [
+          {
+            "edge": [
+              "7:10|321:8",
+              "7:10|325:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "7:10|325:8",
+              "155:8|325:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "155:8|325:8",
+              "155:8|243:0"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          },
+          {
+            "edge": [
+              "155:8|243:0",
+              "7:10|321:8"
+            ],
+            "opposite_direction": 1,
+            "same_direction": 0,
+            "status": "PASS"
+          }
+        ],
+        "coordinate_model": "source-identity quotient",
+        "original_disk": {
+          "internal_diagonal": [
+            "155:8|325:8",
+            "7:10|321:8"
+          ],
+          "reason": "Two oriented triangles form a disk with exactly the declared boundary.",
+          "status": "PASS"
+        },
+        "reason": "Original disk and retained collar are valid in the source quotient; a compatible fan preserves this interface topology.",
+        "runtime_identity_equivalence": "UNKNOWN",
+        "schema": "c1-lite-source-interface-topology-v1",
+        "status": "PASS",
+        "vertex_link_checks": [
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|243:0",
+              "7:10|325:8"
+            ],
+            "link_edges": 5,
+            "link_vertices": 6,
+            "source_vid": "7:10|321:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|325:8",
+              "7:10|321:8"
+            ],
+            "link_edges": 3,
+            "link_vertices": 4,
+            "source_vid": "7:10|325:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|243:0",
+              "7:10|325:8"
+            ],
+            "link_edges": 4,
+            "link_vertices": 5,
+            "source_vid": "155:8|325:8",
+            "status": "PASS"
+          },
+          {
+            "directed_link_path_compatible": true,
+            "expected_path_endpoints": [
+              "155:8|325:8",
+              "7:10|321:8"
+            ],
+            "link_edges": 8,
+            "link_vertices": 9,
+            "source_vid": "155:8|243:0",
+            "status": "PASS"
+          }
+        ],
+        "witness_count": 0,
+        "witnesses": []
+      },
+      "interface_topology_status": "PASS",
+      "kind": "actual_singleton",
+      "original_disk_status": "PASS",
+      "raw_manifest": {
+        "binary32_runtime_certificate": "UNKNOWN",
+        "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+        "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+        "extra_smooth": "UNSUPPORTED",
+        "identically_zero_area_source_faces": 1372,
+        "interface_degenerate_source_faces": 4,
+        "interface_degenerate_witnesses": [
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              false
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                2
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 48,
+                  "numerator": -55
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 256,
+                  "numerator": -275
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 48,
+                  "numerator": -55
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 256,
+                  "numerator": -275
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "54dd8641c8e8eb6bd9b2a2aa1670aced53a199ef7628b7793c034dab91600874",
+            "shared_source_vertices": [
+              "155:8|243:0",
+              "7:10|321:8"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:10|243:0",
+              "7:10|321:8",
+              "155:8|243:0"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              false
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4831,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4854,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                914,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                927,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                10,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                22,
+                1,
+                1,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 48,
+                  "numerator": -55
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -4235
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 48,
+                  "numerator": -55
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -4235
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "9e378900996c3fd73bc0f6d0dcb479f0fc5358f2d272dc218047257f13aa1340",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:10|243:0",
+              "155:8|243:0",
+              "7:12|243:0"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              false,
+              true
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4749,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4770,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4782,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                896,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                898,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                900,
+                0,
+                0,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -4235
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 3072,
+                  "numerator": -4235
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 6,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "848c01ce61dfa7d55d559cef5b24b913fe555be444ae01693850f9e5167bcaae",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "7:12|243:0",
+              "155:8|243:0",
+              "243:0|243:32"
+            ]
+          },
+          {
+            "coordinate_model": "ideal rational interpolation of serialized HV binary32",
+            "element": 0,
+            "exact_zero_area_on_cell": true,
+            "in_view": [
+              false,
+              true,
+              true
+            ],
+            "kind": "BASELINE_DEGENERACY_TOUCHES_SOURCE_INTERFACE",
+            "owners": [
+              [
+                0,
+                0,
+                16,
+                4714,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4725,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                876,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                887,
+                0,
+                0,
+                0
+              ]
+            ],
+            "positions_t0": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1024,
+                  "numerator": -2475
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": 8525
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": -825
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "positions_t1": [
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ],
+              [
+                {
+                  "denominator": 1024,
+                  "numerator": -2475
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": 8525
+                },
+                {
+                  "denominator": 1024,
+                  "numerator": -825
+                }
+              ],
+              [
+                {
+                  "denominator": 512,
+                  "numerator": -825
+                },
+                {
+                  "denominator": 32,
+                  "numerator": 275
+                },
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "raw_occurrence_count": 4,
+            "repeated_effective_SourceVID": false,
+            "retained_source_face_id": "77d07c16576675fa2bf4180165cadf3eea926ef30e1a1444b6a314e158613d44",
+            "shared_source_vertices": [
+              "155:8|243:0"
+            ],
+            "source_branches": [
+              "affine",
+              "affine",
+              "affine"
+            ],
+            "source_vertices": [
+              "155:8|243:0",
+              "837:0|837:32",
+              "243:0|243:32"
+            ]
+          }
+        ],
+        "interface_gate": "REJECT_BASELINE_DEGENERACY_AT_INTERFACE",
+        "mode": "raw",
+        "owner_ledger_sha256": "bd7ff028b09a1cf6883edf9181097b5a38047ed337900e24cde046506b9eecc1",
+        "owner_reason_counts": {
+          "before_original_start": 122,
+          "inactive_cache_group": 10242,
+          "interval_not_selected": 11135,
+          "raw_emitted": 5250,
+          "record_not_loaded": 852,
+          "requested_exact_owner": 12
+        },
+        "owner_state_counts": {
+          "retained": 5250,
+          "skip": 22351,
+          "suppress": 12
+        },
+        "owner_universe": "Every serialized polygon fan occurrence in the inventory; skipped owners are retained in the ledger denominator.",
+        "raw_owner_count": 27613,
+        "repeated_effective_SourceVID_faces": 0,
+        "retained_manifest_sha256": "7bc9166a63f24828c7ae34b86e95af6f9abfa41e1e6374cbbc367cf0cedb9cc7",
+        "retained_raw_occurrence_count": 5250,
+        "retained_source_face_count": 3818,
+        "runtime_admission": false,
+        "runtime_final_array_identity": "UNKNOWN_CANONICAL_SOURCE_GEOMETRIC_QUOTIENT_ONLY",
+        "scan_complete": true,
+        "schema": "c1-lite-raw-retained-v1",
+        "status": "PASS_RAW_EMISSION_MODEL",
+        "t0": {
+          "denominator": 5,
+          "numerator": 106
+        },
+        "t1": {
+          "denominator": 5,
+          "numerator": 106
+        },
+        "time_domain": "actual_singleton"
+      },
+      "retained_certificate_kinds": {
+        "BASELINE_INTERFACE_DEGENERACY_POLICY": 4,
+        "POSITIVE_INCIDENT_HALFPLANE_COMBINATION": 1,
+        "STRICT_SOURCE_EDGE_EXTERIOR": 3802,
+        "UNKNOWN": 11
+      },
+      "retained_certificate_stream_sha256": "1c1f9aa91a08c4b131202cac8877efedccc2395c3951c03a2c53ab8ff9691ed9",
+      "retained_counts": {
+        "PASS": 3803,
+        "REJECT": 4,
+        "UNKNOWN": 11
+      },
+      "scan_complete": true,
+      "status": "REJECT",
+      "t0": {
+        "denominator": 5,
+        "numerator": 106
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 106
+      }
+    }
+  ]
+}

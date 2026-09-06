@@ -1,0 +1,128 @@
+{
+  "ab_result_sha256": "8b17fd6a61f3f7f0abe25c39638e1cb01a1ff610f6b66351d7253d234ed15605",
+  "artifacts": {
+    "event-00-6d2d6dc2cdd7.json": {
+      "bytes": 57366,
+      "sha256": "31917821cc711cc4d578171c7e1406c9d291f3f45dae5efc9da526150bfc2464"
+    },
+    "event-01-e40703e638f3.json": {
+      "bytes": 35711,
+      "sha256": "5fdf72286f7d172316082d8a150b1f5760813b1c62096adf478fd41d9ab6bd7b"
+    },
+    "event-02-88ade47aa4fa.json": {
+      "bytes": 59713,
+      "sha256": "a0f6ecb0d61b25d4b4bbae34a96c9150567e30f5bd7f8cdca57550030381eb79"
+    },
+    "event-03-0c61aa0982ef.json": {
+      "bytes": 178427,
+      "sha256": "d56c4b034ef3ac2e3c8618da10742b810613f4329f1a1fc507a4d126666b615f"
+    }
+  },
+  "cache_input_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+  "elapsed_seconds": 69.26118253499999,
+  "events": [
+    {
+      "admission": "FAIL_CLOSED",
+      "all_units_scanned": true,
+      "ideal_audit_status": "REJECT",
+      "key": "event-00-6d2d6dc2cdd7",
+      "pair_counts": {
+        "PASS": 30007,
+        "REJECT": 2,
+        "UNKNOWN": 2
+      },
+      "rejected_gates": [
+        "source_incidence_contact",
+        "interface_topology",
+        "interface_degeneracy_policy"
+      ],
+      "unresolved_gates": [
+        "event_isolation",
+        "endpoint_realization",
+        "compiler_selector_conditioning",
+        "raw_emission_equivalence",
+        "binary32_geometry_contact",
+        "runtime_identity_and_unchanged_exterior"
+      ]
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "all_units_scanned": true,
+      "ideal_audit_status": "PASS",
+      "key": "event-01-e40703e638f3",
+      "pair_counts": {
+        "PASS": 21420
+      },
+      "rejected_gates": [
+        "endpoint_realization"
+      ],
+      "unresolved_gates": [
+        "event_isolation",
+        "compiler_selector_conditioning",
+        "raw_emission_equivalence",
+        "binary32_geometry_contact",
+        "runtime_identity_and_unchanged_exterior"
+      ]
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "all_units_scanned": true,
+      "ideal_audit_status": "UNKNOWN",
+      "key": "event-02-88ade47aa4fa",
+      "pair_counts": {
+        "PASS": 26678,
+        "UNKNOWN": 48
+      },
+      "rejected_gates": [],
+      "unresolved_gates": [
+        "source_incidence_contact",
+        "interface_degeneracy_policy",
+        "event_isolation",
+        "endpoint_realization",
+        "compiler_selector_conditioning",
+        "raw_emission_equivalence",
+        "binary32_geometry_contact",
+        "runtime_identity_and_unchanged_exterior"
+      ]
+    },
+    {
+      "admission": "FAIL_CLOSED",
+      "all_units_scanned": true,
+      "ideal_audit_status": "REJECT",
+      "key": "event-03-0c61aa0982ef",
+      "pair_counts": {
+        "PASS": 26619,
+        "REJECT": 28,
+        "UNKNOWN": 79
+      },
+      "rejected_gates": [
+        "source_incidence_contact",
+        "interface_degeneracy_policy"
+      ],
+      "unresolved_gates": [
+        "event_isolation",
+        "endpoint_realization",
+        "compiler_selector_conditioning",
+        "raw_emission_equivalence",
+        "binary32_geometry_contact",
+        "runtime_identity_and_unchanged_exterior"
+      ]
+    }
+  ],
+  "production_started": false,
+  "render_started": false,
+  "runtime_admitted": false,
+  "schema": "c1-lite-repair-summary-v1",
+  "script_sha256": {
+    "interface_topology.py": "fd5209e96885e92c626c43e36a243d95bdfbac7d1c0df522a653934954be6f05",
+    "run_window_audit.py": "20941586729cedcb2a9d82b3cb1d928c0707c1be4cf531e58d9e6dbe26ce9941",
+    "run_window_audit_v2.py": "3742ca690afc66732a9dde458f005ac26e993c395a65914b10b57c228e597b8c",
+    "runtime_retained.py": "ffc84f433f87a5dfd38f501a2655c5c68c77ef00d21f2387e806fc12027bd810",
+    "window_admission.py": "8a35281a0f918278a01eea1c156c13fb46a695d659cfa9f820275252d47d4fcc",
+    "window_contact_v2.py": "369be1671662482accd3da5882044984f734e67ca23cf9952f0bd3a4d538d404",
+    "window_exterior.py": "9e9e071307f49e2059a8bf121a7adb3b0fa2469b15a1afc953c2e5dc73c99479",
+    "window_geometry.py": "a3a9ffd34775634d6e93d722911317d8e3fffa52d2410a8ca34e862fa0a38765",
+    "window_source.py": "1aa09ab97c85d57941b5be574c25f0c9c243c569c282c8f72b6692eff65f4ff6"
+  },
+  "status": "COMPLETED_WITH_SCIENTIFIC_REJECTIONS_OR_UNRESOLVED_GATES"
+}

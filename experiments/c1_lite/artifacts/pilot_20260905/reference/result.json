@@ -1,0 +1,118 @@
+{
+  "schema": "binoc-c1-lite-reference-preflight-v1",
+  "status": "STOP_PREFLIGHT",
+  "runtime_plan_emitted": false,
+  "render_started": false,
+  "continuous_window_certified": false,
+  "endpoint_audits": {
+    "lower": {
+      "ideal_midpoint_exact": [
+        {
+          "numerator": 2425,
+          "denominator": 4096
+        },
+        {
+          "numerator": 1301088759534933,
+          "denominator": 9007199254740992
+        },
+        {
+          "numerator": 1325,
+          "denominator": 4096
+        }
+      ],
+      "ideal_midpoint_on_shared_diagonal_exact": true,
+      "center_binary64": [
+        0.592041015625,
+        0.14444986979166663,
+        0.323486328125
+      ],
+      "center_binary32": [
+        0.592041015625,
+        0.1444498747587204,
+        0.323486328125
+      ],
+      "source_diagonal_binary64": [
+        [
+          0.8056640625,
+          -0.6591796875,
+          0.2685546875
+        ],
+        [
+          0.37841796875,
+          0.9480794270833333,
+          0.37841796875
+        ]
+      ],
+      "source_diagonal_binary32": [
+        [
+          0.8056640625,
+          -0.6591796875,
+          0.2685546875
+        ],
+        [
+          0.37841796875,
+          0.9480794072151184,
+          0.37841796875
+        ]
+      ],
+      "binary64_center_on_shared_diagonal_exact": true,
+      "binary32_center_on_ideal_diagonal_exact": false,
+      "binary32_center_on_shared_diagonal_exact": false,
+      "binary32_distance_to_shared_diagonal": 3.94406591993566e-09,
+      "meaning": "Prospective binary32 contract compares quantized center with quantized source diagonal; no C++ runtime execution was performed.",
+      "source_diagonal": [
+        "133:4|139:2",
+        "302:0|694:0"
+      ]
+    }
+  },
+  "measurements": [],
+  "limitations": [
+    "Finite source samples do not prove interval owner or branch stability.",
+    "No patch/exterior continuous intersection certificate.",
+    "No production whole-mesh splice, attribute, or OMP execution.",
+    "Height error is not Hausdorff distance or warped SSIM.",
+    "C1-lite denotes a route, not temporal derivative continuity."
+  ],
+  "selection": "First existing canonical event; original window, fixed grids 32/64/128; no retuning.",
+  "quality_gate": "At each interior sample/grid, C1 mean improves over baseline and naive beyond numeric tolerance; sampled maximum does not regress against either.",
+  "inputs_sha256": {
+    "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/all_canonical_beb1_summary.json": "a2a1c6c4487261034450359f34723e3bce813bf55b7e6609a085f227b35645be",
+    "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-00-6d2d6dc2cdd7/critical_beb1_event_ir.json": "6e933f461a9377aa339ac696a5e115dd815db9e073e4ffb7e0e42f0a6b88c2b7",
+    "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-00-6d2d6dc2cdd7/whole_mesh_validation.json": "554abb4758d7fde8a97092ac46b61a1578200ce5d35f82f17df60990df906dbb",
+    "/home/warpwang/src/BinocMesher/experiments/tv0_tv4/run_lightweight_profile.py": "aff10846eb0ee8a35580343f6e455fc797b80ee99a924a85693c3569db13013a",
+    "/mnt/e/BinocMesher/experiments/c1_lite/reference.py": "97a983683f0419cc628d6dcbd8c6552f941e83449c41c94af2443f84921ee7b3"
+  },
+  "times": [
+    {
+      "numerator": 114,
+      "denominator": 11
+    },
+    {
+      "numerator": 117,
+      "denominator": 11
+    },
+    {
+      "numerator": 120,
+      "denominator": 11
+    },
+    {
+      "numerator": 123,
+      "denominator": 11
+    },
+    {
+      "numerator": 126,
+      "denominator": 11
+    }
+  ],
+  "natural_frame_mapping": null,
+  "event_id": "element=0;role=temporal_neighbour;face=133:4|157:0|302:0|179:4",
+  "cache_root": "/home/warpwang/binoc-runs/full-ubuntu26-smoke/tv0_tv4/cache",
+  "fixed_boundary_cycle": [
+    "133:4|139:2",
+    "179:4|302:0",
+    "302:0|694:0",
+    "157:0|302:0"
+  ],
+  "stop_reason": "lower: quantized center leaves the quantized source diagonal; prospective binary32 endpoint identity is not satisfied."
+}

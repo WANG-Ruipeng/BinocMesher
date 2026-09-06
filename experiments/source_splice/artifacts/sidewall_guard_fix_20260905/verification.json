@@ -1,0 +1,155 @@
+{
+  "status": "PASS_GUARD_REPAIR_CONTINUOUS_GEOMETRY_STILL_BLOCKED",
+  "scope": "Admission safety repair, not a continuous-geometry repair",
+  "checks": {
+    "test_sidewall_contract": true,
+    "test_critical_beb1_event_ir": true,
+    "test_window_boundary": true,
+    "test_geometry_gate": true,
+    "root_compile": true,
+    "root_plan_byte_identical": true,
+    "window_request_rejected": true,
+    "no_plan_on_window_rejection": true,
+    "legacy_preflight_rejected": true,
+    "new_preflight_rejected": true
+  },
+  "root_plan_sha256": "df0beda686136630ad2615d5e1f3122e12ebbf99a11b3287e69576d1ec42309e",
+  "sidewall_contract": {
+    "arithmetic": "Exact rational predicates on serialized binary64 positions; no epsilon.",
+    "edges": [
+      {
+        "boundary_edge_indices": [
+          0,
+          1
+        ],
+        "compatible": false,
+        "edge_cross_product_exact": [
+          "-1123072591228343275/9223372036854775808",
+          "-155502358785462975/4611686018427387904",
+          "777511793927315175/9223372036854775808"
+        ],
+        "edge_dot_product_exact": "11818571950419383575/4611686018427387904",
+        "noncollapsing_same_direction": false,
+        "parallel_exact": false,
+        "slab": 0
+      },
+      {
+        "boundary_edge_indices": [
+          1,
+          2
+        ],
+        "compatible": false,
+        "edge_cross_product_exact": [
+          "818089008761905/40564819207303340847894502572032",
+          "0",
+          "-818089008761905/40564819207303340847894502572032"
+        ],
+        "edge_dot_product_exact": "11302496948460583358372395235557/81129638414606681695789005144064",
+        "noncollapsing_same_direction": false,
+        "parallel_exact": false,
+        "slab": 0
+      },
+      {
+        "boundary_edge_indices": [
+          2,
+          3
+        ],
+        "compatible": false,
+        "edge_cross_product_exact": [
+          "-2620502712866133/81129638414606681695789005144064",
+          "0",
+          "2620502712866133/81129638414606681695789005144064"
+        ],
+        "edge_dot_product_exact": "12533874247582336044993685458489/20282409603651670423947251286016",
+        "noncollapsing_same_direction": false,
+        "parallel_exact": false,
+        "slab": 0
+      },
+      {
+        "boundary_edge_indices": [
+          3,
+          0
+        ],
+        "compatible": false,
+        "edge_cross_product_exact": [
+          "34375/1048576",
+          "0",
+          "-103125/1048576"
+        ],
+        "edge_dot_product_exact": "940625/524288",
+        "noncollapsing_same_direction": false,
+        "parallel_exact": false,
+        "slab": 0
+      },
+      {
+        "boundary_edge_indices": [
+          0,
+          1
+        ],
+        "compatible": false,
+        "edge_cross_product_exact": [
+          "-1123072591228343275/9223372036854775808",
+          "-155502358785462975/4611686018427387904",
+          "777511793927315175/9223372036854775808"
+        ],
+        "edge_dot_product_exact": "12783000721068616425/4611686018427387904",
+        "noncollapsing_same_direction": false,
+        "parallel_exact": false,
+        "slab": 1
+      },
+      {
+        "boundary_edge_indices": [
+          1,
+          2
+        ],
+        "compatible": false,
+        "edge_cross_product_exact": [
+          "9136418049852953/162259276829213363391578010288128",
+          "0",
+          "-9136418049852953/162259276829213363391578010288128"
+        ],
+        "edge_dot_product_exact": "9114916893919823657476613006221/81129638414606681695789005144064",
+        "noncollapsing_same_direction": false,
+        "parallel_exact": false,
+        "slab": 1
+      },
+      {
+        "boundary_edge_indices": [
+          2,
+          3
+        ],
+        "compatible": false,
+        "edge_cross_product_exact": [
+          "-1136162015368533/162259276829213363391578010288128",
+          "0",
+          "1136162015368533/162259276829213363391578010288128"
+        ],
+        "edge_dot_product_exact": "20215926205777963597384413639111/40564819207303340847894502572032",
+        "noncollapsing_same_direction": false,
+        "parallel_exact": false,
+        "slab": 1
+      },
+      {
+        "boundary_edge_indices": [
+          3,
+          0
+        ],
+        "compatible": false,
+        "edge_cross_product_exact": [
+          "34375/1048576",
+          "0",
+          "-103125/1048576"
+        ],
+        "edge_dot_product_exact": "540625/262144",
+        "noncollapsing_same_direction": false,
+        "parallel_exact": false,
+        "slab": 1
+      }
+    ],
+    "incompatible_edges": 8,
+    "pass": false,
+    "schema": "binoc-linear-sidewall-contract-v1",
+    "scope": "Boundary of the legacy two-triangle-per-edge linear 4D wall only; not whole-window admission.",
+    "verdict": "REJECT_LINEAR_SIDEWALL_WINDOW"
+  }
+}

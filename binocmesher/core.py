@@ -162,6 +162,7 @@ class BinocMesher:
         use_alignment=False,
     ):
         dll = load_cdll(str(Path(__file__).parent.resolve()/"lib"/"core.so"))
+        self._runtime_library = dll
         self.float_type = c_double
         self.np_float_type = np.float64
         self.AF = AsDouble
@@ -335,6 +336,7 @@ class BinocMesher:
         skip_save1 = True
         path = self.path
         n_elements = len(kernels)
+        self._window_n_elements = n_elements
         slicing_finish = path / _SLICING_CACHE_FINISH
         slicing_manifest = path / _SLICING_CACHE_MANIFEST
         cache_contract = _slicing_cache_contract()
@@ -352,6 +354,7 @@ class BinocMesher:
                 n_elements,
                 str(path).encode('utf-8'),
             )
+            self._window_delta_t = float(self.tsize) / (2 * int(time_slices))
  
         if not os.path.exists(str(path / "slicing_preprocess.finish")):
             files_to_delete = list(path.glob("*.txt"))
@@ -596,3 +599,18 @@ class BinocMesher:
             self.slicing_clean_up()
 
         return meshes, in_view_tags
+
+    def slice_window_batch(self, values, source_contract, *, time_mode='exact',
+                           extra_smooth=False, enabled=True):
+        """Opt-in atomic schedule, after normal cache initialization.
+
+        Returns raw (vertices, faces, tags) tuples and an explicit report.
+        This is not a continuous-window certificate or the default renderer.
+        """
+        from .window_runtime import WindowRuntime, WindowSpec
+        try:
+            spec = WindowSpec.from_source_contract(source_contract)
+        except (ValueError, TypeError, KeyError, IndexError, ZeroDivisionError):
+            spec = None
+        return WindowRuntime(self).run(values, spec, time_mode=time_mode,
+                                       extra_smooth=extra_smooth, enabled=enabled)

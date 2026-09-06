@@ -1,0 +1,13 @@
+{
+  "schema": "c1-lite-owned-failed-cache-cleanup-v1",
+  "removed_directories": [
+    "/home/warpwang/binoc-runs/forest-census-repair-20260906/HyperMesh",
+    "/home/warpwang/binoc-runs/forest-census-repair-20260906/assets"
+  ],
+  "removed_regenerable_bytes": 488586831,
+  "remaining_failed_run_bytes": 31872,
+  "retained_evidence": ["failed_cache_inventory.json", "stage1_diagnosis.json", "worker_tail.log", "protocol.json", "summary.json", "source_fingerprints_before.json"],
+  "recoverability": "No trash copy retained; deleted files were generated only by this failed pilot and can be rebuilt. Original scene/assets/cache remain untouched.",
+  "active_forest64_run_modified": false,
+  "note": "Stage64 validated the exact failed-file size before this cleanup and recorded the prior summary hash. Replaying that prior-cap admission check now requires recreating the failed cache or reviewing the retained forensic evidence."
+}

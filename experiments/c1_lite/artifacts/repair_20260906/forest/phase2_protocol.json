@@ -1,0 +1,41 @@
+{
+  "schema": "c1-lite-forest-census-prospective-stage2-v1",
+  "status": "NOT_STARTED_RESOURCE_PREFLIGHT",
+  "predeclared_before_stage1_registry_outcome": true,
+  "seed": 0,
+  "frames_inclusive": [1, 96],
+  "fps": 24,
+  "resolution": [960, 540],
+  "opaque_pixels_per_cube": 6,
+  "coarse_pixels_per_cube": 30,
+  "outview_pixels_per_cube": 120,
+  "atmosphere_pixels_per_cube": 100,
+  "fading_time_seconds": 1,
+  "omp_threads": 8,
+  "camera_origin_seconds_formula": "(1-0.5)/24",
+  "camera_duration_seconds_formula": "95/24 + 1e-5, evaluated by the executed Python constructor",
+  "expected_max_tL": 1,
+  "expected_temporal_groups": 2,
+  "expected_maximum_discrete_time": 4,
+  "selection_rationale": "Restore the existing pilot's multiple temporal groups at the same seed, trajectory, and LOD, not select a beneficial event/window.",
+  "requirements_before_start": [
+    "Stage1 must complete with no entry/resource/source-integrity error.",
+    "Use a fresh geometry-cache path; never alter or resume from the old event-disabled cache.",
+    "Do not render, export a large scene copy, change the production mesher, or install environments.",
+    "Worker wall budget remains 1200 seconds and incremental disk budget remains 2000000000 bytes.",
+    "Resource preflight must support completion under these limits; otherwise leave this stage unexecuted."
+  ],
+  "observed_original_forest96_resource_evidence": {
+    "fine_task_log": "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/logs/fineterrain.err",
+    "opaque_meshing_seconds": 1542.980389,
+    "opaque_medium_step_approx_seconds": 871,
+    "opaque_bisection_approx_seconds": 390,
+    "atmosphere_meshing_seconds": 48.319587,
+    "old_final_hypermesh_du_approx_MiB": 710,
+    "largest_processed_file_du_approx_MiB": 134,
+    "old_registry_enabled": false,
+    "old_provenance_enabled": false
+  },
+  "resource_decision": "DO_NOT_START: previous opaque build alone exceeded 20min before provenance overhead; original output has files exceeding the stage1 128MiB cap, and peak new provenance/cache disk has not been bounded below 2GB.",
+  "scientific_limit": "A stage1 zero registry count from max_tL=0 is not a six-scene coverage estimate or evidence that Forest96 has no events."
+}

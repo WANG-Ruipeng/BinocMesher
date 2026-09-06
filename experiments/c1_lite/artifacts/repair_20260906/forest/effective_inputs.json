@@ -1,0 +1,37 @@
+{
+  "bounds": [
+    -500,
+    500,
+    -500,
+    500,
+    -500,
+    500
+  ],
+  "core_so": "/home/warpwang/src/BinocMesher/binocmesher/lib/core.so",
+  "core_so_sha256": "b2bf1b5f1847087645d88507446b012dd4b77324269e45bf893de0e17d330796",
+  "mesher_python": "/home/warpwang/src/BinocMesher/binocmesher/core.py",
+  "note": "Existing mesh_extraction; write_attribute_enabled=False skips only material/tag evaluation, not SDF geometry.",
+  "overrides": [
+    "scene.upsidedown_mountains_chance=0",
+    "scene.sdf_trees_chance=1",
+    "nishita_lighting.sun_elevation=20",
+    "nishita_lighting.sun_rotation=0",
+    "shader_atmosphere.density=0.0005",
+    "shader_atmosphere.anisotropy=0.8",
+    "fine_terrain.mesher_backend=\"BinocMesher\"",
+    "compose_nature.load_cameras=\"../infinigen_example_scenes/forest.txt\"",
+    "BinocMesher.pixels_per_cube=6",
+    "Terrain.device=\"cpu\"",
+    "execute_tasks.generate_resolution=[960,540]",
+    "execute_tasks.frame_range=[1,24]",
+    "execute_tasks.camera_id=[0,0]"
+  ],
+  "terrain_elements": [
+    "ground",
+    "landtiles",
+    "sdf_trees",
+    "warped_rocks",
+    "voronoi_rocks",
+    "atmosphere"
+  ]
+}

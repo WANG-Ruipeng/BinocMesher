@@ -1,0 +1,4060 @@
+{
+  "schema": "c1-lite-demo-census-v1",
+  "status": "SCREEN_COMPLETE_NO_WINDOW_ADMISSION",
+  "campaign_root": "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1",
+  "cache_root": "/home/warpwang/binoc-runs/full-ubuntu26-smoke/tv0_tv4/cache",
+  "time_mapping": {
+    "status": "RECONSTRUCTED_DEMO_PROFILE_NOT_SERIALIZED_RUNTIME_PARAMETERS",
+    "formula": "global_seconds = origin_seconds + internal_exact_time * delta_seconds",
+    "origin_seconds": {
+      "numerator": 6004799503160661,
+      "denominator": 288230376151711744
+    },
+    "delta_seconds": {
+      "numerator": 8631989357785997,
+      "denominator": 288230376151711744
+    },
+    "duration_seconds": {
+      "numerator": 8631989357785997,
+      "denominator": 9007199254740992
+    },
+    "max_temporal_level": 4,
+    "cache_group_count": 16,
+    "maximum_discrete_time": 32,
+    "origin_seconds_float": 0.020833333333333332,
+    "delta_seconds_float": 0.029948229166666663,
+    "assumptions": [
+      "Existing run_lightweight_profile.make_cameras: (i+0.5)/24.",
+      "core.py defaults min_t_offset=0 and use_alignment=False.",
+      "Parameters reconstructed from saved profile and verified against cache shape; no C++ runtime initialized.",
+      "Fractions represent actual binary64 parameter values; final C++ long-double arithmetic/rounding is not modelled."
+    ],
+    "source_references": [
+      "experiments/tv0_tv4/run_lightweight_profile.py:make_cameras",
+      "binocmesher/core.py:BinocMesher.__init__",
+      "binocmesher/source/coarse_step.cpp:load_parameters",
+      "binocmesher/source/slicing.cpp:run_slicing_exact"
+    ]
+  },
+  "source_interval_stability": "UNKNOWN",
+  "continuous_embedding_certificate": "UNKNOWN",
+  "runtime_started": false,
+  "rendering_started": false,
+  "events": [
+    {
+      "key": "event-00-6d2d6dc2cdd7",
+      "event_id": "element=0;role=temporal_neighbour;face=133:4|157:0|302:0|179:4",
+      "source_ir_path": "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-00-6d2d6dc2cdd7/critical_beb1_event_ir.json",
+      "source_ir_sha256": "6e933f461a9377aa339ac696a5e115dd815db9e073e4ffb7e0e42f0a6b88c2b7",
+      "levels_internal": {
+        "lower": {
+          "numerator": 114,
+          "denominator": 11
+        },
+        "root": {
+          "numerator": 120,
+          "denominator": 11
+        },
+        "upper": {
+          "numerator": 126,
+          "denominator": 11
+        }
+      },
+      "levels_global_seconds": {
+        "lower": {
+          "numerator": 1050099581322370929,
+          "denominator": 3170534137668829184
+        },
+        "root": {
+          "numerator": 1101891517469086911,
+          "denominator": 3170534137668829184
+        },
+        "upper": {
+          "numerator": 1153683453615802893,
+          "denominator": 3170534137668829184
+        }
+      },
+      "window_seconds_float": 0.03267079545454545,
+      "original_24fps_half_phase": {
+        "fps": 24,
+        "phase_in_frames": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "formula": "(index + phase_in_frames) / fps",
+        "closed_window_count": 1,
+        "open_window_count": 1,
+        "left_open_slab_count": 0,
+        "right_open_slab_count": 1,
+        "hits": [
+          {
+            "index_zero_based": 8,
+            "seconds": {
+              "numerator": 17,
+              "denominator": 48
+            },
+            "location": "right_open_slab"
+          }
+        ]
+      },
+      "predeclared_zero_phase_grids": [
+        {
+          "fps": 24,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 1,
+          "open_window_count": 1,
+          "left_open_slab_count": 1,
+          "right_open_slab_count": 0,
+          "hits": [
+            {
+              "index_zero_based": 8,
+              "seconds": {
+                "numerator": 1,
+                "denominator": 3
+              },
+              "location": "left_open_slab"
+            }
+          ]
+        },
+        {
+          "fps": 48,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 2,
+          "open_window_count": 2,
+          "left_open_slab_count": 1,
+          "right_open_slab_count": 1,
+          "hits": [
+            {
+              "index_zero_based": 16,
+              "seconds": {
+                "numerator": 1,
+                "denominator": 3
+              },
+              "location": "left_open_slab"
+            },
+            {
+              "index_zero_based": 17,
+              "seconds": {
+                "numerator": 17,
+                "denominator": 48
+              },
+              "location": "right_open_slab"
+            }
+          ]
+        },
+        {
+          "fps": 96,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 3,
+          "open_window_count": 3,
+          "left_open_slab_count": 2,
+          "right_open_slab_count": 1,
+          "hits": [
+            {
+              "index_zero_based": 32,
+              "seconds": {
+                "numerator": 1,
+                "denominator": 3
+              },
+              "location": "left_open_slab"
+            },
+            {
+              "index_zero_based": 33,
+              "seconds": {
+                "numerator": 11,
+                "denominator": 32
+              },
+              "location": "left_open_slab"
+            },
+            {
+              "index_zero_based": 34,
+              "seconds": {
+                "numerator": 17,
+                "denominator": 48
+              },
+              "location": "right_open_slab"
+            }
+          ]
+        },
+        {
+          "fps": 192,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 6,
+          "open_window_count": 6,
+          "left_open_slab_count": 3,
+          "right_open_slab_count": 3,
+          "hits": [
+            {
+              "index_zero_based": 64,
+              "seconds": {
+                "numerator": 1,
+                "denominator": 3
+              },
+              "location": "left_open_slab"
+            },
+            {
+              "index_zero_based": 65,
+              "seconds": {
+                "numerator": 65,
+                "denominator": 192
+              },
+              "location": "left_open_slab"
+            },
+            {
+              "index_zero_based": 66,
+              "seconds": {
+                "numerator": 11,
+                "denominator": 32
+              },
+              "location": "left_open_slab"
+            },
+            {
+              "index_zero_based": 67,
+              "seconds": {
+                "numerator": 67,
+                "denominator": 192
+              },
+              "location": "right_open_slab"
+            },
+            {
+              "index_zero_based": 68,
+              "seconds": {
+                "numerator": 17,
+                "denominator": 48
+              },
+              "location": "right_open_slab"
+            },
+            {
+              "index_zero_based": 69,
+              "seconds": {
+                "numerator": 23,
+                "denominator": 64
+              },
+              "location": "right_open_slab"
+            }
+          ]
+        }
+      ],
+      "exact_legacy_rotation_contract": {
+        "schema": "binoc-linear-sidewall-contract-v1",
+        "pass": false,
+        "verdict": "REJECT_LINEAR_SIDEWALL_WINDOW",
+        "arithmetic": "Exact rational predicates on serialized binary64 positions; no epsilon.",
+        "scope": "Boundary of the legacy two-triangle-per-edge linear 4D wall only; not whole-window admission.",
+        "edges": [
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              0,
+              1
+            ],
+            "edge_cross_product_exact": [
+              "-1123072591228343275/9223372036854775808",
+              "-155502358785462975/4611686018427387904",
+              "777511793927315175/9223372036854775808"
+            ],
+            "edge_dot_product_exact": "11818571950419383575/4611686018427387904",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              1,
+              2
+            ],
+            "edge_cross_product_exact": [
+              "818089008761905/40564819207303340847894502572032",
+              "0",
+              "-818089008761905/40564819207303340847894502572032"
+            ],
+            "edge_dot_product_exact": "11302496948460583358372395235557/81129638414606681695789005144064",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              2,
+              3
+            ],
+            "edge_cross_product_exact": [
+              "-2620502712866133/81129638414606681695789005144064",
+              "0",
+              "2620502712866133/81129638414606681695789005144064"
+            ],
+            "edge_dot_product_exact": "12533874247582336044993685458489/20282409603651670423947251286016",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              3,
+              0
+            ],
+            "edge_cross_product_exact": [
+              "34375/1048576",
+              "0",
+              "-103125/1048576"
+            ],
+            "edge_dot_product_exact": "940625/524288",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              0,
+              1
+            ],
+            "edge_cross_product_exact": [
+              "-1123072591228343275/9223372036854775808",
+              "-155502358785462975/4611686018427387904",
+              "777511793927315175/9223372036854775808"
+            ],
+            "edge_dot_product_exact": "12783000721068616425/4611686018427387904",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              1,
+              2
+            ],
+            "edge_cross_product_exact": [
+              "9136418049852953/162259276829213363391578010288128",
+              "0",
+              "-9136418049852953/162259276829213363391578010288128"
+            ],
+            "edge_dot_product_exact": "9114916893919823657476613006221/81129638414606681695789005144064",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              2,
+              3
+            ],
+            "edge_cross_product_exact": [
+              "-1136162015368533/162259276829213363391578010288128",
+              "0",
+              "1136162015368533/162259276829213363391578010288128"
+            ],
+            "edge_dot_product_exact": "20215926205777963597384413639111/40564819207303340847894502572032",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              3,
+              0
+            ],
+            "edge_cross_product_exact": [
+              "34375/1048576",
+              "0",
+              "-103125/1048576"
+            ],
+            "edge_dot_product_exact": "540625/262144",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          }
+        ],
+        "incompatible_edges": 8
+      },
+      "source_interval_audit": {
+        "interval_stability_certificate": "UNKNOWN",
+        "reason": "Candidate branch boundaries are extracted analytically for registry-linked records and observed boundary VIDs. Full exterior incidence, selected-owner equivalence, and all-source ownership over the interval remain uncertified.",
+        "registry_record_count": 6,
+        "source_edge_count": 12,
+        "boundary_source_intervals": [
+          {
+            "source_vid": "133:4|139:2",
+            "raw_times": [
+              12,
+              6
+            ],
+            "effective_interpolation_interval": [
+              6,
+              12
+            ],
+            "endpoint_halfspans": [
+              4,
+              2
+            ],
+            "endpoint_in_view": [
+              0,
+              0
+            ]
+          },
+          {
+            "source_vid": "157:0|302:0",
+            "raw_times": [
+              8,
+              16
+            ],
+            "effective_interpolation_interval": [
+              8,
+              16
+            ],
+            "endpoint_halfspans": [
+              8,
+              16
+            ],
+            "endpoint_in_view": [
+              0,
+              0
+            ]
+          },
+          {
+            "source_vid": "179:4|302:0",
+            "raw_times": [
+              9,
+              16
+            ],
+            "effective_interpolation_interval": [
+              9,
+              16
+            ],
+            "endpoint_halfspans": [
+              1,
+              16
+            ],
+            "endpoint_in_view": [
+              0,
+              0
+            ]
+          },
+          {
+            "source_vid": "302:0|694:0",
+            "raw_times": [
+              16,
+              4
+            ],
+            "effective_interpolation_interval": [
+              4,
+              16
+            ],
+            "endpoint_halfspans": [
+              16,
+              4
+            ],
+            "endpoint_in_view": [
+              0,
+              0
+            ]
+          }
+        ],
+        "candidate_breakpoints_in_closed_window": [
+          {
+            "time": {
+              "numerator": 11,
+              "denominator": 1
+            },
+            "reasons": [
+              "effective_clamp_or_SourceVID_collapse:0:5|133:4",
+              "effective_clamp_or_SourceVID_collapse:0:5|179:4",
+              "effective_clamp_or_SourceVID_collapse:0:5|302:0",
+              "processed_owner_interval:0:8:3431",
+              "processed_owner_interval:4:8:687",
+              "processed_owner_interval:5:8:0",
+              "raw_source_clamp_or_time:0:5|133:4",
+              "raw_source_clamp_or_time:0:5|179:4",
+              "raw_source_clamp_or_time:0:5|302:0"
+            ]
+          }
+        ],
+        "slabs": [
+          {
+            "slab": 0,
+            "internal_candidates": [],
+            "stability": "UNKNOWN"
+          },
+          {
+            "slab": 1,
+            "internal_candidates": [
+              {
+                "time": {
+                  "numerator": 11,
+                  "denominator": 1
+                },
+                "reasons": [
+                  "effective_clamp_or_SourceVID_collapse:0:5|133:4",
+                  "effective_clamp_or_SourceVID_collapse:0:5|179:4",
+                  "effective_clamp_or_SourceVID_collapse:0:5|302:0",
+                  "processed_owner_interval:0:8:3431",
+                  "processed_owner_interval:4:8:687",
+                  "processed_owner_interval:5:8:0",
+                  "raw_source_clamp_or_time:0:5|133:4",
+                  "raw_source_clamp_or_time:0:5|179:4",
+                  "raw_source_clamp_or_time:0:5|302:0"
+                ]
+              }
+            ],
+            "stability": "UNKNOWN"
+          }
+        ]
+      },
+      "legacy_sidewall_samples": {
+        "status": "FINITE_DIAGNOSTIC_NOT_A_CERTIFICATE",
+        "sampling": "Fixed alpha=1/4,1/2,3/4 in each slab; duplicate shared wall-vertices remain in RMS.",
+        "distance": "One-way sliced old-wall vertices to corresponding ordinary boundary edge; not Hausdorff and not the continuous-time maximum.",
+        "maximum_over_samples": 0.02370484342888187,
+        "samples": [
+          {
+            "slab": 0,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 21,
+              "denominator": 2
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.017948354153944676,
+            "sampled_rms_vertex_to_source_edge_gap": 0.008214736662887882,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "133:4|139:2",
+              "179:4|302:0",
+              "302:0|694:0",
+              "157:0|302:0"
+            ],
+            "source_faces": [
+              [
+                "133:4|139:2",
+                "179:4|302:0",
+                "302:0|694:0"
+              ],
+              [
+                "133:4|139:2",
+                "302:0|694:0",
+                "157:0|302:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                4,
+                2489,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                4,
+                2489,
+                3,
+                0,
+                2
+              ],
+              [
+                0,
+                4,
+                4,
+                3,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                4,
+                4,
+                3,
+                3,
+                0,
+                2
+              ]
+            ]
+          },
+          {
+            "slab": 0,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "internal_time": {
+              "numerator": 117,
+              "denominator": 11
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.02370484342888187,
+            "sampled_rms_vertex_to_source_edge_gap": 0.010813933841947666,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "133:4|139:2",
+              "179:4|302:0",
+              "302:0|694:0",
+              "157:0|302:0"
+            ],
+            "source_faces": [
+              [
+                "133:4|139:2",
+                "179:4|302:0",
+                "302:0|694:0"
+              ],
+              [
+                "133:4|139:2",
+                "302:0|694:0",
+                "157:0|302:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                4,
+                2489,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                4,
+                2489,
+                3,
+                0,
+                2
+              ],
+              [
+                0,
+                4,
+                4,
+                3,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                4,
+                4,
+                3,
+                3,
+                0,
+                2
+              ]
+            ]
+          },
+          {
+            "slab": 0,
+            "alpha": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 237,
+              "denominator": 22
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.01760827063578537,
+            "sampled_rms_vertex_to_source_edge_gap": 0.008007450611872384,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "133:4|139:2",
+              "179:4|302:0",
+              "302:0|694:0",
+              "157:0|302:0"
+            ],
+            "source_faces": [
+              [
+                "133:4|139:2",
+                "179:4|302:0",
+                "302:0|694:0"
+              ],
+              [
+                "133:4|139:2",
+                "302:0|694:0",
+                "157:0|302:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                4,
+                2489,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                4,
+                2489,
+                3,
+                0,
+                2
+              ],
+              [
+                0,
+                4,
+                4,
+                3,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                4,
+                4,
+                3,
+                3,
+                0,
+                2
+              ]
+            ]
+          },
+          {
+            "slab": 1,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 243,
+              "denominator": 22
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.017266549954706913,
+            "sampled_rms_vertex_to_source_edge_gap": 0.0078054872651857595,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "133:4|139:2",
+              "179:4|302:0",
+              "302:0|694:0",
+              "157:0|302:0"
+            ],
+            "source_faces": [
+              [
+                "133:4|139:2",
+                "179:4|302:0",
+                "302:0|694:0"
+              ],
+              [
+                "133:4|139:2",
+                "302:0|694:0",
+                "157:0|302:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                4,
+                2489,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                4,
+                2489,
+                3,
+                0,
+                2
+              ],
+              [
+                0,
+                4,
+                4,
+                3,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                4,
+                4,
+                3,
+                3,
+                0,
+                2
+              ]
+            ]
+          },
+          {
+            "slab": 1,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "internal_time": {
+              "numerator": 123,
+              "denominator": 11
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.02279415701858876,
+            "sampled_rms_vertex_to_source_edge_gap": 0.010275456608621182,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "133:4|139:2",
+              "179:4|302:0",
+              "302:0|694:0",
+              "157:0|302:0"
+            ],
+            "source_faces": [
+              [
+                "133:4|139:2",
+                "179:4|302:0",
+                "302:0|694:0"
+              ],
+              [
+                "133:4|139:2",
+                "302:0|694:0",
+                "157:0|302:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                4,
+                2489,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                4,
+                2489,
+                3,
+                0,
+                2
+              ],
+              [
+                0,
+                4,
+                4,
+                3,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                4,
+                4,
+                3,
+                3,
+                0,
+                2
+              ]
+            ]
+          },
+          {
+            "slab": 1,
+            "alpha": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 249,
+              "denominator": 22
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.016924898774915445,
+            "sampled_rms_vertex_to_source_edge_gap": 0.007609123401072378,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "133:4|139:2",
+              "179:4|302:0",
+              "302:0|694:0",
+              "157:0|302:0"
+            ],
+            "source_faces": [
+              [
+                "133:4|139:2",
+                "179:4|302:0",
+                "302:0|694:0"
+              ],
+              [
+                "133:4|139:2",
+                "302:0|694:0",
+                "157:0|302:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                4,
+                2489,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                4,
+                2489,
+                3,
+                0,
+                2
+              ],
+              [
+                0,
+                4,
+                4,
+                3,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                4,
+                4,
+                3,
+                3,
+                0,
+                2
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "key": "event-01-e40703e638f3",
+      "event_id": "element=0;role=temporal_neighbour;face=0:5|133:4|157:0|302:0",
+      "source_ir_path": "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-01-e40703e638f3/critical_beb1_event_ir.json",
+      "source_ir_sha256": "ac3c343c075b609f4f51f76bc5b3b4da5d7075f9d69a363d31579b15d09a59d8",
+      "levels_internal": {
+        "lower": {
+          "numerator": 34,
+          "denominator": 3
+        },
+        "root": {
+          "numerator": 104,
+          "denominator": 9
+        },
+        "upper": {
+          "numerator": 106,
+          "denominator": 9
+        }
+      },
+      "levels_global_seconds": {
+        "lower": {
+          "numerator": 311502036674205881,
+          "denominator": 864691128455135232
+        },
+        "root": {
+          "numerator": 951770088738189637,
+          "denominator": 2594073385365405696
+        },
+        "upper": {
+          "numerator": 969034067453761631,
+          "denominator": 2594073385365405696
+        }
+      },
+      "window_seconds_float": 0.013310324074074072,
+      "original_24fps_half_phase": {
+        "fps": 24,
+        "phase_in_frames": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "formula": "(index + phase_in_frames) / fps",
+        "closed_window_count": 0,
+        "open_window_count": 0,
+        "left_open_slab_count": 0,
+        "right_open_slab_count": 0,
+        "hits": []
+      },
+      "predeclared_zero_phase_grids": [
+        {
+          "fps": 24,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 0,
+          "open_window_count": 0,
+          "left_open_slab_count": 0,
+          "right_open_slab_count": 0,
+          "hits": []
+        },
+        {
+          "fps": 48,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 0,
+          "open_window_count": 0,
+          "left_open_slab_count": 0,
+          "right_open_slab_count": 0,
+          "hits": []
+        },
+        {
+          "fps": 96,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 1,
+          "open_window_count": 1,
+          "left_open_slab_count": 1,
+          "right_open_slab_count": 0,
+          "hits": [
+            {
+              "index_zero_based": 35,
+              "seconds": {
+                "numerator": 35,
+                "denominator": 96
+              },
+              "location": "left_open_slab"
+            }
+          ]
+        },
+        {
+          "fps": 192,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 2,
+          "open_window_count": 2,
+          "left_open_slab_count": 1,
+          "right_open_slab_count": 1,
+          "hits": [
+            {
+              "index_zero_based": 70,
+              "seconds": {
+                "numerator": 35,
+                "denominator": 96
+              },
+              "location": "left_open_slab"
+            },
+            {
+              "index_zero_based": 71,
+              "seconds": {
+                "numerator": 71,
+                "denominator": 192
+              },
+              "location": "right_open_slab"
+            }
+          ]
+        }
+      ],
+      "exact_legacy_rotation_contract": {
+        "schema": "binoc-linear-sidewall-contract-v1",
+        "pass": false,
+        "verdict": "REJECT_LINEAR_SIDEWALL_WINDOW",
+        "arithmetic": "Exact rational predicates on serialized binary64 positions; no epsilon.",
+        "scope": "Boundary of the legacy two-triangle-per-edge linear 4D wall only; not whole-window admission.",
+        "edges": [
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              0,
+              1
+            ],
+            "edge_cross_product_exact": [
+              "1478232299565511/20282409603651670423947251286016",
+              "886939379739307/40564819207303340847894502572032",
+              "-605/9223372036854775808"
+            ],
+            "edge_dot_product_exact": "22082865871505798042972772785873/40564819207303340847894502572032",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              1,
+              2
+            ],
+            "edge_cross_product_exact": [
+              "-583613790997293/81129638414606681695789005144064",
+              "0",
+              "583613790997293/81129638414606681695789005144064"
+            ],
+            "edge_dot_product_exact": "3764582209414137491849381386511/40564819207303340847894502572032",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              2,
+              3
+            ],
+            "edge_cross_product_exact": [
+              "-97780907088142901/324518553658426726783156020576256",
+              "-14628740419076877/162259276829213363391578010288128",
+              "43655847392363277/162259276829213363391578010288128"
+            ],
+            "edge_dot_product_exact": "337195664894033652327661104354951/162259276829213363391578010288128",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              3,
+              0
+            ],
+            "edge_cross_product_exact": [
+              "-35835934534921485/324518553658426726783156020576256",
+              "-2866874762793717/162259276829213363391578010288128",
+              "2150156072095289/40564819207303340847894502572032"
+            ],
+            "edge_dot_product_exact": "963160652993383728472542709465/2535301200456458802993406410752",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              0,
+              1
+            ],
+            "edge_cross_product_exact": [
+              "-1478232299565511/81129638414606681695789005144064",
+              "55/4611686018427387904",
+              "-4918482014917973/81129638414606681695789005144064"
+            ],
+            "edge_dot_product_exact": "51526687033513533000056236771303/40564819207303340847894502572032",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              1,
+              2
+            ],
+            "edge_cross_product_exact": [
+              "1244018870283703/40564819207303340847894502572032",
+              "0",
+              "-1244018870283703/40564819207303340847894502572032"
+            ],
+            "edge_dot_product_exact": "3406050570422314829697275565443/40564819207303340847894502572032",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              2,
+              3
+            ],
+            "edge_cross_product_exact": [
+              "39419527988413631/162259276829213363391578010288128",
+              "12747353855993499/162259276829213363391578010288128",
+              "-21885517162398477/81129638414606681695789005144064"
+            ],
+            "edge_dot_product_exact": "802846821176270633076367304153953/324518553658426726783156020576256",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              3,
+              0
+            ],
+            "edge_cross_product_exact": [
+              "1433437381396861/324518553658426726783156020576256",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "41094854527717708615036585064227/324518553658426726783156020576256",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          }
+        ],
+        "incompatible_edges": 8
+      },
+      "source_interval_audit": {
+        "interval_stability_certificate": "UNKNOWN",
+        "reason": "Candidate branch boundaries are extracted analytically for registry-linked records and observed boundary VIDs. Full exterior incidence, selected-owner equivalence, and all-source ownership over the interval remain uncertified.",
+        "registry_record_count": 7,
+        "source_edge_count": 9,
+        "boundary_source_intervals": [
+          {
+            "source_vid": "0:5|133:4",
+            "raw_times": [
+              11,
+              12
+            ],
+            "effective_interpolation_interval": [
+              11,
+              12
+            ],
+            "endpoint_halfspans": [
+              1,
+              4
+            ],
+            "endpoint_in_view": [
+              0,
+              0
+            ]
+          },
+          {
+            "source_vid": "0:5|302:0",
+            "raw_times": [
+              11,
+              16
+            ],
+            "effective_interpolation_interval": [
+              11,
+              16
+            ],
+            "endpoint_halfspans": [
+              1,
+              16
+            ],
+            "endpoint_in_view": [
+              0,
+              0
+            ]
+          },
+          {
+            "source_vid": "133:4|179:4",
+            "raw_times": [
+              12,
+              9
+            ],
+            "effective_interpolation_interval": [
+              9,
+              12
+            ],
+            "endpoint_halfspans": [
+              4,
+              1
+            ],
+            "endpoint_in_view": [
+              0,
+              0
+            ]
+          },
+          {
+            "source_vid": "179:4|302:0",
+            "raw_times": [
+              9,
+              16
+            ],
+            "effective_interpolation_interval": [
+              9,
+              16
+            ],
+            "endpoint_halfspans": [
+              1,
+              16
+            ],
+            "endpoint_in_view": [
+              0,
+              0
+            ]
+          }
+        ],
+        "candidate_breakpoints_in_closed_window": [],
+        "slabs": [
+          {
+            "slab": 0,
+            "internal_candidates": [],
+            "stability": "UNKNOWN"
+          },
+          {
+            "slab": 1,
+            "internal_candidates": [],
+            "stability": "UNKNOWN"
+          }
+        ]
+      },
+      "legacy_sidewall_samples": {
+        "status": "FINITE_DIAGNOSTIC_NOT_A_CERTIFICATE",
+        "sampling": "Fixed alpha=1/4,1/2,3/4 in each slab; duplicate shared wall-vertices remain in RMS.",
+        "distance": "One-way sliced old-wall vertices to corresponding ordinary boundary edge; not Hausdorff and not the continuous-time maximum.",
+        "maximum_over_samples": 2.2887833992611187e-16,
+        "samples": [
+          {
+            "slab": 0,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 205,
+              "denominator": 18
+            },
+            "sampled_max_vertex_to_source_edge_gap": 1.576213700060856e-16,
+            "sampled_rms_vertex_to_source_edge_gap": 1.259557379276143e-16,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "0:5|133:4",
+              "0:5|302:0",
+              "179:4|302:0",
+              "133:4|179:4"
+            ],
+            "source_faces": [
+              [
+                "0:5|133:4",
+                "179:4|302:0",
+                "133:4|179:4"
+              ],
+              [
+                "0:5|133:4",
+                "0:5|302:0",
+                "179:4|302:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                8,
+                3431,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                8,
+                3431,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                4,
+                8,
+                687,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                4,
+                8,
+                687,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                5,
+                8,
+                0,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                5,
+                8,
+                0,
+                2,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "slab": 0,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "internal_time": {
+              "numerator": 103,
+              "denominator": 9
+            },
+            "sampled_max_vertex_to_source_edge_gap": 1.1443916996305594e-16,
+            "sampled_rms_vertex_to_source_edge_gap": 9.361079663672307e-17,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "0:5|133:4",
+              "0:5|302:0",
+              "179:4|302:0",
+              "133:4|179:4"
+            ],
+            "source_faces": [
+              [
+                "0:5|133:4",
+                "179:4|302:0",
+                "133:4|179:4"
+              ],
+              [
+                "0:5|133:4",
+                "0:5|302:0",
+                "179:4|302:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                8,
+                3431,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                8,
+                3431,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                4,
+                8,
+                687,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                4,
+                8,
+                687,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                5,
+                8,
+                0,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                5,
+                8,
+                0,
+                2,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "slab": 0,
+            "alpha": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 23,
+              "denominator": 2
+            },
+            "sampled_max_vertex_to_source_edge_gap": 1.5700924586837752e-16,
+            "sampled_rms_vertex_to_source_edge_gap": 8.355822838529924e-17,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "0:5|133:4",
+              "0:5|302:0",
+              "179:4|302:0",
+              "133:4|179:4"
+            ],
+            "source_faces": [
+              [
+                "0:5|133:4",
+                "179:4|302:0",
+                "133:4|179:4"
+              ],
+              [
+                "0:5|133:4",
+                "0:5|302:0",
+                "179:4|302:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                8,
+                3431,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                8,
+                3431,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                4,
+                8,
+                687,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                4,
+                8,
+                687,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                5,
+                8,
+                0,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                5,
+                8,
+                0,
+                2,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "slab": 1,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 209,
+              "denominator": 18
+            },
+            "sampled_max_vertex_to_source_edge_gap": 1.2412670766236366e-16,
+            "sampled_rms_vertex_to_source_edge_gap": 9.886402008701255e-17,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "0:5|133:4",
+              "0:5|302:0",
+              "179:4|302:0",
+              "133:4|179:4"
+            ],
+            "source_faces": [
+              [
+                "0:5|133:4",
+                "179:4|302:0",
+                "133:4|179:4"
+              ],
+              [
+                "0:5|133:4",
+                "0:5|302:0",
+                "179:4|302:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                8,
+                3431,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                8,
+                3431,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                4,
+                8,
+                687,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                4,
+                8,
+                687,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                5,
+                8,
+                0,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                5,
+                8,
+                0,
+                2,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "slab": 1,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "internal_time": {
+              "numerator": 35,
+              "denominator": 3
+            },
+            "sampled_max_vertex_to_source_edge_gap": 2.2887833992611187e-16,
+            "sampled_rms_vertex_to_source_edge_gap": 1.1857187100668868e-16,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "0:5|133:4",
+              "0:5|302:0",
+              "179:4|302:0",
+              "133:4|179:4"
+            ],
+            "source_faces": [
+              [
+                "0:5|133:4",
+                "179:4|302:0",
+                "133:4|179:4"
+              ],
+              [
+                "0:5|133:4",
+                "0:5|302:0",
+                "179:4|302:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                8,
+                3431,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                8,
+                3431,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                4,
+                8,
+                687,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                4,
+                8,
+                687,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                5,
+                8,
+                0,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                5,
+                8,
+                0,
+                2,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "slab": 1,
+            "alpha": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 211,
+              "denominator": 18
+            },
+            "sampled_max_vertex_to_source_edge_gap": 2.2887833992611187e-16,
+            "sampled_rms_vertex_to_source_edge_gap": 1.3526394372366472e-16,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "0:5|133:4",
+              "0:5|302:0",
+              "179:4|302:0",
+              "133:4|179:4"
+            ],
+            "source_faces": [
+              [
+                "0:5|133:4",
+                "179:4|302:0",
+                "133:4|179:4"
+              ],
+              [
+                "0:5|133:4",
+                "0:5|302:0",
+                "179:4|302:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                8,
+                3431,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                8,
+                3431,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                4,
+                8,
+                687,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                4,
+                8,
+                687,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                5,
+                8,
+                0,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                5,
+                8,
+                0,
+                2,
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "key": "event-02-88ade47aa4fa",
+      "event_id": "element=0;role=temporal_neighbour;face=46:10|311:0|159:8|391:8",
+      "source_ir_path": "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-02-88ade47aa4fa/critical_beb1_event_ir.json",
+      "source_ir_sha256": "c7ba221583aac6f189c4cf59980fa6e5083c5ee3ff5ca6ca1d200603b60c67cf",
+      "levels_internal": {
+        "lower": {
+          "numerator": 102,
+          "denominator": 5
+        },
+        "root": {
+          "numerator": 104,
+          "denominator": 5
+        },
+        "upper": {
+          "numerator": 106,
+          "denominator": 5
+        }
+      },
+      "levels_global_seconds": {
+        "lower": {
+          "numerator": 910486912009974999,
+          "denominator": 1441151880758558720
+        },
+        "root": {
+          "numerator": 927750890725546993,
+          "denominator": 1441151880758558720
+        },
+        "upper": {
+          "numerator": 945014869441118987,
+          "denominator": 1441151880758558720
+        }
+      },
+      "window_seconds_float": 0.02395858333333333,
+      "original_24fps_half_phase": {
+        "fps": 24,
+        "phase_in_frames": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "formula": "(index + phase_in_frames) / fps",
+        "closed_window_count": 1,
+        "open_window_count": 1,
+        "left_open_slab_count": 0,
+        "right_open_slab_count": 1,
+        "hits": [
+          {
+            "index_zero_based": 15,
+            "seconds": {
+              "numerator": 31,
+              "denominator": 48
+            },
+            "location": "right_open_slab"
+          }
+        ]
+      },
+      "predeclared_zero_phase_grids": [
+        {
+          "fps": 24,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 0,
+          "open_window_count": 0,
+          "left_open_slab_count": 0,
+          "right_open_slab_count": 0,
+          "hits": []
+        },
+        {
+          "fps": 48,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 1,
+          "open_window_count": 1,
+          "left_open_slab_count": 0,
+          "right_open_slab_count": 1,
+          "hits": [
+            {
+              "index_zero_based": 31,
+              "seconds": {
+                "numerator": 31,
+                "denominator": 48
+              },
+              "location": "right_open_slab"
+            }
+          ]
+        },
+        {
+          "fps": 96,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 2,
+          "open_window_count": 2,
+          "left_open_slab_count": 1,
+          "right_open_slab_count": 1,
+          "hits": [
+            {
+              "index_zero_based": 61,
+              "seconds": {
+                "numerator": 61,
+                "denominator": 96
+              },
+              "location": "left_open_slab"
+            },
+            {
+              "index_zero_based": 62,
+              "seconds": {
+                "numerator": 31,
+                "denominator": 48
+              },
+              "location": "right_open_slab"
+            }
+          ]
+        },
+        {
+          "fps": 192,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 4,
+          "open_window_count": 4,
+          "left_open_slab_count": 2,
+          "right_open_slab_count": 2,
+          "hits": [
+            {
+              "index_zero_based": 122,
+              "seconds": {
+                "numerator": 61,
+                "denominator": 96
+              },
+              "location": "left_open_slab"
+            },
+            {
+              "index_zero_based": 123,
+              "seconds": {
+                "numerator": 41,
+                "denominator": 64
+              },
+              "location": "left_open_slab"
+            },
+            {
+              "index_zero_based": 124,
+              "seconds": {
+                "numerator": 31,
+                "denominator": 48
+              },
+              "location": "right_open_slab"
+            },
+            {
+              "index_zero_based": 125,
+              "seconds": {
+                "numerator": 125,
+                "denominator": 192
+              },
+              "location": "right_open_slab"
+            }
+          ]
+        }
+      ],
+      "exact_legacy_rotation_contract": {
+        "schema": "binoc-linear-sidewall-contract-v1",
+        "pass": false,
+        "verdict": "REJECT_LINEAR_SIDEWALL_WINDOW",
+        "arithmetic": "Exact rational predicates on serialized binary64 positions; no epsilon.",
+        "scope": "Boundary of the legacy two-triangle-per-edge linear 4D wall only; not whole-window admission.",
+        "edges": [
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              0,
+              1
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "15125/262144",
+              "15125/262144"
+            ],
+            "edge_dot_product_exact": "3747975/1048576",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              1,
+              2
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "2695275/524288",
+            "parallel_exact": true,
+            "noncollapsing_same_direction": true,
+            "compatible": true
+          },
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              2,
+              3
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "105875/524288",
+            "parallel_exact": true,
+            "noncollapsing_same_direction": true,
+            "compatible": true
+          },
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              3,
+              0
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "9075/4096",
+            "parallel_exact": true,
+            "noncollapsing_same_direction": true,
+            "compatible": true
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              0,
+              1
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "15125/262144",
+              "15125/262144"
+            ],
+            "edge_dot_product_exact": "3681425/1048576",
+            "parallel_exact": false,
+            "noncollapsing_same_direction": false,
+            "compatible": false
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              1,
+              2
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "2096325/524288",
+            "parallel_exact": true,
+            "noncollapsing_same_direction": true,
+            "compatible": true
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              2,
+              3
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "317625/524288",
+            "parallel_exact": true,
+            "noncollapsing_same_direction": true,
+            "compatible": true
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              3,
+              0
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "9075/8192",
+            "parallel_exact": true,
+            "noncollapsing_same_direction": true,
+            "compatible": true
+          }
+        ],
+        "incompatible_edges": 2
+      },
+      "source_interval_audit": {
+        "interval_stability_certificate": "UNKNOWN",
+        "reason": "Candidate branch boundaries are extracted analytically for registry-linked records and observed boundary VIDs. Full exterior incidence, selected-owner equivalence, and all-source ownership over the interval remain uncertified.",
+        "registry_record_count": 7,
+        "source_edge_count": 11,
+        "boundary_source_intervals": [
+          {
+            "source_vid": "46:10|376:8",
+            "raw_times": [
+              22,
+              18
+            ],
+            "effective_interpolation_interval": [
+              18,
+              22
+            ],
+            "endpoint_halfspans": [
+              2,
+              2
+            ],
+            "endpoint_in_view": [
+              0,
+              0
+            ]
+          },
+          {
+            "source_vid": "46:10|391:8",
+            "raw_times": [
+              22,
+              20
+            ],
+            "effective_interpolation_interval": [
+              20,
+              22
+            ],
+            "endpoint_halfspans": [
+              2,
+              4
+            ],
+            "endpoint_in_view": [
+              0,
+              0
+            ]
+          },
+          {
+            "source_vid": "159:8|311:0",
+            "raw_times": [
+              24,
+              16
+            ],
+            "effective_interpolation_interval": [
+              16,
+              24
+            ],
+            "endpoint_halfspans": [
+              8,
+              16
+            ],
+            "endpoint_in_view": [
+              0,
+              0
+            ]
+          },
+          {
+            "source_vid": "159:8|391:8",
+            "raw_times": [
+              24,
+              20
+            ],
+            "effective_interpolation_interval": [
+              20,
+              24
+            ],
+            "endpoint_halfspans": [
+              8,
+              4
+            ],
+            "endpoint_in_view": [
+              0,
+              0
+            ]
+          }
+        ],
+        "candidate_breakpoints_in_closed_window": [],
+        "slabs": [
+          {
+            "slab": 0,
+            "internal_candidates": [],
+            "stability": "UNKNOWN"
+          },
+          {
+            "slab": 1,
+            "internal_candidates": [],
+            "stability": "UNKNOWN"
+          }
+        ]
+      },
+      "legacy_sidewall_samples": {
+        "status": "FINITE_DIAGNOSTIC_NOT_A_CERTIFICATE",
+        "sampling": "Fixed alpha=1/4,1/2,3/4 in each slab; duplicate shared wall-vertices remain in RMS.",
+        "distance": "One-way sliced old-wall vertices to corresponding ordinary boundary edge; not Hausdorff and not the continuous-time maximum.",
+        "maximum_over_samples": 0.01088601662367055,
+        "samples": [
+          {
+            "slab": 0,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 41,
+              "denominator": 2
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.00807305570794225,
+            "sampled_rms_vertex_to_source_edge_gap": 0.002854256217991365,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "46:10|376:8",
+              "159:8|311:0",
+              "159:8|391:8",
+              "46:10|391:8"
+            ],
+            "source_faces": [
+              [
+                "46:10|376:8",
+                "159:8|311:0",
+                "159:8|391:8"
+              ],
+              [
+                "46:10|376:8",
+                "159:8|391:8",
+                "46:10|391:8"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ]
+          },
+          {
+            "slab": 0,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "internal_time": {
+              "numerator": 103,
+              "denominator": 5
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.010788951059164192,
+            "sampled_rms_vertex_to_source_edge_gap": 0.0038144702279123924,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "46:10|376:8",
+              "159:8|311:0",
+              "159:8|391:8",
+              "46:10|391:8"
+            ],
+            "source_faces": [
+              [
+                "46:10|376:8",
+                "159:8|311:0",
+                "159:8|391:8"
+              ],
+              [
+                "46:10|376:8",
+                "159:8|391:8",
+                "46:10|391:8"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ]
+          },
+          {
+            "slab": 0,
+            "alpha": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 207,
+              "denominator": 10
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.008110192633568125,
+            "sampled_rms_vertex_to_source_edge_gap": 0.0028673861039626033,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "46:10|376:8",
+              "159:8|311:0",
+              "159:8|391:8",
+              "46:10|391:8"
+            ],
+            "source_faces": [
+              [
+                "46:10|376:8",
+                "159:8|311:0",
+                "159:8|391:8"
+              ],
+              [
+                "46:10|376:8",
+                "159:8|391:8",
+                "46:10|391:8"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ]
+          },
+          {
+            "slab": 1,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 209,
+              "denominator": 10
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.008146597103848028,
+            "sampled_rms_vertex_to_source_edge_gap": 0.0028802570278628143,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "46:10|376:8",
+              "159:8|311:0",
+              "159:8|391:8",
+              "46:10|391:8"
+            ],
+            "source_faces": [
+              [
+                "46:10|376:8",
+                "159:8|311:0",
+                "159:8|391:8"
+              ],
+              [
+                "46:10|376:8",
+                "159:8|391:8",
+                "46:10|391:8"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ]
+          },
+          {
+            "slab": 1,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "internal_time": {
+              "numerator": 21,
+              "denominator": 1
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.01088601662367055,
+            "sampled_rms_vertex_to_source_edge_gap": 0.003848788087353465,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "46:10|376:8",
+              "159:8|311:0",
+              "159:8|391:8",
+              "46:10|391:8"
+            ],
+            "source_faces": [
+              [
+                "46:10|376:8",
+                "159:8|311:0",
+                "159:8|391:8"
+              ],
+              [
+                "46:10|376:8",
+                "159:8|391:8",
+                "46:10|391:8"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ]
+          },
+          {
+            "slab": 1,
+            "alpha": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 211,
+              "denominator": 10
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.008182230055544963,
+            "sampled_rms_vertex_to_source_edge_gap": 0.0028928551787521122,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "46:10|376:8",
+              "159:8|311:0",
+              "159:8|391:8",
+              "46:10|391:8"
+            ],
+            "source_faces": [
+              [
+                "46:10|376:8",
+                "159:8|311:0",
+                "159:8|391:8"
+              ],
+              [
+                "46:10|376:8",
+                "159:8|391:8",
+                "46:10|391:8"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4864,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                928,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                32,
+                2,
+                0,
+                2
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "key": "event-03-0c61aa0982ef",
+      "event_id": "element=0;role=temporal_neighbour;face=7:10|243:0|155:8|325:8",
+      "source_ir_path": "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-03-0c61aa0982ef/critical_beb1_event_ir.json",
+      "source_ir_sha256": "f9bc6fc6361f30e88437acfcce5b88e1fdb799c617e7932ed740cdb1f7030bbd",
+      "levels_internal": {
+        "lower": {
+          "numerator": 102,
+          "denominator": 5
+        },
+        "root": {
+          "numerator": 104,
+          "denominator": 5
+        },
+        "upper": {
+          "numerator": 106,
+          "denominator": 5
+        }
+      },
+      "levels_global_seconds": {
+        "lower": {
+          "numerator": 910486912009974999,
+          "denominator": 1441151880758558720
+        },
+        "root": {
+          "numerator": 927750890725546993,
+          "denominator": 1441151880758558720
+        },
+        "upper": {
+          "numerator": 945014869441118987,
+          "denominator": 1441151880758558720
+        }
+      },
+      "window_seconds_float": 0.02395858333333333,
+      "original_24fps_half_phase": {
+        "fps": 24,
+        "phase_in_frames": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "formula": "(index + phase_in_frames) / fps",
+        "closed_window_count": 1,
+        "open_window_count": 1,
+        "left_open_slab_count": 0,
+        "right_open_slab_count": 1,
+        "hits": [
+          {
+            "index_zero_based": 15,
+            "seconds": {
+              "numerator": 31,
+              "denominator": 48
+            },
+            "location": "right_open_slab"
+          }
+        ]
+      },
+      "predeclared_zero_phase_grids": [
+        {
+          "fps": 24,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 0,
+          "open_window_count": 0,
+          "left_open_slab_count": 0,
+          "right_open_slab_count": 0,
+          "hits": []
+        },
+        {
+          "fps": 48,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 1,
+          "open_window_count": 1,
+          "left_open_slab_count": 0,
+          "right_open_slab_count": 1,
+          "hits": [
+            {
+              "index_zero_based": 31,
+              "seconds": {
+                "numerator": 31,
+                "denominator": 48
+              },
+              "location": "right_open_slab"
+            }
+          ]
+        },
+        {
+          "fps": 96,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 2,
+          "open_window_count": 2,
+          "left_open_slab_count": 1,
+          "right_open_slab_count": 1,
+          "hits": [
+            {
+              "index_zero_based": 61,
+              "seconds": {
+                "numerator": 61,
+                "denominator": 96
+              },
+              "location": "left_open_slab"
+            },
+            {
+              "index_zero_based": 62,
+              "seconds": {
+                "numerator": 31,
+                "denominator": 48
+              },
+              "location": "right_open_slab"
+            }
+          ]
+        },
+        {
+          "fps": 192,
+          "phase_in_frames": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "formula": "(index + phase_in_frames) / fps",
+          "closed_window_count": 4,
+          "open_window_count": 4,
+          "left_open_slab_count": 2,
+          "right_open_slab_count": 2,
+          "hits": [
+            {
+              "index_zero_based": 122,
+              "seconds": {
+                "numerator": 61,
+                "denominator": 96
+              },
+              "location": "left_open_slab"
+            },
+            {
+              "index_zero_based": 123,
+              "seconds": {
+                "numerator": 41,
+                "denominator": 64
+              },
+              "location": "left_open_slab"
+            },
+            {
+              "index_zero_based": 124,
+              "seconds": {
+                "numerator": 31,
+                "denominator": 48
+              },
+              "location": "right_open_slab"
+            },
+            {
+              "index_zero_based": 125,
+              "seconds": {
+                "numerator": 125,
+                "denominator": 192
+              },
+              "location": "right_open_slab"
+            }
+          ]
+        }
+      ],
+      "exact_legacy_rotation_contract": {
+        "schema": "binoc-linear-sidewall-contract-v1",
+        "pass": true,
+        "verdict": "PASS_LINEAR_SIDEWALL_NECESSARY_CONTRACT",
+        "arithmetic": "Exact rational predicates on serialized binary64 positions; no epsilon.",
+        "scope": "Boundary of the legacy two-triangle-per-edge linear 4D wall only; not whole-window admission.",
+        "edges": [
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              0,
+              1
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "9075/65536",
+            "parallel_exact": true,
+            "noncollapsing_same_direction": true,
+            "compatible": true
+          },
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              1,
+              2
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "3025/262144",
+            "parallel_exact": true,
+            "noncollapsing_same_direction": true,
+            "compatible": true
+          },
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              2,
+              3
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "27225/65536",
+            "parallel_exact": true,
+            "noncollapsing_same_direction": true,
+            "compatible": true
+          },
+          {
+            "slab": 0,
+            "boundary_edge_indices": [
+              3,
+              0
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "75625/262144",
+            "parallel_exact": true,
+            "noncollapsing_same_direction": true,
+            "compatible": true
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              0,
+              1
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "9075/131072",
+            "parallel_exact": true,
+            "noncollapsing_same_direction": true,
+            "compatible": true
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              1,
+              2
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "9075/262144",
+            "parallel_exact": true,
+            "noncollapsing_same_direction": true,
+            "compatible": true
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              2,
+              3
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "21175/65536",
+            "parallel_exact": true,
+            "noncollapsing_same_direction": true,
+            "compatible": true
+          },
+          {
+            "slab": 1,
+            "boundary_edge_indices": [
+              3,
+              0
+            ],
+            "edge_cross_product_exact": [
+              "0",
+              "0",
+              "0"
+            ],
+            "edge_dot_product_exact": "75625/262144",
+            "parallel_exact": true,
+            "noncollapsing_same_direction": true,
+            "compatible": true
+          }
+        ],
+        "incompatible_edges": 0
+      },
+      "source_interval_audit": {
+        "interval_stability_certificate": "UNKNOWN",
+        "reason": "Candidate branch boundaries are extracted analytically for registry-linked records and observed boundary VIDs. Full exterior incidence, selected-owner equivalence, and all-source ownership over the interval remain uncertified.",
+        "registry_record_count": 14,
+        "source_edge_count": 11,
+        "boundary_source_intervals": [
+          {
+            "source_vid": "7:10|321:8",
+            "raw_times": [
+              22,
+              18
+            ],
+            "effective_interpolation_interval": [
+              20,
+              22
+            ],
+            "endpoint_halfspans": [
+              2,
+              2
+            ],
+            "endpoint_in_view": [
+              0,
+              1
+            ]
+          },
+          {
+            "source_vid": "7:10|325:8",
+            "raw_times": [
+              22,
+              20
+            ],
+            "effective_interpolation_interval": [
+              20,
+              22
+            ],
+            "endpoint_halfspans": [
+              2,
+              4
+            ],
+            "endpoint_in_view": [
+              0,
+              1
+            ]
+          },
+          {
+            "source_vid": "155:8|243:0",
+            "raw_times": [
+              24,
+              16
+            ],
+            "effective_interpolation_interval": [
+              16,
+              24
+            ],
+            "endpoint_halfspans": [
+              8,
+              16
+            ],
+            "endpoint_in_view": [
+              0,
+              1
+            ]
+          },
+          {
+            "source_vid": "155:8|325:8",
+            "raw_times": [
+              24,
+              20
+            ],
+            "effective_interpolation_interval": [
+              20,
+              24
+            ],
+            "endpoint_halfspans": [
+              8,
+              4
+            ],
+            "endpoint_in_view": [
+              0,
+              1
+            ]
+          }
+        ],
+        "candidate_breakpoints_in_closed_window": [],
+        "slabs": [
+          {
+            "slab": 0,
+            "internal_candidates": [],
+            "stability": "UNKNOWN"
+          },
+          {
+            "slab": 1,
+            "internal_candidates": [],
+            "stability": "UNKNOWN"
+          }
+        ]
+      },
+      "legacy_sidewall_samples": {
+        "status": "FINITE_DIAGNOSTIC_NOT_A_CERTIFICATE",
+        "sampling": "Fixed alpha=1/4,1/2,3/4 in each slab; duplicate shared wall-vertices remain in RMS.",
+        "distance": "One-way sliced old-wall vertices to corresponding ordinary boundary edge; not Hausdorff and not the continuous-time maximum.",
+        "maximum_over_samples": 0.0,
+        "samples": [
+          {
+            "slab": 0,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 41,
+              "denominator": 2
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.0,
+            "sampled_rms_vertex_to_source_edge_gap": 0.0,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "7:10|321:8",
+              "7:10|325:8",
+              "155:8|325:8",
+              "155:8|243:0"
+            ],
+            "source_faces": [
+              [
+                "7:10|321:8",
+                "7:10|325:8",
+                "155:8|325:8"
+              ],
+              [
+                "7:10|321:8",
+                "155:8|325:8",
+                "155:8|243:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "slab": 0,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "internal_time": {
+              "numerator": 103,
+              "denominator": 5
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.0,
+            "sampled_rms_vertex_to_source_edge_gap": 0.0,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "7:10|321:8",
+              "7:10|325:8",
+              "155:8|325:8",
+              "155:8|243:0"
+            ],
+            "source_faces": [
+              [
+                "7:10|321:8",
+                "7:10|325:8",
+                "155:8|325:8"
+              ],
+              [
+                "7:10|321:8",
+                "155:8|325:8",
+                "155:8|243:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "slab": 0,
+            "alpha": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 207,
+              "denominator": 10
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.0,
+            "sampled_rms_vertex_to_source_edge_gap": 0.0,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "7:10|321:8",
+              "7:10|325:8",
+              "155:8|325:8",
+              "155:8|243:0"
+            ],
+            "source_faces": [
+              [
+                "7:10|321:8",
+                "7:10|325:8",
+                "155:8|325:8"
+              ],
+              [
+                "7:10|321:8",
+                "155:8|325:8",
+                "155:8|243:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "slab": 1,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 209,
+              "denominator": 10
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.0,
+            "sampled_rms_vertex_to_source_edge_gap": 0.0,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "7:10|321:8",
+              "7:10|325:8",
+              "155:8|325:8",
+              "155:8|243:0"
+            ],
+            "source_faces": [
+              [
+                "7:10|321:8",
+                "7:10|325:8",
+                "155:8|325:8"
+              ],
+              [
+                "7:10|321:8",
+                "155:8|325:8",
+                "155:8|243:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "slab": 1,
+            "alpha": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "internal_time": {
+              "numerator": 21,
+              "denominator": 1
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.0,
+            "sampled_rms_vertex_to_source_edge_gap": 0.0,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "7:10|321:8",
+              "7:10|325:8",
+              "155:8|325:8",
+              "155:8|243:0"
+            ],
+            "source_faces": [
+              [
+                "7:10|321:8",
+                "7:10|325:8",
+                "155:8|325:8"
+              ],
+              [
+                "7:10|321:8",
+                "155:8|325:8",
+                "155:8|243:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "slab": 1,
+            "alpha": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "internal_time": {
+              "numerator": 211,
+              "denominator": 10
+            },
+            "sampled_max_vertex_to_source_edge_gap": 0.0,
+            "sampled_rms_vertex_to_source_edge_gap": 0.0,
+            "sampled_vertex_count": 16,
+            "boundary_cycle": [
+              "7:10|321:8",
+              "7:10|325:8",
+              "155:8|325:8",
+              "155:8|243:0"
+            ],
+            "source_faces": [
+              [
+                "7:10|321:8",
+                "7:10|325:8",
+                "155:8|325:8"
+              ],
+              [
+                "7:10|321:8",
+                "155:8|325:8",
+                "155:8|243:0"
+              ]
+            ],
+            "raw_owner_references": [
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4866,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                16,
+                4868,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                930,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                8,
+                16,
+                932,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                34,
+                2,
+                0,
+                1
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                10,
+                16,
+                36,
+                2,
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

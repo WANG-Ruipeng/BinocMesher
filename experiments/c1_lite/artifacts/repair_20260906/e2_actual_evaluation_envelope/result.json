@@ -1,0 +1,366 @@
+{
+  "actual_source_suppressor_set_equivalence_proven": false,
+  "all_original_occurrence_certificate_stream_sha256": "e4a4d6ff3667ff32d238c4494c81c0be26b1f788d16c0140c8f5319abf56b710",
+  "arithmetic_binary_binding_verified": false,
+  "canonical_to_original_order_relation_unique": true,
+  "center_exact_anchor_then_RNE32_error": {
+    "denominator": 1427247692705959881058285969449495136382746624,
+    "numerator": 824287510886120955684473353256348680193
+  },
+  "center_runtime_implementation_verified": false,
+  "diagnostics": [],
+  "event_key": "event-02-88ade47aa4fa",
+  "exact_rational_source_occurrence_model_complete": true,
+  "full_window_rollback_proven": false,
+  "interface_identity": [
+    {
+      "effective_lower": 18,
+      "effective_upper": 22,
+      "minimum_clamp_clearance": {
+        "denominator": 5,
+        "numerator": 4
+      },
+      "original_ordered_source_vid": "376:8|46:10",
+      "source_vid": "46:10|376:8",
+      "stable_actual_original_vid_entire_window": true
+    },
+    {
+      "effective_lower": 16,
+      "effective_upper": 24,
+      "minimum_clamp_clearance": {
+        "denominator": 5,
+        "numerator": 14
+      },
+      "original_ordered_source_vid": "311:0|159:8",
+      "source_vid": "159:8|311:0",
+      "stable_actual_original_vid_entire_window": true
+    },
+    {
+      "effective_lower": 20,
+      "effective_upper": 24,
+      "minimum_clamp_clearance": {
+        "denominator": 5,
+        "numerator": 2
+      },
+      "original_ordered_source_vid": "391:8|159:8",
+      "source_vid": "159:8|391:8",
+      "stable_actual_original_vid_entire_window": true
+    },
+    {
+      "effective_lower": 20,
+      "effective_upper": 22,
+      "minimum_clamp_clearance": {
+        "denominator": 5,
+        "numerator": 2
+      },
+      "original_ordered_source_vid": "391:8|46:10",
+      "source_vid": "46:10|391:8",
+      "stable_actual_original_vid_entire_window": true
+    }
+  ],
+  "merge_argument": [
+    "Every emitted polygon vertex is covered, including polygons that emit no fan faces and vertices of suppressed faces.",
+    "Noncollapsed actual pairs are the original ordered VID; identical VID evaluations use the same HV endpoints and the same actual double time.",
+    "At a collapsed endpoint, binary32 HV times an int8 integer span fits exactly in binary64; dividing by that exact integer rounds to the original representable HV coordinate. All representatives of the collapsed ID coincide.",
+    "A remote ID may clamp slightly before an exact threshold. Its continuous clamped coordinate trajectory is Lipschitz, so the time-error envelope applies on both sides; exact effective-ID equality is not claimed for remote entities.",
+    "Four interface IDs remain noncollapsed by the strict all-window clearance; no collapsed endpoint ID can alias one of these noncollapsed two-endpoint IDs."
+  ],
+  "original_inputs_unchanged": true,
+  "physical_entry_owner_equivalence_proven": false,
+  "production_modified": false,
+  "remaining_external_obligations": [
+    "Bind runtime compiled library, IEEE mode/flags, HV cache digest and actual deltaT to this declared arithmetic profile.",
+    "Bind exact rational raw selector and source suppressor to the owner ledger, including singleton boundary policy.",
+    "Verify the replacement center follows the original exact anchors then one RNE32 conversion; preserve all shared actual final-array coordinates.",
+    "Compose with conditional perturbation, endpoint contract, topology and transactional whole-window admission; this report alone never admits runtime output."
+  ],
+  "runtime_admitted": false,
+  "sampling_used_as_proof": false,
+  "schema": "c1-lite-actual-evaluation-envelope-v1",
+  "script_sha256": "d879a203835f1fb91bf90f4a536f26dd5afb93c7ae07c46141f313dba35b52aa",
+  "source_cache_sha256": "329c7681d849938a86e1f8812a1d05e3018070a06fb4bd070b81fd6ffb6cd3f6",
+  "source_envelope": {
+    "arithmetic_assumptions": [
+      "T is IEEE binary64; spaceT is IEEE binary32; RNE ties-to-even; gradual underflow; no fast-math reassociation.",
+      "GCC Linux long double has precision at least binary64; rational int64 numerator/denominator are positive and <=2^63-1.",
+      "deltaT is a fixed binary64 in [2^-100,2^100]; no overflow/underflow in the time conversion.",
+      "All emitted HV coordinates are binary32, abs <=2^40; nonzero magnitudes >=2^-64; effective time endpoints are int8 integers.",
+      "E2 tau lies in [102/5,106/5]; every emitted source pair has ordered times and a positive effective span, or identical endpoint coordinates.",
+      "A positive span is an exact integer >=1. Binary64 interpolation intermediates are normal or zero under these exponent bounds."
+    ],
+    "delta_t": {
+      "denominator": 288230376151711744,
+      "numerator": 8631989357785997
+    },
+    "delta_t_runtime_binding_verified": false,
+    "delta_t_supplied_and_in_profile": true,
+    "exact_error_below_target": true,
+    "exact_rational_entry_coordinate_error": {
+      "denominator": 48695092250272389342250587466099440734431319523868377350144,
+      "numerator": 3192699122563911425701833048543158272865262763938708511
+    },
+    "final_binary32_cast_error": {
+      "denominator": 146085276750817168026751762398298322203293958571605132050432,
+      "numerator": 9578097130411805364739668919689432397617221868184499293
+    },
+    "gamma8_binary64": {
+      "denominator": 1125899906842623,
+      "numerator": 1
+    },
+    "interpolation_binary64_error": {
+      "denominator": 102354536985693,
+      "numerator": 100
+    },
+    "maximum_coordinate": {
+      "denominator": 1,
+      "numerator": 1100
+    },
+    "maximum_slope": {
+      "denominator": 8,
+      "numerator": 275
+    },
+    "models": {
+      "exact_rational": "Compare actual geometry to the ideal source at the requested exact tau; rational selectors are separate from rounded interpolation time.",
+      "physical_actual_discrete_double": "Compare to ideal at Fraction(actual binary64 physical/deltaT); this does not prove the physical cache-group or owner selector matches the rational-entry ledger."
+    },
+    "physical_entry_actual_discrete_double_coordinate_error": {
+      "denominator": 146085276750817168026751762398298322203293958571605132050432,
+      "numerator": 9578097273136574635335657025518029342566735506459161693
+    },
+    "physical_error_below_target": true,
+    "rational_entry_discrete_time_error": {
+      "denominator": 5629499534213115,
+      "numerator": 106
+    },
+    "target_epsilon": {
+      "denominator": 1024,
+      "numerator": 1
+    },
+    "tau_upper": {
+      "denominator": 5,
+      "numerator": 106
+    }
+  },
+  "source_report_sha256": "6b7f08fb7689ef8e62002c787e301a321fb343cda16d1ce37c54021b58c92dc2",
+  "status": "PASS_ANALYTIC_ENVELOPE_UNDER_DECLARED_ARITHMETIC",
+  "unique_original_ordered_source_pairs": 1831,
+  "units": [
+    {
+      "all_original_replicas_share_ideal_trajectory": true,
+      "complete_exact_partition_checked": true,
+      "counts": {
+        "all_emitted_polygon_vertex_occurrences": 10938,
+        "emitted_polygons": 2838,
+        "no_fan_polygons": 0,
+        "noncanonical_original_order": 4496,
+        "zero_span_constant_occurrences": 0
+      },
+      "emitted_raw_fan_owners": 5262,
+      "exact_raw_owner_ledger_set_match": true,
+      "index": 0,
+      "interface_source_ids_present": [
+        "159:8|311:0",
+        "159:8|391:8",
+        "46:10|376:8",
+        "46:10|391:8"
+      ],
+      "kind": "affine_branch",
+      "merged_ideal_id_count_including_no_fan_polygons": 1831,
+      "partition_proof": "build_retained_unit requires no internal source/global-group/expanded-or-original record-time threshold; source partition includes all serialized polygon vertices, including no-fan polygons. The midpoint labels this proven constant open cell, not an empirical sample.",
+      "t0": {
+        "denominator": 5,
+        "numerator": 102
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 104
+      }
+    },
+    {
+      "all_original_replicas_share_ideal_trajectory": true,
+      "complete_exact_partition_checked": true,
+      "counts": {
+        "all_emitted_polygon_vertex_occurrences": 10938,
+        "emitted_polygons": 2838,
+        "no_fan_polygons": 0,
+        "noncanonical_original_order": 4496,
+        "zero_span_constant_occurrences": 0
+      },
+      "emitted_raw_fan_owners": 5262,
+      "exact_raw_owner_ledger_set_match": true,
+      "index": 1,
+      "interface_source_ids_present": [
+        "159:8|311:0",
+        "159:8|391:8",
+        "46:10|376:8",
+        "46:10|391:8"
+      ],
+      "kind": "affine_branch",
+      "merged_ideal_id_count_including_no_fan_polygons": 1831,
+      "partition_proof": "build_retained_unit requires no internal source/global-group/expanded-or-original record-time threshold; source partition includes all serialized polygon vertices, including no-fan polygons. The midpoint labels this proven constant open cell, not an empirical sample.",
+      "t0": {
+        "denominator": 5,
+        "numerator": 104
+      },
+      "t1": {
+        "denominator": 1,
+        "numerator": 21
+      }
+    },
+    {
+      "all_original_replicas_share_ideal_trajectory": true,
+      "complete_exact_partition_checked": true,
+      "counts": {
+        "all_emitted_polygon_vertex_occurrences": 10938,
+        "emitted_polygons": 2838,
+        "no_fan_polygons": 0,
+        "noncanonical_original_order": 4496,
+        "zero_span_constant_occurrences": 0
+      },
+      "emitted_raw_fan_owners": 5262,
+      "exact_raw_owner_ledger_set_match": true,
+      "index": 2,
+      "interface_source_ids_present": [
+        "159:8|311:0",
+        "159:8|391:8",
+        "46:10|376:8",
+        "46:10|391:8"
+      ],
+      "kind": "affine_branch",
+      "merged_ideal_id_count_including_no_fan_polygons": 1831,
+      "partition_proof": "build_retained_unit requires no internal source/global-group/expanded-or-original record-time threshold; source partition includes all serialized polygon vertices, including no-fan polygons. The midpoint labels this proven constant open cell, not an empirical sample.",
+      "t0": {
+        "denominator": 1,
+        "numerator": 21
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 106
+      }
+    },
+    {
+      "all_original_replicas_share_ideal_trajectory": true,
+      "complete_exact_partition_checked": true,
+      "counts": {
+        "all_emitted_polygon_vertex_occurrences": 10938,
+        "emitted_polygons": 2838,
+        "no_fan_polygons": 0,
+        "noncanonical_original_order": 4496,
+        "zero_span_constant_occurrences": 0
+      },
+      "emitted_raw_fan_owners": 5262,
+      "exact_raw_owner_ledger_set_match": true,
+      "index": 0,
+      "interface_source_ids_present": [
+        "159:8|311:0",
+        "159:8|391:8",
+        "46:10|376:8",
+        "46:10|391:8"
+      ],
+      "kind": "actual_singleton",
+      "merged_ideal_id_count_including_no_fan_polygons": 1831,
+      "partition_proof": "build_retained_unit requires no internal source/global-group/expanded-or-original record-time threshold; source partition includes all serialized polygon vertices, including no-fan polygons. The midpoint labels this proven constant open cell, not an empirical sample.",
+      "t0": {
+        "denominator": 5,
+        "numerator": 102
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 102
+      }
+    },
+    {
+      "all_original_replicas_share_ideal_trajectory": true,
+      "complete_exact_partition_checked": true,
+      "counts": {
+        "all_emitted_polygon_vertex_occurrences": 10938,
+        "emitted_polygons": 2838,
+        "no_fan_polygons": 0,
+        "noncanonical_original_order": 4496,
+        "zero_span_constant_occurrences": 0
+      },
+      "emitted_raw_fan_owners": 5262,
+      "exact_raw_owner_ledger_set_match": true,
+      "index": 1,
+      "interface_source_ids_present": [
+        "159:8|311:0",
+        "159:8|391:8",
+        "46:10|376:8",
+        "46:10|391:8"
+      ],
+      "kind": "actual_singleton",
+      "merged_ideal_id_count_including_no_fan_polygons": 1831,
+      "partition_proof": "build_retained_unit requires no internal source/global-group/expanded-or-original record-time threshold; source partition includes all serialized polygon vertices, including no-fan polygons. The midpoint labels this proven constant open cell, not an empirical sample.",
+      "t0": {
+        "denominator": 5,
+        "numerator": 104
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 104
+      }
+    },
+    {
+      "all_original_replicas_share_ideal_trajectory": true,
+      "complete_exact_partition_checked": true,
+      "counts": {
+        "all_emitted_polygon_vertex_occurrences": 10938,
+        "emitted_polygons": 2838,
+        "no_fan_polygons": 0,
+        "noncanonical_original_order": 4496,
+        "zero_span_constant_occurrences": 0
+      },
+      "emitted_raw_fan_owners": 5262,
+      "exact_raw_owner_ledger_set_match": true,
+      "index": 2,
+      "interface_source_ids_present": [
+        "159:8|311:0",
+        "159:8|391:8",
+        "46:10|376:8",
+        "46:10|391:8"
+      ],
+      "kind": "actual_singleton",
+      "merged_ideal_id_count_including_no_fan_polygons": 1831,
+      "partition_proof": "build_retained_unit requires no internal source/global-group/expanded-or-original record-time threshold; source partition includes all serialized polygon vertices, including no-fan polygons. The midpoint labels this proven constant open cell, not an empirical sample.",
+      "t0": {
+        "denominator": 1,
+        "numerator": 21
+      },
+      "t1": {
+        "denominator": 1,
+        "numerator": 21
+      }
+    },
+    {
+      "all_original_replicas_share_ideal_trajectory": true,
+      "complete_exact_partition_checked": true,
+      "counts": {
+        "all_emitted_polygon_vertex_occurrences": 10938,
+        "emitted_polygons": 2838,
+        "no_fan_polygons": 0,
+        "noncanonical_original_order": 4496,
+        "zero_span_constant_occurrences": 0
+      },
+      "emitted_raw_fan_owners": 5262,
+      "exact_raw_owner_ledger_set_match": true,
+      "index": 3,
+      "interface_source_ids_present": [
+        "159:8|311:0",
+        "159:8|391:8",
+        "46:10|376:8",
+        "46:10|391:8"
+      ],
+      "kind": "actual_singleton",
+      "merged_ideal_id_count_including_no_fan_polygons": 1831,
+      "partition_proof": "build_retained_unit requires no internal source/global-group/expanded-or-original record-time threshold; source partition includes all serialized polygon vertices, including no-fan polygons. The midpoint labels this proven constant open cell, not an empirical sample.",
+      "t0": {
+        "denominator": 5,
+        "numerator": 106
+      },
+      "t1": {
+        "denominator": 5,
+        "numerator": 106
+      }
+    }
+  ]
+}

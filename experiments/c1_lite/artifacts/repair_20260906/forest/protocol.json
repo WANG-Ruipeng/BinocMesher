@@ -1,0 +1,36 @@
+{
+  "atmosphere_pixels_per_cube": 100,
+  "build_script_sha256": "95c4638379052d25295477795b9c275a5336f6e1852088fc7e777d4f1826d4d4",
+  "coarse_pixels_per_cube": 30,
+  "disk_budget_bytes": 2000000000,
+  "early_disk_stop_bytes": 1500000000,
+  "fading_time": 1,
+  "fps": 24,
+  "frames_inclusive": [
+    1,
+    24
+  ],
+  "limitations": [
+    "Shortened camera window changes temporal subdivision/cache and is not the old 96-frame cache.",
+    "6px matches the existing pilot, not the paper 3px final setting.",
+    "Disk is supervised every 0.2 seconds with a 500 MB reserve and 128 MiB per-file cap; not an OS directory quota.",
+    "No production C1 transition, eligibility certificate, geometry quality comparison, or rendering."
+  ],
+  "maximum_worker_wall_seconds": 1200,
+  "omp_threads": 8,
+  "opaque_pixels_per_cube": 6,
+  "output": "/home/warpwang/binoc-runs/forest-census-repair-20260906",
+  "outview_pixels_per_cube": 120,
+  "per_file_limit_bytes": 134217728,
+  "provenance_enabled": true,
+  "registry_enabled": true,
+  "rendering_permitted": false,
+  "resolution": [
+    960,
+    540
+  ],
+  "schema": "c1-lite-forest-census-pilot-v1",
+  "seed": 0,
+  "selection": "Earliest fixed 24 Forest frames; no outcome-dependent reselection.",
+  "source_scene_root": "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0"
+}

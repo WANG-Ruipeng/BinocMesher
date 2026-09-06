@@ -165,6 +165,26 @@ extern "C" {
         bool extra_smooth=true
     ) noexcept;
     const char *slicing_last_error() noexcept;
+    // Opt-in ACTUAL raw identity observer. No mesh mutation. Status values:
+    // 0 disabled, 1 ready, 2 unsupported/not ready, 3 observation error.
+    // Requires BPM2 provenance, extra_smooth=false, and no SSP1 plan. The
+    // enable request persists across cleanup; snapshots do not. Read counts
+    // and arrays after a successful run, before cleanup or another run.
+    // Vertex rows: ordered (HVID0.node, HVID0.group, HVID1.node, HVID1.group).
+    // Owner rows: TriangleRef seven fields, final_face_id, final v0/v1/v2.
+    // Multiple rows may share one final face. Capacities are INTS, not rows.
+    // Counts return -1 when unavailable; output calls return 0 or -1.
+    void slicing_identity_enable(bool enabled) noexcept;
+    int slicing_identity_status() noexcept;
+    const char* slicing_identity_last_error() noexcept;
+    int slicing_identity_vertex_count(int element) noexcept;
+    int slicing_identity_owner_count(int element) noexcept;
+    int slicing_identity_output_vertices(int element, int* rows, int int_capacity) noexcept;
+    int slicing_identity_output_owners(int element, int* rows, int int_capacity) noexcept;
+    // Explicitly discard every pending element output without copying arrays.
+    // Safe after success/failure and idempotent; invalidates identity snapshots.
+    // Does not change the existing slicing_clean_up lifecycle contract.
+    void slicing_discard_output() noexcept;
     // actually output the mesh data
     void slicing_output(int ele, T *output_verts, int *output_faces, int *output_inview);
     // clean up slicing data

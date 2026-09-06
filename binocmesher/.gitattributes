@@ -1,0 +1,8 @@
+# Preserve the exact tested E2 source bytes, including existing line endings.
+# verification.json binds these files by raw SHA256, not normalized text.
+core.py -text
+window_runtime.py -text
+window_geometry_runtime.py -text
+source/slicing.cpp -text
+source/slicing.h -text
+source/runtime_identity.h -text
