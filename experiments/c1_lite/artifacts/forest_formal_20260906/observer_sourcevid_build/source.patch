@@ -1,0 +1,126 @@
+--- a/source/slicing.h
++++ b/source/slicing.h
+@@ -177,6 +177,10 @@
+     void slicing_identity_enable(bool enabled) noexcept;
+     int slicing_identity_status() noexcept;
+     const char* slicing_identity_last_error() noexcept;
++    // Encoding v2 restores original effective ordered SourceVIDs. Shift rows
++    // have shape 5x4, node0/group0/node1/group1; empty elements are zero.
++    int slicing_identity_source_vid_encoding_version() noexcept;
++    int slicing_identity_output_source_vid_shifts(int* rows, int int_capacity) noexcept;
+     int slicing_identity_vertex_count(int element) noexcept;
+     int slicing_identity_owner_count(int element) noexcept;
+     int slicing_identity_output_vertices(int element, int* rows, int int_capacity) noexcept;
+--- a/source/slicing.cpp
++++ b/source/slicing.cpp
+@@ -711,6 +711,7 @@
+         max_n = smax(max_n, index%2? a[i].first[index/2].first: a[i].first[index/2].second);
+         min_n = smin(min_n, index%2? a[i].first[index/2].first: a[i].first[index/2].second);
+     }
++    runtime_identity::record_sort_shift(ele, index, min_n);
+     for (int i = 0; i < a.size(); i++) {
+         if (index%2) {
+             a[i].first[index/2].first -= min_n;
+@@ -1291,6 +1292,13 @@
+     const char* slicing_identity_last_error() noexcept {
+         return runtime_identity::state.message;
+     }
++    int slicing_identity_source_vid_encoding_version() noexcept {
++        // v2 = compute_slice effective ordered VID, BEFORE bucket normalization.
++        return 2;
++    }
++    int slicing_identity_output_source_vid_shifts(int* rows, int int_capacity) noexcept {
++        return runtime_identity::output_source_vid_shifts(rows, int_capacity);
++    }
+     int slicing_identity_vertex_count(int element) noexcept {
+         return runtime_identity::count(element, false);
+     }
+--- a/source/runtime_identity.h
++++ b/source/runtime_identity.h
+@@ -4,6 +4,7 @@
+ // Opt-in provenance of ACTUAL raw slicing arrays; never mutates mesh data.
+ // VID rows preserve the ordered HVID pair used by the upstream merger.
+ #include <cstring>
++#include <climits>
+ #include <vector>
+ 
+ namespace runtime_identity {
+@@ -22,6 +23,9 @@
+     int vertex_total = 0;
+     int owner_total = 0;
+     bool finalized[kElements]{};
++    // Export-order columns: node0, group0, node1, group1.
++    int source_vid_shifts[kElements][4]{};
++    unsigned char sort_passes[kElements]{};
+     char message[256]{};
+     std::vector<VertexRow> vertices[kElements];
+     std::vector<OwnerRow> owners[kElements];
+@@ -38,6 +42,9 @@
+         std::vector<VertexRow>().swap(state.vertices[element]);
+         std::vector<OwnerRow>().swap(state.owners[element]);
+         state.finalized[element] = false;
++        state.sort_passes[element] = 0;
++        for (int column = 0; column < 4; ++column)
++            state.source_vid_shifts[element][column] = 0;
+     }
+     state.vertex_total = state.owner_total = 0;
+     state.elements = 0;
+@@ -76,6 +83,22 @@
+     return element >= 0 && element < state.elements;
+ }
+ 
++// Sorting destructively subtracts each field minimum from the merger keys.
++// Observe, but NEVER modify, those keys or the legacy source-splice registry.
++inline void record_sort_shift(int element, int bucket_index, int minimum) noexcept {
++    if (!state.collecting) return;
++    if (!valid_element(element) || bucket_index < 0 || bucket_index >= 4) {
++        fail("Invalid source-VID sorting shift."); return;
++    }
++    const unsigned char bit = static_cast<unsigned char>(1u << bucket_index);
++    if (state.sort_passes[element] & bit) {
++        fail("A source-VID sorting pass was observed twice."); return;
++    }
++    // bucket passes are group0, node0, group1, node1.
++    state.source_vid_shifts[element][bucket_index ^ 1] = minimum;
++    state.sort_passes[element] |= bit;
++}
++
+ template<class Owner, class Face>
+ inline void record_owner(const Owner& owner, const Face& face) noexcept {
+     if (!state.collecting) return;
+@@ -109,6 +132,17 @@
+         }
+         VertexRow row{{vid[0].first, static_cast<int>(vid[0].second),
+                        vid[1].first, static_cast<int>(vid[1].second)}};
++        if (state.sort_passes[element] != 15) {
++            fail("Original source VID requires all four observed sorting shifts."); return;
++        }
++        for (int column = 0; column < 4; ++column) {
++            const long long original = static_cast<long long>(row.values[column]) +
++                                       state.source_vid_shifts[element][column];
++            if (original < INT_MIN || original > INT_MAX) {
++                fail("Restored original source VID exceeds the int ABI."); return;
++            }
++            row.values[column] = static_cast<int>(original);
++        }
+         state.vertices[element].push_back(row);
+         ++state.vertex_total;
+     } catch (...) { fail("Identity vertex allocation failed; baseline is unchanged."); }
+@@ -216,6 +250,17 @@
+     return 0;
+ }
+ 
++inline int output_source_vid_shifts(int* output, int capacity) noexcept {
++    if (state.status != ready || capacity < kElements*4 || output == nullptr) {
++        message("Original source-VID shifts require a ready snapshot and 20-int capacity.");
++        return -1;
++    }
++    for (int element = 0; element < kElements; ++element)
++        for (int column = 0; column < 4; ++column)
++            output[element*4+column] = state.source_vid_shifts[element][column];
++    return 0;
++}
++
+ inline int output_owners(int element, int* output, int capacity) noexcept {
+     const int rows = count(element, true);
+     if (rows < 0 || capacity < 0 || capacity < rows*11 || (rows && output == nullptr)) {

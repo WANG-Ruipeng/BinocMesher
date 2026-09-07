@@ -1,0 +1,15 @@
+--- frozen/source/runtime_identity.h
++++ isolated-observer/source/runtime_identity.h
+@@ -9,9 +9,9 @@
+ namespace runtime_identity {
+ enum Status { disabled = 0, ready = 1, unsupported = 2, error = 3 };
+ constexpr int kElements = 5;
+-constexpr int kMaximumVertices = 250000;
+-constexpr int kMaximumOwners = 250000;
+-constexpr int kMaximumFaces = 250000;
++constexpr int kMaximumVertices = 2000000;
++constexpr int kMaximumOwners = 8000000;
++constexpr int kMaximumFaces = 2000000;
+ struct VertexRow { int values[4]; };
+ struct OwnerRow { int values[11]; };
+ struct State {
