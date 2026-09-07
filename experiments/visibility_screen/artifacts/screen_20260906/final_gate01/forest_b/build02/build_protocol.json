@@ -1,0 +1,102 @@
+{
+  "budget_amendment": {
+    "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/budget_amendment01.json",
+    "sha256": "39ce0a8088c5c72a4b6595c8d054becf6c909410d4e70e1460a042f8488c2ac0"
+  },
+  "camera_path": "/home/warpwang/src/BinocMesher/infinigen_example_scenes/forest.txt",
+  "camera_path_sha256": "78000978c1910ff7b99eb76d8074b9960cd53a93d3bbb23042362ccdfd5a01a7",
+  "campaign_deadline_utc": "2026-09-06T19:28:39+00:00",
+  "coarse_regenerated": false,
+  "driver_snapshot_sha256": "556ebbf95168e96ed81e06d3238e89ad2fee6a0f8dfe64856b5969f8e1005a5c",
+  "effective_budgets": {
+    "build_peak_rss_bytes": 17179869184,
+    "cache_per_scene_output_bytes": 8589934592,
+    "cache_per_scene_wall_seconds": 5400,
+    "certification_and_screen_per_scene_wall_seconds": 3600,
+    "cleanup": "Remove only validated run-owned temporary cache copies and disposable coarse intermediates after input verification; preserve compact results and required rerun inputs. No environment deletion.",
+    "coarse_per_scene_output_bytes": 8589934592,
+    "coarse_per_scene_wall_seconds": 3600,
+    "maximum_campaign_wall_seconds": 32400,
+    "maximum_compact_reports_and_images_bytes": 536870912,
+    "maximum_new_persistent_bytes": 32000000000,
+    "native_query_peak_rss_bytes": 8589934592,
+    "persistent_full_mesh_video_files": 0,
+    "post_displacement_pilot_wall_seconds": 1800,
+    "preserve_original_inputs_and_old_evidence": true,
+    "simultaneous_heavy_scene_workers": 1,
+    "small_visual_experiment_wall_seconds": 1800,
+    "source_per_scene_wall_seconds": 1200,
+    "total_existing_and_new_storage_limit_bytes": 400000000000
+  },
+  "native_only_scope": "Opaque occupancy/cache, no post-surface-displacement, no exported/rendered scene.",
+  "only_supervisor_native_wall_and_output_ceiling_amended": true,
+  "output": "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02",
+  "overrides": [
+    "fine_terrain.mesher_backend=\"BinocMesher\"",
+    "BinocMesher.pixels_per_cube=6",
+    "BinocMesher.pixels_per_cube_coarse=30",
+    "BinocMesher.pixels_per_cube_outview=120",
+    "BinocMesher.min_dist=0.1",
+    "BinocMesher.fading_time=1",
+    "Terrain.device=\"cpu\"",
+    "execute_tasks.generate_resolution=[960,540]",
+    "execute_tasks.camera_id=[0,0]",
+    "scene.upsidedown_mountains_chance=0",
+    "scene.sdf_trees_chance=1",
+    "nishita_lighting.sun_elevation=20",
+    "nishita_lighting.sun_rotation=0",
+    "shader_atmosphere.density=0.0005",
+    "shader_atmosphere.anisotropy=0.8",
+    "compose_nature.load_cameras=\"../infinigen_example_scenes/forest.txt\"",
+    "execute_tasks.frame_range=[97,160]"
+  ],
+  "per_file_limit_bytes": 1073741824,
+  "previous_attempt_contract": {
+    "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/forest_b/build01/build_protocol.json",
+    "sha256": "a0f656a20f10c1e02bed3a9ec510a7b94713e5ea822a3a5e556c475dfd2ed665"
+  },
+  "production_algorithm_modified": false,
+  "protocol_sha256": "9f8ec007632e763383d87ad544d4be2d0069bc506a89d3f38734e3c1bb6d2ae1",
+  "repo": "/home/warpwang/src/BinocMesher",
+  "resource_reserve_bytes": 268435456,
+  "schema": "registered-scene-build-attempt-v1",
+  "segment": {
+    "asset_action": "REUSE_SAVED_SCENE_AND_PRIVATE_ASSET_COPY",
+    "camera_evaluation": "Saved original Blender BEZIER keyframes at 1,120,240,360,480, evaluated at absolute frames 97..160; do not replace by linear interpolation or new path.",
+    "camera_path": "../infinigen_example_scenes/forest.txt",
+    "camera_path_sha256": "78000978c1910ff7b99eb76d8074b9960cd53a93d3bbb23042362ccdfd5a01a7",
+    "configs": [
+      "mountain",
+      "monocular",
+      "simple",
+      "no_assets"
+    ],
+    "first_frame": 97,
+    "fps": 24,
+    "last_frame": 160,
+    "pixels_per_cube": 6,
+    "scene": "Forest",
+    "scene_overrides": [
+      "scene.upsidedown_mountains_chance=0",
+      "scene.sdf_trees_chance=1",
+      "nishita_lighting.sun_elevation=20",
+      "nishita_lighting.sun_rotation=0",
+      "shader_atmosphere.density=0.0005",
+      "shader_atmosphere.anisotropy=0.8"
+    ],
+    "seed": 0,
+    "segment_id": "forest_b",
+    "source_scene_root": "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0",
+    "source_scene_sha256": "ba63ee3b72e800d67ebf81fa7a35997cb2366a7f3889c4dd243e0614c50902fe"
+  },
+  "source_reuse": {
+    "driver_sha256": "556ebbf95168e96ed81e06d3238e89ad2fee6a0f8dfe64856b5969f8e1005a5c",
+    "driver_snapshot": "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt01/driver_snapshot.py",
+    "previous_build_report": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/forest_b/build01",
+    "source_coarse": "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse",
+    "source_inventory_path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/forest_b/build01/native_source_before.json",
+    "source_inventory_sha256": "b5d6f3be80002697614a6851f7ce77b9371222b46f7cfd565685da62b0a370f5"
+  },
+  "supervisor_sha256": "999b3ada9744e29b7be86bc228ac2828631c42746ef8468d8ee5b608d84f87a6",
+  "worker_uses_original_protocol_unchanged": true
+}

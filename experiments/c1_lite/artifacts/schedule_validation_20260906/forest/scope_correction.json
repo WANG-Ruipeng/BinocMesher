@@ -1,0 +1,131 @@
+{
+  "schema": "forest131-direct-face-proxy-scope-correction-v1",
+  "authority": "This correction controls the scientific interpretation of the unchanged first-run summary.json, events.json and same_root_pairs.json.",
+  "raw_outputs_unchanged": true,
+  "raw_output_sha256": {
+    "summary.json": "0598a3d5d164ad94760a127a8e303fb2162bed6c0f7861f1fbdbaa050228de53",
+    "events.json": "17e9afe93feb2562c2dbc4f4c66110e5ae80b34753d0945546abc7e7771342b0",
+    "same_root_pairs.json": "acb69169c692694a4e74cb8f29520cb580b338f0db5cc209ada11130e403d51e"
+  },
+  "applies_to": {
+    "all_canonical_events": 131,
+    "event_set": "All 131 IDs in the SHA256-bound events.json; no subset selection.",
+    "raw_observations": 440,
+    "logical_incidences": 268,
+    "scope": "Frozen 64-frame Forest6px OpaqueTerrain cache, PRE_SURFACE_DISPLACEMENT only. Not completed Infinigen geometry and not six scenes."
+  },
+  "valid_completed_checks": {
+    "exact_registry_saddle": {"PASS": 131},
+    "referenced_source_provenance": {"PASS": 131},
+    "exact_local_completed_beb1_kernel": {"PASS": 131},
+    "existing_tv3_local_selector": {"PASS": 131},
+    "local_kernel_scope": "Source-labelled four-tetrahedron local construction and rank, not gluing to the ordinary exterior boundary.",
+    "streamed_processed_records": 3081976,
+    "retained_proxy_boundary_halo_polygons": 2399,
+    "retained_proxy_boundary_halo_records": 1737,
+    "all_131_candidate_windows_contain_no_integer_source_predicate_threshold": true,
+    "proxy_candidate_natural_frame_hits_each": 8,
+    "proxy_candidate_frame_numbers_by_root": {
+      "3/2": [21, 22, 23, 24, 25, 26, 27, 28],
+      "5/2": [37, 38, 39, 40, 41, 42, 43, 44]
+    },
+    "candidate_hit_scope": "Only explicit unadmitted old-epsilon windows on the reconstructed Forest input grid. Neither certified window coverage nor visibility nor actually modified-frame coverage."
+  },
+  "proxy_trial_not_method_eligibility": {
+    "name": "Direct critical-face four-edge SourceVID quad",
+    "definition": "Intersect the four edges of the registry saddle face using ideal rational coordinates and native ordered-VID collapse semantics, then seek exactly two ordinary source triangles whose union equals those four IDs.",
+    "attempted": 131,
+    "found_two_face_patch": 0,
+    "found_zero_all_vertices_inside_quad_faces": 131,
+    "raw_stage_label": "source_owner_closure REJECT",
+    "corrected_meaning": "This direct-face-quad proxy has no matching two-face support. The method's closure-derived external support was not compiled, so these are not 131 rejected C1 events and not 131 baseline defects.",
+    "proxy_local_geometry_and_interface": "NOT_REACHED for all 131",
+    "raw_structurally_eligible_candidates_zero_is_not_C1_eligible_count": true
+  },
+  "method_level_funnel": {
+    "closure_derived_external_source_support_compilation": {
+      "status": "UNSUPPORTED",
+      "execution": "NOT_ATTEMPTED",
+      "implementation": "NOT_IMPLEMENTED_FOR_STREAMED_FOREST",
+      "events": 131,
+      "reason": "The bounded stream adapter never implements the established event-record two-face search and closure-derived external S_B construction. Its direct-face boundary is not a substitute."
+    },
+    "proper_source_owner_and_interface_eligibility": {"status": "UNKNOWN", "execution": "NOT_ATTEMPTED", "events": 131},
+    "proper_window_local_geometry": {"status": "UNKNOWN", "execution": "NOT_ATTEMPTED", "events": 131},
+    "proper_same_root_compatibility": {"status": "UNKNOWN", "execution": "NOT_ATTEMPTED", "pair_count": 4225},
+    "global_exterior": {"status": "UNKNOWN", "execution": "NOT_ATTEMPTED", "events": 131},
+    "current_public_runtime": {"status": "UNSUPPORTED", "reason": "Single-element-only API; this cache has elements 0 through 4."},
+    "runtime_admission": {"status": "UNKNOWN", "execution": "NOT_ATTEMPTED", "events": 131},
+    "proper_eligible_candidate_count": null,
+    "proper_eligibility_rate_all_131": null,
+    "proper_eligible_subset_denominator": null,
+    "runtime_transactions_attempted": 0,
+    "runtime_success_rate_all_131": null,
+    "runtime_success_rate_eligible": null,
+    "actually_modified_natural_frames": 0,
+    "method_window_hit_rate": null,
+    "visibility_evaluated": false,
+    "null_means": "N/A: required method-level support compiler/admission was not executed, not a measured zero success rate."
+  },
+  "e2_counterexample": {
+    "event_id": "element=0;role=temporal_neighbour;face=46:10|311:0|159:8|391:8",
+    "registry_hvid_cycle": ["46:10", "311:0", "159:8", "391:8"],
+    "registry_times": [22, 16, 24, 20],
+    "direct_face_source_quad": ["159:8|311:0", "159:8|391:8", "46:10|311:0", "46:10|391:8"],
+    "frozen_external_source_boundary_cycle": ["46:10|376:8", "159:8|311:0", "159:8|391:8", "46:10|391:8"],
+    "direct_only": ["46:10|311:0"],
+    "frozen_boundary_only": ["46:10|376:8"],
+    "sets_equal": false,
+    "ir_core_boundary_differs_from_external_s_b": true,
+    "source_document": "experiments/c1_lite/artifacts/ab_20260906/window_audit/event-02-88ade47aa4fa/source.json",
+    "source_document_sha256": "6b7f08fb7689ef8e62002c787e301a321fb343cda16d1ce37c54021b58c92dc2",
+    "ir_document": "/home/warpwang/binoc-runs/full-ubuntu26-smoke/all_canonical_beb1/event-02-88ade47aa4fa/critical_beb1_event_ir.json",
+    "ir_document_sha256": "c7ba221583aac6f189c4cf59980fa6e5083c5ee3ff5ca6ca1d200603b60c67cf",
+    "code_references": ["experiments/source_splice/compile_splice_plans.py:168", "experiments/source_splice/compile_splice_plans.py:189", "experiments/source_splice/compile_splice_plans.py:283", "experiments/c1_lite/window_source.py:414"],
+    "inference": "Even successful frozen E2 uses a different external support boundary, so the direct-face proxy cannot determine method-level Forest eligibility."
+  },
+  "forest_single_record_witness": {
+    "event_id": "element=0;role=temporal_neighbour;face=1525:0|3208:0|3206:0|5093:0",
+    "root": "3/2",
+    "cache_root": "/home/warpwang/binoc-runs/forest-census64-repair-20260906/HyperMesh/OpaqueTerrain",
+    "primary_relative_path": "processed_hyperpolys/0_0.bin",
+    "primary_offset": 58679601,
+    "primary_record_bytes": 184,
+    "primary_record_sha256": "327be1f55264f35ad831778e952cdce24b7f16556412e95b6b8aa6fc4e62d821",
+    "metadata_relative_path": "processed_hyperpolys/0_0_hpmeta.bin",
+    "processed_record_index": 737303,
+    "metadata_record_sha256": "bbe56bca3aa36c9ea19f712a16d4c476e534a53855c188f4db177c8e0df9b5e8",
+    "original_record_times": [0, 1, 2],
+    "active_raw_interval": 1,
+    "direct_boundary": ["1525:0|3208:0", "1525:0|5093:0", "3206:0|3208:0", "3206:0|5093:0"],
+    "owner_prefix": [0, 0, 0, 737303, 1, 0],
+    "oriented_fan_triangles_by_fan_index": [
+      ["5093:0|5093:2", "1525:0|5093:0", "1525:0|3208:0"],
+      ["5093:0|5093:2", "1525:0|3208:0", "3208:0|3208:2"],
+      ["5093:0|5093:2", "3208:0|3208:2", "3206:0|3208:0"],
+      ["5093:0|5093:2", "3206:0|3208:0", "3206:0|5093:0"]
+    ],
+    "additional_source_ids_outside_direct_quad": ["5093:0|5093:2", "3208:0|3208:2"],
+    "input_stats_unchanged": true,
+    "diagnostic_scope": "One existing provenance-selected primary record, native ordered-VID rules with ideal rational coordinates. No full funnel rerun, actual C++ slicing, output mesh or cache mutation. This is not an actual-index identity proof."
+  },
+  "additional_registry_readonly_check": {
+    "raw_rows": 440,
+    "unique_source_t_group_record_index_pairs": 322,
+    "complete_26_int_source_values_disagreements_per_pair": 0
+  },
+  "unchanged_measured_cost": {
+    "bounded_funnel_wall_seconds": 36.148555622,
+    "max_rss_bytes": 330682368,
+    "logical_bytes_examined_not_os_io": 641681212,
+    "first_run_artifacts_bytes": 1397351,
+    "historical_cache_build_seconds_separate": 1203.255439993,
+    "input_immutability_pass": true,
+    "input_stat_checked_files": 23,
+    "input_selected_byte_ranges_rehashed": 3798,
+    "input_complete_files_rehashed": 5,
+    "executed_script_sha256": "ebff52c4698f9e06ecf8c369b81ea83444bf7e635e7287f9a0f19d73ecda2dc5",
+    "executed_script_and_helpers_start_end_hashes_identical": true,
+    "synthetic_tests_passed": 14
+  }
+}

@@ -1,0 +1,2160 @@
+{
+  "admission_rate": null,
+  "budget_amendment": {
+    "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/budget_amendment01.json",
+    "sha256": "39ce0a8088c5c72a4b6595c8d054becf6c909410d4e70e1460a042f8488c2ac0"
+  },
+  "campaign_deadline_utc": "2026-09-06T19:28:39+00:00",
+  "certified_events": {
+    "path": "certified_events.json",
+    "sha256": "6465e7995d37bb660022c67c0a1553fd29ed5fc735db1f62f28c1db0eda72d99"
+  },
+  "component_queries": {
+    "path": "component_queries.json",
+    "sha256": "e4b818d44b097291d9b0d0345e1f105e0e153a41cda6fb9511552dcc988d2d44"
+  },
+  "composition": {
+    "admitted_components": 79,
+    "admitted_events": 87,
+    "component_admission_rate": 0.6929824561403509,
+    "components": 114,
+    "fallback_components": 35,
+    "fallback_events": 60,
+    "joint_event_admission_rate": 0.5918367346938775,
+    "unknown_actual_support_rows": 0
+  },
+  "cost": {
+    "cpu_seconds": 462.175506401,
+    "peak_rss_bytes": 1551605760,
+    "scope": "Research certification/playback/image/audit harness, not production speed.",
+    "wall_seconds": 594.6470293719995
+  },
+  "effective_budgets": {
+    "build_peak_rss_bytes": 17179869184,
+    "cache_per_scene_output_bytes": 8589934592,
+    "cache_per_scene_wall_seconds": 5400,
+    "certification_and_screen_per_scene_wall_seconds": 3600,
+    "cleanup": "Remove only validated run-owned temporary cache copies and disposable coarse intermediates after input verification; preserve compact results and required rerun inputs. No environment deletion.",
+    "coarse_per_scene_output_bytes": 8589934592,
+    "coarse_per_scene_wall_seconds": 3600,
+    "maximum_campaign_wall_seconds": 32400,
+    "maximum_compact_reports_and_images_bytes": 536870912,
+    "maximum_new_persistent_bytes": 32000000000,
+    "native_query_peak_rss_bytes": 8589934592,
+    "persistent_full_mesh_video_files": 0,
+    "post_displacement_pilot_wall_seconds": 1800,
+    "preserve_original_inputs_and_old_evidence": true,
+    "simultaneous_heavy_scene_workers": 1,
+    "small_visual_experiment_wall_seconds": 1800,
+    "source_per_scene_wall_seconds": 1200,
+    "total_existing_and_new_storage_limit_bytes": 400000000000
+  },
+  "final_input_verification": {
+    "original_bytes": 1513840506,
+    "original_files_unchanged": 35,
+    "original_input_content_sha256": "ad52d33106145b10c96bc79f5ba45b282c15918e4d1ff7c1b1871c04fcca2270",
+    "private_log_appended_bytes": 37127,
+    "private_nonlog_inputs_unchanged": true,
+    "status": "PASS"
+  },
+  "frame_artifacts": [
+    {
+      "artifact": {
+        "path": "frames/frame_0001.json",
+        "sha256": "7ea44ee062a1edde4143ddc502b3a099eb6f9b9afee03f511efcf1c4a0c639f7"
+      },
+      "query": {
+        "absolute_frame_number": 1,
+        "evaluation_tau": "0",
+        "frame_index_zero_based": 0,
+        "frame_number": 1,
+        "global_camera_time_hex": "0x1.5555555555555p-6",
+        "key": "frame_0001",
+        "kind": "natural",
+        "physical_time_hex": "0x0.0p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0002.json",
+        "sha256": "e48e9420e3f135adb2c08d1dc378bc275790cf657e64a2b467c541ff60c67e70"
+      },
+      "query": {
+        "absolute_frame_number": 2,
+        "evaluation_tau": "4575067906911335/72057594037927936",
+        "frame_index_zero_based": 1,
+        "frame_number": 2,
+        "global_camera_time_hex": "0x1.0000000000000p-4",
+        "key": "frame_0002",
+        "kind": "natural",
+        "physical_time_hex": "0x1.5555555555556p-5",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0003.json",
+        "sha256": "9c98b599d186b734451741eeb1cf2fbd0e83beb756900d092547229f7ac53f4e"
+      },
+      "query": {
+        "absolute_frame_number": 3,
+        "evaluation_tau": "4575067906911335/36028797018963968",
+        "frame_index_zero_based": 2,
+        "frame_number": 3,
+        "global_camera_time_hex": "0x1.aaaaaaaaaaaabp-4",
+        "key": "frame_0003",
+        "kind": "natural",
+        "physical_time_hex": "0x1.5555555555556p-4",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0004.json",
+        "sha256": "0864330753caa7c4e0c0964dcfdc7689173f03392c0c08194a7d359b1cd91a35"
+      },
+      "query": {
+        "absolute_frame_number": 4,
+        "evaluation_tau": "3431300930183501/18014398509481984",
+        "frame_index_zero_based": 3,
+        "frame_number": 4,
+        "global_camera_time_hex": "0x1.2aaaaaaaaaaabp-3",
+        "key": "frame_0004",
+        "kind": "natural",
+        "physical_time_hex": "0x1.0000000000000p-3",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0005.json",
+        "sha256": "3fa0024ff768313a5deccaed66ab68077584af920a5be044b6e50bfc5cd33b82"
+      },
+      "query": {
+        "absolute_frame_number": 5,
+        "evaluation_tau": "2287533953455667/9007199254740992",
+        "frame_index_zero_based": 4,
+        "frame_number": 5,
+        "global_camera_time_hex": "0x1.8000000000000p-3",
+        "key": "frame_0005",
+        "kind": "natural",
+        "physical_time_hex": "0x1.5555555555555p-3",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0006.json",
+        "sha256": "f6a11f2e14527381af5e51782a8e5f692ebba09dbc9d88e60b0513dd3ce11a78"
+      },
+      "query": {
+        "absolute_frame_number": 6,
+        "evaluation_tau": "44678397528431/140737488355328",
+        "frame_index_zero_based": 5,
+        "frame_number": 6,
+        "global_camera_time_hex": "0x1.d555555555555p-3",
+        "key": "frame_0006",
+        "kind": "natural",
+        "physical_time_hex": "0x1.aaaaaaaaaaaaap-3",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0007.json",
+        "sha256": "22cf5637c89883900377bfb1a09c2a202b1c9c7fa6a6501fe583b0720426ff3f"
+      },
+      "query": {
+        "absolute_frame_number": 7,
+        "evaluation_tau": "6862601860367001/18014398509481984",
+        "frame_index_zero_based": 6,
+        "frame_number": 7,
+        "global_camera_time_hex": "0x1.1555555555555p-2",
+        "key": "frame_0007",
+        "kind": "natural",
+        "physical_time_hex": "0x1.fffffffffffffp-3",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0008.json",
+        "sha256": "eef7ea9091582c3b1cdcb2b4fb6da68cd7f2224608c4aa6c099fe2b2dfd3fc94"
+      },
+      "query": {
+        "absolute_frame_number": 8,
+        "evaluation_tau": "2001592209273709/4503599627370496",
+        "frame_index_zero_based": 7,
+        "frame_number": 8,
+        "global_camera_time_hex": "0x1.4000000000000p-2",
+        "key": "frame_0008",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2aaaaaaaaaaabp-2",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0009.json",
+        "sha256": "041019dc4205fb415e552bd9f3c687984040bf34cda3caafbc6af02725e4dac1"
+      },
+      "query": {
+        "absolute_frame_number": 9,
+        "evaluation_tau": "4575067906911335/9007199254740992",
+        "frame_index_zero_based": 8,
+        "frame_number": 9,
+        "global_camera_time_hex": "0x1.6aaaaaaaaaaabp-2",
+        "key": "frame_0009",
+        "kind": "natural",
+        "physical_time_hex": "0x1.5555555555556p-2",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0010.json",
+        "sha256": "174a841d94fb1cb030a799164b2e17fdc3eb442020168cecfade3a29f6ed509b"
+      },
+      "query": {
+        "absolute_frame_number": 10,
+        "evaluation_tau": "5146951395275251/9007199254740992",
+        "frame_index_zero_based": 9,
+        "frame_number": 10,
+        "global_camera_time_hex": "0x1.9555555555555p-2",
+        "key": "frame_0010",
+        "kind": "natural",
+        "physical_time_hex": "0x1.8000000000000p-2",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0011.json",
+        "sha256": "bd17c66b4e974faf3a0936c55b41cb0d52f02783d571ee7d8c72ef93b8f6accf"
+      },
+      "query": {
+        "absolute_frame_number": 11,
+        "evaluation_tau": "44678397528431/70368744177664",
+        "frame_index_zero_based": 10,
+        "frame_number": 11,
+        "global_camera_time_hex": "0x1.c000000000000p-2",
+        "key": "frame_0011",
+        "kind": "natural",
+        "physical_time_hex": "0x1.aaaaaaaaaaaabp-2",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0012.json",
+        "sha256": "77bec596eeffbdb58f4e7d1eb1a59e391a43b2b947d24c273a9854f49ec2943a"
+      },
+      "query": {
+        "absolute_frame_number": 12,
+        "evaluation_tau": "3145359186001543/4503599627370496",
+        "frame_index_zero_based": 11,
+        "frame_number": 12,
+        "global_camera_time_hex": "0x1.eaaaaaaaaaaabp-2",
+        "key": "frame_0012",
+        "kind": "natural",
+        "physical_time_hex": "0x1.d555555555556p-2",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0013.json",
+        "sha256": "ce878c3773a3e38789c4e4fa7b98828c74a5654aa8edec917cb9a76c0490b5e3"
+      },
+      "query": {
+        "absolute_frame_number": 13,
+        "evaluation_tau": "3431300930183501/4503599627370496",
+        "frame_index_zero_based": 12,
+        "frame_number": 13,
+        "global_camera_time_hex": "0x1.0aaaaaaaaaaabp-1",
+        "key": "frame_0013",
+        "kind": "natural",
+        "physical_time_hex": "0x1.0000000000000p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0014.json",
+        "sha256": "765487734efe7ef3cf2a09d809de74a98d66f7942ebf77e7db14d3e3e84c6fc5"
+      },
+      "query": {
+        "absolute_frame_number": 14,
+        "evaluation_tau": "3717242674365459/4503599627370496",
+        "frame_index_zero_based": 13,
+        "frame_number": 14,
+        "global_camera_time_hex": "0x1.2000000000000p-1",
+        "key": "frame_0014",
+        "kind": "natural",
+        "physical_time_hex": "0x1.1555555555555p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0015.json",
+        "sha256": "f275817d176e50c117e9e227570d068baf68945d5c6043487a231f522d03fa5c"
+      },
+      "query": {
+        "absolute_frame_number": 15,
+        "evaluation_tau": "4003184418547417/4503599627370496",
+        "frame_index_zero_based": 14,
+        "frame_number": 15,
+        "global_camera_time_hex": "0x1.3555555555555p-1",
+        "key": "frame_0015",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2aaaaaaaaaaaap-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0016.json",
+        "sha256": "eb3cdd7a5e66cbf8f0b07720637f6f08f2cace838d9a5473b7d12a2b7c946cd1"
+      },
+      "query": {
+        "absolute_frame_number": 16,
+        "evaluation_tau": "134035192585293/140737488355328",
+        "frame_index_zero_based": 15,
+        "frame_number": 16,
+        "global_camera_time_hex": "0x1.4aaaaaaaaaaabp-1",
+        "key": "frame_0016",
+        "kind": "natural",
+        "physical_time_hex": "0x1.4000000000000p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0017.json",
+        "sha256": "bb72e6c80c7492176fa3b61286d9a5b80e7aa52ad75b3a7d64031e355530032e"
+      },
+      "query": {
+        "absolute_frame_number": 17,
+        "evaluation_tau": "2287533953455667/2251799813685248",
+        "frame_index_zero_based": 16,
+        "frame_number": 17,
+        "global_camera_time_hex": "0x1.6000000000000p-1",
+        "key": "frame_0017",
+        "kind": "natural",
+        "physical_time_hex": "0x1.5555555555555p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0018.json",
+        "sha256": "2b1df4df96511e0d8ce8f3949f692218483385ce88589573a4747d92b0c340f5"
+      },
+      "query": {
+        "absolute_frame_number": 18,
+        "evaluation_tau": "1215252412773323/1125899906842624",
+        "frame_index_zero_based": 17,
+        "frame_number": 18,
+        "global_camera_time_hex": "0x1.7555555555555p-1",
+        "key": "frame_0018",
+        "kind": "natural",
+        "physical_time_hex": "0x1.6aaaaaaaaaaaap-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0019.json",
+        "sha256": "6d86977ab2a5d968d4a16aa474df7460422a8ffd321a87aedc72bef1709dbf9b"
+      },
+      "query": {
+        "absolute_frame_number": 19,
+        "evaluation_tau": "5146951395275251/4503599627370496",
+        "frame_index_zero_based": 18,
+        "frame_number": 19,
+        "global_camera_time_hex": "0x1.8aaaaaaaaaaabp-1",
+        "key": "frame_0019",
+        "kind": "natural",
+        "physical_time_hex": "0x1.8000000000000p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0020.json",
+        "sha256": "a69c4b4d620fa663500523658b5f46e2c4a223fcf143963dc8ebdbbabeff4aa7"
+      },
+      "query": {
+        "absolute_frame_number": 20,
+        "evaluation_tau": "2716446569728605/2251799813685248",
+        "frame_index_zero_based": 19,
+        "frame_number": 20,
+        "global_camera_time_hex": "0x1.a000000000000p-1",
+        "key": "frame_0020",
+        "kind": "natural",
+        "physical_time_hex": "0x1.9555555555555p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0021.json",
+        "sha256": "6861d7559edaf4ccd14048071b336972f9b73004b404d7c738a33aba2cec3caa"
+      },
+      "query": {
+        "absolute_frame_number": 21,
+        "evaluation_tau": "44678397528431/35184372088832",
+        "frame_index_zero_based": 20,
+        "frame_number": 21,
+        "global_camera_time_hex": "0x1.b555555555555p-1",
+        "key": "frame_0021",
+        "kind": "natural",
+        "physical_time_hex": "0x1.aaaaaaaaaaaaap-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0022.json",
+        "sha256": "a5ab44c50405eda2e52b9625e697cdb4a006ee9d096dc29b09b3e7601ac8cd31"
+      },
+      "query": {
+        "absolute_frame_number": 22,
+        "evaluation_tau": "6004776627821127/4503599627370496",
+        "frame_index_zero_based": 21,
+        "frame_number": 22,
+        "global_camera_time_hex": "0x1.caaaaaaaaaaabp-1",
+        "key": "frame_0022",
+        "kind": "natural",
+        "physical_time_hex": "0x1.c000000000000p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0023.json",
+        "sha256": "7c4da72f761c8a3c40735e5df84ed7e3d7239255af1eae15f89a3dc8b5c7cca1"
+      },
+      "query": {
+        "absolute_frame_number": 23,
+        "evaluation_tau": "6290718372003085/4503599627370496",
+        "frame_index_zero_based": 22,
+        "frame_number": 23,
+        "global_camera_time_hex": "0x1.e000000000000p-1",
+        "key": "frame_0023",
+        "kind": "natural",
+        "physical_time_hex": "0x1.d555555555555p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0024.json",
+        "sha256": "748c46b4436c8582bf88bf1a550975cbcf5d3420c605bd0f20d90d514ee5ab65"
+      },
+      "query": {
+        "absolute_frame_number": 24,
+        "evaluation_tau": "6576660116185043/4503599627370496",
+        "frame_index_zero_based": 23,
+        "frame_number": 24,
+        "global_camera_time_hex": "0x1.f555555555555p-1",
+        "key": "frame_0024",
+        "kind": "natural",
+        "physical_time_hex": "0x1.eaaaaaaaaaaaap-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0025.json",
+        "sha256": "e8b0ca72c1ad3e00e03c42570ea3ae1ad4878f3d48978c105cf63b126a7200d1"
+      },
+      "query": {
+        "absolute_frame_number": 25,
+        "evaluation_tau": "6862601860367001/4503599627370496",
+        "frame_index_zero_based": 24,
+        "frame_number": 25,
+        "global_camera_time_hex": "0x1.0555555555555p+0",
+        "key": "frame_0025",
+        "kind": "natural",
+        "physical_time_hex": "0x1.fffffffffffffp-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0026.json",
+        "sha256": "fc152bd29ebf50a8150794c84101b248f8219509034b1afad544802636dce70e"
+      },
+      "query": {
+        "absolute_frame_number": 26,
+        "evaluation_tau": "7148543604548961/4503599627370496",
+        "frame_index_zero_based": 25,
+        "frame_number": 26,
+        "global_camera_time_hex": "0x1.1000000000000p+0",
+        "key": "frame_0026",
+        "kind": "natural",
+        "physical_time_hex": "0x1.0aaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0027.json",
+        "sha256": "43ed815b386510562193f88b3141bbb2906c0c557e16bd3c545793ccb9c5a86a"
+      },
+      "query": {
+        "absolute_frame_number": 27,
+        "evaluation_tau": "929310668591365/562949953421312",
+        "frame_index_zero_based": 26,
+        "frame_number": 27,
+        "global_camera_time_hex": "0x1.1aaaaaaaaaaabp+0",
+        "key": "frame_0027",
+        "kind": "natural",
+        "physical_time_hex": "0x1.1555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0028.json",
+        "sha256": "61c5e0a64963df5e8f39581923e8207b51b4f850238eab71df0fa6bbbf5c6821"
+      },
+      "query": {
+        "absolute_frame_number": 28,
+        "evaluation_tau": "7720427092912877/4503599627370496",
+        "frame_index_zero_based": 27,
+        "frame_number": 28,
+        "global_camera_time_hex": "0x1.2555555555555p+0",
+        "key": "frame_0028",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0029.json",
+        "sha256": "7549ecc1fd68b2c55b35442cf2b1be5ad390925952c922330b94f1e3a40c1a67"
+      },
+      "query": {
+        "absolute_frame_number": 29,
+        "evaluation_tau": "2001592209273709/1125899906842624",
+        "frame_index_zero_based": 28,
+        "frame_number": 29,
+        "global_camera_time_hex": "0x1.3000000000000p+0",
+        "key": "frame_0029",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2aaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0030.json",
+        "sha256": "a31ee9ce93f4b503b62ce40523a933abe764268933844363c4c6637e151e8c4a"
+      },
+      "query": {
+        "absolute_frame_number": 30,
+        "evaluation_tau": "8292310581276795/4503599627370496",
+        "frame_index_zero_based": 29,
+        "frame_number": 30,
+        "global_camera_time_hex": "0x1.3aaaaaaaaaaabp+0",
+        "key": "frame_0030",
+        "kind": "natural",
+        "physical_time_hex": "0x1.3555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0031.json",
+        "sha256": "d3467fb027907d139724681305430d3e0258f2922a8fcb98d18f3b7597aeee94"
+      },
+      "query": {
+        "absolute_frame_number": 31,
+        "evaluation_tau": "134035192585293/70368744177664",
+        "frame_index_zero_based": 30,
+        "frame_number": 31,
+        "global_camera_time_hex": "0x1.4555555555555p+0",
+        "key": "frame_0031",
+        "kind": "natural",
+        "physical_time_hex": "0x1.4000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0032.json",
+        "sha256": "c6f4a39704bf5408fae3bb37ccd81d129bec2c0156cb15ca01cda7bd2560fa11"
+      },
+      "query": {
+        "absolute_frame_number": 32,
+        "evaluation_tau": "8864194069640711/4503599627370496",
+        "frame_index_zero_based": 31,
+        "frame_number": 32,
+        "global_camera_time_hex": "0x1.5000000000000p+0",
+        "key": "frame_0032",
+        "kind": "natural",
+        "physical_time_hex": "0x1.4aaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0033.json",
+        "sha256": "5a0cd749989099b3d8bfd68458432cc5d450e276e669d5969100f24400d934ae"
+      },
+      "query": {
+        "absolute_frame_number": 33,
+        "evaluation_tau": "4575067906911335/2251799813685248",
+        "frame_index_zero_based": 32,
+        "frame_number": 33,
+        "global_camera_time_hex": "0x1.5aaaaaaaaaaabp+0",
+        "key": "frame_0033",
+        "kind": "natural",
+        "physical_time_hex": "0x1.5555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0034.json",
+        "sha256": "b44abba30d4a75df57841bfe6c0a092641595f3ae0dc70d22d9724f3579e6c83"
+      },
+      "query": {
+        "absolute_frame_number": 34,
+        "evaluation_tau": "2359019389501157/1125899906842624",
+        "frame_index_zero_based": 33,
+        "frame_number": 34,
+        "global_camera_time_hex": "0x1.6555555555555p+0",
+        "key": "frame_0034",
+        "kind": "natural",
+        "physical_time_hex": "0x1.6000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0035.json",
+        "sha256": "03f04c96cc47a23f915383d0657683e2f9b769a25951fe5d8293fcfb4fd6d28b"
+      },
+      "query": {
+        "absolute_frame_number": 35,
+        "evaluation_tau": "4861009651093293/2251799813685248",
+        "frame_index_zero_based": 34,
+        "frame_number": 35,
+        "global_camera_time_hex": "0x1.7000000000000p+0",
+        "key": "frame_0035",
+        "kind": "natural",
+        "physical_time_hex": "0x1.6aaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0036.json",
+        "sha256": "32275b76ca92d9eb311439ca4aed34c4ce56fcbb13a6bc03b39b28e85b8980d7"
+      },
+      "query": {
+        "absolute_frame_number": 36,
+        "evaluation_tau": "5003980523184273/2251799813685248",
+        "frame_index_zero_based": 35,
+        "frame_number": 36,
+        "global_camera_time_hex": "0x1.7aaaaaaaaaaabp+0",
+        "key": "frame_0036",
+        "kind": "natural",
+        "physical_time_hex": "0x1.7555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0037.json",
+        "sha256": "660784014b024b358a7c9bd975a2215a61f5c23306cc8d8880ec4e0551f1c9d0"
+      },
+      "query": {
+        "absolute_frame_number": 37,
+        "evaluation_tau": "5146951395275251/2251799813685248",
+        "frame_index_zero_based": 36,
+        "frame_number": 37,
+        "global_camera_time_hex": "0x1.8555555555555p+0",
+        "key": "frame_0037",
+        "kind": "natural",
+        "physical_time_hex": "0x1.8000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0038.json",
+        "sha256": "a92250bc94e1fb7c951f02e2940752ca98015f6714d1b90248e487e288b6fc4d"
+      },
+      "query": {
+        "absolute_frame_number": 38,
+        "evaluation_tau": "5289922267366231/2251799813685248",
+        "frame_index_zero_based": 37,
+        "frame_number": 38,
+        "global_camera_time_hex": "0x1.9000000000000p+0",
+        "key": "frame_0038",
+        "kind": "natural",
+        "physical_time_hex": "0x1.8aaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0039.json",
+        "sha256": "9803233a0572f8ca422b6c3731dfa5f685d606d54f9a2483500bfefd85e87e76"
+      },
+      "query": {
+        "absolute_frame_number": 39,
+        "evaluation_tau": "2716446569728605/1125899906842624",
+        "frame_index_zero_based": 38,
+        "frame_number": 39,
+        "global_camera_time_hex": "0x1.9aaaaaaaaaaabp+0",
+        "key": "frame_0039",
+        "kind": "natural",
+        "physical_time_hex": "0x1.9555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0040.json",
+        "sha256": "00434b3072cda24743c7295bce3e82c49c42b5bf22ca25821f959f05db96956f"
+      },
+      "query": {
+        "absolute_frame_number": 40,
+        "evaluation_tau": "5575864011548189/2251799813685248",
+        "frame_index_zero_based": 39,
+        "frame_number": 40,
+        "global_camera_time_hex": "0x1.a555555555555p+0",
+        "key": "frame_0040",
+        "kind": "natural",
+        "physical_time_hex": "0x1.a000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0041.json",
+        "sha256": "ebd797e980753a0d912be221a39345c80fa5ef8a5a7d48959647596393dd241e"
+      },
+      "query": {
+        "absolute_frame_number": 41,
+        "evaluation_tau": "44678397528431/17592186044416",
+        "frame_index_zero_based": 40,
+        "frame_number": 41,
+        "global_camera_time_hex": "0x1.b000000000000p+0",
+        "key": "frame_0041",
+        "kind": "natural",
+        "physical_time_hex": "0x1.aaaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0042.json",
+        "sha256": "2f35e854f17418addd360d593fac9c9568aafa54f49fdf81dfa10ad7da201999"
+      },
+      "query": {
+        "absolute_frame_number": 42,
+        "evaluation_tau": "1465451438932537/562949953421312",
+        "frame_index_zero_based": 41,
+        "frame_number": 42,
+        "global_camera_time_hex": "0x1.baaaaaaaaaaabp+0",
+        "key": "frame_0042",
+        "kind": "natural",
+        "physical_time_hex": "0x1.b555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0043.json",
+        "sha256": "680cfa04c35357bc5740ad70599ae12c9a63322632441cb1a5b40185b50d0ea3"
+      },
+      "query": {
+        "absolute_frame_number": 43,
+        "evaluation_tau": "6004776627821127/2251799813685248",
+        "frame_index_zero_based": 42,
+        "frame_number": 43,
+        "global_camera_time_hex": "0x1.c555555555555p+0",
+        "key": "frame_0043",
+        "kind": "natural",
+        "physical_time_hex": "0x1.c000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0044.json",
+        "sha256": "d7f4af4d71208ab0b6d93ccac55920d17a0ae8896258163dfd505d770a005332"
+      },
+      "query": {
+        "absolute_frame_number": 44,
+        "evaluation_tau": "3073873749956053/1125899906842624",
+        "frame_index_zero_based": 43,
+        "frame_number": 44,
+        "global_camera_time_hex": "0x1.d000000000000p+0",
+        "key": "frame_0044",
+        "kind": "natural",
+        "physical_time_hex": "0x1.caaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0045.json",
+        "sha256": "df4f1be650443f1da388e58ba9eb4fda31538af5ee25980c4408162f11cefabe"
+      },
+      "query": {
+        "absolute_frame_number": 45,
+        "evaluation_tau": "3145359186001543/1125899906842624",
+        "frame_index_zero_based": 44,
+        "frame_number": 45,
+        "global_camera_time_hex": "0x1.daaaaaaaaaaabp+0",
+        "key": "frame_0045",
+        "kind": "natural",
+        "physical_time_hex": "0x1.d555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0046.json",
+        "sha256": "15d6494cd6da63dd47e0a12bcede6a7e4824008c34e3e62ce043bba6b178a4d3"
+      },
+      "query": {
+        "absolute_frame_number": 46,
+        "evaluation_tau": "402105577755879/140737488355328",
+        "frame_index_zero_based": 45,
+        "frame_number": 46,
+        "global_camera_time_hex": "0x1.e555555555555p+0",
+        "key": "frame_0046",
+        "kind": "natural",
+        "physical_time_hex": "0x1.e000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0047.json",
+        "sha256": "81f89e52d265122d86a672fba41a1158db87934d41937899848ab3b0210374cc"
+      },
+      "query": {
+        "absolute_frame_number": 47,
+        "evaluation_tau": "1644165029046261/562949953421312",
+        "frame_index_zero_based": 46,
+        "frame_number": 47,
+        "global_camera_time_hex": "0x1.f000000000000p+0",
+        "key": "frame_0047",
+        "kind": "natural",
+        "physical_time_hex": "0x1.eaaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0048.json",
+        "sha256": "c78f8b2263f762db8fedf8a5346d186af3eae8ef799d187d774b304bba6196d8"
+      },
+      "query": {
+        "absolute_frame_number": 48,
+        "evaluation_tau": "6719630988276023/2251799813685248",
+        "frame_index_zero_based": 47,
+        "frame_number": 48,
+        "global_camera_time_hex": "0x1.faaaaaaaaaaabp+0",
+        "key": "frame_0048",
+        "kind": "natural",
+        "physical_time_hex": "0x1.f555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0049.json",
+        "sha256": "8079ac89dd33c3bc4f87387e8dbc9542c423216fb0bc8a81cc868b37ad3575a0"
+      },
+      "query": {
+        "absolute_frame_number": 49,
+        "evaluation_tau": "3431300930183501/1125899906842624",
+        "frame_index_zero_based": 48,
+        "frame_number": 49,
+        "global_camera_time_hex": "0x1.02aaaaaaaaaabp+1",
+        "key": "frame_0049",
+        "kind": "natural",
+        "physical_time_hex": "0x1.0000000000000p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0050.json",
+        "sha256": "d8268891ae694f81e8769ab6799b1d8dfb115c0dbd135cbe4eaca3015f27ab7b"
+      },
+      "query": {
+        "absolute_frame_number": 50,
+        "evaluation_tau": "7005572732457981/2251799813685248",
+        "frame_index_zero_based": 49,
+        "frame_number": 50,
+        "global_camera_time_hex": "0x1.0800000000000p+1",
+        "key": "frame_0050",
+        "kind": "natural",
+        "physical_time_hex": "0x1.0555555555555p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0051.json",
+        "sha256": "cee025e3339467f9792a5d6ca91daf89acf62326b7f7353647c2885563544fc2"
+      },
+      "query": {
+        "absolute_frame_number": 51,
+        "evaluation_tau": "7148543604548959/2251799813685248",
+        "frame_index_zero_based": 50,
+        "frame_number": 51,
+        "global_camera_time_hex": "0x1.0d55555555555p+1",
+        "key": "frame_0051",
+        "kind": "natural",
+        "physical_time_hex": "0x1.0aaaaaaaaaaaap+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0052.json",
+        "sha256": "9c445bca123f1a240aeeffd9be52570400768f58ac261daf275fc01b1003e381"
+      },
+      "query": {
+        "absolute_frame_number": 52,
+        "evaluation_tau": "7291514476639939/2251799813685248",
+        "frame_index_zero_based": 51,
+        "frame_number": 52,
+        "global_camera_time_hex": "0x1.12aaaaaaaaaabp+1",
+        "key": "frame_0052",
+        "kind": "natural",
+        "physical_time_hex": "0x1.1000000000000p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0053.json",
+        "sha256": "311ce692e38d1a95ba52160780e70b742a0058221714ece26c71de864e7f9f7b"
+      },
+      "query": {
+        "absolute_frame_number": 53,
+        "evaluation_tau": "3717242674365459/1125899906842624",
+        "frame_index_zero_based": 52,
+        "frame_number": 53,
+        "global_camera_time_hex": "0x1.1800000000000p+1",
+        "key": "frame_0053",
+        "kind": "natural",
+        "physical_time_hex": "0x1.1555555555555p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0054.json",
+        "sha256": "e2b726639a318bb0bd5ad1929fa9ca19e8f4207013ff45bd408cb05c6f34d4a7"
+      },
+      "query": {
+        "absolute_frame_number": 54,
+        "evaluation_tau": "7577456220821897/2251799813685248",
+        "frame_index_zero_based": 53,
+        "frame_number": 54,
+        "global_camera_time_hex": "0x1.1d55555555555p+1",
+        "key": "frame_0054",
+        "kind": "natural",
+        "physical_time_hex": "0x1.1aaaaaaaaaaaap+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0055.json",
+        "sha256": "b2aeffcbfa8e1089f4481cdabd319479a86972d8ffd39aaeee0dcb9cac6c37a5"
+      },
+      "query": {
+        "absolute_frame_number": 55,
+        "evaluation_tau": "7720427092912877/2251799813685248",
+        "frame_index_zero_based": 54,
+        "frame_number": 55,
+        "global_camera_time_hex": "0x1.22aaaaaaaaaabp+1",
+        "key": "frame_0055",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2000000000000p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0056.json",
+        "sha256": "d82c984afc9e55e1cc90fd9002c5e9a806bb773146474b8ca173be1d2c5d79f6"
+      },
+      "query": {
+        "absolute_frame_number": 56,
+        "evaluation_tau": "491462372812741/140737488355328",
+        "frame_index_zero_based": 55,
+        "frame_number": 56,
+        "global_camera_time_hex": "0x1.2800000000000p+1",
+        "key": "frame_0056",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2555555555555p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0057.json",
+        "sha256": "e3b936bdccd5ac9bb487163d1e03048c868c18cc5549f890abee4256d96232ac"
+      },
+      "query": {
+        "absolute_frame_number": 57,
+        "evaluation_tau": "4003184418547417/1125899906842624",
+        "frame_index_zero_based": 56,
+        "frame_number": 57,
+        "global_camera_time_hex": "0x1.2d55555555555p+1",
+        "key": "frame_0057",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2aaaaaaaaaaaap+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0058.json",
+        "sha256": "5846630f971064e103d54f573934e5a8e1536697153ec458ea1767aaea3c49c5"
+      },
+      "query": {
+        "absolute_frame_number": 58,
+        "evaluation_tau": "8149339709185815/2251799813685248",
+        "frame_index_zero_based": 57,
+        "frame_number": 58,
+        "global_camera_time_hex": "0x1.32aaaaaaaaaabp+1",
+        "key": "frame_0058",
+        "kind": "natural",
+        "physical_time_hex": "0x1.3000000000000p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0059.json",
+        "sha256": "185d50fb89f88fd847315c685dad1665eb80c844e8a86f046a84279755a62cd0"
+      },
+      "query": {
+        "absolute_frame_number": 59,
+        "evaluation_tau": "8292310581276793/2251799813685248",
+        "frame_index_zero_based": 58,
+        "frame_number": 59,
+        "global_camera_time_hex": "0x1.3800000000000p+1",
+        "key": "frame_0059",
+        "kind": "natural",
+        "physical_time_hex": "0x1.3555555555555p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0060.json",
+        "sha256": "c666c1f8af225b6893f2aea349f86490be411f415c66560e8a9ec707b924a781"
+      },
+      "query": {
+        "absolute_frame_number": 60,
+        "evaluation_tau": "2108820363341943/562949953421312",
+        "frame_index_zero_based": 59,
+        "frame_number": 60,
+        "global_camera_time_hex": "0x1.3d55555555555p+1",
+        "key": "frame_0060",
+        "kind": "natural",
+        "physical_time_hex": "0x1.3aaaaaaaaaaaap+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0061.json",
+        "sha256": "a970fc10e82f7efb56b7ac47f4005c3eee5dda38c2fd802d5b58601be4361d65"
+      },
+      "query": {
+        "absolute_frame_number": 61,
+        "evaluation_tau": "134035192585293/35184372088832",
+        "frame_index_zero_based": 60,
+        "frame_number": 61,
+        "global_camera_time_hex": "0x1.42aaaaaaaaaabp+1",
+        "key": "frame_0061",
+        "kind": "natural",
+        "physical_time_hex": "0x1.4000000000000p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0062.json",
+        "sha256": "c2ca7a8fb118bfb79903912a45d2b914bab7c85f311fb988a12e8b1278585592"
+      },
+      "query": {
+        "absolute_frame_number": 62,
+        "evaluation_tau": "8721223197549731/2251799813685248",
+        "frame_index_zero_based": 61,
+        "frame_number": 62,
+        "global_camera_time_hex": "0x1.4800000000000p+1",
+        "key": "frame_0062",
+        "kind": "natural",
+        "physical_time_hex": "0x1.4555555555555p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0063.json",
+        "sha256": "e1a04402ec1ca5e3ff2808423e850ab8827e97bf3157f56d72c73f43c513f8e7"
+      },
+      "query": {
+        "absolute_frame_number": 63,
+        "evaluation_tau": "4432097034820355/1125899906842624",
+        "frame_index_zero_based": 62,
+        "frame_number": 63,
+        "global_camera_time_hex": "0x1.4d55555555555p+1",
+        "key": "frame_0063",
+        "kind": "natural",
+        "physical_time_hex": "0x1.4aaaaaaaaaaaap+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/frame_0064.json",
+        "sha256": "a5612e5e523088094a958a968c64607de85ab682cdb74b74146328ad4a666932"
+      },
+      "query": {
+        "absolute_frame_number": 64,
+        "evaluation_tau": "4503582470865845/1125899906842624",
+        "frame_index_zero_based": 63,
+        "frame_number": 64,
+        "global_camera_time_hex": "0x1.52aaaaaaaaaabp+1",
+        "key": "frame_0064",
+        "kind": "natural",
+        "physical_time_hex": "0x1.5000000000000p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/root_3_2.json",
+        "sha256": "00e21ff98ea42a5bf5cb705cd9081be459f13c7d777274c1973b6fdf493202f3"
+      },
+      "query": {
+        "active": true,
+        "evaluation_tau": "3/2",
+        "frame_number": null,
+        "key": "root_3_2",
+        "kind": "exact_root",
+        "physical_time_hex": "0x1.f8007dd441356p-1",
+        "time_mode": "exact"
+      }
+    },
+    {
+      "artifact": {
+        "path": "frames/root_5_2.json",
+        "sha256": "b5cd5124c7efe52f00d37486362478915fec2126e80133b69c0aa686d0e1fee1"
+      },
+      "query": {
+        "active": true,
+        "evaluation_tau": "5/2",
+        "frame_number": null,
+        "key": "root_5_2",
+        "kind": "exact_root",
+        "physical_time_hex": "0x1.a40068db8bac7p+0",
+        "time_mode": "exact"
+      }
+    }
+  ],
+  "initialization": {
+    "actual_delta_t_hex": "0x1.500053e2d6239p-1",
+    "actual_elements": 3,
+    "actual_max_tL": 1,
+    "build_repository": "/home/warpwang/binoc-runs/forest-observer-sourcevid-20260906/build",
+    "duration_hex": "0x1.500053e2d6239p+1",
+    "extra_smooth": false,
+    "frozen_helper_source_sha256": "4f35f38874fd506c4ed54f4e9c70e9b9a4842483604f07f886d9db13cc24b623",
+    "library_sha256": "3a0bab2f77142708e83251520dd11937de20cd198a887bc4cc8e8ce6bd543197",
+    "native_entrypoints_called": [
+      "slicing_discard_output",
+      "slicing_clean_up",
+      "slicing_identity_enable",
+      "load_parameters"
+    ],
+    "opaque_element_names": [
+      "ground",
+      "landtiles",
+      "voronoi_rocks"
+    ],
+    "origin_seconds_hex": "0x1.5555555555555p-6",
+    "original_cache_root": "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain",
+    "parameter_sources": "Explicit hash-bound effective mesher parameters and actual build opaque-element order; original camera time mapping. No Forest element-count or transparent-element inference.",
+    "private_cache_root": "/home/warpwang/binoc-runs/forest-native-20260906-8n05xnbr/cache",
+    "source_vid_encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+    "source_vid_encoding_version": 2,
+    "time_groups": 2,
+    "tree_or_preprocess_or_initial_slice_run": false
+  },
+  "input_and_code_sha256": {
+    "/home/warpwang/binoc-runs/e2-runtime-loop-20260906/build/binocmesher/lib/core.so": "f4263a2f47ba5283175a921e49b8867998bdd8124aac810793b34242ec43a3c9",
+    "/home/warpwang/binoc-runs/forest-observer-sourcevid-20260906/build/binocmesher/lib/core.so": "3a0bab2f77142708e83251520dd11937de20cd198a887bc4cc8e8ce6bd543197",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/MaskTag.json": "fa1d416740324e0a164c56658a41e9ea66fe83c59054cd70f83011f07e333de3",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/assets/Caves/0/boundingbox.npy": "8606fed5f67ce5e49817e9363503262ac85ca916afa121ba6c9bfda3d36537a7",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/assets/Caves/0/finish": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/assets/Caves/0/occupancy.npy": "07e29082829cb49e17007f1cf84c4b0f51180484dcc012a15a85fb9390b4cdbc",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/assets/MultiMountains/0/erosion.heightmap.exr": "c095e440ec9917d6fb422e2c0d07587fbc0e9b472d157712ae34c41153348fb2",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/assets/MultiMountains/0/erosion.mask.exr": "b7d8120f89f7fbeb962e25ae2199366ea9713e7163a6cc1da29b4f351c2af4a2",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/assets/MultiMountains/0/finish": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/assets/MultiMountains/0/heightmap.exr": "7e813fc437b1fec7b855057cc99509822603139aefc20924c44360a6e0b495f1",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/assets/MultiMountains/0/params.txt": "f2a70fffa4bd625f2d5abf8428d1276e853e58a51f989cc6710ee86a0d6acf60",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/assets/MultiMountains/0/snowfall.heightmap.exr": "137e200209ee958d04b9831f866e57d14499f9dcf7b407988fc9e380d6c4a54b",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/assets/MultiMountains/0/snowfall.mask.exr": "d9d02522de409815f1340f2c74430b15ca45b12ea27fd815523fd749d0333a8a",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/assets/MultiMountains/0/tile_size.txt": "ab8e9a58c47abe1aeff8ae620a0ed614ee77d507ef52799d4c103d69ff35d85c",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/assets/info.pickle": "c84660cc11a6d21380d78965303d86faf14703cad98ca9f73a866006945d610e",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/pipeline_coarse.csv": "53017750f3ae680f642f7c4097520c2a9eca0e82aeaace7a34dd430a73c098b1",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/polycounts.txt": "d2314077ad6ad5bef96217730edf735725bde317fe689758a2e90aa28fa623c5",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/scene.blend": "8f3e693b0b5ac46eb52634db5bd066efad535e995a9f5fbb91a7c9f3bfc931e3",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/version.txt": "e7066ea517cbc9e563967997e5cf2e3a899250403dac6fbaa25bb6b1815d16ca",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/coarse/worker.log": "4bd2793f3af7eeedf78f8b7f0bcb384f905549da51b67b30d35a9239ffc62b1b",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/driver_snapshot.py": "556ebbf95168e96ed81e06d3238e89ad2fee6a0f8dfe64856b5969f8e1005a5c",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/driver_snapshot.py": "556ebbf95168e96ed81e06d3238e89ad2fee6a0f8dfe64856b5969f8e1005a5c",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/event_registry_p1.csv": "5a4c1daf87ecb988598dfa953f9d1077d456394efcfb2d8b8d4f230774e03342",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/hypervertices/0.bin": "5263dd21236501e88b9af81e3e6faa094210b38a6b7c6a7ac3f10f74f08d9e4d",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/hypervertices/1.bin": "22578a3f95cd9c0e5fd2c330a073b5b4fc833abdc149b55e833daf0b7a72725b",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_0.bin": "b942a2c9d4174b6224a506980a5e595e6ada8a6cc99c3b3439c1438e926899fe",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_0_hpmeta.bin": "afceae82950b1a602b5fc6ae056239db57ba239be429140eaa3d16c9d7f70414",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_1.bin": "123e02e42696a3d06b2f67a735ee88d57e0739d43e6f5c06440a02cd75b3899e",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_1_hpmeta.bin": "cf37bf026d9943d8ce8016e45d95e4d7385db80ab168149b6dfe3bb53e80fae8",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_2.bin": "5b6c6d553cfcb94b1bb3ca858347e396243cee38f3d5bb76c25d5f5f9ffbede3",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_2_hpmeta.bin": "664f73b49c810a465cd641c8c1bf8ccb8cd4e237e5d116827cefc53c5c16592d",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_3.bin": "4e2b921baadf5dac433a9a1254179606742efc298df767cb2542febc946d9a65",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_3_hpmeta.bin": "9f800e163e087faa89d702795ecbe16732a03db283c04eb4d39ad0b07dead931",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_0.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_0_hpmeta.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_1.bin": "4ea1c5b00c0ab88018b9a1247677608fc0172cbcf9a49828aae71caa22969e39",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_1_hpmeta.bin": "fef681f80fc22ca947b1bd441b839b967ad186bd784f4cd11fcf60e137dbae40",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_2.bin": "9d08aae4767ec35ddb4b9756ee324564da1aa5b4c69e5eb09b99ff32cfdabbac",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_2_hpmeta.bin": "45f62f369176c4dcc3b327f1e8ce7b7f8b86e67575f037cfde4f83018d95e52a",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_3.bin": "f067f527678dee24789fb17d316258fb909b98d077f11ba1821ec6da57e9b671",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_3_hpmeta.bin": "6b8c2eac37a1ad5a9c35ec6bb729f9d12fdbcd10cd45b8a9a5778d8bf5bd9e7c",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/slicing_preprocess.finish": "fb2b2dcf0d79fe49810f7765670247f87c3252c369a159a9d6bfd792e8df1340",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/slicing_preprocess.manifest.json": "7e9b633f2e19a59c645ed233e562cd2906821f594ec3050a6599521a92063447",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt01/driver_snapshot.py": "556ebbf95168e96ed81e06d3238e89ad2fee6a0f8dfe64856b5969f8e1005a5c",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/MaskTag.json": "5be863ca62bff871bdbec23c48fe9ca7c1c2219b24db29cf40857f044ee9615d",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/assets/MultiMountains/0/erosion.heightmap.exr": "6536b5676c2850f47cb45338a18500b2173e3f2c8811231dda5f2ad0a605a6a6",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/assets/MultiMountains/0/erosion.mask.exr": "237e47f98bfaa366af5ab7c41e32a7cf0b693f11da09e8ed7af9eaf1c11d4939",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/assets/MultiMountains/0/finish": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/assets/MultiMountains/0/heightmap.exr": "49c6cd8049a75256574a97502ca20fb56823a591e65080fc57011132ebf75ddf",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/assets/MultiMountains/0/params.txt": "f2a70fffa4bd625f2d5abf8428d1276e853e58a51f989cc6710ee86a0d6acf60",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/assets/MultiMountains/0/snowfall.heightmap.exr": "66a823bb8903ad44773008eb1dba0eefa651d4a286d3ee21ed07cc3be251263c",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/assets/MultiMountains/0/snowfall.mask.exr": "902e0e3ba5553bfba930f0b51cf150170395dbc64fe6212ba6ff00d33c0c263f",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/assets/MultiMountains/0/tile_size.txt": "ab8e9a58c47abe1aeff8ae620a0ed614ee77d507ef52799d4c103d69ff35d85c",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/assets/info.pickle": "c84660cc11a6d21380d78965303d86faf14703cad98ca9f73a866006945d610e",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/pipeline_coarse.csv": "3f8e78f7f0105dd6ff704306c811d8b1d10bc27b49299df1a8d0a35f76a7f731",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/pipeline_fine.csv": "33edbeba083c77d66da5a3b174bbd43bab76f165d97429cbfb514b180a27e3fa",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/polycounts.txt": "63230017baa48bdf4438ea0bceaa49e2e6a6587f99c1bb3228b3514028f38f56",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/scene.blend": "ba63ee3b72e800d67ebf81fa7a35997cb2366a7f3889c4dd243e0614c50902fe",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/scene.blend1": "ccc531f57d25b13b44669b450aec6aa53c52924d6a8fa70f89ae1e62d5bfc6d4",
+    "/home/warpwang/runs/forest96-four-baseline-pilot-20260905/binoc/0/coarse/version.txt": "e7066ea517cbc9e563967997e5cf2e3a899250403dac6fbaa25bb6b1815d16ca",
+    "/mnt/c/Users/warpwang/.codex/attachments/ce6309a2-4ad1-43a2-9990-df58b01df37a/pasted-text.txt": "a6090f7c9fb18a4fd3c4b85cf207db0f1e435488be81c68601435dcd7ac002a5",
+    "/mnt/e/BinocMesher/binocmesher/__init__.py": "7d39ede0400e2fc84420944b3321f1b25c749b80b52faf3a9b5cd2eb97e5b53b",
+    "/mnt/e/BinocMesher/binocmesher/core.py": "f5611dcebde85ae45990322a72188de59c954c1f68f8382679211bcc511b7816",
+    "/mnt/e/BinocMesher/binocmesher/source/binoctree.cpp": "8e27aec98e370515bf38a80d5c1502f1f233b16f8d98eaebc1d79cef171ecdd5",
+    "/mnt/e/BinocMesher/binocmesher/source/binoctree.h": "2f00240fb155d90a031d95ce37de2964d54111bf406007d48f59b2cf8150083b",
+    "/mnt/e/BinocMesher/binocmesher/source/bisection.cpp": "f034863476f0ae0c63e0d3c157536a5ad8722acf938ddb9b1997eb34e0754edc",
+    "/mnt/e/BinocMesher/binocmesher/source/bisection.h": "1504691f44642f88fa8e38c4fde008e61e5ba7b2ccaaf0216e531621861606c9",
+    "/mnt/e/BinocMesher/binocmesher/source/checked_output.h": "f44ae529cce8cecd50c146ac1901d0e07f89f05ad1068c0d41d18adc9c96abcc",
+    "/mnt/e/BinocMesher/binocmesher/source/coarse_step.cpp": "cc9f1b73cdb2fe4636f7653c4c802dde98185b152b94cc40f88837677eae1859",
+    "/mnt/e/BinocMesher/binocmesher/source/coarse_step.h": "9052c31f475f2cef6ec8af87a0a0d831066d8f281b734fa950044cbd709739ef",
+    "/mnt/e/BinocMesher/binocmesher/source/dual_contouring.cpp": "8629752cd094fb66698e1bbb6e6d2a11e3f381c992b213ef613f3cd992c3b9dc",
+    "/mnt/e/BinocMesher/binocmesher/source/dual_contouring.h": "84b6c7ec0dc3525234443ff2fcaf40b94dfbb633c2097a283243ef91aee93cb0",
+    "/mnt/e/BinocMesher/binocmesher/source/event_registry.cpp": "5a2284407ad929d39d3f49c6baf28d577f5002802d58a90b9c50498846f81eb1",
+    "/mnt/e/BinocMesher/binocmesher/source/event_registry.h": "2eede980ac6c9096d94a1abe81c4097bc6f2b19be2ecdeeae2890586d9607220",
+    "/mnt/e/BinocMesher/binocmesher/source/fine_step.cpp": "ca6224ccb49e48a1debd4342189d413b3c6452b2ed8ed2e7fed8954335210ee6",
+    "/mnt/e/BinocMesher/binocmesher/source/fine_step.h": "9d1ea4f28fc9822d6e9bc8b1f473759350ad90f71b26da089a5d609258202f72",
+    "/mnt/e/BinocMesher/binocmesher/source/hyperpoly_layout.h": "77e46b73101bb22fa6a593bb583c6a7cb22eaa2e0f0c06ccfdda20d5149dd8ba",
+    "/mnt/e/BinocMesher/binocmesher/source/hyperpoly_provenance.h": "c20c33479f15c68c31c12607a5c4c018babbed7f618fb6999df362aff2019d62",
+    "/mnt/e/BinocMesher/binocmesher/source/medium_step.cpp": "8d01360587dc68a21f2d4c5562947de2172aa2768495cf72cb90259a0b88d77f",
+    "/mnt/e/BinocMesher/binocmesher/source/medium_step.h": "05418a85a5777ddb5d7699ae44d52ac5c8c74faa9c56481c27f2a6a8ce152f36",
+    "/mnt/e/BinocMesher/binocmesher/source/runtime_identity.h": "f0506e3dabbc57a5a754703cc421548ef2566b909e2803348ecc71244c37fc75",
+    "/mnt/e/BinocMesher/binocmesher/source/slicing.cpp": "7c1b7397401d941c7a1e35fcfdee9a4740de9d37bdcfd302601c678707507763",
+    "/mnt/e/BinocMesher/binocmesher/source/slicing.h": "858c8e3f491db499a055a4c8c7211f2c04ee5670bd81cc3cce684f8c620e00f6",
+    "/mnt/e/BinocMesher/binocmesher/source/source_splice.cpp": "f892b4112229c20e089e0e975eb0d4adc1329714e7f18787f6dbaf27ba6e2b9c",
+    "/mnt/e/BinocMesher/binocmesher/source/source_splice.h": "ac78c440d8e1cba47a1ee6ffb7c1b9d05c11c59fcd2669d6609a2b890f410726",
+    "/mnt/e/BinocMesher/binocmesher/source/utils.h": "caca3657f67e5346ca861ae3eb6990837b3c215dbcd07f434135c5ba7a024cdf",
+    "/mnt/e/BinocMesher/binocmesher/window_geometry_runtime.py": "8b8fb1002bb8b9f427e10a77e3c87a3d5d67d72d2b5431bb31a20665d21b0c8b",
+    "/mnt/e/BinocMesher/binocmesher/window_runtime.py": "4eae868b0db7c15e1e2c44d55423e72fb6fee2b8c82a2949be8e5d33ee84aeb2",
+    "/mnt/e/BinocMesher/experiments/c1_lite/actual_evaluation_envelope.py": "b3c8b3f57c38b0bf7bea45c4643deac13f0d5a2e6defa964d5a9576a1b117b26",
+    "/mnt/e/BinocMesher/experiments/c1_lite/anchor_ablation.py": "99faa6506f189b5055f729426dcf5c6eac3c1b81eeaefa7d5d6eedf33fb01437",
+    "/mnt/e/BinocMesher/experiments/c1_lite/archive_forest_runtime_sources.py": "dbf0af00ea02120bcdf0669a5d0af5203994c6ab9a101986bdcf58f0df9866ff",
+    "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/forest_sequence_20260906/structural_coherence.json": "a6dd316d78aa22befdcf54ee7180daaab4de37b5c681c264fbdffbe4e0543c8b",
+    "/mnt/e/BinocMesher/experiments/c1_lite/assemble_forest_sequence_manifest.py": "c5474906c9fb155d383b8b898421f6155eeff32fe716b61afbf0506c8c9b2792",
+    "/mnt/e/BinocMesher/experiments/c1_lite/audit_forest_component_certificate.py": "b3c4bdff97f6ca181a5f2106d46c6b77d5d762680ebd0c525a24f2ff8eb46d16",
+    "/mnt/e/BinocMesher/experiments/c1_lite/audit_forest_final_report.py": "5de60fe3d68cfd2f52b231af700d3e725d0225d10a688a3063cb1c91968481d6",
+    "/mnt/e/BinocMesher/experiments/c1_lite/audit_forest_visibility_projection.py": "cd6f42cc3fe9c89b482320f3a4736166aa261d0d13c3cfbf4296a8f6de89a01e",
+    "/mnt/e/BinocMesher/experiments/c1_lite/audit_relative_plane_feasibility.py": "549da9829af72793f67123bae78fd330d7113707b54a5ee8694aa458c18a3239",
+    "/mnt/e/BinocMesher/experiments/c1_lite/census.py": "62dab7f39624a9f35d2a45354880c0e49ee7eba2d518941784f17c8bce308c3f",
+    "/mnt/e/BinocMesher/experiments/c1_lite/compare_forest_native_runs.py": "94c82764538bbdcc732b85d77f8bca7da83f9e114bf99136bc036193d27ed626",
+    "/mnt/e/BinocMesher/experiments/c1_lite/compare_forest_sequences.py": "02120eff19ab026975a802fef15a1841cd74f382cd04818c92c289cea7a05a07",
+    "/mnt/e/BinocMesher/experiments/c1_lite/conditional_perturbation.py": "5e70d9813de36124d2178815638ddb2d3f661b9ab6417353269da7a006cde017",
+    "/mnt/e/BinocMesher/experiments/c1_lite/e2_image_metrics.py": "6b3b83450b4e8485f819d24fc23018aa56feb43b1582c799d9ad72668fcead94",
+    "/mnt/e/BinocMesher/experiments/c1_lite/e2_raster.py": "817aadf006087868f61150ad35f8061bf8117ad1e8040fd1c79af1ed4211fe68",
+    "/mnt/e/BinocMesher/experiments/c1_lite/e2_render_views.py": "6102f35c2ca58242154d3ac930b749b27cc82501b1c4bc652662cd55a5edf3d4",
+    "/mnt/e/BinocMesher/experiments/c1_lite/e2_runtime_validation.py": "4c8d6fe24e72e7f5e97de1b9a84934ff1983916df19e5566fff2ad8e87642d19",
+    "/mnt/e/BinocMesher/experiments/c1_lite/e2_schedule_coherence.py": "a5d3f2f0ec0b98776026b8a9a723fc956ecb5b074dffafba082e493d3c2f85b2",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_census_pilot.py": "b87e5a6f3e4d888def5bba72c3d914c5b038d861a044f6c0fb450d98afbec058",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_component_graph.py": "e1b04e70a6933a921eac4e9a302b30aeedffb53edce99b4f3d8aa764b391d709",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_component_union.py": "1f3e0ea57fe06163184566657cf39f4608ce0aec80380dc4be841f849e616f82",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_eligibility_funnel.py": "ebff52c4698f9e06ecf8c369b81ea83444bf7e635e7287f9a0f19d73ecda2dc5",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_exact_contact.py": "f48a74a196b0f1ec41600fd85c11c98bf5da891beccdeea4446e1ba50620d850",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_fan_contact.py": "5c1410de314dae2b439db7ed87b532b7e9d1129d71fb69ad169d8fca0e4e078c",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_frozen_query.py": "2c228484b216cc79f2860a6dc6d91859a15f18cba6f9758675d4f4c5c2e47834",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_native_campaign.py": "4f21d173e388a7860f420a4dc2e7a3f9acbf288e9fa5d0f443f83d20b4cda55a",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_native_patch.py": "05ea64b988dbb60f94334e559ca510045282c902951e5d312325dd43cb54b076",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_native_reader.py": "4f35f38874fd506c4ed54f4e9c70e9b9a4842483604f07f886d9db13cc24b623",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_observer_contract.py": "75f10450ec361daadf9fbb1633da20cf461f67ed31a1e36b229e3e86f6fafca8",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_raster.py": "8428baec62e79d4862e51321d6ea58d9d7f82d9f2bb2d39284ed28ad624c3872",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_requested_source_gates.py": "3a0dc1a5e0cdc67ad58fc25ca82abc5144342ec9476fdd71f4f6c75a052bc3df",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_schedule_policy.py": "f1d9e59ab97841237560bb80d34d4326c26c254a7a48769f583b48781923e884",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_sequence_inputs.py": "fcd0a43e5184538b40eb32cb166be3828372a4415ba7b8f08978ccfd128d0cca",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_source_compiler.py": "74feb0814940726e4f2f6a9f597674a12f9d0e39ece3809a119748322e9fd305",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_source_link_witness.py": "836e47486dd70c56cec418c35320f4e79ff5865d6cac31bc2b20a15638b67814",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_source_support_inventory.py": "022d14cb56554f88a361024d9831a66b781698977acc7c59b3a70708ab8d4c6c",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_support_reader.py": "1830a45d47881c3a30af97ab2164490a7f90b5c02ee32ed458e12d7a6a96cb64",
+    "/mnt/e/BinocMesher/experiments/c1_lite/freeze_c0.py": "9ea0ff5c38df448f204cc63ce7943de2e34079651964d274c3b143f9f9daadfa",
+    "/mnt/e/BinocMesher/experiments/c1_lite/inspect_forest_contact_witnesses.py": "563fb684c5eb27d18e3590387ecc3d46a8a9be58387d308a66181d534d25e7c3",
+    "/mnt/e/BinocMesher/experiments/c1_lite/interface_topology.py": "fd5209e96885e92c626c43e36a243d95bdfbac7d1c0df522a653934954be6f05",
+    "/mnt/e/BinocMesher/experiments/c1_lite/plot_anchor_ablation.py": "b4606df597ca445c6a74435c4f8b36b71430ae5049ef06ad1129abdf3b5845ce",
+    "/mnt/e/BinocMesher/experiments/c1_lite/reference.py": "7fb812f7fdaa2488e17e7774017118b0cb0844c8d1aef8fc1a686ccc45af83eb",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_e2_conditional_perturbation.py": "156fd8fb1c80300f1605f0bf042292aca805fd3978aaf4b06b1657a1ad2b72cc",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_e2_runtime.py": "306abf2601525ecc3a9f7e8b77f61d34bf03138eb7ce1ecec60cd8ac2220f72d",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_forest_atomic_sequence.py": "c10cc94360beb1f4094792a88dce92c413fec60e0666f8af7e8041ece55e5a3a",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_forest_component_certification.py": "b9eab8215b55a3ff1998297e820e699de93e54ea5e7bc940bc5cc8d25dd90620",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_forest_formal.py": "fb77487ba4e55abebe857e4093379d9111301e764675f6f454d31c749ee7a5d7",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_forest_native_admission.py": "71fd6a49a4e287a38e431d776cd505d3ee2a4383903fc262eecaa4ffbc7114fe",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_forest_native_probe.py": "e420ff33f2dc5da07aeb6af76f2cd6f670e02cf0ed5c3f56123bd5218b80a870",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_forest_visibility_triage.py": "6f7004dc5aa8ce50a7c799ccc2ba12fc6fa42302817fcb905eaee16e2d4c17bb",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_schedule_e2_images.py": "5f23711499c45e8b9ea6f82700e25c757f943d0d5e702e67b8ef2860c16ee5e2",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_window_audit.py": "20941586729cedcb2a9d82b3cb1d928c0707c1be4cf531e58d9e6dbe26ce9941",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_window_audit_v2.py": "3742ca690afc66732a9dde458f005ac26e993c395a65914b10b57c228e597b8c",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_window_audit_v3.py": "27964bdb74d7d90d6dd6f779aaf87cf475f6262391ae1cb98e5125ed3661a2c9",
+    "/mnt/e/BinocMesher/experiments/c1_lite/runtime_baseline_audit.py": "f165529f88896acfd0dfc7465b256d5be929b01e6a486e85efc300e00288a27f",
+    "/mnt/e/BinocMesher/experiments/c1_lite/runtime_breakpoint_crosscheck.py": "6ea7694b732e25e092fe411fd3d2424d7c682ec5c9a2ee39fd8cadb6dc637724",
+    "/mnt/e/BinocMesher/experiments/c1_lite/runtime_retained.py": "ffc84f433f87a5dfd38f501a2655c5c68c77ef00d21f2387e806fc12027bd810",
+    "/mnt/e/BinocMesher/experiments/c1_lite/runtime_rounding_probe.py": "285b681b41a42e7762d62a8fe5793385a0b891eac4733add8ed18a62c536bc8d",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_actual_evaluation_envelope.py": "7cc478f88a864ff447a0dff9eb785164bea9237141264bb44fd11b39f87ad222",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_anchor_ablation.py": "ea6b6412eae889e2902d78f76542a6c7a4b9a1b46f5b707eee71ce59d841f360",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_assemble_forest_sequence_manifest.py": "448f5d5c4825f9623a2d93bf6ffaadb453863db54905de761c203414c715ab57",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_audit_forest_component_certificate.py": "96a817f19b26b24d0cac85cad0762be99c2f6ddf343ed1e339edae2dfe2b2238",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_audit_forest_final_report.py": "f84f5884270306392166e3a3c17ef5cd5c36310c9b4fea76d1ccc7db6b0f4bbb",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_audit_forest_visibility_projection.py": "6870de42e653ec260c6d0bcc3c9340f07a56b63838027780776f855746e67bb0",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_census.py": "03a8365052c408844067e5bec29e665cbc1b8d5a61a6be7e5d12e6017de46092",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_compare_forest_native_runs.py": "7f6bf2c23ab4ce6a052d0d19179cd88cb463261c2ff00f0329db986411309e4a",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_compare_forest_sequences.py": "68ab068389b16cbf0bccbc51f467e78975f0e23c3a1d5232245a82850d8984b1",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_conditional_perturbation.py": "e7c3b1112239656387cdd301d7dc9012f855c8b38d8fadbe416fa17f7536604e",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_e2_campaign_contracts.py": "6bbf914c4ea20d3e069125846bc2982d33a76eb0f220a36c74f08af906c63512",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_e2_image_metrics.py": "bf8f46fb304993c547df9b243329164852734dfa75725f1d444811ad94ad2854",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_e2_raster.py": "d96846291941bba66d857508eec9a31d5909611d4eceef0ae6b9dd39b172b279",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_e2_render_views.py": "a70aa03442b7a702b5b7dc6c0524b6bd89914d1a1311542637e43990fc7002c2",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_e2_runtime_validation.py": "528de0a9312083f28080f58bdd96912bab72ee80083ebd88d1ed11d71054d37a",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_e2_schedule_coherence.py": "ae442915cd663e01464ef0ac21f128356e6c8a0af8f66c43f967d30d30fc6482",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_atomic_sequence.py": "38a1e8c46413e49db2cbd972a2b399ba5a25d18085f960ae510bf21cf4ad03f4",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_census_pilot.py": "debe1a1a1597ac31287d5bb7ad99248a4a6c181ff2c7a94096b76400c24c023d",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_component_graph.py": "47790a1757fc048b9dcb4bbd3095b7fa3f16cf7ab823b2eaa6f4fcef5ded72d5",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_component_union.py": "04ef4c706045279ceb83390b2496d33c38aacf347f6b511c1cc0bb49ca899690",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_eligibility_funnel.py": "ab38a4eb664811609ab9da7e9cb37722db6c7ab5891150e44b0f3b6e8fa44fe5",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_exact_contact.py": "ab27fe136077b4b016178af9443f3b1381507628c0e0f5e1d3549760f66ab3ad",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_fan_contact.py": "4d4a86dc814fcff2008c3a68498f770c2164c2b8c189fbb8aaba60a8aeb16479",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_formal_runner.py": "745dce823fe84e6f98746a81f40ee4f481ae49b42eec9a6c39e500ed0656def4",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_frozen_query.py": "809227c823aff8ecaa450de6f5683b4ff7d75db3225220078d31abb74dd3d558",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_native_admission.py": "77cc9d38070b180390125900a5bc5d95858784fc0bb07638c0388dce2c930a6b",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_native_campaign.py": "3023990353d7d1640b6dba5bc6e280490c1bd240342a6b4b8e51343f9aa9c4cc",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_native_exact_fallback.py": "60bd52c49599ae37092b5d95bb523578a17d053b60d596c7464126a02042b5f7",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_native_patch.py": "e02bdc55fd3c54991c8a96663c7f40a1426069300848439426ad08ad1e66f0c7",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_native_reader.py": "038d3c84b060b0fdf14b2b5b1fc71f1092cb6ba2b758dee383406e78cae98ee8",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_observer_contract.py": "fd49d1b1545c2dd32ad5d71a6254426cb56f90e7396ec7eb33ad52a14e954201",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_raster.py": "d0336f24810a6458a9133f48a77321bb7ce6b177c589dba371fe8bc41937674b",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_requested_source_gates.py": "9288dc326ae0bcda34e24f1b38fea274988c7c94fb7666894a6dc324366c92f6",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_schedule_policy.py": "2c8cb3f770e4357cd5a286b33708b7f62fa736e8edf2d5900598785e708558db",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_source_compiler.py": "84ad8152de12f95057e695f75a052079f4610e4cbd9340f2e2e72cd9eb4fc845",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_source_support_inventory.py": "491444cbca7a9718e067375b23f20bec9507600651784181568336a866046008",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_support_reader.py": "1ea378dcf7ee421d5a9a9ddb664bb8bd3402062dcf86d8588ddf36f23cf38957",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_forest_visibility_triage.py": "bfc1c98892439ae6a32300e199e45d15f98d9220d7e091e0bbd2c0f9c5bbe9d1",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_interface_topology.py": "ffeb2af0455d859a5e7d001e9a33d9658d6b6c2393d32382218deeb5eed0bdad",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_reference.py": "a9843e95b20f55775ae5ea2c0a1222a57d9019891183d8d484d1fb0b692ebafb",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_relative_plane_feasibility.py": "699754a25bc8452f466482493d3a09362e6a1a7139adbc2f6a6591f0450328b0",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_run_window_audit.py": "7b34d96a6abea2d74efd8377d7e88d5acfbd69d236635b28d4bfa8161d9d3d62",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_run_window_audit_v2.py": "01b47bfa98b8ffefdcc55e6b14e756f75c16bdc08d0593f59a0bea5948a7f31f",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_run_window_audit_v3.py": "09a879fd6491e43a99edf1cc609baf91392d18047e2a7419c1922cb619dac8fd",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_runtime_baseline_audit.py": "17607e49db45fa5c8005a54ec084901753c3b01fbfb7b9793345d99108b0a1fe",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_runtime_breakpoint_crosscheck.py": "954ea8e5ad6ae4c39b47b50bb4595ea8e9c00b55d279bd4d6b083ad868b9d7eb",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_runtime_retained.py": "368709520383fd14bd66d857300226e3f603131d32389cbbe79817668231a988",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_runtime_rounding_probe.py": "1835b5502fea95318999676ff0d2602d1c84eb92e3b4f39547639aea24f06dc5",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_window_admission.py": "f74d83eee57e2cfc6dc7fd6bcec5ad425c65ee573c9c08c82bb415c110901b4d",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_window_contact_v2.py": "153bc04d720874a781c3b96d3b5c3bc059f201fb796965a1b1366234480ad99c",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_window_contact_v3.py": "0f0cdc22964700845e4e82e08a67f7bd76b772ccc393dbac8b37d38763cdbb06",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_window_exterior.py": "fdfef9965fe2717e042d8f9733a616777dea3573aab004066afc9c0c4e578332",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_window_geometry.py": "e6e126b111872f259823aa437d7c0d88957a7f8b1317feeb3e5516dd245fd1db",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_window_runtime.py": "d887bd3a0508ddd2c36361990b9ffaa15d6699bc4465332630004c9bed2efa65",
+    "/mnt/e/BinocMesher/experiments/c1_lite/test_window_source.py": "2c9330cfa1d6c0c08687c3fb02524ca4c09955d76bc70873eb2dfda399140b90",
+    "/mnt/e/BinocMesher/experiments/c1_lite/verify_forest_sequence_inputs.py": "fd6d8531b11479229c6542d8407783d2739f9f87183822823e996296b9504a3b",
+    "/mnt/e/BinocMesher/experiments/c1_lite/window_admission.py": "8a35281a0f918278a01eea1c156c13fb46a695d659cfa9f820275252d47d4fcc",
+    "/mnt/e/BinocMesher/experiments/c1_lite/window_contact_v2.py": "369be1671662482accd3da5882044984f734e67ca23cf9952f0bd3a4d538d404",
+    "/mnt/e/BinocMesher/experiments/c1_lite/window_contact_v3.py": "828285a2ad2916b6999dad280df5aeade8befede32be2f8dd328ddb2e72b66d0",
+    "/mnt/e/BinocMesher/experiments/c1_lite/window_exterior.py": "9e9e071307f49e2059a8bf121a7adb3b0fa2469b15a1afc953c2e5dc73c99479",
+    "/mnt/e/BinocMesher/experiments/c1_lite/window_geometry.py": "a3a9ffd34775634d6e93d722911317d8e3fffa52d2410a8ca34e862fa0a38765",
+    "/mnt/e/BinocMesher/experiments/c1_lite/window_source.py": "1aa09ab97c85d57941b5be574c25f0c9c243c569c282c8f72b6692eff65f4ff6",
+    "/mnt/e/BinocMesher/experiments/source_splice/check_window_boundary.py": "0d7ec8d3daec2007e0bd92c8a5e131a3ed6803108dd07125a75ef06710c815f2",
+    "/mnt/e/BinocMesher/experiments/source_splice/compile_critical_beb1_event_ir.py": "2eb72a39b0b8529d829c5d4e3b6a098e052d2fe920a4a07ded802b4c12f1fb49",
+    "/mnt/e/BinocMesher/experiments/source_splice/compile_same_root_beb1_batch.py": "40767e594b453c7d1332e2ea7d843107dc05cdbb177a2a9598cf7ffff673dbd4",
+    "/mnt/e/BinocMesher/experiments/source_splice/compile_splice_plans.py": "658b7e2657573a8bfa854ba094ab36402c675cb7ffb7606924a11eda5cd6c094",
+    "/mnt/e/BinocMesher/experiments/source_splice/processed_mesh.py": "7082a2a00b73554ed7bceefc513842891c3261d7772d50526ad079751bfad7bb",
+    "/mnt/e/BinocMesher/experiments/source_splice/run_all_canonical_beb1_events.py": "d05a785b260f7f5d34d6a82a51c919d327874cf58b17c6a92f75f87bdf69a7d0",
+    "/mnt/e/BinocMesher/experiments/source_splice/run_critical_beb1_splice.py": "89af6db2379b962988849e35959cebe5943582182f59dde0b7d50b7a4f4db864",
+    "/mnt/e/BinocMesher/experiments/source_splice/run_exact_trace.py": "0037fbb8e5024b91441fcf760702f9036634440dc76d88456574d579aea37c8b",
+    "/mnt/e/BinocMesher/experiments/source_splice/run_geometry_gate.py": "09f07b09036bfa29082c25f1f176996ad6f1f66ba93d8d53919c37f332ba30c5",
+    "/mnt/e/BinocMesher/experiments/source_splice/run_same_root_beb1_batch.py": "5d9657c7ebaa1a4a31d65b9eba653bd55cbac469fd657f3629e8f4c354007656",
+    "/mnt/e/BinocMesher/experiments/source_splice/run_splice_experiment.py": "66332db9e2e4121dd4008e9f83011cc2f9bc04e640d7c876900c760b73d7a914",
+    "/mnt/e/BinocMesher/experiments/source_splice/runtime_common.py": "30620ecf59310c5852f088f9eabf3393250ca8b6037803b555b0a7cd7a657832",
+    "/mnt/e/BinocMesher/experiments/source_splice/select_probe.py": "4f7e12eb3b45803c1ad30e28a3b7c8f15fe1bd8ab9dd7681dcf4a1d54fb3ce2b",
+    "/mnt/e/BinocMesher/experiments/source_splice/sidewall_contract.py": "9b11d9bc5a5dadb6c166f66065f6e97dc6b1f0e4462dab3e9a56d65c604e090e",
+    "/mnt/e/BinocMesher/experiments/source_splice/space_position_contract.py": "deb2a0bc8018c0ad1e4386063030b43a1559e7757666945cce3f9baf6201f9c3",
+    "/mnt/e/BinocMesher/experiments/source_splice/test_critical_beb1_event_ir.py": "f88c8a08495d08c9227f90d32229d266b3dd63aafd93df4bdd8706194145b78b",
+    "/mnt/e/BinocMesher/experiments/source_splice/test_geometry_gate.py": "157dc48e527c2bcc641584ee53dc70fb02fe7cf805b206728df9b094c22794ac",
+    "/mnt/e/BinocMesher/experiments/source_splice/test_sidewall_contract.py": "cd33251adb6b394a43950dbc5a4f9cd8e834e3e60d36569ba64dc9595175bd56",
+    "/mnt/e/BinocMesher/experiments/source_splice/test_window_boundary.py": "f4c654f647a698695475543fc2d7ce60ad563fa59725d33374446a4fe260d306",
+    "/mnt/e/BinocMesher/experiments/source_splice/validate_critical_beb1_splice.py": "e1819b75fd73057ccd2df163edae2c6fc9566ee9694a0f5f201f77de48a89d46",
+    "/mnt/e/BinocMesher/experiments/source_splice/validate_same_root_beb1_batch.py": "89c1c857c11245005d233c32c4eaac228a72e92420048263cd40d6f1f26ea966",
+    "/mnt/e/BinocMesher/experiments/source_splice/validate_source_splice.py": "2c6cfb6ff3e3e26c8a08e6fc06ad2726d8c0582b05a2071fa0e4757d2181fd28",
+    "/mnt/e/BinocMesher/experiments/tv0_tv4/run_lightweight_profile.py": "b27bfc4e15d76f1ff9bdd9cd95882a1e8b592f7c3edb0ace53f807b76dbf9a58",
+    "/mnt/e/BinocMesher/experiments/tv0_tv4/run_tv0_tv4.py": "cd06288ea306c13d852d6821f1580deb0db556fdcf05a91942e8c38e02ba35b3",
+    "/mnt/e/BinocMesher/experiments/tv0_tv4/theory_audit.py": "3560419f77d97d40a051f2c8bd4520722f9bbfb4b095cb7897ed58c4163175bf",
+    "/mnt/e/BinocMesher/experiments/tv0_tv4/validate_tv0_tv4.py": "5c59ca42299806eadd25ef40c7d28350d1bf2fe4e4c413e685549fc2ca641ceb",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/budget_amendment01.json": "39ce0a8088c5c72a4b6595c8d054becf6c909410d4e70e1460a042f8488c2ac0",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/cave/build01/build_protocol.json": "344df3c21b2ba3bbd3552aa6a09f2cd0b2307e3e6e858cc1ae506acfeba53d8a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/cave/build01/native_command.json": "a37ec04fd7e032f19617864f731111ebe67c526de6c6d049c63dea9361d66dbe",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/cave/build01/native_source_after.json": "1bbdd07687be577b79753272487d47f639d01df2ca4cf40450b6b6d7c138ce90",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/cave/build01/native_source_before.json": "1bbdd07687be577b79753272487d47f639d01df2ca4cf40450b6b6d7c138ce90",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/cave/build01/summary.json": "db00d679c9d1039d994fa54d58df25764231a9790b617655427a5feaa293a0b7",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/build_protocol.json": "246a733fd9194453d60553448818f5d5dadca1ba906972f7f5ca571d42e71e1b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/camera_inputs.json": "2148fcdb61b7999414e4b481f0061fb6800a7872b35cea3031d275e06cb41957",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/effective_inputs.json": "4e667bec455cb5f06a29bc0e1b37f4ba5dfa4a415f67a01e83711f403aa61119",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/original_render_camera.json": "d2ad4b4a3b6a731dc05fd1d4b88a8a7a0cb432a4974b9b9e82f41cc67c07fc7c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/summary.json": "13bf0303c0e03fd42124c5e80610e7f9ef1b6b0f490027c84dc5d28e5593e48d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/worker_complete.json": "8ef1de67f5321aa5bbef8148dc9dd6bb1e99fbea69cba50a48c107458d97fbaa",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/certified_events.json": "6465e7995d37bb660022c67c0a1553fd29ed5fc735db1f62f28c1db0eda72d99",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/component_queries.json": "e4b818d44b097291d9b0d0345e1f105e0e153a41cda6fb9511552dcc988d2d44",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0001.json": "7ea44ee062a1edde4143ddc502b3a099eb6f9b9afee03f511efcf1c4a0c639f7",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0002.json": "e48e9420e3f135adb2c08d1dc378bc275790cf657e64a2b467c541ff60c67e70",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0003.json": "9c98b599d186b734451741eeb1cf2fbd0e83beb756900d092547229f7ac53f4e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0004.json": "0864330753caa7c4e0c0964dcfdc7689173f03392c0c08194a7d359b1cd91a35",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0005.json": "3fa0024ff768313a5deccaed66ab68077584af920a5be044b6e50bfc5cd33b82",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0006.json": "f6a11f2e14527381af5e51782a8e5f692ebba09dbc9d88e60b0513dd3ce11a78",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0007.json": "22cf5637c89883900377bfb1a09c2a202b1c9c7fa6a6501fe583b0720426ff3f",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0008.json": "eef7ea9091582c3b1cdcb2b4fb6da68cd7f2224608c4aa6c099fe2b2dfd3fc94",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0009.json": "041019dc4205fb415e552bd9f3c687984040bf34cda3caafbc6af02725e4dac1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0010.json": "174a841d94fb1cb030a799164b2e17fdc3eb442020168cecfade3a29f6ed509b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0011.json": "bd17c66b4e974faf3a0936c55b41cb0d52f02783d571ee7d8c72ef93b8f6accf",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0012.json": "77bec596eeffbdb58f4e7d1eb1a59e391a43b2b947d24c273a9854f49ec2943a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0013.json": "ce878c3773a3e38789c4e4fa7b98828c74a5654aa8edec917cb9a76c0490b5e3",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0014.json": "765487734efe7ef3cf2a09d809de74a98d66f7942ebf77e7db14d3e3e84c6fc5",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0015.json": "f275817d176e50c117e9e227570d068baf68945d5c6043487a231f522d03fa5c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0016.json": "eb3cdd7a5e66cbf8f0b07720637f6f08f2cace838d9a5473b7d12a2b7c946cd1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0017.json": "bb72e6c80c7492176fa3b61286d9a5b80e7aa52ad75b3a7d64031e355530032e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0018.json": "2b1df4df96511e0d8ce8f3949f692218483385ce88589573a4747d92b0c340f5",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0019.json": "6d86977ab2a5d968d4a16aa474df7460422a8ffd321a87aedc72bef1709dbf9b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0020.json": "a69c4b4d620fa663500523658b5f46e2c4a223fcf143963dc8ebdbbabeff4aa7",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0021.json": "6861d7559edaf4ccd14048071b336972f9b73004b404d7c738a33aba2cec3caa",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0022.json": "a5ab44c50405eda2e52b9625e697cdb4a006ee9d096dc29b09b3e7601ac8cd31",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0023.json": "7c4da72f761c8a3c40735e5df84ed7e3d7239255af1eae15f89a3dc8b5c7cca1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0024.json": "748c46b4436c8582bf88bf1a550975cbcf5d3420c605bd0f20d90d514ee5ab65",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0025.json": "e8b0ca72c1ad3e00e03c42570ea3ae1ad4878f3d48978c105cf63b126a7200d1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0026.json": "fc152bd29ebf50a8150794c84101b248f8219509034b1afad544802636dce70e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0027.json": "43ed815b386510562193f88b3141bbb2906c0c557e16bd3c545793ccb9c5a86a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0028.json": "61c5e0a64963df5e8f39581923e8207b51b4f850238eab71df0fa6bbbf5c6821",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0029.json": "7549ecc1fd68b2c55b35442cf2b1be5ad390925952c922330b94f1e3a40c1a67",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0030.json": "a31ee9ce93f4b503b62ce40523a933abe764268933844363c4c6637e151e8c4a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0031.json": "d3467fb027907d139724681305430d3e0258f2922a8fcb98d18f3b7597aeee94",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0032.json": "c6f4a39704bf5408fae3bb37ccd81d129bec2c0156cb15ca01cda7bd2560fa11",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0033.json": "5a0cd749989099b3d8bfd68458432cc5d450e276e669d5969100f24400d934ae",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0034.json": "b44abba30d4a75df57841bfe6c0a092641595f3ae0dc70d22d9724f3579e6c83",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0035.json": "03f04c96cc47a23f915383d0657683e2f9b769a25951fe5d8293fcfb4fd6d28b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0036.json": "32275b76ca92d9eb311439ca4aed34c4ce56fcbb13a6bc03b39b28e85b8980d7",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0037.json": "660784014b024b358a7c9bd975a2215a61f5c23306cc8d8880ec4e0551f1c9d0",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0038.json": "a92250bc94e1fb7c951f02e2940752ca98015f6714d1b90248e487e288b6fc4d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0039.json": "9803233a0572f8ca422b6c3731dfa5f685d606d54f9a2483500bfefd85e87e76",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0040.json": "00434b3072cda24743c7295bce3e82c49c42b5bf22ca25821f959f05db96956f",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0041.json": "ebd797e980753a0d912be221a39345c80fa5ef8a5a7d48959647596393dd241e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0042.json": "2f35e854f17418addd360d593fac9c9568aafa54f49fdf81dfa10ad7da201999",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0043.json": "680cfa04c35357bc5740ad70599ae12c9a63322632441cb1a5b40185b50d0ea3",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0044.json": "d7f4af4d71208ab0b6d93ccac55920d17a0ae8896258163dfd505d770a005332",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0045.json": "df4f1be650443f1da388e58ba9eb4fda31538af5ee25980c4408162f11cefabe",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0046.json": "15d6494cd6da63dd47e0a12bcede6a7e4824008c34e3e62ce043bba6b178a4d3",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0047.json": "81f89e52d265122d86a672fba41a1158db87934d41937899848ab3b0210374cc",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0048.json": "c78f8b2263f762db8fedf8a5346d186af3eae8ef799d187d774b304bba6196d8",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0049.json": "8079ac89dd33c3bc4f87387e8dbc9542c423216fb0bc8a81cc868b37ad3575a0",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0050.json": "d8268891ae694f81e8769ab6799b1d8dfb115c0dbd135cbe4eaca3015f27ab7b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0051.json": "cee025e3339467f9792a5d6ca91daf89acf62326b7f7353647c2885563544fc2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0052.json": "9c445bca123f1a240aeeffd9be52570400768f58ac261daf275fc01b1003e381",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0053.json": "311ce692e38d1a95ba52160780e70b742a0058221714ece26c71de864e7f9f7b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0054.json": "e2b726639a318bb0bd5ad1929fa9ca19e8f4207013ff45bd408cb05c6f34d4a7",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0055.json": "b2aeffcbfa8e1089f4481cdabd319479a86972d8ffd39aaeee0dcb9cac6c37a5",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0056.json": "d82c984afc9e55e1cc90fd9002c5e9a806bb773146474b8ca173be1d2c5d79f6",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0057.json": "e3b936bdccd5ac9bb487163d1e03048c868c18cc5549f890abee4256d96232ac",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0058.json": "5846630f971064e103d54f573934e5a8e1536697153ec458ea1767aaea3c49c5",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0059.json": "185d50fb89f88fd847315c685dad1665eb80c844e8a86f046a84279755a62cd0",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0060.json": "c666c1f8af225b6893f2aea349f86490be411f415c66560e8a9ec707b924a781",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0061.json": "a970fc10e82f7efb56b7ac47f4005c3eee5dda38c2fd802d5b58601be4361d65",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0062.json": "c2ca7a8fb118bfb79903912a45d2b914bab7c85f311fb988a12e8b1278585592",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0063.json": "e1a04402ec1ca5e3ff2808423e850ab8827e97bf3157f56d72c73f43c513f8e7",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/frame_0064.json": "a5612e5e523088094a958a968c64607de85ab682cdb74b74146328ad4a666932",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/root_3_2.json": "00e21ff98ea42a5bf5cb705cd9081be459f13c7d777274c1973b6fdf493202f3",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/frames/root_5_2.json": "b5cd5124c7efe52f00d37486362478915fec2126e80133b69c0aa686d0e1fee1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0021-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0021-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0021-depth_pair.png": "e38df3fb2349396073e065db02c960f9b26ce848d3ef420fbc4155c8331e54cc",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0021-normal_pair.png": "0419a59bdc2feb8cc9d1d96fd8d4eb1044ffad38d0f570934a0dd2c52adf57d8",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0022-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0022-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0022-depth_pair.png": "31ffc0715edec2eceaef198271c5f2b3ec3b426a71af47a2d4af6cff7ef4ed4f",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0022-normal_pair.png": "1253541c28fb79d31220363fe414a9619331238016a93a46dea1daacb6a8cd69",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0023-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0023-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0023-depth_pair.png": "e7c1e7bf3e0baf01df7a33906750b11ffc4435957342286387c189c0950dd61a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0023-normal_pair.png": "9d250f2924068fedd2f25ed19e5abcc5d06a8e11daaa8921599b43fc13944994",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0024-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0024-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0024-depth_pair.png": "fee0c7ce30c30550fda013ed219191281ec7229ef4a3e4e985f73e93e7a9f87a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0024-normal_pair.png": "7784a627702cc844bedc90590312f3b5226ab271821b76a92c49783d4a1e9602",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0025-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0025-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0025-depth_pair.png": "f37879f241616bdd2b8841e7f3ec817089ca29031b1841cbb14656ff2fc2032e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0025-normal_pair.png": "de165df53000e7a0abcc12886bc1f8735dab75c163c5b79d090eaa3720dade28",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0026-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0026-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0026-depth_pair.png": "6642792941b885a43a735813bac052c6bf3533192b4a1ff1a73d0ea2c6d53788",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0026-normal_pair.png": "21b2a145cb37972e9556adcf628873464e8f594ac5be5e6f71fb8474b71bc161",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0027-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0027-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0027-depth_pair.png": "fa8405cd05a327488e5a9b2127e7c3e79ddb8bae983bab5a6f624685ea80a2b6",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0027-normal_pair.png": "eb73e74716bf6a78b0010438c66a7c4b7132e7893635c3894f926b9c02f4c9ed",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0028-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0028-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0028-depth_pair.png": "78370cf7a6603d3a49e9c39f0d65d9ad1dcb8c5bf008f61bac8f14c4da775a83",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0028-normal_pair.png": "93f04d4ee13f81fa452ef303e81357bb0b358983fc17f57f2127e5b3a1740f06",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0037-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0037-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0037-depth_pair.png": "fcd1ce4099ca6de3694c88dab15624af61182b10fdf80bc8a024afaed81d447c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0037-normal_pair.png": "8e2d673b3716649dc97060600c2c94d695d3385adf340ab26dac9aab918067f3",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0038-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0038-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0038-depth_pair.png": "8db0e1f2c041537b82125fc0c80dae5d6e22a9cb15e8cbcf94d25196d710671a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0038-normal_pair.png": "d60fbc9bf7a317cad9bd024b6a4af10839a74e1d6a307aa8b007253ac36412ba",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0039-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0039-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0039-depth_pair.png": "1e736fc9e33f031027fe16fd3c6c22490cc57801dda49874f3fddb152b4fffce",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0039-normal_pair.png": "cf50212d060caa873f2f6bee23bff02a5ddc52436499b35a0e6729749c427e1f",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0040-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0040-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0040-depth_pair.png": "81e8738e200748c0082f2b8eac2967dd8f03c5a923f685c652a5a5288a81767e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0040-normal_pair.png": "56f81da72a0f0ab317f5ea408763bfe9a773877c51bc1a997472b99023552b9d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0041-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0041-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0041-depth_pair.png": "0bb0fb9d0759c43a25839d153635d3accd8697851f40331d67f62356e3ea1626",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0041-normal_pair.png": "9794893d7aa82a564390aa0d8a269921cf09c3d8ee4c9214dc6bf4307b1d9ffc",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0042-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0042-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0042-depth_pair.png": "3050b7f1f4f1afc7a27f30c13e07694ca75b1f4d9aaea545e58d0afcf428d6b1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0042-normal_pair.png": "9b7fad9470965903aca62489eeaaca5f27ac382d3ccb4f92ed858214320c9190",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0043-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0043-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0043-depth_pair.png": "1d53914dfc5a665da0d1912ebe721d798b02f87ebf072c0e35ce85345103e749",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0043-normal_pair.png": "71cd7abb632a8a8ee7fb0600a125f3da49a531e96c44dc3f8e333ef50e3dcdc4",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0044-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0044-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0044-depth_pair.png": "e3cb51aa48fff3fff82f0787ba663996207b05e38922f95f455a97bf1b538977",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0044-normal_pair.png": "66babdb1a36d699b698bbfffcd64fe077fc81ce58e399510e64d853d9e05d918",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/ordinary_reference.json": "1d234db47e08c65b45fe49572c06b052974c63cdbda712560d90480fffa5b3b0",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/support_graph.json": "c6ea2fef29e11d54563c2b47b484bef9de62558bf02d91810a06d9859c0dfdc6",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0021.json": "f74ad99e400796f730c6a3c397bd0f80273c679dce0247098a9c2b6eb3a6a64c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0022.json": "aba6a202770c5156674693a7ce9e54d75924aae494391cacffc4472862642893",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0023.json": "4cd85e76f9642a2cf6a32b570c0bbf3b3c4811da48d3be3c1164232a05d2c2ca",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0024.json": "0bfe03ba730640b35c37566a27f8c09e09b021a8f08e61c1d7b74d380bc3320a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0025.json": "ec3200182b8687658d324d0cb025de7fda6c812f308591206ec93abf6d83097f",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0026.json": "9d5f529f5f03c6db9596a30c03343f8ccc175cdfc6939a6ad2c2cc4d708f0fb3",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0027.json": "22e8686e9f753c82337efbb5bd9df96f911fed40a740e5d795ff21aa8b597ff2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0028.json": "962ead57982a11e90b6581fc33f03f04f4d9f6a34e09e5c0d9a669aea63cbb6f",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0037.json": "6e895102e221e620593f0a751b2e7d622b8da8a14b10e8a6cd6620c5bcc48cbb",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0038.json": "a49a3df2dd05593fb23735a32b2a4428a6af66b363f6bc30de2c17eb22032cd8",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0039.json": "58672cea32edf38c495ab34b950acf44e4a56d2b78a3efbb21a8a55ceb34aafc",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0040.json": "2c4c6878d8240003d2c07107eff05b8804a8f6bd49db196f27f39a61ffee5ff0",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0041.json": "3b4deb182aaac7876b6405c405820643558400f8d0ed0c42a267dcaf1dca7631",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0042.json": "1415a9d3cb83b841838b74f8a27290a257e9ce50cd05d6e6509104b23356d005",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0043.json": "47376816e08faf757a5b6ca72dd2804e271a0b300e769da40982ee50c072bc7e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0044.json": "ba64a8365edfe75d449415d84afee92ad7a8267c47f9ed5a11b236bf9ab7d9cc",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00000-98ae2211e56c.json": "863c932298cd4f749d8852cdeb8e59def392afb75b9320eaceb5bc08e09c912d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00001-86c265617875.json": "54075a6820c7f6d24479e668a22b6564fa58ce0d681fc414f87d2fb9cbf3c391",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00002-fb618284482f.json": "8585bbac24a157e3d3e881d858fdb8000fbf811efc97000f46ee92dfb20fa7bb",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00003-60c91f2182a4.json": "aa72d9527e0abda8eafc486b5f446db86be041dc549a082766537ebfba8f7b7c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00004-73a000c64df9.json": "fca8391d1b8589a3eb48b312e9d4e744779bef585d830507c6ff4758130424f8",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00005-4c4a5ef95144.json": "700ff9ae8ac8d3314f4a91f993446c084a5d2efb695c22f903b71bb8c6ab41c6",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00006-d4f0f18d74c2.json": "357ec8cd90631fdb92ee77d0d935a9bd6f0a6910173190abd0e203dda2670be8",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00007-36b5752949ed.json": "d67f6f75d0912f323b5d85ef718fa5cfaebf7a4df5005bd2898f3ffbdfbfa4bb",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00008-e5939b1631cc.json": "f90040b775906db1ef2bea8488eb0b37255e088fc8d70967eda79144fb6bc460",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00009-d1553079ea3d.json": "3397fb1c0dae76793f2739bb89d120bcc0bbc1bfa7ab56213f6b40be48f71a6a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00010-a6d1d6a628f8.json": "850c02dfff34d1874c578d3696a3d3dec450f7a4b63578c4d7c26d3bcc8f04cb",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00011-bfd16eccfa4f.json": "e19260e130db40a23fdf3cb4573344d2c46ec82cb573e16c922d8b1fe6cea083",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00012-2ea5767076a6.json": "0e2da32884ca83fb6d3f8dfa850da8fa7301d7bd205ad749aa47139a295eb8fb",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00013-033110305eea.json": "0899088844ba0b8fd84a25f17b09d3268a3cc389de6328ff9bff05f9a467969b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00014-d0b5f1a0a3c7.json": "1c84aeb4ce1aa1c3582617179a65cd63c3c5178e45f2dfd587fa989f2a79926d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00015-499c9d7a0276.json": "963edcc1b2c35603121d0e0c0e37bca1fd1e0cfbd1d2340dd29148b961724e8b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00016-c3adb66a49be.json": "6422c8136ff84fbfd92dccc1d90405dbe86aefdfe29b80c3cc5f6e789b2d6463",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00017-632090188846.json": "f60da82c5fd7f5777cb5ae36963f79ba6adf87aefbcb31436656ff88649a336c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00018-f366fcbfd640.json": "0416d26507216c4f1a58a563dc7ce2a64607be68b8b09978dcb4a11a59adad17",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00019-892ec72d8d9d.json": "bafb08e5349034323b459bdb93c72667dfb3bfa3f2a89bb839addd67aa33be8b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00020-bb68c10fa038.json": "057bc67e3044fefdfef4feca67a58e08f50fd930ec9d3b16a67522c50a75034e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00021-2649e6ac23e8.json": "be0365fc6cc699274f85d78153a789826d8db9dfe505d1fe6cc2acd2a6eb1797",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00022-a3c7a0dab51f.json": "842a7f84a4bc072b80642d00ee88147e8c6403d0954a575ab57879db31d3f260",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00023-36e09f9be6fb.json": "768de301878477acec7b175945b620db6045cce5db443d9806b3e9e00b424992",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00024-80f07567a516.json": "f948d480bb6bc886309748aaf6fb46fc5c83281af7dc7eea05b8a64a201c6bf2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00025-6227c9af9f68.json": "85e56528ec3b03ce4e56e186849c4bdf0da1e2bb8293ce9fa89435e51591c8f2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00026-ae055b1056eb.json": "636499313b8de277ee9f991561491535cf23b631a856a7d8e058f59c7b61ca29",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00027-47a635569318.json": "53d90e526432b3fd8eeec4045c812fd737482627abd3bd05272e15bf2d8465b0",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00028-5cb97cad6aa4.json": "f185cd8942f12dfd9f0cc82e0a429f91789b6b2ccd1495554c0b3b4415d6c5f3",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00029-aeab08a668bc.json": "dc12188733599a7b995e19c5cd93be869c7cb3672b00a70d0946af9179b39d04",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00030-36473354afb8.json": "9dac7dabc438142834ecd217360b0f0b50e967cae507f6bc8907506680090774",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00031-79bafae95500.json": "de881078f3326ddba2f172c731860c2185ef3a106b2141dd155153f86210d94c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00032-b301e55a0b5e.json": "e9cd144506cc95bd1c6a49b637c36ccbd0f748836da786bebe2be8e85afdad49",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00033-ca3f0aaf9b28.json": "7ebaefde51c788ed0acb79f20131aa99930a422d7bf839f3557ef3e3b61a58d0",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00034-053f4fc8944e.json": "dcb2fc574eceeba46a822bb1f953d78301aca770f5baf608262bfd019cbcd0b9",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00035-319e727e18ed.json": "454d84386a219df2cef4e84e5f3ed7a64d77e8ffc4adf831ac51829716ef758e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00036-04571cf36129.json": "cf4c750db41ba85fdc400d565fee52c1029536603c4ed6f501d97af86a71fc95",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00037-a6fa31f73c33.json": "8d811596a265d2bd208c62bdceb83e681c5a45c248f8ce00b309f3f8c6e33aa4",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00038-5eef8b1d9cd7.json": "3d76023644a829628726132a7ece6bbff62a50aa6c1e21ac6560c10160ab02ef",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00039-c85cb30e7afb.json": "c5c2340f9273388138dd34971ad85c163790686f43de0016a1daf1c6dd10ceab",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00040-9729d78a6fe9.json": "d867b54578eb917d9d9422077b575a7c92575c9f1dce14e3a32183d61875fdf9",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00041-0efbdcb273f5.json": "cde26e2df87e86c362baec478315a186f13e73d013ae18dcb14830ac39885ae7",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00042-933132d01965.json": "a844f68c39f6427ec7a0b6f1d0e936da52914be7241ccf8efd6f7c04a57ee029",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00043-1823083237ef.json": "0f85f10c8ef1be1a39022010e45139f9d6ac6817e9d092e37b7b5d50cbe6c80d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00044-00f2e0fb5efd.json": "b49e98b1f5b84893f8c12a57bd050904472f196679fa7d7873530d4a53f0f36b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00045-03cf9f8ac0e9.json": "0aea8a75150d3e21cc3ed2d85bc2cc7c5cea3d3b7fd06ad346e6d7f84c16c3c4",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00046-81ab2c63e092.json": "49c59ca29ea4acd50d2887aecd996f437355aa82072a1c6f720b439ae77a7319",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00047-82bfa039ab5c.json": "1903f895f9d89aa09efa641429c65d8c64158c0be5d8bc7c2a2849ce8856c3e2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00048-57f8b15805c8.json": "ccaa6e225f6a7be84e609d188c341123fc0ebe12e7b484f4f95e4ce2aa4e80d0",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00049-cf4b604c9038.json": "3395ad301a77ac277d9ebb2c11daef5edd0e57923396adb8d0e5a9cdc8441242",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00050-3480c9eacd2f.json": "453418da6c11c8e2672672cafc72a3808c74938d8d34b77b5ec6b60ece4d908e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00051-719d06a08d01.json": "f42f1f344c2c195d7ba0c0d768bd3c23a2b576f88c4b44bdbb11de6cc581bfe2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00052-ef07434535c9.json": "bcba792ffa50afbc28675728992e31b121b79b2e7be4edc7c29d43a78214d161",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00053-ec27fc1ddddb.json": "75d993c9ca5dce578ee91910a3f48c7be7629ad42a499a800fc381a64967be58",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00054-3867b4f8b482.json": "8aefa2f1c6f33e1624b68af0909402a6c6c698acd4875da4147671e01fab3aac",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00055-348e89bad5fd.json": "3294357cd16d37716ba751e015a0d09d6d5b6cfc8fc7b6d4eaf5e7a11ffddb11",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00056-836ba0e8e41b.json": "6fb2aaf3f58cba8440d3a6ca6cb01e41f6b4b943265f62cba284536ef17b2cb6",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00057-a9f3f0bf812a.json": "d07319a2df8b4c5afb2623c83648c851d9c093493a87dd2699001a2492cb5b9a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00058-07e7e4c3503a.json": "17cc3c9096454b09701723ecf70645a0f33b0606654b441b233cbb1df2fb5ccd",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00059-c4084e0d7455.json": "f6245c2394db19f374327ea6770fb804bcc34d3492f54658cf791b6cfd207a0f",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00060-d8e395f1faad.json": "8c441f6987018a95efb566aad9c799382486b76b5bfd9bf85dffc29b1ce523e1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00061-c0fe5fd82dcf.json": "90927159f124897a5dd6b9a922d3a32e29266db0038b9ea32ed1f82cc4744b0e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00062-a948088566c5.json": "209a061b1f6f6d26211b2098f8aa815e70052c76e64149359e57736e0f25ac80",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00063-012a15b350ae.json": "0a018bb09ee25ee10d3e1766c6ff8d57ad6d75e21109cfe2c1470ae4e8cc1568",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00064-75a6d4aa0a3a.json": "a7471aa265d3156b9fb586b78ac8ea798bb8e9103daa4fd45b1d07d5ddcb6561",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00065-1c7a98630679.json": "344b9891165bbc9ded5190b4f6dc3a42d5fef8d4028809f82d1e275c614cea05",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00066-277f21728306.json": "9bad987b5ecb946113263496094b580aa2b68e36647b5efcce538002781bb009",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00067-f338b3e7f8c8.json": "de2c22a9f5bd80eacb54b398b2535535a48deaa0e05545c14fc683b0f6d50cdc",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00068-97faafa2fc6d.json": "6c4b3eda6bc45c0a6f7c813ff135d208e6d585bc597e699032a46c7e07967d1b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00069-750b81fbc424.json": "2c35afe61d898729bf92ee9dc65a4d60dca1b1d780b59bdfed9ee484ac406087",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00070-bcf612daf11e.json": "ee221388d60a2845f14a8caf77bc1e6da100981f6a93b2146d6c3ca815c3e66b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00071-5b856e60ff76.json": "0c336c216597ae5272d78d362b723fd7d95f4908ee5aa893dbcd50fb3c91fa24",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00072-63d8a28b63bf.json": "047eb0b99ff46c6465fc20d43a4a8dca035af3531698de4a87e43fcbff31b788",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00073-dddba094548b.json": "1b258130417a5d68a48c6480873fe9598a96e084d535a578861830eb7e94a2f9",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00074-a76ba3d67795.json": "1a805616aa387d33a7710ea8e90d1890ea8446ade4cdda3043f0cb67aaa776ca",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00075-bda20cae0061.json": "6a5133969ec97807e0144fc397e1fd19860caf80320ec16fd7915a1a0c78e4c8",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00076-e5ce2f51dd01.json": "834a51ee46210f566fcf5f9cb42de3729afc9aeab011bca9cfd546e0afbb5ce4",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00077-1fcbd2b09763.json": "fbb669523bc2c7154a9d8dd61410bea12322bcefa09aa5c4ea15ebea03c4fa5c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00078-1540bfa34d24.json": "08494cbfe168b815ee73ccd2a31cdf189724968477754a997deaa2e00678b107",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00079-4e627253c58c.json": "876472e389c040f63257bbdc6f2b07c2eba062d9846faaf90219dc7066e58bff",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00080-c1f0e8a4c6e1.json": "81b667c6c0de3bbb3eef54a673e21fe968a9caf4dc8589eb8c3fda523d1353f7",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00081-8839d982ad6e.json": "3bb814d47551d0f3ceb28b76a3d66b0cdafdfc02a35847f0dd66821871a0e823",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00082-47aacd547503.json": "5883f9012b1382ec1ba4040336e29912c2b417c6e97f454f4b5c97ac5d953127",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00083-76edc50e64bb.json": "e06b68bcb577f56127ad8b8baf245ff60b52673d49d7954a04cfc1b12cad66dd",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00084-e7c4101015f5.json": "223350cc554ff6a525577667b2a00cf4a040c050357c0af907e7cea735acb133",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00085-17b9dd25e116.json": "0e4fdf4b5dad4263228e9766d0478f72cdd5855be36362ac4936fc37226dbc37",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00086-d9e84dd00a3f.json": "02c7968af73a845fe1cbf153c800c9c5cec160f2edf2b6e48fa0d63c3adb5363",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00087-5fb8c129c728.json": "26075363e42da5213f4067d43812985942322c2de0a2b12a97091e0235e1e19d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00088-876c80eb568a.json": "e4f878aea3b0ad93809cc9fd84995cf131182593538824e00c4ab0e70a4bbd2d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00089-8d051f4d77ea.json": "423f1534d25d9c718a45224e8d0399c758c9e098dde467d173c4a2ceb1ea4772",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00090-5a81903da70e.json": "26cdf7629be7a214e62cf42555cf56c4856c713eda553b0e2ad203ab5e375e5a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00091-4b5e5035a35d.json": "5061e3a9da8dd066256780923f5f3f48166312f581caf3bdad3afe3e497e8731",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00092-cd6141a28eac.json": "9e0a5cfd51c975ddecff8214104f1a0ba7dc1b48455f7854d95ade79103d8a34",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00093-0c211fbf8334.json": "f54ed453fb963b097683b7d9dc167e49e743a1b3ede798199dacac64bd6569d2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00094-93c15cb352d5.json": "849cec2a154dd056c35b3047d050f310e1e251975442f736b85ae0e81f282f01",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00095-3bfee1d4a325.json": "f36a56bf9b40b5f049fb7ae00acee89fd7473ff5208c92eefe81c2b20973ff52",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00096-df51bf3ece98.json": "7f5a1445500cf7d7efe82ffde9dfacdea92c94b96ff1ced53e3d50ad4f9791f9",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00097-6b097996cd6e.json": "1dd2b04f1e090887cec96cdf3911c494fc81b8febf803664fbf8d0e3418a6766",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00098-692c8f105a46.json": "2c32a52b3d1d1d4fb756658d1b8e7dd0a71f4196919e4140a5f31979bef19ff6",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00099-0081194607aa.json": "cb4179e0f7b86a8e2acf0e0db4015cbb913cf8cfe3f12c287316836f9dc265ef",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00100-48c9a9ee2c5d.json": "3f871d9a60ce6b11a91c4bfde598ecba1e0a31fd72573daafb0ecd4b021304e0",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00101-890cbb5fd34e.json": "8d25a33d7fb665611819236269c6a07d0eb6c2ab41fa5a587f7582b520cc43d2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00102-94e99601bb59.json": "8e616546d8ad830024bbc6663cf28945f7acbbb29273a9e865f4088b1de091d1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00103-9d7f57a5866e.json": "a1f1339344e1104d412851c3d8ad4d1e50a8200dbe06ac269001d122377847e6",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00104-51e50b09c166.json": "d747c9a2df1de97f376ebeb9d528d4f83c1e5d374c420fced5e04ac44a085763",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00105-ac2019440bae.json": "3ab767a6dc6fcf4425da9f8ab081594ad52f69e914242c5b2929fd1b1c63276c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00106-c4f24ec23d20.json": "fb24ed9088feee447dd94070e0900d2951a65d684c16344daf058e36c5d6c26d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00107-29b0a1dd90ea.json": "a79b4eadc287f962443a82c0d5177bb9882ab6cdd7007888091f76762f3dc8a8",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00108-5b9ccba921a4.json": "841db306b176a0457c777f06c186a66dbf2d5365570fea785dbc76ba04c3ad61",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00109-9c22cf15ea13.json": "ddb78d35b01ee2f1e63d32f64168760d2b957743b935c6342f679d67488fb02e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00110-9a594f84a43c.json": "631837b4b4b3287f7ef006eb3b02fa96b03be50b40ea98313fe0c92bd12e0530",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00111-fc9f63189e23.json": "64dddab201c741ad79539054ae31349bf419dde80d966a4e2ba768c33bcb966f",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00112-0ffc83ec7e44.json": "298cfdddf40f11765272ba7167d96e20f4cd3bf46b6dd46ff49da3da6ea893af",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00113-73ce975b67bd.json": "fed2951b3c628338d3faaf8b64968c23078fccf80cac8582c66c125a26e9d977",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00114-6883f09d68c9.json": "81cc10619cf6148476aaf7f6580643f45cc89056a43f1e6bcb9a7a1f80957a24",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00115-f79d864f8c7d.json": "b4d22df14a8daa9b92d3ec3114ce3352ca768a63da9c080a1105675b637bb8f5",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00116-0c770f26d64a.json": "51c2efb981eb1d8a0136ca294858521181ea6680a32ace49ee68fadf241f976c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00117-6a7acc084f24.json": "1a62f078f72aea49084d9a54438849c8d3c2f08b70f137c5ec3f00b36df38d31",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00118-0a3b0be283e9.json": "c1cd8161739ccd2113664ec70f3643738cc29212dcb6b5da730f955973ae60cd",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00119-b7687b355df6.json": "198d3afd4d8967431a7b2654b464e5555fef5d8121b50c36cdd5455db1d77ded",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00120-1eea9a6afe5d.json": "d285c6a78a9a2350e4979438848630b1efa4180f1212392fd57fa1b255decda1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00121-8f5804be2c07.json": "13474dea4bf53e322a251dda9a224abc3f4fb4dbed9432b8d1fda9ba4580c4c2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00122-bffa70997a32.json": "65840f1fa4dddde8e40e295d10108f9d8a9dc921f274b22df4c8b3095bf012f0",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00123-8e5b8b094c02.json": "c9a96d78cef48552ad21952626b2a7e03063a1a16f7f068b548af21d96124a1a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00124-8581c4d9edf6.json": "2ed92fa81dc9a07dd33235886ad12b74689d8fc6fe9b4f33b3f2623883d55135",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00125-884a5fd80993.json": "a1413fb3b03de2d3b73faa97ef10ddb5a034bd2649945ec5ac23abb64be3b5b0",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00126-8fe42f7f2e19.json": "e35a6e05a9ea325f2e283b248d7e1756c25f5d49d8ee771d431a5bd572356946",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00127-fea446e9eb35.json": "c5b413d52eefdcf7f318478991e27a4c47b37b2fd4df5ce9f47ffbee66bcb87d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00128-264ea587d2c1.json": "6970b3007751bc5f7a2a0455d5910a6c5e0c772e3e441be9cd35f77d73d84ebc",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00129-3c66dc1f905c.json": "51f730dca3995c718e0d86ea2ec3270cb3648c12e40153db0d0334ea80c472c2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00130-ff21dc3be55c.json": "40ee68b3eac226145b16b3afe58b69729a6cb5fd6b4291c2d1e70f401d9c79eb",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00131-a1a53dc73967.json": "e22d5e4b4b017994349e9e57fd856757b9dfed720f2395c680fdf388cd3ba59c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00132-a3d74530a0a5.json": "63653c7a66dcfa9d1b515488f3134da9e9bca99b2bf0b5669370cd21f3f52d2b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00133-6738f60793a9.json": "7d5f9dd62bb38267f9fabf532a9d41116e56f90b5954e6543c4c92a0b9d35d1a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00134-470c2c77b90f.json": "a7c7af5250443f32b8bb57f9f55f206ccd78fe3f25cc11c55044bc0ade046a3a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00135-a3d360569635.json": "7321f255697fff2117c160206ce623a9d86d5dd3f19932f24d26c1b4b2a8439d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00136-7981196cd38e.json": "f2092945fb954ab21fb780215ac814784cc9795e16ec22d31534be7fda5db459",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00137-c5c971403f42.json": "ca1075d2c2a284efd1c81e1f106bb40f12f51356660801d0b264329b2197bed4",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00138-88bde0129151.json": "022d81eaf9b540c756cf2ace5dab2fcf5bcbc0cee82b7f4ad229febd6cfb0e19",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00139-3a21c6af65bf.json": "7cc58fdf005162d94072153fc81613712d516be8abb105a3c4188ba44609b495",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00140-cd699c11d644.json": "0c03588391a834679ed4ee1161d2e13b8cd8dff8320b1f8f908f92e2d22042c6",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00141-d79fdfa6916e.json": "0336351482bbdb43e3adcf0c271fd99f92d798d43e53cd6610344b7cdd34b7a2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00142-8537193b7c58.json": "ff456e518cf769ae60b2df88c088c97415b024e3101ca02448dfaefee5f38876",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00143-a9e2e8320b9a.json": "b148700ea27d0819725bbe683ea3816ba93071c73566befaf9782ec2758efdc8",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00144-688884eb1e2e.json": "ad39c1e7c98f265b754f1b29b162447d2dca00cd2aeb7561953d54cb2c8f7802",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00145-c0049973a669.json": "9440ec17956e8868accc173a46bd4df70e13d74b9a75093ac9e69d015a85ee3d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events/00146-09fc0dde7c27.json": "33ee988e2ff3ec7496592255706ba902158080272e7b96bb7d19030898f2ddb4",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events_index.json": "917d6ae1ff7aec14fb8dd916a726babfca14d5c292740af041efc1fb89618d65",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/source_support_inventory.json": "76d53b18d450d2eee603d4a585779c1f3387d2140f276394c567e120f366c2ef",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/summary.json": "cbdd9d3519915569c7a105e8734a9ab82a2fcb9bc6af1fc29e6c73304b8b65b1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/forest_b/build01/build_protocol.json": "a0f656a20f10c1e02bed3a9ec510a7b94713e5ea822a3a5e556c475dfd2ed665",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/forest_b/build01/native_command.json": "e140d16589a149bc7370d51d87d2ce8f7134a9322637d29bfe90d833fe9047ac",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/forest_b/build01/native_source_after.json": "b5d6f3be80002697614a6851f7ce77b9371222b46f7cfd565685da62b0a370f5",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/forest_b/build01/native_source_before.json": "b5d6f3be80002697614a6851f7ce77b9371222b46f7cfd565685da62b0a370f5",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/forest_b/build01/summary.json": "297e5bd016e5bd10c36c31fadfba87270bc5f552d13f72e873a4f7786caf1bf3",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/screen02_omp1/summary.json": "fab8822c32eb3afb3a356362a53644554f99f1f5a3b0bec4409d9c7e799beba2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/screen03_omp8/combined_summary.json": "4cc59eb9ad9efd9c954ddaa31c1221d0191695ff87d06cfcf90f50b4d5b811e7",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/screen03_omp8/omp_confirmation.json": "a726211c32543099bad700d78d6b6d2c9a5fbadc08fd880dff6e5d64d5d9039c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/screen03_omp8/summary.json": "ccf0c68006ec0c626ec280ec39c789e272d9468ec39c0483470fd3098d77e514",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/preregistration_seal.json": "f72e5e09cfd4bcc0454ef7dfe9078a2d914237c1e11c9468803ad3fd17f36411",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/regression_tests02.json": "4c2d4757a59874307afc69fe1de8ff6a6db91982081250a1060bb8393bfb4dea",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/coverage_report.py": "80ca9bce6b4d37736799bc4e3a271dcabc7dfdd866a48be03eb11ef68a9486e2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_amendment.py": "121e88a1fbb96534a7aca884b184f23a13e879f44d7a887f49039790fdea5ba5",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_build.py": "999b3ada9744e29b7be86bc228ac2828631c42746ef8468d8ee5b608d84f87a6",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_resources.py": "b86c849d72f1dc00ac6d971da724b3b55dbbee9ba7f74be62ecd288df309506e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_screen.py": "8e7c18dd1e386c0642508e4719309a2e62f153ce94fe0e09c0709a9ba7eaf8da",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_source.py": "3e0e62fd6e24c0301760a849e033afe320a25a06cceb16b4d6d622a28ff31419",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/post_displacement_pilot.py": "c175eef64a52b7f8c1250ace834b99deb4c01e5857d29310599faad115c6655a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/protocol_20260906.json": "9f8ec007632e763383d87ad544d4be2d0069bc506a89d3f38734e3c1bb6d2ae1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/run_screen.py": "a1ac0467e538dd751098abbcf87615a1ed574f42cf6c06fcdf388aa46524040d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_build.py": "556ebbf95168e96ed81e06d3238e89ad2fee6a0f8dfe64856b5969f8e1005a5c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_geometry.py": "0d36891fc27f5ac394274128f05bc78999125622b5eda2ba2284ded3433beb69",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_native.py": "8bf73a224ec880b82ab765a8d76b27de8d0b5bcbaaff3e91499af15d6aba97bb",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_source.py": "87b023010d63fa8176658c239145b8c80b1a37a58f683bd93bf098797280ee0b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/screen_contracts.py": "dd805e0d3f1ada3c8f92bb081f31328e224a01ba372e97fee553da932faa4018",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/screen_resources.py": "2b122024a9b6d81ba2869fdae1bf60c2d406a29576ce2e13df63f73ff3922031",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/source_stage.py": "473537379ed19a18ff254c1616931025e139718e54069c77db1bf23b9d0cc9f2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_coverage_report.py": "debeb8e13bd67eaf0903af24672dae78dd373a8b86c5081658a5e9b3a9ec21cd",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_post_displacement_pilot.py": "bb2e626739a679903b661d583b5eae0dee60136c4d38bc6cd07d09a1c0dcf8da",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_run_screen.py": "8647cb6b105563e143f1b867f193590ac50c22fc1ee17910809ac6e34d1e654c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_scene_build.py": "72151117fd4239636feb182dfb083438434e6702510b494b64c5e1f049d6809e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_scene_geometry.py": "3809a264d4af956be9410de0600e57e89af1ae63143edc274a85565ba72ccfaf",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_scene_native.py": "ca1576508845673557f89b527484c3294201cedf650f06ec947237a59d32b74d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_scene_source.py": "3558befbfb0299c2105ff5425d603c21288b51147a8b999d519687630c694779",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_screen_contracts.py": "b1b6c397da7f604d140856fa7ca8e82e4922d0e1030704c27ae91a6186e2f2ac"
+  },
+  "native_slice_calls": 66,
+  "omp_confirmation": {
+    "status": "REPLAY_COMPLETED"
+  },
+  "omp_num_threads": "8",
+  "original_cache_verification": {
+    "original_bytes": 1513840506,
+    "original_files_unchanged": 35,
+    "original_input_content_sha256": "ad52d33106145b10c96bc79f5ba45b282c15918e4d1ff7c1b1871c04fcca2270",
+    "private_log_appended_bytes": 37127,
+    "private_nonlog_inputs_unchanged": true,
+    "status": "PASS"
+  },
+  "output_publication": "ALL_REQUESTED_QUERIES_VALIDATED; COMPACT_RECEIPTS_ONLY",
+  "partial_output_published": false,
+  "preregistration_seal_sha256": "f72e5e09cfd4bcc0454ef7dfe9078a2d914237c1e11c9468803ad3fd17f36411",
+  "primary_summary": {
+    "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/summary.json",
+    "sha256": "b7c43bace30445ed0e18ef36e489ef8a963704576936d1e7b1bdedd657c2bec1"
+  },
+  "private_cache_removed": true,
+  "protocol_sha256": "9f8ec007632e763383d87ad544d4be2d0069bc506a89d3f38734e3c1bb6d2ae1",
+  "schedule": {
+    "exact_root_diagnostics": 2,
+    "modified_natural_frames": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "natural_event_frame_replacements": 696,
+    "natural_frames": 64,
+    "query_count": 66,
+    "root_schedule_domain": {
+      "all_same_root_schedules_equal": true,
+      "cross_root_open_windows_disjoint": true,
+      "effective_tau_and_physical_hit_selection_agree": true,
+      "root_count": 2,
+      "status": "PASS_FROZEN_ROOT_SEPARATION_AND_QUERY_PHASE_DOMAIN"
+    }
+  },
+  "scope": "Fixed pre-displacement 64-frame scene; no quality or all-time theorem.",
+  "segment_id": "cave",
+  "source": {
+    "canonical_events": 147,
+    "exact_roots": 2,
+    "individually_admitted_events": 102,
+    "raw_observations": 522,
+    "source_decision_counts": {
+      "ADMITTED_REQUESTED_SCHEDULE": 102,
+      "Actual source boundary is not a strict convex XY graph.": 3,
+      "Degenerate actual retained triangle touches source interface.": 7,
+      "FORBIDDEN_ACTUAL_PATCH_RETAINED_CONTACT": 11,
+      "LEGACY_EXHAUSTIVE_SELECTOR_NO_CANDIDATE": 2,
+      "SOURCE_INTERFACE_REJECT": 22
+    },
+    "unresolved_certificate_events": 0
+  },
+  "status": "PASS_OMP8_SEQUENCE_REPLAY",
+  "supplied_input_hashes_do_not_imply_validation": true,
+  "support_graph": {
+    "path": "support_graph.json",
+    "sha256": "c6ea2fef29e11d54563c2b47b484bef9de62558bf02d91810a06d9859c0dfdc6"
+  },
+  "visibility": {
+    "canonical_events": 147,
+    "compiled_source_visible_admitted": 0,
+    "compiled_source_visible_candidates": 0,
+    "first_qualifying_component": null,
+    "natural_event_frame_queries": 1176,
+    "qualified_components": [],
+    "unknown_support_visibility_events": 0,
+    "visibility_scope": "Original-camera baseline source-support visibility, not counterfactual artifact impact.",
+    "visible_admitted_source_events": 0,
+    "visible_artifact_impact_coverage": null,
+    "visible_candidate_events": 0,
+    "visible_replacement_events": 0,
+    "visible_source_admission_rate": null,
+    "zero_denominator_is_not_zero_percent": true
+  },
+  "visibility_artifacts_base": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1",
+  "visibility_frame_artifacts": [
+    {
+      "artifact": {
+        "path": "visibility/frame_0021.json",
+        "sha256": "f74ad99e400796f730c6a3c397bd0f80273c679dce0247098a9c2b6eb3a6a64c"
+      },
+      "query": {
+        "absolute_frame_number": 21,
+        "evaluation_tau": "44678397528431/35184372088832",
+        "frame_index_zero_based": 20,
+        "frame_number": 21,
+        "global_camera_time_hex": "0x1.b555555555555p-1",
+        "key": "frame_0021",
+        "kind": "natural",
+        "physical_time_hex": "0x1.aaaaaaaaaaaaap-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0022.json",
+        "sha256": "aba6a202770c5156674693a7ce9e54d75924aae494391cacffc4472862642893"
+      },
+      "query": {
+        "absolute_frame_number": 22,
+        "evaluation_tau": "6004776627821127/4503599627370496",
+        "frame_index_zero_based": 21,
+        "frame_number": 22,
+        "global_camera_time_hex": "0x1.caaaaaaaaaaabp-1",
+        "key": "frame_0022",
+        "kind": "natural",
+        "physical_time_hex": "0x1.c000000000000p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0023.json",
+        "sha256": "4cd85e76f9642a2cf6a32b570c0bbf3b3c4811da48d3be3c1164232a05d2c2ca"
+      },
+      "query": {
+        "absolute_frame_number": 23,
+        "evaluation_tau": "6290718372003085/4503599627370496",
+        "frame_index_zero_based": 22,
+        "frame_number": 23,
+        "global_camera_time_hex": "0x1.e000000000000p-1",
+        "key": "frame_0023",
+        "kind": "natural",
+        "physical_time_hex": "0x1.d555555555555p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0024.json",
+        "sha256": "0bfe03ba730640b35c37566a27f8c09e09b021a8f08e61c1d7b74d380bc3320a"
+      },
+      "query": {
+        "absolute_frame_number": 24,
+        "evaluation_tau": "6576660116185043/4503599627370496",
+        "frame_index_zero_based": 23,
+        "frame_number": 24,
+        "global_camera_time_hex": "0x1.f555555555555p-1",
+        "key": "frame_0024",
+        "kind": "natural",
+        "physical_time_hex": "0x1.eaaaaaaaaaaaap-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0025.json",
+        "sha256": "ec3200182b8687658d324d0cb025de7fda6c812f308591206ec93abf6d83097f"
+      },
+      "query": {
+        "absolute_frame_number": 25,
+        "evaluation_tau": "6862601860367001/4503599627370496",
+        "frame_index_zero_based": 24,
+        "frame_number": 25,
+        "global_camera_time_hex": "0x1.0555555555555p+0",
+        "key": "frame_0025",
+        "kind": "natural",
+        "physical_time_hex": "0x1.fffffffffffffp-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0026.json",
+        "sha256": "9d5f529f5f03c6db9596a30c03343f8ccc175cdfc6939a6ad2c2cc4d708f0fb3"
+      },
+      "query": {
+        "absolute_frame_number": 26,
+        "evaluation_tau": "7148543604548961/4503599627370496",
+        "frame_index_zero_based": 25,
+        "frame_number": 26,
+        "global_camera_time_hex": "0x1.1000000000000p+0",
+        "key": "frame_0026",
+        "kind": "natural",
+        "physical_time_hex": "0x1.0aaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0027.json",
+        "sha256": "22e8686e9f753c82337efbb5bd9df96f911fed40a740e5d795ff21aa8b597ff2"
+      },
+      "query": {
+        "absolute_frame_number": 27,
+        "evaluation_tau": "929310668591365/562949953421312",
+        "frame_index_zero_based": 26,
+        "frame_number": 27,
+        "global_camera_time_hex": "0x1.1aaaaaaaaaaabp+0",
+        "key": "frame_0027",
+        "kind": "natural",
+        "physical_time_hex": "0x1.1555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0028.json",
+        "sha256": "962ead57982a11e90b6581fc33f03f04f4d9f6a34e09e5c0d9a669aea63cbb6f"
+      },
+      "query": {
+        "absolute_frame_number": 28,
+        "evaluation_tau": "7720427092912877/4503599627370496",
+        "frame_index_zero_based": 27,
+        "frame_number": 28,
+        "global_camera_time_hex": "0x1.2555555555555p+0",
+        "key": "frame_0028",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0037.json",
+        "sha256": "6e895102e221e620593f0a751b2e7d622b8da8a14b10e8a6cd6620c5bcc48cbb"
+      },
+      "query": {
+        "absolute_frame_number": 37,
+        "evaluation_tau": "5146951395275251/2251799813685248",
+        "frame_index_zero_based": 36,
+        "frame_number": 37,
+        "global_camera_time_hex": "0x1.8555555555555p+0",
+        "key": "frame_0037",
+        "kind": "natural",
+        "physical_time_hex": "0x1.8000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0038.json",
+        "sha256": "a49a3df2dd05593fb23735a32b2a4428a6af66b363f6bc30de2c17eb22032cd8"
+      },
+      "query": {
+        "absolute_frame_number": 38,
+        "evaluation_tau": "5289922267366231/2251799813685248",
+        "frame_index_zero_based": 37,
+        "frame_number": 38,
+        "global_camera_time_hex": "0x1.9000000000000p+0",
+        "key": "frame_0038",
+        "kind": "natural",
+        "physical_time_hex": "0x1.8aaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0039.json",
+        "sha256": "58672cea32edf38c495ab34b950acf44e4a56d2b78a3efbb21a8a55ceb34aafc"
+      },
+      "query": {
+        "absolute_frame_number": 39,
+        "evaluation_tau": "2716446569728605/1125899906842624",
+        "frame_index_zero_based": 38,
+        "frame_number": 39,
+        "global_camera_time_hex": "0x1.9aaaaaaaaaaabp+0",
+        "key": "frame_0039",
+        "kind": "natural",
+        "physical_time_hex": "0x1.9555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0040.json",
+        "sha256": "2c4c6878d8240003d2c07107eff05b8804a8f6bd49db196f27f39a61ffee5ff0"
+      },
+      "query": {
+        "absolute_frame_number": 40,
+        "evaluation_tau": "5575864011548189/2251799813685248",
+        "frame_index_zero_based": 39,
+        "frame_number": 40,
+        "global_camera_time_hex": "0x1.a555555555555p+0",
+        "key": "frame_0040",
+        "kind": "natural",
+        "physical_time_hex": "0x1.a000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0041.json",
+        "sha256": "3b4deb182aaac7876b6405c405820643558400f8d0ed0c42a267dcaf1dca7631"
+      },
+      "query": {
+        "absolute_frame_number": 41,
+        "evaluation_tau": "44678397528431/17592186044416",
+        "frame_index_zero_based": 40,
+        "frame_number": 41,
+        "global_camera_time_hex": "0x1.b000000000000p+0",
+        "key": "frame_0041",
+        "kind": "natural",
+        "physical_time_hex": "0x1.aaaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0042.json",
+        "sha256": "1415a9d3cb83b841838b74f8a27290a257e9ce50cd05d6e6509104b23356d005"
+      },
+      "query": {
+        "absolute_frame_number": 42,
+        "evaluation_tau": "1465451438932537/562949953421312",
+        "frame_index_zero_based": 41,
+        "frame_number": 42,
+        "global_camera_time_hex": "0x1.baaaaaaaaaaabp+0",
+        "key": "frame_0042",
+        "kind": "natural",
+        "physical_time_hex": "0x1.b555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0043.json",
+        "sha256": "47376816e08faf757a5b6ca72dd2804e271a0b300e769da40982ee50c072bc7e"
+      },
+      "query": {
+        "absolute_frame_number": 43,
+        "evaluation_tau": "6004776627821127/2251799813685248",
+        "frame_index_zero_based": 42,
+        "frame_number": 43,
+        "global_camera_time_hex": "0x1.c555555555555p+0",
+        "key": "frame_0043",
+        "kind": "natural",
+        "physical_time_hex": "0x1.c000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "artifact": {
+        "path": "visibility/frame_0044.json",
+        "sha256": "ba64a8365edfe75d449415d84afee92ad7a8267c47f9ed5a11b236bf9ab7d9cc"
+      },
+      "query": {
+        "absolute_frame_number": 44,
+        "evaluation_tau": "3073873749956053/1125899906842624",
+        "frame_index_zero_based": 43,
+        "frame_number": 44,
+        "global_camera_time_hex": "0x1.d000000000000p+0",
+        "key": "frame_0044",
+        "kind": "natural",
+        "physical_time_hex": "0x1.caaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    }
+  ],
+  "whole_mesh_video_files": 0
+}

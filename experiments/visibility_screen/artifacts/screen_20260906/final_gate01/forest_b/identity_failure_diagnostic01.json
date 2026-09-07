@@ -1,0 +1,209 @@
+{
+  "schema": "forest-b-fixed-query-identity-failure-diagnostic-v1",
+  "status": "READ_ONLY_SUFFICIENT_OBSERVER_FACE_CAP_BLOCKER_CONFIRMED",
+  "scope": "SAVED_RAW_QUERY_EVIDENCE_PLUS_FROZEN_OBSERVER_SOURCE_NOT_A_NEW_NATIVE_RUN",
+  "segment_id": "forest_b",
+  "retained_screen_status": "STOP_SCREEN_ATTEMPT_NOT_COMPLETE",
+  "diagnostic_choice": "The authorized read-only alternative was sufficient: the saved RAW first query necessarily exceeds the manifest-bound observer final-face limit. No private cache or native reproduction was started.",
+  "requested_diagnostic_limits_not_consumed": {
+    "maximum_single_native_queries": 1,
+    "maximum_private_copy_bytes": 8589934592,
+    "maximum_wall_seconds": 120,
+    "maximum_rss_bytes": 8589934592,
+    "omp_num_threads": "1",
+    "budget_or_method_adjustment_allowed": false
+  },
+  "input_sha256": {
+    "/home/warpwang/binoc-runs/forest-observer-sourcevid-20260906/build/binocmesher/lib/core.so": "3a0bab2f77142708e83251520dd11937de20cd198a887bc4cc8e8ce6bd543197",
+    "/home/warpwang/binoc-runs/forest-observer-sourcevid-20260906/build/binocmesher/source/runtime_identity.h": "1b951c3beabea89eb5a348f0722fa0f5dbdf501e7e6f1ec5e38bcd72b1b3e6d3",
+    "/home/warpwang/binoc-runs/forest-observer-sourcevid-20260906/build/binocmesher/source/slicing.cpp": "4e0b342e8f111695c4277624c245fcf51de0df02a90e2492215de8c9ca096737",
+    "/home/warpwang/binoc-runs/forest-observer-sourcevid-20260906/manifest.json": "98e878db02329bd65ed53237ca60ad14ff8e0dcb91e80c524363e7f5fe5f796c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/screen01_omp1/ordinary_reference.json": "430b38a00955d03e11ff9d5db40851d90502b6ce545fbad020d6a9b9b379fd7b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/screen01_omp1/summary.json": "82879bbee94edb327d35410af588bd38dea464918f83fda9f3b64b7f8350a93c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_screen.py": "8e7c18dd1e386c0642508e4719309a2e62f153ce94fe0e09c0709a9ba7eaf8da",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/protocol_20260906.json": "9f8ec007632e763383d87ad544d4be2d0069bc506a89d3f38734e3c1bb6d2ae1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_geometry.py": "0d36891fc27f5ac394274128f05bc78999125622b5eda2ba2284ded3433beb69",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_native.py": "8bf73a224ec880b82ab765a8d76b27de8d0b5bcbaaff3e91499af15d6aba97bb"
+  },
+  "fixed_query": {
+    "absolute_frame_number": 97,
+    "evaluation_tau": "0",
+    "frame_index_zero_based": 0,
+    "frame_number": 1,
+    "global_camera_time_hex": "0x1.0155555555555p+2",
+    "key": "frame_0001",
+    "kind": "natural",
+    "physical_time_hex": "0x0.0p+0",
+    "time_mode": "physical"
+  },
+  "opaque_element_order": [
+    "ground",
+    "landtiles",
+    "sdf_trees",
+    "warped_rocks",
+    "voronoi_rocks"
+  ],
+  "observed_saved_ordinary_raw_receipt": [
+    {
+      "faces": 9784,
+      "sha256": {
+        "faces": "79728ba50fe4f3dea55c85762ffaf7e45206ea22adce737acbf91e48a63cd4a0",
+        "tags": "21f76b1c2a69d61ce1785e6711bc417122c5ccf9a99b192f82a4973722750705",
+        "vertices": "b674493c2a4733471450e7596797e860e41c72bf5f3ce7cc82b08fc539fb9cfa"
+      },
+      "vertices": 4844
+    },
+    {
+      "faces": 907167,
+      "sha256": {
+        "faces": "90e6face51d6b8fdb47573ce06de7cb3891cfe9377857b5a836cbbb28e6adc52",
+        "tags": "f093182429de1b0671cc954bb9e82deab3be13d2c41fa6e0219d949e3450c818",
+        "vertices": "6aa2be3610403648d98791e5bfbc1a1b04dc33159f68aa513360bd21eb335f12"
+      },
+      "vertices": 453601
+    },
+    {
+      "faces": 2336644,
+      "sha256": {
+        "faces": "4f36d066cbfb2d9374426dc00b50b7ac0c50baffdea1e5fb97e0881101d41afe",
+        "tags": "f39d1babd8e65325260575f3a8dee830e5cd4ea14e1ac03fcbf0a41aa07a1ae6",
+        "vertices": "9e7015582be807608da683fce1a3d218f2e9ba7e1f6528833bd8cf684b5467f6"
+      },
+      "vertices": 1115161
+    },
+    {
+      "faces": 10219,
+      "sha256": {
+        "faces": "beca2a5025aa489b8db87ed16a9e60f8839cc1972940d5e76f2edda827e02962",
+        "tags": "03756c050721e72919a3d9e6aa874c0c73a5501d02098e39e943744f3fa8c28a",
+        "vertices": "e392e139e966ba272d76a884e641adda35efa096f13551c4e5e2af606268be28"
+      },
+      "vertices": 5122
+    },
+    {
+      "faces": 576521,
+      "sha256": {
+        "faces": "e902ae17ed29ad54f6ee18878f9a2516851685b040c0a3f65812782d6d9c0b7c",
+        "tags": "6ea38a56d3cee286ab44ef689abb391752f10d6bc1b0b6d8bd50d2993c0d46c6",
+        "vertices": "b3a772474fedda43fa3089302b9fd663ac2e5d85ee1a81703d4034d353a87fbb"
+      },
+      "vertices": 273273
+    }
+  ],
+  "saved_reference_contract": {
+    "status": "PASS_ORIGINAL_ORDINARY_REFERENCE_SEQUENCE",
+    "query_count": 64,
+    "extra_smooth": false,
+    "identity_enabled": false,
+    "library_sha256": "f4263a2f47ba5283175a921e49b8867998bdd8124aac810793b34242ec43a3c9"
+  },
+  "frozen_observer_contract": {
+    "library_sha256": "3a0bab2f77142708e83251520dd11937de20cd198a887bc4cc8e8ce6bd543197",
+    "header_sha256": "1b951c3beabea89eb5a348f0722fa0f5dbdf501e7e6f1ec5e38bcd72b1b3e6d3",
+    "manifest_and_actual_source_library_hashes_match": true,
+    "capacities": {
+      "maximum_faces_per_element": 2000000,
+      "maximum_raw_owners_total": 8000000,
+      "maximum_vertices_total": 2000000
+    },
+    "face_limit_scope": "PER_ELEMENT_FINAL_FACES_NOT_SCENE_TOTAL",
+    "final_faces_checked_after_ordinary_face_deduplication": true
+  },
+  "sufficient_blocker": {
+    "kind": "FINAL_FACE_COUNT_EXCEEDS_FROZEN_OBSERVER_CAP",
+    "violations": [
+      {
+        "element": 2,
+        "excess": 336644,
+        "final_faces": 2336644,
+        "limit": 2000000,
+        "name": "sdf_trees"
+      }
+    ],
+    "total_first_query_vertices": 1852001,
+    "total_first_query_faces": 3840335,
+    "total_vertices_below_declared_vertex_cap": true,
+    "raw_owner_count_available": false,
+    "raw_owner_cap_pass_or_failure": "UNKNOWN_FROM_SAVED_REPORT",
+    "source_references": [
+      {
+        "path": "/home/warpwang/binoc-runs/forest-observer-sourcevid-20260906/build/binocmesher/source/runtime_identity.h",
+        "lines": [
+          13,
+          15
+        ],
+        "meaning": "Frozen vertex-total, owner-total and final-faces-per-element limits."
+      },
+      {
+        "path": "/home/warpwang/binoc-runs/forest-observer-sourcevid-20260906/build/binocmesher/source/runtime_identity.h",
+        "lines": [
+          181,
+          188
+        ],
+        "meaning": "If identity collection remains active, finalize_element rejects faces.size() greater than kMaximumFaces."
+      },
+      {
+        "path": "/home/warpwang/binoc-runs/forest-observer-sourcevid-20260906/build/binocmesher/source/slicing.cpp",
+        "lines": [
+          1157,
+          1160
+        ],
+        "meaning": "Ordinary deduplicated face count is recorded, then passed unchanged to identity finalization."
+      },
+      {
+        "path": "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_screen.py",
+        "lines": [
+          168,
+          176
+        ],
+        "meaning": "Actual observer snapshot time and raw mesh receipt are checked against the saved reference before the identity-ready guard is called."
+      }
+    ],
+    "conditional_finalization_error_text": "Final identity arrays exceed their bound or lost alignment.",
+    "conditional_error_text_was_observed_in_this_failed_native_query": false,
+    "inference": "At this same raw geometry, a complete READY identity ledger cannot satisfy the frozen per-element face cap. The cap is independently sufficient to prevent this screen query from passing its identity gate, even if all earlier observer checks succeed.",
+    "first_native_failure_reason_uniquely_identified": false,
+    "earliest_error_limitation": "The failed screen discarded the snapshot before saving its identity_status and identity_error. An earlier raw-owner or other observer bound could have failed first; this audit does not invent an actual native error string or enum value."
+  },
+  "raw_observer_parity_evidence": {
+    "basis": "CONTROL_FLOW_INFERENCE_FROM_SAVED_TRACEBACK_AND_HASH_BOUND_EXECUTED_CODE",
+    "saved_traceback_reaches_original_identity_receipt_after_receipt_equality_guard": true,
+    "existing_frame_receipt_files": 0,
+    "same_raw_first_query_receipt_equality_guard_was_passed": true,
+    "independently_rerun_mesh_receipt_comparison": false,
+    "smooth_output_substituted": false
+  },
+  "actual_identity_status": null,
+  "actual_identity_error": null,
+  "actual_identity_status_error_availability": "NOT_PRESERVED_BY_FAILED_SCREEN; NO_NEW_QUERY_EXECUTED",
+  "original_failed_attempt": {
+    "wall_seconds": 676.9953352350003,
+    "private_cache_removed": true,
+    "final_input_verification": {
+      "original_bytes": 4097985903,
+      "original_files_unchanged": 35,
+      "original_input_content_sha256": "79e885cf30d0b0312ca60239388c8c2030e8c0c3c7ed52e166d328bd360a47e8",
+      "private_log_appended_bytes": 46757,
+      "private_nonlog_inputs_unchanged": true,
+      "status": "PASS"
+    },
+    "input_verification_scope": "Inherited from the hash-bound failed screen summary. The 4.10 GB original cache was not reread or rehashed by this diagnostic."
+  },
+  "new_diagnostic_cleanup": {
+    "private_cache_created": false,
+    "private_cache_bytes": 0,
+    "native_worker_started": false,
+    "native_queries_executed": 0,
+    "whole_mesh_files_written": 0,
+    "cleanup_required": false,
+    "deleted_files": []
+  },
+  "unchanged_policy": {
+    "native_library_or_header_modified": false,
+    "observer_cap_increased": false,
+    "source_selector_or_admission_modified": false,
+    "screen_retried": false,
+    "raster_or_render_executed": false
+  },
+  "conclusion": "This is a frozen observer-capacity obstruction on an ordinary raw frame, not evidence of a mesh defect, BEB1 rejection, zero visible impact, or completed Forest B screen. Keep the original screen STOP. No additional budget or method extension follows from this diagnostic."
+}

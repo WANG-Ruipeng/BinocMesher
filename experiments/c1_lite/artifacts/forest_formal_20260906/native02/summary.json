@@ -1,0 +1,93 @@
+{
+  "actual_delta_t_hex": "0x1.500053e2d6239p-1",
+  "actual_event_frame_modifications": 0,
+  "actual_query_rejections": 104,
+  "actual_unique_modified_natural_frames": [],
+  "admitted": 0,
+  "all_events_resolved": true,
+  "candidate_natural_schedule": {
+    "actual_modified_frames": 0,
+    "event_frame_incidences": 1048,
+    "events_with_natural_hits": 131,
+    "root_excluded_from_natural_denominators": true,
+    "time_mapping": "INPUT_RECONSTRUCTED; native initialization not yet used unless a runtime event is attempted",
+    "unique_natural_frame_numbers": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "unique_natural_hit_rate": 0.25
+  },
+  "canonical_event_denominator": 131,
+  "conditional_runtime_commit_rate": 0.0,
+  "cost": {
+    "cpu_seconds": 20.459059178,
+    "peak_rss_bytes": 1030483968,
+    "wall_seconds": 22.855855313999996
+  },
+  "executed_sources_sha256": {
+    "/mnt/e/BinocMesher/binocmesher/__init__.py": "7d39ede0400e2fc84420944b3321f1b25c749b80b52faf3a9b5cd2eb97e5b53b",
+    "/mnt/e/BinocMesher/binocmesher/core.py": "f5611dcebde85ae45990322a72188de59c954c1f68f8382679211bcc511b7816",
+    "/mnt/e/BinocMesher/binocmesher/window_geometry_runtime.py": "8b8fb1002bb8b9f427e10a77e3c87a3d5d67d72d2b5431bb31a20665d21b0c8b",
+    "/mnt/e/BinocMesher/binocmesher/window_runtime.py": "4eae868b0db7c15e1e2c44d55423e72fb6fee2b8c82a2949be8e5d33ee84aeb2",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_frozen_query.py": "2c228484b216cc79f2860a6dc6d91859a15f18cba6f9758675d4f4c5c2e47834",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_native_campaign.py": "4f21d173e388a7860f420a4dc2e7a3f9acbf288e9fa5d0f443f83d20b4cda55a",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_native_patch.py": "fe31b95d9b0030b58e5466fe97d87328b1ee0344089d439b137709096db78c9c",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_native_reader.py": "ce165393071e805c6217541782384344f59f291f33040c3197dae877bb765e37",
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_schedule_policy.py": "f1d9e59ab97841237560bb80d34d4326c26c254a7a48769f583b48781923e884",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_forest_formal.py": "fb77487ba4e55abebe857e4093379d9111301e764675f6f454d31c749ee7a5d7",
+    "/mnt/e/BinocMesher/experiments/c1_lite/run_forest_native_admission.py": "07f3b36f357fdadd65837d12e85b66b5e61e4c58b60e7fe7c91c416657cdc6b4",
+    "/mnt/e/BinocMesher/experiments/c1_lite/window_source.py": "1aa09ab97c85d57941b5be574c25f0c9c243c569c282c8f72b6692eff65f4ff6"
+  },
+  "expected_event_ids_sha256": "f6425b58e74b4f12cb4f8030b5e5be1d5d27ea99513e761b0ec4044ac9e826bc",
+  "final_input_verification": {
+    "original_bytes": 1096080433,
+    "original_files_unchanged": 35,
+    "original_input_content_sha256": "aca6fd25083a4fe6c60fec296be3e7b8558731e2e566b08f2c6e25ee45488a71",
+    "private_log_appended_bytes": 2878,
+    "private_nonlog_inputs_unchanged": true,
+    "status": "PASS"
+  },
+  "input_verification": {
+    "original_bytes": 1096080433,
+    "original_files_unchanged": 35,
+    "original_input_content_sha256": "aca6fd25083a4fe6c60fec296be3e7b8558731e2e566b08f2c6e25ee45488a71",
+    "private_log_appended_bytes": 2878,
+    "private_nonlog_inputs_unchanged": true,
+    "status": "PASS"
+  },
+  "native_library_sha256": "fad66b2876f30b99d79e84895b30eacf436419079e8378d339a2a222e7b41edf",
+  "native_slice_calls": 4,
+  "policy_admission_rate": 0.0,
+  "policy_admission_rate_bounds": [
+    0.0,
+    0.0
+  ],
+  "private_cache_removed": true,
+  "rate_scope": "Fixed construction-policy, individual-event requested-schedule admission against the same baseline; not same-root union or all-time admission.",
+  "registry_sha256": "0ce1a439bf33b785db9dbb3ea55dbc548933477aca64d2fca64829f660609b52",
+  "rejected_fixed_policy": 131,
+  "runtime_events_attempted": 104,
+  "same_root_union_rate": null,
+  "schema": "forest-actual-requested-admission-v1",
+  "scope": "Individual-event five-element native requested-schedule admission; not same-root union, all-time theorem, or image-quality improvement.",
+  "source_campaign_sha256": "74fe3be570ab1119c7c005d23b29505317c66072404274f3689c474cfb9fee67",
+  "source_gate_rejections": 27,
+  "status": "COMPLETE_REAL_FIXED_POLICY_RATE",
+  "total_wall_seconds_including_cleanup": 23.479827635999868,
+  "unique_native_queries": 2,
+  "unknown": 0
+}

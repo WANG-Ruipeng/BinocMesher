@@ -1,0 +1,45 @@
+{
+  "build_protocol_sha256": "344df3c21b2ba3bbd3552aa6a09f2cd0b2307e3e6e858cc1ae506acfeba53d8a",
+  "cleanup_performed": false,
+  "data_left_for_readonly_diagnosis": true,
+  "failed_build_is_not_zero_events": true,
+  "full_infinigen_or_post_displacement_complete": false,
+  "geometry_stage": "PRE_SURFACE_DISPLACEMENT_OPAQUE",
+  "no_method_admission_attempted": true,
+  "no_rendering": true,
+  "output": "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01",
+  "reason": "ValueError: Bounded native stage did not complete: {'exit_code': -15, 'infrastructure_stop': 'REGISTERED_WALL_LIMIT', 'wall_seconds': 2700.2017811250003, 'peak_process_group_rss_bytes': 2766114816, 'peak_monitored_output_bytes': 426612159, 'wall_limit_seconds': 2700, 'output_limit_bytes': 4294967296, 'early_stop_output_bytes': 4026531840, 'rss_limit_bytes': 17179869184, 'single_file_limit_bytes': 1073741824, 'all_children_exit_expected': True, 'directory_quota_is_polled_not_filesystem_enforced': True}",
+  "segment_id": "cave",
+  "stages": {
+    "coarse": {
+      "all_children_exit_expected": true,
+      "directory_quota_is_polled_not_filesystem_enforced": true,
+      "early_stop_output_bytes": 8321499136,
+      "exit_code": 0,
+      "infrastructure_stop": null,
+      "output_limit_bytes": 8589934592,
+      "peak_monitored_output_bytes": 130660437,
+      "peak_process_group_rss_bytes": 2807263232,
+      "rss_limit_bytes": 17179869184,
+      "single_file_limit_bytes": 1073741824,
+      "wall_limit_seconds": 3600,
+      "wall_seconds": 263.0644226979998
+    },
+    "native": {
+      "all_children_exit_expected": true,
+      "directory_quota_is_polled_not_filesystem_enforced": true,
+      "early_stop_output_bytes": 4026531840,
+      "exit_code": -15,
+      "infrastructure_stop": "REGISTERED_WALL_LIMIT",
+      "output_limit_bytes": 4294967296,
+      "peak_monitored_output_bytes": 426612159,
+      "peak_process_group_rss_bytes": 2766114816,
+      "rss_limit_bytes": 17179869184,
+      "single_file_limit_bytes": 1073741824,
+      "wall_limit_seconds": 2700,
+      "wall_seconds": 2700.2017811250003
+    }
+  },
+  "status": "STOP_INFRASTRUCTURE_BUILD_INCOMPLETE",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/e/BinocMesher/experiments/visibility_screen/scene_build.py\", line 393, in supervise\n    require(result['exit_code']==0 and result['infrastructure_stop'] is None,'Bounded '+phase+' stage did not complete: '+str(result))\n  File \"/mnt/e/BinocMesher/experiments/visibility_screen/scene_build.py\", line 29, in require\n    raise ValueError(message)\nValueError: Bounded native stage did not complete: {'exit_code': -15, 'infrastructure_stop': 'REGISTERED_WALL_LIMIT', 'wall_seconds': 2700.2017811250003, 'peak_process_group_rss_bytes': 2766114816, 'peak_monitored_output_bytes': 426612159, 'wall_limit_seconds': 2700, 'output_limit_bytes': 4294967296, 'early_stop_output_bytes': 4026531840, 'rss_limit_bytes': 17179869184, 'single_file_limit_bytes': 1073741824, 'all_children_exit_expected': True, 'directory_quota_is_polled_not_filesystem_enforced': True}\n"
+}

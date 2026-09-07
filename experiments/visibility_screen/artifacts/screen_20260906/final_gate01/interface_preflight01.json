@@ -1,0 +1,228 @@
+{
+  "schema": "final-gate-interface-preflight-v1",
+  "status": "PASS_BOUNDED_INTERFACE_PREFLIGHT_NOT_BUILD_OR_ADMISSION",
+  "scope": "READ_ONLY_PRODUCER_CONSUMER_AND_PURE_INPUT_PARAMETER_AUDIT",
+  "audit_date": "2026-09-06",
+  "segment_order": [
+    "cave",
+    "forest_b"
+  ],
+  "existing_cave_supervisor_contract": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/build_protocol.json",
+  "original_campaign_deadline_utc": "2026-09-06T19:28:39+00:00",
+  "input_sha256": {
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/native/camera_inputs.json": "2148fcdb61b7999414e4b481f0061fb6800a7872b35cea3031d275e06cb41957",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/native/effective_inputs.json": "4e667bec455cb5f06a29bc0e1b37f4ba5dfa4a415f67a01e83711f403aa61119",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt01/native/camera_inputs.json": "37c9ce177201858bb842d599621641f91b48d31ab4f2e6adf9f78fe2d4fc9486",
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt01/native/effective_inputs.json": "c1089fc40bbaada19775fa068391bb27d335ffae25444784f147973a6c345f2f",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/budget_amendment01.json": "39ce0a8088c5c72a4b6595c8d054becf6c909410d4e70e1460a042f8488c2ac0",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/cave/build01/build_protocol.json": "344df3c21b2ba3bbd3552aa6a09f2cd0b2307e3e6e858cc1ae506acfeba53d8a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/build_protocol.json": "246a733fd9194453d60553448818f5d5dadca1ba906972f7f5ca571d42e71e1b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/forest_b/build01/build_protocol.json": "a0f656a20f10c1e02bed3a9ec510a7b94713e5ea822a3a5e556c475dfd2ed665",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/build01/worker_complete.json": "ce74602e261fa6daa8d090e8a2afcc00bc87b64071dac45b2c176037cf5e4b7c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_amendment.py": "121e88a1fbb96534a7aca884b184f23a13e879f44d7a887f49039790fdea5ba5",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_build.py": "999b3ada9744e29b7be86bc228ac2828631c42746ef8468d8ee5b608d84f87a6",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_resources.py": "b86c849d72f1dc00ac6d971da724b3b55dbbee9ba7f74be62ecd288df309506e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_screen.py": "8e7c18dd1e386c0642508e4719309a2e62f153ce94fe0e09c0709a9ba7eaf8da",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_source.py": "3e0e62fd6e24c0301760a849e033afe320a25a06cceb16b4d6d622a28ff31419",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/protocol_20260906.json": "9f8ec007632e763383d87ad544d4be2d0069bc506a89d3f38734e3c1bb6d2ae1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/run_screen.py": "a1ac0467e538dd751098abbcf87615a1ed574f42cf6c06fcdf388aa46524040d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_build.py": "556ebbf95168e96ed81e06d3238e89ad2fee6a0f8dfe64856b5969f8e1005a5c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_native.py": "8bf73a224ec880b82ab765a8d76b27de8d0b5bcbaaff3e91499af15d6aba97bb",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_source.py": "87b023010d63fa8176658c239145b8c80b1a37a58f683bd93bf098797280ee0b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/screen_contracts.py": "dd805e0d3f1ada3c8f92bb081f31328e224a01ba372e97fee553da932faa4018",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/screen_resources.py": "2b122024a9b6d81ba2869fdae1bf60c2d406a29576ce2e13df63f73ff3922031"
+  },
+  "hash_scope": "Direct hashes of the explicitly listed small source/input/contract files; this does not replace the original complete method seal, the budget-amendment validator, or later cache integrity checks.",
+  "source_freeze_checks": {
+    "cave_contract_supervisor_sha256": "999b3ada9744e29b7be86bc228ac2828631c42746ef8468d8ee5b608d84f87a6",
+    "current_supervisor_sha256": "999b3ada9744e29b7be86bc228ac2828631c42746ef8468d8ee5b608d84f87a6",
+    "exact_match": true,
+    "old_scene_source_run_screen_screen_resources_unchanged": true
+  },
+  "producer_consumer_checks": [
+    {
+      "producer": "final_gate_build.py:73-81,141-142",
+      "consumer": "final_gate_resources.py:53-76",
+      "fields": [
+        "summary.status",
+        "summary.segment_id",
+        "summary.budget_amendment",
+        "summary.build_protocol_sha256",
+        "summary.input_sha256",
+        "build_protocol.segment",
+        "build_protocol.budget_amendment",
+        "build_protocol.effective_budgets",
+        "build_protocol.worker_uses_original_protocol_unchanged",
+        "build_protocol.only_supervisor_native_wall_and_output_ceiling_amended"
+      ],
+      "result": "FIELD_AND_SEMANTIC_COMPATIBILITY_CONFIRMED_FROM_CODE_AND_SAVED_CONTRACT",
+      "note": "Common amendment binding is exactly absolute path plus SHA256. Full effective budgets belong to the supervisor contract, not the unchanged native worker."
+    },
+    {
+      "producer": "scene_build.py:347-352; final_gate_build.py:112-115",
+      "consumer": "final_gate_source.py:253-259; final_gate_screen.py:123-134",
+      "fields": [
+        "worker_complete.status",
+        "worker_complete.source_inputs_unchanged",
+        "worker_complete.cache",
+        "worker_complete.camera_inputs_sha256",
+        "worker_complete.effective_inputs_sha256",
+        "worker_complete.original_render_camera_sha256"
+      ],
+      "result": "FIELDS_EXIST_IN_BYTE_IDENTICAL_WORKER_AND_COMPLETED_MOUNTAIN_RECEIPT",
+      "note": "The new Cave worker completion receipt was not available or read in this audit. Its actual successful completion is not inferred."
+    },
+    {
+      "producer": "final_gate_source.py:385-406",
+      "consumer": "final_gate_screen.py:135-155",
+      "fields": [
+        "budget_amendment",
+        "amendment_input_sha256",
+        "resource_limits.input_cache_bytes",
+        "camera_binding",
+        "segment_spec_binding",
+        "cache_root",
+        "registry_sha256",
+        "events_index",
+        "source_support_inventory"
+      ],
+      "result": "SOURCE_TO_SCREEN_OUTPUT_SCHEMA_MATCHES",
+      "note": "Source emits original stage/index/inventory schemas plus budget fields. Its cache ceiling is 8589934592 bytes; compute/reader/report limits remain unchanged."
+    },
+    {
+      "producer": "final_gate_screen.py:180-236",
+      "consumer": "final_gate_screen.py:530-545",
+      "fields": [
+        "reference_worker --budget-amendment",
+        "ordinary_reference.budget_amendment",
+        "ordinary_reference.code_sha256",
+        "OMP1 summary.budget_amendment",
+        "OMP1 summary.effective_budgets"
+      ],
+      "result": "REFERENCE_AND_REPLAY_RECEIPT_WIRING_MATCHES",
+      "note": "Independent reference process receives the same amendment argument. Actual reference or replay jobs were not run."
+    }
+  ],
+  "measured_checks": {
+    "clean_process_cli_help": [
+      {
+        "command": "/home/warpwang/miniforge3/envs/binoc-exp/bin/python -B experiments/visibility_screen/final_gate_source.py --help",
+        "cwd": "/mnt/e/BinocMesher",
+        "exit_code": 0,
+        "manual_pythonpath_injection": false,
+        "required_arguments": [
+          "--protocol",
+          "--seal",
+          "--budget-amendment",
+          "--segment",
+          "--build-report",
+          "--output"
+        ]
+      },
+      {
+        "command": "/home/warpwang/miniforge3/envs/binoc-exp/bin/python -B experiments/visibility_screen/final_gate_screen.py --help",
+        "cwd": "/mnt/e/BinocMesher",
+        "exit_code": 0,
+        "manual_pythonpath_injection": false,
+        "required_arguments": [
+          "--protocol",
+          "--seal",
+          "--budget-amendment",
+          "--segment",
+          "--build-report",
+          "--source"
+        ],
+        "output_required_for_non_reference_mode": true
+      }
+    ],
+    "pure_parameter_calls": [
+      "scene_native.prepare_parameters(camera, effective)",
+      "final_gate_source.validate_profile(camera, registered_segment)"
+    ],
+    "parameter_input_scope": "Only the previous failed attempts' immutable input JSON, saved before their geometry result. No old or new mesh/cache content was opened.",
+    "segments": {
+      "cave": {
+        "camera_path": "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/native/camera_inputs.json",
+        "effective_path": "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/native/effective_inputs.json",
+        "previous_attempt_input_root": "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/native",
+        "result": "PASS_PURE_PARAMETER_PROFILE",
+        "first_frame": 1,
+        "last_frame": 64,
+        "opaque_elements": [
+          "ground",
+          "landtiles",
+          "voronoi_rocks"
+        ],
+        "opaque_element_count": 3,
+        "pinned_observer_v2_shift_capacity": 5,
+        "within_observer_element_capacity": true,
+        "origin_seconds_hex": "0x1.5555555555555p-6",
+        "duration_seconds_hex": "0x1.500053e2d6239p+1",
+        "expected_delta_t_hex": "0x1.500053e2d6239p-1",
+        "temporal_group_count": 2,
+        "maximum_discrete_time": 4
+      },
+      "forest_b": {
+        "camera_path": "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt01/native/camera_inputs.json",
+        "effective_path": "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt01/native/effective_inputs.json",
+        "previous_attempt_input_root": "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt01/native",
+        "result": "PASS_PURE_PARAMETER_PROFILE",
+        "first_frame": 97,
+        "last_frame": 160,
+        "opaque_elements": [
+          "ground",
+          "landtiles",
+          "sdf_trees",
+          "warped_rocks",
+          "voronoi_rocks"
+        ],
+        "opaque_element_count": 5,
+        "pinned_observer_v2_shift_capacity": 5,
+        "within_observer_element_capacity": true,
+        "origin_seconds_hex": "0x1.0155555555555p+2",
+        "duration_seconds_hex": "0x1.500053e2d6239p+1",
+        "expected_delta_t_hex": "0x1.500053e2d6239p-1",
+        "temporal_group_count": 2,
+        "maximum_discrete_time": 4
+      }
+    },
+    "resolution": [
+      960,
+      540
+    ],
+    "fps": 24,
+    "pixels_per_cube": 6,
+    "compatibility_dependency": "The new build's existing gate requires complete camera/effective JSON equality to these old frozen inputs before it publishes COMPLETE; that gate must actually execute after build completion."
+  },
+  "execution_limits": {
+    "running_cave_cache_read": false,
+    "old_scene_mesh_or_cache_read": false,
+    "native_library_loaded_or_initialized": false,
+    "native_query_executed": false,
+    "source_registry_or_halo_stage_executed": false,
+    "raster_executed": false,
+    "blender_or_displacement_executed": false,
+    "scene_or_worker_started": false,
+    "frozen_code_modified": false,
+    "original_camera_modified": false,
+    "new_heavy_task_started": false,
+    "new_unit_suite_run_in_this_preflight": false,
+    "only_new_artifact": "interface_preflight01.json"
+  },
+  "interpretation": {
+    "blocking_interface_issue_found": false,
+    "actual_new_build_status": "NOT_EVALUATED",
+    "actual_source_compilation_status": "NOT_EVALUATED",
+    "actual_native_identity_or_parity_status": "NOT_EVALUATED",
+    "actual_component_admission_status": "NOT_EVALUATED",
+    "actual_original_camera_visibility_status": "NOT_EVALUATED",
+    "zero_event_or_zero_visibility_claim": false,
+    "remaining_required_checks": [
+      "New build actually completes within the unchanged global deadline and amended per-build limits.",
+      "Successful supervisor receipt binds the unchanged native-worker completion and copies all required JSON.",
+      "New cache completion/provenance and complete source-stage population verify.",
+      "Actual native initialization, ordinary parity, requested-schedule admission, atomic composition, original-camera visibility and OMP replay independently execute."
+    ],
+    "failure_policy": "A later missing/invalid envelope, resource exhaustion or runtime failure remains an infrastructure/proof result; it must not be counted as zero events or zero visible support."
+  }
+}

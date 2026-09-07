@@ -1,0 +1,76 @@
+{
+  "schema": "forest-isolated-observer-capacity-build-v1",
+  "status": "BUILT_NOT_NATIVE_VALIDATED",
+  "scope": "Observer-capacity instrumentation only; no geometry, identity semantics or baseline-array changes intended. Native cross-library/observer parity is a separate mandatory gate.",
+  "build_repo": "/home/warpwang/binoc-runs/forest-observer-20260906/build",
+  "frozen_build_repo": "/home/warpwang/binoc-runs/e2-runtime-loop-20260906/build",
+  "build_command": "make -j2 CXX=/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++",
+  "build_cwd": "/home/warpwang/binoc-runs/forest-observer-20260906/build/binocmesher",
+  "build_log": "/home/warpwang/binoc-runs/forest-observer-20260906/build.log",
+  "source_change_method": "apply_patch applied only to the fresh isolated source copy",
+  "capacity_change": {
+    "total_vertices": [
+      250000,
+      2000000
+    ],
+    "total_raw_owners": [
+      250000,
+      8000000
+    ],
+    "per_element_faces": [
+      250000,
+      2000000
+    ]
+  },
+  "capacity_compile_command": "/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++ -std=c++17 -fsyntax-only -x c++ -",
+  "capacity_static_asserts": [
+    "4LL*kMaximumVertices < INT_MAX",
+    "11LL*kMaximumOwners < INT_MAX",
+    "3LL*kMaximumFaces < INT_MAX",
+    "44LL*kMaximumOwners + 44LL*kMaximumVertices + 12LL*kElements*kMaximumFaces < 2LL*1024*1024*1024"
+  ],
+  "frozen_source_hashes_before_after_identical": true,
+  "production_sources_modified": false,
+  "installed_library_modified": false,
+  "native_slicing_run_by_build_task": false,
+  "build_exit_code": 0,
+  "build_log_sha256": "86d2673944385d6a5040acaf17d49247c4282c32e081a1a4d53912b589f299b9",
+  "capacity_abi_static_asserts_exit_code": 0,
+  "compiler_version": "x86_64-conda-linux-gnu-g++ (conda-forge gcc 11.4.0-13) 11.4.0",
+  "exactly_three_capacity_constant_changes": true,
+  "maximum_ready_snapshot_array_bytes": 560000000,
+  "new_changed_source_sha256": "d77659ff4a62fde038730601b43afecea9b480611151c38d958c5ebae8dd999b",
+  "new_library_path": "/home/warpwang/binoc-runs/forest-observer-20260906/build/binocmesher/lib/core.so",
+  "new_library_sha256": "fad66b2876f30b99d79e84895b30eacf436419079e8378d339a2a222e7b41edf",
+  "old_library_sha256": "f4263a2f47ba5283175a921e49b8867998bdd8124aac810793b34242ec43a3c9",
+  "old_source_hashes": {
+    "makefile": "953e714c4724a86cc57f0ca855534cc427db4d87be06cdfa691fd46a6a20b27b",
+    "source/binoctree.cpp": "8e27aec98e370515bf38a80d5c1502f1f233b16f8d98eaebc1d79cef171ecdd5",
+    "source/binoctree.h": "2f00240fb155d90a031d95ce37de2964d54111bf406007d48f59b2cf8150083b",
+    "source/bisection.cpp": "f034863476f0ae0c63e0d3c157536a5ad8722acf938ddb9b1997eb34e0754edc",
+    "source/bisection.h": "1504691f44642f88fa8e38c4fde008e61e5ba7b2ccaaf0216e531621861606c9",
+    "source/checked_output.h": "f44ae529cce8cecd50c146ac1901d0e07f89f05ad1068c0d41d18adc9c96abcc",
+    "source/coarse_step.cpp": "cc9f1b73cdb2fe4636f7653c4c802dde98185b152b94cc40f88837677eae1859",
+    "source/coarse_step.h": "9052c31f475f2cef6ec8af87a0a0d831066d8f281b734fa950044cbd709739ef",
+    "source/dual_contouring.cpp": "8629752cd094fb66698e1bbb6e6d2a11e3f381c992b213ef613f3cd992c3b9dc",
+    "source/dual_contouring.h": "84b6c7ec0dc3525234443ff2fcaf40b94dfbb633c2097a283243ef91aee93cb0",
+    "source/event_registry.cpp": "5a2284407ad929d39d3f49c6baf28d577f5002802d58a90b9c50498846f81eb1",
+    "source/event_registry.h": "2eede980ac6c9096d94a1abe81c4097bc6f2b19be2ecdeeae2890586d9607220",
+    "source/fine_step.cpp": "ca6224ccb49e48a1debd4342189d413b3c6452b2ed8ed2e7fed8954335210ee6",
+    "source/fine_step.h": "9d1ea4f28fc9822d6e9bc8b1f473759350ad90f71b26da089a5d609258202f72",
+    "source/hyperpoly_layout.h": "77e46b73101bb22fa6a593bb583c6a7cb22eaa2e0f0c06ccfdda20d5149dd8ba",
+    "source/hyperpoly_provenance.h": "c20c33479f15c68c31c12607a5c4c018babbed7f618fb6999df362aff2019d62",
+    "source/medium_step.cpp": "8d01360587dc68a21f2d4c5562947de2172aa2768495cf72cb90259a0b88d77f",
+    "source/medium_step.h": "05418a85a5777ddb5d7699ae44d52ac5c8c74faa9c56481c27f2a6a8ce152f36",
+    "source/runtime_identity.h": "f0506e3dabbc57a5a754703cc421548ef2566b909e2803348ecc71244c37fc75",
+    "source/slicing.cpp": "7c1b7397401d941c7a1e35fcfdee9a4740de9d37bdcfd302601c678707507763",
+    "source/slicing.h": "858c8e3f491db499a055a4c8c7211f2c04ee5670bd81cc3cce684f8c620e00f6",
+    "source/source_splice.cpp": "f892b4112229c20e089e0e975eb0d4adc1329714e7f18787f6dbaf27ba6e2b9c",
+    "source/source_splice.h": "ac78c440d8e1cba47a1ee6ffb7c1b9d05c11c59fcd2669d6609a2b890f410726",
+    "source/utils.h": "caca3657f67e5346ca861ae3eb6990837b3c215dbcd07f434135c5ba7a024cdf"
+  },
+  "only_changed_source": [
+    "source/runtime_identity.h"
+  ],
+  "source_diff": "--- frozen/source/runtime_identity.h\n+++ isolated-observer/source/runtime_identity.h\n@@ -9,9 +9,9 @@\n namespace runtime_identity {\n enum Status { disabled = 0, ready = 1, unsupported = 2, error = 3 };\n constexpr int kElements = 5;\n-constexpr int kMaximumVertices = 250000;\n-constexpr int kMaximumOwners = 250000;\n-constexpr int kMaximumFaces = 250000;\n+constexpr int kMaximumVertices = 2000000;\n+constexpr int kMaximumOwners = 8000000;\n+constexpr int kMaximumFaces = 2000000;\n struct VertexRow { int values[4]; };\n struct OwnerRow { int values[11]; };\n struct State {\n"
+}

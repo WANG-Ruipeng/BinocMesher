@@ -1,0 +1,153 @@
+{
+  "actual_delta_t": 0.6562525,
+  "actual_delta_t_hex": "0x1.500053e2d6239p-1",
+  "baseline_only": true,
+  "cache_ownership": "PARENT_OWNS_NO_COPY_NO_DELETE",
+  "cache_root": "/home/warpwang/binoc-runs/forest-native-20260906-qvwbv7p_/cache",
+  "camera_inputs_sha256": "40535546e900f9fc9c6d6efab3e1538da8eb9a88021c9078ebec4697a53f23b7",
+  "continuous_window_admitted": false,
+  "cost": {
+    "array_bytes": 62869900,
+    "cpu_seconds": 3.795103743,
+    "peak_rss_bytes": 1095364608,
+    "wall_seconds": 3.806303430000071
+  },
+  "counts": [
+    {
+      "element": 0,
+      "faces": 10459,
+      "identity_vertices": 0,
+      "raw_owners": 0,
+      "vertices": 5182
+    },
+    {
+      "element": 1,
+      "faces": 659914,
+      "identity_vertices": 0,
+      "raw_owners": 0,
+      "vertices": 329974
+    },
+    {
+      "element": 2,
+      "faces": 1275613,
+      "identity_vertices": 0,
+      "raw_owners": 0,
+      "vertices": 615960
+    },
+    {
+      "element": 3,
+      "faces": 62684,
+      "identity_vertices": 0,
+      "raw_owners": 0,
+      "vertices": 31111
+    },
+    {
+      "element": 4,
+      "faces": 446516,
+      "identity_vertices": 0,
+      "raw_owners": 0,
+      "vertices": 210904
+    }
+  ],
+  "effective_inputs_sha256": "78944c29b77938e035bb1a9c61f4b084cb90144371402e5600d9fb31026daa08",
+  "extra_smooth": false,
+  "helper_wall_seconds": 3.9026311269999496,
+  "identity_enabled": false,
+  "initialization": {
+    "actual_delta_t_hex": "0x1.500053e2d6239p-1",
+    "actual_elements": 5,
+    "actual_max_tL": 1,
+    "duration_hex": "0x1.500053e2d6239p+1",
+    "library_sha256": "f4263a2f47ba5283175a921e49b8867998bdd8124aac810793b34242ec43a3c9",
+    "native_entrypoints_called": [
+      "slicing_discard_output",
+      "slicing_clean_up",
+      "slicing_identity_enable",
+      "load_parameters"
+    ],
+    "origin_seconds_hex": "0x1.5555555555555p-6",
+    "parameter_sources": "Recorded camera/effective Forest documents; coarse=30, outview=120, min_dist=0.1 are unchanged frozen core constructor defaults, also recorded in the Forest build protocol.",
+    "source_vid_encoding": "MERGER_NORMALIZED_UNVERIFIED",
+    "source_vid_encoding_version": 0,
+    "time_groups": 2,
+    "tree_or_preprocess_or_initial_slice_run": false
+  },
+  "input_documents_sha256": {
+    "camera": {
+      "binding": "exact document bytes",
+      "path": "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/repair_20260906/forest/stage64/camera_inputs.json",
+      "sha256": "40535546e900f9fc9c6d6efab3e1538da8eb9a88021c9078ebec4697a53f23b7"
+    },
+    "effective": {
+      "binding": "exact document bytes",
+      "path": "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/repair_20260906/forest/stage64/effective_inputs.json",
+      "sha256": "78944c29b77938e035bb1a9c61f4b084cb90144371402e5600d9fb31026daa08"
+    }
+  },
+  "library_path": "/home/warpwang/binoc-runs/e2-runtime-loop-20260906/build/binocmesher/lib/core.so",
+  "library_sha256": "f4263a2f47ba5283175a921e49b8867998bdd8124aac810793b34242ec43a3c9",
+  "mesh_files_written": 0,
+  "meshes": [
+    {
+      "faces": 10459,
+      "sha256": {
+        "faces": "6e8a484b60c3ba07c08f6f7fc8796f7b49e27870c8abd57d8010abf15310e472",
+        "tags": "d38d6c5749aef38ca15b148ddadc1683f312016a1beafea28a9b1e246b81dc76",
+        "vertices": "2bd5d3acc323dcd18199f2134790cb0fabdf662facd94b92994e6b019381dfdc"
+      },
+      "vertices": 5182
+    },
+    {
+      "faces": 659914,
+      "sha256": {
+        "faces": "e55c24394886168d7b707a34a7f5e87720693528abcab89d160e3c0c563b8442",
+        "tags": "b0ac5a1658a464ed9e42008131ee0bf8ff3809757ade3da43b9f60b9d191589b",
+        "vertices": "dd7337adee936579de2078a427231e2cb631c477cd2e38f12e8741ab981df01e"
+      },
+      "vertices": 329974
+    },
+    {
+      "faces": 1275613,
+      "sha256": {
+        "faces": "9bd13eb17706076c8577edfcc056c5a9eec5998f84a5b36f86eed0cf9e967892",
+        "tags": "ff038bcbb20846f3bdc546fc9134a2d7816f5020fe83e83138939fbfd50b92aa",
+        "vertices": "fbb81b099ed7081a58507202bfffc86418dd95cea7a41097b7aefd1019752bf8"
+      },
+      "vertices": 615960
+    },
+    {
+      "faces": 62684,
+      "sha256": {
+        "faces": "d065c38c9ded3648b4d3dac538dab92209063fbdaa406dcdad63b1353ab86b84",
+        "tags": "93595f9660a020dd2892280b1ee08f52ebd2884d4f322fccb5e5413f5b56432f",
+        "vertices": "41a4f00f53ac088fe47f6ea91e17c7b9fa442192eb4c474b81ff0fb60b81df14"
+      },
+      "vertices": 31111
+    },
+    {
+      "faces": 446516,
+      "sha256": {
+        "faces": "5238ae02465309dafa5f1521634c09ab0973d88f311f7e55248425286047bcaf",
+        "tags": "98f700ddb4d3d472cd065b7f411e03793feaa460e81d1537a1dd565448366e80",
+        "vertices": "b575d7885230e416a7f8c47b2b4eed9bd74afe78a5236df22430219e8ed9ef4e"
+      },
+      "vertices": 210904
+    }
+  ],
+  "nonlog_cache_integrity": "PARENT_CAMPAIGN_OBLIGATION",
+  "query": {
+    "effective_discrete_time_hex": "0x1.befb8026e7c50p+1",
+    "exact_time": null,
+    "mode": "physical",
+    "physical_time_hex": "0x1.2555555555555p+1",
+    "value": "0x1.2555555555555p+1"
+  },
+  "query_token": [
+    "physical",
+    "0x1.2555555555555p+1"
+  ],
+  "reader_closed": true,
+  "registry_sha256": "0ce1a439bf33b785db9dbb3ea55dbc548933477aca64d2fca64829f660609b52",
+  "schema": "forest-frozen-ordinary-query-receipt-v1",
+  "status": "FROZEN_ORDINARY_QUERY_RECEIPT"
+}

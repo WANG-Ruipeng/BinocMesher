@@ -1,0 +1,22 @@
+{
+  "schema": "final-gate-lightweight-regression-receipt-v1",
+  "status": "PASS_FINAL_REPORTING_AND_EXPERIMENT_HARNESS_TESTS",
+  "observed_at_utc": "2026-09-06 17:14:11 UTC",
+  "command": "PYTHONDONTWRITEBYTECODE=1 /home/warpwang/miniforge3/envs/binoc-exp/bin/python -B -m unittest discover",
+  "cwd": "/mnt/e/BinocMesher/experiments/visibility_screen",
+  "tests_run": 230,
+  "unittest_wall_seconds": 2.608,
+  "tool_wall_seconds": 5.7612946,
+  "exit_code": 0,
+  "expected_negative_cli_messages": true,
+  "external_stop_and_final_verdict_subset_tests": 44,
+  "final_verdict_command_exit_code": 0,
+  "final_verdict_tool_wall_seconds": 4.8884768,
+  "final_decision": "RESOURCE_OR_EVIDENCE_UNRESOLVED_STOP_VISIBILITY_CAMPAIGN",
+  "final_verdict_sha256": "c4e5ba6218bf8a0d1dbcbee547d266cf84ea251eb01a661687a49c8002786c74",
+  "final_reporting_sources_sha256": {
+    "final_gate_verdict.py": "f88b12425da7192c7ed75bd051a69905592356e6d56a9cdd113c40c6843ccb0e",
+    "final_stop_binding.py": "3cfe6f5b0601351869fb1ae2d247efb3ff3e3d142bacb594bcda716aa0ca4cca"
+  },
+  "scope": "Includes preserved harness tests and pure final-report linkage/negative tests; no additional native query or rasterization was run. Final verdict revalidates actual input and outcome chains."
+}

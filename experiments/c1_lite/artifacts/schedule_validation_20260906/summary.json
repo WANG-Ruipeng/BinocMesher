@@ -1,0 +1,130 @@
+{
+  "schema": "schedule-e2-forest-scoped-experiment-summary-v1",
+  "status": "E2_COMPLETE_FOREST_FRONTEND_COMPLETE_FULL_METHOD_ELIGIBILITY_UNEVALUATED",
+  "date": "2026-09-06",
+  "frozen_production_commit": "000028e0fa5bc4922aeb51aa9fb9ee96b799301e",
+  "production_modified": false,
+  "committed_or_pushed": false,
+  "rgb_or_long_video_rendered": false,
+  "e2": {
+    "report": "e2_retry2/result.json",
+    "structural_manifest": "e2_retry2/structural_coherence.json",
+    "structural_status": "PASS_SCHEDULE_STRUCTURAL_COHERENCE_ONLY",
+    "continuous_window_admitted": false,
+    "same_root_group_admitted": false,
+    "natural_indices_zero_based": [13, 14, 15, 16, 17],
+    "modified_natural_indices": [15],
+    "natural_temporal_hits_full_schedule": {"numerator": 1, "denominator": 24},
+    "selected_natural_modified_rate": {"numerator": 1, "denominator": 5},
+    "original_view_changed_natural_frames": 0,
+    "original_view_visible_source_support_pixels_active_frame": 0,
+    "exact_root_excluded_from_natural_rates": true,
+    "requested_transactions": {
+      "beb1_window": {"attempted": 2, "committed": 2},
+      "centroid_window": {"attempted": 2, "committed": 2},
+      "scope": "Each method has a five-natural-query atomic batch and a separate one-query exact-root transaction; this is not population event coverage."
+    },
+    "injected_late_refusal_returns_full_baseline_batch": true,
+    "harness_stops_excluded_from_method_fallback_counts": ["e2/result.json", "e2_retry1/result.json"],
+    "diagnostic_natural_frame_15": {
+      "reference_domain": "fixed original-source footprint; identical to visible raw support in this case",
+      "footprint_pixels": 16034,
+      "predeclared_larger_bbox_roi_pixels": 40420,
+      "depth_mean_absolute_error_scene_units": {
+        "raw": 0.17262226438041248,
+        "centroid_window": 0.16830172595244658,
+        "beb1_window": 0.16527228463330965
+      },
+      "normal_mean_error_degrees": {
+        "raw": 21.7893738678657,
+        "centroid_window": 21.76577193446847,
+        "beb1_window": 21.827988905290166
+      },
+      "beb1_relative_depth_reduction_vs_raw": 0.04257839956788816,
+      "beb1_relative_depth_reduction_vs_centroid": 0.018000060914365772,
+      "beb1_normal_error_increase_vs_raw_degrees": 0.03861503742446715,
+      "beb1_normal_error_increase_vs_centroid_degrees": 0.06221697082169442,
+      "depth_changed_pixels_vs_raw": 16034,
+      "normal_changed_pixels_vs_raw": 16034,
+      "quantized_depth_png_changed_pixels_vs_raw": 7861,
+      "silhouette_xor_pixels": 0,
+      "boundary_xor_pixels": 0,
+      "perceptual_visibility_tested": false,
+      "all_metric_superiority_supported": false
+    },
+    "reference_refinement": {
+      "status": "PASS_REFINEMENT_CHECK",
+      "grid_vertices_per_axis": [128, 256],
+      "roi_complete_coverage": true,
+      "mean_depth_change": 0.000071855248574914676,
+      "mean_normal_change_degrees": 0.0014316470285120775,
+      "analytic_error_bound": false,
+      "camera_or_threshold_retuned_after_results": false
+    },
+    "successful_worker_wall_seconds": 25.386862387000008,
+    "successful_worker_cpu_seconds": 17.405787014999998,
+    "peak_process_rss_bytes": 286310400,
+    "original_cache_unchanged": true,
+    "temporary_cache_removed": true
+  },
+  "forest": {
+    "authoritative_scope_correction": "forest/scope_correction.json",
+    "raw_probe_report": "forest/summary.json",
+    "raw_event_records": "forest/events.json",
+    "input_scope": "One Forest 64-frame / 6px pre-displacement cache, not paper-scale completed scene geometry",
+    "raw_observations": 440,
+    "logical_incidences": 268,
+    "canonical_events": 131,
+    "root_groups": [{"root": "3/2", "events": 66}, {"root": "5/2", "events": 65}],
+    "exact_registry_saddle_pass": 131,
+    "referenced_source_provenance_pass": 131,
+    "local_kernel_nondegeneracy_checks_pass": 131,
+    "direct_critical_face_quad_proxy": {
+      "evaluated": 131,
+      "two_face_template_matches": 0,
+      "equivalent_to_frozen_e2_source_support": false,
+      "scope": "Auxiliary failed template probe only; not complete C1 source-support eligibility or method coverage."
+    },
+    "closure_derived_c1_source_support_compilation": {
+      "status": "UNSUPPORTED",
+      "execution": "NOT_ATTEMPTED",
+      "reason": "Registry-wide complete source-support compiler is not connected; E2 reads its support from a completed replacement plan."
+    },
+    "method_level_eligibility_rate": null,
+    "method_level_admission_rate": null,
+    "runtime_transactions_attempted": 0,
+    "runtime_spontaneous_fail_closed_count": null,
+    "actual_modified_frames_produced": 0,
+    "runtime_limit": "Current public window runtime is single-element; Forest OpaqueTerrain has five elements.",
+    "same_root_pairs_compatibility_unknown": 4225,
+    "unadmitted_candidate_schedule_only": {
+      "windows_with_natural_hits": 131,
+      "candidate_windows": 131,
+      "hits_per_candidate": 8,
+      "event_frame_incidences": 1048,
+      "distinct_frame_numbers_one_based": [21, 22, 23, 24, 25, 26, 27, 28, 37, 38, 39, 40, 41, 42, 43, 44],
+      "camera_frames": 64,
+      "certified_window_coverage": false,
+      "visibility_evaluated": false,
+      "time_mapping_is_reconstructed_not_cpp_serialized": true
+    },
+    "processed_records_scanned": 3081976,
+    "retained_halo_polygons": 2399,
+    "worker_wall_seconds": 36.148555622,
+    "peak_process_rss_bytes": 330682368,
+    "historical_cache_build_seconds_separate": 1203.255439993,
+    "input_immutability_checks_passed": true,
+    "whole_unrelated_processed_payload_sha256_claimed": false
+  },
+  "verification": {
+    "c1_lite_unit_tests_passed": 331,
+    "source_splice_unit_tests_passed": 14,
+    "total_unit_tests_passed": 345,
+    "persistent_result_bytes_approximate": 2900000,
+    "workspace_plus_wsl_and_backup_bytes_approximate": 40300000000,
+    "storage_ceiling_bytes": 400000000000,
+    "full_precision_mesh_or_image_arrays_retained": false,
+    "experiment_workers_still_running": false
+  },
+  "next_required_work_not_performed": "Connect Forest registry events to the actual closure-derived source-support/replacement-plan compiler before reporting complete-method eligibility or runtime admission."
+}

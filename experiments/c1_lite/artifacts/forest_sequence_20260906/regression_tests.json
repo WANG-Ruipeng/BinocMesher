@@ -1,0 +1,176 @@
+{
+  "schema": "forest-sequence-regression-tests-v1",
+  "status": "PASS_REGRESSION_WITH_POST_EDIT_FOCUSED_RECHECK",
+  "scope": "Existing c1_lite and source_splice regressions only. No native campaign, scene rebuild, mesh rendering, or changes to sequence-bound code.",
+  "python": "/home/warpwang/miniforge3/envs/binoc-exp/bin/python",
+  "bytecode_writes_disabled": true,
+  "unit_test_files": 57,
+  "c1_lite_test_files": 53,
+  "source_splice_test_files": 4,
+  "unittest_cases_total": 642,
+  "unittest_failures": 0,
+  "unittest_errors": 0,
+  "unittest_skipped": 0,
+  "standalone_regressions": 1,
+  "standalone_status": "PASS_CRITICAL_BEB1_EVENT_STAR_CLOSURE_COMBINATORICS",
+  "runs": [
+    {
+      "name": "c1_lite_unittest_discovery",
+      "command": "wsl.exe -d Ubuntu --cd /mnt/e/BinocMesher /home/warpwang/miniforge3/envs/binoc-exp/bin/python -B -m unittest discover -s experiments/c1_lite -p test_*.py",
+      "exit_code": 0,
+      "unit_tests": 628,
+      "reported_test_seconds": 7.009,
+      "tool_process_wall_seconds": 9.1431445,
+      "stdout_stderr": "....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 628 tests in 7.009s\n\nOK\n"
+    },
+    {
+      "name": "source_splice_unittest_discovery",
+      "command": "wsl.exe -d Ubuntu --cd /mnt/e/BinocMesher /home/warpwang/miniforge3/envs/binoc-exp/bin/python -B -m unittest discover -s experiments/source_splice -p test_*.py",
+      "exit_code": 0,
+      "unit_tests": 14,
+      "reported_test_seconds": 0.003,
+      "tool_process_wall_seconds": 0.4280269,
+      "stdout_stderr": "..............\n----------------------------------------------------------------------\nRan 14 tests in 0.003s\n\nOK\n"
+    },
+    {
+      "name": "source_splice_standalone_critical_beb1",
+      "command": "wsl.exe -d Ubuntu --cd /mnt/e/BinocMesher /home/warpwang/miniforge3/envs/binoc-exp/bin/python -B experiments/source_splice/test_critical_beb1_event_ir.py",
+      "exit_code": 0,
+      "unit_tests": null,
+      "reported_test_seconds": null,
+      "tool_process_wall_seconds": 0.4410815,
+      "stdout_stderr": "PASS_CRITICAL_BEB1_EVENT_STAR_CLOSURE_COMBINATORICS\n"
+    }
+  ],
+  "post_edit_focused_visibility_recheck": {
+    "test_command": [
+      "/home/warpwang/miniforge3/envs/binoc-exp/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "test_forest_visibility_triage",
+      "test_forest_raster"
+    ],
+    "test_exit_code": 0,
+    "test_stdout": "",
+    "test_stderr": "..........................\n----------------------------------------------------------------------\nRan 26 tests in 3.670s\n\nOK\n",
+    "runner_import_exit_code": 0,
+    "runner_import_stdout": "",
+    "runner_import_stderr": "",
+    "before_sha256": {
+      "run_forest_visibility_triage.py": "6f7004dc5aa8ce50a7c799ccc2ba12fc6fa42302817fcb905eaee16e2d4c17bb",
+      "forest_raster.py": "8428baec62e79d4862e51321d6ea58d9d7f82d9f2bb2d39284ed28ad624c3872",
+      "test_forest_visibility_triage.py": "bfc1c98892439ae6a32300e199e45d15f98d9220d7e091e0bbd2c0f9c5bbe9d1",
+      "test_forest_raster.py": "d0336f24810a6458a9133f48a77321bb7ce6b177c589dba371fe8bc41937674b"
+    },
+    "after_sha256": {
+      "run_forest_visibility_triage.py": "6f7004dc5aa8ce50a7c799ccc2ba12fc6fa42302817fcb905eaee16e2d4c17bb",
+      "forest_raster.py": "8428baec62e79d4862e51321d6ea58d9d7f82d9f2bb2d39284ed28ad624c3872",
+      "test_forest_visibility_triage.py": "bfc1c98892439ae6a32300e199e45d15f98d9220d7e091e0bbd2c0f9c5bbe9d1",
+      "test_forest_raster.py": "d0336f24810a6458a9133f48a77321bb7ce6b177c589dba371fe8bc41937674b"
+    },
+    "unchanged": true,
+    "wall_seconds": 4.496316140999966,
+    "unit_tests": 26,
+    "reported_test_seconds": 3.67,
+    "these_are_repeated_cases_not_additional_unique_tests": true,
+    "import_check_scope": "Import-only syntax/import dependency check; runner main was not invoked.",
+    "reason": "Parent notified that visibility runner had been updated near the full-suite run. The relevant tests were repeated against before/after-identical current files.",
+    "initial_precheck": {
+      "exit_code": 1,
+      "reason": "Read-only precheck used nonexistent forest_visibility_triage.py instead of actual run_forest_visibility_triage.py; stopped before tests. Corrected file list and reran; no production/experiment state changed."
+    }
+  },
+  "code_hash_scope": {
+    "full_suite": "Test-file hashes were captured after the full suites only; no claim of a global before/after executed-source snapshot for the full run.",
+    "focused_visibility": "All four implementation/test files were hashed before and after the focused rerun and remained identical.",
+    "test_file_sha256_after_full_run": {
+      "experiments/c1_lite/test_actual_evaluation_envelope.py": "7cc478f88a864ff447a0dff9eb785164bea9237141264bb44fd11b39f87ad222",
+      "experiments/c1_lite/test_forest_native_reader.py": "038d3c84b060b0fdf14b2b5b1fc71f1092cb6ba2b758dee383406e78cae98ee8",
+      "experiments/c1_lite/test_compare_forest_sequences.py": "68ab068389b16cbf0bccbc51f467e78975f0e23c3a1d5232245a82850d8984b1",
+      "experiments/c1_lite/test_window_runtime.py": "d887bd3a0508ddd2c36361990b9ffaa15d6699bc4465332630004c9bed2efa65",
+      "experiments/c1_lite/test_e2_schedule_coherence.py": "ae442915cd663e01464ef0ac21f128356e6c8a0af8f66c43f967d30d30fc6482",
+      "experiments/c1_lite/test_forest_schedule_policy.py": "2c8cb3f770e4357cd5a286b33708b7f62fa736e8edf2d5900598785e708558db",
+      "experiments/c1_lite/test_window_source.py": "2c9330cfa1d6c0c08687c3fb02524ca4c09955d76bc70873eb2dfda399140b90",
+      "experiments/c1_lite/test_forest_support_reader.py": "1ea378dcf7ee421d5a9a9ddb664bb8bd3402062dcf86d8588ddf36f23cf38957",
+      "experiments/c1_lite/test_forest_raster.py": "d0336f24810a6458a9133f48a77321bb7ce6b177c589dba371fe8bc41937674b",
+      "experiments/c1_lite/test_window_geometry.py": "e6e126b111872f259823aa437d7c0d88957a7f8b1317feeb3e5516dd245fd1db",
+      "experiments/c1_lite/test_forest_requested_source_gates.py": "9288dc326ae0bcda34e24f1b38fea274988c7c94fb7666894a6dc324366c92f6",
+      "experiments/source_splice/test_geometry_gate.py": "157dc48e527c2bcc641584ee53dc70fb02fe7cf805b206728df9b094c22794ac",
+      "experiments/c1_lite/test_forest_formal_runner.py": "745dce823fe84e6f98746a81f40ee4f481ae49b42eec9a6c39e500ed0656def4",
+      "experiments/c1_lite/test_runtime_retained.py": "368709520383fd14bd66d857300226e3f603131d32389cbbe79817668231a988",
+      "experiments/c1_lite/test_window_admission.py": "f74d83eee57e2cfc6dc7fd6bcec5ad425c65ee573c9c08c82bb415c110901b4d",
+      "experiments/c1_lite/test_run_window_audit_v3.py": "09a879fd6491e43a99edf1cc609baf91392d18047e2a7419c1922cb619dac8fd",
+      "experiments/c1_lite/test_e2_runtime_validation.py": "528de0a9312083f28080f58bdd96912bab72ee80083ebd88d1ed11d71054d37a",
+      "experiments/c1_lite/test_runtime_rounding_probe.py": "1835b5502fea95318999676ff0d2602d1c84eb92e3b4f39547639aea24f06dc5",
+      "experiments/c1_lite/test_anchor_ablation.py": "ea6b6412eae889e2902d78f76542a6c7a4b9a1b46f5b707eee71ce59d841f360",
+      "experiments/c1_lite/test_audit_forest_final_report.py": "f84f5884270306392166e3a3c17ef5cd5c36310c9b4fea76d1ccc7db6b0f4bbb",
+      "experiments/c1_lite/test_window_contact_v2.py": "153bc04d720874a781c3b96d3b5c3bc059f201fb796965a1b1366234480ad99c",
+      "experiments/c1_lite/test_runtime_baseline_audit.py": "17607e49db45fa5c8005a54ec084901753c3b01fbfb7b9793345d99108b0a1fe",
+      "experiments/c1_lite/test_forest_visibility_triage.py": "bfc1c98892439ae6a32300e199e45d15f98d9220d7e091e0bbd2c0f9c5bbe9d1",
+      "experiments/c1_lite/test_runtime_breakpoint_crosscheck.py": "954ea8e5ad6ae4c39b47b50bb4595ea8e9c00b55d279bd4d6b083ad868b9d7eb",
+      "experiments/source_splice/test_sidewall_contract.py": "cd33251adb6b394a43950dbc5a4f9cd8e834e3e60d36569ba64dc9595175bd56",
+      "experiments/source_splice/test_window_boundary.py": "f4c654f647a698695475543fc2d7ce60ad563fa59725d33374446a4fe260d306",
+      "experiments/c1_lite/test_run_window_audit_v2.py": "01b47bfa98b8ffefdcc55e6b14e756f75c16bdc08d0593f59a0bea5948a7f31f",
+      "experiments/source_splice/test_critical_beb1_event_ir.py": "f88c8a08495d08c9227f90d32229d266b3dd63aafd93df4bdd8706194145b78b",
+      "experiments/c1_lite/test_e2_image_metrics.py": "bf8f46fb304993c547df9b243329164852734dfa75725f1d444811ad94ad2854",
+      "experiments/c1_lite/test_e2_raster.py": "d96846291941bba66d857508eec9a31d5909611d4eceef0ae6b9dd39b172b279",
+      "experiments/c1_lite/test_forest_atomic_sequence.py": "38a1e8c46413e49db2cbd972a2b399ba5a25d18085f960ae510bf21cf4ad03f4",
+      "experiments/c1_lite/test_forest_observer_contract.py": "fd49d1b1545c2dd32ad5d71a6254426cb56f90e7396ec7eb33ad52a14e954201",
+      "experiments/c1_lite/test_interface_topology.py": "ffeb2af0455d859a5e7d001e9a33d9658d6b6c2393d32382218deeb5eed0bdad",
+      "experiments/c1_lite/test_e2_campaign_contracts.py": "6bbf914c4ea20d3e069125846bc2982d33a76eb0f220a36c74f08af906c63512",
+      "experiments/c1_lite/test_forest_fan_contact.py": "4d4a86dc814fcff2008c3a68498f770c2164c2b8c189fbb8aaba60a8aeb16479",
+      "experiments/c1_lite/test_forest_exact_contact.py": "ab27fe136077b4b016178af9443f3b1381507628c0e0f5e1d3549760f66ab3ad",
+      "experiments/c1_lite/test_forest_census_pilot.py": "debe1a1a1597ac31287d5bb7ad99248a4a6c181ff2c7a94096b76400c24c023d",
+      "experiments/c1_lite/test_forest_frozen_query.py": "809227c823aff8ecaa450de6f5683b4ff7d75db3225220078d31abb74dd3d558",
+      "experiments/c1_lite/test_forest_native_admission.py": "77cc9d38070b180390125900a5bc5d95858784fc0bb07638c0388dce2c930a6b",
+      "experiments/c1_lite/test_audit_forest_component_certificate.py": "96a817f19b26b24d0cac85cad0762be99c2f6ddf343ed1e339edae2dfe2b2238",
+      "experiments/c1_lite/test_forest_native_campaign.py": "3023990353d7d1640b6dba5bc6e280490c1bd240342a6b4b8e51343f9aa9c4cc",
+      "experiments/c1_lite/test_window_exterior.py": "fdfef9965fe2717e042d8f9733a616777dea3573aab004066afc9c0c4e578332",
+      "experiments/c1_lite/test_forest_source_support_inventory.py": "491444cbca7a9718e067375b23f20bec9507600651784181568336a866046008",
+      "experiments/c1_lite/test_forest_native_exact_fallback.py": "60bd52c49599ae37092b5d95bb523578a17d053b60d596c7464126a02042b5f7",
+      "experiments/c1_lite/test_census.py": "03a8365052c408844067e5bec29e665cbc1b8d5a61a6be7e5d12e6017de46092",
+      "experiments/c1_lite/test_relative_plane_feasibility.py": "699754a25bc8452f466482493d3a09362e6a1a7139adbc2f6a6591f0450328b0",
+      "experiments/c1_lite/test_reference.py": "a9843e95b20f55775ae5ea2c0a1222a57d9019891183d8d484d1fb0b692ebafb",
+      "experiments/c1_lite/test_forest_component_graph.py": "47790a1757fc048b9dcb4bbd3095b7fa3f16cf7ab823b2eaa6f4fcef5ded72d5",
+      "experiments/c1_lite/test_forest_native_patch.py": "e02bdc55fd3c54991c8a96663c7f40a1426069300848439426ad08ad1e66f0c7",
+      "experiments/c1_lite/test_run_window_audit.py": "7b34d96a6abea2d74efd8377d7e88d5acfbd69d236635b28d4bfa8161d9d3d62",
+      "experiments/c1_lite/test_forest_source_compiler.py": "84ad8152de12f95057e695f75a052079f4610e4cbd9340f2e2e72cd9eb4fc845",
+      "experiments/c1_lite/test_forest_component_union.py": "04ef4c706045279ceb83390b2496d33c38aacf347f6b511c1cc0bb49ca899690",
+      "experiments/c1_lite/test_window_contact_v3.py": "0f0cdc22964700845e4e82e08a67f7bd76b772ccc393dbac8b37d38763cdbb06",
+      "experiments/c1_lite/test_compare_forest_native_runs.py": "7f6bf2c23ab4ce6a052d0d19179cd88cb463261c2ff00f0329db986411309e4a",
+      "experiments/c1_lite/test_e2_render_views.py": "a70aa03442b7a702b5b7dc6c0524b6bd89914d1a1311542637e43990fc7002c2",
+      "experiments/c1_lite/test_conditional_perturbation.py": "e7c3b1112239656387cdd301d7dc9012f855c8b38d8fadbe416fa17f7536604e",
+      "experiments/c1_lite/test_forest_eligibility_funnel.py": "ab38a4eb664811609ab9da7e9cb37722db6c7ab5891150e44b0f3b6e8fa44fe5"
+    }
+  },
+  "sequence_directory_snapshot": {
+    "snapshot_utc": "2026-09-06T09:48:32.7141138Z",
+    "path": "E:\\BinocMesher\\experiments\\c1_lite\\artifacts\\forest_sequence_20260906",
+    "file_count": 73,
+    "bytes": 5060212,
+    "by_top_level": [
+      {
+        "name": "(root files)",
+        "files": 1,
+        "bytes": 70316
+      },
+      {
+        "name": "component01",
+        "files": 20,
+        "bytes": 4266680
+      },
+      {
+        "name": "sequence01_omp1",
+        "files": 1,
+        "bytes": 1231
+      },
+      {
+        "name": "sequence02_omp1",
+        "files": 51,
+        "bytes": 721985
+      }
+    ],
+    "note": "Point-in-time read-only inventory while sequence02_omp1 was actively writing new receipts. Excludes this new regression_tests.json report. Not a final campaign disk-size claim."
+  }
+}

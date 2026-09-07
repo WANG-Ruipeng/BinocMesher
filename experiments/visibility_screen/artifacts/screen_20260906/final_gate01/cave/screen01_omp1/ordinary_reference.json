@@ -1,0 +1,2824 @@
+{
+  "budget_amendment": {
+    "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/budget_amendment01.json",
+    "sha256": "39ce0a8088c5c72a4b6595c8d054becf6c909410d4e70e1460a042f8488c2ac0"
+  },
+  "code_sha256": {
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_amendment.py": "121e88a1fbb96534a7aca884b184f23a13e879f44d7a887f49039790fdea5ba5",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_resources.py": "b86c849d72f1dc00ac6d971da724b3b55dbbee9ba7f74be62ecd288df309506e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_screen.py": "8e7c18dd1e386c0642508e4719309a2e62f153ce94fe0e09c0709a9ba7eaf8da",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_source.py": "3e0e62fd6e24c0301760a849e033afe320a25a06cceb16b4d6d622a28ff31419",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/run_screen.py": "a1ac0467e538dd751098abbcf87615a1ed574f42cf6c06fcdf388aa46524040d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_geometry.py": "0d36891fc27f5ac394274128f05bc78999125622b5eda2ba2284ded3433beb69",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_native.py": "8bf73a224ec880b82ab765a8d76b27de8d0b5bcbaaff3e91499af15d6aba97bb",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_source.py": "87b023010d63fa8176658c239145b8c80b1a37a58f683bd93bf098797280ee0b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/screen_contracts.py": "dd805e0d3f1ada3c8f92bb081f31328e224a01ba372e97fee553da932faa4018",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/screen_resources.py": "2b122024a9b6d81ba2869fdae1bf60c2d406a29576ce2e13df63f73ff3922031"
+  },
+  "identity_enabled": false,
+  "initialization": {
+    "actual_delta_t_hex": "0x1.500053e2d6239p-1",
+    "actual_elements": 3,
+    "actual_max_tL": 1,
+    "build_repository": "/home/warpwang/binoc-runs/e2-runtime-loop-20260906/build",
+    "duration_hex": "0x1.500053e2d6239p+1",
+    "extra_smooth": false,
+    "frozen_helper_source_sha256": "4f35f38874fd506c4ed54f4e9c70e9b9a4842483604f07f886d9db13cc24b623",
+    "library_sha256": "f4263a2f47ba5283175a921e49b8867998bdd8124aac810793b34242ec43a3c9",
+    "native_entrypoints_called": [
+      "slicing_discard_output",
+      "slicing_clean_up",
+      "slicing_identity_enable",
+      "load_parameters"
+    ],
+    "opaque_element_names": [
+      "ground",
+      "landtiles",
+      "voronoi_rocks"
+    ],
+    "origin_seconds_hex": "0x1.5555555555555p-6",
+    "original_cache_root": "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain",
+    "parameter_sources": "Explicit hash-bound effective mesher parameters and actual build opaque-element order; original camera time mapping. No Forest element-count or transparent-element inference.",
+    "private_cache_root": "/home/warpwang/binoc-runs/forest-native-20260906-j6cu83ih/cache",
+    "source_vid_encoding": "MERGER_NORMALIZED_UNVERIFIED",
+    "source_vid_encoding_version": 0,
+    "time_groups": 2,
+    "tree_or_preprocess_or_initial_slice_run": false
+  },
+  "library_sha256": "f4263a2f47ba5283175a921e49b8867998bdd8124aac810793b34242ec43a3c9",
+  "protocol_sha256": "9f8ec007632e763383d87ad544d4be2d0069bc506a89d3f38734e3c1bb6d2ae1",
+  "queries": [
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 1,
+        "evaluation_tau": "0",
+        "frame_index_zero_based": 0,
+        "frame_number": 1,
+        "global_camera_time_hex": "0x1.5555555555555p-6",
+        "key": "frame_0001",
+        "kind": "natural",
+        "physical_time_hex": "0x0.0p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 2,
+        "evaluation_tau": "4575067906911335/72057594037927936",
+        "frame_index_zero_based": 1,
+        "frame_number": 2,
+        "global_camera_time_hex": "0x1.0000000000000p-4",
+        "key": "frame_0002",
+        "kind": "natural",
+        "physical_time_hex": "0x1.5555555555556p-5",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 3,
+        "evaluation_tau": "4575067906911335/36028797018963968",
+        "frame_index_zero_based": 2,
+        "frame_number": 3,
+        "global_camera_time_hex": "0x1.aaaaaaaaaaaabp-4",
+        "key": "frame_0003",
+        "kind": "natural",
+        "physical_time_hex": "0x1.5555555555556p-4",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 4,
+        "evaluation_tau": "3431300930183501/18014398509481984",
+        "frame_index_zero_based": 3,
+        "frame_number": 4,
+        "global_camera_time_hex": "0x1.2aaaaaaaaaaabp-3",
+        "key": "frame_0004",
+        "kind": "natural",
+        "physical_time_hex": "0x1.0000000000000p-3",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 5,
+        "evaluation_tau": "2287533953455667/9007199254740992",
+        "frame_index_zero_based": 4,
+        "frame_number": 5,
+        "global_camera_time_hex": "0x1.8000000000000p-3",
+        "key": "frame_0005",
+        "kind": "natural",
+        "physical_time_hex": "0x1.5555555555555p-3",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 6,
+        "evaluation_tau": "44678397528431/140737488355328",
+        "frame_index_zero_based": 5,
+        "frame_number": 6,
+        "global_camera_time_hex": "0x1.d555555555555p-3",
+        "key": "frame_0006",
+        "kind": "natural",
+        "physical_time_hex": "0x1.aaaaaaaaaaaaap-3",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 7,
+        "evaluation_tau": "6862601860367001/18014398509481984",
+        "frame_index_zero_based": 6,
+        "frame_number": 7,
+        "global_camera_time_hex": "0x1.1555555555555p-2",
+        "key": "frame_0007",
+        "kind": "natural",
+        "physical_time_hex": "0x1.fffffffffffffp-3",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 8,
+        "evaluation_tau": "2001592209273709/4503599627370496",
+        "frame_index_zero_based": 7,
+        "frame_number": 8,
+        "global_camera_time_hex": "0x1.4000000000000p-2",
+        "key": "frame_0008",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2aaaaaaaaaaabp-2",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 9,
+        "evaluation_tau": "4575067906911335/9007199254740992",
+        "frame_index_zero_based": 8,
+        "frame_number": 9,
+        "global_camera_time_hex": "0x1.6aaaaaaaaaaabp-2",
+        "key": "frame_0009",
+        "kind": "natural",
+        "physical_time_hex": "0x1.5555555555556p-2",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 10,
+        "evaluation_tau": "5146951395275251/9007199254740992",
+        "frame_index_zero_based": 9,
+        "frame_number": 10,
+        "global_camera_time_hex": "0x1.9555555555555p-2",
+        "key": "frame_0010",
+        "kind": "natural",
+        "physical_time_hex": "0x1.8000000000000p-2",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 11,
+        "evaluation_tau": "44678397528431/70368744177664",
+        "frame_index_zero_based": 10,
+        "frame_number": 11,
+        "global_camera_time_hex": "0x1.c000000000000p-2",
+        "key": "frame_0011",
+        "kind": "natural",
+        "physical_time_hex": "0x1.aaaaaaaaaaaabp-2",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 12,
+        "evaluation_tau": "3145359186001543/4503599627370496",
+        "frame_index_zero_based": 11,
+        "frame_number": 12,
+        "global_camera_time_hex": "0x1.eaaaaaaaaaaabp-2",
+        "key": "frame_0012",
+        "kind": "natural",
+        "physical_time_hex": "0x1.d555555555556p-2",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 13,
+        "evaluation_tau": "3431300930183501/4503599627370496",
+        "frame_index_zero_based": 12,
+        "frame_number": 13,
+        "global_camera_time_hex": "0x1.0aaaaaaaaaaabp-1",
+        "key": "frame_0013",
+        "kind": "natural",
+        "physical_time_hex": "0x1.0000000000000p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 14,
+        "evaluation_tau": "3717242674365459/4503599627370496",
+        "frame_index_zero_based": 13,
+        "frame_number": 14,
+        "global_camera_time_hex": "0x1.2000000000000p-1",
+        "key": "frame_0014",
+        "kind": "natural",
+        "physical_time_hex": "0x1.1555555555555p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 15,
+        "evaluation_tau": "4003184418547417/4503599627370496",
+        "frame_index_zero_based": 14,
+        "frame_number": 15,
+        "global_camera_time_hex": "0x1.3555555555555p-1",
+        "key": "frame_0015",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2aaaaaaaaaaaap-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1050449,
+          "sha256": {
+            "faces": "17debb17bd8d7a66203955c37dd5fa9227bc93ab7a3ced5eee471cdb70b37c60",
+            "tags": "d0fcda8678494e98df867090f974140215d38cc54de9e540119d861dca8d616c",
+            "vertices": "e9ac08c5950592fe82334b527b9af236573d1db79afffe225088b210409cd0a6"
+          },
+          "vertices": 521414
+        },
+        {
+          "faces": 924623,
+          "sha256": {
+            "faces": "dd63a7b1c229a545658601d7d25e0a9119327ee78907e535cc84a56966ec7cf3",
+            "tags": "4274f3e56f61a2074b94246b6f78b31f7d55552b17061b326c557153abc64b16",
+            "vertices": "00a2298a5df1bd70e38df66dbf1ce530fb44154da6f66525be399b327736e915"
+          },
+          "vertices": 460402
+        },
+        {
+          "faces": 331403,
+          "sha256": {
+            "faces": "820ba1a1cb5a48f55e95315ee49d6d6ea693afef0cbf24a82a971789af864b52",
+            "tags": "319c525798023026802a3171241920cf8d326bdbf019116ea03fb496fd50722b",
+            "vertices": "de66b549fa0587e68468fb42896f1cd93791977dfc07f5d1877ed15c4375ef78"
+          },
+          "vertices": 158586
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 16,
+        "evaluation_tau": "134035192585293/140737488355328",
+        "frame_index_zero_based": 15,
+        "frame_number": 16,
+        "global_camera_time_hex": "0x1.4aaaaaaaaaaabp-1",
+        "key": "frame_0016",
+        "kind": "natural",
+        "physical_time_hex": "0x1.4000000000000p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "36b3cf40b612bb4905d939eb0ca4962827957e30f16de5af350190d88d76e256"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "a5a586826c868fbea10139e1d6cc42ede128a567e0ed22a5923fa3fd33e73a03"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "d34a215d4a8a908f191fc2471cf1d460b9c5d928ae11aee0968511b1b01c40ba"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 17,
+        "evaluation_tau": "2287533953455667/2251799813685248",
+        "frame_index_zero_based": 16,
+        "frame_number": 17,
+        "global_camera_time_hex": "0x1.6000000000000p-1",
+        "key": "frame_0017",
+        "kind": "natural",
+        "physical_time_hex": "0x1.5555555555555p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "e122eb080d23af78e0548411018a6a1794753f72f5e9f1135813032766cd0f26"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "60d1ee1329013d64d9e9134f0092780899038f7faea4fefc0bb8651fb23d634c"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "2d05a16315319975675bb24987224574b7153715f64b7b449c58bfe55ba28f10"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 18,
+        "evaluation_tau": "1215252412773323/1125899906842624",
+        "frame_index_zero_based": 17,
+        "frame_number": 18,
+        "global_camera_time_hex": "0x1.7555555555555p-1",
+        "key": "frame_0018",
+        "kind": "natural",
+        "physical_time_hex": "0x1.6aaaaaaaaaaaap-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "5ac2869f5e6e442c3b0b32f10e9bbdcb4c029714e115925a28ac5dfab7d8d04f"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "a5651979c91da0c6fd0846350975737b8b6a49f8979145efebe4674a0c5b2f6b"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "549fc0b43613a01d39abb8c84ac6a33f8f30d2eac6c5b807827feef279d3a746"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 19,
+        "evaluation_tau": "5146951395275251/4503599627370496",
+        "frame_index_zero_based": 18,
+        "frame_number": 19,
+        "global_camera_time_hex": "0x1.8aaaaaaaaaaabp-1",
+        "key": "frame_0019",
+        "kind": "natural",
+        "physical_time_hex": "0x1.8000000000000p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "0a83db691acdb2e6725ddd1064dbd5d3c453d01a430c5e705f7f28d6b8cc9a05"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "ded25ffd140c6fc3b57273bfa72e9aa72d90d281c4705df6320ded01185e5613"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "76ee9434c2bdbea4a8e432b7d036ff699a5ea4d889f47bafe7666b497f7790dc"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 20,
+        "evaluation_tau": "2716446569728605/2251799813685248",
+        "frame_index_zero_based": 19,
+        "frame_number": 20,
+        "global_camera_time_hex": "0x1.a000000000000p-1",
+        "key": "frame_0020",
+        "kind": "natural",
+        "physical_time_hex": "0x1.9555555555555p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "a5b67e2224564efe4ba8b41ab6bc2e09fbe332d32329511bbbcc38d0a987e70f"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "8555b520dc27268293a2b427eb7850411427bc9cba6548f36e986e8de8156a72"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "847432e2b1431691cdf449dd98e18829d95805f6b7d171389e4f532f79d0128f"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 21,
+        "evaluation_tau": "44678397528431/35184372088832",
+        "frame_index_zero_based": 20,
+        "frame_number": 21,
+        "global_camera_time_hex": "0x1.b555555555555p-1",
+        "key": "frame_0021",
+        "kind": "natural",
+        "physical_time_hex": "0x1.aaaaaaaaaaaaap-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "76f6ba8ee407b0ab5797896d12ee7dd65e20974d753a0fd7ec0cae1dd8254bc2"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "8dec157f34441e8066652646e2c72751b201c13675ab3186f375dbadc9def9a1"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "fa850d8ceba9ed6f98bf1db29ef0a0823b9b29ea7e896cedf47890344e563bde"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 22,
+        "evaluation_tau": "6004776627821127/4503599627370496",
+        "frame_index_zero_based": 21,
+        "frame_number": 22,
+        "global_camera_time_hex": "0x1.caaaaaaaaaaabp-1",
+        "key": "frame_0022",
+        "kind": "natural",
+        "physical_time_hex": "0x1.c000000000000p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "efeb0f3a40c23e464456e9b0188b1e06b911f7650640089dbba1218034a544ac"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "5bc74d2e6285493febec52bbd785dbbc1c62a3506fd0055eb56ac52304af08f3"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "7e2af2c60def1c2850f2fb6989665b3c4d9b25a41a79e250227514132193ce47"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 23,
+        "evaluation_tau": "6290718372003085/4503599627370496",
+        "frame_index_zero_based": 22,
+        "frame_number": 23,
+        "global_camera_time_hex": "0x1.e000000000000p-1",
+        "key": "frame_0023",
+        "kind": "natural",
+        "physical_time_hex": "0x1.d555555555555p-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "48214a4758a2318c9f13870cbcdf5e7dede3c2aca22f7aebc0b35e03afcde78f"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "e190d17183585bb998380f1347e7a46cc58bdd33af16055dd501d58e939503a6"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "f0ca76fb61f7ba8c9b4ece21fb7199728de074c0667d99aa73dff666ddbf0c7d"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 24,
+        "evaluation_tau": "6576660116185043/4503599627370496",
+        "frame_index_zero_based": 23,
+        "frame_number": 24,
+        "global_camera_time_hex": "0x1.f555555555555p-1",
+        "key": "frame_0024",
+        "kind": "natural",
+        "physical_time_hex": "0x1.eaaaaaaaaaaaap-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "36df213a7d4e541660dd483b2634678df55c3934e780b424fc5aa2e54e98c928"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "004da83d6f9f3ae3eb9b66aacab83ef868b8d378e5af045934796c9747a5bdd5"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "ada1b3ef71752d1c5ceb27b59c3faebeebd46e654e4899db580c1fad3b23286c"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 25,
+        "evaluation_tau": "6862601860367001/4503599627370496",
+        "frame_index_zero_based": 24,
+        "frame_number": 25,
+        "global_camera_time_hex": "0x1.0555555555555p+0",
+        "key": "frame_0025",
+        "kind": "natural",
+        "physical_time_hex": "0x1.fffffffffffffp-1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "7101eeac45ae98a218288e65d760cff61ca89b3bc050b32f48d478a0a32b3a10"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "fc5cf68f1241a30161629b6c7f0c6af11c18e4421ce1514b3f8b6b3a59cf4649"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "30ca55a1a5b6923605d0809e21411d5a556710eade3351266662b81d452865a8"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 26,
+        "evaluation_tau": "7148543604548961/4503599627370496",
+        "frame_index_zero_based": 25,
+        "frame_number": 26,
+        "global_camera_time_hex": "0x1.1000000000000p+0",
+        "key": "frame_0026",
+        "kind": "natural",
+        "physical_time_hex": "0x1.0aaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "26dac79a8bbccecb2bbbbdcf23d5f741601e80ca8d90c13b6d3c8ac9fd9595e3"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "6c32f5ec04645a4237a094bf01ae9e71a18a13268461244c1307a886b8cf3c5c"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "aee1d7ef5c14d7fc19dfd9bc4a550987e8849cf92371c29e517f2be25e85b294"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 27,
+        "evaluation_tau": "929310668591365/562949953421312",
+        "frame_index_zero_based": 26,
+        "frame_number": 27,
+        "global_camera_time_hex": "0x1.1aaaaaaaaaaabp+0",
+        "key": "frame_0027",
+        "kind": "natural",
+        "physical_time_hex": "0x1.1555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "24a8b15356e0e92d6b6d3f830734382ceea887b3d0e3fb2baf187795493c0530"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "6cdd364fa1f16eea8f8f3fb838968f823c5ed0f21f650ff556f3edd7faedc41a"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "c91851977d9e887230c7242b0c2c532af8d052810391244ee7ab68dfdea213c8"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 28,
+        "evaluation_tau": "7720427092912877/4503599627370496",
+        "frame_index_zero_based": 27,
+        "frame_number": 28,
+        "global_camera_time_hex": "0x1.2555555555555p+0",
+        "key": "frame_0028",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "7e529174dc88c3daca697eeac2fa09b7e3788be6f166198b53a522520dac188e"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "b604bd3b9f9ada3e056bc205d78e564e75d2858ef2c6c2ef9d9dfa751710fea2"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "b25f9d58933a9a3aee3a533c899c398c80413990649220c4da066e2b4b82d170"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 29,
+        "evaluation_tau": "2001592209273709/1125899906842624",
+        "frame_index_zero_based": 28,
+        "frame_number": 29,
+        "global_camera_time_hex": "0x1.3000000000000p+0",
+        "key": "frame_0029",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2aaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "2a6489c608784f9e9d28e52679ac1375f42674fbba70d5d9d0923457ce940c91"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "0c22dbe7eb02705894c1a1cd5365728737f247c40de97677ce95f726fd1f5c00"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "3004ee1fd1156199dfdb16bf426fdcefefe6b0d4e9695dde45264a5068fdc650"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 30,
+        "evaluation_tau": "8292310581276795/4503599627370496",
+        "frame_index_zero_based": 29,
+        "frame_number": 30,
+        "global_camera_time_hex": "0x1.3aaaaaaaaaaabp+0",
+        "key": "frame_0030",
+        "kind": "natural",
+        "physical_time_hex": "0x1.3555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "657ee4aad06d192902ccefaa609a6ac2f0915b92896828aa8602e9215cc750ef"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "6f0d01f7a907a9d0b9482a0fa7fe76811b9225e60cd3b89b3668b8b3ce6e5aad"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "a1b0e38cd3fe3236bf58d222b815e295e465bb29a3700d7f3f3b74dddc083810"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 31,
+        "evaluation_tau": "134035192585293/70368744177664",
+        "frame_index_zero_based": 30,
+        "frame_number": 31,
+        "global_camera_time_hex": "0x1.4555555555555p+0",
+        "key": "frame_0031",
+        "kind": "natural",
+        "physical_time_hex": "0x1.4000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "5caef2f4752f5f7c71d22ab9207ddfab83782942b705de5d3b9be627edac1a38"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "c24ed04ac779d799df454242d166ad3f7273a62788564495ad4d6eb13b4fde29"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "8df0691c0d29e879ad5de3e70faff10c11e89e6019aae12d6a50b741dca5a2dd"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 32,
+        "evaluation_tau": "8864194069640711/4503599627370496",
+        "frame_index_zero_based": 31,
+        "frame_number": 32,
+        "global_camera_time_hex": "0x1.5000000000000p+0",
+        "key": "frame_0032",
+        "kind": "natural",
+        "physical_time_hex": "0x1.4aaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "3989ea29be5358824d0df824346573e0236dfdc6fe0171368f4957e78d89ffbf"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "690a0c0fc27031ed1100bdfbc705d158b14cf638e8173639aff16ca8e398ca53"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "2e6874a2550f9e21dc5b57b3b1f172b5c517e763e2108646ab9b574d0dd337ea"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 33,
+        "evaluation_tau": "4575067906911335/2251799813685248",
+        "frame_index_zero_based": 32,
+        "frame_number": 33,
+        "global_camera_time_hex": "0x1.5aaaaaaaaaaabp+0",
+        "key": "frame_0033",
+        "kind": "natural",
+        "physical_time_hex": "0x1.5555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "1b1a67aeaba31f781c3c98cc4f9e8dad0fa8600c9f2f018e942c2ec60592edd7"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "25f229cc29b46f7648167f04d0833762446713bfbde90de6ebfe2822792a937f"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "88152252d5e7a10f877eb8be06094c64503e1b4fc2d55d929da792d0ec6e75a3"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 34,
+        "evaluation_tau": "2359019389501157/1125899906842624",
+        "frame_index_zero_based": 33,
+        "frame_number": 34,
+        "global_camera_time_hex": "0x1.6555555555555p+0",
+        "key": "frame_0034",
+        "kind": "natural",
+        "physical_time_hex": "0x1.6000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "f9d57d869d3050704a023feaeff260eaefb51941f979ce061dc6c300a577b3a6"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "d9e743dc1ea2e89d3f2bac13cd5f0709ae657b6ab22bdf92b4af5eb799a5c4f0"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "bf68fdd0b99c02f088988453935659821d1fbbf498d048f369db5be163ec7121"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 35,
+        "evaluation_tau": "4861009651093293/2251799813685248",
+        "frame_index_zero_based": 34,
+        "frame_number": 35,
+        "global_camera_time_hex": "0x1.7000000000000p+0",
+        "key": "frame_0035",
+        "kind": "natural",
+        "physical_time_hex": "0x1.6aaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "ebe18eb1714beadb350ce9acbe1632bfbf53cb210c25c8bdbd5dd37da97d3355"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "8ec132c0412beef70242ff364e7fc9f56d64dd999a8418ce2374beb6087d3d6a"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "aeecf13a494a64bf788d523d1e64a9da3ad943968838d18c6b91d13c79f20e65"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 36,
+        "evaluation_tau": "5003980523184273/2251799813685248",
+        "frame_index_zero_based": 35,
+        "frame_number": 36,
+        "global_camera_time_hex": "0x1.7aaaaaaaaaaabp+0",
+        "key": "frame_0036",
+        "kind": "natural",
+        "physical_time_hex": "0x1.7555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "e38539d7ae394352e73df43888a8ef5d4ab1edc914a9832ac27ab710bcf88798"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "ebc8ff0b83189b5833e18d6364b2510815cba8f059bea577fe68a915e2d4395f"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "036b515cbb61a887c138ef94d1c1e673880967298386244cd0d051f78591117f"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 37,
+        "evaluation_tau": "5146951395275251/2251799813685248",
+        "frame_index_zero_based": 36,
+        "frame_number": 37,
+        "global_camera_time_hex": "0x1.8555555555555p+0",
+        "key": "frame_0037",
+        "kind": "natural",
+        "physical_time_hex": "0x1.8000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "feaadcada47d56f4f547c36da73c46c84cf437285b3b582ada08a2a7c6284cdd"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "58ed2af61f86816e55439f71c7b6243b637c386d7777f939367867ecfd249dc8"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "fb8c5e4b661402f6fe925d179f54f8ea4124bec5cdaa67e0fac5f973bcb05967"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 38,
+        "evaluation_tau": "5289922267366231/2251799813685248",
+        "frame_index_zero_based": 37,
+        "frame_number": 38,
+        "global_camera_time_hex": "0x1.9000000000000p+0",
+        "key": "frame_0038",
+        "kind": "natural",
+        "physical_time_hex": "0x1.8aaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "e288f77db647eb2e0b7b4267529a4f167b246d76a5d5ba6b91dfff57c086bed4"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "6e83b7f5219f77a5f12442b59c82e3ea70a526f976b581188da7feb78b82ddc9"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "df449a9b08766608b220342a7f824a75b693a26b547e557abe2631421106534e"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 39,
+        "evaluation_tau": "2716446569728605/1125899906842624",
+        "frame_index_zero_based": 38,
+        "frame_number": 39,
+        "global_camera_time_hex": "0x1.9aaaaaaaaaaabp+0",
+        "key": "frame_0039",
+        "kind": "natural",
+        "physical_time_hex": "0x1.9555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "d93d5c97f2d3614492f6eb8a4c2137d01a7169f4c4cc9afbe8129b48351161da"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "f2989a4f9f3c3486d55ac81c982df446689711a2535a838df66b538ddb17460b"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "3c06df3daa3b746cab17a1b275acf650b6c25449dd5dc9790c2472b50e13ed74"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 40,
+        "evaluation_tau": "5575864011548189/2251799813685248",
+        "frame_index_zero_based": 39,
+        "frame_number": 40,
+        "global_camera_time_hex": "0x1.a555555555555p+0",
+        "key": "frame_0040",
+        "kind": "natural",
+        "physical_time_hex": "0x1.a000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "fdd90f4b86d733bc7e408afc298b0e333691c78a7f243bb3813dd65db47d7008"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "14b82c07a386ecd2e30fe32d9da4842819b25bd9e01fc8e679f09d0ebe8a8715"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "6691ccf86d3045d33e60ac425a4782963aa2f05f5c0b0bfe2d42fe6829cd5b14"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 41,
+        "evaluation_tau": "44678397528431/17592186044416",
+        "frame_index_zero_based": 40,
+        "frame_number": 41,
+        "global_camera_time_hex": "0x1.b000000000000p+0",
+        "key": "frame_0041",
+        "kind": "natural",
+        "physical_time_hex": "0x1.aaaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "b80af6a151807f9ef99e849f70df6fe10ed23d3a056a2ba3804cd9021b2a3281"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "eb32b67bdbf101412c938f337162cca93fc9f486a39c4f5fd1f7be809a5bfa59"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "9df509faf19ec5a83530dd8bc5d958fb30d08170ffe8350a26a1159df6467eb0"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 42,
+        "evaluation_tau": "1465451438932537/562949953421312",
+        "frame_index_zero_based": 41,
+        "frame_number": 42,
+        "global_camera_time_hex": "0x1.baaaaaaaaaaabp+0",
+        "key": "frame_0042",
+        "kind": "natural",
+        "physical_time_hex": "0x1.b555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "f084536e03e3e366fd5426951411cf9a26bd6cce0bb8010a8c74e588c780006e"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "ad2e0519ac39dd358d8101c56fbfcd612072726ead68371a62636a4a8b89e166"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "20c947f375c943d022ca17114294cc754e5a5367df776879ee022e7b48e7aa92"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 43,
+        "evaluation_tau": "6004776627821127/2251799813685248",
+        "frame_index_zero_based": 42,
+        "frame_number": 43,
+        "global_camera_time_hex": "0x1.c555555555555p+0",
+        "key": "frame_0043",
+        "kind": "natural",
+        "physical_time_hex": "0x1.c000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "51795bb701c41fae039bb8d7cdb5f1b5c72296e4824b5540726cb3d88667fcfd"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "c056262a49e167555dd17a8f4a02b0416481d24633380704f9faa1d35b1b9ed0"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "d74d7eee8822539f7dc919ae50189539a8f602c874515ee8e418cea7303bf06a"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 44,
+        "evaluation_tau": "3073873749956053/1125899906842624",
+        "frame_index_zero_based": 43,
+        "frame_number": 44,
+        "global_camera_time_hex": "0x1.d000000000000p+0",
+        "key": "frame_0044",
+        "kind": "natural",
+        "physical_time_hex": "0x1.caaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "743b6075bfd5a00749950f03bf5ca15c80839f199acf6fcaaf8d2eae4bee799d"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "c96f73e4c8d9656fa9dc82df6f9becc7f9d6a972e1322f236548d315cf771b9a"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "609bd0f61dba8fb9902cac91a0248a1a720349c907046588aaac6130f812bf8d"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 45,
+        "evaluation_tau": "3145359186001543/1125899906842624",
+        "frame_index_zero_based": 44,
+        "frame_number": 45,
+        "global_camera_time_hex": "0x1.daaaaaaaaaaabp+0",
+        "key": "frame_0045",
+        "kind": "natural",
+        "physical_time_hex": "0x1.d555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "688b31fb01a933a09c55ed9796602868f77f02f86171d9a5da4a2503f1c1fcca"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "96ecfa8bd0e29c6938974b9735c368f93b2d0cfe114b423fefba4a28a42d5c3f"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "da36795eac9b072401b33071b428c844485ad2b103816f4322fdfecae46a50cc"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 46,
+        "evaluation_tau": "402105577755879/140737488355328",
+        "frame_index_zero_based": 45,
+        "frame_number": 46,
+        "global_camera_time_hex": "0x1.e555555555555p+0",
+        "key": "frame_0046",
+        "kind": "natural",
+        "physical_time_hex": "0x1.e000000000000p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "0ec4672ca0164033b635368566652a8492a78394400fab00a0632b09c7b58f53"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "86e6e491cbda6d4ee46338b88b72d0c2157022edfa09bda956c4635413c5232f"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "e7a187c0fe253deb1f4417065cda6e6e5cf2500affb8dbcb9da841efc5d7b45b"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 47,
+        "evaluation_tau": "1644165029046261/562949953421312",
+        "frame_index_zero_based": 46,
+        "frame_number": 47,
+        "global_camera_time_hex": "0x1.f000000000000p+0",
+        "key": "frame_0047",
+        "kind": "natural",
+        "physical_time_hex": "0x1.eaaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "227c54e196cfa6a18d91c43f1ec664979f8b279b33f3382a55f3dfbfa4a37580"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "e7fb5211293ad320fb76d3c4a6f3aefb796d7825341cb2f0d0fa1a60f14cfe8f"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "6c59d6cb17e53e3640ff64a7271a85222698fcc90c0810ae86e3e742886bbdb4"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 48,
+        "evaluation_tau": "6719630988276023/2251799813685248",
+        "frame_index_zero_based": 47,
+        "frame_number": 48,
+        "global_camera_time_hex": "0x1.faaaaaaaaaaabp+0",
+        "key": "frame_0048",
+        "kind": "natural",
+        "physical_time_hex": "0x1.f555555555556p+0",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 49,
+        "evaluation_tau": "3431300930183501/1125899906842624",
+        "frame_index_zero_based": 48,
+        "frame_number": 49,
+        "global_camera_time_hex": "0x1.02aaaaaaaaaabp+1",
+        "key": "frame_0049",
+        "kind": "natural",
+        "physical_time_hex": "0x1.0000000000000p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 50,
+        "evaluation_tau": "7005572732457981/2251799813685248",
+        "frame_index_zero_based": 49,
+        "frame_number": 50,
+        "global_camera_time_hex": "0x1.0800000000000p+1",
+        "key": "frame_0050",
+        "kind": "natural",
+        "physical_time_hex": "0x1.0555555555555p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 51,
+        "evaluation_tau": "7148543604548959/2251799813685248",
+        "frame_index_zero_based": 50,
+        "frame_number": 51,
+        "global_camera_time_hex": "0x1.0d55555555555p+1",
+        "key": "frame_0051",
+        "kind": "natural",
+        "physical_time_hex": "0x1.0aaaaaaaaaaaap+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 52,
+        "evaluation_tau": "7291514476639939/2251799813685248",
+        "frame_index_zero_based": 51,
+        "frame_number": 52,
+        "global_camera_time_hex": "0x1.12aaaaaaaaaabp+1",
+        "key": "frame_0052",
+        "kind": "natural",
+        "physical_time_hex": "0x1.1000000000000p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 53,
+        "evaluation_tau": "3717242674365459/1125899906842624",
+        "frame_index_zero_based": 52,
+        "frame_number": 53,
+        "global_camera_time_hex": "0x1.1800000000000p+1",
+        "key": "frame_0053",
+        "kind": "natural",
+        "physical_time_hex": "0x1.1555555555555p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 54,
+        "evaluation_tau": "7577456220821897/2251799813685248",
+        "frame_index_zero_based": 53,
+        "frame_number": 54,
+        "global_camera_time_hex": "0x1.1d55555555555p+1",
+        "key": "frame_0054",
+        "kind": "natural",
+        "physical_time_hex": "0x1.1aaaaaaaaaaaap+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 55,
+        "evaluation_tau": "7720427092912877/2251799813685248",
+        "frame_index_zero_based": 54,
+        "frame_number": 55,
+        "global_camera_time_hex": "0x1.22aaaaaaaaaabp+1",
+        "key": "frame_0055",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2000000000000p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 56,
+        "evaluation_tau": "491462372812741/140737488355328",
+        "frame_index_zero_based": 55,
+        "frame_number": 56,
+        "global_camera_time_hex": "0x1.2800000000000p+1",
+        "key": "frame_0056",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2555555555555p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 57,
+        "evaluation_tau": "4003184418547417/1125899906842624",
+        "frame_index_zero_based": 56,
+        "frame_number": 57,
+        "global_camera_time_hex": "0x1.2d55555555555p+1",
+        "key": "frame_0057",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2aaaaaaaaaaaap+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 58,
+        "evaluation_tau": "8149339709185815/2251799813685248",
+        "frame_index_zero_based": 57,
+        "frame_number": 58,
+        "global_camera_time_hex": "0x1.32aaaaaaaaaabp+1",
+        "key": "frame_0058",
+        "kind": "natural",
+        "physical_time_hex": "0x1.3000000000000p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 59,
+        "evaluation_tau": "8292310581276793/2251799813685248",
+        "frame_index_zero_based": 58,
+        "frame_number": 59,
+        "global_camera_time_hex": "0x1.3800000000000p+1",
+        "key": "frame_0059",
+        "kind": "natural",
+        "physical_time_hex": "0x1.3555555555555p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 60,
+        "evaluation_tau": "2108820363341943/562949953421312",
+        "frame_index_zero_based": 59,
+        "frame_number": 60,
+        "global_camera_time_hex": "0x1.3d55555555555p+1",
+        "key": "frame_0060",
+        "kind": "natural",
+        "physical_time_hex": "0x1.3aaaaaaaaaaaap+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 61,
+        "evaluation_tau": "134035192585293/35184372088832",
+        "frame_index_zero_based": 60,
+        "frame_number": 61,
+        "global_camera_time_hex": "0x1.42aaaaaaaaaabp+1",
+        "key": "frame_0061",
+        "kind": "natural",
+        "physical_time_hex": "0x1.4000000000000p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 62,
+        "evaluation_tau": "8721223197549731/2251799813685248",
+        "frame_index_zero_based": 61,
+        "frame_number": 62,
+        "global_camera_time_hex": "0x1.4800000000000p+1",
+        "key": "frame_0062",
+        "kind": "natural",
+        "physical_time_hex": "0x1.4555555555555p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 63,
+        "evaluation_tau": "4432097034820355/1125899906842624",
+        "frame_index_zero_based": 62,
+        "frame_number": 63,
+        "global_camera_time_hex": "0x1.4d55555555555p+1",
+        "key": "frame_0063",
+        "kind": "natural",
+        "physical_time_hex": "0x1.4aaaaaaaaaaaap+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 861052,
+          "sha256": {
+            "faces": "cac7e89b1904edb83cc9f4a5dfe6781a4cb0c024f49e75e714324d666d744e78",
+            "tags": "01025daad41057f22045f71cc1e414f6d47aa468b440904c6223f145f2631b99",
+            "vertices": "f6d85114018596261eb725c814b9d629706359b3b462afa969b1c40f4a791da3"
+          },
+          "vertices": 427616
+        },
+        {
+          "faces": 1046239,
+          "sha256": {
+            "faces": "1e28c998ec151b14266e05775c641159b6d622618b9d260fdc7c29dca83c789d",
+            "tags": "967eb9f84223cdb0af4a28503d52e031a5626c3ca98f6f2adfcc99bb18207493",
+            "vertices": "e9d7cf3ff965bcd5d345452ddaeabe1725c1b67935599acc4444eba336990d1a"
+          },
+          "vertices": 520829
+        },
+        {
+          "faces": 277408,
+          "sha256": {
+            "faces": "29d88e2ef84c2dd12763db3004f60133b5c613f52237462646c360d385c6860f",
+            "tags": "c906a2da1f5beaa7725732707e0e134279a4da76b8b2214548abd4c3f7459c74",
+            "vertices": "714192001fb4d58c5089b87bef0b6a2b16d61b951b52641c29f1c21b5d6b876b"
+          },
+          "vertices": 132143
+        }
+      ],
+      "query": {
+        "absolute_frame_number": 64,
+        "evaluation_tau": "4503582470865845/1125899906842624",
+        "frame_index_zero_based": 63,
+        "frame_number": 64,
+        "global_camera_time_hex": "0x1.52aaaaaaaaaabp+1",
+        "key": "frame_0064",
+        "kind": "natural",
+        "physical_time_hex": "0x1.5000000000000p+1",
+        "time_mode": "physical"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226423,
+          "sha256": {
+            "faces": "4692e88b18ae133a959ba58f163e7636b1cf6062687fcd0d0efc1b0acd5dd03f",
+            "tags": "fc4a337667bf4588bb3ee77b6444c6004bf74942d0d093b987f72e2cd705ee94",
+            "vertices": "6ab5132c1cf71a24b2e9e905a8dfef499ba8dfbd6eba66d225b6e38cffcbe4b1"
+          },
+          "vertices": 608934
+        },
+        {
+          "faces": 1169614,
+          "sha256": {
+            "faces": "a121e56c3e28198b90dd3c808898dde206f1cd6701af80c386846b76b5595439",
+            "tags": "ff53c4cdccb25ef8300b378cf8661866485553e33201f54a53195aba0fd56a6c",
+            "vertices": "d8cb526a2e1fa5b21d9ec5d69b16d6e07c5bbe1a5d1a343e5790530634bd775e"
+          },
+          "vertices": 582357
+        },
+        {
+          "faces": 403925,
+          "sha256": {
+            "faces": "15035629c7ec5af3e1f3991a8abaf925d364dec2edc1a1f4a8c14f9be9c6f25d",
+            "tags": "26b251dcbd6b8c618caf291b14ee0b2f6d7669862741a5614ec1c6d81e201dc7",
+            "vertices": "e35ed5a5a25fcf7a6731fbbf0b43ca60f9585104ccac49eca5cca98d9868c6f9"
+          },
+          "vertices": 193549
+        }
+      ],
+      "query": {
+        "active": true,
+        "evaluation_tau": "3/2",
+        "frame_number": null,
+        "key": "root_3_2",
+        "kind": "exact_root",
+        "physical_time_hex": "0x1.f8007dd441356p-1",
+        "time_mode": "exact"
+      }
+    },
+    {
+      "baseline": [
+        {
+          "faces": 1226189,
+          "sha256": {
+            "faces": "18a2b8553af3d116779e41d0287264b8820ec78cf7593c5426ebed3b8ca45e2e",
+            "tags": "4ad6f409b374c6a44deccc671d34633e8a5b8e02021ea387bdac8fff7572fb37",
+            "vertices": "892ed9a6cb4ec5bfc7def9b9a9839a804453d6dcf6ef857c29248959251d1407"
+          },
+          "vertices": 608809
+        },
+        {
+          "faces": 1169005,
+          "sha256": {
+            "faces": "86f939a6888f0bc0ad2bf4ca0a6a23d7134362a6f4a5d7cccf8d03c84c09c9d8",
+            "tags": "e6a0c0c02e26070fe7e1ad6d2aa42550d98173a449e6e1b553e1f7b13dcb8470",
+            "vertices": "d5d69dc20ecda6a0eafe70b5ade8379d7b66afe3fda9664eeca61457afcc9a54"
+          },
+          "vertices": 582027
+        },
+        {
+          "faces": 403491,
+          "sha256": {
+            "faces": "8f6ef805cc2b26a8cbd073f72e03bb5cb7ffba5011435d08aa42334b7fd0e9ef",
+            "tags": "64b4aa8f6f271b5a0f5604596dc4d2f17e5a73a575939b5dc0bb0894e40dad17",
+            "vertices": "092acd5a7970432a37c8c3dc143bf7053d60de9988199efe96afa22b17a7963b"
+          },
+          "vertices": 193297
+        }
+      ],
+      "query": {
+        "active": true,
+        "evaluation_tau": "5/2",
+        "frame_number": null,
+        "key": "root_5_2",
+        "kind": "exact_root",
+        "physical_time_hex": "0x1.a40068db8bac7p+0",
+        "time_mode": "exact"
+      }
+    }
+  ],
+  "segment_id": "cave",
+  "source_summary_sha256": "cbdd9d3519915569c7a105e8734a9ab82a2fcb9bc6af1fc29e6c73304b8b65b1",
+  "status": "PASS_ORIGINAL_ORDINARY_REFERENCE_SEQUENCE",
+  "wall_seconds": 269.2076722259999
+}

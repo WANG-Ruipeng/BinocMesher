@@ -1,0 +1,35 @@
+{
+  "admission_rate": null,
+  "cost": {
+    "cpu_seconds": 5.080034982,
+    "peak_rss_bytes": 742371328,
+    "scope": "Research certification/playback/image/audit harness, not production speed.",
+    "wall_seconds": 165.92738926899983
+  },
+  "final_input_verification": {
+    "original_bytes": 851327836,
+    "original_files_unchanged": 35,
+    "original_input_content_sha256": "645c3a65492cafa74a89d1376d9cd094f81f11f710d26ac9ea8b70a439d807fa",
+    "private_log_appended_bytes": 26694,
+    "private_nonlog_inputs_unchanged": true,
+    "status": "PASS"
+  },
+  "partial_output_published": false,
+  "preregistration_seal_sha256": "f72e5e09cfd4bcc0454ef7dfe9078a2d914237c1e11c9468803ad3fd17f36411",
+  "private_cache_removed": true,
+  "protocol_sha256": "9f8ec007632e763383d87ad544d4be2d0069bc506a89d3f38734e3c1bb6d2ae1",
+  "reason": "NativeReadError: ORIGINAL_SOURCE_VID_SHIFT_OUTPUT_FAILED",
+  "segment_id": "mountain",
+  "source": {
+    "canonical_events": 46,
+    "exact_roots": 2,
+    "raw_observations": 155,
+    "source_decision_counts": {
+      "SOURCE_INTERFACE_REJECT": 1,
+      "UNKNOWN": 45
+    }
+  },
+  "status": "STOP_SCREEN_ATTEMPT_NOT_COMPLETE",
+  "supplied_input_hashes_do_not_imply_validation": true,
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/e/BinocMesher/experiments/visibility_screen/run_screen.py\", line 529, in run\n    certified, certification_calls = certify(reader, events, inventory_rows, specs, reference, reports, segment, checkpoint)\n  File \"/mnt/e/BinocMesher/experiments/visibility_screen/run_screen.py\", line 262, in certify\n    snapshot, baseline = slice_bound(reader, query, reference[key]); calls += 1\n  File \"/mnt/e/BinocMesher/experiments/visibility_screen/run_screen.py\", line 157, in slice_bound\n    snapshot = reader.slice_query(value, mode=query['time_mode'], ledger=ledger)\n  File \"/mnt/e/BinocMesher/experiments/visibility_screen/scene_native.py\", line 191, in slice_query\n    require(self.dll.slicing_identity_output_source_vid_shifts(frozen._int_pointer(shifts), shifts.size) == 0, 'ORIGINAL_SOURCE_VID_SHIFT_OUTPUT_FAILED')\n  File \"/mnt/e/BinocMesher/experiments/c1_lite/forest_native_reader.py\", line 40, in require\n    if not value:raise NativeReadError(message)\nforest_native_reader.NativeReadError: ORIGINAL_SOURCE_VID_SHIFT_OUTPUT_FAILED\n"
+}

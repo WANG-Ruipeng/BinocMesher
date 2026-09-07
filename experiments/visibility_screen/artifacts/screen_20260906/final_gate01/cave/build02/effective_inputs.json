@@ -1,0 +1,514 @@
+{
+  "bounds": [
+    -500,
+    500,
+    -500,
+    500,
+    -500,
+    500
+  ],
+  "configs": [
+    "cave",
+    "monocular",
+    "high_quality_terrain",
+    "no_assets"
+  ],
+  "core_so": "/home/warpwang/src/BinocMesher/binocmesher/lib/core.so",
+  "core_so_sha256": "b2bf1b5f1847087645d88507446b012dd4b77324269e45bf893de0e17d330796",
+  "element_parameters": [
+    {
+      "attributes": [
+        "ground_collection"
+      ],
+      "height_offset": 0.0,
+      "index": 0,
+      "name": "ground",
+      "opaque": true,
+      "parameters": {
+        "float_params": {
+          "dtype": "float32",
+          "path": "kernel_parameters/0_float_params.npy",
+          "sha256": "bbf41760f766e6aa7b63938f2a1472dab12b62bec79c8d886ef597d67fe99836",
+          "shape": [
+            10
+          ]
+        },
+        "float_params2": {
+          "dtype": "float32",
+          "path": "kernel_parameters/0_float_params2.npy",
+          "sha256": "6359dd77a64387c48824de018dbb9373dcbe4a08329af3fdb09d26820a122747",
+          "shape": [
+            2097167
+          ]
+        },
+        "float_params3": {
+          "dtype": "float32",
+          "path": "kernel_parameters/0_float_params3.npy",
+          "sha256": "4e65bac20d7e3ce2d5f45a7e2a99fc25e1ca7ed28d2d729f4e598713da68639f",
+          "shape": [
+            0
+          ]
+        },
+        "int_params": {
+          "dtype": "int32",
+          "path": "kernel_parameters/0_int_params.npy",
+          "sha256": "7ce44bc2320f81c1606c171ac9bfda50572f79d53a2dfaba92240d87046cf590",
+          "shape": [
+            3
+          ]
+        },
+        "int_params2": {
+          "dtype": "int32",
+          "path": "kernel_parameters/0_int_params2.npy",
+          "sha256": "81c1c6c83e46083866e393f3f2aa81b29163850ed72fcca40c6fe2d6670e0543",
+          "shape": [
+            5
+          ]
+        },
+        "int_params3": {
+          "dtype": "int32",
+          "path": "kernel_parameters/0_int_params3.npy",
+          "sha256": "040ce28f7590a34af85fbdb8115c90c9a0529a73b047533889c859c2f2c6e627",
+          "shape": [
+            0
+          ]
+        },
+        "meta_params": {
+          "dtype": "bool",
+          "path": "kernel_parameters/0_meta_params.npy",
+          "sha256": "d13bab448a58cfff3fb7336525998915b7cde741811292a048f4f925e89edb8f",
+          "shape": [
+            1
+          ]
+        }
+      },
+      "python_class": "infinigen.terrain.elements.ground.Ground",
+      "sdf_surface_kernels": [
+        {
+          "attribute": "ground_collection",
+          "imported_values": {
+            "float": {
+              "dtype": "float32",
+              "path": "kernel_parameters/0_sdfsurface_0_float.npy",
+              "sha256": "41105e7ecc5bf64c4a73259f57a980e63c7a23d3e4d4143da05a827bd952a75e",
+              "shape": [
+                84
+              ]
+            },
+            "float3_nonbuiltin": {
+              "dtype": "float32",
+              "path": "kernel_parameters/0_sdfsurface_0_float3_nonbuiltin.npy",
+              "sha256": "a02f77717ca0c7e777680da3bcb0b18bea79556f322eb477bc0537c50aa7f94c",
+              "shape": [
+                81
+              ]
+            }
+          },
+          "name": "mountain",
+          "use_normal": true,
+          "use_position": true
+        }
+      ],
+      "whole_bbox": null
+    },
+    {
+      "attributes": [
+        "mountain_collection"
+      ],
+      "height_offset": 0.0,
+      "index": 1,
+      "name": "landtiles",
+      "opaque": true,
+      "parameters": {
+        "float_params": {
+          "dtype": "float32",
+          "path": "kernel_parameters/1_float_params.npy",
+          "sha256": "66003975ea72e945698bb72cfba787df5ff5db614a65c62c7d5922a0d40a8a38",
+          "shape": [
+            8388627
+          ]
+        },
+        "float_params2": {
+          "dtype": "float32",
+          "path": "kernel_parameters/1_float_params2.npy",
+          "sha256": "6359dd77a64387c48824de018dbb9373dcbe4a08329af3fdb09d26820a122747",
+          "shape": [
+            2097167
+          ]
+        },
+        "float_params3": {
+          "dtype": "float32",
+          "path": "kernel_parameters/1_float_params3.npy",
+          "sha256": "4e65bac20d7e3ce2d5f45a7e2a99fc25e1ca7ed28d2d729f4e598713da68639f",
+          "shape": [
+            0
+          ]
+        },
+        "int_params": {
+          "dtype": "int32",
+          "path": "kernel_parameters/1_int_params.npy",
+          "sha256": "f8939723aabb687b828d6f1d37aabfb905e143c759bb836bc7d246c8c52b36d8",
+          "shape": [
+            8
+          ]
+        },
+        "int_params2": {
+          "dtype": "int32",
+          "path": "kernel_parameters/1_int_params2.npy",
+          "sha256": "81c1c6c83e46083866e393f3f2aa81b29163850ed72fcca40c6fe2d6670e0543",
+          "shape": [
+            5
+          ]
+        },
+        "int_params3": {
+          "dtype": "int32",
+          "path": "kernel_parameters/1_int_params3.npy",
+          "sha256": "040ce28f7590a34af85fbdb8115c90c9a0529a73b047533889c859c2f2c6e627",
+          "shape": [
+            0
+          ]
+        },
+        "meta_params": {
+          "dtype": "bool",
+          "path": "kernel_parameters/1_meta_params.npy",
+          "sha256": "d13bab448a58cfff3fb7336525998915b7cde741811292a048f4f925e89edb8f",
+          "shape": [
+            1
+          ]
+        }
+      },
+      "python_class": "infinigen.terrain.elements.landtiles.LandTiles",
+      "sdf_surface_kernels": [
+        {
+          "attribute": "mountain_collection",
+          "imported_values": {
+            "float": {
+              "dtype": "float32",
+              "path": "kernel_parameters/1_sdfsurface_0_float.npy",
+              "sha256": "41105e7ecc5bf64c4a73259f57a980e63c7a23d3e4d4143da05a827bd952a75e",
+              "shape": [
+                84
+              ]
+            },
+            "float3_nonbuiltin": {
+              "dtype": "float32",
+              "path": "kernel_parameters/1_sdfsurface_0_float3_nonbuiltin.npy",
+              "sha256": "a02f77717ca0c7e777680da3bcb0b18bea79556f322eb477bc0537c50aa7f94c",
+              "shape": [
+                81
+              ]
+            }
+          },
+          "name": "mountain",
+          "use_normal": true,
+          "use_position": true
+        }
+      ],
+      "whole_bbox": null
+    },
+    {
+      "attributes": [
+        "mountain_collection"
+      ],
+      "height_offset": 0.0,
+      "index": 2,
+      "name": "voronoi_rocks",
+      "opaque": true,
+      "parameters": {
+        "float_params": {
+          "dtype": "float32",
+          "path": "kernel_parameters/2_float_params.npy",
+          "sha256": "3a081acdc77d6a100746e86be08d4d95e6dae8880f22f9ee06ff79ffa154e830",
+          "shape": [
+            20
+          ]
+        },
+        "float_params2": {
+          "dtype": "float32",
+          "path": "kernel_parameters/2_float_params2.npy",
+          "sha256": "66003975ea72e945698bb72cfba787df5ff5db614a65c62c7d5922a0d40a8a38",
+          "shape": [
+            8388627
+          ]
+        },
+        "float_params3": {
+          "dtype": "float32",
+          "path": "kernel_parameters/2_float_params3.npy",
+          "sha256": "6359dd77a64387c48824de018dbb9373dcbe4a08329af3fdb09d26820a122747",
+          "shape": [
+            2097167
+          ]
+        },
+        "int_params": {
+          "dtype": "int32",
+          "path": "kernel_parameters/2_int_params.npy",
+          "sha256": "3d17e3c946304e5024230af9429fa419c71b51f5ad41047d81d971ba3ad152f3",
+          "shape": [
+            3
+          ]
+        },
+        "int_params2": {
+          "dtype": "int32",
+          "path": "kernel_parameters/2_int_params2.npy",
+          "sha256": "f8939723aabb687b828d6f1d37aabfb905e143c759bb836bc7d246c8c52b36d8",
+          "shape": [
+            8
+          ]
+        },
+        "int_params3": {
+          "dtype": "int32",
+          "path": "kernel_parameters/2_int_params3.npy",
+          "sha256": "81c1c6c83e46083866e393f3f2aa81b29163850ed72fcca40c6fe2d6670e0543",
+          "shape": [
+            5
+          ]
+        },
+        "meta_params": {
+          "dtype": "bool",
+          "path": "kernel_parameters/2_meta_params.npy",
+          "sha256": "0b817e43431aebef7038fe8d2d2c58ebd463017402e03a221f7bfe0b68c6b829",
+          "shape": [
+            2
+          ]
+        }
+      },
+      "python_class": "infinigen.terrain.elements.voronoi_rocks.VoronoiRocks",
+      "sdf_surface_kernels": [
+        {
+          "attribute": "mountain_collection",
+          "imported_values": {
+            "float": {
+              "dtype": "float32",
+              "path": "kernel_parameters/2_sdfsurface_0_float.npy",
+              "sha256": "41105e7ecc5bf64c4a73259f57a980e63c7a23d3e4d4143da05a827bd952a75e",
+              "shape": [
+                84
+              ]
+            },
+            "float3_nonbuiltin": {
+              "dtype": "float32",
+              "path": "kernel_parameters/2_sdfsurface_0_float3_nonbuiltin.npy",
+              "sha256": "a02f77717ca0c7e777680da3bcb0b18bea79556f322eb477bc0537c50aa7f94c",
+              "shape": [
+                81
+              ]
+            }
+          },
+          "name": "mountain",
+          "use_normal": true,
+          "use_position": true
+        }
+      ],
+      "whole_bbox": null
+    },
+    {
+      "attributes": [
+        "liquid_collection"
+      ],
+      "height_offset": 0.0,
+      "index": 3,
+      "name": "liquid",
+      "opaque": false,
+      "parameters": {
+        "float_params": {
+          "dtype": "float32",
+          "path": "kernel_parameters/3_float_params.npy",
+          "sha256": "aee3cd31ebd0328b2cb2e38bd6f2138d0822a7232e1488368beefb0ea3525bb8",
+          "shape": [
+            2
+          ]
+        },
+        "float_params2": {
+          "dtype": "float32",
+          "path": "kernel_parameters/3_float_params2.npy",
+          "sha256": "66003975ea72e945698bb72cfba787df5ff5db614a65c62c7d5922a0d40a8a38",
+          "shape": [
+            8388627
+          ]
+        },
+        "float_params3": {
+          "dtype": "float32",
+          "path": "kernel_parameters/3_float_params3.npy",
+          "sha256": "6359dd77a64387c48824de018dbb9373dcbe4a08329af3fdb09d26820a122747",
+          "shape": [
+            2097167
+          ]
+        },
+        "int_params": {
+          "dtype": "int32",
+          "path": "kernel_parameters/3_int_params.npy",
+          "sha256": "040ce28f7590a34af85fbdb8115c90c9a0529a73b047533889c859c2f2c6e627",
+          "shape": [
+            0
+          ]
+        },
+        "int_params2": {
+          "dtype": "int32",
+          "path": "kernel_parameters/3_int_params2.npy",
+          "sha256": "f8939723aabb687b828d6f1d37aabfb905e143c759bb836bc7d246c8c52b36d8",
+          "shape": [
+            8
+          ]
+        },
+        "int_params3": {
+          "dtype": "int32",
+          "path": "kernel_parameters/3_int_params3.npy",
+          "sha256": "81c1c6c83e46083866e393f3f2aa81b29163850ed72fcca40c6fe2d6670e0543",
+          "shape": [
+            5
+          ]
+        },
+        "meta_params": {
+          "dtype": "bool",
+          "path": "kernel_parameters/3_meta_params.npy",
+          "sha256": "ac537e78759740605ab6c13c1755caf6d517d19b47b4b20cf679e5fed978ed67",
+          "shape": [
+            2
+          ]
+        }
+      },
+      "python_class": "infinigen.terrain.elements.waterbody.Waterbody",
+      "sdf_surface_kernels": [],
+      "whole_bbox": null
+    },
+    {
+      "attributes": [
+        "atmosphere"
+      ],
+      "height_offset": 0.0,
+      "index": 4,
+      "name": "atmosphere",
+      "opaque": false,
+      "parameters": {
+        "float_params": {
+          "dtype": "float32",
+          "path": "kernel_parameters/4_float_params.npy",
+          "sha256": "f9572e287e04149164f2d88ea9b2d6ee356c036b2af9aa771bc85e724498bdb3",
+          "shape": [
+            3
+          ]
+        },
+        "float_params2": {
+          "dtype": "float32",
+          "path": "kernel_parameters/4_float_params2.npy",
+          "sha256": "aee3cd31ebd0328b2cb2e38bd6f2138d0822a7232e1488368beefb0ea3525bb8",
+          "shape": [
+            2
+          ]
+        },
+        "float_params3": {
+          "dtype": "float32",
+          "path": "kernel_parameters/4_float_params3.npy",
+          "sha256": "4e65bac20d7e3ce2d5f45a7e2a99fc25e1ca7ed28d2d729f4e598713da68639f",
+          "shape": [
+            0
+          ]
+        },
+        "int_params": {
+          "dtype": "int32",
+          "path": "kernel_parameters/4_int_params.npy",
+          "sha256": "040ce28f7590a34af85fbdb8115c90c9a0529a73b047533889c859c2f2c6e627",
+          "shape": [
+            0
+          ]
+        },
+        "int_params2": {
+          "dtype": "int32",
+          "path": "kernel_parameters/4_int_params2.npy",
+          "sha256": "040ce28f7590a34af85fbdb8115c90c9a0529a73b047533889c859c2f2c6e627",
+          "shape": [
+            0
+          ]
+        },
+        "int_params3": {
+          "dtype": "int32",
+          "path": "kernel_parameters/4_int_params3.npy",
+          "sha256": "040ce28f7590a34af85fbdb8115c90c9a0529a73b047533889c859c2f2c6e627",
+          "shape": [
+            0
+          ]
+        },
+        "meta_params": {
+          "dtype": "bool",
+          "path": "kernel_parameters/4_meta_params.npy",
+          "sha256": "d13bab448a58cfff3fb7336525998915b7cde741811292a048f4f925e89edb8f",
+          "shape": [
+            1
+          ]
+        }
+      },
+      "python_class": "infinigen.terrain.elements.atmosphere.Atmosphere",
+      "sdf_surface_kernels": [],
+      "whole_bbox": null
+    }
+  ],
+  "frame_range": [
+    1,
+    64
+  ],
+  "geometry_stage": "PRE_SURFACE_DISPLACEMENT_OPAQUE",
+  "mesher_parameters": {
+    "fading_time": 1,
+    "min_dist": 0.1,
+    "min_t_offset": 0,
+    "pixels_per_cube": 6,
+    "pixels_per_cube_coarse": 30,
+    "pixels_per_cube_outview": 120,
+    "relax_iters": 6,
+    "use_alignment": false
+  },
+  "mesher_python": "/home/warpwang/src/BinocMesher/binocmesher/core.py",
+  "mesher_python_sha256": "6b0a3e31ecc7483c940315124bbb8687d4dda207d9094c8d8223645709aef2f5",
+  "occupancy_sdf_perturbations_preserved": true,
+  "opaque_elements": [
+    "ground",
+    "landtiles",
+    "voronoi_rocks"
+  ],
+  "overrides": [
+    "fine_terrain.mesher_backend=\"BinocMesher\"",
+    "BinocMesher.pixels_per_cube=6",
+    "BinocMesher.pixels_per_cube_coarse=30",
+    "BinocMesher.pixels_per_cube_outview=120",
+    "BinocMesher.min_dist=0.1",
+    "BinocMesher.fading_time=1",
+    "Terrain.device=\"cpu\"",
+    "execute_tasks.generate_resolution=[960,540]",
+    "execute_tasks.camera_id=[0,0]",
+    "caves.load_assets.on_the_fly_instances=1",
+    "landtiles.load_assets.on_the_fly_instances=1",
+    "Terrain.populated_bounds=(-25,25,-25,25,-25,10)",
+    "Caves.height_offset=-3",
+    "Waterbody.height=-3",
+    "scene.waterbody_chance=1",
+    "scene.voronoi_rocks_chance=1",
+    "scene.warped_rocks_chance=0",
+    "surface.registry.ground_collection=[('mountain',1)]",
+    "surface.registry.mountain_collection=[('mountain',1)]",
+    "BinocMesher.relax_iters=6",
+    "nishita_lighting.sun_elevation=90",
+    "mountain.shader.random_seed=2",
+    "compose_nature.camera_lighting=True",
+    "compose_nature.load_cameras=\"../infinigen_example_scenes/cave.txt\"",
+    "execute_tasks.frame_range=[1,64]"
+  ],
+  "rendering_executed": false,
+  "sampled_surfaces": {
+    "atmosphere": "infinigen.assets.materials.atmosphere_light_haze",
+    "ground_collection": "infinigen.assets.materials.mountain",
+    "liquid_collection": "infinigen.assets.materials.water",
+    "mountain_collection": "infinigen.assets.materials.mountain"
+  },
+  "scene": "Cave",
+  "schema": "registered-opaque-build-effective-v1",
+  "seed": 1,
+  "segment_id": "cave",
+  "surface_displacement_executed": false,
+  "terrain_elements": [
+    "ground",
+    "landtiles",
+    "voronoi_rocks",
+    "liquid",
+    "atmosphere"
+  ]
+}

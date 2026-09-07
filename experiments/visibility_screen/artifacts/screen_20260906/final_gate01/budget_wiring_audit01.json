@@ -1,0 +1,144 @@
+{
+  "amendment": {
+    "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/budget_amendment01.json",
+    "sha256": "39ce0a8088c5c72a4b6595c8d054becf6c909410d4e70e1460a042f8488c2ac0"
+  },
+  "ast_comparisons": [
+    {
+      "exact_ast_equal_definitions": [
+        "require",
+        "digest",
+        "file_sha",
+        "document",
+        "validate_profile",
+        "cells_for_bounds",
+        "kernel_domain_witness",
+        "build_inventory_event",
+        "symbolic_dependencies",
+        "base_event",
+        "write_new"
+      ],
+      "new": "final_gate_source.py",
+      "not_claimed_whole_function_equal": [
+        "main",
+        "run_source_stage"
+      ],
+      "original": "scene_source.py",
+      "unexpected_ast_differences": []
+    },
+    {
+      "exact_ast_equal_definitions": [
+        "Reports",
+        "bound_read",
+        "read_visibility_receipts",
+        "initialize",
+        "slice_bound",
+        "pair_proofs",
+        "requests_for",
+        "certify",
+        "make_graph",
+        "render_visibility",
+        "execute_sequence"
+      ],
+      "new": "final_gate_screen.py",
+      "not_claimed_whole_function_equal": [
+        "baseline_references",
+        "executed_sources",
+        "main",
+        "reference_worker",
+        "run",
+        "validate_inputs"
+      ],
+      "original": "run_screen.py",
+      "unexpected_ast_differences": []
+    }
+  ],
+  "audited_new_files_sha256": {
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_resources.py": "b86c849d72f1dc00ac6d971da724b3b55dbbee9ba7f74be62ecd288df309506e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_screen.py": "8e7c18dd1e386c0642508e4719309a2e62f153ce94fe0e09c0709a9ba7eaf8da",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_source.py": "3e0e62fd6e24c0301760a849e033afe320a25a06cceb16b4d6d622a28ff31419",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_final_gate_wiring.py": "7233811b59dce5251bbad15b485bc0bb299d12c5f2dd6e22a15427c8094f23f8"
+  },
+  "campaign_deadline_utc": "2026-09-06T19:28:39+00:00",
+  "effective_budgets": {
+    "build_peak_rss_bytes": 17179869184,
+    "cache_per_scene_output_bytes": 8589934592,
+    "cache_per_scene_wall_seconds": 5400,
+    "certification_and_screen_per_scene_wall_seconds": 3600,
+    "cleanup": "Remove only validated run-owned temporary cache copies and disposable coarse intermediates after input verification; preserve compact results and required rerun inputs. No environment deletion.",
+    "coarse_per_scene_output_bytes": 8589934592,
+    "coarse_per_scene_wall_seconds": 3600,
+    "maximum_campaign_wall_seconds": 32400,
+    "maximum_compact_reports_and_images_bytes": 536870912,
+    "maximum_new_persistent_bytes": 32000000000,
+    "native_query_peak_rss_bytes": 8589934592,
+    "persistent_full_mesh_video_files": 0,
+    "post_displacement_pilot_wall_seconds": 1800,
+    "preserve_original_inputs_and_old_evidence": true,
+    "simultaneous_heavy_scene_workers": 1,
+    "small_visual_experiment_wall_seconds": 1800,
+    "source_per_scene_wall_seconds": 1200,
+    "total_existing_and_new_storage_limit_bytes": 400000000000
+  },
+  "mountain_complete_omp_chain_reverified": {
+    "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/screen03_omp8/combined_summary.json",
+    "sha256": "4cc59eb9ad9efd9c954ddaa31c1221d0191695ff87d06cfcf90f50b4d5b811e7"
+  },
+  "old_18_python_bindings_unchanged": true,
+  "original_sealed_bindings_verified": 176,
+  "private_cache_verify_and_remove_identical_function_objects": true,
+  "source_event_loops_exact_ast_equal": 3,
+  "status": "PASS_RESOURCE_ONLY_WIRING_AUDIT",
+  "unchanged_old_python_sha256": {
+    "/mnt/e/BinocMesher/experiments/visibility_screen/coverage_report.py": "80ca9bce6b4d37736799bc4e3a271dcabc7dfdd866a48be03eb11ef68a9486e2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/post_displacement_pilot.py": "c175eef64a52b7f8c1250ace834b99deb4c01e5857d29310599faad115c6655a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/run_screen.py": "a1ac0467e538dd751098abbcf87615a1ed574f42cf6c06fcdf388aa46524040d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_build.py": "556ebbf95168e96ed81e06d3238e89ad2fee6a0f8dfe64856b5969f8e1005a5c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_geometry.py": "0d36891fc27f5ac394274128f05bc78999125622b5eda2ba2284ded3433beb69",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_native.py": "8bf73a224ec880b82ab765a8d76b27de8d0b5bcbaaff3e91499af15d6aba97bb",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_source.py": "87b023010d63fa8176658c239145b8c80b1a37a58f683bd93bf098797280ee0b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/screen_contracts.py": "dd805e0d3f1ada3c8f92bb081f31328e224a01ba372e97fee553da932faa4018",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/screen_resources.py": "2b122024a9b6d81ba2869fdae1bf60c2d406a29576ce2e13df63f73ff3922031",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/source_stage.py": "473537379ed19a18ff254c1616931025e139718e54069c77db1bf23b9d0cc9f2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_coverage_report.py": "debeb8e13bd67eaf0903af24672dae78dd373a8b86c5081658a5e9b3a9ec21cd",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_post_displacement_pilot.py": "bb2e626739a679903b661d583b5eae0dee60136c4d38bc6cd07d09a1c0dcf8da",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_run_screen.py": "8647cb6b105563e143f1b867f193590ac50c22fc1ee17910809ac6e34d1e654c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_scene_build.py": "72151117fd4239636feb182dfb083438434e6702510b494b64c5e1f049d6809e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_scene_geometry.py": "3809a264d4af956be9410de0600e57e89af1ae63143edc274a85565ba72ccfaf",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_scene_native.py": "ca1576508845673557f89b527484c3294201cedf650f06ec947237a59d32b74d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_scene_source.py": "3558befbfb0299c2105ff5425d603c21288b51147a8b999d519687630c694779",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_screen_contracts.py": "b1b6c397da7f604d140856fa7ca8e82e4922d0e1030704c27ae91a6186e2f2ac"
+  },
+  "schema": "final-visibility-gate-budget-wiring-audit-v1",
+  "scope": "Read-only AST, source hash and evidence-chain review. Not a native execution, admission, visibility, or quality result.",
+  "execution": {
+    "native_queries": 0,
+    "renders": 0,
+    "new_unit_test_runs": 0,
+    "inspection_process_exit_code": 0,
+    "inspection_tool_wall_seconds": 1.4606393
+  },
+  "manual_entrypoint_diff_review": {
+    "source_entry": "Only authenticated build/amendment input checks, the 8 GiB input-cache ceiling, original/global deadline checks, and receipt/resource metadata are added. The source compiler, exact kernel and three event loops are unchanged.",
+    "screen_entry": "Only executed-source bindings, authenticated amendment/build/source inputs, original-reference worker bindings/timeouts, amended private-copy constructor and global deadline metadata/checks differ. All certification, graph, union/replay and raster/statistics definitions retain exact AST equality.",
+    "resources_entry": "New private-cache constructor validates the final receipt and deadline, permits <=8 GiB inputs, and inherits old verification and precise-target cleanup unchanged.",
+    "source_wall_limit_seconds": 1200,
+    "source_reader_rss_bytes": 2147483648,
+    "screen_wall_limit_seconds": 3600,
+    "native_query_peak_rss_bytes": 8589934592,
+    "native_build_peak_rss_bytes": 17179869184,
+    "single_file_native_build_limit_bytes": 1073741824,
+    "single_file_limit_basis": "final_gate_build reuses frozen scene_build.monitor/worker; the immutable worker retains 1 GiB RLIMIT_FSIZE and original serializer limits.",
+    "native_face_owner_vertex_caps_basis": "Frozen observer and ordinary library hashes remain the original sealed hashes; scene_native.py is among the unchanged 18 Python files. No C++ recompilation or changed capacity is inferred from this budget amendment.",
+    "source_output_limit_bytes": 104857600,
+    "reference_worker_timeout": "min(900 seconds, remaining original campaign wall budget)",
+    "no_changed_scene_seed_camera_window_contact_or_selection_policy": true
+  },
+  "limitations": [
+    "AST equality is claimed only for the listed definitions and three source event loops, not for the modified entrypoint functions as a whole.",
+    "Deadline checks inside source/screen are cooperative. This audit does not claim arbitrary in-progress native calls are OS-preempted at the exact deadline; the outer process supervisor remains responsible for hard process-group limits.",
+    "Errors detected before a stage creates its report directory may propagate to its caller. The caller must preserve an infrastructure STOP; such an exception is not a method rejection or zero visibility.",
+    "Existing Mountain evidence is reverified and inherited, not regenerated or relabelled as having used amended limits."
+  ],
+  "method_or_production_files_modified_by_audit": false
+}

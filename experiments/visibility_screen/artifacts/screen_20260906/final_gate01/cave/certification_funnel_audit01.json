@@ -1,0 +1,243 @@
+{
+  "actual_omp1_sequence": {
+    "all_66_frame_sha_recomputed": true,
+    "all_or_none_and_no_partial_publication_receipts": true,
+    "cost": {
+      "cpu_seconds": 932.7172186600001,
+      "peak_rss_bytes": 1618554880,
+      "scope": "Research certification/playback/image/audit harness, not production speed.",
+      "wall_seconds": 1459.4289639960002
+    },
+    "event_component_membership_and_canonical_order_recomputed": true,
+    "exact_root_diagnostics": 2,
+    "final_input_verification": {
+      "original_bytes": 1513840506,
+      "original_files_unchanged": 35,
+      "original_input_content_sha256": "ad52d33106145b10c96bc79f5ba45b282c15918e4d1ff7c1b1871c04fcca2270",
+      "private_log_appended_bytes": 86651,
+      "private_nonlog_inputs_unchanged": true,
+      "status": "PASS"
+    },
+    "frame_sha_map_digest": "418ad58949ef63ff1e0acd2cff8047c341c60cabc83f64ad2f10d46ddc6d416d",
+    "full_root_support_replay_receipts_match_certification": true,
+    "natural_baseline_identical_frames": 48,
+    "natural_event_frame_replacements": 696,
+    "natural_frames": 64,
+    "natural_modified_frames": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "omp_num_threads": 1,
+    "private_cache_removed": true,
+    "raw_owner_consumption_all_66_queries": 2322,
+    "scope": "Independent replay of bound JSON/frame receipts only; no native geometry replay, raster, or claim that this auditor independently reproved all contact predicates.",
+    "source_face_consumption_all_66_queries": 1566,
+    "status": "PASS_PREREGISTERED_SEGMENT_SCREEN_OMP1_ONLY"
+  },
+  "actual_support_row_counts": {
+    "COMPLETE_ACTUAL_REQUESTED_SUPPORT": 1323
+  },
+  "artifact_audit_cost": {
+    "peak_rss_bytes": 74747904,
+    "wall_seconds": 0.7776919349998934
+  },
+  "bindings": {
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/certified_events.json": "6465e7995d37bb660022c67c0a1553fd29ed5fc735db1f62f28c1db0eda72d99",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/component_queries.json": "e4b818d44b097291d9b0d0345e1f105e0e153a41cda6fb9511552dcc988d2d44",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/summary.json": "b7c43bace30445ed0e18ef36e489ef8a963704576936d1e7b1bdedd657c2bec1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/support_graph.json": "c6ea2fef29e11d54563c2b47b484bef9de62558bf02d91810a06d9859c0dfdc6",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events_index.json": "917d6ae1ff7aec14fb8dd916a726babfca14d5c292740af041efc1fb89618d65",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/summary.json": "cbdd9d3519915569c7a105e8734a9ab82a2fcb9bc6af1fc29e6c73304b8b65b1"
+  },
+  "certification_snapshot_status": "CERTIFICATION_STAGE_ONLY_NOT_COMPLETED_SEQUENCE",
+  "component_count": 114,
+  "component_decision_counts": {
+    "ADMITTED_COMPONENT_REQUESTED_SCHEDULE": 79,
+    "FAIL_CLOSED_REJECTED_MEMBER": 29,
+    "FAIL_CLOSED_UNSUPPORTED_JOINT_COMPONENT": 6
+  },
+  "component_size_histogram": {
+    "1": 93,
+    "2": 13,
+    "3": 5,
+    "4": 2,
+    "5": 1
+  },
+  "direct_rejected": 45,
+  "direct_rejection_reason_counts": {
+    "REJECTED_FIXED_POLICY | legacy_selector | LEGACY_EXHAUSTIVE_SELECTOR_NO_CANDIDATE": 2,
+    "REJECTED_FIXED_POLICY | requested_source_interface | SOURCE_INTERFACE_REJECT": 22,
+    "SOURCE_READY | actual_requested_query | Actual source boundary is not a strict convex XY graph.": 3,
+    "SOURCE_READY | actual_requested_query | Degenerate actual retained triangle touches source interface.": 7,
+    "SOURCE_READY | actual_requested_query | FORBIDDEN_ACTUAL_PATCH_RETAINED_CONTACT": 11
+  },
+  "event_count": 147,
+  "first_rejection_per_reason": {
+    "REJECTED_FIXED_POLICY | legacy_selector | LEGACY_EXHAUSTIVE_SELECTOR_NO_CANDIDATE": {
+      "audit_stage": null,
+      "audit_status": null,
+      "certified_necessary_policy_failure": true,
+      "event_id": "element=2;role=temporal_neighbour;face=1008668:0|1008867:0|1127196:0|1010319:0",
+      "gate": "legacy_selector",
+      "query": null,
+      "reason_code": "LEGACY_EXHAUSTIVE_SELECTOR_NO_CANDIDATE",
+      "root": "3/2",
+      "source_status": "REJECTED_FIXED_POLICY"
+    },
+    "REJECTED_FIXED_POLICY | requested_source_interface | SOURCE_INTERFACE_REJECT": {
+      "audit_stage": null,
+      "audit_status": null,
+      "certified_necessary_policy_failure": true,
+      "event_id": "element=0;role=temporal_neighbour;face=1504:0|1547:0|1606:0|1600:0",
+      "gate": "requested_source_interface",
+      "query": null,
+      "reason_code": "SOURCE_INTERFACE_REJECT",
+      "root": "3/2",
+      "source_status": "REJECTED_FIXED_POLICY"
+    },
+    "SOURCE_READY | actual_requested_query | Actual source boundary is not a strict convex XY graph.": {
+      "audit_stage": "actual_local_graph",
+      "audit_status": "REJECT",
+      "certified_necessary_policy_failure": true,
+      "event_id": "element=0;role=temporal_neighbour;face=10282:0|10315:0|216207:0|159512:0",
+      "gate": "actual_requested_query",
+      "query": {
+        "active": true,
+        "evaluation_tau": "3/2",
+        "frame_number": null,
+        "key": "root_3_2",
+        "kind": "exact_root",
+        "physical_time_hex": "0x1.f8007dd441356p-1",
+        "time_mode": "exact"
+      },
+      "reason_code": "Actual source boundary is not a strict convex XY graph.",
+      "root": "3/2",
+      "source_status": "SOURCE_READY"
+    },
+    "SOURCE_READY | actual_requested_query | Degenerate actual retained triangle touches source interface.": {
+      "audit_stage": "actual_interface",
+      "audit_status": "REJECT",
+      "certified_necessary_policy_failure": true,
+      "event_id": "element=0;role=temporal_neighbour;face=650:1|1547:0|657:1|1600:0",
+      "gate": "actual_requested_query",
+      "query": {
+        "active": true,
+        "evaluation_tau": "5/2",
+        "frame_number": null,
+        "key": "root_5_2",
+        "kind": "exact_root",
+        "physical_time_hex": "0x1.a40068db8bac7p+0",
+        "time_mode": "exact"
+      },
+      "reason_code": "Degenerate actual retained triangle touches source interface.",
+      "root": "5/2",
+      "source_status": "SOURCE_READY"
+    },
+    "SOURCE_READY | actual_requested_query | FORBIDDEN_ACTUAL_PATCH_RETAINED_CONTACT": {
+      "audit_stage": "actual_all_element_exterior",
+      "audit_status": "REJECT",
+      "certified_necessary_policy_failure": true,
+      "event_id": "element=0;role=temporal_neighbour;face=154329:0|154885:0|156411:0|155862:0",
+      "gate": "actual_requested_query",
+      "query": {
+        "active": true,
+        "evaluation_tau": "3/2",
+        "frame_number": null,
+        "key": "root_3_2",
+        "kind": "exact_root",
+        "physical_time_hex": "0x1.f8007dd441356p-1",
+        "time_mode": "exact"
+      },
+      "reason_code": "FORBIDDEN_ACTUAL_PATCH_RETAINED_CONTACT",
+      "root": "3/2",
+      "source_status": "SOURCE_READY"
+    }
+  },
+  "graph_partition_connectivity_and_pair_denominators_recomputed": true,
+  "independent_admitted": 102,
+  "interpretation": {
+    "component_fallback": "2 independent-pass peer propagations differ from 13 independent-pass events in six unsupported shared-support joint components.",
+    "continuous_or_post_displacement": "No arbitrary-time or post-displacement admission claim.",
+    "forbidden_contact": "Prospective patch versus retained contact forbidden by the fixed policy; not an assertion that the baseline has no pre-existing intersections.",
+    "nonconvex_boundary": "Outside the frozen strict-convex-XY graph-fan domain.",
+    "retained_interface_degeneracy": "Pre-existing ordinary retained defect at the required interface, not created by this proposal.",
+    "source_gate_rejection": "Fixed selector/source-interface policy, not proof that an arbitrary future closure cannot exist.",
+    "visibility": "Not audited in this funnel artifact; no visibility or image-quality result is asserted."
+  },
+  "joint_event_count": 87,
+  "omp8_confirmation": {
+    "combined_screen_complete": false,
+    "status": "PENDING_NOT_INSPECTED"
+  },
+  "pair_query_verdict_counts": {
+    "PASS_PAIR_INTERACTIONS": 22896,
+    "UNSUPPORTED_SHARED_SUPPORT": 63
+  },
+  "peer_propagated_independent_pass_events": 2,
+  "per_root": {
+    "3/2": {
+      "components": 56,
+      "direct_rejects": 22,
+      "events": 74,
+      "independent_admitted": 52,
+      "joint_components": 39,
+      "joint_events": 43,
+      "peer_propagated": 0,
+      "unsupported_joint": 9
+    },
+    "5/2": {
+      "components": 58,
+      "direct_rejects": 23,
+      "events": 73,
+      "independent_admitted": 50,
+      "joint_components": 40,
+      "joint_events": 44,
+      "peer_propagated": 2,
+      "unsupported_joint": 4
+    }
+  },
+  "planned_event_frame_replacements": 696,
+  "planned_modified_natural_frames": {
+    "21": 43,
+    "22": 43,
+    "23": 43,
+    "24": 43,
+    "25": 43,
+    "26": 43,
+    "27": 43,
+    "28": 43,
+    "37": 44,
+    "38": 44,
+    "39": 44,
+    "40": 44,
+    "41": 44,
+    "42": 44,
+    "43": 44,
+    "44": 44
+  },
+  "query_count": 18,
+  "sequence_completion_verified": true,
+  "source_policy_rejected": 24,
+  "source_ready": 123,
+  "status": "PASS_OMP1_CERTIFICATION_FUNNEL_RECEIPT_AUDIT_OMP8_PENDING",
+  "total_fallback_events": 60,
+  "unsupported_joint_independent_pass_events": 13,
+  "unsupported_joint_query_cause_counts": {
+    "UNSUPPORTED_SHARED_SUPPORT": 54
+  },
+  "visibility_result": null
+}

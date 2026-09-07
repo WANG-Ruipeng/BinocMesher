@@ -1,0 +1,515 @@
+{
+  "schema": "saved-cave-visibility-buffer-audit-v1",
+  "status": "PASS_SAVED_VISIBILITY_BUFFER_AUDIT_BOUND_TO_COMPLETE_OMP1",
+  "scope": "READ_ONLY_SAVED_RECEIPTS_AND_PNG_VERIFICATION_NOT_RERASTER_OR_NATIVE_CERTIFICATION",
+  "terminal_summary": {
+    "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/summary.json",
+    "sha256": "b7c43bace30445ed0e18ef36e489ef8a963704576936d1e7b1bdedd657c2bec1",
+    "status": "PASS_PREREGISTERED_SEGMENT_SCREEN_OMP1_ONLY",
+    "omp_num_threads": "1",
+    "omp_confirmation": {
+      "status": "NOT_YET_CONFIRMED"
+    },
+    "private_cache_removed": true,
+    "final_input_verification_status": "PASS"
+  },
+  "terminal_sequence_scope": {
+    "natural_frames": 64,
+    "total_requested_queries": 66,
+    "exact_root_diagnostics": 2,
+    "modified_natural_frames": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "natural_event_frame_replacements": 696,
+    "validation_basis": "Counts and completion state inherited from the hash-bound OMP1 terminal summary. This audit independently verifies the 16 visibility receipts, not all 66 native query/union certificates.",
+    "omp8_determinism_independently_verified": false
+  },
+  "counts": {
+    "active_natural_frames": 16,
+    "canonical_events": 147,
+    "domain_kinds": {
+      "BASELINE_BLOCKED_CURRENT_CANDIDATE_DOMAIN": 16,
+      "FIXED_SOURCE_AND_REPLACEMENT": 1160
+    },
+    "graph_components": 114,
+    "graph_jointly_admitted_components": 79,
+    "graph_jointly_admitted_events": 87,
+    "hits_per_event": {
+      "8": 147
+    },
+    "image_bytes": 16770325,
+    "images": 64,
+    "jointly_admitted_strata": {
+      "NO_ISOLATED_PIXEL_COVERAGE": 680,
+      "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 16
+    },
+    "max_common_foreground_pixels": 518400,
+    "min_common_foreground_pixels": 518400,
+    "natural_event_frame_support_rows": 1176,
+    "strata": {
+      "NO_ISOLATED_PIXEL_COVERAGE": 1136,
+      "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 40
+    },
+    "unknown_support_events": 0,
+    "visible_candidate_events": 0,
+    "visible_replacement_events": 0,
+    "distinct_events_by_domain_kind": {
+      "BASELINE_BLOCKED_CURRENT_CANDIDATE_DOMAIN": 2,
+      "FIXED_SOURCE_AND_REPLACEMENT": 145
+    },
+    "distinct_events_by_visibility_stratum": {
+      "NO_ISOLATED_PIXEL_COVERAGE": 142,
+      "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 5
+    }
+  },
+  "support_population": {
+    "canonical_registry_denominator": 147,
+    "events_with_eight_active_natural_queries": 147,
+    "expected_and_observed_event_frame_rows": 1176,
+    "unique_event_query_pairs_complete": true,
+    "visibility_frame_numbers": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "fixed_compiled_source_events": 145,
+    "baseline_blocked_current_candidate_domain_events": 2,
+    "fixed_compiled_source_event_frame_rows": 1160,
+    "baseline_blocked_current_candidate_domain_event_frame_rows": 16,
+    "unknown_support_event_frame_rows": 0,
+    "unknown_support_events": 0,
+    "candidate_domain_warning": "The two BASELINE_BLOCKED_CURRENT_CANDIDATE_DOMAIN events retain candidate-support visibility rather than silently disappearing. They are not represented as fully compiled C1 source patches or as counterfactual artifact-impact support.",
+    "source_admission_given_visible_candidate_rate": null,
+    "zero_denominator_explanation": "There are zero visible source candidates, so admitted-visible divided by visible-candidates is undefined, not 0%."
+  },
+  "visibility_stratification": {
+    "NO_ISOLATED_PIXEL_COVERAGE": {
+      "event_frames": 1136,
+      "distinct_events": 142,
+      "interpretation": "The saved isolated support raster contains no pixel-center hit. This does not by itself distinguish frustum exclusion from tiny, degenerate, or otherwise non-covering projected geometry."
+    },
+    "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": {
+      "event_frames": 40,
+      "distinct_events": 5,
+      "interpretation": "The saved isolated support raster has pixel coverage, but no face from that support is selected by the full-scene z-buffer. Exact depth ties are included; this is not asserted to be pure occlusion."
+    },
+    "visible_source_candidate_events": 0,
+    "visible_replacement_events": 0,
+    "all_reported_baseline_support_pixel_sums": 0,
+    "all_reported_replacement_pixel_sums": 0,
+    "jointly_admitted_event_frames": 696,
+    "jointly_admitted_no_isolated_pixel_coverage": 680,
+    "jointly_admitted_occluded_or_tie": 16
+  },
+  "numeric_buffer_evidence": {
+    "buffer_names": [
+      "depth",
+      "normals",
+      "mask",
+      "element_id",
+      "face_id",
+      "label_id"
+    ],
+    "frame_count": 16,
+    "equal_baseline_combined_saved_sha256_pairs": 96,
+    "hash_format_and_complete_six_key_sets_verified": true,
+    "saved_numeric_hash_equality_verified": true,
+    "raw_numeric_arrays_independently_recomputed_or_read": false,
+    "raw_numeric_scope": "The original raster stored hashes and metrics, not raw pixel arrays. This audit rechecks equal hashes in hash-bound receipts; it does not claim a new raster or independent recomputation of numeric buffer hashes.",
+    "nonempty_full_scene_foreground_on_every_frame": true,
+    "minimum_saved_common_foreground_pixels": 518400,
+    "maximum_saved_common_foreground_pixels": 518400,
+    "image_resolution": [
+      960,
+      540
+    ],
+    "all_saved_global_depth_normal_silhouette_change_counts_zero": true,
+    "all_component_rois_empty": true,
+    "component_roi_depth_and_normal_error_statistics_null_not_zero": true,
+    "geometry_change_is_not_quality_gain": true
+  },
+  "png_evidence": {
+    "files": 64,
+    "total_bytes": 16770325,
+    "every_declared_sha256_recomputed_and_matched": true,
+    "no_unreferenced_pngs_in_images_directory": true,
+    "decoded_with": "Existing PIL plus NumPy; one PNG at a time; no package installation.",
+    "required_rgb_png_mode_verified": true,
+    "pair_pngs": {
+      "files": 32,
+      "width": 1920,
+      "height": 540,
+      "left_right_pixel_arrays_identical": true,
+      "each_pair_has_nonzero_pixels": true
+    },
+    "depth_delta_pngs": {
+      "files": 16,
+      "width": 960,
+      "height": 540,
+      "all_pixels_black": true
+    },
+    "component_id_pngs": {
+      "files": 16,
+      "width": 960,
+      "height": 540,
+      "all_pixels_black": true
+    },
+    "display_scope": "These are quantized depth/normal/component diagnostic images, not RGB quality renders. Their equality is corroboration, not a substitute for the saved numeric hash contract."
+  },
+  "camera": {
+    "camera_inputs_sha256": "2148fcdb61b7999414e4b481f0061fb6800a7872b35cea3031d275e06cb41957",
+    "natural_global_and_physical_times_exactly_match_saved_camera": true,
+    "original_render_camera_sha256": "d2ad4b4a3b6a731dc05fd1d4b88a8a7a0cb432a4974b9b9e82f41cc67c07fc7c",
+    "role": "UNRELAXED_IMAGE_CAMERA",
+    "same_poses_as_original_lod_input": true,
+    "terminal_input_hash_bindings_match": true,
+    "camera_and_effective_hashes_match_worker_complete": true,
+    "absolute_frame_range": [
+      1,
+      64
+    ],
+    "fps": 24,
+    "view_or_fov_modified": false,
+    "diagnostic_camera_substitution": false
+  },
+  "per_frame": [
+    {
+      "key": "frame_0021",
+      "absolute_frame": 21,
+      "visibility_json_sha256": "f74ad99e400796f730c6a3c397bd0f80273c679dce0247098a9c2b6eb3a6a64c",
+      "event_frame_rows": 74,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 3
+      }
+    },
+    {
+      "key": "frame_0022",
+      "absolute_frame": 22,
+      "visibility_json_sha256": "aba6a202770c5156674693a7ce9e54d75924aae494391cacffc4472862642893",
+      "event_frame_rows": 74,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 3
+      }
+    },
+    {
+      "key": "frame_0023",
+      "absolute_frame": 23,
+      "visibility_json_sha256": "4cd85e76f9642a2cf6a32b570c0bbf3b3c4811da48d3be3c1164232a05d2c2ca",
+      "event_frame_rows": 74,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 3
+      }
+    },
+    {
+      "key": "frame_0024",
+      "absolute_frame": 24,
+      "visibility_json_sha256": "0bfe03ba730640b35c37566a27f8c09e09b021a8f08e61c1d7b74d380bc3320a",
+      "event_frame_rows": 74,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 3
+      }
+    },
+    {
+      "key": "frame_0025",
+      "absolute_frame": 25,
+      "visibility_json_sha256": "ec3200182b8687658d324d0cb025de7fda6c812f308591206ec93abf6d83097f",
+      "event_frame_rows": 74,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 3
+      }
+    },
+    {
+      "key": "frame_0026",
+      "absolute_frame": 26,
+      "visibility_json_sha256": "9d5f529f5f03c6db9596a30c03343f8ccc175cdfc6939a6ad2c2cc4d708f0fb3",
+      "event_frame_rows": 74,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 3
+      }
+    },
+    {
+      "key": "frame_0027",
+      "absolute_frame": 27,
+      "visibility_json_sha256": "22e8686e9f753c82337efbb5bd9df96f911fed40a740e5d795ff21aa8b597ff2",
+      "event_frame_rows": 74,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 3
+      }
+    },
+    {
+      "key": "frame_0028",
+      "absolute_frame": 28,
+      "visibility_json_sha256": "962ead57982a11e90b6581fc33f03f04f4d9f6a34e09e5c0d9a669aea63cbb6f",
+      "event_frame_rows": 74,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 3
+      }
+    },
+    {
+      "key": "frame_0037",
+      "absolute_frame": 37,
+      "visibility_json_sha256": "6e895102e221e620593f0a751b2e7d622b8da8a14b10e8a6cd6620c5bcc48cbb",
+      "event_frame_rows": 73,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 2
+      }
+    },
+    {
+      "key": "frame_0038",
+      "absolute_frame": 38,
+      "visibility_json_sha256": "a49a3df2dd05593fb23735a32b2a4428a6af66b363f6bc30de2c17eb22032cd8",
+      "event_frame_rows": 73,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 2
+      }
+    },
+    {
+      "key": "frame_0039",
+      "absolute_frame": 39,
+      "visibility_json_sha256": "58672cea32edf38c495ab34b950acf44e4a56d2b78a3efbb21a8a55ceb34aafc",
+      "event_frame_rows": 73,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 2
+      }
+    },
+    {
+      "key": "frame_0040",
+      "absolute_frame": 40,
+      "visibility_json_sha256": "2c4c6878d8240003d2c07107eff05b8804a8f6bd49db196f27f39a61ffee5ff0",
+      "event_frame_rows": 73,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 2
+      }
+    },
+    {
+      "key": "frame_0041",
+      "absolute_frame": 41,
+      "visibility_json_sha256": "3b4deb182aaac7876b6405c405820643558400f8d0ed0c42a267dcaf1dca7631",
+      "event_frame_rows": 73,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 2
+      }
+    },
+    {
+      "key": "frame_0042",
+      "absolute_frame": 42,
+      "visibility_json_sha256": "1415a9d3cb83b841838b74f8a27290a257e9ce50cd05d6e6509104b23356d005",
+      "event_frame_rows": 73,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 2
+      }
+    },
+    {
+      "key": "frame_0043",
+      "absolute_frame": 43,
+      "visibility_json_sha256": "47376816e08faf757a5b6ca72dd2804e271a0b300e769da40982ee50c072bc7e",
+      "event_frame_rows": 73,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 2
+      }
+    },
+    {
+      "key": "frame_0044",
+      "absolute_frame": 44,
+      "visibility_json_sha256": "ba64a8365edfe75d449415d84afee92ad7a8267c47f9ed5a11b236bf9ab7d9cc",
+      "event_frame_rows": 73,
+      "common_foreground_pixels": 518400,
+      "six_saved_hashes_equal": true,
+      "strata": {
+        "NO_ISOLATED_PIXEL_COVERAGE": 71,
+        "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 2
+      }
+    }
+  ],
+  "final_read_only_integrity_check": {
+    "camera_hashes_match_terminal_input_bindings": true,
+    "distinct_events_by_domain_kind": {
+      "BASELINE_BLOCKED_CURRENT_CANDIDATE_DOMAIN": 2,
+      "FIXED_SOURCE_AND_REPLACEMENT": 145
+    },
+    "distinct_events_by_visibility_stratum": {
+      "NO_ISOLATED_PIXEL_COVERAGE": 142,
+      "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 5
+    },
+    "event_pixel_sums": {
+      "baseline_pixels_event_sum": 0,
+      "replacement_pixels_event_sum": 0
+    },
+    "rehashed_files": 88,
+    "status": "PASS_TERMINAL_AND_INPUT_BYTES_UNCHANGED"
+  },
+  "input_sha256": {
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/camera_inputs.json": "2148fcdb61b7999414e4b481f0061fb6800a7872b35cea3031d275e06cb41957",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/effective_inputs.json": "4e667bec455cb5f06a29bc0e1b37f4ba5dfa4a415f67a01e83711f403aa61119",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/original_render_camera.json": "d2ad4b4a3b6a731dc05fd1d4b88a8a7a0cb432a4974b9b9e82f41cc67c07fc7c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/worker_complete.json": "8ef1de67f5321aa5bbef8148dc9dd6bb1e99fbea69cba50a48c107458d97fbaa",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/certified_events.json": "6465e7995d37bb660022c67c0a1553fd29ed5fc735db1f62f28c1db0eda72d99",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0021-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0021-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0021-depth_pair.png": "e38df3fb2349396073e065db02c960f9b26ce848d3ef420fbc4155c8331e54cc",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0021-normal_pair.png": "0419a59bdc2feb8cc9d1d96fd8d4eb1044ffad38d0f570934a0dd2c52adf57d8",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0022-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0022-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0022-depth_pair.png": "31ffc0715edec2eceaef198271c5f2b3ec3b426a71af47a2d4af6cff7ef4ed4f",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0022-normal_pair.png": "1253541c28fb79d31220363fe414a9619331238016a93a46dea1daacb6a8cd69",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0023-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0023-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0023-depth_pair.png": "e7c1e7bf3e0baf01df7a33906750b11ffc4435957342286387c189c0950dd61a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0023-normal_pair.png": "9d250f2924068fedd2f25ed19e5abcc5d06a8e11daaa8921599b43fc13944994",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0024-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0024-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0024-depth_pair.png": "fee0c7ce30c30550fda013ed219191281ec7229ef4a3e4e985f73e93e7a9f87a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0024-normal_pair.png": "7784a627702cc844bedc90590312f3b5226ab271821b76a92c49783d4a1e9602",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0025-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0025-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0025-depth_pair.png": "f37879f241616bdd2b8841e7f3ec817089ca29031b1841cbb14656ff2fc2032e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0025-normal_pair.png": "de165df53000e7a0abcc12886bc1f8735dab75c163c5b79d090eaa3720dade28",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0026-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0026-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0026-depth_pair.png": "6642792941b885a43a735813bac052c6bf3533192b4a1ff1a73d0ea2c6d53788",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0026-normal_pair.png": "21b2a145cb37972e9556adcf628873464e8f594ac5be5e6f71fb8474b71bc161",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0027-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0027-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0027-depth_pair.png": "fa8405cd05a327488e5a9b2127e7c3e79ddb8bae983bab5a6f624685ea80a2b6",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0027-normal_pair.png": "eb73e74716bf6a78b0010438c66a7c4b7132e7893635c3894f926b9c02f4c9ed",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0028-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0028-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0028-depth_pair.png": "78370cf7a6603d3a49e9c39f0d65d9ad1dcb8c5bf008f61bac8f14c4da775a83",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0028-normal_pair.png": "93f04d4ee13f81fa452ef303e81357bb0b358983fc17f57f2127e5b3a1740f06",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0037-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0037-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0037-depth_pair.png": "fcd1ce4099ca6de3694c88dab15624af61182b10fdf80bc8a024afaed81d447c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0037-normal_pair.png": "8e2d673b3716649dc97060600c2c94d695d3385adf340ab26dac9aab918067f3",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0038-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0038-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0038-depth_pair.png": "8db0e1f2c041537b82125fc0c80dae5d6e22a9cb15e8cbcf94d25196d710671a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0038-normal_pair.png": "d60fbc9bf7a317cad9bd024b6a4af10839a74e1d6a307aa8b007253ac36412ba",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0039-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0039-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0039-depth_pair.png": "1e736fc9e33f031027fe16fd3c6c22490cc57801dda49874f3fddb152b4fffce",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0039-normal_pair.png": "cf50212d060caa873f2f6bee23bff02a5ddc52436499b35a0e6729749c427e1f",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0040-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0040-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0040-depth_pair.png": "81e8738e200748c0082f2b8eac2967dd8f03c5a923f685c652a5a5288a81767e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0040-normal_pair.png": "56f81da72a0f0ab317f5ea408763bfe9a773877c51bc1a997472b99023552b9d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0041-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0041-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0041-depth_pair.png": "0bb0fb9d0759c43a25839d153635d3accd8697851f40331d67f62356e3ea1626",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0041-normal_pair.png": "9794893d7aa82a564390aa0d8a269921cf09c3d8ee4c9214dc6bf4307b1d9ffc",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0042-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0042-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0042-depth_pair.png": "3050b7f1f4f1afc7a27f30c13e07694ca75b1f4d9aaea545e58d0afcf428d6b1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0042-normal_pair.png": "9b7fad9470965903aca62489eeaaca5f27ac382d3ccb4f92ed858214320c9190",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0043-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0043-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0043-depth_pair.png": "1d53914dfc5a665da0d1912ebe721d798b02f87ebf072c0e35ce85345103e749",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0043-normal_pair.png": "71cd7abb632a8a8ee7fb0600a125f3da49a531e96c44dc3f8e333ef50e3dcdc4",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0044-component_ids.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0044-depth_delta.png": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0044-depth_pair.png": "e3cb51aa48fff3fff82f0787ba663996207b05e38922f95f455a97bf1b538977",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/images/frame_0044-normal_pair.png": "66babdb1a36d699b698bbfffcd64fe077fc81ce58e399510e64d853d9e05d918",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/support_graph.json": "c6ea2fef29e11d54563c2b47b484bef9de62558bf02d91810a06d9859c0dfdc6",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0021.json": "f74ad99e400796f730c6a3c397bd0f80273c679dce0247098a9c2b6eb3a6a64c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0022.json": "aba6a202770c5156674693a7ce9e54d75924aae494391cacffc4472862642893",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0023.json": "4cd85e76f9642a2cf6a32b570c0bbf3b3c4811da48d3be3c1164232a05d2c2ca",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0024.json": "0bfe03ba730640b35c37566a27f8c09e09b021a8f08e61c1d7b74d380bc3320a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0025.json": "ec3200182b8687658d324d0cb025de7fda6c812f308591206ec93abf6d83097f",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0026.json": "9d5f529f5f03c6db9596a30c03343f8ccc175cdfc6939a6ad2c2cc4d708f0fb3",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0027.json": "22e8686e9f753c82337efbb5bd9df96f911fed40a740e5d795ff21aa8b597ff2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0028.json": "962ead57982a11e90b6581fc33f03f04f4d9f6a34e09e5c0d9a669aea63cbb6f",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0037.json": "6e895102e221e620593f0a751b2e7d622b8da8a14b10e8a6cd6620c5bcc48cbb",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0038.json": "a49a3df2dd05593fb23735a32b2a4428a6af66b363f6bc30de2c17eb22032cd8",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0039.json": "58672cea32edf38c495ab34b950acf44e4a56d2b78a3efbb21a8a55ceb34aafc",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0040.json": "2c4c6878d8240003d2c07107eff05b8804a8f6bd49db196f27f39a61ffee5ff0",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0041.json": "3b4deb182aaac7876b6405c405820643558400f8d0ed0c42a267dcaf1dca7631",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0042.json": "1415a9d3cb83b841838b74f8a27290a257e9ce50cd05d6e6509104b23356d005",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0043.json": "47376816e08faf757a5b6ca72dd2804e271a0b300e769da40982ee50c072bc7e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/visibility/frame_0044.json": "ba64a8365edfe75d449415d84afee92ad7a8267c47f9ed5a11b236bf9ab7d9cc",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/summary.json": "cbdd9d3519915569c7a105e8734a9ab82a2fcb9bc6af1fc29e6c73304b8b65b1",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/summary.json": "b7c43bace30445ed0e18ef36e489ef8a963704576936d1e7b1bdedd657c2bec1"
+  },
+  "execution_scope": {
+    "saved_compact_json_and_pngs_only": true,
+    "old_or_new_native_cache_content_read": false,
+    "native_library_or_query_executed": false,
+    "raster_executed": false,
+    "geometry_or_contact_recomputed": false,
+    "original_inputs_or_frozen_code_modified": false,
+    "displacement_or_rgb_quality_run": false,
+    "only_new_file": "final_gate01/cave/visibility_buffer_audit01.json"
+  },
+  "conclusion": "The complete OMP1 Cave screen contains real nonempty scene images and 1176 fully accounted active candidate-support rows, but zero original-camera visible source candidates or replacement pixels in these 16 natural-frame windows. This saved-output audit does not certify OMP8 determinism, a post-displacement stage, counterfactual artifact impact, or image-quality improvement."
+}

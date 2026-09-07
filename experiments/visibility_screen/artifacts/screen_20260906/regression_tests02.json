@@ -1,0 +1,101 @@
+{
+  "schema": "visibility-screen-regression-tests-v2",
+  "status": "PASS_CURRENT_ADAPTER_REGRESSION_WITH_EXPLICIT_INHERITED_FROZEN_RESULTS",
+  "scope": "Synthetic/pure adapter tests plus explicitly inherited frozen-method regression evidence. Not scene admission, visibility, displacement, or quality evidence.",
+  "actual_run": {
+    "execution_reported_by": "Parent agent /root; completed tool invocation before this receipt was written",
+    "cwd": "/mnt/e/BinocMesher",
+    "command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 /home/warpwang/miniforge3/envs/binoc-exp/bin/python -B -m unittest discover -s experiments/visibility_screen -p \"test_*.py\"",
+    "python": "/home/warpwang/miniforge3/envs/binoc-exp/bin/python",
+    "unittest_cases": 143,
+    "reported_unittest_seconds": 2.51,
+    "tool_wall_seconds": 7.6141991,
+    "exit_code": 0,
+    "result": "Ran 143 tests in 2.510s; OK",
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "bytecode_writes_disabled": true,
+    "rerun_by_recording_agent": false
+  },
+  "inherited_results": {
+    "source": {
+      "path": "regression_tests01.json",
+      "sha256": "a7b2bbd2abad905a1e754254c81140c2a24390621fb8f5436bfcbe12a2f874c3"
+    },
+    "explicitly_not_rerun_in_this_record": true,
+    "prior_visibility_screen_138_test_run_superseded_by_current_143": true,
+    "inherited_unittest_cases": 664,
+    "inherited_standalone_regressions": 1,
+    "runs": [
+      {
+        "source_json_pointer": "/runs/1",
+        "scope": "experiments/c1_lite frozen-method tests",
+        "unittest_cases": 650,
+        "reported_unittest_seconds": 6.987,
+        "tool_wall_seconds": 8.9629498,
+        "exit_code": 0,
+        "result": "Ran 650 tests in 6.987s; OK",
+        "execution": "INHERITED_NOT_RERUN"
+      },
+      {
+        "source_json_pointer": "/runs/2",
+        "scope": "experiments/source_splice frozen-method tests and standalone critical BEB1 regression",
+        "unittest_cases": 14,
+        "reported_unittest_seconds": 0.003,
+        "tool_wall_seconds_combined": 0.5418352,
+        "standalone_regressions": 1,
+        "exit_code": 0,
+        "result": "Ran 14 tests in 0.003s; OK; PASS_CRITICAL_BEB1_EVENT_STAR_CLOSURE_COMBINATORICS",
+        "execution": "INHERITED_NOT_RERUN"
+      }
+    ]
+  },
+  "current_visibility_screen_python_sha256": {
+    "/mnt/e/BinocMesher/experiments/visibility_screen/coverage_report.py": "80ca9bce6b4d37736799bc4e3a271dcabc7dfdd866a48be03eb11ef68a9486e2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/post_displacement_pilot.py": "c175eef64a52b7f8c1250ace834b99deb4c01e5857d29310599faad115c6655a",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/run_screen.py": "a1ac0467e538dd751098abbcf87615a1ed574f42cf6c06fcdf388aa46524040d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_build.py": "556ebbf95168e96ed81e06d3238e89ad2fee6a0f8dfe64856b5969f8e1005a5c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_geometry.py": "0d36891fc27f5ac394274128f05bc78999125622b5eda2ba2284ded3433beb69",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_native.py": "8bf73a224ec880b82ab765a8d76b27de8d0b5bcbaaff3e91499af15d6aba97bb",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_source.py": "87b023010d63fa8176658c239145b8c80b1a37a58f683bd93bf098797280ee0b",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/screen_contracts.py": "dd805e0d3f1ada3c8f92bb081f31328e224a01ba372e97fee553da932faa4018",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/screen_resources.py": "2b122024a9b6d81ba2869fdae1bf60c2d406a29576ce2e13df63f73ff3922031",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/source_stage.py": "473537379ed19a18ff254c1616931025e139718e54069c77db1bf23b9d0cc9f2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_coverage_report.py": "debeb8e13bd67eaf0903af24672dae78dd373a8b86c5081658a5e9b3a9ec21cd",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_post_displacement_pilot.py": "bb2e626739a679903b661d583b5eae0dee60136c4d38bc6cd07d09a1c0dcf8da",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_run_screen.py": "8647cb6b105563e143f1b867f193590ac50c22fc1ee17910809ac6e34d1e654c",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_scene_build.py": "72151117fd4239636feb182dfb083438434e6702510b494b64c5e1f049d6809e",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_scene_geometry.py": "3809a264d4af956be9410de0600e57e89af1ae63143edc274a85565ba72ccfaf",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_scene_native.py": "ca1576508845673557f89b527484c3294201cedf650f06ec947237a59d32b74d",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_scene_source.py": "3558befbfb0299c2105ff5425d603c21288b51147a8b999d519687630c694779",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/test_screen_contracts.py": "b1b6c397da7f604d140856fa7ca8e82e4922d0e1030704c27ae91a6186e2f2ac"
+  },
+  "reference_sha256": {
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/native_identity_preflight01.json": "d1024866a2e55d3ea3cec8ba2226e1e7ae848781d41257f98ebae385125459e2",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/screen01_omp1/ordinary_reference.json": "d7c564fc1a2eba8ff922d24fda50c7bc2075b4ade58a118554b27f48ca8ed100",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/preregistration_seal.json": "f72e5e09cfd4bcc0454ef7dfe9078a2d914237c1e11c9468803ad3fd17f36411",
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/regression_tests01.json": "a7b2bbd2abad905a1e754254c81140c2a24390621fb8f5436bfcbe12a2f874c3"
+  },
+  "source_seal_verification": {
+    "all_176_bindings_unchanged": true,
+    "changed_bindings": [],
+    "sealed_bindings_checked": 176,
+    "status": "PASS"
+  },
+  "change_scope": {
+    "adapter_only_transport_fix": "Pinned SourceVID v2 exporter requires five transport rows (20 int slots); expose only actual n rows and reject nonzero unused slots. This is not scene padding.",
+    "frozen_method_policy_unchanged": true,
+    "frozen_native_binaries_unchanged": true,
+    "production_source_edits": false,
+    "geometry_certificate_policy_changed": false
+  },
+  "recording_activity": {
+    "new_tests_executed": 0,
+    "new_native_queries_executed": 0,
+    "heavy_workers_started": 0,
+    "source_sha_checks_only": true,
+    "owned_patch_scratch_remaining": []
+  },
+  "not_a_claim_that_all_four_experiment_priorities_are_complete": true
+}

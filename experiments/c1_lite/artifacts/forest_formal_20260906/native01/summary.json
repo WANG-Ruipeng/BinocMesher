@@ -1,0 +1,17 @@
+{
+  "final_input_verification": {
+    "original_bytes": 1096080433,
+    "original_files_unchanged": 35,
+    "original_input_content_sha256": "aca6fd25083a4fe6c60fec296be3e7b8558731e2e566b08f2c6e25ee45488a71",
+    "private_log_appended_bytes": 0,
+    "private_nonlog_inputs_unchanged": true,
+    "status": "PASS"
+  },
+  "native_slice_calls": 0,
+  "policy_admission_rate": null,
+  "private_cache_removed": true,
+  "reason": "ModuleNotFoundError: No module named 'binocmesher'",
+  "status": "NATIVE_HARNESS_OR_INSTRUMENTATION_STOP_NOT_ALGORITHM_REJECTION",
+  "total_wall_seconds_including_cleanup": 2.961027379999905,
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/e/BinocMesher/experiments/c1_lite/run_forest_native_admission.py\", line 133, in main\n    specs[event['event_id']] = spec_from_source(source)\n  File \"/mnt/e/BinocMesher/experiments/c1_lite/forest_native_patch.py\", line 58, in spec_from_source\n    wr, _ = _modules()\n  File \"/mnt/e/BinocMesher/experiments/c1_lite/forest_native_patch.py\", line 25, in _modules\n    return (importlib.import_module('binocmesher.window_runtime'),\n  File \"/home/warpwang/miniforge3/envs/binoc-exp/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 992, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"<frozen importlib._bootstrap>\", line 1050, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1027, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1004, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'binocmesher'\n"
+}

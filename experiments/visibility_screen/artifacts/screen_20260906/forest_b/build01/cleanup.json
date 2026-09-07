@@ -1,0 +1,227 @@
+{
+  "schema": "failed-generated-cache-cleanup-v1",
+  "status": "PASS_AUTHORIZED_FAILED_CACHE_CLEANUP",
+  "completed_utc": "2026-09-06T12:21:49Z",
+  "segment_id": "forest_b",
+  "validated_target": "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt01/native/HyperMesh/OpaqueTerrain",
+  "authorization": "Parent-authorized deletion of these two run-owned incomplete caches after copying compact diagnostics; no algorithm or experiment restart.",
+  "command_exit_code": 0,
+  "deletion_method": "Linux rm -r -- with the validated literal absolute target; not moved to trash.",
+  "recoverability": "Deleted generated cache payload is not recoverable from these receipts; reconstruction is required. Coarse scenes, assets, parameters and cameras are preserved.",
+  "validation": {
+    "resolved_path_exactly_equals_literal_target": true,
+    "target_was_directory_not_symlink": true,
+    "all_descendants_normal_files_or_directories": true,
+    "target_absent_after_deletion": true,
+    "complete_marker_absent_before_delete": [
+      "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt01/native/worker_complete.json",
+      "slicing_preprocess.finish",
+      "slicing_preprocess.manifest.json",
+      "event_registry_p1.csv",
+      "event_registry_p1_summary.json"
+    ],
+    "upstream_summary": {
+      "path": "summary.json",
+      "sha256": "297e5bd016e5bd10c36c31fadfba87270bc5f552d13f72e873a4f7786caf1bf3",
+      "status": "STOP_INFRASTRUCTURE_BUILD_INCOMPLETE"
+    },
+    "failed_build_is_not_zero_events": true
+  },
+  "removed_inventory": {
+    "file_count": 31,
+    "file_payload_bytes": 3924015543,
+    "allocated_tree_bytes_before_deletion": 3924185088,
+    "files": [
+      {
+        "path": "bip_edges/0.bin",
+        "bytes": 324485520
+      },
+      {
+        "path": "bip_edges/1.bin",
+        "bytes": 374981580
+      },
+      {
+        "path": "bisection/0.finish",
+        "bytes": 0
+      },
+      {
+        "path": "computed_vertices/0.bin",
+        "bytes": 133006012
+      },
+      {
+        "path": "computed_vertices/1.bin",
+        "bytes": 196781512
+      },
+      {
+        "path": "constructing/finish",
+        "bytes": 0
+      },
+      {
+        "path": "fine_nodes/0.bin",
+        "bytes": 618636
+      },
+      {
+        "path": "fine_nodes/10000.bin",
+        "bytes": 182960
+      },
+      {
+        "path": "fine_nodes/20000.bin",
+        "bytes": 441576
+      },
+      {
+        "path": "fine_nodes/30000.bin",
+        "bytes": 270536
+      },
+      {
+        "path": "fine_nodes/40000.bin",
+        "bytes": 228320
+      },
+      {
+        "path": "fine_nodes/50000.bin",
+        "bytes": 264196
+      },
+      {
+        "path": "fine_nodes/60000.bin",
+        "bytes": 572712
+      },
+      {
+        "path": "fine_nodes/70000.bin",
+        "bytes": 357824
+      },
+      {
+        "path": "fine_nodes/80000.bin",
+        "bytes": 1812
+      },
+      {
+        "path": "graphs/0.bin",
+        "bytes": 240069436
+      },
+      {
+        "path": "graphs/1.bin",
+        "bytes": 327853964
+      },
+      {
+        "path": "hyperpoly_meta/0.bin",
+        "bytes": 562441592
+      },
+      {
+        "path": "hyperpoly_meta/1.bin",
+        "bytes": 649968096
+      },
+      {
+        "path": "hyperpolys/0.bin",
+        "bytes": 367750260
+      },
+      {
+        "path": "hyperpolys/1.bin",
+        "bytes": 424979128
+      },
+      {
+        "path": "hypervertices/0.bin",
+        "bytes": 167772160
+      },
+      {
+        "path": "hypervertices/1.bin",
+        "bytes": 147253292
+      },
+      {
+        "path": "log.txt",
+        "bytes": 99859
+      },
+      {
+        "path": "rearrange_fine_nodes.finish",
+        "bytes": 0
+      },
+      {
+        "path": "rearranged_fine_nodes/0.bin",
+        "bytes": 1168392
+      },
+      {
+        "path": "rearranged_fine_nodes/1.bin",
+        "bytes": 1770128
+      },
+      {
+        "path": "rearranged_nodemap/0.bin",
+        "bytes": 254380
+      },
+      {
+        "path": "rearranged_nodemap/1.bin",
+        "bytes": 386092
+      },
+      {
+        "path": "sdf_calls.txt",
+        "bytes": 55560
+      },
+      {
+        "path": "tree_sizes.bin",
+        "bytes": 8
+      }
+    ],
+    "inventory_scope": "File names and sizes only; generated payloads were not rehashed."
+  },
+  "diagnostic_copies": {
+    "scope": "Diagnostic-only logs and intermediate markers, explicitly not a resumable cache or full completion evidence.",
+    "source_and_destination_bytes_compared_equal_before_delete": true,
+    "metadata_file_payload_bytes": 155427,
+    "native_worker_log_bytes": 10453,
+    "files": [
+      {
+        "path": "failed_cache_metadata/tree_sizes.bin",
+        "sha256": "11637c76f1ed5d55199a78fd1fae84e637b0fd4acf8a0c987ee54451dbf5dfad"
+      },
+      {
+        "path": "failed_cache_metadata/README.md",
+        "sha256": "ba15d68e0480a10655d3c61930173b5c243a6c9eab8e8355c80c4c573e3ff9cf"
+      },
+      {
+        "path": "failed_cache_metadata/sdf_calls.txt",
+        "sha256": "c01da8760a8ba3eed7700154ea322413a1ff678ac6bad04b068046709c4dd27a"
+      },
+      {
+        "path": "failed_cache_metadata/bisection/0.finish",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "failed_cache_metadata/constructing/finish",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "failed_cache_metadata/rearrange_fine_nodes.finish",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "failed_cache_metadata/log.txt",
+        "sha256": "e927b111d39535642c1ce8823f78ca39ecd29b7de6c8967a5037d93c0cb8d873"
+      },
+      {
+        "path": "failed_native_worker.log",
+        "sha256": "c35ee76f1649805d29fffb862a34907578e11a8902d7dc72d4e83c8d8496e9e7"
+      }
+    ]
+  },
+  "original_input_verification": {
+    "before_after_inventory_byte_identical": true,
+    "native_source_before_sha256": "b5d6f3be80002697614a6851f7ce77b9371222b46f7cfd565685da62b0a370f5",
+    "native_source_after_sha256": "b5d6f3be80002697614a6851f7ce77b9371222b46f7cfd565685da62b0a370f5",
+    "attempt_source_inputs_before_sha256": "b5d6f3be80002697614a6851f7ce77b9371222b46f7cfd565685da62b0a370f5",
+    "original_source_files": 16,
+    "original_source_payload_bytes": 134624741,
+    "scope": "Existing full original-source before/after SHA receipts were byte-compared, and matched the attempt native/source_inputs_before.json. Original external source directories were not newly scanned."
+  },
+  "preserved_attempt_files": {
+    "scope": "All files under this attempt excluding only the removed exact cache subtree; includes assets, kernel parameters, camera/effective/source inputs, worker logs, driver snapshot, and existing coarse/frames files.",
+    "file_count": 56,
+    "manifest_encoding": "LC_ALL=C sorted sha256sum records of absolute paths; one terminal newline; SHA256 of the complete text",
+    "before_sha256": "28518ed3394dd978cd8f7c01ebc22ac693a7e78f01af6b8ab9c80f9019b34745",
+    "after_sha256": "28518ed3394dd978cd8f7c01ebc22ac693a7e78f01af6b8ab9c80f9019b34745",
+    "all_file_hashes_unchanged": true
+  },
+  "untouched_scopes": [
+    "All Mountain paths",
+    "Sealed protocol, source and algorithm files",
+    "All existing compact experiment/failure summaries",
+    "Native sibling inputs",
+    "Original scene sources"
+  ],
+  "no_new_native_load_or_campaign": true
+}

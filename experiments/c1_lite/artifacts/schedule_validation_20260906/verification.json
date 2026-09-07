@@ -1,0 +1,49 @@
+{
+  "schema": "schedule-validation-handoff-verification-v1",
+  "date": "2026-09-06",
+  "frozen_head": "000028e0fa5bc4922aeb51aa9fb9ee96b799301e",
+  "tracked_worktree_diff_empty": true,
+  "new_experiment_files_uncommitted": true,
+  "pushed": false,
+  "unit_tests": {"c1_lite": 331, "source_splice": 14, "total": 345, "status": "PASS"},
+  "report_crosschecks": {
+    "summary_matches_e2_and_forest_measured_times": true,
+    "summary_matches_actual_natural_frame_depth_measurement": true,
+    "method_level_forest_eligibility_and_admission_are_null": true,
+    "all_9_result_json_documents_parse": true,
+    "forest_raw_report_hashes_match_scope_correction": true,
+    "e2_executed_measurement_module_hashes_match_current_files": true,
+    "independent_e2_metric_denominator_review_passed": true,
+    "independent_e2_vs_forest_support_scope_review_completed": true
+  },
+  "sha256": {
+    "summary.json": "eae74c355339a9a1380d6d92d281c586436af1e1e1aa8c85e3d77388bd920777",
+    "e2_retry2/result.json": "391910a06c26e5bbff0d05f6ff0841985edffef70cd7623f83ea0c8355abef35",
+    "e2_retry2/structural_coherence.json": "0de86324046f2241d1c5d2627a87216d5cfbcaf65cfa2a6a2369027974d29a67",
+    "forest/scope_correction.json": "6a6a539b8ec078630bc0ff73992046d45c1baac9d6835a462324ce8da1a8a2ba"
+  },
+  "visual_qa": {
+    "original_natural_15_overview_inspected": true,
+    "diagnostic_natural_15_overview_inspected": true,
+    "reference_finite_domain_exterior_is_explained": true,
+    "no_perceptual_visibility_claim": true
+  },
+  "cleanup": {
+    "all_e2_disposable_cache_copies_removed": true,
+    "experiment_workers_exited": true,
+    "only_own_three_applied_temporary_patch_files_removed": true,
+    "older_tmp_files_preserved": true,
+    "environments_original_caches_existing_experiments_preserved": true
+  },
+  "storage_snapshot_before_this_verification_file": {
+    "artifact_files": 143,
+    "artifact_bytes": 2860283,
+    "windows_repo_bytes": 62397380,
+    "wsl_vhdx_bytes": 31609323520,
+    "wsl_migration_backup_bytes": 8600965120,
+    "combined_bytes_without_double_counting_wsl_contents": 40272686020,
+    "user_ceiling_bytes": 400000000000,
+    "under_ceiling": true
+  },
+  "completion_limit": "E2 requested experiment complete. Forest registry/local-kernel front-end complete; full C1 closure-derived source-support eligibility and production runtime admission remain unevaluated, not rejected."
+}

@@ -1,0 +1,11 @@
+{
+  "cost": {
+    "cpu_seconds": 0.9812433529999999,
+    "peak_rss_bytes": 89374720,
+    "wall_seconds": 3.839137375000007
+  },
+  "published_partial_outputs": false,
+  "reason": "TypeError: 'PosixPath' object is not subscriptable",
+  "status": "STOP_SEQUENCE_NOT_COMMITTED",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/e/BinocMesher/experiments/c1_lite/run_forest_atomic_sequence.py\", line 114, in main\n    certificate, graph, cert_queries, bindings = load_component_certificate(args.certification)\n  File \"/mnt/e/BinocMesher/experiments/c1_lite/run_forest_atomic_sequence.py\", line 46, in load_component_certificate\n    queries = {q['query']['key']: q for q in (read(root[r['path']]) for r in summary['query_artifacts'])}\n  File \"/mnt/e/BinocMesher/experiments/c1_lite/run_forest_atomic_sequence.py\", line 46, in <dictcomp>\n    queries = {q['query']['key']: q for q in (read(root[r['path']]) for r in summary['query_artifacts'])}\n  File \"/mnt/e/BinocMesher/experiments/c1_lite/run_forest_atomic_sequence.py\", line 46, in <genexpr>\n    queries = {q['query']['key']: q for q in (read(root[r['path']]) for r in summary['query_artifacts'])}\nTypeError: 'PosixPath' object is not subscriptable\n"
+}

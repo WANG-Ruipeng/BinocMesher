@@ -1,0 +1,19 @@
+{
+  "schema": "firsthand-tool-execution-observation-v1",
+  "observation_source": "PARENT_AGENT_FIRSTHAND_TOOL_EXECUTION",
+  "script_generated": false,
+  "exact_start_time_recorded": false,
+  "prelaunch_input_hashes_recorded": false,
+  "started_no_later_than_utc": "2026-09-06T16:49:03+00:00",
+  "launch_tool": "functions.exec -> exec_command",
+  "launch_returned_running": true,
+  "session_id": 14234,
+  "launch_chunk_id": "16ef38",
+  "terminal_tool": "functions.exec -> write_stdin",
+  "terminal_chunk_id": "c4c6cd",
+  "terminal_exit_code": 1,
+  "observed_status": "STOP_SCREEN_ATTEMPT_NOT_COMPLETE",
+  "observed_reason": "ValueError: Original SourceVID observation is not ready.",
+  "command": "wsl -d Ubuntu --cd /mnt/e/BinocMesher/experiments/visibility_screen -- env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 /home/warpwang/miniforge3/envs/binoc-exp/bin/python -B final_gate_screen.py --protocol protocol_20260906.json --seal artifacts/screen_20260906/preregistration_seal.json --budget-amendment artifacts/screen_20260906/budget_amendment01.json --segment forest_b --build-report artifacts/screen_20260906/final_gate01/forest_b/build02 --source artifacts/screen_20260906/final_gate01/forest_b/source02 --output artifacts/screen_20260906/final_gate01/forest_b/screen01_omp1",
+  "scope": "Recorded after termination from the parent agent's firsthand tool execution observations. Not a script-generated or signed execution receipt; no precise start timestamp, startup hash capture, earliest native error, runtime admission, or measured visibility is asserted."
+}

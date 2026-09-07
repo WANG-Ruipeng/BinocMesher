@@ -1,0 +1,57 @@
+{
+  "cases": [],
+  "continuous_window_admitted": false,
+  "coordinate_buffers": "camera-Z depth; world oriented flat normals; all faces without tag filtering",
+  "core_so_sha256": "f4263a2f47ba5283175a921e49b8867998bdd8124aac810793b34242ec43a3c9",
+  "cpu_seconds": 7.7678362,
+  "error": "ValueError: Runtime slicing log contains an undeclared appended record.",
+  "exact_root_is_separate_diagnostic": true,
+  "frozen_commit": "000028e0fa5bc4922aeb51aa9fb9ee96b799301e",
+  "input_cache_bytes": 4255152,
+  "last_stage": "prepare_actual_schedule",
+  "methods": [
+    "raw",
+    "centroid_window",
+    "beb1_window"
+  ],
+  "module_sha256": {
+    "e2_image_metrics.py": "6b3b83450b4e8485f819d24fc23018aa56feb43b1582c799d9ad72668fcead94",
+    "e2_raster.py": "817aadf006087868f61150ad35f8061bf8117ad1e8040fd1c79af1ed4211fe68",
+    "e2_render_views.py": "6102f35c2ca58242154d3ac930b749b27cc82501b1c4bc652662cd55a5edf3d4",
+    "e2_schedule_coherence.py": "963088e1938f146f908c0542a8f8aa3ebf27d9071e4a03fee1571ef4815231f9"
+  },
+  "natural_frame_indices_zero_based": [
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "original_cache_unchanged": true,
+  "original_source_unchanged": true,
+  "output_bytes_before_summary": 0,
+  "peak_rss_bytes": 221876224,
+  "reference": {
+    "rounds": []
+  },
+  "reference_terrain_source": {
+    "path": "/mnt/e/BinocMesher/experiments/tv0_tv4/run_lightweight_profile.py",
+    "sha256": "b27bfc4e15d76f1ff9bdd9cd95882a1e8b592f7c3edb0ace53f807b76dbf9a58"
+  },
+  "rgb_rendered": false,
+  "schema": "e2-schedule-image-validation-v1",
+  "scientific_limits": [
+    "Reference grid and gradient refinement are empirical sensitivity checks, not a complete numerical error bound.",
+    "Source footprint is separately projected raw support; raw_visible_source_support_pixels includes whole-mesh occlusion.",
+    "Pixel silhouette/boundary differences do not certify mesh topology.",
+    "Quantized preview differences do not establish human-perceptual visibility."
+  ],
+  "script_sha256": "5f23711499c45e8b9ea6f82700e25c757f943d0d5e702e67b8ef2860c16ee5e2",
+  "source_sha256": "6b7f08fb7689ef8e62002c787e301a321fb343cda16d1ce37c54021b58c92dc2",
+  "status": "STOP",
+  "temporary_cache_removed": true,
+  "timings": {
+    "cache_copy_seconds": 0.02416187600000086
+  },
+  "wall_seconds": 8.042286937000004
+}

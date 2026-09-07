@@ -1,0 +1,57 @@
+{
+  "admission_rate": null,
+  "budget_amendment": {
+    "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/budget_amendment01.json",
+    "sha256": "39ce0a8088c5c72a4b6595c8d054becf6c909410d4e70e1460a042f8488c2ac0"
+  },
+  "campaign_deadline_utc": "2026-09-06T19:28:39+00:00",
+  "cost": {
+    "cpu_seconds": 18.068667521,
+    "peak_rss_bytes": 1365827584,
+    "scope": "Research certification/playback/image/audit harness, not production speed.",
+    "wall_seconds": 676.9953352350003
+  },
+  "effective_budgets": {
+    "build_peak_rss_bytes": 17179869184,
+    "cache_per_scene_output_bytes": 8589934592,
+    "cache_per_scene_wall_seconds": 5400,
+    "certification_and_screen_per_scene_wall_seconds": 3600,
+    "cleanup": "Remove only validated run-owned temporary cache copies and disposable coarse intermediates after input verification; preserve compact results and required rerun inputs. No environment deletion.",
+    "coarse_per_scene_output_bytes": 8589934592,
+    "coarse_per_scene_wall_seconds": 3600,
+    "maximum_campaign_wall_seconds": 32400,
+    "maximum_compact_reports_and_images_bytes": 536870912,
+    "maximum_new_persistent_bytes": 32000000000,
+    "native_query_peak_rss_bytes": 8589934592,
+    "persistent_full_mesh_video_files": 0,
+    "post_displacement_pilot_wall_seconds": 1800,
+    "preserve_original_inputs_and_old_evidence": true,
+    "simultaneous_heavy_scene_workers": 1,
+    "small_visual_experiment_wall_seconds": 1800,
+    "source_per_scene_wall_seconds": 1200,
+    "total_existing_and_new_storage_limit_bytes": 400000000000
+  },
+  "final_input_verification": {
+    "original_bytes": 4097985903,
+    "original_files_unchanged": 35,
+    "original_input_content_sha256": "79e885cf30d0b0312ca60239388c8c2030e8c0c3c7ed52e166d328bd360a47e8",
+    "private_log_appended_bytes": 46757,
+    "private_nonlog_inputs_unchanged": true,
+    "status": "PASS"
+  },
+  "partial_output_published": false,
+  "preregistration_seal_sha256": "f72e5e09cfd4bcc0454ef7dfe9078a2d914237c1e11c9468803ad3fd17f36411",
+  "private_cache_removed": true,
+  "protocol_sha256": "9f8ec007632e763383d87ad544d4be2d0069bc506a89d3f38734e3c1bb6d2ae1",
+  "reason": "ValueError: Original SourceVID observation is not ready.",
+  "segment_id": "forest_b",
+  "source": {
+    "canonical_events": 0,
+    "exact_roots": 0,
+    "raw_observations": 0,
+    "source_decision_counts": {}
+  },
+  "status": "STOP_SCREEN_ATTEMPT_NOT_COMPLETE",
+  "supplied_input_hashes_do_not_imply_validation": true,
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_screen.py\", line 569, in run\n    frame_refs, images, modified, replacement_count, frame_calls = execute_sequence(\n  File \"/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_screen.py\", line 441, in execute_sequence\n    snapshot, baseline = slice_bound(reader, query, reference[key]); calls += 1\n  File \"/mnt/e/BinocMesher/experiments/visibility_screen/final_gate_screen.py\", line 176, in slice_bound\n    original_identity_receipt(snapshot)\n  File \"/mnt/e/BinocMesher/experiments/visibility_screen/scene_geometry.py\", line 489, in original_identity_receipt\n    raise ValueError('Original SourceVID observation is not ready.')\nValueError: Original SourceVID observation is not ready.\n"
+}

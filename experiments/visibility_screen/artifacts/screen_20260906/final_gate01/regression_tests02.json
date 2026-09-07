@@ -1,0 +1,20 @@
+{
+  "schema": "final-gate-lightweight-regression-receipt-v1",
+  "status": "PASS_PURE_TESTS_NOT_NEW_SCENE_EVIDENCE",
+  "observed_at_utc": "2026-09-06 14:59:46 UTC",
+  "command": "PYTHONDONTWRITEBYTECODE=1 /home/warpwang/miniforge3/envs/binoc-exp/bin/python -B -m unittest discover",
+  "cwd": "/mnt/e/BinocMesher/experiments/visibility_screen",
+  "tests_run": 208,
+  "unittest_wall_seconds": 2.758,
+  "tool_wall_seconds": 3.9736497,
+  "exit_code": 0,
+  "expected_negative_cli_messages": true,
+  "earlier_invocation_note": "An earlier explicit -p test_*.py invocation was shell-expanded into multiple arguments and exited before test discovery; the default-pattern invocation recorded here passed.",
+  "final_verdict_tests": 22,
+  "scope": "Existing 194 tests plus 14 final-outcome linkage tests; no heavy native job, new raster or scene result.",
+  "changed_reporting_files_sha256": {
+    "final_gate_verdict.py": "9407ae9eb53de58a652e66113daf20d2ba4d1a9460726a79ae8c5f2c1efb8a3d",
+    "test_final_gate_verdict.py": "132fa09a4a783889e3a6d6960b53c8eb95c50c2a5dc1b8bfe8bdced38ecc1583"
+  },
+  "running_build_script_unchanged_sha256": "999b3ada9744e29b7be86bc228ac2828631c42746ef8468d8ee5b608d84f87a6"
+}

@@ -1,0 +1,176 @@
+{
+  "audit_wall_seconds": 3.6478310800002873,
+  "budget_amendment": {
+    "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/budget_amendment01.json",
+    "sha256": "39ce0a8088c5c72a4b6595c8d054becf6c909410d4e70e1460a042f8488c2ac0"
+  },
+  "cave_coverage_row": {
+    "absolute_frames": [
+      1,
+      64
+    ],
+    "admitted_components": 79,
+    "admitted_events": 87,
+    "canonical_events": 147,
+    "compiled_source_visible_admitted": 0,
+    "compiled_source_visible_candidates": 0,
+    "component_admission_rate": 0.6929824561403509,
+    "components": 114,
+    "eligible_for_preregistered_pilot_selection": true,
+    "event_admission_rate": 0.5918367346938775,
+    "exact_roots": 2,
+    "fallback_components": 35,
+    "fallback_events": 60,
+    "modified_natural_frames": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "natural_event_frame_replacements": 696,
+    "natural_frames": 64,
+    "qualification_evidence_scope": "Hash-bound frozen screening summary; pixel/geometry evidence is inherited, not re-rasterized here.",
+    "qualified_components": [],
+    "query_count": 66,
+    "raw_observations": 522,
+    "reason": null,
+    "scene": "Cave",
+    "screen_complete": true,
+    "segment_id": "cave",
+    "source_counts_scope": "Completed fixed-policy requested-schedule screen with OMP1/8 confirmation.",
+    "source_decision_counts": {
+      "ADMITTED_REQUESTED_SCHEDULE": 102,
+      "Actual source boundary is not a strict convex XY graph.": 3,
+      "Degenerate actual retained triangle touches source interface.": 7,
+      "FORBIDDEN_ACTUAL_PATCH_RETAINED_CONTACT": 11,
+      "LEGACY_EXHAUSTIVE_SELECTOR_NO_CANDIDATE": 2,
+      "SOURCE_INTERFACE_REJECT": 22
+    },
+    "status": "PASS_PREREGISTERED_SEGMENT_SCREEN",
+    "terminal_infrastructure_stop": false,
+    "unknown_support_visibility_events": 0,
+    "visible_admitted_source_events": 0,
+    "visible_candidate_events": 0,
+    "visible_replacement_events": 0,
+    "visible_source_admission_rate": null
+  },
+  "chain_artifacts": {
+    "build": {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/summary.json",
+      "sha256": "13bf0303c0e03fd42124c5e80610e7f9ef1b6b0f490027c84dc5d28e5593e48d"
+    },
+    "build_contract": {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/build_protocol.json",
+      "sha256": "246a733fd9194453d60553448818f5d5dadca1ba906972f7f5ca571d42e71e1b"
+    },
+    "combined": {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen02_omp8/combined_summary.json",
+      "sha256": "10ec455a30b4bd1757b648c15c2feddb05753083dee50393301a247c7e32b9cb"
+    },
+    "confirmation": {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen02_omp8/omp_confirmation.json",
+      "sha256": "42cadd2d20a5e6e40c1ee568053f558af95e0bdd480ce4dd8dbad32b7fc7fe5b"
+    },
+    "omp1": {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen01_omp1/summary.json",
+      "sha256": "b7c43bace30445ed0e18ef36e489ef8a963704576936d1e7b1bdedd657c2bec1"
+    },
+    "omp8": {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/screen02_omp8/summary.json",
+      "sha256": "cd4feb070ab102a65cdb43afbd39a4625d8d939ac10fa20ddd1a6d03598351e7"
+    },
+    "source": {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/summary.json",
+      "sha256": "cbdd9d3519915569c7a105e8734a9ab82a2fcb9bc6af1fc29e6c73304b8b65b1"
+    },
+    "worker_complete": {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/worker_complete.json",
+      "sha256": "8ef1de67f5321aa5bbef8148dc9dd6bb1e99fbea69cba50a48c107458d97fbaa"
+    }
+  },
+  "checks": {
+    "all_declared_input_code_hashes_rechecked": true,
+    "confirmed_original_omp_summaries_verified": true,
+    "final_verdict_cave_validate_outcome_binding_pass": true,
+    "frozen_coverage_scene_row_rebuilt": true,
+    "omp1_omp8_combined_direct_build_source_code_binding": true,
+    "original_protocol_seal_176_bindings_and_old_18_python_unchanged": true,
+    "registered_amendment_load_pass": true,
+    "second_build_terminal_complete_and_exact_budget_contract": true,
+    "source_direct_second_build_and_contract_binding": true,
+    "source_original_segment_camera_cache_completion_and_fixed_resource_limits": true
+  },
+  "confirmed_query_count": 66,
+  "created_at_utc": "2026-09-06T16:10:18.134532+00:00",
+  "executed_validation_code_sha256": {
+    "coverage_report.py": "80ca9bce6b4d37736799bc4e3a271dcabc7dfdd866a48be03eb11ef68a9486e2",
+    "final_gate_amendment.py": "121e88a1fbb96534a7aca884b184f23a13e879f44d7a887f49039790fdea5ba5",
+    "final_gate_verdict.py": "9407ae9eb53de58a652e66113daf20d2ba4d1a9460726a79ae8c5f2c1efb8a3d"
+  },
+  "hash_verification": {
+    "additional_bytes_streamed": 1124117912,
+    "all_unique_bindings_canonical_map_sha256": "959c64526728b8abf0c84f66c9c56339d4bed18f93510e9112440a177f13f804",
+    "changed_files": [],
+    "conflicting_hash_bindings": 0,
+    "previously_rehashed_by_load_amendment": 248,
+    "unique_bound_files": 586
+  },
+  "preregistration_seal_sha256": "f72e5e09cfd4bcc0454ef7dfe9078a2d914237c1e11c9468803ad3fd17f36411",
+  "protocol_sha256": "9f8ec007632e763383d87ad544d4be2d0069bc506a89d3f38734e3c1bb6d2ae1",
+  "schema": "cave-final-gate-chain-audit-v1",
+  "scope": {
+    "forest_b_retry_outcome_read_or_substituted": false,
+    "geometry_or_pixel_claims_recomputed": false,
+    "images_rendered": 0,
+    "mountain_original_completed_evidence_reused_and_reverified": true,
+    "native_queries_executed": 0,
+    "old_forest_b_stop_only_read_as_registered_amendment_provenance": true,
+    "pixel_and_geometry_evidence": "Inherited from original completed OMP1 and confirmed OMP8 hash-bound receipts; no re-raster or mesh audit in this chain check.",
+    "quality_improvement_established": false,
+    "three_segment_final_verdict_generated": false
+  },
+  "segment_id": "cave",
+  "status": "PASS_CAVE_FINAL_OUTCOME_CHAIN_ONLY",
+  "verified_hash_maps": {
+    "build.input_sha256": {
+      "canonical_map_sha256": "b7c127b18c980ef3ea6730f4eb56589a9bb3ef1a3475629c187180e4ae1fd3f7",
+      "entries": 250
+    },
+    "combined.input_and_code_sha256": {
+      "canonical_map_sha256": "b47d2535f121922076ef06bd0c0448b162dc230ae9aa103502705a40a4fcec84",
+      "entries": 511
+    },
+    "omp1.input_and_code_sha256": {
+      "canonical_map_sha256": "b47d2535f121922076ef06bd0c0448b162dc230ae9aa103502705a40a4fcec84",
+      "entries": 511
+    },
+    "omp8.input_and_code_sha256": {
+      "canonical_map_sha256": "efa2b42cf0daa0bab148c3084060cf51935a2651385229a0d16dd88c8738ce56",
+      "entries": 581
+    },
+    "source.amendment_input_sha256": {
+      "canonical_map_sha256": "10efb873edb6feeec12d443acbac3c0bbca0a1cae8d2eb5d03d6f37f29d60312",
+      "entries": 254
+    },
+    "source.cache_completion_provenance_sha256": {
+      "canonical_map_sha256": "7acac77f86e72543f87a08ec7f1b8e899adbd0ae5918101d9c2167f3f60ac3be",
+      "entries": 2
+    },
+    "source.executed_sources_sha256": {
+      "canonical_map_sha256": "61e6e536e4542831ffb16b85eba20192e1392762389dffb6ddebb372c41e1c21",
+      "entries": 151
+    }
+  }
+}

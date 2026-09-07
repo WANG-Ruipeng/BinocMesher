@@ -1,0 +1,18 @@
+{
+  "schema": "forest-native-identity-scope-correction-v1",
+  "supersedes_admission_interpretation_only": true,
+  "immutable_summary_sha256": "40997b1fa316e8ffecd5ad931c24eb89a887b0e974b8e4c6ad86af2c5e27abff",
+  "immutable_events_index_sha256": "616080c72c742285c3913bded20dae65a3f33e8c1127dd822edcd497d18d8e85",
+  "status": "INVALID_NATIVE_IDENTITY_SEMANTICS_NOT_A_REAL_ADMISSION_RATE",
+  "policy_admission_rate": null,
+  "canonical_event_denominator": 131,
+  "valid_source_policy_rejections": 27,
+  "native_events_unresolved": 104,
+  "reason": "bucket_sort subtracts each ordered VID field minimum in place. The old observer exports normalized merger keys after sorting, not original effective SourceVIDs. Therefore 103 boundary identity lookup failures cannot be counted as method rejection. The remaining native rejection is also withheld pending correctly bound identity re-evaluation.",
+  "retained_valid_evidence": [
+    "All five ordinary mesh array hashes are observer-off/on identical and match frozen-library ordinary receipts.",
+    "Original cache inputs are unchanged; private cache copy was removed.",
+    "The independently verified attempt01 source-policy witnesses remain valid."
+  ],
+  "required_followup": "Observer-only restoration of per-element, per-query, per-field offsets; explicit identity encoding ABI; unchanged ordinary-array regression; fresh native campaign. Do not overwrite the original failed-attempt artifacts."
+}

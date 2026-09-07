@@ -1,0 +1,845 @@
+{
+  "schema": "independent-omp1-visibility-buffer-receipt-audit-v1",
+  "status": "PASS_OMP1_VISIBILITY_RECEIPT_AUDIT_NOT_NEW_RASTER",
+  "recorded_utc": "2026-09-06T13:17:05.371087+00:00",
+  "segment_id": "mountain",
+  "screen_attempt": "screen02_omp1",
+  "scope": "Independent JSON and image-file hash aggregation; recorded baseline/combined buffer hashes are compared, but transient raw raster buffers are not regenerated or independently rehashed.",
+  "omp_scope": "OMP1_ONLY; this report does not assert OMP8 confirmation.",
+  "input_artifacts": [
+    {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/screen02_omp1/summary.json",
+      "sha256": "fab8822c32eb3afb3a356362a53644554f99f1f5a3b0bec4409d9c7e799beba2",
+      "bytes": 108486
+    },
+    {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/source01/summary.json",
+      "sha256": "3a613ce05ddce52694ab73efcaeb0b2f2254d5e9a12f825fe577586925467ceb",
+      "bytes": 28515
+    },
+    {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/build01/original_render_camera.json",
+      "sha256": "818fea57aaabc315ced0073d4b4513ddaea163f27e53a5ba732e9f0c9d126328",
+      "bytes": 45398
+    },
+    {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/screen02_omp1/certified_events.json",
+      "sha256": "75276420f22297b5ca3244a88cc7cc983646471deed824910e3b691779968f16",
+      "bytes": 6973886
+    },
+    {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/screen02_omp1/support_graph.json",
+      "sha256": "ba7e8d534c2477a2b1eecca58acdcdfd0f1c75373146e342db0bd0646db75b18",
+      "bytes": 79203
+    }
+  ],
+  "input_json_sha_unchanged_during_audit": true,
+  "source_summary_sha256": "3a613ce05ddce52694ab73efcaeb0b2f2254d5e9a12f825fe577586925467ceb",
+  "actual_original_image_camera_sha256": "818fea57aaabc315ced0073d4b4513ddaea163f27e53a5ba732e9f0c9d126328",
+  "image_camera_role": "ORIGINAL_SCENE_RENDER_CAMERA_NOT_RELAXED_LOD_CAMERA",
+  "counts": {
+    "canonical_events": 46,
+    "exact_roots_excluded_from_visibility": 2,
+    "natural_frames_in_sequence": 64,
+    "active_natural_frames_audited": 16,
+    "event_natural_cases": 368,
+    "jointly_admitted_event_natural_cases": 264,
+    "component_natural_cases": 280,
+    "image_files_hashed": 64,
+    "recorded_buffer_hash_pairs_compared": 96,
+    "recorded_buffer_hash_pair_mismatches": 0,
+    "unknown_support_visibility_events": 0,
+    "visible_candidate_events": 0,
+    "visible_admitted_source_events": 0,
+    "visible_replacement_events": 0,
+    "visible_source_pixels_across_all_event_rows": 0,
+    "actual_replacement_pixels_across_all_event_rows": 0,
+    "qualifying_components": 0,
+    "visible_source_admission_rate": null,
+    "visible_artifact_impact_coverage": null
+  },
+  "event_visibility_category_counts": {
+    "NO_ISOLATED_PIXEL_COVERAGE": 366,
+    "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED": 2
+  },
+  "event_domain_kind_counts": {
+    "FIXED_SOURCE_AND_REPLACEMENT": 368
+  },
+  "foreground_check": {
+    "common_foreground_pixels_min": 374466,
+    "common_foreground_pixels_max": 411795,
+    "all_sixteen_frames_nonempty": true,
+    "all_full_frame_reported_depth_normal_silhouette_differences_zero": true,
+    "scope": "Nonempty full-scene foreground is confirmed by bound metric receipts; no new pixel decoding or rasterization."
+  },
+  "nonzero_isolated_support_cases": [
+    {
+      "event_id": "element=0;role=temporal_neighbour;face=41543:0|547281:0|547339:0|547936:0",
+      "frame": 21,
+      "isolated_pixels": 4,
+      "visible_source_pixels": 0,
+      "visibility": "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED",
+      "jointly_admitted": false
+    },
+    {
+      "event_id": "element=0;role=temporal_neighbour;face=41543:0|547281:0|547339:0|547936:0",
+      "frame": 22,
+      "isolated_pixels": 1,
+      "visible_source_pixels": 0,
+      "visibility": "OCCLUDED_OR_DEPTH_TIE_NOT_SELECTED",
+      "jointly_admitted": false
+    }
+  ],
+  "rows": [
+    {
+      "query": {
+        "absolute_frame_number": 21,
+        "evaluation_tau": "44678397528431/35184372088832",
+        "frame_index_zero_based": 20,
+        "frame_number": 21,
+        "global_camera_time_hex": "0x1.b555555555555p-1",
+        "key": "frame_0021",
+        "kind": "natural",
+        "physical_time_hex": "0x1.aaaaaaaaaaaaap-1",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0021.json",
+        "sha256": "4de93405bbab71cc2299067055190272051dfe32f5022bee92202c4ef49d953e"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 374466,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0021-depth_pair.png",
+          "sha256": "433d0a1f84aa36c11ec737589ced4d918e860da0ea174bd2a472d995bed620db",
+          "bytes": 44132
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0021-normal_pair.png",
+          "sha256": "b51062f66ca4cab56aa612de1adeb09af3934be5143e65e67d4647a6f4e707b1",
+          "bytes": 717324
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0021-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0021-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 22,
+        "evaluation_tau": "6004776627821127/4503599627370496",
+        "frame_index_zero_based": 21,
+        "frame_number": 22,
+        "global_camera_time_hex": "0x1.caaaaaaaaaaabp-1",
+        "key": "frame_0022",
+        "kind": "natural",
+        "physical_time_hex": "0x1.c000000000000p-1",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0022.json",
+        "sha256": "5e6f3c44d148835b58f6c4ccd18d1f47922c94af5f656dfdf0e76f5636c00a74"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 375616,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0022-depth_pair.png",
+          "sha256": "4ec85f3a456a99673213277d58e8725e563b493bc06f7d7970199e0340dd8488",
+          "bytes": 44145
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0022-normal_pair.png",
+          "sha256": "3f179ed569dd730bf1c2a17686cdbc4850fd9952f6ade5431c9149c6744ffd55",
+          "bytes": 716031
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0022-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0022-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 23,
+        "evaluation_tau": "6290718372003085/4503599627370496",
+        "frame_index_zero_based": 22,
+        "frame_number": 23,
+        "global_camera_time_hex": "0x1.e000000000000p-1",
+        "key": "frame_0023",
+        "kind": "natural",
+        "physical_time_hex": "0x1.d555555555555p-1",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0023.json",
+        "sha256": "e0fac5f746663bafcb02de42a1600d1266734342154cbd41887691c98919f02a"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 376797,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0023-depth_pair.png",
+          "sha256": "7caf1fa259f8ea5748ce185eadaf7706b437ab1fe10672bbc972db87ffeea0a2",
+          "bytes": 44483
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0023-normal_pair.png",
+          "sha256": "8588493b7a3d3a79009134ecf25c737ec5a611fc0b0a6fe4f878ab79ad9b6a3c",
+          "bytes": 716093
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0023-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0023-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 24,
+        "evaluation_tau": "6576660116185043/4503599627370496",
+        "frame_index_zero_based": 23,
+        "frame_number": 24,
+        "global_camera_time_hex": "0x1.f555555555555p-1",
+        "key": "frame_0024",
+        "kind": "natural",
+        "physical_time_hex": "0x1.eaaaaaaaaaaaap-1",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0024.json",
+        "sha256": "0b6060a1a9ac6d84cfd24e6d5a65c3fb1e8acd22ed2f04e8e33e11715fc0c21e"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 378067,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0024-depth_pair.png",
+          "sha256": "a6d180c5e46eb1f330bc650a67f87022a0710cd506568e1b259a3333dca006e2",
+          "bytes": 45309
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0024-normal_pair.png",
+          "sha256": "4bcf1b53b65c879eef476dcdc8e15386ce30df1a16f4a2494d8d4f50c154fa0b",
+          "bytes": 718116
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0024-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0024-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 25,
+        "evaluation_tau": "6862601860367001/4503599627370496",
+        "frame_index_zero_based": 24,
+        "frame_number": 25,
+        "global_camera_time_hex": "0x1.0555555555555p+0",
+        "key": "frame_0025",
+        "kind": "natural",
+        "physical_time_hex": "0x1.fffffffffffffp-1",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0025.json",
+        "sha256": "cfe237d27df0fb9ee8296c8f7dfd35a7133db53290a1741cb6a39eddc93fa8cf"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 379365,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0025-depth_pair.png",
+          "sha256": "6948145e5b8c8a94bb913503e75954e2f100e83681c97b46f269c611153efe44",
+          "bytes": 44494
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0025-normal_pair.png",
+          "sha256": "1ec30c329677af82a9f62dd70c17d2f803bf60d3c6dc4e05bea1c3010c5db9d4",
+          "bytes": 719389
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0025-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0025-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 26,
+        "evaluation_tau": "7148543604548961/4503599627370496",
+        "frame_index_zero_based": 25,
+        "frame_number": 26,
+        "global_camera_time_hex": "0x1.1000000000000p+0",
+        "key": "frame_0026",
+        "kind": "natural",
+        "physical_time_hex": "0x1.0aaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0026.json",
+        "sha256": "3f63daf6b93198ddf648aea778c013592a9788bff1feac276002b4b51dee8a63"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 380683,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0026-depth_pair.png",
+          "sha256": "2afe9ed75e0066f2ea0db9cb972877c33afdff54efaa7e083690f277f5fd002d",
+          "bytes": 44786
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0026-normal_pair.png",
+          "sha256": "d2ccbdd30e2e7d3d7c55e70fb7c88ec2209111c8b2fee0e9ea7fb641a4b93693",
+          "bytes": 718289
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0026-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0026-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 27,
+        "evaluation_tau": "929310668591365/562949953421312",
+        "frame_index_zero_based": 26,
+        "frame_number": 27,
+        "global_camera_time_hex": "0x1.1aaaaaaaaaaabp+0",
+        "key": "frame_0027",
+        "kind": "natural",
+        "physical_time_hex": "0x1.1555555555556p+0",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0027.json",
+        "sha256": "543e63f6b6f7ee15d9ac48b0477801788c4c4358b9b2888ba159d4ab32864c70"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 382049,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0027-depth_pair.png",
+          "sha256": "56ed4a48431b5b07a3f187a456bda6fa6aa0a5c028f00febb68ccb3b8ebd33ec",
+          "bytes": 44949
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0027-normal_pair.png",
+          "sha256": "e4e6af1a3c744e48739fb1804d9aa6e8c9f6b5e46ef64f95bac45ab55d44108a",
+          "bytes": 717209
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0027-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0027-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 28,
+        "evaluation_tau": "7720427092912877/4503599627370496",
+        "frame_index_zero_based": 27,
+        "frame_number": 28,
+        "global_camera_time_hex": "0x1.2555555555555p+0",
+        "key": "frame_0028",
+        "kind": "natural",
+        "physical_time_hex": "0x1.2000000000000p+0",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0028.json",
+        "sha256": "069247a4276b9850a5da77a3ac4cd509703d737150f8c648c7b7b1d1a07e815a"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 383477,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0028-depth_pair.png",
+          "sha256": "b29cbdc15c6cec94a9637f531cd34180a2c36945d470336ae4ac9e0f1e16c455",
+          "bytes": 45108
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0028-normal_pair.png",
+          "sha256": "4cda5e9ed6dcbe9a704930f43d01256b61c36f0928f5a71a27e367747eab9c96",
+          "bytes": 716191
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0028-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0028-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 37,
+        "evaluation_tau": "5146951395275251/2251799813685248",
+        "frame_index_zero_based": 36,
+        "frame_number": 37,
+        "global_camera_time_hex": "0x1.8555555555555p+0",
+        "key": "frame_0037",
+        "kind": "natural",
+        "physical_time_hex": "0x1.8000000000000p+0",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0037.json",
+        "sha256": "fae2a9a1e05442ce09c9fb0b2bf2efcae44c588a0ab925583be64bc0cb22dee2"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 398065,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0037-depth_pair.png",
+          "sha256": "deb5cff85b51828aa2df01fdbc9baaf36ac681bf0fe994cb23996e02b26b11ad",
+          "bytes": 49295
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0037-normal_pair.png",
+          "sha256": "0e6c0eceb760d9f8f523002c5cbf6bdcfddfc459aa785357a2e2d8cf380f66c9",
+          "bytes": 717840
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0037-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0037-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 38,
+        "evaluation_tau": "5289922267366231/2251799813685248",
+        "frame_index_zero_based": 37,
+        "frame_number": 38,
+        "global_camera_time_hex": "0x1.9000000000000p+0",
+        "key": "frame_0038",
+        "kind": "natural",
+        "physical_time_hex": "0x1.8aaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0038.json",
+        "sha256": "45debdb597af53be36e8fa91d74d3ec54d2daefa5d9b68c315ea3be5078cf9bc"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 399867,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0038-depth_pair.png",
+          "sha256": "d634789fccc50983b972cdf689a1d658f78d6139ffde9584bc1ad919b004fec4",
+          "bytes": 48999
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0038-normal_pair.png",
+          "sha256": "e04225daa44eb909394501f190a4e7b2c4b079f02c028b3500e34dcb2b2f4ca7",
+          "bytes": 720225
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0038-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0038-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 39,
+        "evaluation_tau": "2716446569728605/1125899906842624",
+        "frame_index_zero_based": 38,
+        "frame_number": 39,
+        "global_camera_time_hex": "0x1.9aaaaaaaaaaabp+0",
+        "key": "frame_0039",
+        "kind": "natural",
+        "physical_time_hex": "0x1.9555555555556p+0",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0039.json",
+        "sha256": "a14f30f88ebf26fff926d9688c8ce7bf6636b54022e27270abf2ddfacde98132"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 401738,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0039-depth_pair.png",
+          "sha256": "8fdce6a20d9a4dd680911bf722e323a411396bb197dd77c489c738f74169ce54",
+          "bytes": 50307
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0039-normal_pair.png",
+          "sha256": "e67bf3bd888c6d205898682fb3f34aea5159a89593b2f28a500c880c84c53ca5",
+          "bytes": 721291
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0039-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0039-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 40,
+        "evaluation_tau": "5575864011548189/2251799813685248",
+        "frame_index_zero_based": 39,
+        "frame_number": 40,
+        "global_camera_time_hex": "0x1.a555555555555p+0",
+        "key": "frame_0040",
+        "kind": "natural",
+        "physical_time_hex": "0x1.a000000000000p+0",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0040.json",
+        "sha256": "019f4b61b44ff5b00da71f5bcf75d76646f012fdd88cce9f8c3171ef762d24d8"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 403716,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0040-depth_pair.png",
+          "sha256": "4729083cb8f3eca2e30e3cb85196010f07604a9f49973943c20a4d59e872bd5a",
+          "bytes": 50352
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0040-normal_pair.png",
+          "sha256": "046d53b12bf94bff8aa4aa74c55e7ef0c76e401069f2a37a071d387979fe1fc6",
+          "bytes": 722165
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0040-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0040-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 41,
+        "evaluation_tau": "44678397528431/17592186044416",
+        "frame_index_zero_based": 40,
+        "frame_number": 41,
+        "global_camera_time_hex": "0x1.b000000000000p+0",
+        "key": "frame_0041",
+        "kind": "natural",
+        "physical_time_hex": "0x1.aaaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0041.json",
+        "sha256": "5abea0a7d2545f93a21e94183eb3010e337204edf53ea82598bd20b5da43f9a9"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 405647,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0041-depth_pair.png",
+          "sha256": "e45ae60a49a87859763811914fa503aeeafbcfe5ee79e83ed3e5d737f1d23581",
+          "bytes": 50090
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0041-normal_pair.png",
+          "sha256": "e94c72459b88a72addd726cf3ec57dc7c1203ce0c43f70d54cc345cac349a1d4",
+          "bytes": 725267
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0041-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0041-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 42,
+        "evaluation_tau": "1465451438932537/562949953421312",
+        "frame_index_zero_based": 41,
+        "frame_number": 42,
+        "global_camera_time_hex": "0x1.baaaaaaaaaaabp+0",
+        "key": "frame_0042",
+        "kind": "natural",
+        "physical_time_hex": "0x1.b555555555556p+0",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0042.json",
+        "sha256": "f68f9bb18b5aa48da560e81d86e804a029e2a3e9b336fe1bdc428be27243e614"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 407659,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0042-depth_pair.png",
+          "sha256": "ecfb9cc7c692c6f8d0575710f65161e3d00cccff1fbba9250a56a22c646d33b1",
+          "bytes": 50349
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0042-normal_pair.png",
+          "sha256": "34bf92002d78b405feea8b53462c429a6f002fd626cfe755bc8c538799c11f7e",
+          "bytes": 726252
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0042-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0042-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 43,
+        "evaluation_tau": "6004776627821127/2251799813685248",
+        "frame_index_zero_based": 42,
+        "frame_number": 43,
+        "global_camera_time_hex": "0x1.c555555555555p+0",
+        "key": "frame_0043",
+        "kind": "natural",
+        "physical_time_hex": "0x1.c000000000000p+0",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0043.json",
+        "sha256": "398fcf6b9f2d3fdc36e73150c0fc19b8c6e61d1b0973a96807545529647b79ba"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 409748,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0043-depth_pair.png",
+          "sha256": "fcb81516b3ce4f8ea052073300ccce32431efa83d912a096bbd48f0cbe15e058",
+          "bytes": 49877
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0043-normal_pair.png",
+          "sha256": "29360ba361eb5736d280fa0b71d58e92a9f53829b84ff927ea09dd42c4647fde",
+          "bytes": 728257
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0043-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0043-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    },
+    {
+      "query": {
+        "absolute_frame_number": 44,
+        "evaluation_tau": "3073873749956053/1125899906842624",
+        "frame_index_zero_based": 43,
+        "frame_number": 44,
+        "global_camera_time_hex": "0x1.d000000000000p+0",
+        "key": "frame_0044",
+        "kind": "natural",
+        "physical_time_hex": "0x1.caaaaaaaaaaabp+0",
+        "time_mode": "physical"
+      },
+      "artifact": {
+        "path": "visibility/frame_0044.json",
+        "sha256": "d66449873040228bcd5a2a49d7c3969d2b62939b51b4647ebe02be0e6ec911a0"
+      },
+      "event_natural_cases": 23,
+      "common_foreground_pixels": 411795,
+      "all_six_recorded_buffer_hash_pairs_equal": true,
+      "images": [
+        {
+          "kind": "depth_pair",
+          "path": "images/frame_0044-depth_pair.png",
+          "sha256": "4f7a1f15a8cc93d9d8e9782a9b51342881d47669eb54055bfaa82633ff271d38",
+          "bytes": 49963
+        },
+        {
+          "kind": "normal_pair",
+          "path": "images/frame_0044-normal_pair.png",
+          "sha256": "898053ee359950836608fe6e850f490d0e30fa5b66a627a6ceeeb2a0c2091a8d",
+          "bytes": 728737
+        },
+        {
+          "kind": "depth_delta",
+          "path": "images/frame_0044-depth_delta.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        },
+        {
+          "kind": "component_ids",
+          "path": "images/frame_0044-component_ids.png",
+          "sha256": "3a693f9f9c1c0e9b7f64c92339813a291b629eddc90b3a2293e5b480cb90b66d",
+          "bytes": 1586
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "NO_ISOLATED_PIXEL_COVERAGE is not an independently certified out-of-frustum classification; clipping, subpixel coverage and other no-hit cases are not separated here.",
+    "The two nonzero-isolated but zero-visible cases remain occluded-or-exact-depth-tie, without distinguishing those causes.",
+    "Zero baseline-relative buffer differences establish no image change in these sampled buffers, not improved quality, post-displacement safety or all-time behavior.",
+    "No native mesher calls, rendering, source-stage execution, alternate cameras, quality-based selection or OMP8 verification were performed."
+  ],
+  "recorded_buffer_fields_checked": [
+    "depth",
+    "normals",
+    "mask",
+    "element_id",
+    "face_id",
+    "label_id"
+  ]
+}

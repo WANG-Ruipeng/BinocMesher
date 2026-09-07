@@ -1,0 +1,3228 @@
+{
+  "all_events_preserved_shared_baseline": true,
+  "baseline": [
+    {
+      "faces": 12193,
+      "sha256": {
+        "faces": "1883225646deff6374ea7d881879f81a54f3610837e865031637eb9b4659d589",
+        "tags": "e727d07985ff8ea76eab1ffb569b853ef72b93248a2fae6bf9b91f47c0b70c47",
+        "vertices": "77510e8e9610f183f4f811e160182c549c68231c5445cb837255a212957ab356"
+      },
+      "vertices": 6031
+    },
+    {
+      "faces": 715985,
+      "sha256": {
+        "faces": "b45de18accb6189d4782d7666b4ee7bec7c4871c24f81c9d04771c455e75c0ca",
+        "tags": "a9b020ab77187599966f6e1a9b7d22b119640e03bf1469aa5fc6366033b5b9ed",
+        "vertices": "7eb6f52710a9817f70c99fe59966ea735e88ea38b677c2679c6a58fb7cdc01ac"
+      },
+      "vertices": 358013
+    },
+    {
+      "faces": 1395257,
+      "sha256": {
+        "faces": "8034ed3ddf44f3af6d8e6aaee382d7f4f738ce59ec1f02a38feb808837fdd0ca",
+        "tags": "a746db867d1f1ce8e571dc73ff877cb644ea31eee67c716df6bf99edb14b71f6",
+        "vertices": "f9db9a8f456f7fab9bb275b085f8be59e8a1623a7bf91b8dd4b3b4b280a4ecfe"
+      },
+      "vertices": 674292
+    },
+    {
+      "faces": 74520,
+      "sha256": {
+        "faces": "5fb1ea9284733a84db34da0530f546a36347a5d2e48bac645e89bc644fa9d0fc",
+        "tags": "ed698a93e3bc2a942d8e4afc2d914b0e57212eeebb996fa530d434d801c66e67",
+        "vertices": "16b96e1b585d7b21d36e0f9fd25d950739897b9b4f3860b66a194eef31416e20"
+      },
+      "vertices": 36953
+    },
+    {
+      "faces": 500484,
+      "sha256": {
+        "faces": "bef38ae01f70bcc068a925f999b35f872c6c45c2b0a2a6e68bb21641c8ab6eee",
+        "tags": "a910dc263281275b80563b29a3b6b32287eaa9d35b5fb160e14b8918639cf3cd",
+        "vertices": "006163f23dde741d291911cad7325864d6559f2ca0c9b28ce73d6e2dffa457a7"
+      },
+      "vertices": 237016
+    }
+  ],
+  "counts": [
+    {
+      "element": 0,
+      "faces": 12193,
+      "identity_vertices": 6031,
+      "raw_owners": 12193,
+      "vertices": 6031
+    },
+    {
+      "element": 1,
+      "faces": 715985,
+      "identity_vertices": 358013,
+      "raw_owners": 741261,
+      "vertices": 358013
+    },
+    {
+      "element": 2,
+      "faces": 1395257,
+      "identity_vertices": 674292,
+      "raw_owners": 1453651,
+      "vertices": 674292
+    },
+    {
+      "element": 3,
+      "faces": 74520,
+      "identity_vertices": 36953,
+      "raw_owners": 78776,
+      "vertices": 36953
+    },
+    {
+      "element": 4,
+      "faces": 500484,
+      "identity_vertices": 237016,
+      "raw_owners": 537558,
+      "vertices": 237016
+    }
+  ],
+  "events": [
+    {
+      "case": {
+        "actual_array_receipt": {
+          "all_retained_face_rows_byte_identical": true,
+          "array_bytes_transient": 18616236,
+          "element": 1,
+          "faces_after": 715987,
+          "faces_before": 715985,
+          "old_vertices_and_tags_byte_identical": true,
+          "other_elements_unchanged_by_object_identity": true,
+          "output": {
+            "faces": 715987,
+            "sha256": {
+              "faces": "a1038070cf4ba2fdf7841d2a1ee618360ba572726718772fb8b712a805115535",
+              "tags": "e52c12f32e3ff680a76fa04d9f8487c7c38917a762cc281e2ff68321134417b3",
+              "vertices": "dbf9c1e8650246283db517c024e931313a4d25d0a2069e89bc13f1405467a3e9"
+            },
+            "vertices": 358014
+          },
+          "status": "ACTUAL_ARRAYS_CONSTRUCTED_NOT_PUBLISHED",
+          "vertices_after": 358014,
+          "vertices_before": 358013
+        },
+        "audit": {
+          "boundary_actual_ids": [
+            22504,
+            41403,
+            41405,
+            41404
+          ],
+          "certificate_counts": {
+            "EXACT_FOUR_FAN_TRIANGLE_CONTACT": 1,
+            "RELATIVE_EDGE_PLANE": 18,
+            "RELATIVE_EMPTY_PLANE": 8,
+            "STRICT_ACTUAL_AABB": 2698410
+          },
+          "consumed_owners": [
+            [
+              1,
+              0,
+              0,
+              103639,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              103639,
+              1,
+              0,
+              2
+            ]
+          ],
+          "continuous_window_admitted": false,
+          "element": 1,
+          "exact_contact_arithmetic_work": 1476,
+          "exact_contact_fallback_enabled": true,
+          "expected_retained_faces": 2698437,
+          "full_exterior": true,
+          "interface_star_faces": 20,
+          "local_exact": {
+            "boundary": [
+              [
+                -161.4013671875,
+                70.6298828125,
+                47.5341796875
+              ],
+              [
+                -160.7635498046875,
+                70.75616455078125,
+                47.68923568725586
+              ],
+              [
+                -161.0992431640625,
+                70.9320068359375,
+                47.7691650390625
+              ],
+              [
+                -161.33901977539062,
+                70.94799041748047,
+                47.753177642822266
+              ]
+            ],
+            "center": [
+              -161.13641357421875,
+              70.77335357666016,
+              47.65926742553711
+            ],
+            "inward": [
+              "62330009/1073741824",
+              "32102183/536870912",
+              "165938025/4294967296",
+              "323577375/4294967296"
+            ],
+            "turns": [
+              "20742975/134217728",
+              "154339/4194304",
+              "82969425/1073741824",
+              "209402441/1073741824"
+            ]
+          },
+          "native_owner_element_remapped": false,
+          "proposal_only": true,
+          "reason": "Actual identity, local graph, interface and every retained face certified.",
+          "replaced_face_rows": [
+            48567,
+            48569
+          ],
+          "retained_faces_checked": 2698437,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "fb1787b29c5b03a1a02c137e725c23a16bfc71d266d51988807ba7f9504ff350",
+          "source_vid_encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+          "source_vid_encoding_version": 2,
+          "source_vid_shifts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5104,
+              0,
+              891,
+              0
+            ],
+            [
+              368712,
+              0,
+              8030,
+              0
+            ],
+            [
+              1059851,
+              0,
+              18157,
+              0
+            ],
+            [
+              1097044,
+              0,
+              19344,
+              0
+            ]
+          ],
+          "source_vid_shifts_applied_by_python": false,
+          "stage": "actual_five_element_exterior",
+          "status": "PASS",
+          "tau": "6862601860367001/4503599627370496",
+          "wall_seconds": 0.6382562830000325
+        },
+        "check_wall_seconds": 0.6527133920000097,
+        "plan": {
+          "baseline_face_count": 715985,
+          "baseline_vertex_count": 358013,
+          "boundary_actual_ids": [
+            22504,
+            41403,
+            41405,
+            41404
+          ],
+          "center": [
+            -161.13641357421875,
+            70.77335357666016,
+            47.65926742553711
+          ],
+          "consumed_owners": [
+            [
+              1,
+              0,
+              0,
+              103639,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              103639,
+              1,
+              0,
+              2
+            ]
+          ],
+          "element": 1,
+          "fan_faces": [
+            [
+              22504,
+              41403,
+              358013
+            ],
+            [
+              41403,
+              41405,
+              358013
+            ],
+            [
+              41405,
+              41404,
+              358013
+            ],
+            [
+              41404,
+              22504,
+              358013
+            ]
+          ],
+          "new_center_id": 358013,
+          "outside_arrays_policy": "Original vertices/tags unchanged; replace two face rows and append two.",
+          "removed_face_rows": [
+            48567,
+            48569
+          ],
+          "source_digest": "fb1787b29c5b03a1a02c137e725c23a16bfc71d266d51988807ba7f9504ff350"
+        },
+        "query": {
+          "active": true,
+          "evaluation_tau": "6862601860367001/4503599627370496",
+          "frame_index_zero_based": 24,
+          "frame_number": 25,
+          "global_camera_time_hex": "0x1.0555555555555p+0",
+          "key": "frame_0025",
+          "kind": "natural",
+          "physical_time_hex": "0x1.fffffffffffffp-1",
+          "time_mode": "physical"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=17683:0|37773:0|37797:0|37791:0",
+      "status": "PASS",
+      "wall_seconds": 0.6527133920000097
+    },
+    {
+      "case": {
+        "actual_array_receipt": {
+          "all_retained_face_rows_byte_identical": true,
+          "array_bytes_transient": 18616236,
+          "element": 1,
+          "faces_after": 715987,
+          "faces_before": 715985,
+          "old_vertices_and_tags_byte_identical": true,
+          "other_elements_unchanged_by_object_identity": true,
+          "output": {
+            "faces": 715987,
+            "sha256": {
+              "faces": "ba0624ef249fb5e6a96883e8e0589bac7917365f47d0e8ee4371d3c1d4b5123f",
+              "tags": "e52c12f32e3ff680a76fa04d9f8487c7c38917a762cc281e2ff68321134417b3",
+              "vertices": "dc09f38491fd3c15e5a60aeb291d5c631cce8dec9bb46d323f8266bba1de5bce"
+            },
+            "vertices": 358014
+          },
+          "status": "ACTUAL_ARRAYS_CONSTRUCTED_NOT_PUBLISHED",
+          "vertices_after": 358014,
+          "vertices_before": 358013
+        },
+        "audit": {
+          "boundary_actual_ids": [
+            22792,
+            59506,
+            59508,
+            59507
+          ],
+          "certificate_counts": {
+            "RELATIVE_EDGE_PLANE": 23,
+            "RELATIVE_EMPTY_PLANE": 68,
+            "STRICT_ACTUAL_AABB": 2698346
+          },
+          "consumed_owners": [
+            [
+              1,
+              0,
+              0,
+              204925,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              204925,
+              1,
+              0,
+              2
+            ]
+          ],
+          "continuous_window_admitted": false,
+          "element": 1,
+          "exact_contact_arithmetic_work": 0,
+          "exact_contact_fallback_enabled": true,
+          "expected_retained_faces": 2698437,
+          "full_exterior": true,
+          "interface_star_faces": 25,
+          "local_exact": {
+            "boundary": [
+              [
+                -119.10400390625,
+                46.19140625,
+                28.936767578125
+              ],
+              [
+                -117.7979965209961,
+                47.340755462646484,
+                29.74722671508789
+              ],
+              [
+                -117.8619384765625,
+                47.5006103515625,
+                29.8431396484375
+              ],
+              [
+                -118.11770629882812,
+                47.5325813293457,
+                29.8431396484375
+              ]
+            ],
+            "center": [
+              -118.29313659667969,
+              47.081398010253906,
+              29.54941177368164
+            ],
+            "inward": [
+              "1978829799/8589934592",
+              "822352101/8589934592",
+              "2078881907/17179869184",
+              "3602932693/17179869184"
+            ],
+            "turns": [
+              "606155825/2147483648",
+              "1334582059/34359738368",
+              "804366475/2147483648",
+              "21233774741/34359738368"
+            ]
+          },
+          "native_owner_element_remapped": false,
+          "proposal_only": true,
+          "reason": "Actual identity, local graph, interface and every retained face certified.",
+          "replaced_face_rows": [
+            49512,
+            49514
+          ],
+          "retained_faces_checked": 2698437,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "80cbf76c8544c51870aa0c53239c9abd642618f06434186044ff7d4eaa576b10",
+          "source_vid_encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+          "source_vid_encoding_version": 2,
+          "source_vid_shifts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5104,
+              0,
+              891,
+              0
+            ],
+            [
+              368712,
+              0,
+              8030,
+              0
+            ],
+            [
+              1059851,
+              0,
+              18157,
+              0
+            ],
+            [
+              1097044,
+              0,
+              19344,
+              0
+            ]
+          ],
+          "source_vid_shifts_applied_by_python": false,
+          "stage": "actual_five_element_exterior",
+          "status": "PASS",
+          "tau": "6862601860367001/4503599627370496",
+          "wall_seconds": 0.46489710399998785
+        },
+        "check_wall_seconds": 0.4796809369998982,
+        "plan": {
+          "baseline_face_count": 715985,
+          "baseline_vertex_count": 358013,
+          "boundary_actual_ids": [
+            22792,
+            59506,
+            59508,
+            59507
+          ],
+          "center": [
+            -118.29313659667969,
+            47.081398010253906,
+            29.54941177368164
+          ],
+          "consumed_owners": [
+            [
+              1,
+              0,
+              0,
+              204925,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              204925,
+              1,
+              0,
+              2
+            ]
+          ],
+          "element": 1,
+          "fan_faces": [
+            [
+              22792,
+              59506,
+              358013
+            ],
+            [
+              59506,
+              59508,
+              358013
+            ],
+            [
+              59508,
+              59507,
+              358013
+            ],
+            [
+              59507,
+              22792,
+              358013
+            ]
+          ],
+          "new_center_id": 358013,
+          "outside_arrays_policy": "Original vertices/tags unchanged; replace two face rows and append two.",
+          "removed_face_rows": [
+            49512,
+            49514
+          ],
+          "source_digest": "80cbf76c8544c51870aa0c53239c9abd642618f06434186044ff7d4eaa576b10"
+        },
+        "query": {
+          "active": true,
+          "evaluation_tau": "6862601860367001/4503599627370496",
+          "frame_index_zero_based": 24,
+          "frame_number": 25,
+          "global_camera_time_hex": "0x1.0555555555555p+0",
+          "key": "frame_0025",
+          "kind": "natural",
+          "physical_time_hex": "0x1.fffffffffffffp-1",
+          "time_mode": "physical"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=17888:0|56019:0|56153:0|56150:0",
+      "status": "PASS",
+      "wall_seconds": 0.4796809369998982
+    },
+    {
+      "case": {
+        "actual_array_receipt": {
+          "all_retained_face_rows_byte_identical": true,
+          "array_bytes_transient": 18616236,
+          "element": 1,
+          "faces_after": 715987,
+          "faces_before": 715985,
+          "old_vertices_and_tags_byte_identical": true,
+          "other_elements_unchanged_by_object_identity": true,
+          "output": {
+            "faces": 715987,
+            "sha256": {
+              "faces": "a4c578c4c385388e4203637ee6ed20c9afec2dde3491eb4a3034ed3bda36078b",
+              "tags": "e52c12f32e3ff680a76fa04d9f8487c7c38917a762cc281e2ff68321134417b3",
+              "vertices": "a99da4c1fc0d5f4d2070e113afa60ed57a18a7cf749a2dbc4baa1f255f777892"
+            },
+            "vertices": 358014
+          },
+          "status": "ACTUAL_ARRAYS_CONSTRUCTED_NOT_PUBLISHED",
+          "vertices_after": 358014,
+          "vertices_before": 358013
+        },
+        "audit": {
+          "boundary_actual_ids": [
+            25548,
+            301478,
+            25550,
+            25551
+          ],
+          "certificate_counts": {
+            "RELATIVE_EDGE_PLANE": 18,
+            "RELATIVE_EMPTY_PLANE": 9,
+            "STRICT_ACTUAL_AABB": 2698410
+          },
+          "consumed_owners": [
+            [
+              1,
+              0,
+              0,
+              34473,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              34473,
+              1,
+              0,
+              2
+            ]
+          ],
+          "continuous_window_admitted": false,
+          "element": 1,
+          "exact_contact_arithmetic_work": 0,
+          "exact_contact_fallback_enabled": true,
+          "expected_retained_faces": 2698437,
+          "full_exterior": true,
+          "interface_star_faces": 20,
+          "local_exact": {
+            "boundary": [
+              [
+                -33.71003723144531,
+                123.76531982421875,
+                20.282272338867188
+              ],
+              [
+                -35.04638671875,
+                119.64111328125,
+                20.00732421875
+              ],
+              [
+                -29.873497009277344,
+                121.84705352783203,
+                20.154386520385742
+              ],
+              [
+                -31.15234375,
+                125.68359375,
+                20.41015625
+              ]
+            ],
+            "center": [
+              -32.82600784301758,
+              121.29557037353516,
+              20.11762046813965
+            ],
+            "inward": [
+              "59668848491/8589934592",
+              "125766982743/34359738368",
+              "413440046057/34359738368",
+              "68828333509/8589934592"
+            ],
+            "turns": [
+              "157935898641/8589934592",
+              "1521160575/67108864",
+              "105363040559/8589934592",
+              "1071724775/134217728"
+            ]
+          },
+          "native_owner_element_remapped": false,
+          "proposal_only": true,
+          "reason": "Actual identity, local graph, interface and every retained face certified.",
+          "replaced_face_rows": [
+            62600,
+            62601
+          ],
+          "retained_faces_checked": 2698437,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "90984e38b3e0a394e3c37d79c5c279109e5a1a2012ad96c96337529d7b94a627",
+          "source_vid_encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+          "source_vid_encoding_version": 2,
+          "source_vid_shifts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5104,
+              0,
+              891,
+              0
+            ],
+            [
+              368712,
+              0,
+              8030,
+              0
+            ],
+            [
+              1059851,
+              0,
+              18157,
+              0
+            ],
+            [
+              1097044,
+              0,
+              19344,
+              0
+            ]
+          ],
+          "source_vid_shifts_applied_by_python": false,
+          "stage": "actual_five_element_exterior",
+          "status": "PASS",
+          "tau": "6862601860367001/4503599627370496",
+          "wall_seconds": 0.45616822499994214
+        },
+        "check_wall_seconds": 0.4710909880000145,
+        "plan": {
+          "baseline_face_count": 715985,
+          "baseline_vertex_count": 358013,
+          "boundary_actual_ids": [
+            25548,
+            301478,
+            25550,
+            25551
+          ],
+          "center": [
+            -32.82600784301758,
+            121.29557037353516,
+            20.11762046813965
+          ],
+          "consumed_owners": [
+            [
+              1,
+              0,
+              0,
+              34473,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              34473,
+              1,
+              0,
+              2
+            ]
+          ],
+          "element": 1,
+          "fan_faces": [
+            [
+              25548,
+              301478,
+              358013
+            ],
+            [
+              301478,
+              25550,
+              358013
+            ],
+            [
+              25550,
+              25551,
+              358013
+            ],
+            [
+              25551,
+              25548,
+              358013
+            ]
+          ],
+          "new_center_id": 358013,
+          "outside_arrays_policy": "Original vertices/tags unchanged; replace two face rows and append two.",
+          "removed_face_rows": [
+            62600,
+            62601
+          ],
+          "source_digest": "90984e38b3e0a394e3c37d79c5c279109e5a1a2012ad96c96337529d7b94a627"
+        },
+        "query": {
+          "active": true,
+          "evaluation_tau": "6862601860367001/4503599627370496",
+          "frame_index_zero_based": 24,
+          "frame_number": 25,
+          "global_camera_time_hex": "0x1.0555555555555p+0",
+          "key": "frame_0025",
+          "kind": "natural",
+          "physical_time_hex": "0x1.fffffffffffffp-1",
+          "time_mode": "physical"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=19248:0|19278:0|19268:0|310020:0",
+      "status": "PASS",
+      "wall_seconds": 0.4710909880000145
+    },
+    {
+      "case": {
+        "actual_array_receipt": {
+          "all_retained_face_rows_byte_identical": true,
+          "array_bytes_transient": 18616236,
+          "element": 1,
+          "faces_after": 715987,
+          "faces_before": 715985,
+          "old_vertices_and_tags_byte_identical": true,
+          "other_elements_unchanged_by_object_identity": true,
+          "output": {
+            "faces": 715987,
+            "sha256": {
+              "faces": "5b1aa90449ddbd25c4b100fbcc55f9d630ed58678be4d10da58adb0014d3463b",
+              "tags": "e52c12f32e3ff680a76fa04d9f8487c7c38917a762cc281e2ff68321134417b3",
+              "vertices": "911ed245d9037167b50f4d54939d76f3d28beb8e35384253c500ba7ecf5be537"
+            },
+            "vertices": 358014
+          },
+          "status": "ACTUAL_ARRAYS_CONSTRUCTED_NOT_PUBLISHED",
+          "vertices_after": 358014,
+          "vertices_before": 358013
+        },
+        "audit": {
+          "boundary_actual_ids": [
+            38732,
+            38741,
+            38740,
+            38742
+          ],
+          "certificate_counts": {
+            "RELATIVE_EDGE_PLANE": 19,
+            "RELATIVE_EMPTY_PLANE": 35,
+            "STRICT_ACTUAL_AABB": 2698383
+          },
+          "consumed_owners": [
+            [
+              1,
+              0,
+              0,
+              131032,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              131032,
+              1,
+              0,
+              2
+            ]
+          ],
+          "continuous_window_admitted": false,
+          "element": 1,
+          "exact_contact_arithmetic_work": 0,
+          "exact_contact_fallback_enabled": true,
+          "expected_retained_faces": 2698437,
+          "full_exterior": true,
+          "interface_star_faces": 21,
+          "local_exact": {
+            "boundary": [
+              [
+                -147.83935546875,
+                62.70751953125,
+                39.07470703125
+              ],
+              [
+                -147.1168212890625,
+                63.609092712402344,
+                38.723026275634766
+              ],
+              [
+                -147.100830078125,
+                63.848876953125,
+                38.739013671875
+              ],
+              [
+                -147.27667236328125,
+                63.76894760131836,
+                38.81894302368164
+              ]
+            ],
+            "center": [
+              -147.3941650390625,
+              63.38450241088867,
+              38.86130142211914
+            ],
+            "inward": [
+              "188487899/2147483648",
+              "135100751/2147483648",
+              "250012655/4294967296",
+              "393465345/4294967296"
+            ],
+            "turns": [
+              "85273925/536870912",
+              "43901053/1073741824",
+              "152115975/1073741824",
+              "69690693/268435456"
+            ]
+          },
+          "native_owner_element_remapped": false,
+          "proposal_only": true,
+          "reason": "Actual identity, local graph, interface and every retained face certified.",
+          "replaced_face_rows": [
+            88914,
+            88915
+          ],
+          "retained_faces_checked": 2698437,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "c9a6c2acc4c3a590800b5d272ab76e2bb0ff45a1ab185cab3ea7a4a6de136a7f",
+          "source_vid_encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+          "source_vid_encoding_version": 2,
+          "source_vid_shifts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5104,
+              0,
+              891,
+              0
+            ],
+            [
+              368712,
+              0,
+              8030,
+              0
+            ],
+            [
+              1059851,
+              0,
+              18157,
+              0
+            ],
+            [
+              1097044,
+              0,
+              19344,
+              0
+            ]
+          ],
+          "source_vid_shifts_applied_by_python": false,
+          "stage": "actual_five_element_exterior",
+          "status": "PASS",
+          "tau": "6862601860367001/4503599627370496",
+          "wall_seconds": 0.45509381600004417
+        },
+        "check_wall_seconds": 0.47007369599998583,
+        "plan": {
+          "baseline_face_count": 715985,
+          "baseline_vertex_count": 358013,
+          "boundary_actual_ids": [
+            38732,
+            38741,
+            38740,
+            38742
+          ],
+          "center": [
+            -147.3941650390625,
+            63.38450241088867,
+            38.86130142211914
+          ],
+          "consumed_owners": [
+            [
+              1,
+              0,
+              0,
+              131032,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              131032,
+              1,
+              0,
+              2
+            ]
+          ],
+          "element": 1,
+          "fan_faces": [
+            [
+              38732,
+              38741,
+              358013
+            ],
+            [
+              38741,
+              38740,
+              358013
+            ],
+            [
+              38740,
+              38742,
+              358013
+            ],
+            [
+              38742,
+              38732,
+              358013
+            ]
+          ],
+          "new_center_id": 358013,
+          "outside_arrays_policy": "Original vertices/tags unchanged; replace two face rows and append two.",
+          "removed_face_rows": [
+            88914,
+            88915
+          ],
+          "source_digest": "c9a6c2acc4c3a590800b5d272ab76e2bb0ff45a1ab185cab3ea7a4a6de136a7f"
+        },
+        "query": {
+          "active": true,
+          "evaluation_tau": "6862601860367001/4503599627370496",
+          "frame_index_zero_based": 24,
+          "frame_number": 25,
+          "global_camera_time_hex": "0x1.0555555555555p+0",
+          "key": "frame_0025",
+          "kind": "natural",
+          "physical_time_hex": "0x1.fffffffffffffp-1",
+          "time_mode": "physical"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=35234:0|35239:0|35236:0|35241:0",
+      "status": "PASS",
+      "wall_seconds": 0.47007369599998583
+    },
+    {
+      "case": {
+        "actual_array_receipt": {
+          "all_retained_face_rows_byte_identical": true,
+          "array_bytes_transient": 18616236,
+          "element": 1,
+          "faces_after": 715987,
+          "faces_before": 715985,
+          "old_vertices_and_tags_byte_identical": true,
+          "other_elements_unchanged_by_object_identity": true,
+          "output": {
+            "faces": 715987,
+            "sha256": {
+              "faces": "814c3eaa4acbd1ab3a9dd2d514ed4807a5665faf6f7380310a3c38abffec5a8c",
+              "tags": "e52c12f32e3ff680a76fa04d9f8487c7c38917a762cc281e2ff68321134417b3",
+              "vertices": "bc1cb1294dc995af440e2b24cd314560abf87edab3faa8de21c5d003dbc9c4a0"
+            },
+            "vertices": 358014
+          },
+          "status": "ACTUAL_ARRAYS_CONSTRUCTED_NOT_PUBLISHED",
+          "vertices_after": 358014,
+          "vertices_before": 358013
+        },
+        "audit": {
+          "boundary_actual_ids": [
+            59261,
+            59271,
+            59270,
+            59272
+          ],
+          "certificate_counts": {
+            "RELATIVE_EDGE_PLANE": 19,
+            "RELATIVE_EMPTY_PLANE": 4,
+            "STRICT_ACTUAL_AABB": 2698414
+          },
+          "consumed_owners": [
+            [
+              1,
+              0,
+              0,
+              250733,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              250733,
+              1,
+              0,
+              2
+            ]
+          ],
+          "continuous_window_admitted": false,
+          "element": 1,
+          "exact_contact_arithmetic_work": 0,
+          "exact_contact_fallback_enabled": true,
+          "expected_retained_faces": 2698437,
+          "full_exterior": true,
+          "interface_star_faces": 21,
+          "local_exact": {
+            "boundary": [
+              [
+                -104.400634765625,
+                39.208984375,
+                25.579833984375
+              ],
+              [
+                -103.97062683105469,
+                39.62300491333008,
+                25.648571014404297
+              ],
+              [
+                -104.0985107421875,
+                39.8468017578125,
+                25.6805419921875
+              ],
+              [
+                -104.21041107177734,
+                39.862789154052734,
+                25.6645565032959
+              ]
+            ],
+            "center": [
+              -104.17363739013672,
+              39.57345199584961,
+              25.63018798828125
+            ],
+            "inward": [
+              "2155812217/34359738368",
+              "1778808583/34359738368",
+              "273065499/8589934592",
+              "679305701/8589934592"
+            ],
+            "turns": [
+              "320363725/2147483648",
+              "790219347/34359738368",
+              "163642875/2147483648",
+              "6953886253/34359738368"
+            ]
+          },
+          "native_owner_element_remapped": false,
+          "proposal_only": true,
+          "reason": "Actual identity, local graph, interface and every retained face certified.",
+          "replaced_face_rows": [
+            129575,
+            129576
+          ],
+          "retained_faces_checked": 2698437,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "d9e41164a8f5342ef4cf6db9d4e15feb3baf27a74de96d9ce0d082b9ddbde693",
+          "source_vid_encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+          "source_vid_encoding_version": 2,
+          "source_vid_shifts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5104,
+              0,
+              891,
+              0
+            ],
+            [
+              368712,
+              0,
+              8030,
+              0
+            ],
+            [
+              1059851,
+              0,
+              18157,
+              0
+            ],
+            [
+              1097044,
+              0,
+              19344,
+              0
+            ]
+          ],
+          "source_vid_shifts_applied_by_python": false,
+          "stage": "actual_five_element_exterior",
+          "status": "PASS",
+          "tau": "6862601860367001/4503599627370496",
+          "wall_seconds": 0.42998349800006963
+        },
+        "check_wall_seconds": 0.44471978299998227,
+        "plan": {
+          "baseline_face_count": 715985,
+          "baseline_vertex_count": 358013,
+          "boundary_actual_ids": [
+            59261,
+            59271,
+            59270,
+            59272
+          ],
+          "center": [
+            -104.17363739013672,
+            39.57345199584961,
+            25.63018798828125
+          ],
+          "consumed_owners": [
+            [
+              1,
+              0,
+              0,
+              250733,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              250733,
+              1,
+              0,
+              2
+            ]
+          ],
+          "element": 1,
+          "fan_faces": [
+            [
+              59261,
+              59271,
+              358013
+            ],
+            [
+              59271,
+              59270,
+              358013
+            ],
+            [
+              59270,
+              59272,
+              358013
+            ],
+            [
+              59272,
+              59261,
+              358013
+            ]
+          ],
+          "new_center_id": 358013,
+          "outside_arrays_policy": "Original vertices/tags unchanged; replace two face rows and append two.",
+          "removed_face_rows": [
+            129575,
+            129576
+          ],
+          "source_digest": "d9e41164a8f5342ef4cf6db9d4e15feb3baf27a74de96d9ce0d082b9ddbde693"
+        },
+        "query": {
+          "active": true,
+          "evaluation_tau": "6862601860367001/4503599627370496",
+          "frame_index_zero_based": 24,
+          "frame_number": 25,
+          "global_camera_time_hex": "0x1.0555555555555p+0",
+          "key": "frame_0025",
+          "kind": "natural",
+          "physical_time_hex": "0x1.fffffffffffffp-1",
+          "time_mode": "physical"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=55900:0|55907:0|55902:0|55910:0",
+      "status": "PASS",
+      "wall_seconds": 0.44471978299998227
+    },
+    {
+      "case": {
+        "actual_array_receipt": {
+          "all_retained_face_rows_byte_identical": true,
+          "array_bytes_transient": 18616236,
+          "element": 1,
+          "faces_after": 715987,
+          "faces_before": 715985,
+          "old_vertices_and_tags_byte_identical": true,
+          "other_elements_unchanged_by_object_identity": true,
+          "output": {
+            "faces": 715987,
+            "sha256": {
+              "faces": "7d2246c0836db931b097d0214e28f8924455d939e8af33a19f7c6f5f7c17aa95",
+              "tags": "e52c12f32e3ff680a76fa04d9f8487c7c38917a762cc281e2ff68321134417b3",
+              "vertices": "5412e7bb95e666305fe287808d7350aa8d402cb24330cd11ea917a52b7c7298e"
+            },
+            "vertices": 358014
+          },
+          "status": "ACTUAL_ARRAYS_CONSTRUCTED_NOT_PUBLISHED",
+          "vertices_after": 358014,
+          "vertices_before": 358013
+        },
+        "audit": {
+          "boundary_actual_ids": [
+            59296,
+            59311,
+            59310,
+            59312
+          ],
+          "certificate_counts": {
+            "EXACT_FOUR_FAN_TRIANGLE_CONTACT": 3,
+            "RELATIVE_EDGE_PLANE": 17,
+            "RELATIVE_EMPTY_PLANE": 6,
+            "STRICT_ACTUAL_AABB": 2698411
+          },
+          "consumed_owners": [
+            [
+              1,
+              0,
+              0,
+              236808,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              236808,
+              1,
+              0,
+              2
+            ]
+          ],
+          "continuous_window_admitted": false,
+          "element": 1,
+          "exact_contact_arithmetic_work": 4428,
+          "exact_contact_fallback_enabled": true,
+          "expected_retained_faces": 2698437,
+          "full_exterior": true,
+          "interface_star_faces": 19,
+          "local_exact": {
+            "boundary": [
+              [
+                -108.563232421875,
+                41.827392578125,
+                25.848388671875
+              ],
+              [
+                -108.12523651123047,
+                41.868953704833984,
+                26.08816909790039
+              ],
+              [
+                -108.09326171875,
+                42.02880859375,
+                26.18408203125
+              ],
+              [
+                -108.42896270751953,
+                42.07676696777344,
+                26.136125564575195
+              ]
+            ],
+            "center": [
+              -108.3965835571289,
+              41.92050552368164,
+              26.023828506469727
+            ],
+            "inward": [
+              "290829199/8589934592",
+              "386757601/8589934592",
+              "1749057395/34359738368",
+              "998346605/34359738368"
+            ],
+            "turns": [
+              "73751975/1073741824",
+              "1896551157/34359738368",
+              "48401375/536870912",
+              "3561200043/34359738368"
+            ]
+          },
+          "native_owner_element_remapped": false,
+          "proposal_only": true,
+          "reason": "Actual identity, local graph, interface and every retained face certified.",
+          "replaced_face_rows": [
+            129650,
+            129651
+          ],
+          "retained_faces_checked": 2698437,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "698f2fe70d42266586b0a7da40cd01c0d21da5973f1c3fc73e3de7e0aa441932",
+          "source_vid_encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+          "source_vid_encoding_version": 2,
+          "source_vid_shifts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5104,
+              0,
+              891,
+              0
+            ],
+            [
+              368712,
+              0,
+              8030,
+              0
+            ],
+            [
+              1059851,
+              0,
+              18157,
+              0
+            ],
+            [
+              1097044,
+              0,
+              19344,
+              0
+            ]
+          ],
+          "source_vid_shifts_applied_by_python": false,
+          "stage": "actual_five_element_exterior",
+          "status": "PASS",
+          "tau": "6862601860367001/4503599627370496",
+          "wall_seconds": 0.45395950600004653
+        },
+        "check_wall_seconds": 0.46919709099995544,
+        "plan": {
+          "baseline_face_count": 715985,
+          "baseline_vertex_count": 358013,
+          "boundary_actual_ids": [
+            59296,
+            59311,
+            59310,
+            59312
+          ],
+          "center": [
+            -108.3965835571289,
+            41.92050552368164,
+            26.023828506469727
+          ],
+          "consumed_owners": [
+            [
+              1,
+              0,
+              0,
+              236808,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              236808,
+              1,
+              0,
+              2
+            ]
+          ],
+          "element": 1,
+          "fan_faces": [
+            [
+              59296,
+              59311,
+              358013
+            ],
+            [
+              59311,
+              59310,
+              358013
+            ],
+            [
+              59310,
+              59312,
+              358013
+            ],
+            [
+              59312,
+              59296,
+              358013
+            ]
+          ],
+          "new_center_id": 358013,
+          "outside_arrays_policy": "Original vertices/tags unchanged; replace two face rows and append two.",
+          "removed_face_rows": [
+            129650,
+            129651
+          ],
+          "source_digest": "698f2fe70d42266586b0a7da40cd01c0d21da5973f1c3fc73e3de7e0aa441932"
+        },
+        "query": {
+          "active": true,
+          "evaluation_tau": "6862601860367001/4503599627370496",
+          "frame_index_zero_based": 24,
+          "frame_number": 25,
+          "global_camera_time_hex": "0x1.0555555555555p+0",
+          "key": "frame_0025",
+          "kind": "natural",
+          "physical_time_hex": "0x1.fffffffffffffp-1",
+          "time_mode": "physical"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=55930:0|55942:0|55933:0|55945:0",
+      "status": "PASS",
+      "wall_seconds": 0.46919709099995544
+    },
+    {
+      "case": {
+        "actual_array_receipt": {
+          "all_retained_face_rows_byte_identical": true,
+          "array_bytes_transient": 35623312,
+          "element": 2,
+          "faces_after": 1395259,
+          "faces_before": 1395257,
+          "old_vertices_and_tags_byte_identical": true,
+          "other_elements_unchanged_by_object_identity": true,
+          "output": {
+            "faces": 1395259,
+            "sha256": {
+              "faces": "c98164d9a2c1adfc0198577ca86ebc764d6253f38267a1b77cc9db0a7c55b10d",
+              "tags": "58a7a59d21cf20fb8a4f8db601ccc62c3241d762837f3cc42f918c0696b0feee",
+              "vertices": "936885fc604e7342071100cfe1261e43159312e3b98d7f2c0cbafd199682456f"
+            },
+            "vertices": 674293
+          },
+          "status": "ACTUAL_ARRAYS_CONSTRUCTED_NOT_PUBLISHED",
+          "vertices_after": 674293,
+          "vertices_before": 674292
+        },
+        "audit": {
+          "boundary_actual_ids": [
+            34410,
+            64364,
+            64366,
+            64365
+          ],
+          "certificate_counts": {
+            "EXACT_FOUR_FAN_TRIANGLE_CONTACT": 2,
+            "RELATIVE_EDGE_PLANE": 20,
+            "RELATIVE_EMPTY_PLANE": 12,
+            "STRICT_ACTUAL_AABB": 2698402,
+            "STRICT_FIXED_PLANE": 1
+          },
+          "consumed_owners": [
+            [
+              2,
+              0,
+              0,
+              103640,
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              0,
+              0,
+              103640,
+              1,
+              0,
+              2
+            ]
+          ],
+          "continuous_window_admitted": false,
+          "element": 2,
+          "exact_contact_arithmetic_work": 4328,
+          "exact_contact_fallback_enabled": true,
+          "expected_retained_faces": 2698437,
+          "full_exterior": true,
+          "interface_star_faces": 22,
+          "local_exact": {
+            "boundary": [
+              [
+                -161.80419921875,
+                70.22705078125,
+                47.93701171875
+              ],
+              [
+                -160.58131408691406,
+                70.69222259521484,
+                47.753177642822266
+              ],
+              [
+                -160.6292724609375,
+                70.9320068359375,
+                47.7691650390625
+              ],
+              [
+                -160.88504028320312,
+                70.9320068359375,
+                47.7691650390625
+              ]
+            ],
+            "center": [
+              -161.0496826171875,
+              70.62509155273438,
+              47.80752944946289
+            ],
+            "inward": [
+              "291581647/2147483648",
+              "248092103/2147483648",
+              "84287717/1073741824",
+              "178282283/1073741824"
+            ],
+            "turns": [
+              "338805775/1073741824",
+              "263406449/4294967296",
+              "48400275/268435456",
+              "1866221051/4294967296"
+            ]
+          },
+          "native_owner_element_remapped": false,
+          "proposal_only": true,
+          "reason": "Actual identity, local graph, interface and every retained face certified.",
+          "replaced_face_rows": [
+            76345,
+            76347
+          ],
+          "retained_faces_checked": 2698437,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "392bf03295551d25039ebf148cbb0c0b0f1e8ab5556547be165a5f85a57d32c4",
+          "source_vid_encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+          "source_vid_encoding_version": 2,
+          "source_vid_shifts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5104,
+              0,
+              891,
+              0
+            ],
+            [
+              368712,
+              0,
+              8030,
+              0
+            ],
+            [
+              1059851,
+              0,
+              18157,
+              0
+            ],
+            [
+              1097044,
+              0,
+              19344,
+              0
+            ]
+          ],
+          "source_vid_shifts_applied_by_python": false,
+          "stage": "actual_five_element_exterior",
+          "status": "PASS",
+          "tau": "6862601860367001/4503599627370496",
+          "wall_seconds": 0.7869613060000802
+        },
+        "check_wall_seconds": 0.8194953830000031,
+        "plan": {
+          "baseline_face_count": 1395257,
+          "baseline_vertex_count": 674292,
+          "boundary_actual_ids": [
+            34410,
+            64364,
+            64366,
+            64365
+          ],
+          "center": [
+            -161.0496826171875,
+            70.62509155273438,
+            47.80752944946289
+          ],
+          "consumed_owners": [
+            [
+              2,
+              0,
+              0,
+              103640,
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              0,
+              0,
+              103640,
+              1,
+              0,
+              2
+            ]
+          ],
+          "element": 2,
+          "fan_faces": [
+            [
+              34410,
+              64364,
+              674292
+            ],
+            [
+              64364,
+              64366,
+              674292
+            ],
+            [
+              64366,
+              64365,
+              674292
+            ],
+            [
+              64365,
+              34410,
+              674292
+            ]
+          ],
+          "new_center_id": 674292,
+          "outside_arrays_policy": "Original vertices/tags unchanged; replace two face rows and append two.",
+          "removed_face_rows": [
+            76345,
+            76347
+          ],
+          "source_digest": "392bf03295551d25039ebf148cbb0c0b0f1e8ab5556547be165a5f85a57d32c4"
+        },
+        "query": {
+          "active": true,
+          "evaluation_tau": "6862601860367001/4503599627370496",
+          "frame_index_zero_based": 24,
+          "frame_number": 25,
+          "global_camera_time_hex": "0x1.0555555555555p+0",
+          "key": "frame_0025",
+          "kind": "natural",
+          "physical_time_hex": "0x1.fffffffffffffp-1",
+          "time_mode": "physical"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=383182:0|416281:0|416323:0|416315:0",
+      "status": "PASS",
+      "wall_seconds": 0.8194953830000031
+    },
+    {
+      "case": {
+        "actual_array_receipt": {
+          "all_retained_face_rows_byte_identical": true,
+          "array_bytes_transient": 35623312,
+          "element": 2,
+          "faces_after": 1395259,
+          "faces_before": 1395257,
+          "old_vertices_and_tags_byte_identical": true,
+          "other_elements_unchanged_by_object_identity": true,
+          "output": {
+            "faces": 1395259,
+            "sha256": {
+              "faces": "516c1ebd7a2bcc4e63a04c8728ecb8accc1df63de5bd21a5380daa6f832a42be",
+              "tags": "58a7a59d21cf20fb8a4f8db601ccc62c3241d762837f3cc42f918c0696b0feee",
+              "vertices": "ebdcdc2e7550a29838aa5a1ea94a07d6ee09706b1f9d489e7a6adb1a928153a8"
+            },
+            "vertices": 674293
+          },
+          "status": "ACTUAL_ARRAYS_CONSTRUCTED_NOT_PUBLISHED",
+          "vertices_after": 674293,
+          "vertices_before": 674292
+        },
+        "audit": {
+          "boundary_actual_ids": [
+            37426,
+            594384,
+            37430,
+            37431
+          ],
+          "certificate_counts": {
+            "RELATIVE_EDGE_PLANE": 20,
+            "RELATIVE_EMPTY_PLANE": 13,
+            "STRICT_ACTUAL_AABB": 2698404
+          },
+          "consumed_owners": [
+            [
+              2,
+              0,
+              0,
+              34474,
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              0,
+              0,
+              34474,
+              1,
+              0,
+              2
+            ]
+          ],
+          "continuous_window_admitted": false,
+          "element": 2,
+          "exact_contact_arithmetic_work": 0,
+          "exact_contact_fallback_enabled": true,
+          "expected_retained_faces": 2698437,
+          "full_exterior": true,
+          "interface_star_faces": 22,
+          "local_exact": {
+            "boundary": [
+              [
+                -33.377559661865234,
+                122.79341888427734,
+                20.691495895385742
+              ],
+              [
+                -35.31494140625,
+                119.37255859375,
+                20.27587890625
+              ],
+              [
+                -30.308324813842773,
+                120.23572540283203,
+                20.691495895385742
+              ],
+              [
+                -29.541015625,
+                124.072265625,
+                20.947265625
+              ]
+            ],
+            "center": [
+              -33.30879592895508,
+              120.35562896728516,
+              20.52045249938965
+            ],
+            "inward": [
+              "42590277013/8589934592",
+              "219230129051/68719476736",
+              "797381722149/68719476736",
+              "81094365387/8589934592"
+            ],
+            "turns": [
+              "1062035617309/68719476736",
+              "19913369025/1073741824",
+              "944053373091/68719476736",
+              "5715885725/536870912"
+            ]
+          },
+          "native_owner_element_remapped": false,
+          "proposal_only": true,
+          "reason": "Actual identity, local graph, interface and every retained face certified.",
+          "replaced_face_rows": [
+            91045,
+            91048
+          ],
+          "retained_faces_checked": 2698437,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "91b3df9c6a123f69caf6be0881da3dd6925edde444bc3dacc96185c2ae033c70",
+          "source_vid_encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+          "source_vid_encoding_version": 2,
+          "source_vid_shifts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5104,
+              0,
+              891,
+              0
+            ],
+            [
+              368712,
+              0,
+              8030,
+              0
+            ],
+            [
+              1059851,
+              0,
+              18157,
+              0
+            ],
+            [
+              1097044,
+              0,
+              19344,
+              0
+            ]
+          ],
+          "source_vid_shifts_applied_by_python": false,
+          "stage": "actual_five_element_exterior",
+          "status": "PASS",
+          "tau": "6862601860367001/4503599627370496",
+          "wall_seconds": 0.46721644100000503
+        },
+        "check_wall_seconds": 0.4958298430000241,
+        "plan": {
+          "baseline_face_count": 1395257,
+          "baseline_vertex_count": 674292,
+          "boundary_actual_ids": [
+            37426,
+            594384,
+            37430,
+            37431
+          ],
+          "center": [
+            -33.30879592895508,
+            120.35562896728516,
+            20.52045249938965
+          ],
+          "consumed_owners": [
+            [
+              2,
+              0,
+              0,
+              34474,
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              0,
+              0,
+              34474,
+              1,
+              0,
+              2
+            ]
+          ],
+          "element": 2,
+          "fan_faces": [
+            [
+              37426,
+              594384,
+              674292
+            ],
+            [
+              594384,
+              37430,
+              674292
+            ],
+            [
+              37430,
+              37431,
+              674292
+            ],
+            [
+              37431,
+              37426,
+              674292
+            ]
+          ],
+          "new_center_id": 674292,
+          "outside_arrays_policy": "Original vertices/tags unchanged; replace two face rows and append two.",
+          "removed_face_rows": [
+            91045,
+            91048
+          ],
+          "source_digest": "91b3df9c6a123f69caf6be0881da3dd6925edde444bc3dacc96185c2ae033c70"
+        },
+        "query": {
+          "active": true,
+          "evaluation_tau": "6862601860367001/4503599627370496",
+          "frame_index_zero_based": 24,
+          "frame_number": 25,
+          "global_camera_time_hex": "0x1.0555555555555p+0",
+          "key": "frame_0025",
+          "kind": "natural",
+          "physical_time_hex": "0x1.fffffffffffffp-1",
+          "time_mode": "physical"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=384601:0|384633:0|384623:0|973819:0",
+      "status": "PASS",
+      "wall_seconds": 0.4958298430000241
+    },
+    {
+      "case": {
+        "actual_array_receipt": {
+          "all_retained_face_rows_byte_identical": true,
+          "array_bytes_transient": 35623312,
+          "element": 2,
+          "faces_after": 1395259,
+          "faces_before": 1395257,
+          "old_vertices_and_tags_byte_identical": true,
+          "other_elements_unchanged_by_object_identity": true,
+          "output": {
+            "faces": 1395259,
+            "sha256": {
+              "faces": "2d2c61e664e9740d63139ce36a10808b540724530a6fcd2812af68cd01d892a7",
+              "tags": "58a7a59d21cf20fb8a4f8db601ccc62c3241d762837f3cc42f918c0696b0feee",
+              "vertices": "569ec52e120672d11be0b6d166df13583703c92009b21ec797c4910d9002a06d"
+            },
+            "vertices": 674293
+          },
+          "status": "ACTUAL_ARRAYS_CONSTRUCTED_NOT_PUBLISHED",
+          "vertices_after": 674293,
+          "vertices_before": 674292
+        },
+        "audit": {
+          "boundary_actual_ids": [
+            59936,
+            60441,
+            60443,
+            60442
+          ],
+          "certificate_counts": {
+            "RELATIVE_EDGE_PLANE": 19,
+            "RELATIVE_EMPTY_PLANE": 4,
+            "STRICT_ACTUAL_AABB": 2698413,
+            "STRICT_FIXED_PLANE": 1
+          },
+          "consumed_owners": [
+            [
+              2,
+              0,
+              0,
+              143749,
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              0,
+              0,
+              143749,
+              1,
+              0,
+              2
+            ]
+          ],
+          "continuous_window_admitted": false,
+          "element": 2,
+          "exact_contact_arithmetic_work": 0,
+          "exact_contact_fallback_enabled": true,
+          "expected_retained_faces": 2698437,
+          "full_exterior": true,
+          "interface_star_faces": 21,
+          "local_exact": {
+            "boundary": [
+              [
+                -142.0654296875,
+                59.8876953125,
+                35.85205078125
+              ],
+              [
+                -141.4499969482422,
+                59.99159622192383,
+                36.07744216918945
+              ],
+              [
+                -141.5618896484375,
+                60.3912353515625,
+                36.2213134765625
+              ],
+              [
+                -141.84962463378906,
+                60.455177307128906,
+                36.285255432128906
+              ]
+            ],
+            "center": [
+              -141.7832794189453,
+              60.09390640258789,
+              36.08224105834961
+            ],
+            "inward": [
+              "838320807/8589934592",
+              "1045781193/8589934592",
+              "1712971009/17179869184",
+              "1986229991/17179869184"
+            ],
+            "turns": [
+              "553141875/2147483648",
+              "1852600145/17179869184",
+              "190141875/1073741824",
+              "5614804855/17179869184"
+            ]
+          },
+          "native_owner_element_remapped": false,
+          "proposal_only": true,
+          "reason": "Actual identity, local graph, interface and every retained face certified.",
+          "replaced_face_rows": [
+            137627,
+            137629
+          ],
+          "retained_faces_checked": 2698437,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "16427acb482b02ae693a395ed0b22db1485e6326e6e66af19bccbe33c1ed0878",
+          "source_vid_encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+          "source_vid_encoding_version": 2,
+          "source_vid_shifts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5104,
+              0,
+              891,
+              0
+            ],
+            [
+              368712,
+              0,
+              8030,
+              0
+            ],
+            [
+              1059851,
+              0,
+              18157,
+              0
+            ],
+            [
+              1097044,
+              0,
+              19344,
+              0
+            ]
+          ],
+          "source_vid_shifts_applied_by_python": false,
+          "stage": "actual_five_element_exterior",
+          "status": "PASS",
+          "tau": "6862601860367001/4503599627370496",
+          "wall_seconds": 0.4439234630000328
+        },
+        "check_wall_seconds": 0.4714907979999907,
+        "plan": {
+          "baseline_face_count": 1395257,
+          "baseline_vertex_count": 674292,
+          "boundary_actual_ids": [
+            59936,
+            60441,
+            60443,
+            60442
+          ],
+          "center": [
+            -141.7832794189453,
+            60.09390640258789,
+            36.08224105834961
+          ],
+          "consumed_owners": [
+            [
+              2,
+              0,
+              0,
+              143749,
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              0,
+              0,
+              143749,
+              1,
+              0,
+              2
+            ]
+          ],
+          "element": 2,
+          "fan_faces": [
+            [
+              59936,
+              60441,
+              674292
+            ],
+            [
+              60441,
+              60443,
+              674292
+            ],
+            [
+              60443,
+              60442,
+              674292
+            ],
+            [
+              60442,
+              59936,
+              674292
+            ]
+          ],
+          "new_center_id": 674292,
+          "outside_arrays_policy": "Original vertices/tags unchanged; replace two face rows and append two.",
+          "removed_face_rows": [
+            137627,
+            137629
+          ],
+          "source_digest": "16427acb482b02ae693a395ed0b22db1485e6326e6e66af19bccbe33c1ed0878"
+        },
+        "query": {
+          "active": true,
+          "evaluation_tau": "6862601860367001/4503599627370496",
+          "frame_index_zero_based": 24,
+          "frame_number": 25,
+          "global_camera_time_hex": "0x1.0555555555555p+0",
+          "key": "frame_0025",
+          "kind": "natural",
+          "physical_time_hex": "0x1.fffffffffffffp-1",
+          "time_mode": "physical"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=412044:0|412055:0|412499:0|412343:0",
+      "status": "PASS",
+      "wall_seconds": 0.4714907979999907
+    },
+    {
+      "case": {
+        "actual_array_receipt": {
+          "all_retained_face_rows_byte_identical": true,
+          "array_bytes_transient": 35623312,
+          "element": 2,
+          "faces_after": 1395259,
+          "faces_before": 1395257,
+          "old_vertices_and_tags_byte_identical": true,
+          "other_elements_unchanged_by_object_identity": true,
+          "output": {
+            "faces": 1395259,
+            "sha256": {
+              "faces": "d7c172dfebbafb70e2d628272e5d72fce86368d31e005a0b08e2b3d92ab3a7cd",
+              "tags": "58a7a59d21cf20fb8a4f8db601ccc62c3241d762837f3cc42f918c0696b0feee",
+              "vertices": "f75bbfae254f8bd33ba62cbb49dab383a3ecb9291fcfc884f6a0db36d6b624fe"
+            },
+            "vertices": 674293
+          },
+          "status": "ACTUAL_ARRAYS_CONSTRUCTED_NOT_PUBLISHED",
+          "vertices_after": 674293,
+          "vertices_before": 674292
+        },
+        "audit": {
+          "boundary_actual_ids": [
+            59990,
+            60004,
+            60003,
+            60005
+          ],
+          "certificate_counts": {
+            "RELATIVE_EDGE_PLANE": 24,
+            "RELATIVE_EMPTY_PLANE": 18,
+            "STRICT_ACTUAL_AABB": 2698395
+          },
+          "consumed_owners": [
+            [
+              2,
+              0,
+              0,
+              131033,
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              0,
+              0,
+              131033,
+              1,
+              0,
+              2
+            ]
+          ],
+          "continuous_window_admitted": false,
+          "element": 2,
+          "exact_contact_arithmetic_work": 0,
+          "exact_contact_fallback_enabled": true,
+          "expected_retained_faces": 2698437,
+          "full_exterior": true,
+          "interface_star_faces": 26,
+          "local_exact": {
+            "boundary": [
+              [
+                -147.637939453125,
+                62.908935546875,
+                39.208984375
+              ],
+              [
+                -146.715576171875,
+                63.39968490600586,
+                38.756595611572266
+              ],
+              [
+                -146.7315673828125,
+                63.4796142578125,
+                38.7725830078125
+              ],
+              [
+                -146.97134399414062,
+                63.463626861572266,
+                38.94842529296875
+              ]
+            ],
+            "center": [
+              -147.08604431152344,
+              63.277801513671875,
+              38.96800231933594
+            ],
+            "inward": [
+              "1192046465/17179869184",
+              "542202535/17179869184",
+              "733972335/17179869184",
+              "1035036665/17179869184"
+            ],
+            "turns": [
+              "175173625/2147483648",
+              "166823805/8589934592",
+              "262733625/2147483648",
+              "1584805195/8589934592"
+            ]
+          },
+          "native_owner_element_remapped": false,
+          "proposal_only": true,
+          "reason": "Actual identity, local graph, interface and every retained face certified.",
+          "replaced_face_rows": [
+            137769,
+            137770
+          ],
+          "retained_faces_checked": 2698437,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "8ab7b569c869d215ce9103e0f96ed6141fbf40f8c3ce88e06ff376b1ca1e4d06",
+          "source_vid_encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+          "source_vid_encoding_version": 2,
+          "source_vid_shifts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5104,
+              0,
+              891,
+              0
+            ],
+            [
+              368712,
+              0,
+              8030,
+              0
+            ],
+            [
+              1059851,
+              0,
+              18157,
+              0
+            ],
+            [
+              1097044,
+              0,
+              19344,
+              0
+            ]
+          ],
+          "source_vid_shifts_applied_by_python": false,
+          "stage": "actual_five_element_exterior",
+          "status": "PASS",
+          "tau": "6862601860367001/4503599627370496",
+          "wall_seconds": 0.4518203640000138
+        },
+        "check_wall_seconds": 0.4798717229999738,
+        "plan": {
+          "baseline_face_count": 1395257,
+          "baseline_vertex_count": 674292,
+          "boundary_actual_ids": [
+            59990,
+            60004,
+            60003,
+            60005
+          ],
+          "center": [
+            -147.08604431152344,
+            63.277801513671875,
+            38.96800231933594
+          ],
+          "consumed_owners": [
+            [
+              2,
+              0,
+              0,
+              131033,
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              0,
+              0,
+              131033,
+              1,
+              0,
+              2
+            ]
+          ],
+          "element": 2,
+          "fan_faces": [
+            [
+              59990,
+              60004,
+              674292
+            ],
+            [
+              60004,
+              60003,
+              674292
+            ],
+            [
+              60003,
+              60005,
+              674292
+            ],
+            [
+              60005,
+              59990,
+              674292
+            ]
+          ],
+          "new_center_id": 674292,
+          "outside_arrays_policy": "Original vertices/tags unchanged; replace two face rows and append two.",
+          "removed_face_rows": [
+            137769,
+            137770
+          ],
+          "source_digest": "8ab7b569c869d215ce9103e0f96ed6141fbf40f8c3ce88e06ff376b1ca1e4d06"
+        },
+        "query": {
+          "active": true,
+          "evaluation_tau": "6862601860367001/4503599627370496",
+          "frame_index_zero_based": 24,
+          "frame_number": 25,
+          "global_camera_time_hex": "0x1.0555555555555p+0",
+          "key": "frame_0025",
+          "kind": "natural",
+          "physical_time_hex": "0x1.fffffffffffffp-1",
+          "time_mode": "physical"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=412087:0|412098:0|412090:0|412101:0",
+      "status": "PASS",
+      "wall_seconds": 0.4798717229999738
+    },
+    {
+      "case": {
+        "actual_array_receipt": {
+          "all_retained_face_rows_byte_identical": true,
+          "array_bytes_transient": 35623312,
+          "element": 2,
+          "faces_after": 1395259,
+          "faces_before": 1395257,
+          "old_vertices_and_tags_byte_identical": true,
+          "other_elements_unchanged_by_object_identity": true,
+          "output": {
+            "faces": 1395259,
+            "sha256": {
+              "faces": "28692afef8d07697459e7b0c566b150a016879fa851860f31a6dae048fb6b579",
+              "tags": "58a7a59d21cf20fb8a4f8db601ccc62c3241d762837f3cc42f918c0696b0feee",
+              "vertices": "5b1ceafecd3d46fbacd9d877ff1934b84c11ce08a0e9327536b43b6fda266b83"
+            },
+            "vertices": 674293
+          },
+          "status": "ACTUAL_ARRAYS_CONSTRUCTED_NOT_PUBLISHED",
+          "vertices_after": 674293,
+          "vertices_before": 674292
+        },
+        "audit": {
+          "boundary_actual_ids": [
+            93789,
+            93792,
+            93815,
+            93814
+          ],
+          "certificate_counts": {
+            "RELATIVE_EDGE_PLANE": 22,
+            "RELATIVE_EMPTY_PLANE": 22,
+            "STRICT_ACTUAL_AABB": 2698393
+          },
+          "consumed_owners": [
+            [
+              2,
+              0,
+              0,
+              236809,
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              236809,
+              1,
+              0,
+              1
+            ]
+          ],
+          "continuous_window_admitted": false,
+          "element": 2,
+          "exact_contact_arithmetic_work": 0,
+          "exact_contact_fallback_enabled": true,
+          "expected_retained_faces": 2698437,
+          "full_exterior": true,
+          "interface_star_faces": 24,
+          "local_exact": {
+            "boundary": [
+              [
+                -109.234619140625,
+                41.558837890625,
+                26.318359375
+              ],
+              [
+                -108.65914154052734,
+                41.68672180175781,
+                26.350330352783203
+              ],
+              [
+                -108.21954345703125,
+                42.091148376464844,
+                26.57891845703125
+              ],
+              [
+                -108.3953857421875,
+                42.3309326171875,
+                26.7547607421875
+              ]
+            ],
+            "center": [
+              -108.62837219238281,
+              41.954078674316406,
+              26.501792907714844
+            ],
+            "inward": [
+              "2575657301/17179869184",
+              "225669665/2147483648",
+              "1049117381/8589934592",
+              "146437775/1073741824"
+            ],
+            "turns": [
+              "3032606183/17179869184",
+              "3032658983/17179869184",
+              "361852975/1073741824",
+              "361849675/1073741824"
+            ]
+          },
+          "native_owner_element_remapped": false,
+          "proposal_only": true,
+          "reason": "Actual identity, local graph, interface and every retained face certified.",
+          "replaced_face_rows": [
+            207107,
+            207110
+          ],
+          "retained_faces_checked": 2698437,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "5fed275c9a7eef3c714beb97d772c71740a1afdb3b56a093ee2d7293fb5c8be3",
+          "source_vid_encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+          "source_vid_encoding_version": 2,
+          "source_vid_shifts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5104,
+              0,
+              891,
+              0
+            ],
+            [
+              368712,
+              0,
+              8030,
+              0
+            ],
+            [
+              1059851,
+              0,
+              18157,
+              0
+            ],
+            [
+              1097044,
+              0,
+              19344,
+              0
+            ]
+          ],
+          "source_vid_shifts_applied_by_python": false,
+          "stage": "actual_five_element_exterior",
+          "status": "PASS",
+          "tau": "6862601860367001/4503599627370496",
+          "wall_seconds": 0.4735155079999913
+        },
+        "check_wall_seconds": 0.5020936189999929,
+        "plan": {
+          "baseline_face_count": 1395257,
+          "baseline_vertex_count": 674292,
+          "boundary_actual_ids": [
+            93789,
+            93792,
+            93815,
+            93814
+          ],
+          "center": [
+            -108.62837219238281,
+            41.954078674316406,
+            26.501792907714844
+          ],
+          "consumed_owners": [
+            [
+              2,
+              0,
+              0,
+              236809,
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              236809,
+              1,
+              0,
+              1
+            ]
+          ],
+          "element": 2,
+          "fan_faces": [
+            [
+              93789,
+              93792,
+              674292
+            ],
+            [
+              93792,
+              93815,
+              674292
+            ],
+            [
+              93815,
+              93814,
+              674292
+            ],
+            [
+              93814,
+              93789,
+              674292
+            ]
+          ],
+          "new_center_id": 674292,
+          "outside_arrays_policy": "Original vertices/tags unchanged; replace two face rows and append two.",
+          "removed_face_rows": [
+            207107,
+            207110
+          ],
+          "source_digest": "5fed275c9a7eef3c714beb97d772c71740a1afdb3b56a093ee2d7293fb5c8be3"
+        },
+        "query": {
+          "active": true,
+          "evaluation_tau": "6862601860367001/4503599627370496",
+          "frame_index_zero_based": 24,
+          "frame_number": 25,
+          "global_camera_time_hex": "0x1.0555555555555p+0",
+          "key": "frame_0025",
+          "kind": "natural",
+          "physical_time_hex": "0x1.fffffffffffffp-1",
+          "time_mode": "physical"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=446257:0|446277:0|446262:0|446284:0",
+      "status": "PASS",
+      "wall_seconds": 0.5020936189999929
+    },
+    {
+      "case": {
+        "actual_array_receipt": {
+          "all_retained_face_rows_byte_identical": true,
+          "array_bytes_transient": 35623312,
+          "element": 2,
+          "faces_after": 1395259,
+          "faces_before": 1395257,
+          "old_vertices_and_tags_byte_identical": true,
+          "other_elements_unchanged_by_object_identity": true,
+          "output": {
+            "faces": 1395259,
+            "sha256": {
+              "faces": "7e7ddf60503ea03e02cf409d09e2f4a8a5291dddf550fa0df9f2bd80326718e4",
+              "tags": "58a7a59d21cf20fb8a4f8db601ccc62c3241d762837f3cc42f918c0696b0feee",
+              "vertices": "eb0c4336bb90bed3614771e40346941f71939f51864f76848067bae068d97234"
+            },
+            "vertices": 674293
+          },
+          "status": "ACTUAL_ARRAYS_CONSTRUCTED_NOT_PUBLISHED",
+          "vertices_after": 674293,
+          "vertices_before": 674292
+        },
+        "audit": {
+          "boundary_actual_ids": [
+            93845,
+            93859,
+            93858,
+            93860
+          ],
+          "certificate_counts": {
+            "RELATIVE_EDGE_PLANE": 22,
+            "RELATIVE_EMPTY_PLANE": 8,
+            "STRICT_ACTUAL_AABB": 2698407
+          },
+          "consumed_owners": [
+            [
+              2,
+              0,
+              0,
+              250734,
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              0,
+              0,
+              250734,
+              1,
+              0,
+              2
+            ]
+          ],
+          "continuous_window_admitted": false,
+          "element": 2,
+          "exact_contact_arithmetic_work": 0,
+          "exact_contact_fallback_enabled": true,
+          "expected_retained_faces": 2698437,
+          "full_exterior": true,
+          "interface_star_faces": 24,
+          "local_exact": {
+            "boundary": [
+              [
+                -104.736328125,
+                39.34326171875,
+                26.18408203125
+              ],
+              [
+                -103.95144653320312,
+                39.84360122680664,
+                26.029024124145508
+              ],
+              [
+                -104.0313720703125,
+                40.1153564453125,
+                25.9490966796875
+              ],
+              [
+                -104.22319793701172,
+                40.0833854675293,
+                25.981067657470703
+              ]
+            ],
+            "center": [
+              -104.27754211425781,
+              39.759681701660156,
+              26.06658935546875
+            ],
+            "inward": [
+              "1671457169/17179869184",
+              "1637679431/17179869184",
+              "259232711/4294967296",
+              "540653739/4294967296"
+            ],
+            "turns": [
+              "543926625/2147483648",
+              "1878961533/34359738368",
+              "269658675/2147483648",
+              "11138403267/34359738368"
+            ]
+          },
+          "native_owner_element_remapped": false,
+          "proposal_only": true,
+          "reason": "Actual identity, local graph, interface and every retained face certified.",
+          "replaced_face_rows": [
+            207228,
+            207229
+          ],
+          "retained_faces_checked": 2698437,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "934b1bfbe0eb622ea153261dfab6b793cb84bf782c32170b5e666b6b43598cef",
+          "source_vid_encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+          "source_vid_encoding_version": 2,
+          "source_vid_shifts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5104,
+              0,
+              891,
+              0
+            ],
+            [
+              368712,
+              0,
+              8030,
+              0
+            ],
+            [
+              1059851,
+              0,
+              18157,
+              0
+            ],
+            [
+              1097044,
+              0,
+              19344,
+              0
+            ]
+          ],
+          "source_vid_shifts_applied_by_python": false,
+          "stage": "actual_five_element_exterior",
+          "status": "PASS",
+          "tau": "6862601860367001/4503599627370496",
+          "wall_seconds": 0.45394643199995244
+        },
+        "check_wall_seconds": 0.4825360439999713,
+        "plan": {
+          "baseline_face_count": 1395257,
+          "baseline_vertex_count": 674292,
+          "boundary_actual_ids": [
+            93845,
+            93859,
+            93858,
+            93860
+          ],
+          "center": [
+            -104.27754211425781,
+            39.759681701660156,
+            26.06658935546875
+          ],
+          "consumed_owners": [
+            [
+              2,
+              0,
+              0,
+              250734,
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              0,
+              0,
+              250734,
+              1,
+              0,
+              2
+            ]
+          ],
+          "element": 2,
+          "fan_faces": [
+            [
+              93845,
+              93859,
+              674292
+            ],
+            [
+              93859,
+              93858,
+              674292
+            ],
+            [
+              93858,
+              93860,
+              674292
+            ],
+            [
+              93860,
+              93845,
+              674292
+            ]
+          ],
+          "new_center_id": 674292,
+          "outside_arrays_policy": "Original vertices/tags unchanged; replace two face rows and append two.",
+          "removed_face_rows": [
+            207228,
+            207229
+          ],
+          "source_digest": "934b1bfbe0eb622ea153261dfab6b793cb84bf782c32170b5e666b6b43598cef"
+        },
+        "query": {
+          "active": true,
+          "evaluation_tau": "6862601860367001/4503599627370496",
+          "frame_index_zero_based": 24,
+          "frame_number": 25,
+          "global_camera_time_hex": "0x1.0555555555555p+0",
+          "key": "frame_0025",
+          "kind": "natural",
+          "physical_time_hex": "0x1.fffffffffffffp-1",
+          "time_mode": "physical"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=446303:0|446315:0|446305:0|446321:0",
+      "status": "PASS",
+      "wall_seconds": 0.4825360439999713
+    },
+    {
+      "case": {
+        "actual_array_receipt": {
+          "all_retained_face_rows_byte_identical": true,
+          "array_bytes_transient": 1928976,
+          "element": 3,
+          "faces_after": 74522,
+          "faces_before": 74520,
+          "old_vertices_and_tags_byte_identical": true,
+          "other_elements_unchanged_by_object_identity": true,
+          "output": {
+            "faces": 74522,
+            "sha256": {
+              "faces": "7ed9528ff848c4b8e2015fd35c4d8d204b79f5b85898046b84786b57694aef7e",
+              "tags": "7a0476d149dbf6ff384b697e0517d1c5b24b9d95d1397d97bb009fd6c8531e5c",
+              "vertices": "66c25d5bd8bd37e56e7bc6d607d48df19b9b450e805f85015c8f2536f105ea7e"
+            },
+            "vertices": 36954
+          },
+          "status": "ACTUAL_ARRAYS_CONSTRUCTED_NOT_PUBLISHED",
+          "vertices_after": 36954,
+          "vertices_before": 36953
+        },
+        "audit": {
+          "boundary_actual_ids": [
+            5260,
+            6518,
+            5264,
+            5261
+          ],
+          "certificate_counts": {
+            "RELATIVE_EDGE_PLANE": 31,
+            "RELATIVE_EMPTY_PLANE": 244,
+            "STRICT_ACTUAL_AABB": 2698162
+          },
+          "consumed_owners": [
+            [
+              3,
+              0,
+              0,
+              35432,
+              1,
+              0,
+              1
+            ],
+            [
+              3,
+              0,
+              0,
+              35432,
+              1,
+              0,
+              2
+            ]
+          ],
+          "continuous_window_admitted": false,
+          "element": 3,
+          "exact_contact_arithmetic_work": 0,
+          "exact_contact_fallback_enabled": true,
+          "expected_retained_faces": 2698437,
+          "full_exterior": true,
+          "interface_star_faces": 33,
+          "local_exact": {
+            "boundary": [
+              [
+                -0.9783133864402771,
+                13.021697998046875,
+                1.681663155555725
+              ],
+              [
+                0.2685546875,
+                11.0107421875,
+                1.8798828125
+              ],
+              [
+                -0.21100491285324097,
+                13.533236503601074,
+                1.9374325275421143
+              ],
+              [
+                -0.40283203125,
+                13.629150390625,
+                1.74560546875
+              ]
+            ],
+            "center": [
+              -0.40124207735061646,
+              12.578117370605469,
+              1.843117117881775
+            ],
+            "inward": [
+              "1335639181525/2199023255552",
+              "16499864622175/17592186044416",
+              "3544194577825/17592186044416",
+              "1332202874475/2199023255552"
+            ],
+            "turns": [
+              "38365821555325/17592186044416",
+              "30091323625/68719476736",
+              "3020974092675/17592186044416",
+              "131575846875/68719476736"
+            ]
+          },
+          "native_owner_element_remapped": false,
+          "proposal_only": true,
+          "reason": "Actual identity, local graph, interface and every retained face certified.",
+          "replaced_face_rows": [
+            13199,
+            13213
+          ],
+          "retained_faces_checked": 2698437,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "21b772c982fa407866955602288c04f06d1acba00e27cdbeecd14d2a25506dc2",
+          "source_vid_encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+          "source_vid_encoding_version": 2,
+          "source_vid_shifts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5104,
+              0,
+              891,
+              0
+            ],
+            [
+              368712,
+              0,
+              8030,
+              0
+            ],
+            [
+              1059851,
+              0,
+              18157,
+              0
+            ],
+            [
+              1097044,
+              0,
+              19344,
+              0
+            ]
+          ],
+          "source_vid_shifts_applied_by_python": false,
+          "stage": "actual_five_element_exterior",
+          "status": "PASS",
+          "tau": "6862601860367001/4503599627370496",
+          "wall_seconds": 0.6165638199998966
+        },
+        "check_wall_seconds": 0.6180963620000739,
+        "plan": {
+          "baseline_face_count": 74520,
+          "baseline_vertex_count": 36953,
+          "boundary_actual_ids": [
+            5260,
+            6518,
+            5264,
+            5261
+          ],
+          "center": [
+            -0.40124207735061646,
+            12.578117370605469,
+            1.843117117881775
+          ],
+          "consumed_owners": [
+            [
+              3,
+              0,
+              0,
+              35432,
+              1,
+              0,
+              1
+            ],
+            [
+              3,
+              0,
+              0,
+              35432,
+              1,
+              0,
+              2
+            ]
+          ],
+          "element": 3,
+          "fan_faces": [
+            [
+              5260,
+              6518,
+              36953
+            ],
+            [
+              6518,
+              5264,
+              36953
+            ],
+            [
+              5264,
+              5261,
+              36953
+            ],
+            [
+              5261,
+              5260,
+              36953
+            ]
+          ],
+          "new_center_id": 36953,
+          "outside_arrays_policy": "Original vertices/tags unchanged; replace two face rows and append two.",
+          "removed_face_rows": [
+            13199,
+            13213
+          ],
+          "source_digest": "21b772c982fa407866955602288c04f06d1acba00e27cdbeecd14d2a25506dc2"
+        },
+        "query": {
+          "active": true,
+          "evaluation_tau": "6862601860367001/4503599627370496",
+          "frame_index_zero_based": 24,
+          "frame_number": 25,
+          "global_camera_time_hex": "0x1.0555555555555p+0",
+          "key": "frame_0025",
+          "kind": "natural",
+          "physical_time_hex": "0x1.fffffffffffffp-1",
+          "time_mode": "physical"
+        }
+      },
+      "event_id": "element=3;role=temporal_neighbour;face=1062943:0|1062958:0|1064025:0|1063989:0",
+      "status": "PASS",
+      "wall_seconds": 0.6180963620000739
+    }
+  ],
+  "frozen_library_baseline_parity": "EXACT_RECEIPT_MATCH",
+  "identity_encoding": {
+    "encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+    "per_element_shifts": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5104,
+        0,
+        891,
+        0
+      ],
+      [
+        368712,
+        0,
+        8030,
+        0
+      ],
+      [
+        1059851,
+        0,
+        18157,
+        0
+      ],
+      [
+        1097044,
+        0,
+        19344,
+        0
+      ]
+    ],
+    "shifts_order": [
+      "node0",
+      "group0",
+      "node1",
+      "group1"
+    ],
+    "version": 2
+  },
+  "native_cost": {
+    "array_bytes": 214354084,
+    "cpu_seconds": 3.983798707999995,
+    "peak_rss_bytes": 1053597696,
+    "wall_seconds": 3.989858881000032
+  },
+  "observer_enabled_disabled_byte_equal": true,
+  "query": {
+    "active": true,
+    "evaluation_tau": "6862601860367001/4503599627370496",
+    "frame_index_zero_based": 24,
+    "frame_number": 25,
+    "global_camera_time_hex": "0x1.0555555555555p+0",
+    "key": "frame_0025",
+    "kind": "natural",
+    "physical_time_hex": "0x1.fffffffffffffp-1",
+    "time_mode": "physical"
+  },
+  "query_token": [
+    "physical",
+    "0x1.fffffffffffffp-1"
+  ],
+  "wall_seconds": 14.390538150999987
+}

@@ -1,0 +1,356 @@
+{
+  "audit_cost": {
+    "peak_rss_bytes": 22646784,
+    "wall_seconds": 1.0350955720000456
+  },
+  "build": {
+    "actual_opaque_elements": [
+      "ground",
+      "landtiles",
+      "voronoi_rocks"
+    ],
+    "coarse_regenerated": false,
+    "current_original_coarse_all_file_hashes_recomputed": true,
+    "fps": 24,
+    "frame_range": [
+      1,
+      64
+    ],
+    "image_intrinsics_not_substituted_with_relaxed_lod": true,
+    "kernel_parameter_files_old_new_hash_equal": 41,
+    "lod_px": 6,
+    "native_cost": {
+      "all_children_exit_expected": true,
+      "directory_quota_is_polled_not_filesystem_enforced": true,
+      "early_stop_output_bytes": 8321499136,
+      "exit_code": 0,
+      "infrastructure_stop": null,
+      "original_campaign_deadline_utc": "2026-09-06T19:28:39+00:00",
+      "output_limit_bytes": 8589934592,
+      "peak_monitored_output_bytes": 2615698944,
+      "peak_process_group_rss_bytes": 3043913728,
+      "registered_native_wall_limit_seconds": 5400,
+      "rss_limit_bytes": 17179869184,
+      "single_file_limit_bytes": 1073741824,
+      "wall_limit_seconds": 5400,
+      "wall_seconds": 3189.960686078,
+      "wall_shortened_by_original_campaign_deadline": false
+    },
+    "occupancy_calls": 852,
+    "occupancy_positions": 374709744,
+    "old_new_inputs": {
+      "camera_inputs.json": {
+        "old_new_native_and_report_bytes_sha_equal": true,
+        "sha256": "2148fcdb61b7999414e4b481f0061fb6800a7872b35cea3031d275e06cb41957"
+      },
+      "effective_inputs.json": {
+        "old_new_native_and_report_bytes_sha_equal": true,
+        "sha256": "4e667bec455cb5f06a29bc0e1b37f4ba5dfa4a415f67a01e83711f403aa61119"
+      },
+      "original_render_camera.json": {
+        "old_new_native_and_report_bytes_sha_equal": true,
+        "sha256": "d2ad4b4a3b6a731dc05fd1d4b88a8a7a0cb432a4974b9b9e82f41cc67c07fc7c"
+      }
+    },
+    "original_and_lod_camera_poses_times_equal": true,
+    "original_coarse_bytes": 130660437,
+    "original_coarse_files": 18,
+    "resolution": [
+      960,
+      540
+    ],
+    "six_original_before_after_inventories_equal": true,
+    "status": "COMPLETE_PRE_DISPLACEMENT_OPAQUE_CACHE"
+  },
+  "cache": {
+    "all_cache_stats_unchanged_during_audit": true,
+    "bytes": 1513840506,
+    "exact_file_set_and_sizes_match_complete_inventory": true,
+    "files": 35,
+    "large_payload_evidence": "Build cache_inventory SHA records and source-stage input verification are bound, not independently replayed here.",
+    "large_payload_rehash_by_this_audit": false,
+    "path": "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain",
+    "required_completion_markers": [
+      "slicing_preprocess.finish",
+      "slicing_preprocess.manifest.json",
+      "event_registry_p1.csv",
+      "event_registry_p1_summary.json"
+    ],
+    "small_files_rehashed": [
+      "event_registry_p1.csv",
+      "event_registry_p1_summary.json",
+      "event_registry_selected_event.json",
+      "log.txt",
+      "processed_hyperpolys/0_3_discon.bin",
+      "processed_hyperpolys/1_0.bin",
+      "processed_hyperpolys/1_0_discon.bin",
+      "processed_hyperpolys/1_0_hpmeta.bin",
+      "processed_hyperpolys/1_2_discon.bin",
+      "sdf_calls.txt",
+      "slicing_preprocess.finish",
+      "slicing_preprocess.manifest.json"
+    ]
+  },
+  "guard_review": {
+    "all_requested_raw_queries_fit": null,
+    "initial_element_counts": [
+      {
+        "element": 0,
+        "faces": 1166288,
+        "vertices": 756119
+      },
+      {
+        "element": 1,
+        "faces": 1067210,
+        "vertices": 748855
+      },
+      {
+        "element": 2,
+        "faces": 379210,
+        "vertices": 259413
+      }
+    ],
+    "initial_faces_total": 2612708,
+    "initial_known_counts_exceed_limit": false,
+    "initial_slice_kind": "Discarded default-smooth first-time build slice; not the future raw screen schedule",
+    "initial_vertices_total": 1764387,
+    "observer_face_cap": {
+      "code": "runtime_identity.h:190 faces.size()",
+      "initial_max_faces": 1166288,
+      "initial_min_headroom": 833712,
+      "limit": 2000000,
+      "scope": "PER_ELEMENT"
+    },
+    "observer_owner_cap": {
+      "initial_owner_count": null,
+      "limit": 8000000,
+      "scope": "AGGREGATE_ALL_ELEMENTS"
+    },
+    "observer_vertex_cap": {
+      "code": "runtime_identity.h:132 state.vertex_total",
+      "initial_headroom": 235613,
+      "limit": 2000000,
+      "scope": "AGGREGATE_ALL_ELEMENTS"
+    },
+    "python_array_cap": {
+      "code": "scene_native.py:93-104 validate_counts",
+      "initial_mesh_only_bytes": 80755332,
+      "limit_bytes": 2147483648,
+      "scope": "SUM_ALL_ELEMENTS_MESH_AND_IDENTITY_ARRAYS"
+    },
+    "warning": "2.612708M aggregate faces do not alone violate the 2M per-element face cap. Later raw vertex/owner maxima remain unmeasured; no cap increase is authorized by this audit."
+  },
+  "input_sha256": {
+    "/home/warpwang/binoc-runs/forest-observer-sourcevid-20260906/build/binocmesher/source/runtime_identity.h": {
+      "bytes": 11466,
+      "sha256": "1b951c3beabea89eb5a348f0722fa0f5dbdf501e7e6f1ec5e38bcd72b1b3e6d3"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/native/camera_inputs.json": {
+      "bytes": 46898,
+      "sha256": "2148fcdb61b7999414e4b481f0061fb6800a7872b35cea3031d275e06cb41957"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/native/effective_inputs.json": {
+      "bytes": 15808,
+      "sha256": "4e667bec455cb5f06a29bc0e1b37f4ba5dfa4a415f67a01e83711f403aa61119"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt01/native/original_render_camera.json": {
+      "bytes": 45542,
+      "sha256": "d2ad4b4a3b6a731dc05fd1d4b88a8a7a0cb432a4974b9b9e82f41cc67c07fc7c"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/event_registry_p1.csv": {
+      "bytes": 222673,
+      "sha256": "5a4c1daf87ecb988598dfa953f9d1077d456394efcfb2d8b8d4f230774e03342"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/event_registry_p1_summary.json": {
+      "bytes": 606,
+      "sha256": "497420b41bac595c02842f4f51a61ab3387c86bd2b2f9a5e794cbc67b2c8ff6f"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/event_registry_selected_event.json": {
+      "bytes": 1706,
+      "sha256": "0e1ca4cdb9e004ecebfd4c155f525af5a16c812f5e915380f38c2c40029683a3"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/log.txt": {
+      "bytes": 89797,
+      "sha256": "51dd96685c0f9690c99a4331260d6f1b159a10f0a91a3ba1a3d2c013bd5d140a"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_3_discon.bin": {
+      "bytes": 172716,
+      "sha256": "a79ddfc47cfe3ae5e4e87dffb1fa6e21899565393acbd4355895b7616710a5f8"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_0.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_0_discon.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_0_hpmeta.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_2_discon.bin": {
+      "bytes": 54236,
+      "sha256": "ea4175b6cdcc68d3faa42b503e81946ced8300c71160cb00959dc846aaa478f3"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/sdf_calls.txt": {
+      "bytes": 28356,
+      "sha256": "7a57ede696cf40cf7568c63090755285041bee7066498061b83dfc6ac671ef28"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/slicing_preprocess.finish": {
+      "bytes": 34,
+      "sha256": "fb2b2dcf0d79fe49810f7765670247f87c3252c369a159a9d6bfd792e8df1340"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/HyperMesh/OpaqueTerrain/slicing_preprocess.manifest.json": {
+      "bytes": 217,
+      "sha256": "7e9b633f2e19a59c645ed233e562cd2906821f594ec3050a6599521a92063447"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/camera_inputs.json": {
+      "bytes": 46898,
+      "sha256": "2148fcdb61b7999414e4b481f0061fb6800a7872b35cea3031d275e06cb41957"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/effective_inputs.json": {
+      "bytes": 15808,
+      "sha256": "4e667bec455cb5f06a29bc0e1b37f4ba5dfa4a415f67a01e83711f403aa61119"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/cave_attempt02/native/original_render_camera.json": {
+      "bytes": 45542,
+      "sha256": "d2ad4b4a3b6a731dc05fd1d4b88a8a7a0cb432a4974b9b9e82f41cc67c07fc7c"
+    },
+    "/home/warpwang/src/BinocMesher/infinigen_example_scenes/cave.txt": {
+      "bytes": 557,
+      "sha256": "781783abb118e0e62124954da08ec57929da1b6eb1ba160437a38ef531beec0f"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/budget_amendment01.json": {
+      "bytes": 52846,
+      "sha256": "39ce0a8088c5c72a4b6595c8d054becf6c909410d4e70e1460a042f8488c2ac0"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/cave/build01/native_source_after.json": {
+      "bytes": 2527,
+      "sha256": "1bbdd07687be577b79753272487d47f639d01df2ca4cf40450b6b6d7c138ce90"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/cave/build01/native_source_before.json": {
+      "bytes": 2527,
+      "sha256": "1bbdd07687be577b79753272487d47f639d01df2ca4cf40450b6b6d7c138ce90"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/build_protocol.json": {
+      "bytes": 5413,
+      "sha256": "246a733fd9194453d60553448818f5d5dadca1ba906972f7f5ca571d42e71e1b"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/cache_inventory.json": {
+      "bytes": 5064,
+      "sha256": "4e625174e0a4cc8a2da7587b0b9166288e32df0b7692c10019991b9687911c37"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/camera_inputs.json": {
+      "bytes": 46898,
+      "sha256": "2148fcdb61b7999414e4b481f0061fb6800a7872b35cea3031d275e06cb41957"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/effective_inputs.json": {
+      "bytes": 15808,
+      "sha256": "4e667bec455cb5f06a29bc0e1b37f4ba5dfa4a415f67a01e83711f403aa61119"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/native_command.json": {
+      "bytes": 629,
+      "sha256": "42a6b8459700c3aef2ce4a74e6eb9cae8c69c7ecc8841772c2b5f15b641cac79"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/native_process.json": {
+      "bytes": 628,
+      "sha256": "712c66a767acb6e7be7781649baa313885c1a8548299f32f72d8e10a8026073f"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/native_source_after.json": {
+      "bytes": 2527,
+      "sha256": "1bbdd07687be577b79753272487d47f639d01df2ca4cf40450b6b6d7c138ce90"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/native_source_before.json": {
+      "bytes": 2527,
+      "sha256": "1bbdd07687be577b79753272487d47f639d01df2ca4cf40450b6b6d7c138ce90"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/original_render_camera.json": {
+      "bytes": 45542,
+      "sha256": "d2ad4b4a3b6a731dc05fd1d4b88a8a7a0cb432a4974b9b9e82f41cc67c07fc7c"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/source_inputs_after.json": {
+      "bytes": 2527,
+      "sha256": "1bbdd07687be577b79753272487d47f639d01df2ca4cf40450b6b6d7c138ce90"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/source_inputs_before.json": {
+      "bytes": 2527,
+      "sha256": "1bbdd07687be577b79753272487d47f639d01df2ca4cf40450b6b6d7c138ce90"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/summary.json": {
+      "bytes": 40571,
+      "sha256": "13bf0303c0e03fd42124c5e80610e7f9ef1b6b0f490027c84dc5d28e5593e48d"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/build02/worker_complete.json": {
+      "bytes": 1314,
+      "sha256": "8ef1de67f5321aa5bbef8148dc9dd6bb1e99fbea69cba50a48c107458d97fbaa"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/events_index.json": {
+      "bytes": 77359,
+      "sha256": "917d6ae1ff7aec14fb8dd916a726babfca14d5c292740af041efc1fb89618d65"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/source_support_inventory.json": {
+      "bytes": 7921625,
+      "sha256": "76d53b18d450d2eee603d4a585779c1f3387d2140f276394c567e120f366c2ef"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/cave/source02/summary.json": {
+      "bytes": 66079,
+      "sha256": "cbdd9d3519915569c7a105e8734a9ab82a2fcb9bc6af1fc29e6c73304b8b65b1"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_native.py": {
+      "bytes": 22337,
+      "sha256": "8bf73a224ec880b82ab765a8d76b27de8d0b5bcbaaff3e91499af15d6aba97bb"
+    }
+  },
+  "registry_independently_recounted": {
+    "canonical_events": 147,
+    "logical_incidences": 301,
+    "raw_observations": 522,
+    "roots": {
+      "3/2": 74,
+      "5/2": 73
+    },
+    "unique_raw_ids": 522
+  },
+  "schema": "completed-cave-build-source-independent-audit-v1",
+  "scope": {
+    "continuous_or_requested_schedule_admission": false,
+    "geometry_stage": "PRE_SURFACE_DISPLACEMENT_OPAQUE",
+    "new_native_runs": 0,
+    "new_rasters": 0,
+    "no_algorithm_or_budget_change": true,
+    "read_only": true,
+    "visibility_or_quality_result": null
+  },
+  "segment_id": "cave",
+  "source": {
+    "admission_rate": null,
+    "all_147_event_artifact_hashes_and_identity_roots_checked": true,
+    "cost": {
+      "cpu_seconds": 89.24067029599999,
+      "peak_rss_bytes": 365805568,
+      "wall_seconds": 92.63942280099991
+    },
+    "event_sha_map_digest": "eabbf17dcf9d82d71e772a4aa83b03f610f9c6d27c1f662f7010982177e78e6e",
+    "executed_code_binding_map_sha256": "61e6e536e4542831ffb16b85eba20192e1392762389dffb6ddebb372c41e1c21",
+    "executed_code_files_rehashed": 151,
+    "reader_source_model_not_actual_native_identity": true,
+    "runtime_attempted": false,
+    "runtime_decision_counts": {
+      "REJECTED_FIXED_POLICY": 24,
+      "UNKNOWN": 123
+    },
+    "source_input_verification_inherited": {
+      "pass": true,
+      "scope": "Full opened primary/BPM2/registry/HV hashes and selected BHP2 ranges, plus all opened file stats; not unrelated cache files.",
+      "selected_byte_ranges_rehashed": 11093,
+      "stat_checked_files": 21
+    },
+    "source_status_counts": {
+      "REJECTED_FIXED_POLICY": 24,
+      "SOURCE_READY": 123
+    },
+    "status": "COMPLETE_SOURCE_STAGE_NOT_RUNTIME_ADMISSION"
+  },
+  "status": "PASS_BUILD_SOURCE_RECEIPT_AUDIT_NOT_RUNTIME_ADMISSION"
+}

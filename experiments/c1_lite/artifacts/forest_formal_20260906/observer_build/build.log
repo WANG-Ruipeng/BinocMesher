@@ -1,0 +1,11 @@
+mkdir -p lib
+/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++ -w -O3 -std=c++17 -fPIC -fopenmp -c source/binoctree.cpp -o lib/binoctree.o
+/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++ -w -O3 -std=c++17 -fPIC -fopenmp -c source/coarse_step.cpp -o lib/coarse_step.o
+/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++ -w -O3 -std=c++17 -fPIC -fopenmp -c source/medium_step.cpp -o lib/medium_step.o
+/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++ -w -O3 -std=c++17 -fPIC -fopenmp -c source/fine_step.cpp -o lib/fine_step.o
+/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++ -w -O3 -std=c++17 -fPIC -fopenmp -c source/dual_contouring.cpp -o lib/dual_contouring.o
+/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++ -w -O3 -std=c++17 -fPIC -fopenmp -c source/bisection.cpp -o lib/bisection.o
+/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++ -w -O3 -std=c++17 -fPIC -fopenmp -c source/event_registry.cpp -o lib/event_registry.o
+/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++ -w -O3 -std=c++17 -fPIC -fopenmp -c source/source_splice.cpp -o lib/source_splice.o
+/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++ -w -O3 -std=c++17 -fPIC -fopenmp -c source/slicing.cpp -o lib/slicing.o
+/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++ -shared -o lib/core.so lib/binoctree.o lib/coarse_step.o lib/medium_step.o lib/fine_step.o lib/dual_contouring.o lib/bisection.o lib/event_registry.o lib/source_splice.o lib/slicing.o -fopenmp

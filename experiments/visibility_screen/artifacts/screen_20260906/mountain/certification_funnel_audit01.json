@@ -1,0 +1,448 @@
+{
+  "schema": "independent-certification-funnel-audit-v1",
+  "status": "CERTIFICATION_STAGE_ONLY_NOT_COMPLETED_SEQUENCE",
+  "recorded_utc": "2026-09-06T13:10:00.415620+00:00",
+  "segment_id": "mountain",
+  "screen_attempt": "screen02_omp1",
+  "scope": "Pure JSON audit of frozen certification/source artifacts while the parent independently runs sequence/raster; no native load, mesh replay, source rerun, rendering or completed-sequence claim.",
+  "sequence_completion": "NOT_AUDITED",
+  "omp1_omp8_confirmation": "NOT_AUDITED",
+  "visibility_outcomes": "NOT_READ_OR_CLAIMED",
+  "input_artifacts": [
+    {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/screen02_omp1/certified_events.json",
+      "sha256": "75276420f22297b5ca3244a88cc7cc983646471deed824910e3b691779968f16",
+      "bytes": 6973886
+    },
+    {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/screen02_omp1/support_graph.json",
+      "sha256": "ba7e8d534c2477a2b1eecca58acdcdfd0f1c75373146e342db0bd0646db75b18",
+      "bytes": 79203
+    },
+    {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/screen02_omp1/component_queries.json",
+      "sha256": "7e12a766464439e46e0b577fb6091ead57b9575162fd89097f15a2583459bfc7",
+      "bytes": 2517663
+    },
+    {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/source01/summary.json",
+      "sha256": "3a613ce05ddce52694ab73efcaeb0b2f2254d5e9a12f825fe577586925467ceb",
+      "bytes": 28515
+    },
+    {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/source01/events_index.json",
+      "sha256": "cccad017ce42588a0b43a0d6565b664c11603de2a4b75918fadd3ccb7aada9ed",
+      "bytes": 23561
+    },
+    {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/mountain/source01/source_support_inventory.json",
+      "sha256": "02b2c2651e15463d7201dab35bb84c608136f13dd96cd8e9e6ed7e835643f921",
+      "bytes": 2109970
+    },
+    {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/protocol_20260906.json",
+      "sha256": "9f8ec007632e763383d87ad544d4be2d0069bc506a89d3f38734e3c1bb6d2ae1",
+      "bytes": 10416
+    },
+    {
+      "path": "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/preregistration_seal.json",
+      "sha256": "f72e5e09cfd4bcc0454ef7dfe9078a2d914237c1e11c9468803ad3fd17f36411",
+      "bytes": 25161
+    }
+  ],
+  "input_hashes_unchanged_during_audit": true,
+  "individual_source_event_artifacts_sha_verified": 46,
+  "population_binding_sha256": "094df042a287eeb87a14be08d708b8c04ffe5bdf17e8b03906f9fe8a885476e9",
+  "checks": {
+    "source_canonical_population_preserved": true,
+    "original_compiler_kernel_source_status_preserved": true,
+    "components_exact_disjoint_partition": true,
+    "component_connectivity_and_ids_recomputed": true,
+    "declared_direct_rejected_members_exact": true,
+    "all_required_active_root_population_queries_covered": true,
+    "all_final_independently_admitted_pair_denominators_complete": true,
+    "unknown_actual_support_rows": 0,
+    "positive_negative_exact_xy_turns_recomputed_for_two_rejections": true,
+    "actual_retained_face_zero_area_exactly_recomputed": true,
+    "source_link_connectivity_replay": "NOT_REPLAYED_INHERITED_BOUND_SOURCE_GATE"
+  },
+  "counts": {
+    "canonical_events": 46,
+    "exact_roots": 2,
+    "raw_observations": 155,
+    "source_ready": 45,
+    "source_policy_rejected": 1,
+    "independently_admitted_events": 42,
+    "independently_rejected_events": 4,
+    "components": 35,
+    "component_size_histogram": {
+      "1": 30,
+      "2": 3,
+      "5": 2
+    },
+    "certification_admitted_components": 30,
+    "certification_admitted_events": 33,
+    "fallback_components": 5,
+    "fallback_events": 13,
+    "direct_rejected_events": 4,
+    "additional_fallback_due_to_rejected_peer": 4,
+    "additional_fallback_due_to_unsupported_joint_construction": 5,
+    "certification_event_admission_fraction": {
+      "numerator": 33,
+      "denominator": 46
+    },
+    "certification_component_admission_fraction": {
+      "numerator": 30,
+      "denominator": 35
+    },
+    "unknown_actual_support_rows": 0,
+    "actual_active_query_count": 18,
+    "actual_event_query_observations": 414,
+    "pair_query_status_counts": {
+      "PASS_PAIR_INTERACTIONS": 3780,
+      "UNSUPPORTED_SHARED_SUPPORT": 36
+    }
+  },
+  "root_counts": {
+    "3/2": {
+      "events": 23,
+      "components": 17,
+      "certification_admitted_components": 13,
+      "certification_admitted_events": 15,
+      "fallback_components": 4,
+      "fallback_events": 8
+    },
+    "5/2": {
+      "events": 23,
+      "components": 18,
+      "certification_admitted_components": 17,
+      "certification_admitted_events": 18,
+      "fallback_components": 1,
+      "fallback_events": 5
+    }
+  },
+  "direct_event_rejections": [
+    {
+      "event_id": "element=0;role=temporal_neighbour;face=39594:0|39601:0|39612:0|39602:0",
+      "root": "3/2",
+      "source_status": "SOURCE_READY",
+      "gate": "actual_requested_query",
+      "reason_code": "Actual source boundary is not a strict convex XY graph.",
+      "scope": "Actual native required-query failure of the declared graph-fan policy.",
+      "query": {
+        "active": true,
+        "evaluation_tau": "3/2",
+        "frame_number": null,
+        "key": "root_3_2",
+        "kind": "exact_root",
+        "physical_time_hex": "0x1.f8007dd441356p-1",
+        "time_mode": "exact"
+      },
+      "audit_stage": "actual_local_graph",
+      "native_retained_faces_checked_before_stop": 0,
+      "first_witness": {
+        "boundary_actual_ids": [
+          75793,
+          75833,
+          75835,
+          75834
+        ],
+        "exact_xy_turns": [
+          "4159375/16777216",
+          "-75625/4194304",
+          "7940625/33554432",
+          "16864375/33554432"
+        ],
+        "mixed_exact_turn_signs_independently_verified": true
+      },
+      "interpretation": "Actual serialized-binary32 boundary violates the frozen strict convex XY graph policy; not an exterior collision or a proof no other construction exists."
+    },
+    {
+      "event_id": "element=0;role=temporal_neighbour;face=39630:0|39633:0|39652:0|39644:0",
+      "root": "3/2",
+      "source_status": "SOURCE_READY",
+      "gate": "actual_requested_query",
+      "reason_code": "Actual source boundary is not a strict convex XY graph.",
+      "scope": "Actual native required-query failure of the declared graph-fan policy.",
+      "query": {
+        "active": true,
+        "evaluation_tau": "3/2",
+        "frame_number": null,
+        "key": "root_3_2",
+        "kind": "exact_root",
+        "physical_time_hex": "0x1.f8007dd441356p-1",
+        "time_mode": "exact"
+      },
+      "audit_stage": "actual_local_graph",
+      "native_retained_faces_checked_before_stop": 0,
+      "first_witness": {
+        "boundary_actual_ids": [
+          75880,
+          75942,
+          75943,
+          75941
+        ],
+        "exact_xy_turns": [
+          "2495625/4194304",
+          "-680625/8388608",
+          "226875/262144",
+          "12931875/8388608"
+        ],
+        "mixed_exact_turn_signs_independently_verified": true
+      },
+      "interpretation": "Actual serialized-binary32 boundary violates the frozen strict convex XY graph policy; not an exterior collision or a proof no other construction exists."
+    },
+    {
+      "event_id": "element=0;role=temporal_neighbour;face=41543:0|547281:0|547339:0|547936:0",
+      "root": "3/2",
+      "source_status": "REJECTED_FIXED_POLICY",
+      "gate": "requested_source_interface",
+      "reason_code": "SOURCE_INTERFACE_REJECT",
+      "scope": "Necessary fixed source-quotient contract; not actual binary32 mesh admission.",
+      "query": {
+        "active": true,
+        "evaluation_tau": "44678397528431/35184372088832",
+        "frame_index_zero_based": 20,
+        "frame_number": 21,
+        "global_camera_time_hex": "0x1.b555555555555p-1",
+        "key": "frame_0021",
+        "kind": "natural",
+        "physical_time_hex": "0x1.aaaaaaaaaaaaap-1",
+        "time_mode": "physical"
+      },
+      "audit_stage": null,
+      "native_retained_faces_checked_before_stop": null,
+      "first_witness": {
+        "directed_link_path_compatible": true,
+        "expected_path_endpoints": [
+          "41543:0|547281:0",
+          "41543:0|547936:0"
+        ],
+        "kind": "RETAINED_LINK_NOT_ONE_PATH",
+        "link_edges": 9,
+        "link_vertices": 10,
+        "source_vid": "41543:0|41543:2",
+        "status": "REJECT"
+      },
+      "interpretation": "Inherited necessary source-identity quotient interface gate. E=V-1 plus directed compatibility do not independently replay connectivity. Actual binary32 mesh admission/collision was not tested for this rejected source event."
+    },
+    {
+      "event_id": "element=0;role=temporal_neighbour;face=45085:0|45198:0|46940:0|46498:0",
+      "root": "3/2",
+      "source_status": "SOURCE_READY",
+      "gate": "actual_requested_query",
+      "reason_code": "Degenerate actual retained triangle touches source interface.",
+      "scope": "Actual native required-query failure of the declared graph-fan policy.",
+      "query": {
+        "active": true,
+        "evaluation_tau": "3/2",
+        "frame_number": null,
+        "key": "root_3_2",
+        "kind": "exact_root",
+        "physical_time_hex": "0x1.f8007dd441356p-1",
+        "time_mode": "exact"
+      },
+      "audit_stage": "actual_interface",
+      "native_retained_faces_checked_before_stop": 0,
+      "first_witness": {
+        "failing_face": 82720,
+        "failing_face_actual_ids": [
+          37749,
+          87251,
+          87241
+        ],
+        "failing_face_binary32_coordinates": [
+          [
+            -4.296875,
+            34.375,
+            4.296875
+          ],
+          [
+            -1.07421875,
+            33.30078125,
+            5.37109375
+          ],
+          [
+            -4.296875,
+            34.375,
+            4.296875
+          ]
+        ],
+        "failing_face_exact_cross": [
+          "0",
+          "0",
+          "0"
+        ],
+        "failing_face_shared_boundary_ids": [
+          87251
+        ],
+        "exact_zero_cross_independently_verified": true,
+        "distinct_actual_vertex_ids": true
+      },
+      "interpretation": "Pre-existing retained interface degeneracy violates this fixed admission policy; not a claim of a newly introduced defect. Coincident coordinates are not equated with persistent vertex identity."
+    }
+  ],
+  "fallback_components": [
+    {
+      "component_id": "component-e669fd0c0b0bb16e",
+      "root": "5/2",
+      "decision": "FAIL_CLOSED_UNSUPPORTED_JOINT_COMPONENT",
+      "event_count": 5,
+      "events": [
+        "element=0;role=temporal_neighbour;face=14236:1|39630:0|14238:1|39637:0",
+        "element=0;role=temporal_neighbour;face=14236:1|39630:0|14243:1|39652:0",
+        "element=0;role=temporal_neighbour;face=14238:1|39630:0|14243:1|39655:0",
+        "element=0;role=temporal_neighbour;face=14241:1|39642:0|14246:1|39650:0",
+        "element=0;role=temporal_neighbour;face=14242:1|39643:0|14249:1|39654:0"
+      ],
+      "direct_rejected_events": [],
+      "independently_passing_but_fallback_events": [
+        "element=0;role=temporal_neighbour;face=14236:1|39630:0|14238:1|39637:0",
+        "element=0;role=temporal_neighbour;face=14236:1|39630:0|14243:1|39652:0",
+        "element=0;role=temporal_neighbour;face=14238:1|39630:0|14243:1|39655:0",
+        "element=0;role=temporal_neighbour;face=14241:1|39642:0|14246:1|39650:0",
+        "element=0;role=temporal_neighbour;face=14242:1|39643:0|14249:1|39654:0"
+      ],
+      "fallback_cause": "UNSUPPORTED_JOINT_SHARED_BOUNDARY_CONSTRUCTION",
+      "joint_failure_observations": 27,
+      "joint_failure_status_counts": {
+        "UNSUPPORTED_SHARED_SUPPORT": 27
+      },
+      "first_joint_witness": {
+        "events": [
+          "element=0;role=temporal_neighbour;face=14236:1|39630:0|14238:1|39637:0",
+          "element=0;role=temporal_neighbour;face=14236:1|39630:0|14243:1|39652:0"
+        ],
+        "query": "root_5_2",
+        "report": {
+          "caller_baseline_hash_binding_required": true,
+          "caller_single_event_certificates_required": true,
+          "component_membership_verified": false,
+          "partial_output_published": false,
+          "reason": "Shared boundary identity needs an unsupported joint construction.",
+          "schema": "forest-component-query-union-v1",
+          "scope": "ONE_ACTUAL_QUERY_PROVIDED_PLAN_UNION_ONLY",
+          "status": "UNSUPPORTED_SHARED_SUPPORT",
+          "support_graph_certified": false,
+          "whole_schedule_admitted": false,
+          "witness": {
+            "first_event": "element=0;role=temporal_neighbour;face=14236:1|39630:0|14238:1|39637:0",
+            "second_event": "element=0;role=temporal_neighbour;face=14236:1|39630:0|14243:1|39652:0",
+            "shared": [
+              0,
+              278471
+            ]
+          }
+        }
+      },
+      "dependency_reason_counts": {
+        "ACTUAL_JOINT_PAIR_NOT_CERTIFIED": 3,
+        "ACTUAL_SUPPORT_AABB_POSSIBLE_INTERACTION": 3,
+        "BOUNDARY_ID_OR_INTERFACE_LINK_OVERLAP": 3,
+        "RETAINED_INTERFACE_FACE_OVERLAP": 7,
+        "SOURCE_CELL_BOUNDARY_OR_CANDIDATE_VID_OVERLAP": 3,
+        "SOURCE_CELL_RETAINED_INTERFACE_FACE_OVERLAP": 7,
+        "SOURCE_CELL_SOURCE_RETAINED_INTERFACE_DEPENDENCY": 3,
+        "SOURCE_RETAINED_INTERFACE_DEPENDENCY": 3
+      }
+    },
+    {
+      "component_id": "component-a6846555784d06bb",
+      "root": "3/2",
+      "decision": "FAIL_CLOSED_REJECTED_MEMBER",
+      "event_count": 1,
+      "events": [
+        "element=0;role=temporal_neighbour;face=39594:0|39601:0|39612:0|39602:0"
+      ],
+      "direct_rejected_events": [
+        "element=0;role=temporal_neighbour;face=39594:0|39601:0|39612:0|39602:0"
+      ],
+      "independently_passing_but_fallback_events": [],
+      "fallback_cause": "COMPONENT_CONTAINS_DIRECT_REJECT",
+      "joint_failure_observations": 0,
+      "joint_failure_status_counts": {},
+      "first_joint_witness": null,
+      "dependency_reason_counts": {}
+    },
+    {
+      "component_id": "component-ca56475af5893a2f",
+      "root": "3/2",
+      "decision": "FAIL_CLOSED_REJECTED_MEMBER",
+      "event_count": 5,
+      "events": [
+        "element=0;role=temporal_neighbour;face=39630:0|39633:0|39637:0|39635:0",
+        "element=0;role=temporal_neighbour;face=39630:0|39633:0|39652:0|39644:0",
+        "element=0;role=temporal_neighbour;face=39630:0|39635:0|39655:0|39644:0",
+        "element=0;role=temporal_neighbour;face=39642:0|39644:0|39650:0|39645:0",
+        "element=0;role=temporal_neighbour;face=39643:0|39644:0|39654:0|39653:0"
+      ],
+      "direct_rejected_events": [
+        "element=0;role=temporal_neighbour;face=39630:0|39633:0|39652:0|39644:0"
+      ],
+      "independently_passing_but_fallback_events": [
+        "element=0;role=temporal_neighbour;face=39630:0|39633:0|39637:0|39635:0",
+        "element=0;role=temporal_neighbour;face=39630:0|39635:0|39655:0|39644:0",
+        "element=0;role=temporal_neighbour;face=39642:0|39644:0|39650:0|39645:0",
+        "element=0;role=temporal_neighbour;face=39643:0|39644:0|39654:0|39653:0"
+      ],
+      "fallback_cause": "COMPONENT_CONTAINS_DIRECT_REJECT",
+      "joint_failure_observations": 0,
+      "joint_failure_status_counts": {},
+      "first_joint_witness": null,
+      "dependency_reason_counts": {
+        "ACTUAL_SUPPORT_AABB_POSSIBLE_INTERACTION": 3,
+        "BOUNDARY_ID_OR_INTERFACE_LINK_OVERLAP": 3,
+        "RETAINED_INTERFACE_FACE_OVERLAP": 5,
+        "SOURCE_CELL_BOUNDARY_OR_CANDIDATE_VID_OVERLAP": 3,
+        "SOURCE_CELL_RETAINED_INTERFACE_FACE_OVERLAP": 5,
+        "SOURCE_CELL_SOURCE_RETAINED_INTERFACE_DEPENDENCY": 3,
+        "SOURCE_RETAINED_INTERFACE_DEPENDENCY": 3,
+        "ACTUAL_JOINT_PAIR_NOT_CERTIFIED": 1
+      }
+    },
+    {
+      "component_id": "component-d9dcf6f05cf0c673",
+      "root": "3/2",
+      "decision": "FAIL_CLOSED_REJECTED_MEMBER",
+      "event_count": 1,
+      "events": [
+        "element=0;role=temporal_neighbour;face=41543:0|547281:0|547339:0|547936:0"
+      ],
+      "direct_rejected_events": [
+        "element=0;role=temporal_neighbour;face=41543:0|547281:0|547339:0|547936:0"
+      ],
+      "independently_passing_but_fallback_events": [],
+      "fallback_cause": "COMPONENT_CONTAINS_DIRECT_REJECT",
+      "joint_failure_observations": 0,
+      "joint_failure_status_counts": {},
+      "first_joint_witness": null,
+      "dependency_reason_counts": {}
+    },
+    {
+      "component_id": "component-89fc5afabc7f355e",
+      "root": "3/2",
+      "decision": "FAIL_CLOSED_REJECTED_MEMBER",
+      "event_count": 1,
+      "events": [
+        "element=0;role=temporal_neighbour;face=45085:0|45198:0|46940:0|46498:0"
+      ],
+      "direct_rejected_events": [
+        "element=0;role=temporal_neighbour;face=45085:0|45198:0|46940:0|46498:0"
+      ],
+      "independently_passing_but_fallback_events": [],
+      "fallback_cause": "COMPONENT_CONTAINS_DIRECT_REJECT",
+      "joint_failure_observations": 0,
+      "joint_failure_status_counts": {},
+      "first_joint_witness": null,
+      "dependency_reason_counts": {}
+    }
+  ],
+  "interpretation": [
+    "Nine individually passing events do not reach joint admission: four have a directly rejected component peer, and five form a separately unsupported shared-boundary joint component.",
+    "None of the four direct event reasons is a demonstrated newly introduced replacement-retained collision.",
+    "UNSUPPORTED_SHARED_SUPPORT is a fixed-policy construction limitation, not a proven geometric intersection.",
+    "Source policy failure, actual XY policy failure, pre-existing interface degeneracy and unsupported joint construction remain separate reasons.",
+    "Graph root_counts.pending_components is the pre-joint eligibility count, not the final component admission count; final counts here are recomputed from component decisions.",
+    "All results concern the finite certification schedule only; final sequence publication, OMP consistency and visible impact must be established separately."
+  ]
+}

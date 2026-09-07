@@ -1,0 +1,2058 @@
+{
+  "all_events_preserved_shared_baseline": true,
+  "baseline": [
+    {
+      "faces": 12213,
+      "sha256": {
+        "faces": "e741f41bafd7cdb03827a10df8b8e2cdbc60fa2ee4165b96bc13190ad0a135d7",
+        "tags": "e02343c9cd733c672897b2c25323e2157615cf2af3a9e9ce548186290f580410",
+        "vertices": "facefd244e80ccbf176518577645e4df14dccdde7a5f80969a487d74eb1ed586"
+      },
+      "vertices": 6040
+    },
+    {
+      "faces": 714439,
+      "sha256": {
+        "faces": "aff90e40487fe8dfcd3a22055338c0fb99339c90fad683db1c363ca6af4e2d6e",
+        "tags": "e27e701700c1b1600a2f8ea4051a68bb788913aaf939e07f91cf63193dc310c6",
+        "vertices": "c1486f429f033af376b2006013cfba75138b08dd2891a0e48533218743a95d55"
+      },
+      "vertices": 357235
+    },
+    {
+      "faces": 1393313,
+      "sha256": {
+        "faces": "7e98f8968404c82633bfee12456ba958485d4c696f51493ab9cfbda5efacd74d",
+        "tags": "6c9e402aea5230ed9cecb702992c69cd07e02faf90ab419b6e2dfad61354df06",
+        "vertices": "e460643c8d0aed31bc3be256f2645012dea44ed856003db85894f403a3ef1c62"
+      },
+      "vertices": 673270
+    },
+    {
+      "faces": 74225,
+      "sha256": {
+        "faces": "c73cd0649b27bcd4a5fb8821c45c4248ca61cf76c903b29cbdd1a2571f71afa5",
+        "tags": "3720be885d3543d8cbaf6700b65fd25f263a1c97d1558efe1143c09ce1c1fcb5",
+        "vertices": "e4f054118a01359e0b54c7f01998d5f4522878db80ae63bde64c5c86a2b2d99f"
+      },
+      "vertices": 36797
+    },
+    {
+      "faces": 498390,
+      "sha256": {
+        "faces": "8e6c6e582267caa210c79a027fa6756ac317a944e7c26e05bc8196153367d937",
+        "tags": "2026bd9b29fb3950260cd93430ebbd812c1063d98a238a57a0bd28403f7ff857",
+        "vertices": "0c52a3368e76c49eb2319cf1e9f3e6d8f0f29f84aa5556dfc7dea0415cd24681"
+      },
+      "vertices": 235890
+    }
+  ],
+  "counts": [
+    {
+      "element": 0,
+      "faces": 12213,
+      "identity_vertices": 6040,
+      "raw_owners": 16564,
+      "vertices": 6040
+    },
+    {
+      "element": 1,
+      "faces": 714439,
+      "identity_vertices": 357235,
+      "raw_owners": 790202,
+      "vertices": 357235
+    },
+    {
+      "element": 2,
+      "faces": 1393313,
+      "identity_vertices": 673270,
+      "raw_owners": 1547528,
+      "vertices": 673270
+    },
+    {
+      "element": 3,
+      "faces": 74225,
+      "identity_vertices": 36797,
+      "raw_owners": 89711,
+      "vertices": 36797
+    },
+    {
+      "element": 4,
+      "faces": 498390,
+      "identity_vertices": 235890,
+      "raw_owners": 571679,
+      "vertices": 235890
+    }
+  ],
+  "events": [
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 0,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "9f18a80260c722fd97f3aff4de68809fd4417acc39b79ef05cd2c1f1245367d6",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 0.022227931999850625
+        },
+        "check_wall_seconds": 0.022314046000019516,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=0;role=temporal_neighbour;face=437:1|3208:0|767:1|5093:0",
+      "status": "REJECT",
+      "wall_seconds": 0.022314046000019516
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "31a83ad9f5b43f4c3b09013dd10850d0b5bbeaf46150d5c1c720cc8c319aab28",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 0.19786074600006032
+        },
+        "check_wall_seconds": 0.19788046100006795,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=1316:1|7417:0|1511:1|7808:0",
+      "status": "REJECT",
+      "wall_seconds": 0.19788046100006795
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "de342a4ec20e60d6376c20077d876dcd2bdbc6cb7da9b0b8243c8fa3b98ca799",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 0.00010239499988529133
+        },
+        "check_wall_seconds": 0.0001254590001735778,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=17358:0|34941:0|56949:0|56900:0",
+      "status": "REJECT",
+      "wall_seconds": 0.0001254590001735778
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "ceaa9c5a2687ce41680e2fe9cf1b4e2587d2aabc66f9eacd604e1c5fe4d104a4",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 5.395500011218246e-05
+        },
+        "check_wall_seconds": 5.9734999922511633e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=17404:0|35186:0|37523:0|37514:0",
+      "status": "REJECT",
+      "wall_seconds": 5.9734999922511633e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "6e3f3cd34f785d8f6613c471028dcc5c95985d9a37ed4e71b3dacf5da103302a",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.4321999894236797e-05
+        },
+        "check_wall_seconds": 4.8769999921205454e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=17683:0|37771:0|37797:0|37778:0",
+      "status": "REJECT",
+      "wall_seconds": 4.8769999921205454e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "5db33bbded33012c7b0c99929e2569727f08415f294fe87d6d9938a5cdce1e1a",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.268599991519295e-05
+        },
+        "check_wall_seconds": 4.6760000032008975e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=17888:0|56011:0|56153:0|56144:0",
+      "status": "REJECT",
+      "wall_seconds": 4.6760000032008975e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "649626c4a7cde63aab263c5998bc49f655082982cdd4a3a9c2b81e090e6576cc",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.245300010552455e-05
+        },
+        "check_wall_seconds": 4.622000005838345e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=17889:0|56041:0|56071:0|56070:0",
+      "status": "REJECT",
+      "wall_seconds": 4.622000005838345e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "cf79de9388511d785b536e0e640dda66a3129ca8884008027874a4dede119d94",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.1992999967988e-05
+        },
+        "check_wall_seconds": 4.539600013231393e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=17895:0|56855:0|56997:0|56944:0",
+      "status": "REJECT",
+      "wall_seconds": 4.539600013231393e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "baa4596165f1730aebccec7c94a1af779ada6d6dc7d347ec74881c6373f6dc60",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.084499983036949e-05
+        },
+        "check_wall_seconds": 4.407699998409953e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=17978:0|78746:0|17980:0|78767:0",
+      "status": "REJECT",
+      "wall_seconds": 4.407699998409953e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "26ab9f696faa5f0a87b869beb8b7361ab0ae055b9505c0674fb17ee53cc165ff",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.049300014230539e-05
+        },
+        "check_wall_seconds": 4.4276999915382476e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=18402:0|151561:0|18509:0|159890:0",
+      "status": "REJECT",
+      "wall_seconds": 4.4276999915382476e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "d0d6de91362d714ea652eddbaaf73fb9e2b45f502e42124fe9abc8859f5d7816",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 5.5880999980217894e-05
+        },
+        "check_wall_seconds": 5.919000000176311e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=35193:0|35198:0|35545:0|35423:0",
+      "status": "REJECT",
+      "wall_seconds": 5.919000000176311e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "79824a02f19f635f2fda634419246aaeac20997e1071a499cb4c7719283d1aba",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.030299987789476e-05
+        },
+        "check_wall_seconds": 4.35399999787478e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=35234:0|35235:0|35236:0|35247:0",
+      "status": "REJECT",
+      "wall_seconds": 4.35399999787478e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "bbecaae0bc6bc703cdae0c63c9fe1123cf76a54a4c2d09feaac21ded7dbeeaf1",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.917799995178939e-05
+        },
+        "check_wall_seconds": 4.231200000504032e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=35422:0|35423:0|35427:0|35439:0",
+      "status": "REJECT",
+      "wall_seconds": 4.231200000504032e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "b46d4b9ec03f9af382652e300c669c5e76e453f0052a614ed6e9870607a4682f",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.840399995169719e-05
+        },
+        "check_wall_seconds": 4.145299999436247e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=37389:0|37390:0|37391:0|37403:0",
+      "status": "REJECT",
+      "wall_seconds": 4.145299999436247e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "59250c713b245b25c3c0bfc6d4fc519c10906395ac6f22caa6a06cab9a7c2697",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.926999988834723e-05
+        },
+        "check_wall_seconds": 4.233200002090598e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=52945:0|52946:0|52947:0|53006:0",
+      "status": "REJECT",
+      "wall_seconds": 4.233200002090598e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "d96611168dc5439b9f02177de19877406d95e9d599e3142ebdbe8b9cd167ace9",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.9388000004692e-05
+        },
+        "check_wall_seconds": 4.2477999841139535e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=55844:0|55845:0|55850:0|55863:0",
+      "status": "REJECT",
+      "wall_seconds": 4.2477999841139535e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "ceb636a6f0339420d42d271711236e7ac0a8229cc1108b150d8c1b57295355c9",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 6.225800007086946e-05
+        },
+        "check_wall_seconds": 6.59489999179641e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=55900:0|55901:0|55902:0|55914:0",
+      "status": "REJECT",
+      "wall_seconds": 6.59489999179641e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "f8b0e4780d71e88f03e239b18aa4a17f52b9a94ef63e0d5ecbab2b3ee649a4b2",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.964999993717356e-05
+        },
+        "check_wall_seconds": 5.5081000027712435e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=55930:0|55931:0|55933:0|55932:0",
+      "status": "REJECT",
+      "wall_seconds": 5.5081000027712435e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "3e4285e5d9a9c4144a96b5b88e42e927a585f0133463636af0b63952bbfb6258",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.19899999997142e-05
+        },
+        "check_wall_seconds": 4.562899994198233e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=57082:0|57083:0|57085:0|57084:0",
+      "status": "REJECT",
+      "wall_seconds": 4.562899994198233e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "9ff085bb08fbd3ca3dceee4de48a4f0102133a655efaebd4381c583fc85b39c6",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.999699993073591e-05
+        },
+        "check_wall_seconds": 4.318600008446083e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=6129:1|17835:0|51291:0|51471:0",
+      "status": "REJECT",
+      "wall_seconds": 4.318600008446083e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "81fe6fdff5cfe8d120dd1108ad36505e4797954f6cc189bf5ee0e44f964e2262",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.7896999856457114e-05
+        },
+        "check_wall_seconds": 4.1013000100065256e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=6141:1|17833:0|6881:1|55326:0",
+      "status": "REJECT",
+      "wall_seconds": 4.1013000100065256e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "28b0c9525ddf1818c52133512e0c0848797f020fbcb9e71256dedc3668ec6f37",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.896400016856205e-05
+        },
+        "check_wall_seconds": 4.212700014250004e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=61505:0|61516:0|61617:0|61549:0",
+      "status": "REJECT",
+      "wall_seconds": 4.212700014250004e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "fec9a31c0b6a68a2251bb8aa1efe3e7e443d61bbbaae2528d5ea357184a04db4",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.882299984070414e-05
+        },
+        "check_wall_seconds": 4.204699985166371e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=6175:1|23372:0|6347:1|146441:0",
+      "status": "REJECT",
+      "wall_seconds": 4.204699985166371e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "c5a9c3a0ff745f281a5196e6c280d11416764b76a22efeb2d43f684f1a3e3234",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.925000009985524e-05
+        },
+        "check_wall_seconds": 4.2574000190143124e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=6242:1|19278:0|6248:1|310020:0",
+      "status": "REJECT",
+      "wall_seconds": 4.2574000190143124e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "560013eef3c355b0dcae6740a430a754f6a1e50e47686acf5a17a8695f5860a1",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.027099998893391e-05
+        },
+        "check_wall_seconds": 4.334499999458785e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=6255:1|20487:0|7711:1|20505:0",
+      "status": "REJECT",
+      "wall_seconds": 4.334499999458785e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "a96240cd0a9f2eba274a565dc33cd48501131f3c81fac88b5da97571df8b8bd5",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.874499998346437e-05
+        },
+        "check_wall_seconds": 4.174599985162786e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=6299:1|23124:0|6301:1|23165:0",
+      "status": "REJECT",
+      "wall_seconds": 4.174599985162786e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "6edf3cfedd63ebcabe3ae942e06c77d6677d756e37f8232aa23f8fdc63967234",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.9634000131627545e-05
+        },
+        "check_wall_seconds": 4.283099997337558e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=8121:0|32435:0|32441:0|32461:0",
+      "status": "REJECT",
+      "wall_seconds": 4.283099997337558e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 1,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "7a72b1042141de6562cdac0e2ccdcca8d7c69e28ddb33d83ffb9e078183aad88",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.030499985674396e-05
+        },
+        "check_wall_seconds": 4.319799995755602e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=1;role=temporal_neighbour;face=948:1|5238:0|1758:1|8126:0",
+      "status": "REJECT",
+      "wall_seconds": 4.319799995755602e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "d8d339f81a15259eaf9ba7acdc8d15a818141752e20adf798e48fd844e4cd43f",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 0.39308535899999697
+        },
+        "check_wall_seconds": 0.3930922909999026,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=15070:1|383316:0|436843:0|437105:0",
+      "status": "REJECT",
+      "wall_seconds": 0.3930922909999026
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "1fc2859aac14b14f815e3548a7846d00004368a40af92f55969080ac77658c02",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 0.00010225999994872836
+        },
+        "check_wall_seconds": 0.00012640099998861842,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=15085:1|383314:0|15931:1|443630:0",
+      "status": "REJECT",
+      "wall_seconds": 0.00012640099998861842
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "59292c211271edf7926441aa32f08c2cabe596bd94ec28d571fe9d43d8ad6cba",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.805699995813484e-05
+        },
+        "check_wall_seconds": 5.355600001166749e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=15189:1|384361:0|15191:1|384404:0",
+      "status": "REJECT",
+      "wall_seconds": 5.355600001166749e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "aca523805357b2d70d2db80061ef5a305a7a0e7889a40f86cc0c191b69d8d6be",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.159099989919923e-05
+        },
+        "check_wall_seconds": 4.5177999936640845e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=15231:1|384633:0|15237:1|973819:0",
+      "status": "REJECT",
+      "wall_seconds": 4.5177999936640845e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "57c68528f3d20206aed12c036d104880f44b544a942512106299b9973fc949d4",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.1516000010233256e-05
+        },
+        "check_wall_seconds": 4.487499995775579e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=15244:1|385825:0|17422:1|385847:0",
+      "status": "REJECT",
+      "wall_seconds": 4.487499995775579e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "5dfb80238dcde9575d0a6ea6e589dc212ccd87ef63fb96b04082b42e4a382292",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.922399992006831e-05
+        },
+        "check_wall_seconds": 4.250100005265267e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=15290:1|388488:0|15292:1|388529:0",
+      "status": "REJECT",
+      "wall_seconds": 4.250100005265267e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "edcd52fe189c330648f6510d1b38794d6d815577053778e6c09527dbd7d9eb82",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.026900001008471e-05
+        },
+        "check_wall_seconds": 4.3795000010504737e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=382858:0|411765:0|447801:0|447696:0",
+      "status": "REJECT",
+      "wall_seconds": 4.3795000010504737e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "76b6f4d36a9d2b48247fe81bae0e7f40a35c7f8aa5e81408017b4e280177ab0f",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.078300003129698e-05
+        },
+        "check_wall_seconds": 4.421900007400836e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=382907:0|412028:0|415978:0|415961:0",
+      "status": "REJECT",
+      "wall_seconds": 4.421900007400836e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "109d0b6bc6ea2b1eb1b781fa5441c1a9c520f3e6289107fa7a0d9952f4dac525",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.018799995719746e-05
+        },
+        "check_wall_seconds": 4.338000007919618e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=383182:0|416278:0|416323:0|416294:0",
+      "status": "REJECT",
+      "wall_seconds": 4.338000007919618e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "1fc6e4d60a11d6333c438048925ed4fd4037af3a130616ab84fc624e9ccad99e",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.099299985682592e-05
+        },
+        "check_wall_seconds": 4.408500012687e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=383370:0|446453:0|446481:0|446480:0",
+      "status": "REJECT",
+      "wall_seconds": 4.408500012687e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "7bc23ac4708a717cd9513ac813a764013dd640f3d263a0e90674683dbc25a210",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.97809999412857e-05
+        },
+        "check_wall_seconds": 4.302999991523393e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=383376:0|447621:0|447847:0|447767:0",
+      "status": "REJECT",
+      "wall_seconds": 4.302999991523393e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "9a81286c25e3f6c7d28a3b1e20ea64617b4a48591ba731cd20cd589c68ca9735",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.941299996768066e-05
+        },
+        "check_wall_seconds": 4.253899987816112e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=383811:0|652241:0|653191:0|653115:0",
+      "status": "REJECT",
+      "wall_seconds": 4.253899987816112e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "a575868d206d0b50ecf7882a091a714f174bfbb5399be3f333b3dae3373b7bf9",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.894300016327179e-05
+        },
+        "check_wall_seconds": 4.232800006320758e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=384086:0|731171:0|384089:0|731687:0",
+      "status": "REJECT",
+      "wall_seconds": 4.232800006320758e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "b60b7fb4378c4a7f71fe3bdddf221bd7a521d4462ac4611c2ec3b1229419dedf",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.050600000482518e-05
+        },
+        "check_wall_seconds": 4.366899997876317e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=412044:0|412050:0|412499:0|412334:0",
+      "status": "REJECT",
+      "wall_seconds": 4.366899997876317e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "fd3b4d9d7270e2c5464b92d48c4bd40d40e7f1a1c8f86686ceab0b74a3397cde",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.913999989890726e-05
+        },
+        "check_wall_seconds": 4.215700005261169e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=412087:0|412089:0|412090:0|412109:0",
+      "status": "REJECT",
+      "wall_seconds": 4.215700005261169e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "22d410db938dc6936afea9031c24d5c239fc1ff74a925877600c59117e2d7225",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.856800003632088e-05
+        },
+        "check_wall_seconds": 4.145100001551327e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=412333:0|412334:0|412336:0|412348:0",
+      "status": "REJECT",
+      "wall_seconds": 4.145100001551327e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "bc393b886d155169921b3a0d38bd925162c46e90efcba9c149219de891d12f5c",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 0.00013384199996835378
+        },
+        "check_wall_seconds": 0.00013712200006921194,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=415792:0|415793:0|415794:0|415812:0",
+      "status": "REJECT",
+      "wall_seconds": 0.00013712200006921194
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "286f345679177b2781071c5489dfbef264837c0c15f79e533cc4e33615d4708d",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.386999989947071e-05
+        },
+        "check_wall_seconds": 4.798100007974426e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=439964:0|439965:0|439966:0|440002:0",
+      "status": "REJECT",
+      "wall_seconds": 4.798100007974426e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "4c6588d7a84d1a6d3f3b75dc7af2f6ad1338e2ca89fa988b7d64253c1c20f3d1",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.101099989384238e-05
+        },
+        "check_wall_seconds": 4.411899999468005e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=446126:0|446136:0|446137:0|446163:0",
+      "status": "REJECT",
+      "wall_seconds": 4.411899999468005e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "8ee9df4a0943d7607ff106e085460539fac487493dd96898b8095b54fda0323d",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.925400005755364e-05
+        },
+        "check_wall_seconds": 4.2494000126680476e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=446257:0|446258:0|446262:0|446259:0",
+      "status": "REJECT",
+      "wall_seconds": 4.2494000126680476e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "4b771ae5270a34375fd491d71e7114caac195cd1c3991fa9eb53e84d34955cd8",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.870999989885604e-05
+        },
+        "check_wall_seconds": 4.221199992571201e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=446303:0|446304:0|446305:0|446327:0",
+      "status": "REJECT",
+      "wall_seconds": 4.221199992571201e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "dc64b69578a10b10c84150a22546add274f468d018299c34366c98442d0f178f",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.855800014207489e-05
+        },
+        "check_wall_seconds": 4.170699980932113e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=454299:0|454326:0|454523:0|454379:0",
+      "status": "REJECT",
+      "wall_seconds": 4.170699980932113e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "74a96e71219f30d82a878c4fef6478dc12b2896016c7b4343f9e32365bffd4ea",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.95520000893157e-05
+        },
+        "check_wall_seconds": 4.255999988345138e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=8088:1|368836:0|8941:1|371756:0",
+      "status": "REJECT",
+      "wall_seconds": 4.255999988345138e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 2,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "d8928ea37d49a5f174f85bf84e5c89c253ed4e655c40d2184cccbd1cb0a7a94f",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 3.917900016858766e-05
+        },
+        "check_wall_seconds": 4.245400009494915e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=2;role=temporal_neighbour;face=8442:1|371000:0|8670:1|371420:0",
+      "status": "REJECT",
+      "wall_seconds": 4.245400009494915e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 3,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "79b6b5626729b72daf9e6e7a7a5691d5f23d610e4ce7958531cf5a9dc9ee3b51",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 0.017640925000023344
+        },
+        "check_wall_seconds": 0.01764760500009288,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=3;role=temporal_neighbour;face=18998:1|1062958:0|19071:1|1063989:0",
+      "status": "REJECT",
+      "wall_seconds": 0.01764760500009288
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 4,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "98a9f2a7198fd81239333e2e6c75c11d6811d0283a388276f4a3644d077fd3ec",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 0.1395197660001486
+        },
+        "check_wall_seconds": 0.13953827700015609,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=4;role=temporal_neighbour;face=1100081:0|1115279:0|1127256:0|1127203:0",
+      "status": "REJECT",
+      "wall_seconds": 0.13953827700015609
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 4,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "8d5f816585c985e63ce345a8c77491fbdd4d5ae2c3d646a1eb83072ba951712e",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 9.578599997439596e-05
+        },
+        "check_wall_seconds": 0.00011297900005047268,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=4;role=temporal_neighbour;face=1100081:0|1115280:0|1127260:0|1127203:0",
+      "status": "REJECT",
+      "wall_seconds": 0.00011297900005047268
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 4,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "319c4cb722655607cb63873dccce9b2b3cd7ead4af7dc690cf29110a5f8b0441",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 5.066200014880451e-05
+        },
+        "check_wall_seconds": 5.5972999916775734e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=4;role=temporal_neighbour;face=1100858:0|1211918:0|1211927:0|1211995:0",
+      "status": "REJECT",
+      "wall_seconds": 5.5972999916775734e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 4,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "f12a98a329aa6e31c384c1a96d26f80e0df4efcdef0664bae69d21e467b232ce",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.4415999809643836e-05
+        },
+        "check_wall_seconds": 4.8675000016373815e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=4;role=temporal_neighbour;face=1115429:0|1115430:0|1115431:0|1115438:0",
+      "status": "REJECT",
+      "wall_seconds": 4.8675000016373815e-05
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 4,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "e96dba12eae2d7fa8585cee69ed292d5b6138e055fc9db060ce1a965c26c526e",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 0.00010281499999109656
+        },
+        "check_wall_seconds": 0.00010699800009206228,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=4;role=temporal_neighbour;face=1115459:0|1115460:0|1115461:0|1115470:0",
+      "status": "REJECT",
+      "wall_seconds": 0.00010699800009206228
+    },
+    {
+      "case": {
+        "audit": {
+          "certificate_counts": {},
+          "certified_necessary_policy_failure": true,
+          "continuous_window_admitted": false,
+          "element": 4,
+          "native_owner_element_remapped": false,
+          "reason": "Boundary SourceVID missing or ambiguous in complete native ledger.",
+          "retained_faces_checked": 0,
+          "same_root_group_admitted": false,
+          "scope": "ONE_ACTUAL_QUERY_ONLY",
+          "source_digest": "f0380c829aef881531f5a23b399e2a0c4aa1ffe79b7c282ed28dbfdfd2f60f5b",
+          "stage": "actual_source_ownership",
+          "status": "REJECT",
+          "tau": "5/2",
+          "wall_seconds": 4.1313999872727436e-05
+        },
+        "check_wall_seconds": 4.531700005827588e-05,
+        "query": {
+          "active": true,
+          "evaluation_tau": "5/2",
+          "frame_number": null,
+          "key": "root_5_2",
+          "kind": "exact_root",
+          "physical_time_hex": "0x1.a40068db8bac7p+0",
+          "time_mode": "exact"
+        }
+      },
+      "event_id": "element=4;role=temporal_neighbour;face=21437:1|1101466:0|21438:1|1101525:0",
+      "status": "REJECT",
+      "wall_seconds": 4.531700005827588e-05
+    }
+  ],
+  "frozen_library_baseline_parity": "EXACT_RECEIPT_MATCH",
+  "native_cost": {
+    "array_bytes": 222607264,
+    "cpu_seconds": 4.379905307000001,
+    "peak_rss_bytes": 1030483968,
+    "wall_seconds": 4.384860405999916
+  },
+  "observer_enabled_disabled_byte_equal": true,
+  "query": {
+    "active": true,
+    "evaluation_tau": "5/2",
+    "frame_number": null,
+    "key": "root_5_2",
+    "kind": "exact_root",
+    "physical_time_hex": "0x1.a40068db8bac7p+0",
+    "time_mode": "exact"
+  },
+  "query_token": [
+    "exact",
+    "5/2"
+  ],
+  "wall_seconds": 9.079059687000154
+}

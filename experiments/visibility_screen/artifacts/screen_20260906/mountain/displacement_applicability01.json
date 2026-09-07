@@ -1,0 +1,188 @@
+{
+  "schema": "mountain-displacement-applicability-v1",
+  "scope": "CONFIGURATION_AUDIT_ONLY_NOT_GATE_B",
+  "status": "CONFIGURATION_BOUND_ZERO_POST_SURFACE_DISPLACEMENT_PASSES",
+  "audit_date": "2026-09-06",
+  "segment": "mountain",
+  "seed": 1,
+  "frame_range": [1, 64],
+  "data_root": "/home/warpwang/binoc-runs/visibility-screen-20260906/mountain_attempt01",
+  "source_root": "/home/warpwang/src/BinocMesher/infinigen_binocmesher",
+  "execution_scope": {
+    "read_only_source_and_saved_metadata_inspection": true,
+    "write_attributes_executed_in_this_audit": false,
+    "surface_kernel_executed_in_this_audit": false,
+    "native_query_executed_in_this_audit": false,
+    "raster_executed_in_this_audit": false,
+    "blender_scene_opened_in_this_audit": false,
+    "mesh_arrays_processed_in_this_audit": false,
+    "gate_b_executed": false,
+    "gate_b_passed": null,
+    "visible_component_selected_by_this_audit": null,
+    "visibility_selection": "NOT_EVALUATED_HERE_REQUIRES_SEPARATE_SCREEN_RESULT",
+    "method_or_quality_claim": false,
+    "runtime_files_modified": false
+  },
+  "input_bindings": {
+    "hash_basis": "The following five small manifest/source documents were directly rehashed during this audit. Parameter arrays, scene.blend, and libraries below are inherited from these hash-bound build manifests, not reread or independently executed here.",
+    "effective_inputs": {
+      "path": "native/effective_inputs.json",
+      "sha256": "6aea69c2b05f52e9ab60f9c6ebf47d8acad7c3d8125695e0b4ba974d4665e82f"
+    },
+    "operative_gin": {
+      "path": "native/operative_gin.txt",
+      "sha256": "99c2d110bc82962d6f0302512ee414d8ae0465f2380dd84df3387894bf80b1dc",
+      "line_references": {
+        "get_surface_type.degrade_sdf_to_displacement": 60,
+        "LandTiles.land_process": 76,
+        "LandTiles.material": 77,
+        "registry.mountain_collection": 129,
+        "registry.snow": 132
+      }
+    },
+    "loaded_geometry_libraries": {
+      "path": "native/loaded_geometry_libraries.json",
+      "sha256": "386b7b4a9e2bf3258bf7353ca1bc8e671ab282c8981400925ba6acc172d844b0"
+    },
+    "loaded_python_sources": {
+      "path": "native/loaded_python_sources.json",
+      "sha256": "d9a07e225fa97ed3fe218f6c721d49a1311567263262c0fd8281ac9411a89f46"
+    },
+    "source_inputs_before": {
+      "path": "native/source_inputs_before.json",
+      "sha256": "27aa52d88db1d21ad1850ee5ce47b3068c7a95ee7c21e167261caf5eac429a26"
+    },
+    "coarse_scene": {
+      "path": "coarse/scene.blend",
+      "sha256": "c87c7edd464b868fa5a6271824940299aad962198285f3f5c566e8edaa18877a",
+      "bytes": 36127534,
+      "hash_basis": "INHERITED_FROM_SOURCE_INPUTS_BEFORE"
+    },
+    "coarse_mask_tag": {
+      "path": "coarse/MaskTag.json",
+      "sha256": "a293f9dcdb07cc69bde2f83a79feafe65a8133bce38ebab2d55fb45f1299bc16",
+      "hash_basis": "INHERITED_FROM_SOURCE_INPUTS_BEFORE"
+    }
+  },
+  "source_bindings": {
+    "hash_basis": "Each of these seven source files was directly rehashed during this audit; hashes agree with the saved loaded_python_sources manifest. Paths are relative to source_root; line references are one-based and refer to these exact bytes.",
+    "files": [
+      {
+        "path": "infinigen/terrain/core.py",
+        "sha256": "84520ef794dc6ea9a2b7d14f6914af9fa8e719ce1106bd9701745cd9f96c4b13",
+        "line_references": {"get_surface_type": [67, 74], "ordinary_per_element_attributes_and_out_of_view": [81, 90], "post_surface_displacement_dispatch": [415, 430], "blender_displacement_dispatch": [432, 438], "sdf_surface_registration": [488, 513]}
+      },
+      {
+        "path": "infinigen/terrain/elements/core.py",
+        "sha256": "1ba309e66cba8cff8a9a4e804ce3d1824d7ae1f10b5a37b5f7957a662d1690b0",
+        "line_references": {"material_and_auxiliary_outputs": [127, 139], "occupancy_sdf_perturbation_via_dict": [140, 144]}
+      },
+      {
+        "path": "infinigen/terrain/elements/landtiles.py",
+        "sha256": "95397642f9e2de2766f0e215b30b8d3b01507c69d7c8a9be275ca639e7736745",
+        "line_references": {"default_material_and_transparency": [66, 67], "snowfall_auxiliary_attribute": [89, 96], "terrain_element_tag": [173, 174]}
+      },
+      {
+        "path": "infinigen/assets/materials/mountain.py",
+        "sha256": "c06c218918a7f7fc23b09bf1dd06b2b59f5b7a7a7805aba80866871f222d89d5",
+        "line_references": {"declared_type_modifier_and_kernel_name": [18, 20]}
+      },
+      {
+        "path": "infinigen/infinigen_gpl/surfaces/snow.py",
+        "sha256": "5ae9a97dbae1848b6429af5729cb1792a032542ca312ea5e448d0adf34a6454f",
+        "line_references": {"declared_type_modifier_and_kernel_name": [7, 9]}
+      },
+      {
+        "path": "infinigen/terrain/surface_kernel/core.py",
+        "sha256": "7234a8b77ea9c6f5a9429e65365e40225df26e4897fe02b7d4b7b3367b5aab22",
+        "line_references": {"dict_fixed_normal_and_z_offset": [97, 121], "mesh_current_normals_and_xyz_offset": [122, 140]}
+      },
+      {
+        "path": "infinigen/terrain/utils/mesh.py",
+        "sha256": "ea523d03aeed0429f29777d08b80d11d046acda8a3230738764d6213cf531a27",
+        "line_references": {"write_attributes_signature": 441, "per_element_owner_attribute_branch": [472, 488]}
+      }
+    ]
+  },
+  "frozen_actual_configuration": {
+    "configs": ["snowy_mountain", "monocular", "high_quality_terrain", "no_assets"],
+    "bounds": [-500, 500, -500, 500, -500, 500],
+    "terrain_elements": ["landtiles", "atmosphere"],
+    "opaque_elements": ["landtiles"],
+    "opaque_attributes": ["mountain_collection", "snow"],
+    "opaque_element_class": "infinigen.terrain.elements.landtiles.LandTiles",
+    "opaque_height_offset": 0.0,
+    "land_process": "snowfall",
+    "degrade_sdf_to_displacement": 0,
+    "geometry_stage": "PRE_SURFACE_DISPLACEMENT_OPAQUE",
+    "occupancy_sdf_perturbations_preserved": true,
+    "surface_displacement_executed_in_build": false,
+    "rendering_executed_in_build": false,
+    "mesher_parameters": {"fading_time": 1, "min_dist": 0.1, "min_t_offset": 0, "pixels_per_cube": 6, "pixels_per_cube_coarse": 30, "pixels_per_cube_outview": 120, "relax_iters": 0, "use_alignment": false}
+  },
+  "surface_dispatch": {
+    "attributes_iteration_order": ["mountain_collection", "snow"],
+    "surfaces": [
+      {"attribute": "mountain_collection", "python_module": "infinigen.assets.materials.mountain", "declared_type": "SurfaceTypes.SDFPerturb", "effective_type": "SurfaceTypes.SDFPerturb", "modifier": "geo_MOUNTAIN", "kernel_name": "mountain", "registered_in_occupancy_sdf": true, "use_position": true, "use_normal": true},
+      {"attribute": "snow", "python_module": "infinigen.infinigen_gpl.surfaces.snow", "declared_type": "SurfaceTypes.SDFPerturb", "effective_type": "SurfaceTypes.SDFPerturb", "modifier": "geo_snowtexture", "kernel_name": "snow", "registered_in_occupancy_sdf": true, "use_position": true, "use_normal": true}
+    ],
+    "post_surface_displacement_passes": [],
+    "blender_displacement_modifiers": [],
+    "reason": "The bound operative flag is zero, so get_surface_type returns each declared SDFPerturb type unchanged. Ordinary post-mesh dispatch admits only Displacement, and its Blender modifier list admits only BlenderDisplacement. Neither opaque attribute has either type. The two SDF perturbations were instead registered in LandTiles occupancy evaluation.",
+    "not_a_zero_displacement_function_claim": "The empty post-pass list does not mean the terrain is unperturbed. Mountain and snow are nontrivial occupancy SDF kernels; snow has no imported parameter arrays, which does not imply its library operation is zero.",
+    "prohibited_double_application": "Do not apply mountain or snow again through SurfaceKernel(Mesh) to this frozen geometry. Doing so changes the configured pipeline and applies an additional displacement, rather than completing an omitted ordinary stage.",
+    "dict_mesh_distinction": "Element.__call__ legitimately invokes SurfaceKernel(dict) inside occupancy evaluation, with fixed upward normal and Z-only offset subtracted from SDF. A genuine post-surface-displacement pass would require the separate Mesh branch with current vertex normals and XYZ offsets. No such post pass is selected here."
+  },
+  "opaque_kernel_input_bindings": {
+    "hash_basis": "INHERITED_FROM_DIRECTLY_REHASHED_EFFECTIVE_INPUTS; array files were not reread in this audit",
+    "path_root": "native/",
+    "element_arrays": [
+      {"path": "kernel_parameters/0_int_params.npy", "dtype": "int32", "shape": [8], "sha256": "0f4e92e34c72ed2dccc48d0325ed24193851cbc0dacf809ddb08df6434aa370b"},
+      {"path": "kernel_parameters/0_float_params.npy", "dtype": "float32", "shape": [41943064], "sha256": "84aceda0501065b3d5de55ed200e85ced5c248de76aeb4158a322adc2664841a"},
+      {"path": "kernel_parameters/0_int_params2.npy", "dtype": "int32", "shape": [0], "sha256": "040ce28f7590a34af85fbdb8115c90c9a0529a73b047533889c859c2f2c6e627"},
+      {"path": "kernel_parameters/0_float_params2.npy", "dtype": "float32", "shape": [0], "sha256": "4e65bac20d7e3ce2d5f45a7e2a99fc25e1ca7ed28d2d729f4e598713da68639f"},
+      {"path": "kernel_parameters/0_int_params3.npy", "dtype": "int32", "shape": [0], "sha256": "040ce28f7590a34af85fbdb8115c90c9a0529a73b047533889c859c2f2c6e627"},
+      {"path": "kernel_parameters/0_float_params3.npy", "dtype": "float32", "shape": [0], "sha256": "4e65bac20d7e3ce2d5f45a7e2a99fc25e1ca7ed28d2d729f4e598713da68639f"},
+      {"path": "kernel_parameters/0_meta_params.npy", "dtype": "bool", "shape": [1], "sha256": "abab529d1b1d87bda52d7f044212cde776c26e9adfcd63251fdde8c877a2a8f9"}
+    ],
+    "mountain_imported_arrays": [
+      {"path": "kernel_parameters/0_sdfsurface_0_float.npy", "dtype": "float32", "shape": [84], "sha256": "41105e7ecc5bf64c4a73259f57a980e63c7a23d3e4d4143da05a827bd952a75e"},
+      {"path": "kernel_parameters/0_sdfsurface_0_float3_nonbuiltin.npy", "dtype": "float32", "shape": [81], "sha256": "a02f77717ca0c7e777680da3bcb0b18bea79556f322eb477bc0537c50aa7f94c"}
+    ],
+    "snow_imported_arrays": []
+  },
+  "library_bindings": {
+    "hash_basis": "INHERITED_FROM_DIRECTLY_REHASHED_LOADED_GEOMETRY_LIBRARIES; libraries were not loaded or executed in this audit",
+    "core_so": {"path": "/home/warpwang/src/BinocMesher/binocmesher/lib/core.so", "sha256": "b2bf1b5f1847087645d88507446b012dd4b77324269e45bf893de0e17d330796"},
+    "cpu_library_root": "/home/warpwang/src/BinocMesher/infinigen_binocmesher/infinigen/terrain/lib/cpu",
+    "libraries": [
+      {"path": "elements/landtiles.so", "sha256": "44b6baba0e8654ce51ae9653d2bd7cefef374171efb452408ad8c13e7e393937", "role": "opaque element"},
+      {"path": "surfaces/mountain.so", "sha256": "30b9d2dced6affd93d13df2259b459f0761ea3e964c493e3ddb65478be902426", "role": "occupancy SDF perturbation"},
+      {"path": "surfaces/snow.so", "sha256": "d2f847d098d444ad210b36cbb076029256be0abe369a52b0959ad7b66e96efce", "role": "occupancy SDF perturbation"},
+      {"path": "elements/atmosphere.so", "sha256": "915ae2d2950460c7d7b7da6f687cf3f708b76fc19fe20733b89102d2003e849f", "role": "loaded nonopaque element; not an opaque post-displacement pass"},
+      {"path": "elements/waterbody.so", "sha256": "3ace1670052e5b604746f8d65fb0f8169bc51fcd538c02d17cd6fc10b6daf20b", "role": "loaded library dependency; not an actual Mountain opaque element"}
+    ]
+  },
+  "planned_owner_attribute_contract_not_executed": {
+    "prerequisite": "A separately selected qualifying visible component and sufficient execution authority. Reconstruct the same LandTiles state and loaded parameters in an isolated worker; recheck hashes and effective surface dispatch before any mesh processing.",
+    "scope": "For each full-frame ordinary baseline and full-frame combined opaque mesh independently; no patch crop and no averaging or interpolation of owner attributes.",
+    "invocation": "mesh = Mesh(vertices=vertices.copy(), faces=faces.copy()); write_attributes([landtiles], None, [mesh])",
+    "invocation_branch": "Per-element meshes branch in utils/mesh.py:472-488, not the concatenated-mesh argmin owner-selection branch.",
+    "required_known_material_outputs": ["mountain_collection", "snow"],
+    "output_preservation": "Preserve every actual element return other than Vars.SDF and Vars.Offset, not only the two listed material fields. Preserve ordinary ElementTag.Terrain and set OutOfView from the matching ordinary/combined in-view tags as in terrain/core.py:88. Evaluate at the actual new-center position; do not synthesize its material weights.",
+    "post_dispatch": "Recheck sorted opaque surface attributes and types against this binding. The expected CPU post-surface list and BlenderDisplacement list are empty.",
+    "required_gate_b_checks_still_unexecuted": [
+      "Input reconstruction and owner-attribute invocation really execute with bound parameters and sources.",
+      "Mesh conversion and attribute evaluation leave geometry and IDs as required; this has not been inferred from the empty surface dispatch.",
+      "Full baseline versus combined boundary/exterior positions, retained rows, source identity, and contact audits meet the selected finite-schedule contract.",
+      "Any mismatch is POST_DISPLACEMENT_UNSUPPORTED; do not change the surface-type flag, add offsets, or enlarge support to obtain a pass."
+    ]
+  },
+  "controls_and_reference_status": {
+    "raw_and_extra_smooth": "Existing native adapter exposes both modes; no new control execution was performed by this audit.",
+    "beb1_combined": "Requires the separately bound selected component and complete finite requested-schedule certificate.",
+    "centroid_and_connectivity_only_controls": "No actual Mountain post-stage runs or complete fairness bindings established by this audit.",
+    "independent_quality_reference": "NOT_DEFINED_HERE. Saved coarse scene and heightmap assets are not a certified independent reference for the final perturbed SDF surface.",
+    "interpretation": "This document does not establish a visual improvement, a successful Gate B, or general post-displacement robustness. Zero configured post-surface passes are an applicability result, not a nontrivial displacement experiment. P2/P3 remain gated by separate selection, audit, reference, and authority requirements."
+  }
+}

@@ -1,0 +1,449 @@
+{
+  "audit_cost": {
+    "peak_rss_bytes": 19709952,
+    "wall_seconds": 0.48971688100027677
+  },
+  "build": {
+    "actual_opaque_elements": [
+      "ground",
+      "landtiles",
+      "sdf_trees",
+      "warped_rocks",
+      "voronoi_rocks"
+    ],
+    "build_core_so_sha256": "b2bf1b5f1847087645d88507446b012dd4b77324269e45bf893de0e17d330796",
+    "coarse_regenerated": false,
+    "cost": {
+      "all_children_exit_expected": true,
+      "directory_quota_is_polled_not_filesystem_enforced": true,
+      "early_stop_output_bytes": 8321499136,
+      "exit_code": 0,
+      "infrastructure_stop": null,
+      "original_campaign_deadline_utc": "2026-09-06T19:28:39+00:00",
+      "output_limit_bytes": 8589934592,
+      "peak_monitored_output_bytes": 6643199942,
+      "peak_process_group_rss_bytes": 5071106048,
+      "registered_native_wall_limit_seconds": 5400,
+      "rss_limit_bytes": 17179869184,
+      "single_file_limit_bytes": 1073741824,
+      "wall_limit_seconds": 5400,
+      "wall_seconds": 2421.6429561779996,
+      "wall_shortened_by_original_campaign_deadline": false
+    },
+    "current_original_source_hashes_recomputed": true,
+    "fps": 24,
+    "frame_range": [
+      97,
+      160
+    ],
+    "loaded_library_count_rehashed": 8,
+    "lod_px": 6,
+    "occupancy_calls": 2580,
+    "occupancy_positions": 804348181,
+    "old_new_camera_effective_sha256": {
+      "camera_inputs.json": "37c9ce177201858bb842d599621641f91b48d31ab4f2e6adf9f78fe2d4fc9486",
+      "effective_inputs.json": "c1089fc40bbaada19775fa068391bb27d335ffae25444784f147973a6c345f2f",
+      "original_render_camera.json": "f75b2c1501fa7b8d3e6c6b792f1f4b9206e5d328b8d4fb2344c8fbef5ca254b1"
+    },
+    "old_new_kernel_parameter_files_equal": 41,
+    "old_new_registered_segment_and_overrides_equal": true,
+    "original_source_bytes": 134624741,
+    "original_source_files": 16,
+    "resolution": [
+      960,
+      540
+    ],
+    "scene": "Forest",
+    "seed": 0,
+    "six_before_after_inventories_equal": true,
+    "status": "COMPLETE_PRE_DISPLACEMENT_OPAQUE_CACHE"
+  },
+  "cache": {
+    "bhp2_source_group_files": 2,
+    "bytes": 4097985903,
+    "complete_inventory_file_set_sizes_and_before_after_stats_match": true,
+    "files": 35,
+    "hv_group_files": 2,
+    "large_payload_independent_rehash": false,
+    "large_payload_scope": "Bound completed worker full cache_inventory; this audit verifies all file sizes and small files without rescanning GB payload.",
+    "path": "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain",
+    "primary_bpm2_discon_matrix_files": 24,
+    "required_completion_files": [
+      "slicing_preprocess.finish",
+      "slicing_preprocess.manifest.json",
+      "event_registry_p1.csv",
+      "event_registry_p1_summary.json"
+    ],
+    "small_files_rehashed": [
+      "event_registry_p1.csv",
+      "event_registry_p1_summary.json",
+      "event_registry_selected_event.json",
+      "log.txt",
+      "processed_hyperpolys/0_2.bin",
+      "processed_hyperpolys/0_2_discon.bin",
+      "processed_hyperpolys/0_2_hpmeta.bin",
+      "processed_hyperpolys/0_3.bin",
+      "processed_hyperpolys/0_3_discon.bin",
+      "processed_hyperpolys/0_3_hpmeta.bin",
+      "processed_hyperpolys/1_0.bin",
+      "processed_hyperpolys/1_0_discon.bin",
+      "processed_hyperpolys/1_0_hpmeta.bin",
+      "processed_hyperpolys/1_2.bin",
+      "processed_hyperpolys/1_2_discon.bin",
+      "processed_hyperpolys/1_2_hpmeta.bin",
+      "sdf_calls.txt",
+      "slicing_preprocess.finish",
+      "slicing_preprocess.manifest.json"
+    ]
+  },
+  "guard_review": {
+    "actual_raw_screen_exceeds_limit": null,
+    "initial_element_counts": [
+      {
+        "element": 0,
+        "faces": 9931,
+        "vertices": 5211
+      },
+      {
+        "element": 1,
+        "faces": 1178284,
+        "vertices": 1009552
+      },
+      {
+        "element": 2,
+        "faces": 3607379,
+        "vertices": 3683058
+      },
+      {
+        "element": 3,
+        "faces": 10500,
+        "vertices": 5839
+      },
+      {
+        "element": 4,
+        "faces": 853370,
+        "vertices": 844894
+      }
+    ],
+    "initial_faces_total": 5659464,
+    "initial_slice_kind": "Default extra_smooth build slice, explicitly discarded; not a raw screen admission query",
+    "initial_smooth_counts_would_exceed_size_limits": true,
+    "initial_vertices_total": 5548554,
+    "interpretation": "Substantial risk to a later ledger-enabled screen. Smooth first-slice counts are not proof of raw per-query counts; a capacity stop is instrumentation/resource unresolved, not an event rejection. The zero registry evidence does not itself require a successful patch identity ledger.",
+    "no_cap_change_performed_or_authorized_by_audit": true,
+    "observer_faces": {
+      "element_name": "sdf_trees",
+      "initial_faces": 3607379,
+      "initial_over_by": 1607379,
+      "initial_over_limit_element": 2,
+      "limit": 2000000,
+      "scope": "PER_ELEMENT"
+    },
+    "observer_owners": {
+      "actual_initial_owner_count": null,
+      "limit": 8000000,
+      "scope": "AGGREGATE_ALL_ELEMENTS"
+    },
+    "observer_vertices": {
+      "initial_over_by": 3548554,
+      "limit": 2000000,
+      "scope": "AGGREGATE_ALL_ELEMENTS"
+    },
+    "python_query_arrays": {
+      "initial_mesh_only_bytes": 223273080,
+      "limit_bytes": 2147483648,
+      "scope": "ALL_ELEMENTS_MESH_PLUS_LEDGER_ARRAY_SUM"
+    }
+  },
+  "input_sha256": {
+    "/home/warpwang/binoc-runs/forest-observer-sourcevid-20260906/build/binocmesher/source/runtime_identity.h": {
+      "bytes": 11466,
+      "sha256": "1b951c3beabea89eb5a348f0722fa0f5dbdf501e7e6f1ec5e38bcd72b1b3e6d3"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt01/native/camera_inputs.json": {
+      "bytes": 46580,
+      "sha256": "37c9ce177201858bb842d599621641f91b48d31ab4f2e6adf9f78fe2d4fc9486"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt01/native/effective_inputs.json": {
+      "bytes": 15009,
+      "sha256": "c1089fc40bbaada19775fa068391bb27d335ffae25444784f147973a6c345f2f"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt01/native/original_render_camera.json": {
+      "bytes": 45224,
+      "sha256": "f75b2c1501fa7b8d3e6c6b792f1f4b9206e5d328b8d4fb2344c8fbef5ca254b1"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/driver_snapshot.py": {
+      "bytes": 26897,
+      "sha256": "556ebbf95168e96ed81e06d3238e89ad2fee6a0f8dfe64856b5969f8e1005a5c"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/event_registry_p1.csv": {
+      "bytes": 368,
+      "sha256": "7d209c7123336a36bcb3ae338d6c6b41767a44a0c2bf168b9b7aa41164a19868"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/event_registry_p1_summary.json": {
+      "bytes": 581,
+      "sha256": "4d334fcf326e513f65177bf639622467b74a67acc2ee96e0083bd280557622b8"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/event_registry_selected_event.json": {
+      "bytes": 24,
+      "sha256": "56c1fbbf43c435a712dcfceb3c6b10f7dc78f03dbc6a4419dae6c9a1c413c169"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/log.txt": {
+      "bytes": 101547,
+      "sha256": "f9a1aee1d1a53520c57dd73f7d8362aef66b4a034bdac5017a520ef271646f4c"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_2.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_2_discon.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_2_hpmeta.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_3.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_3_discon.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/0_3_hpmeta.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_0.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_0_discon.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_0_hpmeta.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_2.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_2_discon.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/processed_hyperpolys/1_2_hpmeta.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/sdf_calls.txt": {
+      "bytes": 55561,
+      "sha256": "199109eca7380d938b93126e5a33a5d3e80a4116e8f1ddf75ee3aacc9bea4af3"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/slicing_preprocess.finish": {
+      "bytes": 34,
+      "sha256": "fb2b2dcf0d79fe49810f7765670247f87c3252c369a159a9d6bfd792e8df1340"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/HyperMesh/OpaqueTerrain/slicing_preprocess.manifest.json": {
+      "bytes": 217,
+      "sha256": "7e9b633f2e19a59c645ed233e562cd2906821f594ec3050a6599521a92063447"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/camera_inputs.json": {
+      "bytes": 46580,
+      "sha256": "37c9ce177201858bb842d599621641f91b48d31ab4f2e6adf9f78fe2d4fc9486"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/effective_inputs.json": {
+      "bytes": 15009,
+      "sha256": "c1089fc40bbaada19775fa068391bb27d335ffae25444784f147973a6c345f2f"
+    },
+    "/home/warpwang/binoc-runs/visibility-screen-20260906/forest_b_attempt02/native/original_render_camera.json": {
+      "bytes": 45224,
+      "sha256": "f75b2c1501fa7b8d3e6c6b792f1f4b9206e5d328b8d4fb2344c8fbef5ca254b1"
+    },
+    "/home/warpwang/src/BinocMesher/infinigen_example_scenes/forest.txt": {
+      "bytes": 298,
+      "sha256": "78000978c1910ff7b99eb76d8074b9960cd53a93d3bbb23042362ccdfd5a01a7"
+    },
+    "/mnt/e/BinocMesher/binocmesher/source/event_registry.cpp": {
+      "bytes": 33469,
+      "sha256": "5a2284407ad929d39d3f49c6baf28d577f5002802d58a90b9c50498846f81eb1"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/budget_amendment01.json": {
+      "bytes": 52846,
+      "sha256": "39ce0a8088c5c72a4b6595c8d054becf6c909410d4e70e1460a042f8488c2ac0"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/build02/build_protocol.json": {
+      "bytes": 5185,
+      "sha256": "6ffe5ddddc0212e0ad60d40e10aee513b5318325245b96108834db00a7160af8"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/build02/cache_inventory.json": {
+      "bytes": 5017,
+      "sha256": "40131fc4552a434a07a8190719afc8743e652cd46674e6ed50fefd08a0c1989f"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/build02/camera_inputs.json": {
+      "bytes": 46580,
+      "sha256": "37c9ce177201858bb842d599621641f91b48d31ab4f2e6adf9f78fe2d4fc9486"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/build02/effective_inputs.json": {
+      "bytes": 15009,
+      "sha256": "c1089fc40bbaada19775fa068391bb27d335ffae25444784f147973a6c345f2f"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/build02/loaded_geometry_libraries.json": {
+      "bytes": 1354,
+      "sha256": "d9fdce2abd4e6f80fe8ab87a154553067f5b30637f1bcdad4b666872240d5a60"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/build02/native_command.json": {
+      "bytes": 639,
+      "sha256": "f901f90f890ea156825f034832b976e7d51993fedb99c20d2e9c6ddb89c43d8f"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/build02/native_process.json": {
+      "bytes": 632,
+      "sha256": "f8bc584151b6c0d3f6892787f454a9a7170d9bed0be35b991934b03054a6a2b4"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/build02/native_source_after.json": {
+      "bytes": 2244,
+      "sha256": "b5d6f3be80002697614a6851f7ce77b9371222b46f7cfd565685da62b0a370f5"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/build02/native_source_before.json": {
+      "bytes": 2244,
+      "sha256": "b5d6f3be80002697614a6851f7ce77b9371222b46f7cfd565685da62b0a370f5"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/build02/original_render_camera.json": {
+      "bytes": 45224,
+      "sha256": "f75b2c1501fa7b8d3e6c6b792f1f4b9206e5d328b8d4fb2344c8fbef5ca254b1"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/build02/source_inputs_after.json": {
+      "bytes": 2244,
+      "sha256": "b5d6f3be80002697614a6851f7ce77b9371222b46f7cfd565685da62b0a370f5"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/build02/source_inputs_before.json": {
+      "bytes": 2244,
+      "sha256": "b5d6f3be80002697614a6851f7ce77b9371222b46f7cfd565685da62b0a370f5"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/build02/summary.json": {
+      "bytes": 40866,
+      "sha256": "0743e5b08a73368727c95e0813e522074f3a6af3f219b383af7c3ee2195445e2"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/build02/worker_complete.json": {
+      "bytes": 1563,
+      "sha256": "86a07ae7f548e2a7985159e8d909a13468a107b1f8a6d928d1b531d56812128d"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/source02/events_index.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/source02/source_support_inventory.json": {
+      "bytes": 374,
+      "sha256": "1b31e8ee1b7bbfd603df5d47df91d4e66c8243d8f1c3d471041a65280377e100"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/final_gate01/forest_b/source02/summary.json": {
+      "bytes": 61010,
+      "sha256": "370c52a7fdbd747ad4b710c8a004f550ff1573e395aedf08070351e9caa02cc2"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/forest_b/build01/build_protocol.json": {
+      "bytes": 2648,
+      "sha256": "a0f656a20f10c1e02bed3a9ec510a7b94713e5ea822a3a5e556c475dfd2ed665"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/forest_b/build01/native_source_after.json": {
+      "bytes": 2244,
+      "sha256": "b5d6f3be80002697614a6851f7ce77b9371222b46f7cfd565685da62b0a370f5"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/artifacts/screen_20260906/forest_b/build01/native_source_before.json": {
+      "bytes": 2244,
+      "sha256": "b5d6f3be80002697614a6851f7ce77b9371222b46f7cfd565685da62b0a370f5"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_native.py": {
+      "bytes": 22337,
+      "sha256": "8bf73a224ec880b82ab765a8d76b27de8d0b5bcbaaff3e91499af15d6aba97bb"
+    },
+    "/mnt/e/BinocMesher/experiments/visibility_screen/scene_source.py": {
+      "bytes": 27585,
+      "sha256": "87b023010d63fa8176658c239145b8c80b1a37a58f683bd93bf098797280ee0b"
+    }
+  },
+  "schema": "forest-b-completed-zero-registry-build-source-audit-v1",
+  "scope": {
+    "counter_evidence": "Native complete registry counters were hash-bound and algebraically reconciled; CSV was independently parsed.",
+    "detector_scientific_logic_independently_replayed_over_all_hyperpolys": false,
+    "native_or_source_replays": 0,
+    "new_rasters": 0,
+    "post_displacement_verified": false,
+    "read_only": true,
+    "registry_domain": "Enabled fixed bilinear parameter-face isolated admissible saddle observer on this pre-displacement opaque cache, not all possible critical events or degeneracies.",
+    "runtime_admission_verified": false,
+    "visibility_verified": false
+  },
+  "segment_id": "forest_b",
+  "source": {
+    "admission_rate": null,
+    "canonical_event_denominator": 0,
+    "cost": {
+      "cpu_seconds": 0.17097687000000006,
+      "peak_rss_bytes": 47247360,
+      "wall_seconds": 1.073481396999341
+    },
+    "events_index_and_inventory_empty_with_exact_zero_denominator": true,
+    "executed_source_files_rehashed": 151,
+    "input_verification_scope": "Completed zero-row registry, manifest and complete primary/BPM2 file matrix; no event source support needed.",
+    "logical_incidences": 0,
+    "no_event_source_compilation_needed": true,
+    "raw_registry_observations": 0,
+    "runtime_attempted": false,
+    "source_ready_events": 0,
+    "status": "COMPLETE_SOURCE_STAGE_NOT_RUNTIME_ADMISSION"
+  },
+  "status": "PASS_COMPLETE_FIXED_REGISTRY_ZERO_NOT_ALL_EVENT_TYPES",
+  "time_camera": {
+    "actual_native_delta_replay_in_this_audit": false,
+    "all_64_original_image_and_lod_poses_times_equal": true,
+    "duration_seconds_hex": "0x1.500053e2d6239p+1",
+    "groups_from_complete_cache_matrix": 2,
+    "image_intrinsics_not_relaxed_lod": true,
+    "maximum_discrete_time_from_complete_cache_matrix": 4,
+    "origin_seconds_hex": "0x1.0155555555555p+2",
+    "reconstructed_delta_t_hex": "0x1.500053e2d6239p-1",
+    "time_mapping_basis": "Actual executed build-camera values and frozen constructor arithmetic, with full old/new input equality. Not a new native load_parameters delta replay."
+  },
+  "zero_registry": {
+    "all_examined_faces_accounted_for_by_degenerate_or_reduced_categories": true,
+    "csv_header_columns": 43,
+    "csv_lines": 1,
+    "enabled_and_full_six_faces_per_hyperpoly": true,
+    "independently_parsed_data_rows": 0,
+    "interpretation": "No A!=0 algebraic candidate reached this observer, before admissible interior/root-envelope filters. This is not an observer-disabled result or source-stage row drop. A=B=0 and reduced-HVID cases exist but are outside this isolated-saddle registry; no all-types zero-event theorem follows.",
+    "native_summary": {
+      "a0_b0_degeneracies": 52192955,
+      "a0_b_nonzero_faces": 0,
+      "accepted_saddle_occurrences": 0,
+      "all_parameter_faces": {
+        "canonical_events": 0,
+        "logical_incidences": 0,
+        "raw_observations": 0
+      },
+      "canonical_events": 0,
+      "canonical_shared_events": 0,
+      "enabled": true,
+      "faces_examined": 69946710,
+      "finite_algebraic_roots": 0,
+      "hyperpolys": 11657785,
+      "logical_incidences": 0,
+      "raw_observations": 0,
+      "reduced_hvid_faces": 17753755,
+      "shared_root_mismatches": 0,
+      "temporal_neighbour_faces": {
+        "canonical_events": 0,
+        "logical_incidences": 0,
+        "raw_observations": 0
+      }
+    },
+    "no_unaccounted_missing_hypervertex_faces_in_counter_partition": true,
+    "source_code_evidence": [
+      "binocmesher/source/event_registry.cpp:260-283 A/B equation and degeneracy branches",
+      "binocmesher/source/event_registry.cpp:599-646 enable, six faces, reduced-HVID filter"
+    ]
+  }
+}

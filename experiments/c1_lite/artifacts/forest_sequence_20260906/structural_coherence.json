@@ -1,0 +1,160 @@
+{
+  "actual_delta_t_hex": "0x1.500053e2d6239p-1",
+  "artifact_references": {
+    "component_certification": {
+      "path": "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/forest_sequence_20260906/component01/summary.json",
+      "sha256": "f6bb26c3f4edebb730f930a0493a826f35fbb8615fa4122f193ec6badf92ce31"
+    },
+    "omp_comparison": {
+      "path": "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/forest_sequence_20260906/omp1_omp8_comparison.json",
+      "sha256": "637b1c4aa8df26c2f1f2a07b5777dc75b796da1ca62214f8d52f0a38bf962953"
+    },
+    "sequence_omp1": {
+      "path": "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/summary.json",
+      "sha256": "02d4f4f7e3e268e874c0882eedef44e0acf4b1b8d61d9591275b362a0f73d15b"
+    },
+    "sequence_omp8": {
+      "path": "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/summary.json",
+      "sha256": "02bc376193ce6c700480a716e74d52c963663112f97d983b6d2fd4e414dc8100"
+    },
+    "source_support_inventory": {
+      "path": "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/forest_formal_20260906/source_support_inventory01/summary.json",
+      "sha256": "a1f9cbd17c7045916716a5c901343b819f9c7d4679d3646a4f4eb923d53c1c70"
+    },
+    "supplemental_component_audits": [
+      {
+        "path": "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/component_certificate_audit.json",
+        "sha256": "f177bc4478bb76495edefb73175aae48909893c505a434599ad4d9bc26625e94"
+      },
+      {
+        "path": "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/component_certificate_audit.json",
+        "sha256": "3ee751aaecce4369cc0202c49e84dc59506a87eae72998dfa3876b45df8e05ae"
+      }
+    ],
+    "support_graph": {
+      "path": "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/forest_sequence_20260906/component01/support_graph.json",
+      "sha256": "c2fbeaa7a8edbe6ca93da3140ab98298b4e443f2f32df532adc3b531ba1dad9f"
+    },
+    "visibility": {
+      "path": "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/forest_sequence_20260906/visibility01/summary.json",
+      "sha256": "f5e41061c698726d0ae785e305d4d518ce5019aea76ea9045f0cc1168839a39c"
+    }
+  },
+  "assembly_wall_seconds": 2.744486474000041,
+  "atomic_and_identity_checks": {
+    "canonical_records_and_source_owner_consumption_verified": true,
+    "complete_sequence_manifest_committed": true,
+    "component_membership_all_or_none_verified": true,
+    "evidence_boundary": "JSON receipts and hash-bound prior native/geometry audits, not a new array or geometry replay.",
+    "fresh_five_element_baseline_per_query": true,
+    "omp1_omp8_all_66_receipts_identical": true,
+    "outside_window_baseline_receipts_identical": true,
+    "partial_output_published": false,
+    "persistent_mesh_files": 0
+  },
+  "audited_json_file_count": 159,
+  "audited_json_files_sha256_digest": "bbc45f519bf6a315da387b0f8f6c762cc0042c47060bd1526b396de92193528e",
+  "cost": {
+    "component_certification": {
+      "cpu_seconds": 95.66665736099999,
+      "peak_rss_bytes": 1115623424,
+      "wall_seconds": 100.973106686
+    },
+    "omp1_verified_sequence": {
+      "cpu_seconds": 264.477875289,
+      "peak_rss_bytes": 1095364608,
+      "wall_seconds": 481.01318312399997
+    },
+    "omp8_verified_sequence": {
+      "cpu_seconds": 365.050459192,
+      "peak_rss_bytes": 1091469312,
+      "wall_seconds": 353.2876341489999
+    },
+    "scope": "Measured verification harness costs; not pure production frame latency."
+  },
+  "executed_sources_sha256": {
+    "/mnt/e/BinocMesher/experiments/c1_lite/assemble_forest_sequence_manifest.py": "c5474906c9fb155d383b8b898421f6155eeff32fe716b61afbf0506c8c9b2792",
+    "/mnt/e/BinocMesher/experiments/c1_lite/compare_forest_sequences.py": "02120eff19ab026975a802fef15a1841cd74f382cd04818c92c289cea7a05a07"
+  },
+  "input_artifacts_unchanged": true,
+  "not_claimed": [
+    "all-real-time admission",
+    "post-displacement safety",
+    "six-scene generalization",
+    "visual quality improvement",
+    "warped SSIM improvement",
+    "pure production latency"
+  ],
+  "original_cache_binding": {
+    "original_bytes": 1096080433,
+    "original_files_unchanged": 35,
+    "original_input_content_sha256": "aca6fd25083a4fe6c60fec296be3e7b8558731e2e566b08f2c6e25ee45488a71"
+  },
+  "population": {
+    "canonical_events": 131,
+    "component_admission_rate": 0.25316455696202533,
+    "event_admission_rate": 0.19083969465648856,
+    "fail_closed_components": 59,
+    "fail_closed_events": 106,
+    "jointly_admitted_components": 20,
+    "jointly_admitted_events": 25,
+    "per_root": {
+      "3/2": {
+        "admitted_components": 9,
+        "components": 39,
+        "events": 66,
+        "jointly_admitted_events": 12
+      },
+      "5/2": {
+        "admitted_components": 11,
+        "components": 40,
+        "events": 65,
+        "jointly_admitted_events": 13
+      }
+    },
+    "support_components": 79
+  },
+  "private_cache_removed_both_omp": true,
+  "schedule": {
+    "complete_root_support_replay_queries": 18,
+    "exact_root_diagnostics": 2,
+    "five_element_scene_outputs_per_omp": 66,
+    "modified_natural_frame_count": 16,
+    "modified_natural_frames": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "natural_event_frame_replacements": 200,
+    "natural_frames": 64,
+    "natural_frames_per_jointly_admitted_event": 8,
+    "nonempty_treated_root_count": 2,
+    "treated_exact_roots": {
+      "3/2": 12,
+      "5/2": 13
+    },
+    "unchanged_natural_frames": 48
+  },
+  "schema": "forest-schedule-structural-coherence-v1",
+  "scope": "Fixed Forest pre-displacement/raw five-element mesh; original 64 natural 24FPS queries plus two exact-root diagnostics.",
+  "status": "PASS_REQUESTED_SCHEDULE_STRUCTURAL_COHERENCE",
+  "visibility": {
+    "artifact_scope": "Original-camera pre-displacement pixel-center visibility and geometric image differences only, not visual quality improvement or post-displacement safety.",
+    "scope": "Hash-bound descriptive triage reference only; images and pixel metrics not re-audited by this JSON assembler.",
+    "status": "PASS_COMPLETE_NATURAL_SUPPORT_VISIBILITY_TRIAGE",
+    "visual_quality_improvement_claimed": false
+  }
+}

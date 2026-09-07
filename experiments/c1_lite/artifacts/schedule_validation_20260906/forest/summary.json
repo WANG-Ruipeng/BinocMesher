@@ -1,0 +1,173 @@
+{
+  "denominators": {
+    "actually_modified_natural_frames": 0,
+    "all_canonical_events": 131,
+    "certified_admitted_windows": 0,
+    "eligible_candidate_windows_with_natural_hits": 0,
+    "logical_incidences": 268,
+    "raw_observations": 440,
+    "runtime_success_rate_all_131": null,
+    "runtime_success_rate_eligible": null,
+    "runtime_transactions_attempted": 0,
+    "structurally_eligible_candidates": 0,
+    "visibility_evaluated": false
+  },
+  "executed_source_hashes_start_end_identical": true,
+  "executed_source_sha256": {
+    "/mnt/e/BinocMesher/experiments/c1_lite/forest_eligibility_funnel.py": "ebff52c4698f9e06ecf8c369b81ea83444bf7e635e7287f9a0f19d73ecda2dc5",
+    "/mnt/e/BinocMesher/experiments/c1_lite/interface_topology.py": "fd5209e96885e92c626c43e36a243d95bdfbac7d1c0df522a653934954be6f05",
+    "/mnt/e/BinocMesher/experiments/c1_lite/window_geometry.py": "a3a9ffd34775634d6e93d722911317d8e3fffa52d2410a8ca34e862fa0a38765",
+    "/mnt/e/BinocMesher/experiments/tv0_tv4/theory_audit.py": "3560419f77d97d40a051f2c8bd4520722f9bbfb4b095cb7897ed58c4163175bf"
+  },
+  "failure": null,
+  "historical_build_seconds_separate_not_free": 1203.255439993,
+  "input_full_sha256": {
+    "/home/warpwang/binoc-runs/forest-census64-repair-20260906/HyperMesh/OpaqueTerrain/event_registry_p1.csv": "0ce1a439bf33b785db9dbb3ea55dbc548933477aca64d2fca64829f660609b52",
+    "/home/warpwang/binoc-runs/forest-census64-repair-20260906/HyperMesh/OpaqueTerrain/hypervertices/0.bin": "cc4233f2271b3694c93f20476ce20fdcfb576ac62db26f1678202dccd7edb81a",
+    "/home/warpwang/binoc-runs/forest-census64-repair-20260906/HyperMesh/OpaqueTerrain/hypervertices/1.bin": "a2953624968da79718cf8ec34176d1c540b14643f1907015a4c42de9e23bd72f",
+    "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/repair_20260906/forest/stage64/camera_inputs.json": "40535546e900f9fc9c6d6efab3e1538da8eb9a88021c9078ebec4697a53f23b7",
+    "/mnt/e/BinocMesher/experiments/c1_lite/artifacts/repair_20260906/forest/stage64/native_registry_verification.json": "8692f5a96f9906a1534b46c1998c63b57fcdb103b21d832378c0db66f477310a"
+  },
+  "input_immutability": {
+    "changed": [],
+    "complete_files_rehashed": 5,
+    "pass": true,
+    "scope": "All opened file stats; full registry/camera/HV SHA256; referenced provenance and selected primary byte ranges, not full unrelated processed payload.",
+    "selected_byte_ranges_rehashed": 3798,
+    "stat_checked_files": 23
+  },
+  "measurements": {
+    "logical_bytes_are_not_OS_disk_IO": true,
+    "logical_bytes_examined": 641681212,
+    "max_rss_bytes": 330682368,
+    "stages": [
+      {
+        "cpu_seconds": 0.004825372999999855,
+        "logical_bytes_examined": 236775,
+        "max_rss_bytes": 40554496,
+        "stage": "registry_and_input_binding",
+        "wall_seconds": 0.02438749400000262
+      },
+      {
+        "cpu_seconds": 0.25346578200000014,
+        "logical_bytes_examined": 110864860,
+        "max_rss_bytes": 48746496,
+        "stage": "referenced_hv_and_source_provenance",
+        "wall_seconds": 0.2718336679999993
+      },
+      {
+        "cpu_seconds": 0.06285034899999964,
+        "logical_bytes_examined": 0,
+        "max_rss_bytes": 48746496,
+        "stage": "exact_saddle_beb1_candidate_classification",
+        "wall_seconds": 0.06284894599999546
+      },
+      {
+        "cpu_seconds": 35.439025277,
+        "logical_bytes_examined": 418991386,
+        "max_rss_bytes": 330682368,
+        "stage": "streamed_all_root_owner_interface_halo",
+        "wall_seconds": 35.534866736999994
+      },
+      {
+        "cpu_seconds": 0.14622162100000224,
+        "logical_bytes_examined": 0,
+        "max_rss_bytes": 330682368,
+        "stage": "complete_owner_interface_and_candidate_geometry",
+        "wall_seconds": 0.14621927199999618
+      },
+      {
+        "cpu_seconds": 0.018107242999995776,
+        "logical_bytes_examined": 0,
+        "max_rss_bytes": 330682368,
+        "stage": "same_root_and_natural_candidate_schedule",
+        "wall_seconds": 0.01810424999999327
+      },
+      {
+        "cpu_seconds": 0.044649263000003714,
+        "logical_bytes_examined": 111588191,
+        "max_rss_bytes": 330682368,
+        "stage": "input_immutability_verification",
+        "wall_seconds": 0.06231313199999988
+      }
+    ],
+    "wall_seconds": 36.148555622
+  },
+  "not_claimed": [
+    "Registry saddles equal admitted BEB1 repairs",
+    "Candidate windows are certified coverage",
+    "Root-grid hits are window coverage",
+    "Sampled Jacobians prove nondegeneracy",
+    "SourceVID quotient is actual binary32 runtime identity",
+    "Other elements are geometrically disjoint by namespace",
+    "Unsupported runtime is a geometric rejection"
+  ],
+  "root_groups": [
+    {
+      "canonical_events": 66,
+      "root": {
+        "denominator": 2,
+        "numerator": 3
+      }
+    },
+    {
+      "canonical_events": 65,
+      "root": {
+        "denominator": 2,
+        "numerator": 5
+      }
+    }
+  ],
+  "same_root_pair_counts": {
+    "UNKNOWN": 4225
+  },
+  "scan": {
+    "complete": true,
+    "halo_polygons": 2399,
+    "halo_processed_records": 1737,
+    "processed_records_scanned": 3081976,
+    "scope": "Every raw-active primary stream at both exact roots; all BPM2 prefixes; only complete candidate boundary-incidence halo retained."
+  },
+  "schema": "forest131-readonly-eligibility-funnel-v1",
+  "scope": "One 64-frame Forest6px cache, native geometry PRE_SURFACE_DISPLACEMENT; not six scenes or completed Infinigen geometry.",
+  "script_sha256": "ebff52c4698f9e06ecf8c369b81ea83444bf7e635e7287f9a0f19d73ecda2dc5",
+  "stage_counts": {
+    "beb1_kernel": {
+      "PASS": 131
+    },
+    "candidate_local_geometry": {
+      "NOT_REACHED": 131
+    },
+    "candidate_window": {
+      "PASS": 131
+    },
+    "global_exterior": {
+      "UNKNOWN": 131
+    },
+    "natural_frame_hits": {
+      "PASS": 131
+    },
+    "registry_saddle": {
+      "PASS": 131
+    },
+    "runtime_admission": {
+      "UNKNOWN": 131
+    },
+    "runtime_implementation": {
+      "UNSUPPORTED": 131
+    },
+    "same_root_compatibility": {
+      "UNKNOWN": 131
+    },
+    "source_interface": {
+      "NOT_REACHED": 131
+    },
+    "source_owner_closure": {
+      "REJECT": 131
+    },
+    "source_provenance": {
+      "PASS": 131
+    }
+  },
+  "status": "COMPLETE_BOUNDED_ELIGIBILITY"
+}

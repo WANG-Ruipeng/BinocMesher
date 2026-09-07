@@ -1,0 +1,47 @@
+{
+  "camera_path": "/home/warpwang/src/BinocMesher/infinigen_example_scenes/snowy_mountain.txt",
+  "camera_path_sha256": "cb462b2711c1e09a7f4d03aca78c0dd0280e2b7ce7cc008c4b3d6eeb35616cb1",
+  "driver_snapshot_sha256": "556ebbf95168e96ed81e06d3238e89ad2fee6a0f8dfe64856b5969f8e1005a5c",
+  "native_only_scope": "Opaque occupancy/cache, no post-surface-displacement, no exported/rendered scene.",
+  "output": "/home/warpwang/binoc-runs/visibility-screen-20260906/mountain_attempt01",
+  "overrides": [
+    "fine_terrain.mesher_backend=\"BinocMesher\"",
+    "BinocMesher.pixels_per_cube=6",
+    "BinocMesher.pixels_per_cube_coarse=30",
+    "BinocMesher.pixels_per_cube_outview=120",
+    "BinocMesher.min_dist=0.1",
+    "BinocMesher.fading_time=1",
+    "Terrain.device=\"cpu\"",
+    "execute_tasks.generate_resolution=[960,540]",
+    "execute_tasks.camera_id=[0,0]",
+    "LandTiles.assets_seed_override=64090700628785987370221272729015798609",
+    "compose_nature.load_cameras=\"../infinigen_example_scenes/snowy_mountain.txt\"",
+    "execute_tasks.frame_range=[1,64]"
+  ],
+  "per_file_limit_bytes": 1073741824,
+  "production_algorithm_modified": false,
+  "protocol_sha256": "9f8ec007632e763383d87ad544d4be2d0069bc506a89d3f38734e3c1bb6d2ae1",
+  "repo": "/home/warpwang/src/BinocMesher",
+  "resource_reserve_bytes": 268435456,
+  "schema": "registered-scene-build-attempt-v1",
+  "segment": {
+    "asset_action": "FRESH_OFFICIAL_SEED_COARSE_ONLY",
+    "camera_path": "../infinigen_example_scenes/snowy_mountain.txt",
+    "configs": [
+      "snowy_mountain",
+      "monocular",
+      "high_quality_terrain",
+      "no_assets"
+    ],
+    "first_frame": 1,
+    "fps": 24,
+    "last_frame": 64,
+    "pixels_per_cube": 6,
+    "scene": "Mountain",
+    "scene_overrides": [
+      "LandTiles.assets_seed_override=64090700628785987370221272729015798609"
+    ],
+    "seed": 1,
+    "segment_id": "mountain"
+  }
+}

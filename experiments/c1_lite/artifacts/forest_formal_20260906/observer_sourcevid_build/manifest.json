@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "scope": "ISOLATED_OBSERVER_SOURCEVID_ENCODING_V2_ONLY",
+  "date": "2026-09-06",
+  "root": "/home/warpwang/binoc-runs/forest-observer-sourcevid-20260906",
+  "build_repo": "/home/warpwang/binoc-runs/forest-observer-sourcevid-20260906/build",
+  "parent_build_repo": "/home/warpwang/binoc-runs/forest-observer-20260906/build",
+  "library_relative_path": "build/binocmesher/lib/core.so",
+  "library_sha256": "3a0bab2f77142708e83251520dd11937de20cd198a887bc4cc8e8ce6bd543197",
+  "observer_contract": {
+    "encoding_version": 2,
+    "encoding": "ORIGINAL_EFFECTIVE_SOURCE_VID",
+    "vertex_columns": [
+      "node0",
+      "group0",
+      "node1",
+      "group1"
+    ],
+    "normalization": "Existing bucket_sort mutates merger keys by subtracting one field minimum per element/pass. The observer records those four minima before subtraction and adds them back only into each exported vertex-ledger row using checked long long arithmetic.",
+    "no_geometry_change": "No baseline key, vertex, face, tag, source_splice registry or merge ordering is changed.",
+    "capacities": {
+      "maximum_vertices_total": 2000000,
+      "maximum_raw_owners_total": 8000000,
+      "maximum_faces_per_element": 2000000
+    },
+    "abi": {
+      "slicing_identity_source_vid_encoding_version": "int () noexcept -> 2",
+      "slicing_identity_output_source_vid_shifts": "int (int* rows, int int_capacity) noexcept; requires READY and >=20 ints; shape 5x4; returns 0 on success, -1 otherwise"
+    },
+    "safeguards": [
+      "Every nonempty element must have four distinct observed sort passes before vertex export.",
+      "Missing/duplicate/invalid pass and signed restoration overflow fail only the observer.",
+      "release_rows resets shift values/pass masks; empty elements have zero shifts.",
+      "Old libraries lacking encoding ABI remain readable baselines but are explicitly MERGER_NORMALIZED_UNVERIFIED; they cannot pass the strict native identity gate.",
+      "Python reads already-restored IDs without adding shifts a second time."
+    ]
+  },
+  "build": {
+    "compiler": "/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++",
+    "command": "make -j2 CXX=/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++",
+    "exit_code": 0,
+    "log": "build.log",
+    "warnings_note": "Existing makefile compiles with -w; the separate observer unit test uses -Wall -Wextra -Wpedantic -Werror."
+  },
+  "tests": {
+    "cpp": {
+      "source": "observer_sourcevid_test.cpp",
+      "binary": "observer_sourcevid_test",
+      "command": "/home/warpwang/miniforge3/envs/binoc-exp/bin/x86_64-conda-linux-gnu-g++ -std=c++17 -O2 -Wall -Wextra -Wpedantic -Werror observer_sourcevid_test.cpp -o observer_sourcevid_test && ./observer_sourcevid_test",
+      "exit_code": 0,
+      "log": "observer_sourcevid_test.log",
+      "coverage": [
+        "nonzero shifts",
+        "group/node column mapping",
+        "multiple elements and distinct endpoints",
+        "input VID immutability",
+        "missing pass",
+        "duplicate pass",
+        "invalid pass",
+        "signed overflow both directions",
+        "insufficient/null output capacity",
+        "reset",
+        "all-empty elements",
+        "unsupported",
+        "static int ABI capacity bounds"
+      ]
+    },
+    "python": {
+      "command": "python -m unittest test_forest_native_reader -v",
+      "test_count": 20,
+      "exit_code": 0,
+      "seconds": 0.024,
+      "scope": "Pure fake-ABI and parameter tests only; no native scientific slice/caches."
+    }
+  },
+  "verification": {
+    "parent_sources_unchanged_since_copy": true,
+    "parent_library_unchanged": true,
+    "capacity_library_sha256": "fad66b2876f30b99d79e84895b30eacf436419079e8378d339a2a222e7b41edf",
+    "frozen_e2_library_sha256": "f4263a2f47ba5283175a921e49b8867998bdd8124aac810793b34242ec43a3c9",
+    "changed_source_files": [
+      "source/slicing.h",
+      "source/slicing.cpp",
+      "source/runtime_identity.h"
+    ],
+    "source_splice_unchanged": true,
+    "windows_production_sha256": {
+      "runtime_identity.h": "f0506e3dabbc57a5a754703cc421548ef2566b909e2803348ecc71244c37fc75",
+      "slicing.cpp": "7c1b7397401d941c7a1e35fcfdee9a4740de9d37bdcfd302601c678707507763",
+      "slicing.h": "858c8e3f491db499a055a4c8c7211f2c04ee5670bd81cc3cce684f8c620e00f6",
+      "source_splice.cpp": "f892b4112229c20e089e0e975eb0d4adc1329714e7f18787f6dbaf27ba6e2b9c"
+    },
+    "base_file_sha256": {
+      "source/slicing.h": "858c8e3f491db499a055a4c8c7211f2c04ee5670bd81cc3cce684f8c620e00f6",
+      "source/coarse_step.cpp": "cc9f1b73cdb2fe4636f7653c4c802dde98185b152b94cc40f88837677eae1859",
+      "source/medium_step.h": "05418a85a5777ddb5d7699ae44d52ac5c8c74faa9c56481c27f2a6a8ce152f36",
+      "source/fine_step.cpp": "ca6224ccb49e48a1debd4342189d413b3c6452b2ed8ed2e7fed8954335210ee6",
+      "source/slicing.cpp": "7c1b7397401d941c7a1e35fcfdee9a4740de9d37bdcfd302601c678707507763",
+      "source/source_splice.cpp": "f892b4112229c20e089e0e975eb0d4adc1329714e7f18787f6dbaf27ba6e2b9c",
+      "source/bisection.cpp": "f034863476f0ae0c63e0d3c157536a5ad8722acf938ddb9b1997eb34e0754edc",
+      "source/bisection.h": "1504691f44642f88fa8e38c4fde008e61e5ba7b2ccaaf0216e531621861606c9",
+      "source/binoctree.cpp": "8e27aec98e370515bf38a80d5c1502f1f233b16f8d98eaebc1d79cef171ecdd5",
+      "source/hyperpoly_layout.h": "77e46b73101bb22fa6a593bb583c6a7cb22eaa2e0f0c06ccfdda20d5149dd8ba",
+      "source/dual_contouring.h": "84b6c7ec0dc3525234443ff2fcaf40b94dfbb633c2097a283243ef91aee93cb0",
+      "source/runtime_identity.h": "d77659ff4a62fde038730601b43afecea9b480611151c38d958c5ebae8dd999b",
+      "source/checked_output.h": "f44ae529cce8cecd50c146ac1901d0e07f89f05ad1068c0d41d18adc9c96abcc",
+      "source/binoctree.h": "2f00240fb155d90a031d95ce37de2964d54111bf406007d48f59b2cf8150083b",
+      "source/event_registry.h": "2eede980ac6c9096d94a1abe81c4097bc6f2b19be2ecdeeae2890586d9607220",
+      "source/medium_step.cpp": "8d01360587dc68a21f2d4c5562947de2172aa2768495cf72cb90259a0b88d77f",
+      "source/hyperpoly_provenance.h": "c20c33479f15c68c31c12607a5c4c018babbed7f618fb6999df362aff2019d62",
+      "source/coarse_step.h": "9052c31f475f2cef6ec8af87a0a0d831066d8f281b734fa950044cbd709739ef",
+      "source/source_splice.h": "ac78c440d8e1cba47a1ee6ffb7c1b9d05c11c59fcd2669d6609a2b890f410726",
+      "source/fine_step.h": "9d1ea4f28fc9822d6e9bc8b1f473759350ad90f71b26da089a5d609258202f72",
+      "source/utils.h": "caca3657f67e5346ca861ae3eb6990837b3c215dbcd07f434135c5ba7a024cdf",
+      "source/dual_contouring.cpp": "8629752cd094fb66698e1bbb6e6d2a11e3f381c992b213ef613f3cd992c3b9dc",
+      "source/event_registry.cpp": "5a2284407ad929d39d3f49c6baf28d577f5002802d58a90b9c50498846f81eb1",
+      "makefile": "953e714c4724a86cc57f0ca855534cc427db4d87be06cdfa691fd46a6a20b27b"
+    },
+    "new_file_sha256": {
+      "source/slicing.h": "e80066ab1b920ba0abf65bb6d2a7e6f0e10b2c2c3abaa1b536f0e5841fb82082",
+      "source/coarse_step.cpp": "cc9f1b73cdb2fe4636f7653c4c802dde98185b152b94cc40f88837677eae1859",
+      "source/medium_step.h": "05418a85a5777ddb5d7699ae44d52ac5c8c74faa9c56481c27f2a6a8ce152f36",
+      "source/fine_step.cpp": "ca6224ccb49e48a1debd4342189d413b3c6452b2ed8ed2e7fed8954335210ee6",
+      "source/slicing.cpp": "4e0b342e8f111695c4277624c245fcf51de0df02a90e2492215de8c9ca096737",
+      "source/source_splice.cpp": "f892b4112229c20e089e0e975eb0d4adc1329714e7f18787f6dbaf27ba6e2b9c",
+      "source/bisection.cpp": "f034863476f0ae0c63e0d3c157536a5ad8722acf938ddb9b1997eb34e0754edc",
+      "source/bisection.h": "1504691f44642f88fa8e38c4fde008e61e5ba7b2ccaaf0216e531621861606c9",
+      "source/binoctree.cpp": "8e27aec98e370515bf38a80d5c1502f1f233b16f8d98eaebc1d79cef171ecdd5",
+      "source/hyperpoly_layout.h": "77e46b73101bb22fa6a593bb583c6a7cb22eaa2e0f0c06ccfdda20d5149dd8ba",
+      "source/dual_contouring.h": "84b6c7ec0dc3525234443ff2fcaf40b94dfbb633c2097a283243ef91aee93cb0",
+      "source/runtime_identity.h": "1b951c3beabea89eb5a348f0722fa0f5dbdf501e7e6f1ec5e38bcd72b1b3e6d3",
+      "source/checked_output.h": "f44ae529cce8cecd50c146ac1901d0e07f89f05ad1068c0d41d18adc9c96abcc",
+      "source/binoctree.h": "2f00240fb155d90a031d95ce37de2964d54111bf406007d48f59b2cf8150083b",
+      "source/event_registry.h": "2eede980ac6c9096d94a1abe81c4097bc6f2b19be2ecdeeae2890586d9607220",
+      "source/medium_step.cpp": "8d01360587dc68a21f2d4c5562947de2172aa2768495cf72cb90259a0b88d77f",
+      "source/hyperpoly_provenance.h": "c20c33479f15c68c31c12607a5c4c018babbed7f618fb6999df362aff2019d62",
+      "source/coarse_step.h": "9052c31f475f2cef6ec8af87a0a0d831066d8f281b734fa950044cbd709739ef",
+      "source/source_splice.h": "ac78c440d8e1cba47a1ee6ffb7c1b9d05c11c59fcd2669d6609a2b890f410726",
+      "source/fine_step.h": "9d1ea4f28fc9822d6e9bc8b1f473759350ad90f71b26da089a5d609258202f72",
+      "source/utils.h": "caca3657f67e5346ca861ae3eb6990837b3c215dbcd07f434135c5ba7a024cdf",
+      "source/dual_contouring.cpp": "8629752cd094fb66698e1bbb6e6d2a11e3f381c992b213ef613f3cd992c3b9dc",
+      "source/event_registry.cpp": "5a2284407ad929d39d3f49c6baf28d577f5002802d58a90b9c50498846f81eb1",
+      "makefile": "953e714c4724a86cc57f0ca855534cc427db4d87be06cdfa691fd46a6a20b27b"
+    }
+  },
+  "artifact_sha256": {
+    "observer_sourcevid_test.cpp": "0e19b9f81bb76e2e761eb3a653c8fb4ab310ca336cb3e723aec3fceedcd9e3f0",
+    "observer_sourcevid_test": "f8169610d4f3f2c2c446db39bb6e94e22985fcea7974456247c255fa8e13804d",
+    "observer_sourcevid_test.log": "3057a78239f19d835b3ffcbc7b5322cfbbea086899345ea2ba42512ae75ca5e3",
+    "build.log": "86d2673944385d6a5040acaf17d49247c4282c32e081a1a4d53912b589f299b9",
+    "source.patch": "dd1b9cd832afda87e803af5d4fb84ae4ae7262c2877e2ebdc7581149de8c9386"
+  },
+  "python_binding": {
+    "reader": "experiments/c1_lite/forest_native_reader.py",
+    "reader_sha256": "4f35f38874fd506c4ed54f4e9c70e9b9a4842483604f07f886d9db13cc24b623",
+    "tests": "experiments/c1_lite/test_forest_native_reader.py",
+    "test_sha256": "038d3c84b060b0fdf14b2b5b1fc71f1092cb6ba2b758dee383406e78cae98ee8"
+  },
+  "scientific_runs": "None performed by build task. Main native03 must separately verify new-library off/on and frozen-library baseline parity on actual queries; this manifest does not claim admission or actual query parity."
+}

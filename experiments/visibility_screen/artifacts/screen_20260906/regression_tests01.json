@@ -1,0 +1,45 @@
+{
+  "schema": "visibility-screen-regression-tests-v1",
+  "status": "PASS_UNIT_AND_STANDALONE_REGRESSIONS",
+  "scope": "Synthetic/pure adapter and existing frozen-method regression tests. Not actual native admission, visibility, displacement, or quality evidence.",
+  "python": "/home/warpwang/miniforge3/envs/binoc-exp/bin/python",
+  "environment": "Existing Miniforge binoc-exp, Python 3.10.21",
+  "bytecode_writes_disabled": true,
+  "unittest_cases_total": 802,
+  "standalone_regressions": 1,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "runs": [
+    {
+      "cwd": "/mnt/e/BinocMesher/experiments/visibility_screen",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /home/warpwang/miniforge3/envs/binoc-exp/bin/python -B -m unittest discover",
+      "unittest_cases": 138,
+      "reported_unittest_seconds": 1.828,
+      "tool_wall_seconds": 3.3744267,
+      "exit_code": 0,
+      "result": "Ran 138 tests in 1.828s; OK"
+    },
+    {
+      "cwd": "/mnt/e/BinocMesher/experiments/c1_lite",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /home/warpwang/miniforge3/envs/binoc-exp/bin/python -B -m unittest discover",
+      "unittest_cases": 650,
+      "reported_unittest_seconds": 6.987,
+      "tool_wall_seconds": 8.9629498,
+      "exit_code": 0,
+      "result": "Ran 650 tests in 6.987s; OK"
+    },
+    {
+      "cwd": "/mnt/e/BinocMesher/experiments/source_splice",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /home/warpwang/miniforge3/envs/binoc-exp/bin/python -B -m unittest discover && PYTHONDONTWRITEBYTECODE=1 /home/warpwang/miniforge3/envs/binoc-exp/bin/python -B test_critical_beb1_event_ir.py",
+      "unittest_cases": 14,
+      "reported_unittest_seconds": 0.003,
+      "tool_wall_seconds_combined": 0.5418352,
+      "exit_code": 0,
+      "result": "Ran 14 tests in 0.003s; OK; PASS_CRITICAL_BEB1_EVENT_STAR_CLOSURE_COMBINATORICS"
+    }
+  ],
+  "method_policy_unchanged": true,
+  "no_production_source_edits_performed": true,
+  "not_a_claim_that_all_four_experiment_priorities_are_complete": true
+}

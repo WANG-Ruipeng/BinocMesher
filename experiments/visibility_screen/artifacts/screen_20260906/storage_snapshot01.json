@@ -1,0 +1,18 @@
+{
+  "schema": "visibility-screen-storage-snapshot-v1",
+  "observed_at_utc": "2026-09-06T13:01:19.3969547Z",
+  "scope": "Windows-visible project files plus the WSL virtual disk and retained WSL migration backup. WSL contents are not counted twice.",
+  "repository_path": "E:\\BinocMesher",
+  "repository_files": 3881,
+  "repository_bytes": 228376677,
+  "wsl_vhdx_path": "D:\\WSL\\Ubuntu\\ext4.vhdx",
+  "wsl_vhdx_logical_bytes": 32280412160,
+  "wsl_migration_backup_path": "D:\\WSL-Backup\\Ubuntu-before-move-20260904.tar",
+  "wsl_migration_backup_bytes": 8600965120,
+  "combined_bytes": 41109753957,
+  "registered_total_storage_limit_bytes": 400000000000,
+  "within_registered_limit_at_observation": true,
+  "experiment_running_at_observation": "mountain/screen02_omp1",
+  "not_a_final_campaign_storage_snapshot": true,
+  "note": "Deleting files inside WSL does not necessarily shrink the VHDX logical file size. No live virtual-disk compaction or environment deletion was performed. Failed run-owned Forest B and Cave native cache payload cleanup is recorded separately in each build01/cleanup.json."
+}
