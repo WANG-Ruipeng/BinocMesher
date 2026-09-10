@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-09-07T13:01:44.987324+00:00",
+  "stage": "0_1_only",
+  "wall_limit_seconds": 1800,
+  "address_space_limit_bytes": 4294967296,
+  "experiment_directory_limit_bytes": 104857600,
+  "repo_limit_bytes": 400000000000,
+  "repo_bytes_before": 428959242,
+  "source_bindings": {
+    "IDENTITY.md": "df1ac98ad759a04941fd1425cdd1f930e6bf396e3fdd792bdbc82a224244ce0b",
+    "PROTOCOL.md": "c714b847bae1360d6b72d510d3957ddf8990d1b929c79be02479a1356a31b06d",
+    "TESTING.md": "798d43948a7f6dde9a3751cf4b93ff0cfe5f3a534bdb3d070c751bbe4b88a1ec",
+    "metrics.py": "03a7c6b87fe8dab1bfc808122994a09336066af1c9e28b85ba8213568b93614b",
+    "model.py": "8e5869cecc8d1f1b40eb10b489b81b27d89b21f29e7f3119f77660afdf616eef",
+    "run_probe.py": "e4d73d6108d8cbf4086cbfc149205394901172c5e7a6324965081fdabc3e8dc3",
+    "test_metrics.py": "52cc39ae0fa6a7b2c7f3a372fdfbce81ac295b87c225d792b596b395c0a252d0",
+    "test_model.py": "e6fea3e63d0c62a4a6055de26d5bd801a994e2dc35e09b7ecb3d7cf9670e0896",
+    "test_probe.py": "465332e242aac51f879cc2fa7087eb0e53d72fa0d36fe4f7617cfc490a029527"
+  },
+  "command": [
+    "/home/warpwang/miniforge3/envs/binoc-exp/bin/python",
+    "/mnt/e/BinocMesher/experiments/graph_lift_probe/run_probe.py",
+    "--worker",
+    "/mnt/e/BinocMesher/experiments/graph_lift_probe/artifacts/run_20260907_130141"
+  ]
+}

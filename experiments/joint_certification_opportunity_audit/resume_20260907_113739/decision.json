@@ -1,0 +1,46 @@
+{
+  "schema": "joint-certification-opportunity-decision-v1",
+  "audit_status": "COMPLETE_READ_ONLY_AUDIT",
+  "verdict": "INSUFFICIENT_COST_EVIDENCE",
+  "prior_stop_preserved": "../run_20260907_112855/STOP.json",
+  "resumed_with_user_approval": true,
+  "receipt_inventory": "existing_receipt_inventory.json",
+  "new_native_calls": 0,
+  "new_geometry_computations": 0,
+  "new_trace_calls": 0,
+  "optimization_prototype_started": false,
+  "remaining_relation_redundancy": {
+    "Q_to_final_retained": "Already inherited; no new whole exterior audit in playback.",
+    "Q_to_other_removed_P": "672 contact-function calls per recorded playback; logically covered by bound complete single certificates on supported disjoint inputs.",
+    "Q_to_Q": "672 contact-function calls per playback; necessary relative to single certificates, but component certification checked corresponding pairs earlier. Reuse would still require valid identity mapping and purpose/scope preservation."
+  },
+  "cost_evidence": {
+    "production_T_base_seconds": "UNMEASURED",
+    "removable_T_redundant_seconds": "UNMEASURED",
+    "reuse_binding_lookup_storage_seconds": "UNMEASURED",
+    "maximum_speedup": "UNMEASURED",
+    "expensive_solver_calls_within_contact_calls": "UNMEASURED",
+    "OMP1_verified_union_seconds": 4.556426040000247,
+    "OMP1_union_active_seconds": 2.3052211580001654,
+    "OMP1_union_no_edit_seconds": 2.2512048820000814,
+    "timing_scope": "Composite verified harness, not pure production or isolated redundant contact cost."
+  },
+  "consumer": {
+    "existing_workload": "Frozen Forest 64 natural outputs plus 2 root diagnostics, 6px pre-displacement geometry.",
+    "visible_quality_benefit_established": false,
+    "certification_latency_requirement_established": false,
+    "speed_target_preapproved": false
+  },
+  "conditional_trace_candidate_not_authorized": {
+    "query": "frame_0027",
+    "receipt": "../../c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0027.json",
+    "edits": 12,
+    "event_pairs": 66,
+    "contact_function_calls": 96,
+    "composite_union_seconds": 0.15085083700000723,
+    "require_separate_approval_for_trace": true,
+    "require_separate_approval_for_needed_native_reconstruction": true,
+    "complete_mesh_dump_available": false
+  },
+  "action": "Stop framework/optimization expansion at this audit boundary. No new runtime experiment is warranted by the current cost/use-case evidence alone."
+}

@@ -1,0 +1,92 @@
+{
+  "schema": "joint-opportunity-audit-partial-v1",
+  "status": "PARTIAL_STOPPED_NOT_FINAL_AUDIT",
+  "opportunity_verdict": "INSUFFICIENT_COST_EVIDENCE",
+  "verdict_scope": "Provisional from evidence already read; final inventory/binding verification was interrupted by a read-only extraction error.",
+  "contribution_hypotheses": {
+    "source_authorization_necessity": "SUPPORTED_WITH_TRUSTED_COMPLETE_LEDGER",
+    "special_resolver_advantage": "NOT_DEMONSTRATED_IN_A_C0",
+    "joint_contact_necessity": "SUPPORTED_SYNTHETIC_B",
+    "joint_organization_performance_advantage": "UNMEASURED",
+    "meaningful_original_camera_benefit": "NOT_ESTABLISHED_EXISTING_FOREST_NEGATIVE_REMAINS"
+  },
+  "primary_component_certification": {
+    "source": "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/summary.json",
+    "aggregation": "Delegate read-only aggregation of query_artifacts and their pair_proofs; not a new geometry execution.",
+    "event_pairs": 2079,
+    "support_AABB_excluded_event_pairs": 2037,
+    "AABB_excluded_triangle_relations": 65184,
+    "exact_triangle_calls": 1344,
+    "Q_Q_exact_calls": 672,
+    "Q_A_OTHER_REMOVED_B_exact_calls": 336,
+    "Q_B_OTHER_REMOVED_A_exact_calls": 336,
+    "isolated_role_seconds": "UNMEASURED"
+  },
+  "verified_playback_per_thread_run": {
+    "sources": [
+      "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/summary.json",
+      "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/summary.json"
+    ],
+    "aggregation": "Delegate read-only aggregation of saved frame_artifacts[].union counts; root directly inspected frame_0021.",
+    "all_queries": 66,
+    "active_and_root_queries": 18,
+    "event_query_plans": 225,
+    "event_pairs": 1296,
+    "logical_triangle_relations": 41472,
+    "support_AABB_excluded_event_pairs": 1254,
+    "AABB_excluded_triangle_relations": 40128,
+    "exact_triangle_calls": 1344,
+    "Q_Q_exact_calls": 672,
+    "Q_A_OTHER_REMOVED_B_exact_calls": 336,
+    "Q_B_OTHER_REMOVED_A_exact_calls": 336,
+    "verified_union_seconds_omp1": 4.556426040000247,
+    "verified_union_seconds_omp8": 4.503536795999935,
+    "timing_scope": "Includes local/exact rechecks, assembly and full-array audits. Not pure production time or an isolated redundant-work timer.",
+    "pure_production_base_seconds": "UNMEASURED",
+    "removable_redundant_seconds": "UNMEASURED",
+    "binding_lookup_storage_overhead_seconds": "UNMEASURED",
+    "maximum_speedup": "UNMEASURED"
+  },
+  "independent_audit": {
+    "source": "experiments/c1_lite/artifacts/forest_sequence_20260906/component01_independent_audit.json",
+    "source_fields": [
+      "counts",
+      "wall_seconds",
+      "native_slice_calls"
+    ],
+    "event_pair_rechecks": 2079,
+    "local_rechecks": 279,
+    "exact_triangle_contact_calls": 1344,
+    "AABB_excluded_triangle_relations": 65184,
+    "wall_seconds": 54.585014255,
+    "native_slice_calls": 0,
+    "classification": "Deliberately independent validation; removing it is not an algorithmic speedup."
+  },
+  "mechanisms_already_found": {
+    "Q_i_final_retained": "Already inherited by same-query/source/complete-baseline binding in bound_plan; playback does not call audit_query for all retained faces again.",
+    "Q_i_other_removed_P_j": "Still checked by union _interactions: 336 + 336 exact calls in each saved playback. Supported disjoint inputs permit the same empty-contact conclusion from complete single certificates; cost remains unmeasured.",
+    "Q_i_Q_j": "Not implied by single certificates. Also already checked during component certification and rechecked by verified playback; do not label all such replay verification automatically removable.",
+    "owner_interface_indices": "actual_footprints shares per-element snapshot indices and one full boundary-star face scan per element. Freshness/owner/interface gates cannot be dropped by contact inheritance.",
+    "broad_phase": "Explicit event-pair combinations and support AABB exclusion; no per-role isolated timer.",
+    "binding": "Required query/mode/source/baseline/support/center comparisons exist; isolated reads, storage and timing UNMEASURED."
+  },
+  "C0_exact_active_resolver_median_ms": {
+    "production_min": 11.528799,
+    "production_max": 11.603739,
+    "ordinary_min": 12.09374,
+    "ordinary_max": 12.405301,
+    "source": "experiments/source_contract_probe/artifacts/run_20260907/C0.json",
+    "no_old_report_edit": true
+  },
+  "source_binding_review_completed_so_far": {
+    "current_files_match_recorded_execution_entries": "All 7 entries in each of component01, sequence02 and sequence03, as read-only checked by delegate.",
+    "native04_snapshot": "Manifest inspected: 15 files, 208964 bytes. Full snapshot verification not completed before STOP.",
+    "scientific_evidence_inconsistency_found": false
+  },
+  "decision": {
+    "optimization_prototype_approved_or_started": false,
+    "fixed_query_trace_approved_or_started": false,
+    "new_reconstruction_approved_or_started": false,
+    "reason": "Residual relation work is identifiable, but its independently attributable cost and application value are not established."
+  }
+}

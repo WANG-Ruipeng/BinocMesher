@@ -1,0 +1,3070 @@
+{
+  "status": "PASS_EXISTING_RECEIPT_INVENTORY",
+  "native_calls": 0,
+  "geometry_recomputed": false,
+  "component_certification": {
+    "query_count": 18,
+    "counts": {
+      "event_pairs": 2079,
+      "support_AABB_excluded_event_pairs": 2037,
+      "AABB_excluded_triangle_relations": 65184,
+      "exact_triangle_pair_calls": 1344,
+      "Q_Q_checked": 672,
+      "Q_A_OTHER_REMOVED_B_checked": 336,
+      "Q_B_OTHER_REMOVED_A_checked": 336,
+      "logical_triangle_relations": 66528
+    },
+    "pair_statuses": {
+      "PASS_PAIR_INTERACTIONS": 2079
+    },
+    "whole_stage_cost": {
+      "cpu_seconds": 95.66665736099999,
+      "peak_rss_bytes": 1115623424,
+      "wall_seconds": 100.973106686
+    },
+    "executed_sources_verified": 7,
+    "isolated_role_seconds": "UNMEASURED"
+  },
+  "playback": {
+    "sequence02_omp1": {
+      "frames": 66,
+      "counts": {
+        "event_pairs": 1296,
+        "logical_triangle_relations": 41472,
+        "support_AABB_excluded_event_pairs": 1254,
+        "AABB_excluded_triangle_relations": 40128,
+        "exact_triangle_pair_calls": 1344,
+        "Q_Q_checked": 672,
+        "Q_A_OTHER_REMOVED_B_checked": 336,
+        "Q_B_OTHER_REMOVED_A_checked": 336,
+        "event_query_plans": 225,
+        "active_or_root_queries": 18
+      },
+      "frame_cost_sums_seconds": {
+        "baseline_hash_audit_seconds": 1.0366198730001202,
+        "frame_harness_wall_seconds": 414.4325107179999,
+        "frozen_baseline_reference_audit_seconds": 161.1731403889995,
+        "native_slice_seconds": 233.63084595900017,
+        "resolve_with_complete_interface_audit_seconds": 14.019654764000165,
+        "verified_union_seconds_including_exact_recheck_and_array_audit": 4.556426040000247
+      },
+      "summary_cost": {
+        "cpu_seconds": 264.477875289,
+        "peak_rss_bytes": 1095364608,
+        "wall_seconds": 481.01318312399997
+      },
+      "executed_sources_verified": 7,
+      "same_query_baseline_plan_matches": 225,
+      "all_playback_pairs_have_prior_component_PASS": true,
+      "performance_scope": "Certification is separate. Verified playback includes explicit local/exact rechecks and full-array audits; not pure production frame latency.",
+      "per_query": [
+        {
+          "query": "frame_0001",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015973312000028272,
+            "frame_harness_wall_seconds": 5.6929626670000175,
+            "frozen_baseline_reference_audit_seconds": 2.9384502269999757,
+            "native_slice_seconds": 2.691189013999974,
+            "resolve_with_complete_interface_audit_seconds": 1.701000030607247e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.0472447909999687
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0002",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.017438281000011102,
+            "frame_harness_wall_seconds": 5.45882037399997,
+            "frozen_baseline_reference_audit_seconds": 2.7974381639999706,
+            "native_slice_seconds": 2.5946364619999827,
+            "resolve_with_complete_interface_audit_seconds": 2.2529999910148035e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04914815199998657
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0003",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01574185699996633,
+            "frame_harness_wall_seconds": 5.392314546000023,
+            "frozen_baseline_reference_audit_seconds": 2.873916109999982,
+            "native_slice_seconds": 2.4556452539999896,
+            "resolve_with_complete_interface_audit_seconds": 2.023999968514545e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04686247900002627
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0004",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015721798000015497,
+            "frame_harness_wall_seconds": 5.469578481000042,
+            "frozen_baseline_reference_audit_seconds": 2.8911017869999682,
+            "native_slice_seconds": 2.5151871390000338,
+            "resolve_with_complete_interface_audit_seconds": 1.8599999975776882e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04740404199998238
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0005",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016047951000018656,
+            "frame_harness_wall_seconds": 5.439491852000003,
+            "frozen_baseline_reference_audit_seconds": 2.8816040749999843,
+            "native_slice_seconds": 2.494164613999999,
+            "resolve_with_complete_interface_audit_seconds": 1.6589999631833052e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.047513688000037746
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0006",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016141597999990154,
+            "frame_harness_wall_seconds": 5.498942720000002,
+            "frozen_baseline_reference_audit_seconds": 2.9108308109999825,
+            "native_slice_seconds": 2.5239160049999896,
+            "resolve_with_complete_interface_audit_seconds": 2.080000001569715e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04790464699999575
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0007",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015877858999999717,
+            "frame_harness_wall_seconds": 5.56854427899998,
+            "frozen_baseline_reference_audit_seconds": 2.9344282559999897,
+            "native_slice_seconds": 2.57124042800001,
+            "resolve_with_complete_interface_audit_seconds": 2.6029999844467966e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.046850931999983914
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0008",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016535956999973678,
+            "frame_harness_wall_seconds": 5.483480025999995,
+            "frozen_baseline_reference_audit_seconds": 2.885904327999981,
+            "native_slice_seconds": 2.533281920000036,
+            "resolve_with_complete_interface_audit_seconds": 2.2280000280261447e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.047606578999989324
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0009",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015303460999973595,
+            "frame_harness_wall_seconds": 5.5329559179999706,
+            "frozen_baseline_reference_audit_seconds": 2.91402448599996,
+            "native_slice_seconds": 2.556940301999987,
+            "resolve_with_complete_interface_audit_seconds": 1.972999996269209e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04654193499999337
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0010",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015748653999992257,
+            "frame_harness_wall_seconds": 5.609079590000022,
+            "frozen_baseline_reference_audit_seconds": 3.0233601430000476,
+            "native_slice_seconds": 2.521194491000017,
+            "resolve_with_complete_interface_audit_seconds": 2.1210000227256387e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.048631486999966
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0011",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01562557600004766,
+            "frame_harness_wall_seconds": 5.535538337999981,
+            "frozen_baseline_reference_audit_seconds": 2.952764977999948,
+            "native_slice_seconds": 2.519865373000016,
+            "resolve_with_complete_interface_audit_seconds": 2.0749999976032996e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04713288099998181
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0012",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01562718899998572,
+            "frame_harness_wall_seconds": 5.835281162999991,
+            "frozen_baseline_reference_audit_seconds": 2.9783978950000005,
+            "native_slice_seconds": 2.7940321560000143,
+            "resolve_with_complete_interface_audit_seconds": 1.9190000557500753e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04707244299999047
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0013",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01599773200001664,
+            "frame_harness_wall_seconds": 5.53779572000002,
+            "frozen_baseline_reference_audit_seconds": 2.861392711999997,
+            "native_slice_seconds": 2.6126765580000324,
+            "resolve_with_complete_interface_audit_seconds": 2.041000016106409e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04729072699996095
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0014",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015742144000000735,
+            "frame_harness_wall_seconds": 5.450239643999964,
+            "frozen_baseline_reference_audit_seconds": 2.8758296049999785,
+            "native_slice_seconds": 2.5071992290000367,
+            "resolve_with_complete_interface_audit_seconds": 1.7120000279646774e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.05131804600000578
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0015",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015404133999993519,
+            "frame_harness_wall_seconds": 5.513135692999981,
+            "frozen_baseline_reference_audit_seconds": 2.910277117000021,
+            "native_slice_seconds": 2.5401709220000157,
+            "resolve_with_complete_interface_audit_seconds": 2.257999994981219e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.047132565000026716
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0016",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01569462800000565,
+            "frame_harness_wall_seconds": 5.4467267260000085,
+            "frozen_baseline_reference_audit_seconds": 2.883325952000007,
+            "native_slice_seconds": 2.499624264999966,
+            "resolve_with_complete_interface_audit_seconds": 2.278000010846881e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04793110099996056
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0017",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016346880000014608,
+            "frame_harness_wall_seconds": 7.538584975000049,
+            "frozen_baseline_reference_audit_seconds": 3.9108357490000003,
+            "native_slice_seconds": 3.561906023000006,
+            "resolve_with_complete_interface_audit_seconds": 1.5429999962179863e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04934610300000486
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0018",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016502166999998735,
+            "frame_harness_wall_seconds": 7.615923958999986,
+            "frozen_baseline_reference_audit_seconds": 4.010981597000011,
+            "native_slice_seconds": 3.539352594000036,
+            "resolve_with_complete_interface_audit_seconds": 2.3800000121809717e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04893154999996341
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0019",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01582859100000178,
+            "frame_harness_wall_seconds": 7.597153771000023,
+            "frozen_baseline_reference_audit_seconds": 3.9795622060000255,
+            "native_slice_seconds": 3.555024543000002,
+            "resolve_with_complete_interface_audit_seconds": 1.911000026666443e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04658541499998137
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0020",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01637413700001389,
+            "frame_harness_wall_seconds": 3.617930926999975,
+            "frozen_baseline_reference_audit_seconds": 2.3949999672367994e-06,
+            "native_slice_seconds": 3.5533620600000404,
+            "resolve_with_complete_interface_audit_seconds": 2.870000002985762e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04804194100000814
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0021",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016586670000037884,
+            "frame_harness_wall_seconds": 5.288832860000014,
+            "frozen_baseline_reference_audit_seconds": 1.4250000504034688e-06,
+            "native_slice_seconds": 4.367882226000006,
+            "resolve_with_complete_interface_audit_seconds": 0.7713957320000304,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.13252740399997265
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0022",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01619077399999469,
+            "frame_harness_wall_seconds": 5.03552283099998,
+            "frozen_baseline_reference_audit_seconds": 1.6950000372162322e-06,
+            "native_slice_seconds": 4.16556908900003,
+            "resolve_with_complete_interface_audit_seconds": 0.7217668850000223,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.13158125699999346
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0023",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01649443799999517,
+            "frame_harness_wall_seconds": 4.860845181000002,
+            "frozen_baseline_reference_audit_seconds": 1.6760000107751694e-06,
+            "native_slice_seconds": 4.0242507269999805,
+            "resolve_with_complete_interface_audit_seconds": 0.6895304540000211,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.13015358400002697
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0024",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01672386400002779,
+            "frame_harness_wall_seconds": 4.829706114000032,
+            "frozen_baseline_reference_audit_seconds": 1.1170000107085798e-06,
+            "native_slice_seconds": 3.973596341000018,
+            "resolve_with_complete_interface_audit_seconds": 0.7151409329999865,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.1238034219999804
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0025",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015656120000016926,
+            "frame_harness_wall_seconds": 4.870107774000019,
+            "frozen_baseline_reference_audit_seconds": 1.1170000107085798e-06,
+            "native_slice_seconds": 4.003772205000018,
+            "resolve_with_complete_interface_audit_seconds": 0.7232369099999687,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.12702431100001377
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0026",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016178128999968067,
+            "frame_harness_wall_seconds": 4.818564654999989,
+            "frozen_baseline_reference_audit_seconds": 1.463999979023356e-06,
+            "native_slice_seconds": 3.9998825280000005,
+            "resolve_with_complete_interface_audit_seconds": 0.6653327660000059,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.13666842300000326
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0027",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016073345999984667,
+            "frame_harness_wall_seconds": 4.999626890999991,
+            "frozen_baseline_reference_audit_seconds": 1.295999993544683e-06,
+            "native_slice_seconds": 4.068231448000006,
+            "resolve_with_complete_interface_audit_seconds": 0.7640319930000032,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.15085083700000723
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0028",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01687632499999836,
+            "frame_harness_wall_seconds": 4.926187845000015,
+            "frozen_baseline_reference_audit_seconds": 1.5519999578827992e-06,
+            "native_slice_seconds": 4.068513816999996,
+            "resolve_with_complete_interface_audit_seconds": 0.6902992250000466,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.15006349800000862
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0029",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01627407799998082,
+            "frame_harness_wall_seconds": 3.548640565000028,
+            "frozen_baseline_reference_audit_seconds": 1.398999984303373e-06,
+            "native_slice_seconds": 3.4821728199999598,
+            "resolve_with_complete_interface_audit_seconds": 0.00013332999998283412,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.049890078999965226
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0030",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015731608000010056,
+            "frame_harness_wall_seconds": 7.504039312999964,
+            "frozen_baseline_reference_audit_seconds": 3.917833157000018,
+            "native_slice_seconds": 3.5210217910000097,
+            "resolve_with_complete_interface_audit_seconds": 2.1709999487029563e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.049263354000004256
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0031",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015666879999969296,
+            "frame_harness_wall_seconds": 7.519085593999989,
+            "frozen_baseline_reference_audit_seconds": 3.9506431770000177,
+            "native_slice_seconds": 3.504401685000005,
+            "resolve_with_complete_interface_audit_seconds": 2.34800000953328e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04821267900001658
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0032",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01588941900001828,
+            "frame_harness_wall_seconds": 7.441701850000015,
+            "frozen_baseline_reference_audit_seconds": 3.8971246479999877,
+            "native_slice_seconds": 3.4800319729999956,
+            "resolve_with_complete_interface_audit_seconds": 2.6409999804855033e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04849283600003673
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0033",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015973883999947702,
+            "frame_harness_wall_seconds": 8.041892802000007,
+            "frozen_baseline_reference_audit_seconds": 4.217474200999959,
+            "native_slice_seconds": 3.759240499000043,
+            "resolve_with_complete_interface_audit_seconds": 1.5850000067985093e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04904898099999855
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0034",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016111237000018264,
+            "frame_harness_wall_seconds": 8.137106969000001,
+            "frozen_baseline_reference_audit_seconds": 4.303714839999998,
+            "native_slice_seconds": 3.7680911610000294,
+            "resolve_with_complete_interface_audit_seconds": 1.620000034563418e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04902192899999136
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0035",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01611900800003241,
+            "frame_harness_wall_seconds": 8.104140260999998,
+            "frozen_baseline_reference_audit_seconds": 4.230192519000013,
+            "native_slice_seconds": 3.8072267800000077,
+            "resolve_with_complete_interface_audit_seconds": 2.0459999632294057e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.050447986000051515
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0036",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01598082000003842,
+            "frame_harness_wall_seconds": 3.882244739999976,
+            "frozen_baseline_reference_audit_seconds": 2.9590000281132234e-06,
+            "native_slice_seconds": 3.8136582299999873,
+            "resolve_with_complete_interface_audit_seconds": 1.5859999962231086e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.052434163999976136
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0037",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 16,
+            "Q_B_OTHER_REMOVED_A_checked": 16,
+            "Q_Q_checked": 32,
+            "event_pairs_strict_support_aabb": 76,
+            "exact_triangle_pair_calls": 64,
+            "triangle_pairs_excluded_by_support_aabb": 2432
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015614459999937935,
+            "frame_harness_wall_seconds": 5.352031716000056,
+            "frozen_baseline_reference_audit_seconds": 1.4049999776943878e-06,
+            "native_slice_seconds": 4.393443434999995,
+            "resolve_with_complete_interface_audit_seconds": 0.8215401740000061,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.12090157300008286
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0038",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 16,
+            "Q_B_OTHER_REMOVED_A_checked": 16,
+            "Q_Q_checked": 32,
+            "event_pairs_strict_support_aabb": 76,
+            "exact_triangle_pair_calls": 64,
+            "triangle_pairs_excluded_by_support_aabb": 2432
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016061842999988585,
+            "frame_harness_wall_seconds": 5.294071709000036,
+            "frozen_baseline_reference_audit_seconds": 1.2969999261258636e-06,
+            "native_slice_seconds": 4.3098862320000535,
+            "resolve_with_complete_interface_audit_seconds": 0.849662899000009,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.11801903700006733
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0039",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 16,
+            "Q_B_OTHER_REMOVED_A_checked": 16,
+            "Q_Q_checked": 32,
+            "event_pairs_strict_support_aabb": 76,
+            "exact_triangle_pair_calls": 64,
+            "triangle_pairs_excluded_by_support_aabb": 2432
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015643811000018104,
+            "frame_harness_wall_seconds": 5.258274890000052,
+            "frozen_baseline_reference_audit_seconds": 1.5979999261617195e-06,
+            "native_slice_seconds": 4.300998306999986,
+            "resolve_with_complete_interface_audit_seconds": 0.8238040569999612,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.11734736100004284
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0040",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 16,
+            "Q_B_OTHER_REMOVED_A_checked": 16,
+            "Q_Q_checked": 32,
+            "event_pairs_strict_support_aabb": 76,
+            "exact_triangle_pair_calls": 64,
+            "triangle_pairs_excluded_by_support_aabb": 2432
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015561801000103515,
+            "frame_harness_wall_seconds": 5.331263566999951,
+            "frozen_baseline_reference_audit_seconds": 2.066999968519667e-06,
+            "native_slice_seconds": 4.361333217000038,
+            "resolve_with_complete_interface_audit_seconds": 0.8269334899999876,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.12699229999998352
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0041",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 16,
+            "Q_B_OTHER_REMOVED_A_checked": 16,
+            "Q_Q_checked": 32,
+            "event_pairs_strict_support_aabb": 76,
+            "exact_triangle_pair_calls": 64,
+            "triangle_pairs_excluded_by_support_aabb": 2432
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016093195999928867,
+            "frame_harness_wall_seconds": 5.358289657,
+            "frozen_baseline_reference_audit_seconds": 1.3890000900573796e-06,
+            "native_slice_seconds": 4.391481322999994,
+            "resolve_with_complete_interface_audit_seconds": 0.8266555210000206,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.1236174260000098
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0042",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 8,
+            "Q_B_OTHER_REMOVED_A_checked": 8,
+            "Q_Q_checked": 16,
+            "event_pairs_strict_support_aabb": 77,
+            "exact_triangle_pair_calls": 32,
+            "triangle_pairs_excluded_by_support_aabb": 2464
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015788948000022174,
+            "frame_harness_wall_seconds": 5.305565677000004,
+            "frozen_baseline_reference_audit_seconds": 1.141000097959477e-06,
+            "native_slice_seconds": 4.327496942000039,
+            "resolve_with_complete_interface_audit_seconds": 0.8446690050000143,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.11718818099996042
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0043",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 8,
+            "Q_B_OTHER_REMOVED_A_checked": 8,
+            "Q_Q_checked": 16,
+            "event_pairs_strict_support_aabb": 77,
+            "exact_triangle_pair_calls": 32,
+            "triangle_pairs_excluded_by_support_aabb": 2464
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015613417000054142,
+            "frame_harness_wall_seconds": 5.419807421999963,
+            "frozen_baseline_reference_audit_seconds": 1.3850000186721445e-06,
+            "native_slice_seconds": 4.425776401999997,
+            "resolve_with_complete_interface_audit_seconds": 0.8585531700000502,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.11942771999997603
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0044",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 8,
+            "Q_B_OTHER_REMOVED_A_checked": 8,
+            "Q_Q_checked": 16,
+            "event_pairs_strict_support_aabb": 77,
+            "exact_triangle_pair_calls": 32,
+            "triangle_pairs_excluded_by_support_aabb": 2464
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01591981699993994,
+            "frame_harness_wall_seconds": 5.309431931000063,
+            "frozen_baseline_reference_audit_seconds": 1.1579999181776657e-06,
+            "native_slice_seconds": 4.325742114000036,
+            "resolve_with_complete_interface_audit_seconds": 0.8470646600000009,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.1202435189999278
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0045",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015880230999982814,
+            "frame_harness_wall_seconds": 3.8346543620000375,
+            "frozen_baseline_reference_audit_seconds": 1.6550000054849079e-06,
+            "native_slice_seconds": 3.7697496049999017,
+            "resolve_with_complete_interface_audit_seconds": 0.00010491000000456552,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.048762709000016
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0046",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01593050500002846,
+            "frame_harness_wall_seconds": 8.064584188000026,
+            "frozen_baseline_reference_audit_seconds": 4.211853098999995,
+            "native_slice_seconds": 3.7897958680000556,
+            "resolve_with_complete_interface_audit_seconds": 2.3900000769572216e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.046832425000047806
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0047",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015839068999980555,
+            "frame_harness_wall_seconds": 7.9802377689999275,
+            "frozen_baseline_reference_audit_seconds": 4.1525076330000275,
+            "native_slice_seconds": 3.7649308750000046,
+            "resolve_with_complete_interface_audit_seconds": 2.3889999738457846e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04679469099994549
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0048",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016290492000052836,
+            "frame_harness_wall_seconds": 8.051541960999998,
+            "frozen_baseline_reference_audit_seconds": 4.242810235999968,
+            "native_slice_seconds": 3.7453891440000007,
+            "resolve_with_complete_interface_audit_seconds": 1.5310000662793755e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.046892680000041764
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0049",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014487554999959684,
+            "frame_harness_wall_seconds": 7.6568147650000355,
+            "frozen_baseline_reference_audit_seconds": 4.011251604999984,
+            "native_slice_seconds": 3.5858275809999896,
+            "resolve_with_complete_interface_audit_seconds": 1.8260000160807976e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04509627000004457
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0050",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01510985000004439,
+            "frame_harness_wall_seconds": 7.740951692999943,
+            "frozen_baseline_reference_audit_seconds": 4.000986012999988,
+            "native_slice_seconds": 3.679689279999934,
+            "resolve_with_complete_interface_audit_seconds": 1.7469999420427484e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04500529199992798
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0051",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014679430000001048,
+            "frame_harness_wall_seconds": 7.838610817000017,
+            "frozen_baseline_reference_audit_seconds": 4.101365554999916,
+            "native_slice_seconds": 3.6772642880000603,
+            "resolve_with_complete_interface_audit_seconds": 2.230999939456524e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.0451431459999867
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0052",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014307060000078309,
+            "frame_harness_wall_seconds": 7.892515409999987,
+            "frozen_baseline_reference_audit_seconds": 4.202653164000026,
+            "native_slice_seconds": 3.631708493000019,
+            "resolve_with_complete_interface_audit_seconds": 1.5510000821450376e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04368432199999006
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0053",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014750122000009469,
+            "frame_harness_wall_seconds": 7.715959343999998,
+            "frozen_baseline_reference_audit_seconds": 4.021191913999928,
+            "native_slice_seconds": 3.6349578539999357,
+            "resolve_with_complete_interface_audit_seconds": 1.6799999684735667e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04489739500002088
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0054",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014764565999939805,
+            "frame_harness_wall_seconds": 7.8188236839999945,
+            "frozen_baseline_reference_audit_seconds": 4.1699711639998895,
+            "native_slice_seconds": 3.590687543000058,
+            "resolve_with_complete_interface_audit_seconds": 2.0589999394360348e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04323553000006086
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0055",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014593457000046328,
+            "frame_harness_wall_seconds": 7.702774489000035,
+            "frozen_baseline_reference_audit_seconds": 4.055664568999987,
+            "native_slice_seconds": 3.587673300000006,
+            "resolve_with_complete_interface_audit_seconds": 1.7789999446904403e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.0446593890000031
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0056",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015567611999927067,
+            "frame_harness_wall_seconds": 7.734686777999968,
+            "frozen_baseline_reference_audit_seconds": 4.057782849000091,
+            "native_slice_seconds": 3.6179859650000026,
+            "resolve_with_complete_interface_audit_seconds": 1.4909999208612135e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.0431891609999866
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0057",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014594394000027933,
+            "frame_harness_wall_seconds": 7.768018424999923,
+            "frozen_baseline_reference_audit_seconds": 4.06457586099998,
+            "native_slice_seconds": 3.6436130229999435,
+            "resolve_with_complete_interface_audit_seconds": 1.881999992292549e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04506390699998519
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0058",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014587587000050917,
+            "frame_harness_wall_seconds": 7.798669158999928,
+            "frozen_baseline_reference_audit_seconds": 4.092738822000001,
+            "native_slice_seconds": 3.646865496000032,
+            "resolve_with_complete_interface_audit_seconds": 1.924000002873072e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04431583600000977
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0059",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.0149859269999979,
+            "frame_harness_wall_seconds": 7.816892720000055,
+            "frozen_baseline_reference_audit_seconds": 4.101506147000009,
+            "native_slice_seconds": 3.6555393910000475,
+            "resolve_with_complete_interface_audit_seconds": 2.292999965902709e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.044690537999940716
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0060",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015125989000011941,
+            "frame_harness_wall_seconds": 7.778449315999978,
+            "frozen_baseline_reference_audit_seconds": 4.088837120999983,
+            "native_slice_seconds": 3.630301681999981,
+            "resolve_with_complete_interface_audit_seconds": 2.0880000874967664e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04402539300008357
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0061",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014673985999934303,
+            "frame_harness_wall_seconds": 7.890635354999972,
+            "frozen_baseline_reference_audit_seconds": 4.218388313999981,
+            "native_slice_seconds": 3.613671932999978,
+            "resolve_with_complete_interface_audit_seconds": 2.213000016126898e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.043742509000026075
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0062",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014405379999971046,
+            "frame_harness_wall_seconds": 7.840847574999998,
+            "frozen_baseline_reference_audit_seconds": 4.156476547000011,
+            "native_slice_seconds": 3.6263713600000074,
+            "resolve_with_complete_interface_audit_seconds": 2.0980000954295974e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04343858000004275
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0063",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014279562999945483,
+            "frame_harness_wall_seconds": 7.813684808999938,
+            "frozen_baseline_reference_audit_seconds": 4.123940871999935,
+            "native_slice_seconds": 3.63111173599998,
+            "resolve_with_complete_interface_audit_seconds": 1.5020000319054816e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.044190066000055594
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0064",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01522174100000484,
+            "frame_harness_wall_seconds": 7.901253515999997,
+            "frozen_baseline_reference_audit_seconds": 4.167193703999942,
+            "native_slice_seconds": 3.674435783999911,
+            "resolve_with_complete_interface_audit_seconds": 1.6719999393899343e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04424153100001149
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "root_3_2",
+          "kind": "exact_root",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01595174700003099,
+            "frame_harness_wall_seconds": 5.100433212999974,
+            "frozen_baseline_reference_audit_seconds": 3.5260000004200265e-06,
+            "native_slice_seconds": 4.211961397999971,
+            "resolve_with_complete_interface_audit_seconds": 0.7405717729999424,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.1314678600000434
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "root_5_2",
+          "kind": "exact_root",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 16,
+            "Q_B_OTHER_REMOVED_A_checked": 16,
+            "Q_Q_checked": 32,
+            "event_pairs_strict_support_aabb": 76,
+            "exact_triangle_pair_calls": 64,
+            "triangle_pairs_excluded_by_support_aabb": 2432
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016095811000013782,
+            "frame_harness_wall_seconds": 5.42000718700001,
+            "frozen_baseline_reference_audit_seconds": 1.7440000874557882e-06,
+            "native_slice_seconds": 4.437003715999936,
+            "resolve_with_complete_interface_audit_seconds": 0.8391350450000346,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.127343445000065
+          },
+          "mesh_dump_count": 0
+        }
+      ],
+      "isolated_role_seconds": "UNMEASURED",
+      "union_seconds_active_or_root": 2.3052211580001654,
+      "union_seconds_no_edit": 2.2512048820000814
+    },
+    "sequence03_omp8": {
+      "frames": 66,
+      "counts": {
+        "event_pairs": 1296,
+        "logical_triangle_relations": 41472,
+        "support_AABB_excluded_event_pairs": 1254,
+        "AABB_excluded_triangle_relations": 40128,
+        "exact_triangle_pair_calls": 1344,
+        "Q_Q_checked": 672,
+        "Q_A_OTHER_REMOVED_B_checked": 336,
+        "Q_B_OTHER_REMOVED_A_checked": 336,
+        "event_query_plans": 225,
+        "active_or_root_queries": 18
+      },
+      "frame_cost_sums_seconds": {
+        "baseline_hash_audit_seconds": 1.0279293969996388,
+        "frame_harness_wall_seconds": 286.9422668409999,
+        "frozen_baseline_reference_audit_seconds": 9.850699950675335e-05,
+        "native_slice_seconds": 267.37098108499947,
+        "resolve_with_complete_interface_audit_seconds": 14.024421886999903,
+        "verified_union_seconds_including_exact_recheck_and_array_audit": 4.503536795999935
+      },
+      "summary_cost": {
+        "cpu_seconds": 365.050459192,
+        "peak_rss_bytes": 1091469312,
+        "wall_seconds": 353.2876341489999
+      },
+      "executed_sources_verified": 7,
+      "same_query_baseline_plan_matches": 225,
+      "all_playback_pairs_have_prior_component_PASS": true,
+      "performance_scope": "Certification is separate. Verified playback includes explicit local/exact rechecks and full-array audits; not pure production frame latency.",
+      "per_query": [
+        {
+          "query": "frame_0001",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015927051999938158,
+            "frame_harness_wall_seconds": 3.0933171880000145,
+            "frozen_baseline_reference_audit_seconds": 1.8800000134433503e-06,
+            "native_slice_seconds": 3.0303573099999994,
+            "resolve_with_complete_interface_audit_seconds": 1.7219999790540896e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04692768600000363
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0002",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015906604000065272,
+            "frame_harness_wall_seconds": 2.8999513589999424,
+            "frozen_baseline_reference_audit_seconds": 1.1980000635958277e-06,
+            "native_slice_seconds": 2.836184683000056,
+            "resolve_with_complete_interface_audit_seconds": 1.7759999764166423e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.047714670000004844
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0003",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015291878999960318,
+            "frame_harness_wall_seconds": 2.8610441390000005,
+            "frozen_baseline_reference_audit_seconds": 1.6469999764012755e-06,
+            "native_slice_seconds": 2.798198080999896,
+            "resolve_with_complete_interface_audit_seconds": 2.1050000214017928e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04739453100000901
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0004",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.0156925170000477,
+            "frame_harness_wall_seconds": 2.8865637810000635,
+            "frozen_baseline_reference_audit_seconds": 1.8759999420581153e-06,
+            "native_slice_seconds": 2.8236581119999755,
+            "resolve_with_complete_interface_audit_seconds": 1.4990000636316836e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04706473000010192
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0005",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01599884799998108,
+            "frame_harness_wall_seconds": 2.842592208000042,
+            "frozen_baseline_reference_audit_seconds": 1.0560000873738318e-06,
+            "native_slice_seconds": 2.780271694000021,
+            "resolve_with_complete_interface_audit_seconds": 1.6510000477865105e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04616679000002932
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0006",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015580255000031684,
+            "frame_harness_wall_seconds": 2.853003242999989,
+            "frozen_baseline_reference_audit_seconds": 1.1810000160039635e-06,
+            "native_slice_seconds": 2.7901494069999444,
+            "resolve_with_complete_interface_audit_seconds": 1.774999986992043e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04712677999998505
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0007",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01597551499992278,
+            "frame_harness_wall_seconds": 2.8885978729999806,
+            "frozen_baseline_reference_audit_seconds": 1.1490000133562717e-06,
+            "native_slice_seconds": 2.8260951620000014,
+            "resolve_with_complete_interface_audit_seconds": 1.9130000055156415e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04638035299990406
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0008",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015557187000013073,
+            "frame_harness_wall_seconds": 2.849787751000008,
+            "frozen_baseline_reference_audit_seconds": 1.6459999869766762e-06,
+            "native_slice_seconds": 2.7868476499999133,
+            "resolve_with_complete_interface_audit_seconds": 1.819999965846364e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.047231871999997566
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0009",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01536222100003215,
+            "frame_harness_wall_seconds": 2.8785234869999385,
+            "frozen_baseline_reference_audit_seconds": 2.006000045184919e-06,
+            "native_slice_seconds": 2.815843921999999,
+            "resolve_with_complete_interface_audit_seconds": 1.7780000689526787e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04715153000006467
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0010",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015711376000012933,
+            "frame_harness_wall_seconds": 2.8850579630000084,
+            "frozen_baseline_reference_audit_seconds": 1.316000066253764e-06,
+            "native_slice_seconds": 2.822491027999945,
+            "resolve_with_complete_interface_audit_seconds": 1.7130000742326956e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.0467062640000222
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0011",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015658713999982865,
+            "frame_harness_wall_seconds": 2.939746405000051,
+            "frozen_baseline_reference_audit_seconds": 1.3449999869408202e-06,
+            "native_slice_seconds": 2.876241743000037,
+            "resolve_with_complete_interface_audit_seconds": 1.8020000425167382e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04769565399999465
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0012",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016120596999940062,
+            "frame_harness_wall_seconds": 2.903342531000021,
+            "frozen_baseline_reference_audit_seconds": 1.2879999076176318e-06,
+            "native_slice_seconds": 2.838474832999964,
+            "resolve_with_complete_interface_audit_seconds": 2.4080000002868474e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.048581651000063175
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0013",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015510018999975728,
+            "frame_harness_wall_seconds": 2.9314114189999145,
+            "frozen_baseline_reference_audit_seconds": 1.4910000345480512e-06,
+            "native_slice_seconds": 2.868088238000041,
+            "resolve_with_complete_interface_audit_seconds": 1.9389999579288997e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04765751799993723
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0014",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016029611999897497,
+            "frame_harness_wall_seconds": 2.930584802000112,
+            "frozen_baseline_reference_audit_seconds": 1.2369999922157149e-06,
+            "native_slice_seconds": 2.868312553999999,
+            "resolve_with_complete_interface_audit_seconds": 1.7549999711263808e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04609321700002056
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0015",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016378336999991916,
+            "frame_harness_wall_seconds": 2.920675154000037,
+            "frozen_baseline_reference_audit_seconds": 1.1770000583055662e-06,
+            "native_slice_seconds": 2.855097574999945,
+            "resolve_with_complete_interface_audit_seconds": 1.958999973794562e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04905366699995284
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0016",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015522119999900497,
+            "frame_harness_wall_seconds": 2.9318425470000875,
+            "frozen_baseline_reference_audit_seconds": 1.586999928804289e-06,
+            "native_slice_seconds": 2.8658682500000623,
+            "resolve_with_complete_interface_audit_seconds": 1.6960000266408315e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.050303611999993336
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0017",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015886426000065512,
+            "frame_harness_wall_seconds": 4.194657402999951,
+            "frozen_baseline_reference_audit_seconds": 1.311999994868529e-06,
+            "native_slice_seconds": 4.130156541000019,
+            "resolve_with_complete_interface_audit_seconds": 1.7030000662998646e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04846127800010436
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0018",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015880175999996027,
+            "frame_harness_wall_seconds": 4.109034523999981,
+            "frozen_baseline_reference_audit_seconds": 2.0549999817376374e-06,
+            "native_slice_seconds": 4.045215837000001,
+            "resolve_with_complete_interface_audit_seconds": 1.717000031931093e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.0477875840000479
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0019",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015767597000035494,
+            "frame_harness_wall_seconds": 4.124031463999927,
+            "frozen_baseline_reference_audit_seconds": 1.324999971075158e-06,
+            "native_slice_seconds": 4.060580335000054,
+            "resolve_with_complete_interface_audit_seconds": 1.9920000795536907e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04753667299996778
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0020",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015680642999996053,
+            "frame_harness_wall_seconds": 4.131354230999932,
+            "frozen_baseline_reference_audit_seconds": 1.1859999631269602e-06,
+            "native_slice_seconds": 4.067560100999913,
+            "resolve_with_complete_interface_audit_seconds": 1.6980000054900302e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04795976499997323
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0021",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01596995699992476,
+            "frame_harness_wall_seconds": 5.489572169999974,
+            "frozen_baseline_reference_audit_seconds": 1.1099999710495467e-06,
+            "native_slice_seconds": 4.62267290200009,
+            "resolve_with_complete_interface_audit_seconds": 0.7175965149999683,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.1329194090000101
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0022",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01619675099993856,
+            "frame_harness_wall_seconds": 5.407204985000021,
+            "frozen_baseline_reference_audit_seconds": 1.1490000133562717e-06,
+            "native_slice_seconds": 4.562145737000037,
+            "resolve_with_complete_interface_audit_seconds": 0.6961529460000975,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.132292968999991
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0023",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015795391999972708,
+            "frame_harness_wall_seconds": 5.368132365000065,
+            "frozen_baseline_reference_audit_seconds": 1.3000000080864993e-06,
+            "native_slice_seconds": 4.51533707100009,
+            "resolve_with_complete_interface_audit_seconds": 0.7025394710000228,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.13404085399997712
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0024",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01603968699998859,
+            "frame_harness_wall_seconds": 5.362530717000027,
+            "frozen_baseline_reference_audit_seconds": 1.151000105892308e-06,
+            "native_slice_seconds": 4.5294586539999955,
+            "resolve_with_complete_interface_audit_seconds": 0.688886282999988,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.12773342000002685
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0025",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015725140999961695,
+            "frame_harness_wall_seconds": 5.45641131299999,
+            "frozen_baseline_reference_audit_seconds": 1.8729999737843173e-06,
+            "native_slice_seconds": 4.570215068999914,
+            "resolve_with_complete_interface_audit_seconds": 0.74106292700003,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.12892072500005725
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0026",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01573176900001272,
+            "frame_harness_wall_seconds": 5.406673638999905,
+            "frozen_baseline_reference_audit_seconds": 1.2489999789977446e-06,
+            "native_slice_seconds": 4.555372828000031,
+            "resolve_with_complete_interface_audit_seconds": 0.699977663000027,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.13518102600005477
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0027",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015851547000011124,
+            "frame_harness_wall_seconds": 5.382680691000019,
+            "frozen_baseline_reference_audit_seconds": 1.7280000292885234e-06,
+            "native_slice_seconds": 4.526742807000005,
+            "resolve_with_complete_interface_audit_seconds": 0.703761788999941,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.1359267139999929
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0028",
+          "kind": "natural",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015867554000010387,
+            "frame_harness_wall_seconds": 5.402268136000089,
+            "frozen_baseline_reference_audit_seconds": 1.032999989547534e-06,
+            "native_slice_seconds": 4.547760848000053,
+            "resolve_with_complete_interface_audit_seconds": 0.695533280999939,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.14269237700000303
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0029",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01602747200001886,
+            "frame_harness_wall_seconds": 4.065904511999975,
+            "frozen_baseline_reference_audit_seconds": 1.513000029262912e-06,
+            "native_slice_seconds": 4.000450265999916,
+            "resolve_with_complete_interface_audit_seconds": 9.345700004814717e-05,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04917577900005199
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0030",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01580669299994497,
+            "frame_harness_wall_seconds": 4.069807504999972,
+            "frozen_baseline_reference_audit_seconds": 1.4129999499346013e-06,
+            "native_slice_seconds": 4.00675365699999,
+            "resolve_with_complete_interface_audit_seconds": 2.538999979151413e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04708927699994092
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0031",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016041624000081356,
+            "frame_harness_wall_seconds": 4.072089443999971,
+            "frozen_baseline_reference_audit_seconds": 1.5180000900727464e-06,
+            "native_slice_seconds": 4.007087245999969,
+            "resolve_with_complete_interface_audit_seconds": 2.106000010826392e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.048800530000107756
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0032",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016077723999956106,
+            "frame_harness_wall_seconds": 4.168685348000054,
+            "frozen_baseline_reference_audit_seconds": 2.6019999950221973e-06,
+            "native_slice_seconds": 4.103996934999941,
+            "resolve_with_complete_interface_audit_seconds": 2.569000002949906e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.048419934000094145
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0033",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014984843000092951,
+            "frame_harness_wall_seconds": 4.533257998999943,
+            "frozen_baseline_reference_audit_seconds": 2.389999963270384e-06,
+            "native_slice_seconds": 4.469745448000026,
+            "resolve_with_complete_interface_audit_seconds": 1.8480000107956585e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.048360573999957523
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0034",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015317935999973997,
+            "frame_harness_wall_seconds": 4.459206743999971,
+            "frozen_baseline_reference_audit_seconds": 1.663999910306302e-06,
+            "native_slice_seconds": 4.396668102000035,
+            "resolve_with_complete_interface_audit_seconds": 1.8189999764217646e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.047063526000101774
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0035",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016338297999936913,
+            "frame_harness_wall_seconds": 4.440211733000069,
+            "frozen_baseline_reference_audit_seconds": 1.3819999367115088e-06,
+            "native_slice_seconds": 4.376318086999959,
+            "resolve_with_complete_interface_audit_seconds": 1.714000063657295e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.0474016880000363
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0036",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016013493999935235,
+            "frame_harness_wall_seconds": 4.449161340999922,
+            "frozen_baseline_reference_audit_seconds": 1.5499999790336005e-06,
+            "native_slice_seconds": 4.385044730000004,
+            "resolve_with_complete_interface_audit_seconds": 2.269999981763249e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04792927299990879
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0037",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 16,
+            "Q_B_OTHER_REMOVED_A_checked": 16,
+            "Q_Q_checked": 32,
+            "event_pairs_strict_support_aabb": 76,
+            "exact_triangle_pair_calls": 64,
+            "triangle_pairs_excluded_by_support_aabb": 2432
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016056592999916575,
+            "frame_harness_wall_seconds": 6.059489858000006,
+            "frozen_baseline_reference_audit_seconds": 1.0730000212788582e-06,
+            "native_slice_seconds": 5.05244282700005,
+            "resolve_with_complete_interface_audit_seconds": 0.8675715409999611,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.12298620000001392
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0038",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 16,
+            "Q_B_OTHER_REMOVED_A_checked": 16,
+            "Q_Q_checked": 32,
+            "event_pairs_strict_support_aabb": 76,
+            "exact_triangle_pair_calls": 64,
+            "triangle_pairs_excluded_by_support_aabb": 2432
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015911381999899277,
+            "frame_harness_wall_seconds": 6.013684481000041,
+            "frozen_baseline_reference_audit_seconds": 1.4459999420068925e-06,
+            "native_slice_seconds": 5.006503919000011,
+            "resolve_with_complete_interface_audit_seconds": 0.8735105539999495,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.11732377499993163
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0039",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 16,
+            "Q_B_OTHER_REMOVED_A_checked": 16,
+            "Q_Q_checked": 32,
+            "event_pairs_strict_support_aabb": 76,
+            "exact_triangle_pair_calls": 64,
+            "triangle_pairs_excluded_by_support_aabb": 2432
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016069159999915428,
+            "frame_harness_wall_seconds": 5.905270548999965,
+            "frozen_baseline_reference_audit_seconds": 1.2870000318798702e-06,
+            "native_slice_seconds": 4.950492496000038,
+            "resolve_with_complete_interface_audit_seconds": 0.8252442609999662,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.11301167900001019
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0040",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 16,
+            "Q_B_OTHER_REMOVED_A_checked": 16,
+            "Q_Q_checked": 32,
+            "event_pairs_strict_support_aabb": 76,
+            "exact_triangle_pair_calls": 64,
+            "triangle_pairs_excluded_by_support_aabb": 2432
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015978023000002395,
+            "frame_harness_wall_seconds": 5.949682964999965,
+            "frozen_baseline_reference_audit_seconds": 1.4919999102858128e-06,
+            "native_slice_seconds": 4.964179621000085,
+            "resolve_with_complete_interface_audit_seconds": 0.8443297990000929,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.12478227999997671
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0041",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 16,
+            "Q_B_OTHER_REMOVED_A_checked": 16,
+            "Q_Q_checked": 32,
+            "event_pairs_strict_support_aabb": 76,
+            "exact_triangle_pair_calls": 64,
+            "triangle_pairs_excluded_by_support_aabb": 2432
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015877264000096147,
+            "frame_harness_wall_seconds": 5.980320647000099,
+            "frozen_baseline_reference_audit_seconds": 1.6579999737587059e-06,
+            "native_slice_seconds": 5.015611842999988,
+            "resolve_with_complete_interface_audit_seconds": 0.8290354129999287,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.11936405299991293
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0042",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 8,
+            "Q_B_OTHER_REMOVED_A_checked": 8,
+            "Q_Q_checked": 16,
+            "event_pairs_strict_support_aabb": 77,
+            "exact_triangle_pair_calls": 32,
+            "triangle_pairs_excluded_by_support_aabb": 2464
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01603811500001484,
+            "frame_harness_wall_seconds": 5.92369716099995,
+            "frozen_baseline_reference_audit_seconds": 1.2870000318798702e-06,
+            "native_slice_seconds": 4.95005702800006,
+            "resolve_with_complete_interface_audit_seconds": 0.8417566370000031,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.11542500499990638
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0043",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 8,
+            "Q_B_OTHER_REMOVED_A_checked": 8,
+            "Q_Q_checked": 16,
+            "event_pairs_strict_support_aabb": 77,
+            "exact_triangle_pair_calls": 32,
+            "triangle_pairs_excluded_by_support_aabb": 2464
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016231790000006185,
+            "frame_harness_wall_seconds": 5.9558667909999485,
+            "frozen_baseline_reference_audit_seconds": 1.0700000530050602e-06,
+            "native_slice_seconds": 4.970401514000059,
+            "resolve_with_complete_interface_audit_seconds": 0.8435261960000844,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.12529181000002154
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0044",
+          "kind": "natural",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 8,
+            "Q_B_OTHER_REMOVED_A_checked": 8,
+            "Q_Q_checked": 16,
+            "event_pairs_strict_support_aabb": 77,
+            "exact_triangle_pair_calls": 32,
+            "triangle_pairs_excluded_by_support_aabb": 2464
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01689940899996145,
+            "frame_harness_wall_seconds": 6.0587745220000215,
+            "frozen_baseline_reference_audit_seconds": 1.6059999552453519e-06,
+            "native_slice_seconds": 5.03835815299999,
+            "resolve_with_complete_interface_audit_seconds": 0.8830862620000062,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.11997059800000898
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0045",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01663898499998595,
+            "frame_harness_wall_seconds": 4.51637213999993,
+            "frozen_baseline_reference_audit_seconds": 1.8709999949351186e-06,
+            "native_slice_seconds": 4.451480794999952,
+            "resolve_with_complete_interface_audit_seconds": 0.00014518000000407483,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04794246700009808
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0046",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016043343999967874,
+            "frame_harness_wall_seconds": 4.49364024099998,
+            "frozen_baseline_reference_audit_seconds": 1.3899999657951412e-06,
+            "native_slice_seconds": 4.430063206,
+            "resolve_with_complete_interface_audit_seconds": 2.558999995017075e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04736900799991872
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0047",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016291576000071473,
+            "frame_harness_wall_seconds": 4.501419715999987,
+            "frozen_baseline_reference_audit_seconds": 1.390000079481979e-06,
+            "native_slice_seconds": 4.4358534039999995,
+            "resolve_with_complete_interface_audit_seconds": 1.8060000002151355e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04908534499998041
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0048",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015714894999973694,
+            "frame_harness_wall_seconds": 4.493876381000064,
+            "frozen_baseline_reference_audit_seconds": 1.6149999737535836e-06,
+            "native_slice_seconds": 4.429450817999964,
+            "resolve_with_complete_interface_audit_seconds": 1.986000029319257e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04854389100000844
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0049",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014488870000036513,
+            "frame_harness_wall_seconds": 4.280143486000043,
+            "frozen_baseline_reference_audit_seconds": 1.3999999737279722e-06,
+            "native_slice_seconds": 4.2225205639999785,
+            "resolve_with_complete_interface_audit_seconds": 1.827000005505397e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.042967347999933736
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0050",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.013811793999934707,
+            "frame_harness_wall_seconds": 4.254630557999917,
+            "frozen_baseline_reference_audit_seconds": 1.297999915550463e-06,
+            "native_slice_seconds": 4.196449185999995,
+            "resolve_with_complete_interface_audit_seconds": 2.0429999949556077e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.0442022969999698
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0051",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014873029000000315,
+            "frame_harness_wall_seconds": 4.320351297000002,
+            "frozen_baseline_reference_audit_seconds": 2.0530000028884388e-06,
+            "native_slice_seconds": 4.261775065999927,
+            "resolve_with_complete_interface_audit_seconds": 1.831000076890632e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.043518467000012606
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0052",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01443613300011748,
+            "frame_harness_wall_seconds": 4.276900889999865,
+            "frozen_baseline_reference_audit_seconds": 2.2360000002663583e-06,
+            "native_slice_seconds": 4.217441889999918,
+            "resolve_with_complete_interface_audit_seconds": 1.7929999103216687e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04473204799978703
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0053",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014798683999970308,
+            "frame_harness_wall_seconds": 4.27839482499985,
+            "frozen_baseline_reference_audit_seconds": 1.76799994733301e-06,
+            "native_slice_seconds": 4.221060447999889,
+            "resolve_with_complete_interface_audit_seconds": 1.5690000054746633e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.042376381999929436
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0054",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014467593000063061,
+            "frame_harness_wall_seconds": 4.345428757000036,
+            "frozen_baseline_reference_audit_seconds": 1.390000079481979e-06,
+            "native_slice_seconds": 4.2874670759999844,
+            "resolve_with_complete_interface_audit_seconds": 1.950000068973168e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04332549000014296
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0055",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01449051400004464,
+            "frame_harness_wall_seconds": 4.338476163999985,
+            "frozen_baseline_reference_audit_seconds": 1.4429999737330945e-06,
+            "native_slice_seconds": 4.2795011299999715,
+            "resolve_with_complete_interface_audit_seconds": 1.67500002135057e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04432703199995558
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0056",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01406416400004673,
+            "frame_harness_wall_seconds": 4.368219253000007,
+            "frozen_baseline_reference_audit_seconds": 1.5359998997155344e-06,
+            "native_slice_seconds": 4.309662098999979,
+            "resolve_with_complete_interface_audit_seconds": 1.427999904990429e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.044322175999923275
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0057",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014316609000161407,
+            "frame_harness_wall_seconds": 4.35353929300004,
+            "frozen_baseline_reference_audit_seconds": 1.903999873320572e-06,
+            "native_slice_seconds": 4.2957268319999,
+            "resolve_with_complete_interface_audit_seconds": 2.1099999685247894e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04331677300001502
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0058",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.01468814800000473,
+            "frame_harness_wall_seconds": 4.286044360000005,
+            "frozen_baseline_reference_audit_seconds": 1.4150000424706377e-06,
+            "native_slice_seconds": 4.227067238000018,
+            "resolve_with_complete_interface_audit_seconds": 2.3640000108571257e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04412097700014783
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0059",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014708705999964877,
+            "frame_harness_wall_seconds": 4.341404922000038,
+            "frozen_baseline_reference_audit_seconds": 1.4969998574088095e-06,
+            "native_slice_seconds": 4.281819726000094,
+            "resolve_with_complete_interface_audit_seconds": 1.7579998257133411e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.0447118849999697
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0060",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014349861000027886,
+            "frame_harness_wall_seconds": 4.311390124000127,
+            "frozen_baseline_reference_audit_seconds": 1.4770000689168228e-06,
+            "native_slice_seconds": 4.25347530199997,
+            "resolve_with_complete_interface_audit_seconds": 1.8349999209021917e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.04339652199996635
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0061",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.015283052000086172,
+            "frame_harness_wall_seconds": 4.317851814999813,
+            "frozen_baseline_reference_audit_seconds": 1.1419999736972386e-06,
+            "native_slice_seconds": 4.258582269000044,
+            "resolve_with_complete_interface_audit_seconds": 1.8700000055105193e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.043813801999931457
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0062",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014563863999910609,
+            "frame_harness_wall_seconds": 4.340806502000078,
+            "frozen_baseline_reference_audit_seconds": 1.463999979023356e-06,
+            "native_slice_seconds": 4.281879320999906,
+            "resolve_with_complete_interface_audit_seconds": 1.7549998574395431e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.044199996000088504
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0063",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014320643000019118,
+            "frame_harness_wall_seconds": 4.307956787999956,
+            "frozen_baseline_reference_audit_seconds": 2.0780000795639353e-06,
+            "native_slice_seconds": 4.24970926900005,
+            "resolve_with_complete_interface_audit_seconds": 1.8579999050416518e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.043742818000055195
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "frame_0064",
+          "kind": "natural",
+          "records": 0,
+          "counts": {
+            "event_pairs_strict_support_aabb": 0,
+            "exact_triangle_pair_calls": 0,
+            "triangle_pairs_excluded_by_support_aabb": 0
+          },
+          "event_pairs": 0,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.014659444000017174,
+            "frame_harness_wall_seconds": 4.325002896000115,
+            "frozen_baseline_reference_audit_seconds": 1.2059999789926223e-06,
+            "native_slice_seconds": 4.2666029929998786,
+            "resolve_with_complete_interface_audit_seconds": 1.9180001800123136e-06,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.043573857999945176
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "root_3_2",
+          "kind": "exact_root",
+          "records": 12,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 24,
+            "Q_B_OTHER_REMOVED_A_checked": 24,
+            "Q_Q_checked": 48,
+            "event_pairs_strict_support_aabb": 63,
+            "exact_triangle_pair_calls": 96,
+            "triangle_pairs_excluded_by_support_aabb": 2016
+          },
+          "event_pairs": 66,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016431533000059062,
+            "frame_harness_wall_seconds": 5.49846814700004,
+            "frozen_baseline_reference_audit_seconds": 1.249999968422344e-06,
+            "native_slice_seconds": 4.633276519999981,
+            "resolve_with_complete_interface_audit_seconds": 0.7227286659999663,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.12561723099997835
+          },
+          "mesh_dump_count": 0
+        },
+        {
+          "query": "root_5_2",
+          "kind": "exact_root",
+          "records": 13,
+          "counts": {
+            "Q_A_OTHER_REMOVED_B_checked": 16,
+            "Q_B_OTHER_REMOVED_A_checked": 16,
+            "Q_Q_checked": 32,
+            "event_pairs_strict_support_aabb": 76,
+            "exact_triangle_pair_calls": 64,
+            "triangle_pairs_excluded_by_support_aabb": 2432
+          },
+          "event_pairs": 78,
+          "cost": {
+            "baseline_hash_audit_seconds": 0.016202642999814998,
+            "frame_harness_wall_seconds": 5.956243198000038,
+            "frozen_baseline_reference_audit_seconds": 1.1820000054285629e-06,
+            "native_slice_seconds": 4.970605088999946,
+            "resolve_with_complete_interface_audit_seconds": 0.847795824999821,
+            "verified_union_seconds_including_exact_recheck_and_array_audit": 0.12123168299990539
+          },
+          "mesh_dump_count": 0
+        }
+      ],
+      "isolated_role_seconds": "UNMEASURED",
+      "union_seconds_active_or_root": 2.274711807999779,
+      "union_seconds_no_edit": 2.228824988000156
+    }
+  },
+  "independent_audit": {
+    "status": "PASS_SUPPLEMENTAL_COMPONENT_CERTIFICATE_AUDIT",
+    "counts": {
+      "actual_local_rechecks": 279,
+      "complete_actual_support_rows": 1179,
+      "event_pair_rechecks": 2079,
+      "exact_triangle_contact_calls": 1344,
+      "triangle_pairs_excluded_by_exact_aabb": 65184
+    },
+    "wall_seconds": 54.585014255,
+    "native_slice_calls": 0,
+    "scope": "Finite complete-matrix/graph and compact-geometry supplemental recheck. Actual coordinate, owner and full-star provenance is inherited from hash-bound native receipts. Not a new native run, all-time certificate, or combined-sequence receipt."
+  },
+  "native04_snapshot": {
+    "files_verified": 15,
+    "bytes": 208964,
+    "all_current_files_identical": true
+  },
+  "input_sha256": {
+    "experiments/joint_certification_opportunity_audit/resume_20260907_113739/aggregate_existing.py": "b0a380ceb7fbc10f42850da09c4bcb6b6dac3dde305fca8f39d51486a97279bf",
+    "experiments/joint_certification_opportunity_audit/resume_20260907_113739/PROTOCOL.md": "82986f1faf4b7715f11c6776cb6edebf58974bce36984f459a5ac7a3fdae1d39",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/summary.json": "f6bb26c3f4edebb730f930a0493a826f35fbb8615fa4122f193ec6badf92ce31",
+    "experiments/c1_lite/forest_component_graph.py": "e1b04e70a6933a921eac4e9a302b30aeedffb53edce99b4f3d8aa764b391d709",
+    "experiments/c1_lite/forest_component_union.py": "1f3e0ea57fe06163184566657cf39f4608ce0aec80380dc4be841f849e616f82",
+    "experiments/c1_lite/forest_native_campaign.py": "4f21d173e388a7860f420a4dc2e7a3f9acbf288e9fa5d0f443f83d20b4cda55a",
+    "experiments/c1_lite/forest_native_patch.py": "05ea64b988dbb60f94334e559ca510045282c902951e5d312325dd43cb54b076",
+    "experiments/c1_lite/forest_native_reader.py": "4f35f38874fd506c4ed54f4e9c70e9b9a4842483604f07f886d9db13cc24b623",
+    "experiments/c1_lite/forest_sequence_inputs.py": "fcd0a43e5184538b40eb32cb166be3828372a4415ba7b8f08978ccfd128d0cca",
+    "experiments/c1_lite/run_forest_component_certification.py": "b9eab8215b55a3ff1998297e820e699de93e54ea5e7bc940bc5cc8d25dd90620",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/root_3_2.json": "fe5a6f5f4eb32ba764bccf228b59d6f4d84cb8422a8fce8dcccf0b7ddf4ab4d5",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0021.json": "2886e4f6aa67a66ec822c36de7ac6f94720db047d15563512a581d67956c43a0",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0022.json": "95e5f8a53cf26ecec98208f02aa17f85f66678d91fcff335ae9813194b6c7031",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0023.json": "0aedbc542e83cf2a8e7cdc0b75092219a01152f1747c607391ba01a01f357286",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0024.json": "04ea907a6583374616a01f60efaf2785406a5f92f1eff6fa4d07b5f4c7c81fed",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0025.json": "eab7ffd5a764b787cbc6c1dcdaf8046193259050563f210f9ce2a70c3da2c79b",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0026.json": "b1a764726ae1f7feae0943f0f94891024c540cc3e1fcf5ca3b2af6b16bc7d0ae",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0027.json": "2c2077576573805e97f47024e909ead4eb2ecb3646516bdbeaa0bd586fce27ce",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0028.json": "09ad4f176efaf60834d1d903832a0cd61c4a41a9a95a3d58398ff42dce14e335",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/root_5_2.json": "62ed00d2fb2d520b53047a402216d019cc4cfb7c245f0b84e7ce79b46c7622b8",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0037.json": "1ffe707b8a463499b7e984c9934db204f707c3f6de1b7887be42fd767621659b",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0038.json": "5c8e6315c0156bec05c088b740086dd0404b4dd3daa06df2f9c0e84ab0946718",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0039.json": "2ae1625a3e99aa44208c3dd5ec84ae773367da6d7b9f6ea8fbd9bca6ef876612",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0040.json": "31d2146148fb0e17a9f28cf3c558bb42fd3fcc9d6132a1ee96c98ca97a29f4f2",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0041.json": "f1f3bb249b42431444f9e9d91457ad80984b67e6a6f9bdd15aa011e665db2d45",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0042.json": "ac901169445c349e79002c1b1fcad8bff183e89a069551a8053577f84e76c23d",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0043.json": "ac209346e3febb0d73b92b195efc762ee7fa38f41134831cc2b958d54f5e7a26",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01/queries/frame_0044.json": "d40f7c9b907a4d2fc8b06c0baf53a6023f3544a1c80ee326159c7933983319d2",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/summary.json": "02d4f4f7e3e268e874c0882eedef44e0acf4b1b8d61d9591275b362a0f73d15b",
+    "experiments/c1_lite/run_forest_atomic_sequence.py": "c10cc94360beb1f4094792a88dce92c413fec60e0666f8af7e8041ece55e5a3a",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0001.json": "10f6483737761066cc61366f737622f6dfc45c3777443c7f7e45821fc8c57b6f",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0002.json": "5aa4b8c65c79c3adae337513908518db5571a0b4d35294be40db917350b12263",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0003.json": "6b9103103bde0d598b9d4338b99258f0bd54a3b1e0d1d541b9bc84657fcacdd6",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0004.json": "7b60e86619f9b1be1c85a784bade01f11d350eaf022bbc504cc68def93e34c74",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0005.json": "f6b7152220e538b74fec21ed5902bccc737c26a7d3dcfd4bcb2496f5c272c9e6",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0006.json": "c7437885adc94583df5e3710e1e865ad0c20915673601fce97472ec390d5b2f6",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0007.json": "7e29dfef5d7ca100bb452beb4f75aa3117fb424301fa2957c9d530673738cf45",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0008.json": "1ff0aed179ed6782e4c9706c163c52ae0c58908ee417216366cf8775be779724",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0009.json": "14f663a0ff5b4032ca78844e61cee0ecd5bcf2ac0409196332629d48b5e9e286",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0010.json": "a85d0da3b9e3324e4b6ee6124cc6baf3eb79e54c936003dcae809c81836bb2fe",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0011.json": "f87fe6cf9c6c5ffc568e58aaa1518a528b3d204be6f7fcd40e4c135ce4277394",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0012.json": "77bd7333f884d6c406ed0b2bcee4c22256bfb3e9c3e5671695609e0ead1ea1a6",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0013.json": "7b74a769250d25a35bb7da1e43251b9721463326ae1be267d94ea9712a3185e7",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0014.json": "4a29a977f9c1cbb9ca5094c79572af0d89ce152ec338d2b7375fab151a7dcd9f",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0015.json": "c064d73ba46484cf7e1f941b7b973c592d763bf82e48dc26e761d19672c0ef6a",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0016.json": "c5d436b91c7cc8d4e6a5bc2de5496378f6910ec4f075effed639ca25ba94b820",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0017.json": "168650dff7dc7a9eb64b15c663657132b6ab873c0bdbc6267292e8b7d153fb88",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0018.json": "47ae442fc1846a122bb29231d0ff032260dfd20adc53cbbec717e1baa5ff7e0c",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0019.json": "ebdf46593aa1eac82dc7fe9492165d3e7ec7f597290741a7d49fbe29c87d9281",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0020.json": "aa170962a5e1c5e82b11a3e24ef4a2c63bcc46c0a6872c21d859554eec3b3b2a",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0021.json": "22f4f833b89ad0ef62eab404a392d1c868f134f8c9b39e10845e417b17b3cb7b",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0022.json": "6d680ab2297f1554765a185f181f0c46972644a6cc87f923a0cf964cd9cf4f78",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0023.json": "f96bf3ac5c440973ba4484da04d051027ce2296c557193055f958d4ae76e1a3e",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0024.json": "5dbb9caa7ab0a02e7980a04f29c1b30cc8eb5ae1bd15c95cc7815baa8ec879d9",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0025.json": "e03a56f9be08a1654957f3b048fd9092298d2301cc80390f81212b4c16c90791",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0026.json": "7bb9d8baac5b98546afdcccb6367048f085ec1fd9c45c1139c1673d0362decb7",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0027.json": "dfcf9605362f0f9d7477b6dd607acb20f6c105ddaad37ca12dd73df1b5e796d3",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0028.json": "b518b52bea191ffeb0b559319d1c71eecbc4bc48e70bd4c9d495352c16a5cc51",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0029.json": "f3abd0bfe96c92892bde1c2e59f4cc864b40920f868ad936e41d61db23021865",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0030.json": "594525d237bb9a93576e0cf25870b43317e6619125d67a50753eec4d5c8663ea",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0031.json": "cfdfed9d2ab1b13bdb5f79343a38ff08d05693e6505306981fc4158418ccd10e",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0032.json": "ecb2a01680d6d0b27e14d0f2b64cf33a9e8882d0338ec2e27239a27828556638",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0033.json": "3f545985615b5b879a65b4c1fb2c93582e30908c71f3ca115ea7178a8b8dabd5",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0034.json": "acbda1bb8057bb7e500a85e83a616cb3bc8310d508504c082ac0d9614bfb80d6",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0035.json": "6f54ef2ebb7505d29cea474b3355603b4a4edda850d1c6d49433ecca7ad99a75",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0036.json": "b39a604deba2f24b2822411ccadc96b085efbf962a64a63516a8f0e42e93759d",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0037.json": "6abc42a5797d43db6ed1c6c6abbb16609b89307405581c11da79ac40fbe7fb5d",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0038.json": "3b38dd87fa10da72f4aab1a71143c7961832aa96801756ff4a251da913f4d273",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0039.json": "d2db5a19d24bf8bee166a8e2c1c7a8eb95bcf48056adfc49f29bd89b553fa72f",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0040.json": "8a119e662405537304d2647f080772c4012730365ab2c96a287717f593bd48c4",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0041.json": "370a1940a6bbf7bb94ec5ca91ea03a600c21b2d0eac39be5c0c39a4b74ffd0c4",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0042.json": "8c3927f9a4145e1db7cd3d224ec16640f496bfad2ef75c0539bda9271fc8db41",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0043.json": "4e037d4a4ba38845d0f2a100bed4db1a27ce8445027e5825219957c1e69fa443",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0044.json": "9bc85db4c6cda5724b5e30c7eab37aebc4ff1d4180ad1f78174b405f9b3aa78e",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0045.json": "66c2f68fb2f4abf492a678eb719d9986e0587c873882effee034208be8bdfb74",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0046.json": "82c8a8afec8b5fa9fc895197a42706513cafe2628710eff390f067f1061a0b6d",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0047.json": "cca31f9a6be2be18c03bb8aa44302e1c3a273435a5e2ed643dcf05b7569ad44f",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0048.json": "b607eb6300d54884048833216f2dae7ef09a84fd198fee594acf319180b5a92c",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0049.json": "636aff6305a3404640745fb83d69acae64cc1f2c3a38402bd8035bdda9f17e4c",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0050.json": "56daf43f29de1463b39509c4cb0e80390e9ba3735529e18382a7507aebd8b64b",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0051.json": "c61e8ed8c0bc6f31b3b05199656036ccf29cc3dfbea209ccc9c35ddb14d6b047",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0052.json": "3f4183dff94cbcdf180cd76ea0685bd63417c5f502f055a0e369b721e0bb0e6c",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0053.json": "c71641a1078cb44d96fe2aaf89da14ccfdad7acb3008dfddd3bbd19170f1f656",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0054.json": "172496d178bf1cc85de245e2ec5f9e7914f253450e99cc057ab12cb14dc379f4",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0055.json": "dcd4ff6a2db53437ed6b19e06b30a20e7801db50eb1b6d80c8155d7557661a0e",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0056.json": "bd30b423b341b1fbf4293b8724b6cfdbe2ad97aa1d5114a429da0271d271eff5",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0057.json": "6fc2d8670f6d05269a836d1d285af4f9fd4c8c85eb965b81552203cbfcb1a110",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0058.json": "589bf208f844c6ffb3b0f7e8145991e5f22cb119baed3a0bb5ad178cdc206053",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0059.json": "eb55622f9d3ebab47aa43d86b094406a1fd9037ca209334d9cd0db69d8f469ba",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0060.json": "77edb91b37668451bbac209b4ad793bebbc00367e5842e79278aec15a37b35e9",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0061.json": "7c2ee72924fce8582f0b0be95996fa1f3dc86f6c2698d031db0712d1a10a935d",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0062.json": "ecddb647d717a97b8c1fd6e3ad18bc57f0d291358502197e805dd5d573b47650",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0063.json": "c6a2e15cd7d54a0058cfd13aa215e641b7dc88925a2be5cf3e9f5aa05fc10b59",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/frame_0064.json": "0d9a9d2ed9cf261929a82fc2e28784d90c07b9dd89e794917a1bc387473f7279",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/root_3_2.json": "0e3f080b802d0d59f0c6777548a559c5d25ab171723e90774928ab62fc03b879",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence02_omp1/frames/root_5_2.json": "82d6cfc280023e436336991c2a9edfca65707c5840ebcce2c46874efd6cf7319",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/summary.json": "02bc376193ce6c700480a716e74d52c963663112f97d983b6d2fd4e414dc8100",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0001.json": "e08b5c99f74b7d6ca75129ec35fbfb87413f0dfc77d38a4d0b157ee290beda83",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0002.json": "4e20338ba935fff9988e4324b57b8e898f01ea940d0e52579554cfee0d612949",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0003.json": "b3efd7642a417cec6e4687232b9f935b4ffa708bfc5d102fb1cc1e26c729c257",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0004.json": "16f381c437d3909045f84c89dbb87cb5596217b921bc00b18316e1adfbd94985",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0005.json": "07996cb09f8b75affc175a4e2d4c5283f2dc8bc489d7a1ffe3a6ec432c02d2be",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0006.json": "a3c39e2d8a6dafae4db636a29b57ffa7402ec2d7080cfe545eb76d1f6db0769c",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0007.json": "a16212e53303deaf068afa8de3fe59e887e20a3550536ad37c87107012140432",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0008.json": "e190a47d9420f8340ea34d56132a1932182b07f0f47f4fb314a1fc3943a1b694",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0009.json": "ef5f633184c003e5816db74aa6da4f5afd18150d0025eed8b5b285782f33706f",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0010.json": "aa364ada9dd6c890b800874085bb96ad59100410d300041731788a32f72dc51f",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0011.json": "4fd6e17f3bcb676dee9b9e631f1dcec6aca52d26ae08d0490e88fbf6c1932005",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0012.json": "07a9521f856273188568b6ea7e1a8dd2e161adab2804035315ac94ab234d606d",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0013.json": "021568e7f2d9ebb80a6d536bcb6b4929ceab0afc45ad0bf145e953fe242235ef",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0014.json": "3186b766557a8445ac963f7c56aa901a159f308c0a0b66bb2798e115c78bd22d",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0015.json": "5a3c9042c8b9d450d07f32836ecf6de7c916789a1c2e396aea89134549fd82c5",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0016.json": "69bd0ab0a23dad2c8a19bcc9f87b1d72d4d74eff3af5f99ccdade18ced4b823a",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0017.json": "64dee43f9d9f02c24525b94203f3d4a63fd0c05a5a21f6be9d67ce42a36af8f0",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0018.json": "45ab5b97e272b0d609e24fa5f0f700dee158bd8533f8cd90b884ef1792923108",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0019.json": "f8774bbbfdef153741ed882be35750165434825e03c489a1eada7cf081d745f9",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0020.json": "6c15138edae07298f621fdf94a60cd61ae4458c0e8620ab22c0a6c998567b1d6",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0021.json": "06fee27a5c6e68a7a69c061346a531e4faaf7aad21e0439a9d640cb6a2a45feb",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0022.json": "da04ed5cc06a551ff581403901370e1114f365d2e52901f74b9942461c930b20",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0023.json": "f3154ed77a51d6c7365ba1128ffa5678d652da671fb675e1e62fa8df1e18b04e",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0024.json": "3f45c089c8edc295a5694f2eef15865f9f34290cb6345843135cda667c625b13",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0025.json": "56a33a2bc9086767f0dd81ae778d2a5841ebbff1bc1ab1c7996c76dab5e56f91",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0026.json": "6217246964fcb662fa61b1870c48f35c6907c5b261d9fa6cbbe1ac8a6f780934",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0027.json": "ddabc0244e118f4ef42a59d249244d6c814fb93ce3922390067bb15429fbf8f8",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0028.json": "bdc27633b8c1defe02cfbe546e1cae94d488848b8a2ee5014f60f0f5969d189b",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0029.json": "f39e609bc484c93d6e0089f5e72511bf29c5a4bf69e834d4e99d938b8aa3df16",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0030.json": "11e357a324836f035b798ce84b20d7e8c36a907526d2e42adc2440416918b50d",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0031.json": "9e845107d0d22a5b0c79de4dc633d2c36a266203e399f23a505eec0922c379ea",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0032.json": "0d8311a1436b19ddb6dd5912f174dfb0fb8b3b1a7de1c9ee2e8413a059ac3373",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0033.json": "31796cc4bbbeaaf56da29f527898e70e1e0473aa4791571fc03cb4b2b7daf1ed",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0034.json": "d6121abebe75a0c996e2abdc5c06c753fcc870e3d5055a152a580fe21e1e0cd2",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0035.json": "3b8fc14f02a85933c6aca06e2a6339dc7c9440f9325058a34df2cbbd2922092a",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0036.json": "c3152159b5e9293b0cc14195dd8b70221fb73a1c3f2accb7cc223c267fde7f2c",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0037.json": "77c19c5b103f2b2ccd4399f6967956706c0ebe5c8eb7c7c6f8c44ef19178bff3",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0038.json": "420da9eaee29fa9f14a075d503988691f56daaaa82d3f1e9cd442e041b525b29",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0039.json": "26b65c334695c9fef480368c8aca6712f42c96ac9974de1a80613fe4f18f9bdb",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0040.json": "f299a215a9e059fa4c2be81827b9486ef22efdc142e5d7c3de984619d0fcd7a4",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0041.json": "fde6273201be664da85dba22373f7d1b27863b0a0e1ffa5855306645f2634045",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0042.json": "c8ab36bc6d92d82f8e2c940e6390fe88dd3d77cdb2e91effde6a147e99e4ae38",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0043.json": "0a0f09699c374a11bce2273b12abf5b1974145172f297a3863f0a3376c16a908",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0044.json": "361d1fed4fdbc57ee5c6015acf9cb34c6866db57ae837a76a9348a3da61ed32b",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0045.json": "7b46b9854d57c4e78653bc78d63a9dfb98c5c2ca6084b25883c95625e5811972",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0046.json": "2e446ace9ba2f9f493f453fcbc7c79515bf67de11f3232c7971e260d6cf68682",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0047.json": "e80a547efa3f19a8b0b6a3ea05c528c5babf9b554b07305037dd03ca9cb0b937",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0048.json": "beea5a80b5752de612c945a0fde1a335b9bb6d718ecbf733811568e8cd4bf0c5",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0049.json": "4d0cdaff223339c953ef13a1cd9f1d2dffcca31638610ba9f61f5e6296419484",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0050.json": "afa7bd9ec87343ebdb9d7085ba3effcbfe54d7df635851d942f6ae4c53191e23",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0051.json": "5945a65b88a5ac7892eb8ea38fd7f357e6c085d8cab444d42548404525d29103",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0052.json": "01d4d3b75e37ef37cecfe17af18bac380af8c453baa4df4391184bf54ef3384d",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0053.json": "0c658948946082d4e4a18246059ea1a7de3fb16253a970bdb4b593362f3f8dbe",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0054.json": "38102c4c9356212a826556f8b7074fa81532cbd64acfaba75334756599b75638",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0055.json": "301783e56229a0c2253c7aa9adbb184a47d576b9c9aacce2ccaa90a764751e9e",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0056.json": "ba7a14668c1b2037e2fd83171e710e8a11ac0d2b989231c497da32770263dead",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0057.json": "f77ae56778019142d7963849148104b174d90994ea5b565cee375b6a34fd0dfa",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0058.json": "4388d4569e7a0e14cfead04ae58953d26a51c3dc771d5643eef7ea822cc6e7f9",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0059.json": "1f94d04a659c734d4b9d7eaee85cc99dc3c1feedea234affd6be9d2b297b8bc3",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0060.json": "36406caeb196658fea3fa5ff3417a2c1a63e199726f2676858876cc3e5c99000",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0061.json": "36cb47a36cdb39ea141f62e320c57328943a7c399403827ae2dab8a7d9528cd4",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0062.json": "e212f0e125f4f06af113c89e1c21e07c35545bd2b3835de5afdf206280f01bcf",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0063.json": "6c5cc1255dec71821bebca18f392f682825cfe3600098dc7d91fdeacf2b9aab6",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/frame_0064.json": "26f44cbde6dc5d6dff325b68d73403d483600888ed3e03b57dc707e104373e1a",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/root_3_2.json": "6763e56e06edb8d08d7ba9de50d1044b640f5ed7ed5a3dc4f6bb9eb3c09f8659",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/sequence03_omp8/frames/root_5_2.json": "340322de2f45d0d465fd9c0a8cce049c8184b8b34b19fd7ecb2e4f58a3780464",
+    "experiments/c1_lite/artifacts/forest_sequence_20260906/component01_independent_audit.json": "4dfd8d14148a3a0718a8f2cc94e61392baa54b284a2638981eceb32e3989c9a9",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/manifest.json": "f9629e88f830d209144c2fe73956f55c594facad140d37e46720c7785a4021dd",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/summary.json": "a6bbdc434bfbf87dcb8fe6e818975f6c4d7fd99cfda87e5a0cddd253335cfebf",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/binocmesher/__init__.py": "7d39ede0400e2fc84420944b3321f1b25c749b80b52faf3a9b5cd2eb97e5b53b",
+    "binocmesher/__init__.py": "7d39ede0400e2fc84420944b3321f1b25c749b80b52faf3a9b5cd2eb97e5b53b",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/binocmesher/core.py": "f5611dcebde85ae45990322a72188de59c954c1f68f8382679211bcc511b7816",
+    "binocmesher/core.py": "f5611dcebde85ae45990322a72188de59c954c1f68f8382679211bcc511b7816",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/binocmesher/window_geometry_runtime.py": "8b8fb1002bb8b9f427e10a77e3c87a3d5d67d72d2b5431bb31a20665d21b0c8b",
+    "binocmesher/window_geometry_runtime.py": "8b8fb1002bb8b9f427e10a77e3c87a3d5d67d72d2b5431bb31a20665d21b0c8b",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/binocmesher/window_runtime.py": "4eae868b0db7c15e1e2c44d55423e72fb6fee2b8c82a2949be8e5d33ee84aeb2",
+    "binocmesher/window_runtime.py": "4eae868b0db7c15e1e2c44d55423e72fb6fee2b8c82a2949be8e5d33ee84aeb2",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/experiments/c1_lite/forest_exact_contact.py": "f48a74a196b0f1ec41600fd85c11c98bf5da891beccdeea4446e1ba50620d850",
+    "experiments/c1_lite/forest_exact_contact.py": "f48a74a196b0f1ec41600fd85c11c98bf5da891beccdeea4446e1ba50620d850",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/experiments/c1_lite/forest_fan_contact.py": "5c1410de314dae2b439db7ed87b532b7e9d1129d71fb69ad169d8fca0e4e078c",
+    "experiments/c1_lite/forest_fan_contact.py": "5c1410de314dae2b439db7ed87b532b7e9d1129d71fb69ad169d8fca0e4e078c",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/experiments/c1_lite/forest_frozen_query.py": "2c228484b216cc79f2860a6dc6d91859a15f18cba6f9758675d4f4c5c2e47834",
+    "experiments/c1_lite/forest_frozen_query.py": "2c228484b216cc79f2860a6dc6d91859a15f18cba6f9758675d4f4c5c2e47834",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/experiments/c1_lite/forest_native_campaign.py": "4f21d173e388a7860f420a4dc2e7a3f9acbf288e9fa5d0f443f83d20b4cda55a",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/experiments/c1_lite/forest_native_patch.py": "05ea64b988dbb60f94334e559ca510045282c902951e5d312325dd43cb54b076",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/experiments/c1_lite/forest_native_reader.py": "4f35f38874fd506c4ed54f4e9c70e9b9a4842483604f07f886d9db13cc24b623",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/experiments/c1_lite/forest_observer_contract.py": "75f10450ec361daadf9fbb1633da20cf461f67ed31a1e36b229e3e86f6fafca8",
+    "experiments/c1_lite/forest_observer_contract.py": "75f10450ec361daadf9fbb1633da20cf461f67ed31a1e36b229e3e86f6fafca8",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/experiments/c1_lite/forest_schedule_policy.py": "f1d9e59ab97841237560bb80d34d4326c26c254a7a48769f583b48781923e884",
+    "experiments/c1_lite/forest_schedule_policy.py": "f1d9e59ab97841237560bb80d34d4326c26c254a7a48769f583b48781923e884",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/experiments/c1_lite/run_forest_formal.py": "fb77487ba4e55abebe857e4093379d9111301e764675f6f454d31c749ee7a5d7",
+    "experiments/c1_lite/run_forest_formal.py": "fb77487ba4e55abebe857e4093379d9111301e764675f6f454d31c749ee7a5d7",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/experiments/c1_lite/run_forest_native_admission.py": "71fd6a49a4e287a38e431d776cd505d3ee2a4383903fc262eecaa4ffbc7114fe",
+    "experiments/c1_lite/run_forest_native_admission.py": "71fd6a49a4e287a38e431d776cd505d3ee2a4383903fc262eecaa4ffbc7114fe",
+    "experiments/c1_lite/artifacts/forest_formal_20260906/native04/executed_source_snapshot/experiments/c1_lite/window_source.py": "1aa09ab97c85d57941b5be574c25f0c9c243c569c282c8f72b6692eff65f4ff6",
+    "experiments/c1_lite/window_source.py": "1aa09ab97c85d57941b5be574c25f0c9c243c569c282c8f72b6692eff65f4ff6"
+  },
+  "opportunity_verdict": "INSUFFICIENT_COST_EVIDENCE",
+  "isolated_removable_cost_seconds": "UNMEASURED",
+  "maximum_speedup": "UNMEASURED",
+  "wall_seconds": 16.015866396999996,
+  "peak_rss_bytes": 26660864
+}

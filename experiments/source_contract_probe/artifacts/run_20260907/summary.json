@@ -1,0 +1,71 @@
+{
+  "schema": "source-contract-probe-summary-v1",
+  "status": "PASS_REGISTERED_A_B_C0_COMPLETE",
+  "production_revision": "54a7a7d235449858aac854a6da80f47d2021893b",
+  "unexpected_failures": 0,
+  "budget_stops": 0,
+  "stage_attempts": {"A": 1, "B": 1, "C0": 1},
+  "A": {
+    "families": 5,
+    "cases": 7,
+    "accepted_proposals": 5,
+    "expected_authorization_refusals": 2,
+    "all_current_and_ordinary_decisions_agree": true,
+    "positive_arrays_byte_equal": true,
+    "scope": "Synthetic authorization with shared trusted complete ledgers; not publication or emitter completeness."
+  },
+  "B": {
+    "single_certificates_passed": 4,
+    "retained_faces_checked_per_single": 18,
+    "crossing_union": "REJECT_POLICY_CONTACT",
+    "independent_actual_plan_witness": ["1/3", "0", "1/2"],
+    "witness_barycentrics": ["1/6", "1/6", "2/3"],
+    "crossing_exact_triangle_calls": 1,
+    "safe_union": "PASS_UNION_CONSTRUCTED_NOT_SCHEDULE_CERTIFIED",
+    "safe_actual_output_global_gap_at_least": "1/2",
+    "safe_exact_triangle_calls": 0,
+    "safe_triangle_relations_AABB_excluded": 32,
+    "safe_source_faces_consumed_once": 4,
+    "safe_raw_owners_consumed_once": 6,
+    "late_failure_baseline_outputs": 3,
+    "late_failure_discarded_proposals": 1,
+    "partial_results_published": false,
+    "dependency_scope": "Missing atomic membership and shared-boundary support only.",
+    "scope": "Synthetic mechanisms; no native scene, minimal graph or new visual benefit claim."
+  },
+  "C0": {
+    "native_queries": 3,
+    "active_output_agreements": 2,
+    "unchanged_endpoint_agreements": 1,
+    "decision_mismatches": 0,
+    "native_rejection_timing_samples": 0,
+    "timing_pairs_per_query": 5,
+    "median_arm_milliseconds": [
+      {"internal_tau": "103/5", "role": "active", "current": 33.746490, "ordinary": 33.748464},
+      {"internal_tau": "104/5", "role": "root", "current": 33.017056, "ordinary": 33.756363},
+      {"internal_tau": "102/5", "role": "endpoint", "current": 11.737414, "ordinary": 11.647435}
+    ],
+    "equal_principal_work_per_active_query": {
+      "vertex_rows": 1831, "owner_rows": 5262, "resolver_face_reads": 5264,
+      "indices_built": 3, "indices_reused": 0, "interface_face_slots": 3820,
+      "retained_AABB_relations": 3818, "exact_fan_retained_calls": 28,
+      "explicit_array_payload_bytes_copied": 143048,
+      "event_pairs": 0, "certificate_relations_inherited": 0
+    },
+    "scope": "Single-element E2; same checker/executor, independent resolver; no Forest, scaling or speed superiority claim."
+  },
+  "resources": {
+    "maximum_worker_RSS_bytes": 104321024,
+    "temporary_cache_copy_bytes": 4255152,
+    "temporary_cache_removed": true,
+    "original_cache_unchanged": true,
+    "C0_final_repository_bytes_before_summary": 428514573,
+    "C0_final_experiment_directory_bytes_before_summary": 270497
+  },
+  "wmtk_used": false,
+  "production_changed": false,
+  "rendering_run": false,
+  "certificate_reuse_optimization_run": false,
+  "substantive_advantage_over_ordinary_reference_established": false,
+  "next_action_taken": "None; campaign ends at registered A/B/C0 boundary."
+}

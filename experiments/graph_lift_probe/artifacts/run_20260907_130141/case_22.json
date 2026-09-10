@@ -1,0 +1,1471 @@
+{
+  "id": "cropped_asymmetric_hexagon__strong_rational__2207",
+  "domain": "cropped_asymmetric_hexagon",
+  "family": "strong_rational",
+  "seed": 2207,
+  "status": "MEASURED",
+  "model_only": true,
+  "independent_target_tested": false,
+  "coordinate_scale_bbox_diagonal": 1.5604240752038354,
+  "methods": {
+    "boundary_root0": {
+      "name": "boundary_root0",
+      "selection_uv": [],
+      "checks": {
+        "vertices": 6,
+        "faces": 4,
+        "internal_vertices": 0,
+        "parameter_area": 0.6779,
+        "minimum_parameter_double_area": 0.1488
+      },
+      "budget": {
+        "boundary_model_point_evaluations": 6,
+        "interior_model_point_evaluations": 0,
+        "candidate_model_point_evaluations": 0,
+        "candidate_queries_are_subset_of_interior_queries": true,
+        "original_target_queries": 0,
+        "reference_queries_used_for_construction": 0,
+        "boundary_setup_seconds": 0.000197710999998435,
+        "method_construction_seconds": 1.2728000001516193e-05,
+        "timing_note": "single Python construction, not production benchmark"
+      },
+      "metrics": [
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.04262645300485535,
+            "p95": 0.07793100546157525,
+            "sampled_max": 0.08184299628893035
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.04251222547050374,
+            "p95": 0.07744657237240847,
+            "sampled_max": 0.081773573340499
+          },
+          "symmetric_mean_distance": 0.04256933923767954,
+          "maximum_directed_p95": 0.07793100546157525,
+          "sampled_maximum_distance": 0.08184299628893035,
+          "normal_correspondence_symmetric_mean_degrees": 9.48088608639438,
+          "normal_correspondence_max_directed_p95_degrees": 22.498168333312545,
+          "mesh_area_quadrature": 0.9082942982460904,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 16,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.042712666740527386,
+            "p95": 0.07813136802705768,
+            "sampled_max": 0.08206025765735504
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.04251222547050374,
+            "p95": 0.07744657237240847,
+            "sampled_max": 0.081773573340499
+          },
+          "symmetric_mean_distance": 0.04261244610551557,
+          "maximum_directed_p95": 0.07813136802705768,
+          "sampled_maximum_distance": 0.08206025765735504,
+          "normal_correspondence_symmetric_mean_degrees": 9.48088608639438,
+          "normal_correspondence_max_directed_p95_degrees": 22.498168333312545,
+          "mesh_area_quadrature": 0.9082942982460904,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.04272042461043643,
+            "p95": 0.07803785930094087,
+            "sampled_max": 0.08233545045961899
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.042482678792602105,
+            "p95": 0.07788681363315669,
+            "sampled_max": 0.08211570078392742
+          },
+          "symmetric_mean_distance": 0.04260155170151927,
+          "maximum_directed_p95": 0.07803785930094087,
+          "sampled_maximum_distance": 0.08233545045961899,
+          "normal_correspondence_symmetric_mean_degrees": 9.500537648080277,
+          "normal_correspondence_max_directed_p95_degrees": 21.964021503550967,
+          "mesh_area_quadrature": 0.9082942982460904,
+          "analytic_model_area_quadrature": 0.9015780545706955,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 24
+        }
+      ]
+    },
+    "boundary_root1": {
+      "name": "boundary_root1",
+      "selection_uv": [],
+      "checks": {
+        "vertices": 6,
+        "faces": 4,
+        "internal_vertices": 0,
+        "parameter_area": 0.6779,
+        "minimum_parameter_double_area": 0.1904
+      },
+      "budget": {
+        "boundary_model_point_evaluations": 6,
+        "interior_model_point_evaluations": 0,
+        "candidate_model_point_evaluations": 0,
+        "candidate_queries_are_subset_of_interior_queries": true,
+        "original_target_queries": 0,
+        "reference_queries_used_for_construction": 0,
+        "boundary_setup_seconds": 7.896399999651749e-05,
+        "method_construction_seconds": 6.120999998415755e-06,
+        "timing_note": "single Python construction, not production benchmark"
+      },
+      "metrics": [
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.011165897703706953,
+            "p95": 0.025124616336925122,
+            "sampled_max": 0.03976493502393691
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.011081786419101715,
+            "p95": 0.024658936840933617,
+            "sampled_max": 0.03951117907273502
+          },
+          "symmetric_mean_distance": 0.011123842061404335,
+          "maximum_directed_p95": 0.025124616336925122,
+          "sampled_maximum_distance": 0.03976493502393691,
+          "normal_correspondence_symmetric_mean_degrees": 6.059365191076033,
+          "normal_correspondence_max_directed_p95_degrees": 18.262482034582465,
+          "mesh_area_quadrature": 0.9110639607148769,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 16,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.011216969076340035,
+            "p95": 0.025188439586836912,
+            "sampled_max": 0.039780678436377635
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.011081786419101715,
+            "p95": 0.024658936840933617,
+            "sampled_max": 0.03951117907273502
+          },
+          "symmetric_mean_distance": 0.011149377747720875,
+          "maximum_directed_p95": 0.025188439586836912,
+          "sampled_maximum_distance": 0.039780678436377635,
+          "normal_correspondence_symmetric_mean_degrees": 6.059365191076033,
+          "normal_correspondence_max_directed_p95_degrees": 18.262482034582465,
+          "mesh_area_quadrature": 0.9110639607148769,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.01125506293696795,
+            "p95": 0.025721005065114783,
+            "sampled_max": 0.04364573584647641
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.011102993013973154,
+            "p95": 0.024662866440954393,
+            "sampled_max": 0.040539671126216405
+          },
+          "symmetric_mean_distance": 0.011179027975470553,
+          "maximum_directed_p95": 0.025721005065114783,
+          "sampled_maximum_distance": 0.04364573584647641,
+          "normal_correspondence_symmetric_mean_degrees": 6.071555986498342,
+          "normal_correspondence_max_directed_p95_degrees": 18.1906343803498,
+          "mesh_area_quadrature": 0.911049344136913,
+          "analytic_model_area_quadrature": 0.9015780545706955,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 24
+        }
+      ]
+    },
+    "xyz_mean_fan": {
+      "name": "xyz_mean_fan",
+      "selection_uv": [
+        [
+          0.4866666666666666,
+          0.5183333333333333
+        ]
+      ],
+      "checks": {
+        "vertices": 7,
+        "faces": 6,
+        "internal_vertices": 1,
+        "parameter_area": 0.6779,
+        "minimum_parameter_double_area": 0.18624999999999997
+      },
+      "budget": {
+        "boundary_model_point_evaluations": 6,
+        "interior_model_point_evaluations": 0,
+        "candidate_model_point_evaluations": 0,
+        "candidate_queries_are_subset_of_interior_queries": true,
+        "original_target_queries": 0,
+        "reference_queries_used_for_construction": 0,
+        "boundary_setup_seconds": 7.281599999942046e-05,
+        "method_construction_seconds": 3.209999999853608e-05,
+        "timing_note": "single Python construction, not production benchmark"
+      },
+      "metrics": [
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.020500979953517177,
+            "p95": 0.04634568737281664,
+            "sampled_max": 0.05776948146389494
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.020533400769561116,
+            "p95": 0.04640828751121728,
+            "sampled_max": 0.057571210380385256
+          },
+          "symmetric_mean_distance": 0.020517190361539147,
+          "maximum_directed_p95": 0.04640828751121728,
+          "sampled_maximum_distance": 0.05776948146389494,
+          "normal_correspondence_symmetric_mean_degrees": 5.553355159968376,
+          "normal_correspondence_max_directed_p95_degrees": 13.209150758649944,
+          "mesh_area_quadrature": 0.9030635246274992,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 16,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.020580889031969234,
+            "p95": 0.04640543890832927,
+            "sampled_max": 0.05802864466383976
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.020533400769561116,
+            "p95": 0.04640828751121728,
+            "sampled_max": 0.057571210380385256
+          },
+          "symmetric_mean_distance": 0.020557144900765177,
+          "maximum_directed_p95": 0.04640828751121728,
+          "sampled_maximum_distance": 0.05802864466383976,
+          "normal_correspondence_symmetric_mean_degrees": 5.553355159968376,
+          "normal_correspondence_max_directed_p95_degrees": 13.209150758649944,
+          "mesh_area_quadrature": 0.9030635246274992,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.020565251506500435,
+            "p95": 0.046316052563870044,
+            "sampled_max": 0.05802864466383976
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.02050528655017482,
+            "p95": 0.04640067261080128,
+            "sampled_max": 0.057712051193075806
+          },
+          "symmetric_mean_distance": 0.020535269028337626,
+          "maximum_directed_p95": 0.04640067261080128,
+          "sampled_maximum_distance": 0.05802864466383976,
+          "normal_correspondence_symmetric_mean_degrees": 5.544265465999047,
+          "normal_correspondence_max_directed_p95_degrees": 12.967245189212651,
+          "mesh_area_quadrature": 0.9033486802328927,
+          "analytic_model_area_quadrature": 0.9015780545706955,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 24
+        }
+      ]
+    },
+    "rebuilt_lifted_vertex_mean": {
+      "name": "rebuilt_lifted_vertex_mean",
+      "selection_uv": [
+        [
+          0.4866666666666666,
+          0.5183333333333333
+        ]
+      ],
+      "checks": {
+        "vertices": 7,
+        "faces": 6,
+        "internal_vertices": 1,
+        "parameter_area": 0.6779,
+        "minimum_parameter_double_area": 0.18624999999999997
+      },
+      "budget": {
+        "boundary_model_point_evaluations": 6,
+        "interior_model_point_evaluations": 1,
+        "candidate_model_point_evaluations": 0,
+        "candidate_queries_are_subset_of_interior_queries": true,
+        "original_target_queries": 0,
+        "reference_queries_used_for_construction": 0,
+        "boundary_setup_seconds": 7.280200000536752e-05,
+        "method_construction_seconds": 9.534299999813811e-05,
+        "timing_note": "single Python construction, not production benchmark"
+      },
+      "metrics": [
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.013888947901226033,
+            "p95": 0.04039302352445006,
+            "sampled_max": 0.04935199515125131
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.013908111046242816,
+            "p95": 0.04051204569403944,
+            "sampled_max": 0.049149193250000514
+          },
+          "symmetric_mean_distance": 0.013898529473734425,
+          "maximum_directed_p95": 0.04051204569403944,
+          "sampled_maximum_distance": 0.04935199515125131,
+          "normal_correspondence_symmetric_mean_degrees": 5.612792831915128,
+          "normal_correspondence_max_directed_p95_degrees": 13.177688563600817,
+          "mesh_area_quadrature": 0.9042720375924039,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 16,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.013961436513613416,
+            "p95": 0.0408370475673646,
+            "sampled_max": 0.04964022667821662
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.013908111046242816,
+            "p95": 0.04051204569403944,
+            "sampled_max": 0.049149193250000514
+          },
+          "symmetric_mean_distance": 0.013934773779928116,
+          "maximum_directed_p95": 0.0408370475673646,
+          "sampled_maximum_distance": 0.04964022667821662,
+          "normal_correspondence_symmetric_mean_degrees": 5.612792831915128,
+          "normal_correspondence_max_directed_p95_degrees": 13.177688563600817,
+          "mesh_area_quadrature": 0.9042720375924039,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.013953297012339695,
+            "p95": 0.040421357576904106,
+            "sampled_max": 0.04964022667821662
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.013899113811339563,
+            "p95": 0.040320952445942054,
+            "sampled_max": 0.04962462900983511
+          },
+          "symmetric_mean_distance": 0.013926205411839629,
+          "maximum_directed_p95": 0.040421357576904106,
+          "sampled_maximum_distance": 0.04964022667821662,
+          "normal_correspondence_symmetric_mean_degrees": 5.5877672242249385,
+          "normal_correspondence_max_directed_p95_degrees": 13.460759732195246,
+          "mesh_area_quadrature": 0.9047450409362282,
+          "analytic_model_area_quadrature": 0.9015780545706955,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 24
+        }
+      ]
+    },
+    "rebuilt_lifted_area_centroid": {
+      "name": "rebuilt_lifted_area_centroid",
+      "selection_uv": [
+        [
+          0.49225697005458036,
+          0.5106957761715102
+        ]
+      ],
+      "checks": {
+        "vertices": 7,
+        "faces": 6,
+        "internal_vertices": 1,
+        "parameter_area": 0.6779,
+        "minimum_parameter_double_area": 0.19015694055170376
+      },
+      "budget": {
+        "boundary_model_point_evaluations": 6,
+        "interior_model_point_evaluations": 1,
+        "candidate_model_point_evaluations": 0,
+        "candidate_queries_are_subset_of_interior_queries": true,
+        "original_target_queries": 0,
+        "reference_queries_used_for_construction": 0,
+        "boundary_setup_seconds": 7.03359999931763e-05,
+        "method_construction_seconds": 9.358300000883446e-05,
+        "timing_note": "single Python construction, not production benchmark"
+      },
+      "metrics": [
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.01386992958048881,
+            "p95": 0.04030245789060519,
+            "sampled_max": 0.048565078724004195
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.01390302502461277,
+            "p95": 0.04063039376243683,
+            "sampled_max": 0.049373581153358
+          },
+          "symmetric_mean_distance": 0.01388647730255079,
+          "maximum_directed_p95": 0.04063039376243683,
+          "sampled_maximum_distance": 0.049373581153358,
+          "normal_correspondence_symmetric_mean_degrees": 5.619225458667362,
+          "normal_correspondence_max_directed_p95_degrees": 13.134740402122016,
+          "mesh_area_quadrature": 0.9044944626396191,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 16,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.013942319270583758,
+            "p95": 0.040305936405668034,
+            "sampled_max": 0.048870300826046494
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.01390302502461277,
+            "p95": 0.04063039376243683,
+            "sampled_max": 0.049373581153358
+          },
+          "symmetric_mean_distance": 0.013922672147598264,
+          "maximum_directed_p95": 0.04063039376243683,
+          "sampled_maximum_distance": 0.049373581153358,
+          "normal_correspondence_symmetric_mean_degrees": 5.619225458667362,
+          "normal_correspondence_max_directed_p95_degrees": 13.134740402122016,
+          "mesh_area_quadrature": 0.9044944626396191,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.013949836211885542,
+            "p95": 0.040305936405668034,
+            "sampled_max": 0.04887457239506886
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.013896374216993333,
+            "p95": 0.04013681435220142,
+            "sampled_max": 0.049373581153358
+          },
+          "symmetric_mean_distance": 0.013923105214439437,
+          "maximum_directed_p95": 0.040305936405668034,
+          "sampled_maximum_distance": 0.049373581153358,
+          "normal_correspondence_symmetric_mean_degrees": 5.584548835996925,
+          "normal_correspondence_max_directed_p95_degrees": 13.466181748862882,
+          "mesh_area_quadrature": 0.9049576333274464,
+          "analytic_model_area_quadrature": 0.9015780545706955,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 24
+        }
+      ]
+    },
+    "pure_pl_k1": {
+      "name": "pure_pl_k1",
+      "selection_uv": [
+        [
+          0.6266666666666666,
+          0.48
+        ]
+      ],
+      "checks": {
+        "vertices": 7,
+        "faces": 6,
+        "internal_vertices": 1,
+        "parameter_area": 0.6779,
+        "minimum_parameter_double_area": 0.1488
+      },
+      "budget": {
+        "boundary_model_point_evaluations": 6,
+        "interior_model_point_evaluations": 0,
+        "candidate_model_point_evaluations": 0,
+        "candidate_queries_are_subset_of_interior_queries": true,
+        "original_target_queries": 0,
+        "reference_queries_used_for_construction": 0,
+        "boundary_setup_seconds": 6.890099999168342e-05,
+        "method_construction_seconds": 6.795199999487522e-05,
+        "timing_note": "single Python construction, not production benchmark"
+      },
+      "metrics": [
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.04262645300485535,
+            "p95": 0.07793100546157528,
+            "sampled_max": 0.08184299628893035
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.04251222547050375,
+            "p95": 0.07744657237240847,
+            "sampled_max": 0.081773573340499
+          },
+          "symmetric_mean_distance": 0.04256933923767955,
+          "maximum_directed_p95": 0.07793100546157528,
+          "sampled_maximum_distance": 0.08184299628893035,
+          "normal_correspondence_symmetric_mean_degrees": 9.480886086394381,
+          "normal_correspondence_max_directed_p95_degrees": 22.498168333312545,
+          "mesh_area_quadrature": 0.9082942982460904,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 16,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.042712666740527386,
+            "p95": 0.0781313680270577,
+            "sampled_max": 0.08206025765735504
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.04251222547050375,
+            "p95": 0.07744657237240847,
+            "sampled_max": 0.081773573340499
+          },
+          "symmetric_mean_distance": 0.04261244610551557,
+          "maximum_directed_p95": 0.0781313680270577,
+          "sampled_maximum_distance": 0.08206025765735504,
+          "normal_correspondence_symmetric_mean_degrees": 9.480886086394381,
+          "normal_correspondence_max_directed_p95_degrees": 22.498168333312545,
+          "mesh_area_quadrature": 0.9082942982460904,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.04272042461043644,
+            "p95": 0.07803785930094087,
+            "sampled_max": 0.08233545045961899
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.042482678792602105,
+            "p95": 0.07788681363315669,
+            "sampled_max": 0.08211570078392742
+          },
+          "symmetric_mean_distance": 0.042601551701519275,
+          "maximum_directed_p95": 0.07803785930094087,
+          "sampled_maximum_distance": 0.08233545045961899,
+          "normal_correspondence_symmetric_mean_degrees": 9.500537648080279,
+          "normal_correspondence_max_directed_p95_degrees": 21.964021503550967,
+          "mesh_area_quadrature": 0.9082942982460903,
+          "analytic_model_area_quadrature": 0.9015780545706955,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 24
+        }
+      ]
+    },
+    "uniform_model_k1": {
+      "name": "uniform_model_k1",
+      "selection_uv": [
+        [
+          0.6266666666666666,
+          0.48
+        ]
+      ],
+      "checks": {
+        "vertices": 7,
+        "faces": 6,
+        "internal_vertices": 1,
+        "parameter_area": 0.6779,
+        "minimum_parameter_double_area": 0.1488
+      },
+      "budget": {
+        "boundary_model_point_evaluations": 6,
+        "interior_model_point_evaluations": 1,
+        "candidate_model_point_evaluations": 0,
+        "candidate_queries_are_subset_of_interior_queries": true,
+        "original_target_queries": 0,
+        "reference_queries_used_for_construction": 0,
+        "boundary_setup_seconds": 6.942899999273777e-05,
+        "method_construction_seconds": 0.0001345139999955336,
+        "timing_note": "single Python construction, not production benchmark"
+      },
+      "metrics": [
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.03676983522051492,
+            "p95": 0.07696770010367128,
+            "sampled_max": 0.08184299628893035
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.03646834871971307,
+            "p95": 0.07614808231126992,
+            "sampled_max": 0.081773573340499
+          },
+          "symmetric_mean_distance": 0.036619091970113996,
+          "maximum_directed_p95": 0.07696770010367128,
+          "sampled_maximum_distance": 0.08184299628893035,
+          "normal_correspondence_symmetric_mean_degrees": 10.620012758613072,
+          "normal_correspondence_max_directed_p95_degrees": 23.18667866399554,
+          "mesh_area_quadrature": 0.9202518148977767,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 16,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.03685537723618744,
+            "p95": 0.07740609960165168,
+            "sampled_max": 0.08206025765735504
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.03646834871971307,
+            "p95": 0.07614808231126992,
+            "sampled_max": 0.081773573340499
+          },
+          "symmetric_mean_distance": 0.03666186297795025,
+          "maximum_directed_p95": 0.07740609960165168,
+          "sampled_maximum_distance": 0.08206025765735504,
+          "normal_correspondence_symmetric_mean_degrees": 10.620012758613072,
+          "normal_correspondence_max_directed_p95_degrees": 23.18667866399554,
+          "mesh_area_quadrature": 0.9202518148977767,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.036991187590589614,
+            "p95": 0.077393324605931,
+            "sampled_max": 0.08233545045961899
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.03648760827984787,
+            "p95": 0.0766120496724403,
+            "sampled_max": 0.08203088402847931
+          },
+          "symmetric_mean_distance": 0.03673939793521874,
+          "maximum_directed_p95": 0.077393324605931,
+          "sampled_maximum_distance": 0.08233545045961899,
+          "normal_correspondence_symmetric_mean_degrees": 10.775954944834861,
+          "normal_correspondence_max_directed_p95_degrees": 23.266538583365953,
+          "mesh_area_quadrature": 0.9176420554304463,
+          "analytic_model_area_quadrature": 0.9015780545706955,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 24
+        }
+      ]
+    },
+    "greedy_model_k1": {
+      "name": "greedy_model_k1",
+      "selection_uv": [
+        [
+          0.4033333333333333,
+          0.6866666666666666
+        ]
+      ],
+      "checks": {
+        "vertices": 7,
+        "faces": 6,
+        "internal_vertices": 1,
+        "parameter_area": 0.6779,
+        "minimum_parameter_double_area": 0.1488
+      },
+      "budget": {
+        "boundary_model_point_evaluations": 6,
+        "interior_model_point_evaluations": 4,
+        "candidate_model_point_evaluations": 4,
+        "candidate_queries_are_subset_of_interior_queries": true,
+        "original_target_queries": 0,
+        "reference_queries_used_for_construction": 0,
+        "boundary_setup_seconds": 9.789499999612872e-05,
+        "method_construction_seconds": 0.0004103879999917126,
+        "timing_note": "single Python construction, not production benchmark"
+      },
+      "metrics": [
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.036392882144038685,
+            "p95": 0.0718811630486801,
+            "sampled_max": 0.08052199113964603
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.036053447316181264,
+            "p95": 0.0705331284153919,
+            "sampled_max": 0.08025102989619484
+          },
+          "symmetric_mean_distance": 0.036223164730109975,
+          "maximum_directed_p95": 0.0718811630486801,
+          "sampled_maximum_distance": 0.08052199113964603,
+          "normal_correspondence_symmetric_mean_degrees": 11.693113142042364,
+          "normal_correspondence_max_directed_p95_degrees": 22.500449080979248,
+          "mesh_area_quadrature": 0.9237730652519454,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 16,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.036479477046288324,
+            "p95": 0.07225983053844937,
+            "sampled_max": 0.0805937782258221
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.036053447316181264,
+            "p95": 0.0705331284153919,
+            "sampled_max": 0.08025102989619484
+          },
+          "symmetric_mean_distance": 0.03626646218123479,
+          "maximum_directed_p95": 0.07225983053844937,
+          "sampled_maximum_distance": 0.0805937782258221,
+          "normal_correspondence_symmetric_mean_degrees": 11.693113142042364,
+          "normal_correspondence_max_directed_p95_degrees": 22.500449080979248,
+          "mesh_area_quadrature": 0.9237730652519454,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.03664445563574979,
+            "p95": 0.07210017068526019,
+            "sampled_max": 0.08173616365710445
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.0360472276886052,
+            "p95": 0.07083214502441582,
+            "sampled_max": 0.08025102989619484
+          },
+          "symmetric_mean_distance": 0.0363458416621775,
+          "maximum_directed_p95": 0.07210017068526019,
+          "sampled_maximum_distance": 0.08173616365710445,
+          "normal_correspondence_symmetric_mean_degrees": 11.717104622713897,
+          "normal_correspondence_max_directed_p95_degrees": 22.406637643086995,
+          "mesh_area_quadrature": 0.920354103489397,
+          "analytic_model_area_quadrature": 0.9015780545706955,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 24
+        }
+      ]
+    },
+    "pure_pl_k2": {
+      "name": "pure_pl_k2",
+      "selection_uv": [
+        [
+          0.6266666666666666,
+          0.48
+        ],
+        [
+          0.4033333333333333,
+          0.6866666666666666
+        ]
+      ],
+      "checks": {
+        "vertices": 8,
+        "faces": 8,
+        "internal_vertices": 2,
+        "parameter_area": 0.6779,
+        "minimum_parameter_double_area": 0.1488
+      },
+      "budget": {
+        "boundary_model_point_evaluations": 6,
+        "interior_model_point_evaluations": 0,
+        "candidate_model_point_evaluations": 0,
+        "candidate_queries_are_subset_of_interior_queries": true,
+        "original_target_queries": 0,
+        "reference_queries_used_for_construction": 0,
+        "boundary_setup_seconds": 6.947299999637835e-05,
+        "method_construction_seconds": 0.0001163499999989881,
+        "timing_note": "single Python construction, not production benchmark"
+      },
+      "metrics": [
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.04262645300485535,
+            "p95": 0.07793100546157528,
+            "sampled_max": 0.08184299628893035
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.04251222547050376,
+            "p95": 0.07744657237240848,
+            "sampled_max": 0.081773573340499
+          },
+          "symmetric_mean_distance": 0.042569339237679554,
+          "maximum_directed_p95": 0.07793100546157528,
+          "sampled_maximum_distance": 0.08184299628893035,
+          "normal_correspondence_symmetric_mean_degrees": 9.480886086394378,
+          "normal_correspondence_max_directed_p95_degrees": 22.498168333312545,
+          "mesh_area_quadrature": 0.9082942982460904,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 16,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.042712666740527386,
+            "p95": 0.0781313680270577,
+            "sampled_max": 0.08206025765735504
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.04251222547050376,
+            "p95": 0.07744657237240848,
+            "sampled_max": 0.081773573340499
+          },
+          "symmetric_mean_distance": 0.042612446105515574,
+          "maximum_directed_p95": 0.0781313680270577,
+          "sampled_maximum_distance": 0.08206025765735504,
+          "normal_correspondence_symmetric_mean_degrees": 9.480886086394378,
+          "normal_correspondence_max_directed_p95_degrees": 22.498168333312545,
+          "mesh_area_quadrature": 0.9082942982460904,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.04272042461043644,
+            "p95": 0.07803785930094086,
+            "sampled_max": 0.08233545045961904
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.04248267879260212,
+            "p95": 0.07788681363315673,
+            "sampled_max": 0.08211570078392746
+          },
+          "symmetric_mean_distance": 0.042601551701519275,
+          "maximum_directed_p95": 0.07803785930094086,
+          "sampled_maximum_distance": 0.08233545045961904,
+          "normal_correspondence_symmetric_mean_degrees": 9.500537648080279,
+          "normal_correspondence_max_directed_p95_degrees": 21.964021503550967,
+          "mesh_area_quadrature": 0.9082942982460903,
+          "analytic_model_area_quadrature": 0.9015780545706955,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 24
+        }
+      ]
+    },
+    "uniform_model_k2": {
+      "name": "uniform_model_k2",
+      "selection_uv": [
+        [
+          0.6266666666666666,
+          0.48
+        ],
+        [
+          0.4033333333333333,
+          0.6866666666666666
+        ]
+      ],
+      "checks": {
+        "vertices": 8,
+        "faces": 8,
+        "internal_vertices": 2,
+        "parameter_area": 0.6779,
+        "minimum_parameter_double_area": 0.1488
+      },
+      "budget": {
+        "boundary_model_point_evaluations": 6,
+        "interior_model_point_evaluations": 2,
+        "candidate_model_point_evaluations": 0,
+        "candidate_queries_are_subset_of_interior_queries": true,
+        "original_target_queries": 0,
+        "reference_queries_used_for_construction": 0,
+        "boundary_setup_seconds": 7.301000000836666e-05,
+        "method_construction_seconds": 0.0002648800000031315,
+        "timing_note": "single Python construction, not production benchmark"
+      },
+      "metrics": [
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.030712801551800895,
+            "p95": 0.06838453616751755,
+            "sampled_max": 0.08024071236169354
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.0300204166188454,
+            "p95": 0.06638319549196577,
+            "sampled_max": 0.07573166153322815
+          },
+          "symmetric_mean_distance": 0.030366609085323147,
+          "maximum_directed_p95": 0.06838453616751755,
+          "sampled_maximum_distance": 0.08024071236169354,
+          "normal_correspondence_symmetric_mean_degrees": 12.809443903675781,
+          "normal_correspondence_max_directed_p95_degrees": 23.18667866399554,
+          "mesh_area_quadrature": 0.9357305819036317,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 16,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.030798730974727323,
+            "p95": 0.06890797953353416,
+            "sampled_max": 0.08041750793447876
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.0300204166188454,
+            "p95": 0.06638319549196577,
+            "sampled_max": 0.07573166153322815
+          },
+          "symmetric_mean_distance": 0.03040957379678636,
+          "maximum_directed_p95": 0.06890797953353416,
+          "sampled_maximum_distance": 0.08041750793447876,
+          "normal_correspondence_symmetric_mean_degrees": 12.809443903675781,
+          "normal_correspondence_max_directed_p95_degrees": 23.18667866399554,
+          "mesh_area_quadrature": 0.9357305819036317,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.031050627794492677,
+            "p95": 0.06890721248937086,
+            "sampled_max": 0.08173616365710445
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.03007761517711227,
+            "p95": 0.06606145803992303,
+            "sampled_max": 0.07800686170014315
+          },
+          "symmetric_mean_distance": 0.030564121485802474,
+          "maximum_directed_p95": 0.06890721248937086,
+          "sampled_maximum_distance": 0.08173616365710445,
+          "normal_correspondence_symmetric_mean_degrees": 12.973828427645216,
+          "normal_correspondence_max_directed_p95_degrees": 23.26026281252903,
+          "mesh_area_quadrature": 0.9297018606737528,
+          "analytic_model_area_quadrature": 0.9015780545706955,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 24
+        }
+      ]
+    },
+    "greedy_model_k2": {
+      "name": "greedy_model_k2",
+      "selection_uv": [
+        [
+          0.4033333333333333,
+          0.6866666666666666
+        ],
+        [
+          0.6266666666666666,
+          0.48
+        ]
+      ],
+      "checks": {
+        "vertices": 8,
+        "faces": 8,
+        "internal_vertices": 2,
+        "parameter_area": 0.6779,
+        "minimum_parameter_double_area": 0.1488
+      },
+      "budget": {
+        "boundary_model_point_evaluations": 6,
+        "interior_model_point_evaluations": 7,
+        "candidate_model_point_evaluations": 7,
+        "candidate_queries_are_subset_of_interior_queries": true,
+        "original_target_queries": 0,
+        "reference_queries_used_for_construction": 0,
+        "boundary_setup_seconds": 6.77160000037702e-05,
+        "method_construction_seconds": 0.0006420440000027838,
+        "timing_note": "single Python construction, not production benchmark"
+      },
+      "metrics": [
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.030712801551800895,
+            "p95": 0.06838453616751755,
+            "sampled_max": 0.08024071236169354
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.0300204166188454,
+            "p95": 0.06638319549196577,
+            "sampled_max": 0.07573166153322815
+          },
+          "symmetric_mean_distance": 0.030366609085323147,
+          "maximum_directed_p95": 0.06838453616751755,
+          "sampled_maximum_distance": 0.08024071236169354,
+          "normal_correspondence_symmetric_mean_degrees": 12.809443903675781,
+          "normal_correspondence_max_directed_p95_degrees": 23.18667866399554,
+          "mesh_area_quadrature": 0.9357305819036317,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 16,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.030798730974727323,
+            "p95": 0.06890797953353416,
+            "sampled_max": 0.08041750793447876
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.0300204166188454,
+            "p95": 0.06638319549196577,
+            "sampled_max": 0.07573166153322815
+          },
+          "symmetric_mean_distance": 0.03040957379678636,
+          "maximum_directed_p95": 0.06890797953353416,
+          "sampled_maximum_distance": 0.08041750793447876,
+          "normal_correspondence_symmetric_mean_degrees": 12.809443903675781,
+          "normal_correspondence_max_directed_p95_degrees": 23.18667866399554,
+          "mesh_area_quadrature": 0.9357305819036317,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.031050627794492677,
+            "p95": 0.06890721248937086,
+            "sampled_max": 0.08173616365710445
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.03007761517711227,
+            "p95": 0.06606145803992303,
+            "sampled_max": 0.07800686170014315
+          },
+          "symmetric_mean_distance": 0.030564121485802474,
+          "maximum_directed_p95": 0.06890721248937086,
+          "sampled_maximum_distance": 0.08173616365710445,
+          "normal_correspondence_symmetric_mean_degrees": 12.973828427645216,
+          "normal_correspondence_max_directed_p95_degrees": 23.26026281252903,
+          "mesh_area_quadrature": 0.9297018606737528,
+          "analytic_model_area_quadrature": 0.9015780545706955,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 24
+        }
+      ]
+    },
+    "pure_pl_k4": {
+      "name": "pure_pl_k4",
+      "selection_uv": [
+        [
+          0.6266666666666666,
+          0.48
+        ],
+        [
+          0.4033333333333333,
+          0.6866666666666666
+        ],
+        [
+          0.5866666666666666,
+          0.18666666666666668
+        ],
+        [
+          0.5122222222222222,
+          0.52
+        ]
+      ],
+      "checks": {
+        "vertices": 10,
+        "faces": 12,
+        "internal_vertices": 4,
+        "parameter_area": 0.6779,
+        "minimum_parameter_double_area": 0.05848888888888886
+      },
+      "budget": {
+        "boundary_model_point_evaluations": 6,
+        "interior_model_point_evaluations": 0,
+        "candidate_model_point_evaluations": 0,
+        "candidate_queries_are_subset_of_interior_queries": true,
+        "original_target_queries": 0,
+        "reference_queries_used_for_construction": 0,
+        "boundary_setup_seconds": 7.024399999977504e-05,
+        "method_construction_seconds": 0.000245633000005796,
+        "timing_note": "single Python construction, not production benchmark"
+      },
+      "metrics": [
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.04262645300485535,
+            "p95": 0.0779310054615752,
+            "sampled_max": 0.08184299628893035
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.04251222547050376,
+            "p95": 0.07744657237240848,
+            "sampled_max": 0.081773573340499
+          },
+          "symmetric_mean_distance": 0.042569339237679554,
+          "maximum_directed_p95": 0.0779310054615752,
+          "sampled_maximum_distance": 0.08184299628893035,
+          "normal_correspondence_symmetric_mean_degrees": 9.480886086394378,
+          "normal_correspondence_max_directed_p95_degrees": 22.498168333312545,
+          "mesh_area_quadrature": 0.9082942982460904,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 16,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.042712666740527386,
+            "p95": 0.07813136802705764,
+            "sampled_max": 0.08206025765735504
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.04251222547050376,
+            "p95": 0.07744657237240848,
+            "sampled_max": 0.081773573340499
+          },
+          "symmetric_mean_distance": 0.042612446105515574,
+          "maximum_directed_p95": 0.07813136802705764,
+          "sampled_maximum_distance": 0.08206025765735504,
+          "normal_correspondence_symmetric_mean_degrees": 9.480886086394378,
+          "normal_correspondence_max_directed_p95_degrees": 22.498168333312545,
+          "mesh_area_quadrature": 0.9082942982460904,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.04272042461043644,
+            "p95": 0.07803785930094086,
+            "sampled_max": 0.08233545045961904
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.04248267879260212,
+            "p95": 0.07788681363315673,
+            "sampled_max": 0.08211570078392746
+          },
+          "symmetric_mean_distance": 0.042601551701519275,
+          "maximum_directed_p95": 0.07803785930094086,
+          "sampled_maximum_distance": 0.08233545045961904,
+          "normal_correspondence_symmetric_mean_degrees": 9.500537648080277,
+          "normal_correspondence_max_directed_p95_degrees": 21.964021503550967,
+          "mesh_area_quadrature": 0.9082942982460903,
+          "analytic_model_area_quadrature": 0.9015780545706955,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 24
+        }
+      ]
+    },
+    "uniform_model_k4": {
+      "name": "uniform_model_k4",
+      "selection_uv": [
+        [
+          0.6266666666666666,
+          0.48
+        ],
+        [
+          0.4033333333333333,
+          0.6866666666666666
+        ],
+        [
+          0.5866666666666666,
+          0.18666666666666668
+        ],
+        [
+          0.5122222222222222,
+          0.52
+        ]
+      ],
+      "checks": {
+        "vertices": 10,
+        "faces": 12,
+        "internal_vertices": 4,
+        "parameter_area": 0.6779,
+        "minimum_parameter_double_area": 0.05848888888888886
+      },
+      "budget": {
+        "boundary_model_point_evaluations": 6,
+        "interior_model_point_evaluations": 4,
+        "candidate_model_point_evaluations": 0,
+        "candidate_queries_are_subset_of_interior_queries": true,
+        "original_target_queries": 0,
+        "reference_queries_used_for_construction": 0,
+        "boundary_setup_seconds": 6.53390000024956e-05,
+        "method_construction_seconds": 0.000501592999995637,
+        "timing_note": "single Python construction, not production benchmark"
+      },
+      "metrics": [
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.027099470041239866,
+            "p95": 0.06593362131936316,
+            "sampled_max": 0.08024071236169354
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.02525601774162644,
+            "p95": 0.06238344322102764,
+            "sampled_max": 0.07469769192222393
+          },
+          "symmetric_mean_distance": 0.026177743891433153,
+          "maximum_directed_p95": 0.06593362131936316,
+          "sampled_maximum_distance": 0.08024071236169354,
+          "normal_correspondence_symmetric_mean_degrees": 15.069598056258409,
+          "normal_correspondence_max_directed_p95_degrees": 52.72054966493904,
+          "mesh_area_quadrature": 0.9649850453191435,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 16,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.02718185811594995,
+            "p95": 0.06599593667953156,
+            "sampled_max": 0.08041750793447876
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.02525601774162644,
+            "p95": 0.06238344322102764,
+            "sampled_max": 0.07469769192222393
+          },
+          "symmetric_mean_distance": 0.026218937928788197,
+          "maximum_directed_p95": 0.06599593667953156,
+          "sampled_maximum_distance": 0.08041750793447876,
+          "normal_correspondence_symmetric_mean_degrees": 15.069598056258409,
+          "normal_correspondence_max_directed_p95_degrees": 52.72054966493904,
+          "mesh_area_quadrature": 0.9649850453191435,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.027461267239784155,
+            "p95": 0.06720392020187417,
+            "sampled_max": 0.08173616365710445
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.025280603036899104,
+            "p95": 0.06152702625438553,
+            "sampled_max": 0.0770954744815498
+          },
+          "symmetric_mean_distance": 0.026370935138341628,
+          "maximum_directed_p95": 0.06720392020187417,
+          "sampled_maximum_distance": 0.08173616365710445,
+          "normal_correspondence_symmetric_mean_degrees": 15.035239403821784,
+          "normal_correspondence_max_directed_p95_degrees": 49.40802421153997,
+          "mesh_area_quadrature": 0.9598896622246464,
+          "analytic_model_area_quadrature": 0.9015780545706955,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 24
+        }
+      ]
+    },
+    "greedy_model_k4": {
+      "name": "greedy_model_k4",
+      "selection_uv": [
+        [
+          0.4033333333333333,
+          0.6866666666666666
+        ],
+        [
+          0.6266666666666666,
+          0.48
+        ],
+        [
+          0.5866666666666666,
+          0.18666666666666668
+        ],
+        [
+          0.1366666666666667,
+          0.5966666666666667
+        ]
+      ],
+      "checks": {
+        "vertices": 10,
+        "faces": 12,
+        "internal_vertices": 4,
+        "parameter_area": 0.6779,
+        "minimum_parameter_double_area": 0.04959999999999997
+      },
+      "budget": {
+        "boundary_model_point_evaluations": 6,
+        "interior_model_point_evaluations": 13,
+        "candidate_model_point_evaluations": 13,
+        "candidate_queries_are_subset_of_interior_queries": true,
+        "original_target_queries": 0,
+        "reference_queries_used_for_construction": 0,
+        "boundary_setup_seconds": 6.940500000496286e-05,
+        "method_construction_seconds": 0.0012444509999909315,
+        "timing_note": "single Python construction, not production benchmark"
+      },
+      "metrics": [
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.02687020300598641,
+            "p95": 0.06720861234819969,
+            "sampled_max": 0.07743705485572651
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.02560262793592943,
+            "p95": 0.06388804276235345,
+            "sampled_max": 0.07573166153322815
+          },
+          "symmetric_mean_distance": 0.02623641547095792,
+          "maximum_directed_p95": 0.06720861234819969,
+          "sampled_maximum_distance": 0.07743705485572651,
+          "normal_correspondence_symmetric_mean_degrees": 13.7820275221601,
+          "normal_correspondence_max_directed_p95_degrees": 38.46630784906984,
+          "mesh_area_quadrature": 0.9598275663918229,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 16,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.02695379069700005,
+            "p95": 0.0672706687780481,
+            "sampled_max": 0.07778016333267018
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.02560262793592943,
+            "p95": 0.06388804276235345,
+            "sampled_max": 0.07573166153322815
+          },
+          "symmetric_mean_distance": 0.02627820931646474,
+          "maximum_directed_p95": 0.0672706687780481,
+          "sampled_maximum_distance": 0.07778016333267018,
+          "normal_correspondence_symmetric_mean_degrees": 13.7820275221601,
+          "normal_correspondence_max_directed_p95_degrees": 38.46630784906984,
+          "mesh_area_quadrature": 0.9598275663918229,
+          "analytic_model_area_quadrature": 0.9014459016732198,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 12
+        },
+        {
+          "mesh_to_model_proxy": {
+            "mean": 0.027273495162144043,
+            "p95": 0.0672706687780481,
+            "sampled_max": 0.08017677495476228
+          },
+          "analytic_model_to_mesh": {
+            "mean": 0.025668683893606513,
+            "p95": 0.06309185925020126,
+            "sampled_max": 0.07800686170014315
+          },
+          "symmetric_mean_distance": 0.026471089527875278,
+          "maximum_directed_p95": 0.0672706687780481,
+          "sampled_maximum_distance": 0.08017677495476228,
+          "normal_correspondence_symmetric_mean_degrees": 13.968723249835605,
+          "normal_correspondence_max_directed_p95_degrees": 38.503955714959986,
+          "mesh_area_quadrature": 0.949815024337175,
+          "analytic_model_area_quadrature": 0.9015780545706955,
+          "normal_definition": "same parameter location; not nearest-point correspondence",
+          "reference_resolution": 32,
+          "quadrature_resolution": 24
+        }
+      ]
+    }
+  },
+  "reference_evaluation": {
+    "16_12": {
+      "reference_triangles": 1024,
+      "quadrature_points_per_direction": 576,
+      "model_point_evaluations": 3648
+    },
+    "32_12": {
+      "reference_triangles": 4096,
+      "quadrature_points_per_direction": 576,
+      "model_point_evaluations": 12864
+    },
+    "32_24": {
+      "reference_triangles": 4096,
+      "quadrature_points_per_direction": 2304,
+      "model_point_evaluations": 14592
+    }
+  },
+  "reference_evaluation_model_queries": 31104,
+  "total_evaluation_model_queries": 31302,
+  "boundary_chord_diagnostic": {
+    "maximum_sampled_same_parameter_chord_gap": 0.06222137503859637,
+    "evaluation_model_point_queries": 198,
+    "meaning": "common boundary interpolation discrepancy, not a certified distance floor"
+  },
+  "comparisons": {
+    "internal_information_same_faces": {
+      "status": "RESOLVED_IMPROVEMENT",
+      "baseline_error": 0.020535269028337626,
+      "candidate_error": 0.013926205411839629,
+      "absolute_reduction": 0.006609063616497997,
+      "relative_reduction_percent": 32.183964122300154,
+      "empirical_resolution_tolerance": 0.00021328632791392803,
+      "tolerance_is_certified_bound": false
+    },
+    "center_rule_same_faces_queries": {
+      "status": "RESOLUTION_UNRESOLVED",
+      "baseline_error": 0.013926205411839629,
+      "candidate_error": 0.013923105214439437,
+      "absolute_reduction": 3.1001974001923505e-06,
+      "relative_reduction_percent": 0.022261609020621357,
+      "empirical_resolution_tolerance": 0.00016288132838405901,
+      "tolerance_is_certified_bound": false
+    },
+    "placement_same_faces_queries": {
+      "status": "RESOLVED_IMPROVEMENT",
+      "baseline_error": 0.03673939793521874,
+      "candidate_error": 0.013923105214439437,
+      "absolute_reduction": 0.022816292720779306,
+      "relative_reduction_percent": 62.103066471068615,
+      "empirical_resolution_tolerance": 0.0003138679100291961,
+      "tolerance_is_certified_bound": false
+    },
+    "greedy_same_faces_more_queries": {
+      "status": "RESOLVED_REGRESSION",
+      "baseline_error": 0.013923105214439437,
+      "candidate_error": 0.0363458416621775,
+      "absolute_reduction": -0.02242273644773806,
+      "relative_reduction_percent": -161.04695111032981,
+      "empirical_resolution_tolerance": 0.00031860984395474666,
+      "tolerance_is_certified_bound": false
+    },
+    "refinement_same_faces_more_queries": {
+      "status": "RESOLUTION_UNRESOLVED",
+      "baseline_error": 0.026370935138341628,
+      "candidate_error": 0.026471089527875278,
+      "absolute_reduction": -0.00010015438953365,
+      "relative_reduction_percent": -0.37979081518437324,
+      "empirical_resolution_tolerance": 0.0008557307636940716,
+      "tolerance_is_certified_bound": false
+    },
+    "density_information_vs_diagonal0": {
+      "status": "RESOLVED_IMPROVEMENT",
+      "baseline_error": 0.04260155170151927,
+      "candidate_error": 0.013923105214439437,
+      "absolute_reduction": 0.02867844648707983,
+      "relative_reduction_percent": 67.31784487102871,
+      "empirical_resolution_tolerance": 0.00018125852348435255,
+      "tolerance_is_certified_bound": false
+    },
+    "density_information_vs_diagonal1": {
+      "status": "RESOLVED_REGRESSION",
+      "baseline_error": 0.011179027975470553,
+      "candidate_error": 0.013923105214439437,
+      "absolute_reduction": -0.002744077238968884,
+      "relative_reduction_percent": -24.546653295707305,
+      "empirical_resolution_tolerance": 0.00018362780795213728,
+      "tolerance_is_certified_bound": false
+    }
+  },
+  "all_metric_invariants_passed": true,
+  "elapsed_seconds": 0.8078303570000003
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "joint-opportunity-audit-stop-v1",
+  "status": "STOP_READ_ONLY_EXTRACTION_ERROR",
+  "recorded_utc": "2026-09-07 11:35:04 UTC",
+  "reason": "An exploratory PowerShell command indexed the absent pair_checks property; the receipt exposes pair_proofs. PowerShell emitted Cannot index into a null array.",
+  "requested_field": "pair_checks",
+  "actual_available_field": "pair_proofs",
+  "error_origin": "Assistant read-only extraction command, not a geometry certificate or historical receipt inconsistency.",
+  "command_exit_code": 0,
+  "powershell_error_kind": "Nonterminating NullArray error",
+  "retry_performed": false,
+  "native_calls_started": 0,
+  "traces_started": 0,
+  "optimization_started": false,
+  "old_artifacts_modified": false,
+  "agents_interrupted": true,
+  "budget_violation_observed": false,
+  "next_authority_required": "Permission to correct the read-only extraction and resume this audit; no native trace or optimization implied."
+}
