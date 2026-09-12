@@ -147,3 +147,8 @@ python -m infinigen.datagen.manage_jobs --output_folder OUTPUT_FOLDER --num_scen
 ### Using BinocMesher with the Latest Infinigen
 
 *Details coming soon.*
+
+
+### Experimental GPU bisection solver
+
+The [GPU module](gpu_accelerate/README.md) provides resident CUDA rounds, CUDA Graph replay, and node-local fusion with configurable GROUP32 block sizes. It includes an external-output build entry and source-only correctness/review tools; scene data and experiment results are not distributed.
