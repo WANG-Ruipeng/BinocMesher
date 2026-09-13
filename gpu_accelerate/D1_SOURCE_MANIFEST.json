@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "base_commit": "552a593b9425f7827a3ffcf509de393030ce5e26",
+  "infinigen_revision": "3816586c07dada9adbb963d0e1b518f6fee0e71c",
+  "source_snapshot": "d4_gpu_20260913_01 primary release_02 and debug implementation",
+  "published_entry": "D1 split, d4_solver_run variant=1",
+  "shared_source_scope": "The unchanged shared library also contains D2/D3; this publication adds no D2/D3 benchmark or integration entry.",
+  "preserved_sources": [
+    {
+      "path": "src/d4_field_eval.cuh",
+      "sha256": "851beac5663047ccd7f52c53fa5fbae5fbb250ec49118bd289f4ae20202e2491",
+      "packaging_changes": "NONE_BYTE_IDENTICAL"
+    },
+    {
+      "path": "src/d4_pipeline.cuh",
+      "sha256": "361f9b99d74489b208042f43f66c9d5104638b9c948bd0222dd267648963d90a",
+      "packaging_changes": "NONE_BYTE_IDENTICAL"
+    },
+    {
+      "path": "src/d4_solver.cu",
+      "sha256": "d819a8ae496934a735fe8d0158ed452332858e0471e896ac79a8973b71e6f9ce",
+      "packaging_changes": "NONE_BYTE_IDENTICAL"
+    },
+    {
+      "path": "include/d4_solver_api.h",
+      "sha256": "e9dd015a2162b11219e2fd014ca947011f02c4a9c6787432722faea36b9f27d6",
+      "packaging_changes": "NONE_BYTE_IDENTICAL"
+    }
+  ],
+  "packaging_changes": [
+    "portable explicit build and input paths",
+    "D1 is the checker default",
+    "outputs outside checkout",
+    "documentation"
+  ],
+  "not_bundled": [
+    "parameters",
+    "captures",
+    "oracles",
+    "checkpoints",
+    "binaries",
+    "timings",
+    "third-party source trees"
+  ]
+}

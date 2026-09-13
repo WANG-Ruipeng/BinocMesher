@@ -113,3 +113,8 @@ it with explicit `--performance`, `--audit`, `--out`, and `--execute-profile` af
 formal timing has stopped. `ncu_csv.py` handles the raw wide and long CSV layouts.
 Profiler counters and replay durations are diagnostic, not substitutes for paired
 complete-solve timing. No captured input, output or measured result is committed.
+
+D1 field/closed-loop checks and first-difference replay are documented in
+[D1.md](D1.md). The portable `src/check_d4_gpu.py` defaults to variant 1, requires
+explicit external inputs/libraries and writes only to a new external output
+directory. It does not run timing or establish full native common-entry coverage.

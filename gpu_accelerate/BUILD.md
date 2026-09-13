@@ -47,3 +47,7 @@ Both build types retain the original strict floating-point options:
 The compiler runs with the output directory as its working directory. Its temporary directory, command records, stdout/stderr logs, `BUILD_PLAN.json`, `COMMANDS.jsonl`, and `STATUS.json` all stay under that output directory. Environment variables that inject extra nvcc flags are removed only from the child compiler environment. A failed compilation stops the build and preserves its evidence; no automatic retry or driver modification occurs.
 
 This is a **source build**, not application integration or a new GPU validation run. The package does not include captured checkpoints, frozen field parameters, real-scene inputs, profiling reports, or performance trial data. A successful compilation alone does not establish numerical equivalence or acceleration on your inputs.
+
+For D1, use [build_d1.py](build_d1.py). It builds the same bridge and B128
+reference plus the preserved shared D4 library containing D1. See [D1.md](D1.md)
+for exact commands, filenames, strict arithmetic and CUB requirements.

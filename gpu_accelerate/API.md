@@ -139,3 +139,8 @@ harness exits that worker process on failure; process teardown releases remainin
 resources. If an explicitly managed cleanup is appropriate, check its result too:
 a failing destroy preserves the remaining handle/resources rather than pretending
 that destruction completed. Once destroy succeeds, the handle is invalid.
+
+The independent D1 entry is declared in [include/d4_solver_api.h](include/d4_solver_api.h).
+Select `variant=1`. It borrows an immutable SdfTrees field, preserves the original
+output contract and resets every solve. See [D1.md](D1.md) for lifecycle, supported
+K/lattice limits and the shared-library scope.

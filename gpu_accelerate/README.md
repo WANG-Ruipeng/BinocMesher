@@ -43,3 +43,11 @@ included. Natural-field validation therefore requires separately supplied inputs
 analytic diagnostic fixtures cannot establish real procedural-field coverage.
 The included field headers reference the existing Infinigen dependency rather than
 vendoring it. Upstream license notices and dependency licensing remain applicable.
+
+## D1 split SdfTrees
+
+[D1 implementation, build, API and checks](D1.md) documents the real-field split
+solver. Select variant 1 in the preserved shared D4 library; the D1 checker
+defaults to that variant. Build it with `python3 -B gpu_accelerate/build_d1.py`
+and explicit upstream/output paths. Source/API hashes are recorded in
+`D1_SOURCE_MANIFEST.json`. The main meshing pipeline is unchanged.
