@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "status": "PASS_FINITE_PUBLISHED_INTEGRATION",
+  "recorded_utc": "2026-09-18T16:26:01.774428+00:00",
+  "base_commit": "328e84fa079216789acde0306dde4b0047b13c43",
+  "clean_build_candidate_tree": "1ccb27b710c36dcadf803e1f96d04868e0bc33d1",
+  "default_batching": "off",
+  "packaged_backend": "published",
+  "graph": "OPTIONAL_BACKEND_NOT_PACKAGED",
+  "new_performance_matrix_run": false,
+  "production_mesher_default_changed": false,
+  "cpu_tests": {
+    "initial": 46,
+    "clean_export": 46,
+    "status": "PASS",
+    "not_cuda_validation": true
+  },
+  "gpu_workers": [
+    {
+      "id": "initial_r1_regression",
+      "phase": "regression",
+      "status": "PASS_REGRESSION",
+      "audit": "production and audit/trace",
+      "successful_application_solves": 48,
+      "supervised_worker_seconds": 1.806634064999912,
+      "sanitizer_error_summaries": null,
+      "library_sha256": "b67925e71e183673f9ea6fde9f63fbd96cdbd566a1ed62264a377dcd5bab2452",
+      "raw_result": {
+        "bytes": 106183,
+        "sha256": "c47b3ed4e3ce451652e567152335e72cd95d73239f52b98004cea3cebd0111b7"
+      }
+    },
+    {
+      "id": "initial_r1_memcheck0",
+      "phase": "memcheck",
+      "status": "PASS_MEMCHECK",
+      "audit": 0,
+      "successful_application_solves": 4,
+      "supervised_worker_seconds": 1.6065127489999895,
+      "sanitizer_error_summaries": [
+        0
+      ],
+      "library_sha256": "b67925e71e183673f9ea6fde9f63fbd96cdbd566a1ed62264a377dcd5bab2452",
+      "raw_result": {
+        "bytes": 14194,
+        "sha256": "84fcf106fdb36d7d95c57cff09e59baa4258f614ef47004a48930bcac70505af"
+      }
+    },
+    {
+      "id": "initial_r1_memcheck1",
+      "phase": "memcheck",
+      "status": "PASS_MEMCHECK",
+      "audit": 1,
+      "successful_application_solves": 4,
+      "supervised_worker_seconds": 3.0093035490000375,
+      "sanitizer_error_summaries": [
+        0
+      ],
+      "library_sha256": "b67925e71e183673f9ea6fde9f63fbd96cdbd566a1ed62264a377dcd5bab2452",
+      "raw_result": {
+        "bytes": 24714,
+        "sha256": "bbdcf81199ddb6d14bf4605c60e82bf4d6b446169034fa816355aa8ee493796a"
+      }
+    },
+    {
+      "id": "clean_r1_smoke",
+      "phase": "smoke",
+      "status": "PASS_SMOKE",
+      "audit": "production and audit/trace",
+      "successful_application_solves": 14,
+      "supervised_worker_seconds": 1.2046722829999794,
+      "sanitizer_error_summaries": null,
+      "library_sha256": "cd7d06f879756f6095b7688227b50eab020e87c849b0b3bb0613a8ccff48b652",
+      "raw_result": {
+        "bytes": 30749,
+        "sha256": "edd098de4fedb0b06d24aa701352b2e9f050d1646ea64d74d3c182913202f74f"
+      }
+    }
+  ],
+  "successful_application_solves": 70,
+  "supervised_gpu_sanitizer_seconds": 7.627122645999918,
+  "supervised_seconds_cap": 600,
+  "memory": {
+    "measurement": "point observations, not peak VRAM",
+    "max_observed_tracked_bytes": 77373134,
+    "min_observed_free_bytes": 15587082240,
+    "max_observed_free_bytes": 15681454080,
+    "graph_reserved_bytes": 0,
+    "final_tracked_bytes": 0,
+    "final_live_fields": 0,
+    "final_live_solvers": 0,
+    "base_planned_bytes": 179904,
+    "pipeline_planned_bytes": 43638634,
+    "shared_native_budget_bytes": 2147483648,
+    "device_peak": "UNKNOWN_NOT_MEASURED"
+  },
+  "source_identity_notes": [
+    "Initial R1 worker snapshots are retained unchanged. After they completed, only extra EOF blank lines were removed from pack.py/schema.py; clean export tests/smoke use that final executable source.",
+    "Clean Git tree is exported independently. Final tree changes after the tested candidate are documentation/evidence only: remove one nonexistent optional migration target, preserve evidence JSON/CSV byte identities through scoped Git attributes, and add this validation report/manifest.",
+    "Clean archive text line endings differ from working-copy bytes; actual compile/dependency hashes are recorded separately. No historical DSO was reused."
+  ],
+  "coverage": [
+    "K3/K6 each five distinct real tasks, one scene",
+    "full five production outputs and all eleven requested audit/trace arrays match bitwise",
+    "forward/reverse dispatch, repeated batches, repeated cold reset on the same K6 handle",
+    "native/public invalid-run and old/destroyed readback rejection",
+    "separate finite memcheck for audit=false and audit=true",
+    "fresh source-only build then 14-solve GPU smoke"
+  ],
+  "untested": [
+    "Graph integration/backend",
+    "online arrival/queue/waiting and production pipeline readiness",
+    "general field headers or geometry outside validated domain",
+    "other GPU/toolchain configurations",
+    "full sanitizer matrix, racecheck/synccheck/initcheck",
+    "new performance matrix or independent reproduction of the historical ratios",
+    "historical research A/B failures and SPEC2 gaps unchanged"
+  ],
+  "historical_evidence": "SUMMARY.json, AA.json, TIMINGS.csv retain all 8 verdicts, 32 A/A and 256 arms; independent of new 70-solve integration checks",
+  "replay": "Use recorded raw worker commands with a new output directory under a separately supervised budget; do not overwrite earlier results.",
+  "remote_push": "NOT_RUN"
+}

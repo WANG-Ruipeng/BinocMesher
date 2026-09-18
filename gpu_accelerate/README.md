@@ -51,3 +51,6 @@ solver. Select variant 1 in the preserved shared D4 library; the D1 checker
 defaults to that variant. Build it with `python3 -B gpu_accelerate/build_d1.py`
 and explicit upstream/output paths. Source/API hashes are recorded in
 `D1_SOURCE_MANIFEST.json`. The main meshing pipeline is unchanged.
+
+
+For opt-in offline batching of distinct ready-host tasks, see [BATCHING.md](BATCHING.md).

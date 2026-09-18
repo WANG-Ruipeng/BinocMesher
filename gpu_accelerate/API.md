@@ -144,3 +144,6 @@ The independent D1 entry is declared in [include/d4_solver_api.h](include/d4_sol
 Select `variant=1`. It borrows an immutable SdfTrees field, preserves the original
 output contract and resets every solve. See [D1.md](D1.md) for lifecycle, supported
 K/lattice limits and the shared-library scope.
+
+
+For opt-in offline batching of distinct ready-host tasks, see [BATCHING.md](BATCHING.md).

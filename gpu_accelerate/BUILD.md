@@ -51,3 +51,6 @@ This is a **source build**, not application integration or a new GPU validation 
 For D1, use [build_d1.py](build_d1.py). It builds the same bridge and B128
 reference plus the preserved shared D4 library containing D1. See [D1.md](D1.md)
 for exact commands, filenames, strict arithmetic and CUB requirements.
+
+
+For opt-in offline batching of distinct ready-host tasks, see [BATCHING.md](BATCHING.md).

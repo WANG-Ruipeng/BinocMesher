@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "status": "SOURCE_MIGRATION_DESCRIPTION_NOT_NEW_PERFORMANCE_ATTESTATION",
+  "entries": [
+    {
+      "original_root": "external_evidence_root",
+      "original": {
+        "bytes": 16167,
+        "path": "mixed_common.py",
+        "sha256": "dccc405be3c0cb7687c63c92148708c4fa3f9e4fc1d5828ad5ba1e1b0b6a9e08"
+      },
+      "new_repository_paths": [
+        "gpu_accelerate/batching/schema.py",
+        "gpu_accelerate/batching/pack.py"
+      ],
+      "change": "Migrate actual distinct-job prefix/CSR packing, independent output bytes and round-aware trace split; remove experimental hard-coded paths and frozen library coupling; add explicit stable binding/task identity."
+    },
+    {
+      "original_root": "external_evidence_root",
+      "original": {
+        "bytes": 23703,
+        "path": "mixed_worker.py",
+        "sha256": "036c02cd74958557732672833f47b00d3338b07b4084e68e60612b7f377d8704"
+      },
+      "new_repository_paths": [
+        "gpu_accelerate/batching/runner.py",
+        "gpu_accelerate/check_batching_gpu.py"
+      ],
+      "change": "Extract explicit serial/offline orchestration and finite checks; historical measurement worker remains external and is not invoked by package imports."
+    },
+    {
+      "original_root": "external_backend_root",
+      "original": {
+        "bytes": 3783,
+        "path": "python/input_loader.py",
+        "sha256": "a6a57e9be31424468b0e1e039dbd77303bbe5ac0210074bee2b3c765aed88216"
+      },
+      "new_repository_paths": [
+        "gpu_accelerate/batching/inputs.py"
+      ],
+      "change": "Parse explicitly supplied original binary inputs; no import-time file reads or fixed personal paths."
+    },
+    {
+      "original_root": "external_backend_root",
+      "original": {
+        "bytes": 3378,
+        "path": "python/typed_api.py",
+        "sha256": "a0c8c573676d90bd407d8366e1ef607277867889f26f5bd6b0ff508092190d1d"
+      },
+      "new_repository_paths": [
+        "gpu_accelerate/batching/backend.py",
+        "gpu_accelerate/batching/native/published_api.h"
+      ],
+      "change": "Typed bindings and ownership contracts adapted to Published-only mb_* symbols; no old DSO path or ti_* dependency."
+    },
+    {
+      "original_root": "external_backend_root",
+      "original": {
+        "bytes": 25912,
+        "path": "src/three_ideas_core.cu",
+        "sha256": "3bb906ac4fdd68c1c564b1b4d2b3b171c0899fa84923519159c59e42682524fa"
+      },
+      "new_repository_paths": [
+        "gpu_accelerate/batching/native/published_adapter.cu"
+      ],
+      "change": "Extract minimal Published field/solver token registry, context/lifecycle/error/readback checks; invoke unchanged d4_solver_run variant 1. Not a byte-identical whole historical host wrapper."
+    },
+    {
+      "original_root": "external_backend_root",
+      "original": {
+        "bytes": 196,
+        "path": "src/ti_memory_guard.h",
+        "sha256": "7319ffd013f6527f0ed0c55eaefaee3d62664a3f6a903ae5159910d9c69e9404"
+      },
+      "new_repository_paths": [
+        "gpu_accelerate/batching/native/memory_guard.h"
+      ],
+      "change": "Retain shared allocation accounting and stricter explicit cap; Published has no Graph reservation."
+    },
+    {
+      "original_root": "external_backend_root",
+      "original": {
+        "bytes": 1780,
+        "path": "src/field_admission.h",
+        "sha256": "d88556337e3568e1995b3b1974fc0943f43610155c3abf03593aa0f4e8306d7f"
+      },
+      "new_repository_paths": [
+        "gpu_accelerate/batching/native/validated_domain.h"
+      ],
+      "change": "Retain validated SdfTrees/LandTiles header/schema and geometry envelope admission. Inputs remain external; generic field-domain support is not claimed."
+    },
+    {
+      "original_root": "external_backend_root",
+      "original": {
+        "bytes": 228,
+        "path": "src/field_bridge_isolated.cu",
+        "sha256": "6110a61bfa68363b2cc416c506e9d55e1e8dd3b6ee8757f6afb25a4dca9b8d88"
+      },
+      "new_repository_paths": [
+        "gpu_accelerate/batching/native/field_bridge_guarded.cu"
+      ],
+      "change": "Retain original field bridge implementation through an isolated guarded translation unit; no new field mathematics."
+    },
+    {
+      "original_root": "external_backend_root",
+      "original": {
+        "bytes": 2984,
+        "path": "src/d1_graph_control.cuh",
+        "sha256": "fa95292defc6f41657c6bc302b742033c233067da7f1c96e10cb2f0bdad12fee"
+      },
+      "new_repository_paths": [],
+      "change": "Historical Graph dependency documented but OPTIONAL_BACKEND_NOT_PACKAGED."
+    },
+    {
+      "original_root": "external_backend_root",
+      "original": {
+        "bytes": 3867,
+        "path": "src/graph_query.cuh",
+        "sha256": "020a9819950221a749dc2bbc65b8a58bb9fbe11836cf439dce8c6ccdcc625566"
+      },
+      "new_repository_paths": [],
+      "change": "Historical Graph evidence/topology helper remains external; not required by the Published package."
+    }
+  ],
+  "historical_build_root": "external_build_root",
+  "historical_build_path": "build/graph_fix_r2",
+  "historical_DSO": "external_backend_root/build/frozen/libthree_ideas_production.so",
+  "new_builder": "gpu_accelerate/build_batching.py",
+  "new_DSO_basename": "libbatching_published.so",
+  "new_binary_identity": "Recorded separately by new BUILD_STATUS.json; no equality claim with old DSO",
+  "math_sources": [
+    "gpu_accelerate/src/d4_solver.cu",
+    "gpu_accelerate/src/d4_pipeline.cuh",
+    "gpu_accelerate/src/d4_field_eval.cuh",
+    "gpu_accelerate/src/gpu_solver.cu",
+    "gpu_accelerate/src/field_eval.cuh",
+    "gpu_accelerate/src/field_types.h",
+    "gpu_accelerate/src/field_bridge.cu"
+  ],
+  "new_source_identity": "Candidate Git tree and new builder source/include closure; migrating files are not asserted byte-identical unless explicitly marked",
+  "graph": "OPTIONAL_BACKEND_NOT_PACKAGED",
+  "A_B_C_research_algorithms_packaged": false
+}

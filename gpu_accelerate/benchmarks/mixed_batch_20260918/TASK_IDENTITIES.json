@@ -1,0 +1,462 @@
+{
+  "cross_task_identical_geometry": [
+    {
+      "k": [
+        3,
+        6
+      ],
+      "same_geometry_bytes": true,
+      "tasks": [
+        "K3_batch0",
+        "K6_batch0"
+      ]
+    },
+    {
+      "k": [
+        3,
+        6
+      ],
+      "same_geometry_bytes": true,
+      "tasks": [
+        "K3_batch1",
+        "K6_batch1"
+      ]
+    },
+    {
+      "k": [
+        3,
+        6
+      ],
+      "same_geometry_bytes": true,
+      "tasks": [
+        "K3_batch2",
+        "K6_batch2"
+      ]
+    },
+    {
+      "k": [
+        3,
+        6
+      ],
+      "same_geometry_bytes": true,
+      "tasks": [
+        "K3_batch3",
+        "K6_batch3"
+      ]
+    },
+    {
+      "k": [
+        3,
+        6
+      ],
+      "same_geometry_bytes": true,
+      "tasks": [
+        "K3_batch4",
+        "K6_batch4"
+      ]
+    }
+  ],
+  "field_sha256": "7b3236b3085073eeeb2a4fdc0f51d55506bf66d941f0b2a1a6938a7fac5afae0",
+  "frozen_library_sha256": "e79a7395cbf0b19e04b0a626bcbf5df2a22f908d0983bef6ee431e36031f9dea",
+  "geometry_fingerprint_format": "SHA256(<ii N,M> then each centers/endpoints/offsets/owners: <Q byte_length> + exact bytes; excludes K/name)",
+  "groups": [
+    {
+      "k": 3,
+      "m": 581,
+      "n": 108,
+      "replicated_copies": 0,
+      "tasks": [
+        "K3_batch0",
+        "K3_batch1",
+        "K3_batch2",
+        "K3_batch3",
+        "K3_batch4"
+      ]
+    },
+    {
+      "k": 6,
+      "m": 581,
+      "n": 108,
+      "replicated_copies": 0,
+      "tasks": [
+        "K6_batch0",
+        "K6_batch1",
+        "K6_batch2",
+        "K6_batch3",
+        "K6_batch4"
+      ]
+    }
+  ],
+  "job_count": 10,
+  "lattice_count": 60,
+  "numeric_profile": "frozen_production:e79a7395cbf0b19e04b0a626bcbf5df2a22f908d0983bef6ee431e36031f9dea",
+  "scenario_count": 1,
+  "tasks": [
+    {
+      "arrays_sha256": {
+        "centers": "67fe40b7031a17a0a82f420d53d4653bbbc8b5d79bb0966246265510858bae80",
+        "endpoints": "01c6f5580d5c470f80f08efff73b4b49f9ac6f55b52d1b27467c7b6f1b562702",
+        "offsets": "0d14895fdb683216378a4bb8c93e5319d784829686e6db4f1334ed0f0cedce74",
+        "owners": "b9f40dc4ece1470b1fa13f8715c107f3a90d0a45d08c9977f4377ef857af38db"
+      },
+      "degrees": [
+        4,
+        5,
+        6,
+        3,
+        6,
+        4,
+        8,
+        4,
+        8,
+        7,
+        8,
+        7,
+        4,
+        4,
+        6,
+        7,
+        4,
+        7,
+        4,
+        4,
+        4,
+        7,
+        7,
+        8
+      ],
+      "geometry_sha256": "86048bedebd277583a8d8049aebc0f75a750ea9854da0adac6fd08c91ff10d40",
+      "k": 3,
+      "m": 136,
+      "n": 24,
+      "name": "K3_batch0"
+    },
+    {
+      "arrays_sha256": {
+        "centers": "8c4214e807d78908d4281642442aff6f7c76a22eb055567f15a5167c92dfb784",
+        "endpoints": "0a106d821ee008a02fa230c23d821912529d3a1855f45fe09fc30f68a0cad421",
+        "offsets": "ab89e41a99c08c308eabbf8bcc902bfe913d94c37852c6ff365bd05de6e2251b",
+        "owners": "ed2cb7ea37367eb5199f99a00f6d56244062694dbb89d46ff2e006e1a3607153"
+      },
+      "degrees": [
+        7,
+        4,
+        4,
+        4,
+        8,
+        6,
+        7,
+        8,
+        4,
+        2,
+        8,
+        4,
+        6,
+        6,
+        6,
+        8,
+        6,
+        8,
+        8,
+        6,
+        8,
+        8
+      ],
+      "geometry_sha256": "85f52fee30a031ec3615e05d0d3df0014d1c792e63b0b0be71764ac0837c7073",
+      "k": 3,
+      "m": 136,
+      "n": 22,
+      "name": "K3_batch1"
+    },
+    {
+      "arrays_sha256": {
+        "centers": "224a484daed8cf61d043dcd68528046e51b7066cf6b798f660eb44efcdfc2b5a",
+        "endpoints": "3fd3c7d6bb5ca3fd1e9d864f7029bf9a58e480ae6c51a741a1fc4154a3987954",
+        "offsets": "ae4eede219b5dbd02c4e3d5158a98f4fba2c617b50726cca0c9db44446f2c6e8",
+        "owners": "c66313b3c2d976b1fbbf9c33a6ec0bc4657d418d94df6cb32bfe34a1bc52fc1c"
+      },
+      "degrees": [
+        6,
+        8,
+        5,
+        8,
+        4,
+        2,
+        8,
+        8,
+        8,
+        8,
+        4,
+        8,
+        2,
+        4,
+        8,
+        8,
+        4,
+        4,
+        6,
+        6,
+        6,
+        8
+      ],
+      "geometry_sha256": "f0e1d6eca6de37c3a33487a0e1b9165dc368281b9a66f6e5bc5a6d6937befbcb",
+      "k": 3,
+      "m": 133,
+      "n": 22,
+      "name": "K3_batch2"
+    },
+    {
+      "arrays_sha256": {
+        "centers": "63f43b8817b7d70c21442d8f36049a40b95d0ce0156a4a57e163555d501abc38",
+        "endpoints": "85e9b899fb7285a370e36fe57fe6c202bf88bb20887427f1dc1e22c764ce079b",
+        "offsets": "1c4abc4e431695c0a2b95f664fd39deb0fc71f049cbe9550acfb22af43f40471",
+        "owners": "815758e7a7b4482c2a93c0c276d7d4e135ac084d01750f4fcbb355f9c1a14c60"
+      },
+      "degrees": [
+        6,
+        8,
+        8,
+        8,
+        8,
+        8,
+        7,
+        6,
+        5,
+        6,
+        4,
+        6,
+        2,
+        4,
+        4,
+        4,
+        7,
+        4,
+        4,
+        2,
+        2,
+        2,
+        4,
+        5,
+        6,
+        6,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        3,
+        6,
+        4
+      ],
+      "geometry_sha256": "402d17425a7b811649085552a6a320a439d2eebc764a7bdbd6c99cedaeee7584",
+      "k": 3,
+      "m": 169,
+      "n": 38,
+      "name": "K3_batch3"
+    },
+    {
+      "arrays_sha256": {
+        "centers": "00f6dc8f6120bdf159a7eb47afa37922d17fed057104e0a45d3e2064af4c2156",
+        "endpoints": "e03c5d709084d86d8d4b812a74139460cebadb17208086704f7c0c0ca3009818",
+        "offsets": "7984d4d48a74d9a116e3506741f2916a0666b781d23a42bd9fe4d751e3a37998",
+        "owners": "3df1c0d05800b1fe71869fffc96fc173b1b5e5ea448e6f180922c9abf29687ea"
+      },
+      "degrees": [
+        4,
+        3
+      ],
+      "geometry_sha256": "9e7833b6a789b8ec507c142dad29a91402b0d19bd9f74daa4525c535889c1226",
+      "k": 3,
+      "m": 7,
+      "n": 2,
+      "name": "K3_batch4"
+    },
+    {
+      "arrays_sha256": {
+        "centers": "67fe40b7031a17a0a82f420d53d4653bbbc8b5d79bb0966246265510858bae80",
+        "endpoints": "01c6f5580d5c470f80f08efff73b4b49f9ac6f55b52d1b27467c7b6f1b562702",
+        "offsets": "0d14895fdb683216378a4bb8c93e5319d784829686e6db4f1334ed0f0cedce74",
+        "owners": "b9f40dc4ece1470b1fa13f8715c107f3a90d0a45d08c9977f4377ef857af38db"
+      },
+      "degrees": [
+        4,
+        5,
+        6,
+        3,
+        6,
+        4,
+        8,
+        4,
+        8,
+        7,
+        8,
+        7,
+        4,
+        4,
+        6,
+        7,
+        4,
+        7,
+        4,
+        4,
+        4,
+        7,
+        7,
+        8
+      ],
+      "geometry_sha256": "86048bedebd277583a8d8049aebc0f75a750ea9854da0adac6fd08c91ff10d40",
+      "k": 6,
+      "m": 136,
+      "n": 24,
+      "name": "K6_batch0"
+    },
+    {
+      "arrays_sha256": {
+        "centers": "8c4214e807d78908d4281642442aff6f7c76a22eb055567f15a5167c92dfb784",
+        "endpoints": "0a106d821ee008a02fa230c23d821912529d3a1855f45fe09fc30f68a0cad421",
+        "offsets": "ab89e41a99c08c308eabbf8bcc902bfe913d94c37852c6ff365bd05de6e2251b",
+        "owners": "ed2cb7ea37367eb5199f99a00f6d56244062694dbb89d46ff2e006e1a3607153"
+      },
+      "degrees": [
+        7,
+        4,
+        4,
+        4,
+        8,
+        6,
+        7,
+        8,
+        4,
+        2,
+        8,
+        4,
+        6,
+        6,
+        6,
+        8,
+        6,
+        8,
+        8,
+        6,
+        8,
+        8
+      ],
+      "geometry_sha256": "85f52fee30a031ec3615e05d0d3df0014d1c792e63b0b0be71764ac0837c7073",
+      "k": 6,
+      "m": 136,
+      "n": 22,
+      "name": "K6_batch1"
+    },
+    {
+      "arrays_sha256": {
+        "centers": "224a484daed8cf61d043dcd68528046e51b7066cf6b798f660eb44efcdfc2b5a",
+        "endpoints": "3fd3c7d6bb5ca3fd1e9d864f7029bf9a58e480ae6c51a741a1fc4154a3987954",
+        "offsets": "ae4eede219b5dbd02c4e3d5158a98f4fba2c617b50726cca0c9db44446f2c6e8",
+        "owners": "c66313b3c2d976b1fbbf9c33a6ec0bc4657d418d94df6cb32bfe34a1bc52fc1c"
+      },
+      "degrees": [
+        6,
+        8,
+        5,
+        8,
+        4,
+        2,
+        8,
+        8,
+        8,
+        8,
+        4,
+        8,
+        2,
+        4,
+        8,
+        8,
+        4,
+        4,
+        6,
+        6,
+        6,
+        8
+      ],
+      "geometry_sha256": "f0e1d6eca6de37c3a33487a0e1b9165dc368281b9a66f6e5bc5a6d6937befbcb",
+      "k": 6,
+      "m": 133,
+      "n": 22,
+      "name": "K6_batch2"
+    },
+    {
+      "arrays_sha256": {
+        "centers": "63f43b8817b7d70c21442d8f36049a40b95d0ce0156a4a57e163555d501abc38",
+        "endpoints": "85e9b899fb7285a370e36fe57fe6c202bf88bb20887427f1dc1e22c764ce079b",
+        "offsets": "1c4abc4e431695c0a2b95f664fd39deb0fc71f049cbe9550acfb22af43f40471",
+        "owners": "815758e7a7b4482c2a93c0c276d7d4e135ac084d01750f4fcbb355f9c1a14c60"
+      },
+      "degrees": [
+        6,
+        8,
+        8,
+        8,
+        8,
+        8,
+        7,
+        6,
+        5,
+        6,
+        4,
+        6,
+        2,
+        4,
+        4,
+        4,
+        7,
+        4,
+        4,
+        2,
+        2,
+        2,
+        4,
+        5,
+        6,
+        6,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        3,
+        6,
+        4
+      ],
+      "geometry_sha256": "402d17425a7b811649085552a6a320a439d2eebc764a7bdbd6c99cedaeee7584",
+      "k": 6,
+      "m": 169,
+      "n": 38,
+      "name": "K6_batch3"
+    },
+    {
+      "arrays_sha256": {
+        "centers": "00f6dc8f6120bdf159a7eb47afa37922d17fed057104e0a45d3e2064af4c2156",
+        "endpoints": "e03c5d709084d86d8d4b812a74139460cebadb17208086704f7c0c0ca3009818",
+        "offsets": "7984d4d48a74d9a116e3506741f2916a0666b781d23a42bd9fe4d751e3a37998",
+        "owners": "3df1c0d05800b1fe71869fffc96fc173b1b5e5ea448e6f180922c9abf29687ea"
+      },
+      "degrees": [
+        4,
+        3
+      ],
+      "geometry_sha256": "9e7833b6a789b8ec507c142dad29a91402b0d19bd9f74daa4525c535889c1226",
+      "k": 6,
+      "m": 7,
+      "n": 2,
+      "name": "K6_batch4"
+    }
+  ]
+}
